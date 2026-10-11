@@ -484,6 +484,10 @@ ICONS = {
     # v2.1: trail forks — big curved arrows (left / right), stroke icons
     "fork-left": '<path d="M30 42V28q0-10-10-12H12" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 8l-9 8 9 8" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>',
     "fork-right": '<path d="M18 42V28q0-10 10-12h8" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M31 8l9 8-9 8" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>',
+    # v2.2: 2D walk controls — big forward arrow („Dál“), uphill / downhill fork arrows
+    "arrow-right": '<path d="M20 10L34 24 20 38M33 24H11" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>',
+    "trail-up": '<path d="M10 38L36 12M36 12H20M36 12v16" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 44q14-2 22-14" fill="none" stroke="currentColor" stroke-width="2.5" opacity=".45" stroke-linecap="round"/>',
+    "trail-down": '<path d="M10 10L36 36M36 36H20M36 36V20" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 44q6-3 12 0t12 0t12 0" fill="none" stroke="currentColor" stroke-width="2.5" opacity=".55" stroke-linecap="round"/>',
     # language: simplified round flags (fixed colours)
     # language: simplified round flags (fixed colours, geometry pre-clipped to the circle — no clipPath in symbols)
     "lang-cs": '<path d="M6 24A18 18 0 0 1 42 24Z" fill="#fff"/><path d="M6 24A18 18 0 0 0 42 24Z" fill="#d7141a"/>'

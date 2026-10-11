@@ -2,6 +2,8 @@
 #   main → https://<user>.github.io/houbicky/        (stable)
 #   v2   → https://<user>.github.io/houbicky/beta/   (beta; skipped if the branch does not exist)
 # One artifact holds both. A push to EITHER branch rebuilds both, so this file is identical on main and v2.
+# The github-pages environment only accepts deployments from main, so a push to v2 just dispatches this
+# workflow on main (job trigger-main); the main run then builds and deploys both copies.
 # Photos (Wikimedia Commons) and voices (edge-tts) are generated here per branch, never committed.
 # The two copies never interfere at runtime: different localStorage key, SW scope and cache names
 # (all derived from the URL by js/env.js and sw.js).
@@ -22,7 +24,20 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  trigger-main:
+    if: github.ref != 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - name: Dispatch the deploy on main (builds main + v2)
+        run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}
+
   build:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Check out main (stable)

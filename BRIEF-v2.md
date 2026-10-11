@@ -49,14 +49,19 @@ nahlásit hned** (designér kreslí podle této tabulky souběžně).
 Odemčení: úroveň 2 po 8 nálepkách, úroveň 3 po zlatém albu úrovně 2 (designér navrhne přesně); rodič může odemknout.
 Do `data/species.json` přibude pole `"level": 1|2` (minimální úroveň, na které se druh objeví).
 
-## „Výprava do lesa“ — rámec
-- 3D les ve stylu **papírového divadla**: vrstvené 2D malované prvky (stromy, kapradí, listí, postavičky hub)
-  jako billboardy ve 3D prostoru → sedí na storybookový styl, levné pro iPad, funguje offline.
-- Ovládání bez joysticku: klepnutí = krok po cestičce (nebo šipka „dál“), klepnutí na houbu = zvednout/varování,
-  rozhodnutí košík / nechat. Jedno kolo ≈ 3–4 minuty, 8–10 hub, část schovaná v listí/u pařezů.
-- Konec: průvodce (zvířátko, designér navrhne) projde košík a pochválí / vysvětlí chybu (hlasem).
-- Výkon: 60 fps na iPadu 9. gen. nebo novějším cílem, 30 fps minimum; `prefers-reduced-motion` = bez pohupování kamery.
-- Technika: three.js vendorovaný z npm do `vendor/` (žádné CDN), ES moduly.
+## „Výprava do lesa“ — rámec (ROZHODNUTÍ 2026-10-11: 2D, ne 3D)
+- **2D chůze zleva doprava („jako Mario“) s hloubkou**: vrstvy lesa s paralaxou (daleký les pomalu, kapradí
+  v popředí rychle), terén z profilu s kopci nahoru a dolů, úzká cestička, houby v mechu, na kamenech, u pařezů,
+  částečně schované za popředím. Důvod: hraní v autě (3D pohled z vlastních očí = riziko nevolnosti),
+  srozumitelnost pro 5–6 let, postavičky jsou kreslené z profilu.
+- Ovládání: podržení / klepnutí na velkou šipku „Dál“ (případně i zpět), žádný joystick. Viditelná postavička
+  malého houbaře s košíkem (generická, nepodobá se nikomu konkrétnímu); ježek jde s ní jako průvodce.
+- Klepnutí na houbu = zvednout / varování „Nesahej na mě!“ (jedovaté se nezvednou), rozhodnutí košík / nechat.
+- Rozcestí 1× za kolo (od úrovně 2): nahoru do kopce / dolů k potůčku, dvě velké šipky.
+- Zvířata (srnka, zajíc, veverka) občas přeběhnou krajinou; klepnutí = řeknou své jméno; nikdy u hub.
+- Konec: ježek projde košík a pochválí / vysvětlí chybu (hlasem). Jedno kolo ≈ 3–4 minuty, 8–10 hub.
+- Technika: SVG/DOM nebo canvas 2D, žádná 3D knihovna. `prefers-reduced-motion` = bez pohupování a bez
+  rychlé paralaxy. Rozpracovaný three.js prototyp se odkládá (případný bonus později, ne do v2).
 
 ## Struktura souborů v2 (kontrakt)
 - VÝZKUMNÍK: `data/species.json` (rozšířit, pole `level`, `twin`), `data/RESEARCH_NOTES.md`, `photos/manifest.json`.

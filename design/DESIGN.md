@@ -76,7 +76,7 @@ The IA skill was run in light mode, as the brief asked. `ia_lint.py` was **not**
 ```
 Les (hub, home) ──tap mushroom──► Kartička (overlay over Les; flip = photo; „Dvojník“ = 2nd level)
    ├─ door ► Do košíku!   (round of 6, ends in celebration ► back to Les)
-   ├─ door ► Kdo jsem?    (round of 5)
+   ├─ door ► Kvíz    (round of 5)
    ├─ door ► Album        (tap sticker ► Kartička)
    └─ hold 3 s ► Rodiče   (gated)
 ```
@@ -86,10 +86,10 @@ Every screen has a Home button top-left in the same place (64 px). The child can
 
 | Screen | Hero (one) | T1: must do without reading | T2: on tap | T3 / demoted (named) | Disclosure |
 |---|---|---|---|---|---|
-| **Les** | the forest with 13 characters | tap a character → bounce + name + opens card; pan the panorama | the three doors (Do košíku, Kdo jsem?, Album) | progress „3 / 13“ (small, top right); language flag; parents icon (dim, hold-gated). **Demoted:** text instructions (none; the voice greets instead) | L1 forest, L2 card |
+| **Les** | the forest with 13 characters | tap a character → bounce + name + opens card; pan the panorama | the three doors (Do košíku, Kvíz, Album) | progress „3 / 13“ (small, top right); language flag; parents icon (dim, hold-gated). **Demoted:** text instructions (none; the voice greets instead) | L1 forest, L2 card |
 | **Kartička** | the big character with 3 numbered pins | hear the name (auto-spoken on open); tap a pin → feature spoken; tap the verdict → group spoken | flip → real photo; speaker repeats | EN name + latin (secondary line); „Dvojník“ panel (L2); photo credit (on the back, small). **Demoted:** the fact text is spoken only via the speaker, never shown as a paragraph | L1 front, L2 back or Dvojník |
 | **Do košíku!** | the mushroom currently in play (lifted, centre) | drag (or tap, then tap the zone) into the basket or „Nechat v lese“ | speaker = instruction again | stars row (progress, top right). **Demoted:** score numbers, timer (there is none) | single level |
-| **Kdo jsem?** | the spoken name + the 3 candidates | listen, tap the right one | tap the speaker = hear it again | stars row. **Demoted:** written name (shown only after a correct answer, as reading practice) | single level |
+| **Kvíz** | the spoken name + the 3 candidates | listen, tap the right one | tap the speaker = hear it again | stars row. **Demoted:** written name (shown only after a correct answer, as reading practice) | single level |
 | **Album** | the sticker page (13 slots grouped by edibility) | tap a sticker → card | swipe or arrow to the second page (if split) | count „7 / 13“. **Demoted:** dates, stats | L1 album, L2 card |
 | **Rodiče** | the safety note | (adult) read; toggle Level 2; reset | photo credits list | research notes link, voice settings | single scroll |
 
@@ -102,7 +102,7 @@ Baseline viewport: **iPad landscape 1024×768**. Also valid at 1180×820, 1366×
 - **Parallax pan:** pan offset `p ∈ [0, 2400 − vbW]` (drag on empty ground, two-finger scroll, or arrow buttons). Translate each layer by `−p × data-depth` (far .3, light .45, mid .65, near 1; sky fixed). Release with inertia (`--ease-out`, ~600 ms). Optional ±12 px drift from device tilt or pointer position at rest, same depth ratios.
 - **Characters:** 13 slots are invisible `circle.slot` elements in `#slots` (6 mid, 7 near), each with `data-layer` and `data-scale`. Append each character's inline SVG into `.slots-mid` or `.slots-near` inside its layer, so it pans with its own ground. Place it with its foot point `(120, 262)` on the slot centre, size `240×280 × data-scale`. Hide the character's `.ground` in the scene (the scene has its own floor) and keep its `.shadow`.
 - **Assignment:** recommended order left to right is `muchomurka-cervena, kozak, zlucnik, trepenitka, bedla, troudnatec` (mid), then `hrib-smrkovy, liska, muchomurka-zelena, kremenac, pychavka, suchohrib, muchomurka-tygrovana` (near). This mixes the groups so no area is "the poison corner".
-- **Doors:** a paper tray top-centre with three 88 px round doors and labels (Grandstander 19 px): „Do košíku“ (basket, `--edible-soft` fill), „Kdo jsem?“ (quiz), „Album“. Top-left is the language flag (64 px). Top-right is the progress pill „★ 3 / 13“ and the parents icon (56 px, opacity .75, hold-gated).
+- **Doors:** a paper tray top-centre with three 88 px round doors and labels (Grandstander 19 px): „Do košíku“ (basket, `--edible-soft` fill), „Kvíz“ (quiz), „Album“. Top-left is the language flag (64 px). Top-right is the progress pill „★ 3 / 13“ and the parents icon (56 px, opacity .75, hold-gated).
 - **Met characters** (card opened at least once) get a tiny star sparkle above the cap once on load. Unmet ones idle normally. Everyone is always visible: it is an explore screen.
 - **Ferns** are `g.fern` in the near layer. Keep them on Les; hide them in the game screens.
 
@@ -129,7 +129,7 @@ Baseline viewport: **iPad landscape 1024×768**. Also valid at 1180×820, 1366×
   - Hints: after 2 misses on the same piece, the right zone glows softly (scaffolding).
 - **End:** the basket bounces, leaf confetti (`js/confetti.js`), the voice says „Výborně! Košík je plný.“ Stars fly to the progress pill. Then two doors: „Ještě jednou“ (retry icon) and Home.
 
-### 6.4 Hra „Kdo jsem?“ (name quiz)
+### 6.4 Hra „Kvíz“ (name quiz)
 - Three candidates stand on three tree-stumps (mid ground, near scale), with a big speaker top-centre. On start the voice says „Kde je… *liška obecná*?“ and a tap on the speaker repeats it.
 - **Correct:** a happy jump, a star, the written name appears under it (reading practice), and the voice confirms „Ano! To je liška.“
 - **Wrong:** the tapped mushroom says its *own* name („Já jsem hřib smrkový.“) with a gentle wobble. That turns every miss into learning. It stays in place.

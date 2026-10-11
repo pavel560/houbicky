@@ -229,12 +229,12 @@ async function playKdo(s, lang) {
   await page.click('.topbar [data-act="speak"]'); await s.settle(400);
   check('Do košíku: speaker after the round = praise, no error (#7)', (await s.spoken()).pop().includes('Košík je plný') && !s.errors.length, s.errors.join(' | '));
   await page.click('.end-panel [data-act="home"]'); await page.waitForSelector('.doors'); await s.settle(700);
-  // Kdo jsem?
+  // Kvíz
   await page.click('[data-door="kdo"]'); await page.waitForSelector('.cand'); await s.settle(1000); await s.shot('kdo');
   const q = await playKdo(s, 'cs'); await s.shot('kdo-end');
-  check('Kdo jsem?: full round of 5; wrong pick says its own name', q.wrongSaid);
+  check('Kvíz: full round of 5; wrong pick says its own name', q.wrongSaid);
   await page.click('.big-speaker'); await s.settle(400);
-  check('Kdo jsem?: speaker after round 5 = praise, no error (#7)', (await s.spoken()).pop().includes('Všechny houbičky') && !s.errors.length, s.errors.join(' | '));
+  check('Kvíz: speaker after round 5 = praise, no error (#7)', (await s.spoken()).pop().includes('Všechny houbičky') && !s.errors.length, s.errors.join(' | '));
   await page.click('.end-panel [data-act="home"]'); await page.waitForSelector('.doors'); await s.settle(700);
   // parents: hold 3 s, toggle neutral faces
   const pb = await page.locator('.parents-btn').boundingBox();
@@ -269,7 +269,7 @@ async function playKdo(s, lang) {
   await page.click('.end-panel [data-act="home"]'); await page.waitForSelector('.doors'); await s.settle(600);
   await page.click('[data-door="kdo"]'); await page.waitForSelector('.cand'); await s.settle(900); await s.shot('kdo-en');
   const qe = await playKdo(s, 'en');
-  check('EN Kdo jsem?: full round', qe.wrongSaid);
+  check('EN Kvíz: full round', qe.wrongSaid);
   await page.evaluate(() => { window.__nav = 0; document.addEventListener('screen:leave', () => window.__nav++); });
   await page.click('.end-panel [data-act="home"]'); await page.waitForSelector('.doors'); await s.settle(1500);
   check('one tap on Home = exactly one navigation (no stacked handlers)', (await page.evaluate(() => window.__nav)) === 1 && (await page.locator('#screen > *').count()) === 1, String(await page.evaluate(() => window.__nav)));
@@ -389,7 +389,7 @@ for (const vp of [{ width: 1180, height: 820 }, { width: 1440, height: 900 }, { 
   const tgt = ids.find((id) => prompt.includes(species.find((x) => x.id === id).name.cs.toLocaleLowerCase('cs')));
   await page.click(`.cand[data-id="${tgt}"]`); await page.waitForTimeout(100);
   await page.click('.topbar [data-act="home"]'); await page.waitForSelector('.doors'); await s.settle(2000);
-  check('#6 Kdo jsem?: leave right after a correct answer → no error, stays on Les', (await page.evaluate(() => document.documentElement.dataset.screen)) === 'les' && !s.errors.length, s.errors.join(' | '));
+  check('#6 Kvíz: leave right after a correct answer → no error, stays on Les', (await page.evaluate(() => document.documentElement.dataset.screen)) === 'les' && !s.errors.length, s.errors.join(' | '));
   check('R run: zero console errors / 4xx', s.errors.length === 0, s.errors.join(' | '));
   allErrors.push(...s.errors);
   await s.ctx.close();

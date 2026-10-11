@@ -241,7 +241,7 @@ html:is([data-screen="kosik"], [data-screen="kdo"]) .forest .fern { display: non
 .dropped .shroom, .target-art .shroom { overflow: visible; }
 .target-art .shroom .body { transform-box: fill-box; }
 
-/* ------------------------------------------------------------ Kdo jsem? */
+/* ------------------------------------------------------------ Houbový kvíz */
 .big-speaker { position: absolute; top: max(var(--space-4), env(safe-area-inset-top)); left: 50%; translate: -50% 0; }
 .stumps { position: absolute; left: 0; right: 0; bottom: 4vh; height: 62vh; display: grid; grid-template-columns: repeat(3, 1fr); align-items: end; padding-inline: 4vw; }
 .stump-slot { position: relative; display: grid; justify-items: center; align-content: end; }

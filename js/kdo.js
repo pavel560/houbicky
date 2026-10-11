@@ -1,4 +1,4 @@
-// Houbičky — „Kdo jsem?“: hear a name, tap the right one of three characters. Round of 5.
+// Houbičky — „Houbový kvíz“: hear a name, tap the right one of three characters. Round of 5.
 import { species, byId, shroom, TWINS } from './assets.js';
 import { glideTo } from './scene.js';
 import { idle, jump, wobble } from './anim.js';

@@ -7,7 +7,7 @@ Hra pro děti: poznáváme houby (jak se jmenují a zda jsou jedlé, nejedlé ne
 - **Les** – úvodní obrazovka. Les se dá posouvat prstem (nebo šipkami). Klepnutí na houbičku: poskočí, řekne své skutečné jméno a otevře se kartička.
 - **Kartička** – velký obrázek s očíslovanými znaky (klepnutím je hra přečte), verdikt jedlá / nejedlá / jedovatá / smrtelně jedovatá, věta „Houby sbíráme jen s dospělým“. Tlačítko s šipkami kartičku otočí na skutečnou fotku. U hub s nebezpečnou záměnou je tlačítko **Dvojník**.
 - **Do košíku!** – šest hub: jedlé patří do košíku, ostatní zůstanou v lese. Houbu lze přetáhnout, nebo na ni klepnout a pak klepnout na místo. Chyba se jen vlídně opraví, prohrát nejde.
-- **Kdo jsem?** – hra řekne jméno a dítě vybírá ze tří houbiček. Reproduktor jméno zopakuje.
+- **Houbový kvíz** – hra řekne jméno a dítě vybírá ze tří houbiček. Reproduktor jméno zopakuje.
 - **Album nálepek** – nálepka přibude, když dítě houbu pozná. Zlatý rámeček znamená, že ji poprvé správně určilo v obou hrách.
 - **Koutek pro rodiče** – otevře se podržením ikony rodičů vpravo nahoře po dobu 3 sekund. Obsahuje bezpečnostní větu, úroveň 2 (obličeje bez nápověd, ve výchozím stavu vypnuto), jazyk, rychlost hlasu, zvukové efekty, autory fotografií a smazání postupu.
 

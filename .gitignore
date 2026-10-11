@@ -13,3 +13,5 @@ voice/en/
 voice/phrases.json
 *.part.mp3
 _site/
+# snímky z e2e testů (generované)
+dev/screens/

@@ -1,0 +1,147 @@
+/* Houbičky — design tokens (designer, 2026-10-11)
+   Personal family surface, outside the fleet registers (no ph.json / LIVE_REGISTER).
+   Concept: a living autumn picture-book page — warm umber ink, gouache volumes, golden-hour light.
+   Everything visual in the app should resolve to a var(--token) from this file.
+   Fonts: @fontsource/grandstander (700, 800) + @fontsource/andika (400, 700), latin + latin-ext
+   subsets; Czech coverage verified glyph-by-glyph (see DESIGN.md §9). Baloo 2 / Nunito stay as fallbacks. */
+
+:root {
+  /* ------------------------------------------------------------------ paper + ink */
+  --paper:          #fbf4e4;   /* card / sheet ground */
+  --paper-deep:     #f3e3c3;   /* parchment, pressed areas, album pages */
+  --paper-edge:     #e2d2b0;   /* paper thickness / lower edge */
+  --ink:            #3b2417;   /* warm umber outline + text (never pure black) */
+  --ink-soft:       #6b4a33;   /* secondary text, captions */
+  --ink-faint:      rgb(59 36 23 / .35);
+  --on-color:       #ffffff;   /* glyphs on coloured badges / buttons */
+
+  /* ------------------------------------------------------------------ forest palette (matches the art) */
+  --sky-top:        #b9d0d6;
+  --sky-glow:       #f3e2bf;
+  --sky-low:        #f6cf97;
+  --sun:            #fff6dc;
+  --spruce:         #3a5a44;
+  --spruce-deep:    #24402f;
+  --moss:           #7d8c45;
+  --moss-light:     #a3b25e;
+  --grass:          #56692f;
+  --soil:           #8a6a3a;
+  --soil-deep:      #5c4126;
+  --bark-birch:     #fbf8f0;
+  --leaf-rust:      #c7642a;
+  --leaf-gold:      #d99a2b;
+  --leaf-red:       #a8402a;
+  --leaf-yellow:    #e3b23c;
+  --wicker:         #c98d4a;
+  --wicker-light:   #e3b072;
+  --wicker-dark:    #7a4a22;
+
+  /* ------------------------------------------------------------------ edibility language
+     Colour is the THIRD cue. First = shape, second = glyph, plus the spoken word.
+       jedlá     = circle  + check      (green)
+       nejedlá   = rounded square + X   (slate blue)
+       jedovatá  = triangle + !         (red)
+       smrtelně  = octagon + skull + hazard stripes + "Pozor!" voice (near-black on red)
+     CVD check (Machado 2009, CIELAB dE76): worst pair edible↔poison under deuteranopia = 23
+     (L* 55 vs 50) → colour alone is NOT enough; shapes carry the meaning. */
+  --edible:         #2f9b57;
+  --edible-ink:     #1d6b3a;   /* text on paper, 5.9:1 */
+  --edible-soft:    #dcefdc;   /* zone / card tint */
+  --inedible:       #5f7598;
+  --inedible-ink:   #3f5373;
+  --inedible-soft:  #e1e6ef;
+  --poison:         #c92f2a;
+  --poison-ink:     #9a1f1b;
+  --poison-soft:    #f6dcd6;
+  --deadly:         #2a0f14;
+  --deadly-accent:  var(--poison);
+  --deadly-stripes: repeating-linear-gradient(-45deg, var(--deadly) 0 14px, var(--poison) 14px 28px);
+  --warn-yellow:    #f2c230;   /* only for the deadly ribbon text highlight */
+
+  /* game feedback (never red for a child's mistake — red is reserved for poison) */
+  --good:           var(--edible);
+  --try-again:      #d99a2b;   /* warm amber "zkus to znovu", not an error colour */
+  --star:           #f2b01e;
+  --star-ink:       #b8780a;
+
+  /* ------------------------------------------------------------------ typography */
+  --font-display:   "Grandstander", "Baloo 2", "Comic Sans MS", system-ui, sans-serif;
+  --font-text:      "Andika", "Nunito", system-ui, sans-serif;  /* single-storey a/g like Year-1 handwriting */
+  --fw-text:        400;
+  --fw-text-bold:   700;
+  --fw-display:     800;
+  --fw-display-alt: 700;
+  /* fluid scale, ratio ~1.333, anchored for iPad landscape (1024–1366 px wide) */
+  --fs-hero:        clamp(2.75rem, 1.6rem + 3.6vw, 4.5rem);    /* species name on the card */
+  --fs-title:       clamp(2rem, 1.3rem + 2.2vw, 3.25rem);      /* screen title, quiz prompt */
+  --fs-label:       clamp(1.5rem, 1.1rem + 1.2vw, 2.125rem);   /* button labels, EN name */
+  --fs-body:        clamp(1.25rem, 1rem + .8vw, 1.625rem);     /* look-for captions, parents' text */
+  --fs-small:       clamp(1rem, .9rem + .3vw, 1.125rem);       /* photo credit, latin name */
+  --lh-tight:       1.05;
+  --lh-text:        1.35;
+  --tracking-display: .005em;
+
+  /* ------------------------------------------------------------------ space, size, touch */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --touch-min:      64px;      /* every tappable thing */
+  --touch-main:     88px;      /* primary round buttons (speaker, play, home) */
+  --touch-hero:     120px;     /* game-mode doors on the Les screen */
+  --char-card:      min(46vh, 380px);   /* character height on the card */
+  --char-game:      min(26vh, 200px);   /* character height in games */
+  --badge-card:     72px;
+  --badge-chip:     40px;
+
+  /* ------------------------------------------------------------------ shape */
+  --r-xs:   6px;
+  --r-sm:   12px;
+  --r-md:   20px;
+  --r-lg:   32px;
+  --r-pill: 999px;
+  --stroke-ink: 3px;           /* UI outlines match the 3px character ink */
+  --stroke-ink-heavy: 4px;
+
+  /* ------------------------------------------------------------------ depth (warm umber shadows, paper-lift) */
+  --shadow-paper:   0 2px 0 var(--paper-edge), 0 6px 14px rgb(59 36 23 / .14);
+  --shadow-lift:    0 4px 0 var(--paper-edge), 0 14px 28px rgb(59 36 23 / .22);
+  --shadow-press:   inset 0 3px 0 rgb(59 36 23 / .18);
+  --shadow-sticker: drop-shadow(0 0 0 #fff) drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff)
+                    drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(0 6px 6px rgb(59 36 23 / .3));
+  --shadow-char:    drop-shadow(0 10px 10px rgb(42 26 16 / .25));
+  --glow-edible:    0 0 0 6px rgb(47 155 87 / .35), 0 0 32px 8px rgb(47 155 87 / .35);
+  --glow-poison:    0 0 0 6px rgb(201 47 42 / .35);
+  --grain-opacity:  .06;       /* optional paper grain overlay over the whole app */
+
+  /* ------------------------------------------------------------------ motion */
+  --t-tap:      120ms;   /* press-down */
+  --t-quick:    200ms;   /* hover/focus, small fades */
+  --t-base:     320ms;   /* screen elements in/out */
+  --t-bounce:   650ms;   /* character tap squash-stretch */
+  --t-flip:     700ms;   /* card flip to photo */
+  --t-view:     450ms;   /* View Transition between screens */
+  --t-drop:     550ms;   /* mushroom falling into the basket */
+  --t-return:   480ms;   /* gentle return to the start spot */
+  --t-celebrate: 2400ms;
+  --t-blink:    140ms;   /* eyes closed time */
+  --idle-blink-min: 2800ms;  /* random blink interval range */
+  --idle-blink-max: 6500ms;
+  --idle-sway:  5200ms;  /* slow breathing sway loop */
+  --ease-out:    cubic-bezier(.22, 1, .36, 1);
+  --ease-in:     cubic-bezier(.55, 0, 1, .45);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --ease-spring: linear(0, .009, .035 2.1%, .141 4.4%, .723 12.9%, .938 16.7%, 1.017 19.4%, 1.067, 1.099 24.3%,
+                        1.108 26%, 1.103, 1.088 30.6%, 1.025 38.5%, 1.004 42.7%, .992 48.1%, 1.001 59.7%, 1);
+  --ease-bounce: linear(0, .25 9%, .79 20%, 1 27%, .88 36%, .86 40%, 1 52%, .97 60%, 1 72%, .995 82%, 1);
+
+  /* ------------------------------------------------------------------ layering */
+  --z-scene: 0;  --z-chars: 10;  --z-ui: 20;  --z-drag: 30;  --z-card: 40;  --z-celebrate: 50;  --z-parents: 60;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --t-bounce: 1ms; --t-flip: 1ms; --t-view: 1ms; --t-drop: 1ms; --t-return: 1ms;
+    --t-celebrate: 1200ms;     /* keep a static "done" state visible */
+    --idle-sway: 0ms;          /* JS: skip idle loops when this is 0 */
+    --ease-spring: linear; --ease-bounce: linear;
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "_note": "Compiled 2026-10-11 by houbař-výzkumník. WebFetch/curl to wikimedia.org were blocked in the sandbox (DNS/proxy), so every entry was confirmed only via web-search renderings of the Commons file pages: file exists, author, licence, place/date and species named in the description. Nobody has looked at the pixels yet, hence verified=false everywhere. fetch_photos.py re-reads the licence from Commons extmetadata on download and flags any mismatch.",
+  "photos": [
+    {
+      "id": "hrib-smrkovy",
+      "commonsFile": "File:Boletus edulis 2 2008.JPG",
+      "author": "Włodzimierz Wysocki",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Boletus_edulis_2_2008.JPG",
+      "verified": false,
+      "evidence": "Commons page: Boletus edulis, Tuchola Forest (PL), 14 Sep 2008, own work; dual CC BY-SA 3.0 / GFDL 1.2+.",
+      "alt": ["File:Boletus edulis steinpilz.jpg"],
+      "altNote": "Holger Krisp, CC BY 3.0, Ulm-Eggingen 2012 (licence read from structured data only)."
+    },
+    {
+      "id": "liska",
+      "commonsFile": "File:Kantareller (Cantharellus cibarius) i Sala kn 3868.jpg",
+      "author": "Gunnar Creutz",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Kantareller_(Cantharellus_cibarius)_i_Sala_kn_3868.jpg",
+      "verified": false,
+      "evidence": "Commons page: chanterelles in Sala (SE), 14 Jul 2016, own work, 3812x3256 px.",
+      "alt": ["File:2007-07-14 Cantharellus cibarius.jpg"],
+      "altNote": "Andreas Kunze, CC BY-SA 3.0, Commons Quality image."
+    },
+    {
+      "id": "bedla",
+      "commonsFile": "File:Macrolepiota-procera.jpg",
+      "author": "Chrumps",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Macrolepiota-procera.jpg",
+      "verified": false,
+      "evidence": "Commons Valued image for scope Macrolepiota procera, own work, 14 Sep 2014, 2700x3360 px.",
+      "alt": ["File:Macrolepiota procera 2025 G1.jpg"],
+      "altNote": "George Chernilevsky, CC BY 4.0, Commons Featured picture, Vinnytsia (UA)."
+    },
+    {
+      "id": "kozak",
+      "commonsFile": "File:Kozak brezovy-Leccinum scabrum-I-06-2020-PP Krizanky.jpg",
+      "author": "The photonaut",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Kozak_brezovy-Leccinum_scabrum-I-06-2020-PP_Krizanky.jpg",
+      "verified": false,
+      "evidence": "Commons page: Leccinum scabrum, PP Křižánky, Jičín District (CZ), 7 Jun 2020, own work. Czech find.",
+      "alt": ["File:Gemeine Birkenpilz Leccinum scabrum.jpg", "File:Birch bolete - Brauner Birkenpilz - Leccinum scabrum - 01.jpg"],
+      "altNote": "1) Holger Krisp, CC BY 3.0, 2013. 2) Norbert Nagel, CC BY-SA 3.0, Hesse 2013."
+    },
+    {
+      "id": "kremenac",
+      "commonsFile": "File:Espen-Rotkappe Leccinum leucopodium.JPG",
+      "author": "Holger Krisp",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Espen-Rotkappe_Leccinum_leucopodium.JPG",
+      "verified": false,
+      "evidence": "Commons page: 'Leccinum albostipitatum, Familie Boletaceae', Erbach-Ringingen (DE), 26 Oct 2014, own work; in Category:Leccinum albostipitatum.",
+      "alt": ["File:Weißstielige Rotkappe (Leccinum leucopodium). 2H1A0513WI.jpg"],
+      "altNote": "Kora27 (metadata also names Valentina Patzlaff), CC BY-SA 4.0, Wiki Loves Earth 2024, Saxony. Check the credit line."
+    },
+    {
+      "id": "suchohrib",
+      "commonsFile": "File:Imleria badia in Krajna 46.jpg",
+      "author": "Krzysztof Golik",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Imleria_badia_in_Krajna_46.jpg",
+      "verified": false,
+      "evidence": "Commons page: Imleria badia, Krajna Landscape Park (PL), 23 Oct 2021, own work (user Tournasol7).",
+      "alt": ["File:Imleria badia - Maronenröhrling cropped.jpg"],
+      "altNote": "Derivative by Ak ccm of a Holger Krisp photo, CC BY 3.0; credit 'H. Krisp, derivative Ak ccm'."
+    },
+    {
+      "id": "pychavka",
+      "commonsFile": "File:Lycoperdon-perlatum-flaschenstaeubling.jpg",
+      "author": "Holger Krisp",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Lycoperdon-perlatum-flaschenstaeubling.jpg",
+      "verified": false,
+      "evidence": "Commons page: Lycoperdon perlatum, Ulm-Eggingen (DE), 26 Sep 2011, own work.",
+      "alt": ["File:Single lycoperdon perlatum.jpg"],
+      "altNote": "Daniel Ullrich (Threedots), GFDL / CC BY-SA 2.0 DE / CC BY-SA 3.0, 2005."
+    },
+    {
+      "id": "zlucnik",
+      "commonsFile": "File:Gemeine Gallenröhrling Tylopilus felleus.jpg",
+      "author": "Holger Krisp",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Gemeine_Gallenr%C3%B6hrling_Tylopilus_felleus.jpg",
+      "verified": false,
+      "evidence": "Commons page: Tylopilus felleus, Ulm-Ringingen (DE), 13 Jul 2012, own work, 3000x1996 px.",
+      "alt": ["File:Gallenröhrling (Tylopilus felleus), Nationalpark Hohe Tauern, Kärnten.jpg"],
+      "altNote": "Naturpuur, CC BY 4.0, 15 Aug 2020."
+    },
+    {
+      "id": "troudnatec",
+      "commonsFile": "File:Fomes fomentarius 1.jpg",
+      "author": "Tomas Čekanavičius",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Fomes_fomentarius_1.jpg",
+      "verified": false,
+      "evidence": "Commons page: Fomes fomentarius, Karmėlava forest (LT), 22 Sep 2007, own work (user Tocekas); dual CC BY-SA 3.0 / GFDL.",
+      "alt": ["File:Fomes fomentarius, Zunderschwamm 1.JPG"],
+      "altNote": "Friedrich Böhringer, CC BY-SA 2.5, 2010; he asks reusers to credit him by name."
+    },
+    {
+      "id": "muchomurka-cervena",
+      "commonsFile": "File:Fliegenpilz fly agaric Amanita muscaria.JPG",
+      "author": "Holger Krisp",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Fliegenpilz_fly_agaric_Amanita_muscaria.JPG",
+      "verified": false,
+      "evidence": "Commons page: own work, Erbach-Ringingen (DE), 5 Sep 2014; Commons Picture of the Day 6 Sep 2015.",
+      "alt": ["File:Amanita muscaria (fly agaric).JPG"],
+      "altNote": "MichaelMaggs, CC BY-SA 2.5, Norway 2006."
+    },
+    {
+      "id": "muchomurka-zelena",
+      "commonsFile": "File:Amanita phalloides 1.JPG",
+      "author": "Archenzo",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Amanita_phalloides_1.JPG",
+      "verified": false,
+      "evidence": "Commons page: own work, Piacenza mountains (IT), Sep 2005, 1200x1600 px; dual CC BY-SA 3.0 / GFDL. The page does not say whether the volva is visible.",
+      "alt": ["File:Amanita phalloides.jpg"],
+      "altNote": "Hankwang, southern Sweden 2004; CC BY-SA 3.0 / GFDL / CC BY 1.0."
+    },
+    {
+      "id": "muchomurka-tygrovana",
+      "commonsFile": "File:Pantherpilz (Amanita pantherina).jpg",
+      "author": "Bildkreateur",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pantherpilz_(Amanita_pantherina).jpg",
+      "verified": false,
+      "evidence": "Commons page: own work, 10 Aug 2023, uploaded through the Commons app. The search rendering gives no place, so this is the least certain photo choice.",
+      "alt": ["File:Amanita pantherina 1.JPG"],
+      "altNote": "Archenzo (author field missing; attributed from the upload log), CC BY-SA 3.0 / GFDL, Piacenza (IT) 2005. Do NOT use the James St. John Flickr file, which is a North American taxon."
+    },
+    {
+      "id": "trepenitka",
+      "commonsFile": "File:Clustered woodlover - Hypholoma fasciculare - Grünblättriger Schwefelkopf - sulfur tuft - 01.jpg",
+      "author": "Norbert Nagel",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Clustered_woodlover_-_Hypholoma_fasciculare_-_Gr%C3%BCnbl%C3%A4ttriger_Schwefelkopf_-_sulfur_tuft_-_01.jpg",
+      "verified": false,
+      "evidence": "Commons page: Hesse (DE), Oct 2013, own work, Quality image candidate Oct 2013; preferred credit 'Norbert Nagel / Wikimedia Commons'.",
+      "alt": ["File:Grünblättriger Schwefelkopf (Hypholoma fasciculare) Bruderwald-20251031-RM-162333.jpg"],
+      "altNote": "Reinhold Möller, CC BY-SA 4.0, 2025; he asks to be credited and notified."
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Houbičky — smoke test (phase A)</title>
+  <link rel="icon" href="../icons/icon-192.png">
+  <link rel="stylesheet" href="../design/tokens.css">
+  <link rel="stylesheet" href="../css/fonts.css">
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: var(--font-body); margin: 0; padding: 24px; background: #f6efd9; color: #2b2118; }
+    h1 { font-family: var(--font-display); font-weight: 800; margin: 0 0 8px; color: #3f6b3a; }
+    section { background: #fffaf0; border-radius: 20px; padding: 16px 20px; margin: 14px 0; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+    h2 { font-family: var(--font-display); font-weight: 600; margin: 0 0 10px; font-size: 22px; }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; }
+    button { font: 700 18px/1 var(--font-body); min-height: 64px; min-width: 64px; padding: 0 20px; border: 0; border-radius: 18px;
+      background: #3f6b3a; color: #fff; cursor: pointer; touch-action: manipulation; }
+    button:active { transform: scale(.96); }
+    button.secondary { background: #e9dfc4; color: #2b2118; }
+    pre { background: #2b2118; color: #f6efd9; padding: 12px; border-radius: 12px; max-height: 220px; overflow: auto; font-size: 13px; white-space: pre-wrap; }
+    .glyphs p { margin: 4px 0; font-size: 26px; }
+  </style>
+</head>
+<body>
+  <h1>Houbičky · smoke test</h1>
+  <p>Fáze A: hlas, zvuky, oslava, úložiště, překlady. <a href="../index.html">← index</a></p>
+
+  <section>
+    <h2>Hlas / Speech</h2>
+    <div class="row">
+      <button id="say-cs">Řekni česky</button>
+      <button id="say-en">Say in English</button>
+      <button id="say-safety" class="secondary">Bezpečnostní věta</button>
+      <button id="say-stop" class="secondary">Stop</button>
+    </div>
+    <p id="voice-info">…</p>
+  </section>
+
+  <section>
+    <h2>Zvuky / Sounds</h2>
+    <div class="row" id="sounds"></div>
+    <div class="row" style="margin-top:10px"><button id="mute" class="secondary"></button></div>
+  </section>
+
+  <section>
+    <h2>Oslava / Celebration</h2>
+    <div class="row">
+      <button data-kind="confetti">Konfety</button>
+      <button data-kind="leaves">Listí</button>
+      <button data-kind="mixed">Obojí</button>
+      <button id="burst">Výbuch z tlačítka</button>
+      <button id="reduced" class="secondary">Reduced motion</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Úložiště / Store</h2>
+    <div class="row">
+      <button id="sticker">Přidat nálepku</button>
+      <button id="game" class="secondary">Zapsat hru</button>
+      <button id="reset" class="secondary">Reset</button>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="settings.language"></h2>
+    <div class="row"><button id="lang"></button></div>
+    <p><b data-i18n="feedback.wellDone"></b> · <span data-i18n="feedback.tryAgain"></span> ·
+      <span id="groups"></span></p>
+    <p data-i18n="safety.full"></p>
+  </section>
+
+  <section class="glyphs">
+    <h2>Písmo / Fonts</h2>
+    <p style="font-family:'Grandstander';font-weight:700">Grandstander 700: Příliš žluťoučký kůň úpěl ďábelské ódy. ŘŠČŽÝÁÍÉŮÚĚŇŤĎ</p>
+    <p style="font-family:'Grandstander';font-weight:800">Grandstander 800: Křemenáč osikový, Kozák březový, Pýchavka</p>
+    <p style="font-family:'Andika';font-weight:400">Andika 400: „Houby sbíráme jen s dospělým.“ – ěščřžýáíéůúňťď</p>
+    <p style="font-family:'Andika';font-weight:400;font-style:italic">Andika 400 italic: Boletus edulis, Amanita phalloides</p>
+    <p style="font-family:'Andika';font-weight:700">Andika 700: Hřib žlučník, Troudnatec kopytovitý, Liška obecná</p>
+  </section>
+
+  <pre id="log"></pre>
+
+  <script type="module">
+    import * as speech from '../js/speech.js';
+    import * as sound from '../js/sound.js';
+    import * as confetti from '../js/confetti.js';
+    import * as store from '../js/store.js';
+    import { t, applyI18n, toggleLang, getLang, onLangChange, groupLabel, SPEECH_LANG } from '../js/i18n.js';
+
+    const $ = (s) => document.querySelector(s);
+    const log = (...a) => { $('#log').textContent = a.join(' ') + '\n' + $('#log').textContent; };
+    window.__smoke = { speech, sound, confetti, store, log };
+
+    // speech
+    const describe = async () => {
+      await speech.voicesReady;
+      const cs = speech.getVoice('cs'); const en = speech.getVoice('en');
+      $('#voice-info').textContent = `supported=${speech.isSupported()} · cs-CZ: ${cs ? cs.name + ' (' + cs.lang + ')' : '—'} · en-GB: ${en ? en.name + ' (' + en.lang + ')' : '—'} · voices total: ${speech.listVoices().length}`;
+    };
+    describe();
+    $('#say-cs').onclick = async () => log('speak cs →', await speech.speak('Hřib smrkový. Tahle houba je jedlá.', 'cs'));
+    $('#say-en').onclick = async () => log('speak en →', await speech.speak('Penny bun. This mushroom is edible.', 'en'));
+    $('#say-safety').onclick = async () => log('speak safety →', await speech.speak(t('safety.full'), getLang()));
+    $('#say-stop').onclick = () => { speech.cancel(); log('cancel'); };
+    window.addEventListener('speech:unavailable', (e) => log('speech:unavailable', JSON.stringify(e.detail)));
+
+    // sounds
+    for (const name of sound.SOUND_NAMES) {
+      const b = document.createElement('button'); b.textContent = name; b.dataset.sound = name;
+      b.onclick = () => log('play', name, '→', sound.play(name));
+      $('#sounds').append(b);
+    }
+    const muteLabel = () => { $('#mute').textContent = sound.isMuted() ? t('settings.soundOn') : t('settings.soundOff'); };
+    $('#mute').onclick = () => { log('muted →', sound.toggleMute()); muteLabel(); };
+    muteLabel();
+
+    // confetti
+    let forceReduced = false;
+    document.querySelectorAll('[data-kind]').forEach((b) => b.onclick = async () => {
+      sound.play('success');
+      log('celebrate', b.dataset.kind, 'start');
+      await confetti.celebrate({ kind: b.dataset.kind, reducedMotion: forceReduced || undefined });
+      log('celebrate', b.dataset.kind, 'done');
+    });
+    $('#burst').onclick = (e) => {
+      const r = e.currentTarget.getBoundingClientRect();
+      sound.play('sparkle');
+      confetti.celebrate({ kind: 'confetti', origin: { x: (r.left + r.width / 2) / innerWidth, y: r.top / innerHeight } });
+    };
+    $('#reduced').onclick = () => { forceReduced = !forceReduced; log('force reduced motion =', forceReduced); };
+
+    // store
+    const ids = ['hrib-smrkovy', 'liska', 'bedla', 'muchomurka-cervena'];
+    $('#sticker').onclick = () => { const id = ids[store.stickerCount() % ids.length]; log('addSticker', id, '→', store.addSticker(id)); sound.play('pop'); };
+    $('#game').onclick = () => { store.recordGame('smoke', { rounds: 3, correct: 2 }); log('gamesPlayed', JSON.stringify(store.gamesPlayed())); };
+    $('#reset').onclick = () => { store.reset(); log('reset'); };
+    store.subscribe(({ key, state }) => log('store:change', key, JSON.stringify({ stickers: Object.keys(state.stickers), lang: state.lang, mute: state.mute })));
+    log('store persistent =', store.persistent);
+
+    // i18n
+    const renderI18n = () => {
+      applyI18n();
+      $('#lang').textContent = `${t('lang.' + getLang())} → ${t(getLang() === 'cs' ? 'lang.en' : 'lang.cs')}`;
+      $('#groups').textContent = ['jedla', 'nejedla', 'jedovata'].map((g) => groupLabel(g)).join(' / ') + ' / ' + groupLabel('jedovata', true);
+      muteLabel();
+    };
+    $('#lang').onclick = () => toggleLang();
+    onLangChange((l) => { log('langchange', l, SPEECH_LANG[l]); renderI18n(); });
+    renderI18n();
+
+    document.fonts.ready.then(() => log('fonts ready:', [...document.fonts].filter((f) => f.status === 'loaded').map((f) => f.family + ' ' + f.weight).join(', ')));
+  </script>
+</body>
+</html>

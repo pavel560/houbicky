@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+photos/*.part
+# Kořenový .gitignore ignoruje output/**/*.svg; herní obrázky ale patří do repa.
+!art/*.svg
+# Ikony PWA a designové ukázky patří do repa (kořenový .gitignore ignoruje output/**/*.png).
+!icons/*.png
+!design/*.png
+# generated (CI / scripts): photos, voice recordings, phrase export
+photos/*.jpg
+voice/cs/
+voice/en/
+voice/phrases.json
+*.part.mp3
+_site/

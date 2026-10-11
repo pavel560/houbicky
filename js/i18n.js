@@ -1,0 +1,350 @@
+// Houbičky — UI strings CZ/EN (Czech default), t(key) helper, language switch event.
+import * as store from './store.js';
+
+export const LANGS = ['cs', 'en'];
+export const SPEECH_LANG = { cs: 'cs-CZ', en: 'en-GB' };
+
+export const strings = {
+  cs: {
+    'app.name': 'Houbičky',
+    'nav.home': 'Domů',
+    'nav.play': 'Hrát',
+    'nav.album': 'Album',
+    'nav.back': 'Zpět',
+    'nav.next': 'Další',
+    'nav.start': 'Začít',
+    'nav.playAgain': 'Hrát znovu',
+    'nav.parents': 'Koutek pro rodiče',
+
+    'feedback.wellDone': 'Výborně!',
+    'feedback.great': 'Skvělé!',
+    'feedback.tryAgain': 'Zkus to znovu.',
+    'feedback.almost': 'Skoro! Zkus to ještě jednou.',
+    'feedback.newSticker': 'Nová nálepka do alba!',
+
+    'group.jedla': 'jedlá',
+    'group.nejedla': 'nejedlá',
+    'group.jedovata': 'jedovatá',
+    'group.deadly': 'smrtelně jedovatá',
+    'group.jedla.title': 'Jedlá',
+    'group.nejedla.title': 'Nejedlá',
+    'group.jedovata.title': 'Jedovatá',
+    'group.deadly.title': 'Smrtelně jedovatá',
+    'say.jedla': '{name} je jedlá houba.',
+    'say.nejedla': '{name} je nejedlá houba. Ta se nejí.',
+    'say.jedovata': 'Pozor! {name} je jedovatá houba!',
+    'say.deadly': 'Pozor! {name} je smrtelně jedovatá houba!',
+    'question.group': 'Je jedlá, nejedlá, nebo jedovatá?',
+    'question.where': 'Kde je {name}?',
+
+    'safety.short': 'Houby sbíráme jen s dospělým.',
+    'safety.full': 'Houby sbíráme jen s dospělým. Co se smí jíst, vždycky rozhodne dospělý, který houbám opravdu rozumí.',
+    'card.caution': 'Pozor!',
+    'card.lookFor': 'Poznáš ji podle:',
+    'card.where': 'Kde roste:',
+    'card.showPhoto': 'Ukaž fotku',
+    'card.showDrawing': 'Ukaž obrázek',
+    'card.realPhoto': 'Skutečná fotka',
+    'card.listen': 'Poslechni si',
+    'card.photoMissing': 'Fotka zatím chybí.',
+
+    'album.title': 'Album nálepek',
+    'album.empty': 'Zatím tu nic není. Pojď hrát!',
+    'album.count': '{n} z {total}',
+    'album.complete': 'Máš všechny nálepky!',
+
+    'settings.language': 'Jazyk',
+    'settings.soundOn': 'Zapnout zvuk',
+    'settings.soundOff': 'Vypnout zvuk',
+    'lang.cs': 'Čeština',
+    'lang.en': 'English',
+
+    'parents.title': 'Koutek pro rodiče',
+    'parents.gate': 'Pro vstup podržte tlačítko.',
+    'parents.reset': 'Smazat postup',
+    'parents.resetConfirm': 'Opravdu smazat všechny nálepky a postup?',
+    'parents.credits': 'Autoři fotografií',
+    'parents.sources': 'Zdroje',
+    'parents.offline': 'Hra funguje i bez internetu.',
+    'parents.noStorage': 'Tento prohlížeč neukládá postup (anonymní režim?). Po zavření se ztratí.',
+
+    'speech.unavailable': 'Hlas není k dispozici.',
+    'speech.addVoice.cs': 'Přidejte český hlas (např. Zuzana): Nastavení › Zpřístupnění › Předčítaný obsah › Hlasy › Čeština.',
+    'speech.addVoice.en': 'Přidejte britský anglický hlas: Nastavení › Zpřístupnění › Předčítaný obsah › Hlasy › Angličtina (Spojené království).',
+
+    'common.loading': 'Načítám…',
+    'start.play': 'Hrát',
+    'say.greeting': 'Ahoj! Klepni na houbičku a ona ti řekne, jak se jmenuje.',
+    'door.kosik': 'Do košíku',
+    'door.kdo': 'Kdo jsem?',
+    'door.album': 'Album',
+    'les.progress': 'Nálepky: {n} z {total}',
+    'les.panLeft': 'Posunout les doleva',
+    'les.panRight': 'Posunout les doprava',
+    'les.lang': 'Přepnout do angličtiny',
+    'les.parentsHold': 'Koutek pro rodiče: podržte 3 sekundy',
+
+    'card.ribbon': 'POZOR! SMRTELNĚ JEDOVATÁ · NIKDY NESAHAT',
+    'say.deadlyWarn': 'Na tuhle houbu nikdy nesahej!',
+    'card.flip': 'Otočit kartičku',
+    'card.close': 'Zavřít',
+    'card.twin': 'Dvojník',
+    'card.twinTitle': 'Pozor na dvojníka!',
+    'card.photoCredit': 'Foto: {author} · {license} · Wikimedia Commons',
+    'card.pin': 'Znak {n}',
+
+    'game.kosik.title': 'Do košíku!',
+    'game.kdo.title': 'Kdo jsem?',
+    'game.again': 'Ještě jednou',
+    'game.stars': 'Hvězdičky: {n} z {total}',
+    'kosik.basket': 'Do košíku',
+    'kosik.zone': 'Nechat v lese',
+    'kosik.intro': 'Jedlé houby dáme do košíku. Ostatní necháme v lese.',
+    'kosik.where': 'Kam patří {name}?',
+    'kosik.inBasket': 'Do košíku! S dospělým ji můžeme sbírat.',
+    'kosik.inZone': 'Správně, zůstanu v lese.',
+    'kosik.poisonBounce': 'Pozor! Já jsem jedovatá. Necháme mě v lese.',
+    'kosik.inedibleBounce': 'Já jsem nejedlá. Necháme mě v lese.',
+    'kosik.edibleToZone': 'Tuhle můžeme s dospělým dát do košíku.',
+    'kosik.done': 'Výborně! Košík je plný.',
+    'kdo.where': 'Kde je {name}?',
+    'kdo.yes': 'Ano! To je {name}.',
+    'kdo.iAm': 'Já jsem {name}.',
+    'kdo.done': 'Výborně! Všechny houbičky jsi poznala.',
+    'kdo.option': 'Houbička {n}',
+
+    'album.unknown': 'Tuhle houbičku ještě hledáš.',
+    'album.edible': 'Jedlé',
+    'album.inedible': 'Nejedlé',
+    'album.poisonous': 'Jedovaté',
+
+    'parents.level2': 'Úroveň 2: bez nápověd v obličeji',
+    'parents.level2Hint': 'Houbičky mají ve hrách všechny stejný klidný obličej a chybí jim červené vykřičníky. Dítě je pozná jen podle klobouku, lupínků nebo rourek, nohy a prstenu.',
+    'parents.on': 'Zapnuto',
+    'parents.off': 'Vypnuto',
+    'parents.voiceRate': 'Rychlost hlasu',
+    'parents.rateSlow': 'Pomalu',
+    'parents.rateNormal': 'Normálně',
+    'parents.soundFx': 'Zvukové efekty',
+    'parents.settings': 'Nastavení',
+    'parents.photosHow': 'Fotky se stahují jednorázově na Macu s internetem: ve složce hry spusťte python3 fetch_photos.py. Podrobnosti jsou v souboru README.md.',
+    'parents.creditsEmpty': 'Fotka zatím není stažená.',
+    'parents.notes': 'Poznámky k výzkumu a zdroje (RESEARCH_NOTES.md)',
+    'parents.yes': 'Ano, smazat',
+    'parents.no': 'Ne',
+    'parents.resetDone': 'Postup byl smazán.',
+    'rotate.title': 'Otoč iPad na šířku',
+
+
+    'parents.offlineTitle': 'Hra bez internetu',
+    'parents.offlineReady': 'Připraveno na cestu: {p} %',
+    'parents.offlineChecking': 'Zjišťuji, co je už staženo…',
+    'parents.offlineHint': 'Při 100 % funguje hra i bez internetu, třeba v autě. Stačí ji jednou otevřít s připojením a chvíli počkat.',
+    'parents.offlineNoSw': 'Tady hra bez internetu nefunguje: stránka musí běžet přes https (například na GitHub Pages) nebo přímo na tomto počítači.',
+    'parents.photosCheck': 'Zkontrolujte fotky',
+    'parents.photosCheckHint': 'Fotky se stáhly automaticky a nikdo je zatím neověřil. Před hraním si je projděte. Skrytou fotku dítě neuvidí, místo ní se ukáže obrázek s textem „Fotka zatím chybí“.',
+    'parents.photoShown': 'Zobrazuje se',
+    'parents.photoHidden': 'Skrytá',
+    'parents.photosNone': 'Fotky zatím nejsou stažené.',
+    'parents.via.commonsFile': 'Wikimedia Commons, vybral výzkumník',
+    'parents.via.alt': 'Wikimedia Commons, náhradní fotka',
+    'parents.via.wikipedia': 'Wikipedie, vybráno automaticky (výchozí stav: skrytá)',
+    'parents.via.?': 'Neznámý zdroj (výchozí stav: skrytá)',
+  },
+  en: {
+    'app.name': 'Houbičky',
+    'nav.home': 'Home',
+    'nav.play': 'Play',
+    'nav.album': 'Album',
+    'nav.back': 'Back',
+    'nav.next': 'Next',
+    'nav.start': 'Start',
+    'nav.playAgain': 'Play again',
+    'nav.parents': "Parents' corner",
+
+    'feedback.wellDone': 'Well done!',
+    'feedback.great': 'Brilliant!',
+    'feedback.tryAgain': 'Try again.',
+    'feedback.almost': 'Nearly! Have another go.',
+    'feedback.newSticker': 'A new sticker for your album!',
+
+    'group.jedla': 'edible',
+    'group.nejedla': 'inedible',
+    'group.jedovata': 'poisonous',
+    'group.deadly': 'deadly poisonous',
+    'group.jedla.title': 'Edible',
+    'group.nejedla.title': 'Inedible',
+    'group.jedovata.title': 'Poisonous',
+    'group.deadly.title': 'Deadly poisonous',
+    'say.jedla': 'The {name} is an edible mushroom.',
+    'say.nejedla': 'The {name} is not good to eat.',
+    'say.jedovata': 'Careful! The {name} is poisonous!',
+    'say.deadly': 'Careful! The {name} is deadly poisonous!',
+    'question.group': 'Is it edible, inedible or poisonous?',
+    'question.where': 'Where is the {name}?',
+
+    'safety.short': 'We only pick mushrooms with a grown-up.',
+    'safety.full': 'We only pick mushrooms with a grown-up. A grown-up who really knows about mushrooms always decides what is safe to eat.',
+    'card.caution': 'Careful!',
+    'card.lookFor': 'How to spot it:',
+    'card.where': 'Where it grows:',
+    'card.showPhoto': 'Show the photo',
+    'card.showDrawing': 'Show the picture',
+    'card.realPhoto': 'Real photo',
+    'card.listen': 'Listen',
+    'card.photoMissing': 'No photo yet.',
+
+    'album.title': 'Sticker album',
+    'album.empty': "Nothing here yet. Let's play!",
+    'album.count': '{n} of {total}',
+    'album.complete': 'You have collected every sticker!',
+
+    'settings.language': 'Language',
+    'settings.soundOn': 'Sound on',
+    'settings.soundOff': 'Sound off',
+    'lang.cs': 'Čeština',
+    'lang.en': 'English',
+
+    'parents.title': "Parents' corner",
+    'parents.gate': 'Press and hold the button to enter.',
+    'parents.reset': 'Reset progress',
+    'parents.resetConfirm': 'Really delete all stickers and progress?',
+    'parents.credits': 'Photo credits',
+    'parents.sources': 'Sources',
+    'parents.offline': 'The game also works offline.',
+    'parents.noStorage': 'This browser is not saving progress (private browsing?). It will be lost when closed.',
+
+    'speech.unavailable': 'No voice available.',
+    'speech.addVoice.cs': 'Add a Czech voice (e.g. Zuzana): Settings › Accessibility › Spoken Content › Voices › Czech.',
+    'speech.addVoice.en': 'Add a British English voice: Settings › Accessibility › Spoken Content › Voices › English (UK).',
+
+    'common.loading': 'Loading…',
+    'start.play': 'Play',
+    'say.greeting': 'Hello! Tap a mushroom and it will tell you its name.',
+    'door.kosik': 'Basket',
+    'door.kdo': 'Who am I?',
+    'door.album': 'Album',
+    'les.progress': 'Stickers: {n} of {total}',
+    'les.panLeft': 'Move the forest left',
+    'les.panRight': 'Move the forest right',
+    'les.lang': 'Switch to Czech',
+    'les.parentsHold': "Parents' corner: press and hold for 3 seconds",
+
+    'card.ribbon': 'CAREFUL! DEADLY POISONOUS · NEVER TOUCH',
+    'say.deadlyWarn': 'Never touch this mushroom!',
+    'card.flip': 'Flip the card',
+    'card.close': 'Close',
+    'card.twin': 'Look-alike',
+    'card.twinTitle': 'Watch out for the look-alike!',
+    'card.photoCredit': 'Photo: {author} · {license} · Wikimedia Commons',
+    'card.pin': 'Feature {n}',
+
+    'game.kosik.title': 'Into the basket!',
+    'game.kdo.title': 'Who am I?',
+    'game.again': 'Again',
+    'game.stars': 'Stars: {n} of {total}',
+    'kosik.basket': 'Into the basket',
+    'kosik.zone': 'Leave in the forest',
+    'kosik.intro': 'Edible mushrooms go in the basket. We leave the others in the forest.',
+    'kosik.where': 'Where does the {name} go?',
+    'kosik.inBasket': 'Into the basket! We can pick it with a grown-up.',
+    'kosik.inZone': "That's right, I'll stay in the forest.",
+    'kosik.poisonBounce': "Careful! I'm poisonous. Let's leave me in the forest.",
+    'kosik.inedibleBounce': "I'm not good to eat. Let's leave me in the forest.",
+    'kosik.edibleToZone': 'We can put this one in the basket with a grown-up.',
+    'kosik.done': 'Well done! The basket is full.',
+    'kdo.where': 'Where is the {name}?',
+    'kdo.yes': "Yes! That's the {name}.",
+    'kdo.iAm': "I'm the {name}.",
+    'kdo.done': 'Brilliant! You found them all.',
+    'kdo.option': 'Mushroom {n}',
+
+    'album.unknown': "You haven't found this one yet.",
+    'album.edible': 'Edible',
+    'album.inedible': 'Inedible',
+    'album.poisonous': 'Poisonous',
+
+    'parents.level2': 'Level 2: no hints in the faces',
+    'parents.level2Hint': 'In the games every mushroom has the same calm face and no red exclamation marks. Your child has to recognise them by the cap, gills or pores, stem and ring.',
+    'parents.on': 'On',
+    'parents.off': 'Off',
+    'parents.voiceRate': 'Voice speed',
+    'parents.rateSlow': 'Slow',
+    'parents.rateNormal': 'Normal',
+    'parents.soundFx': 'Sound effects',
+    'parents.settings': 'Settings',
+    'parents.photosHow': 'Photos are downloaded once on a Mac with internet access: run python3 fetch_photos.py in the game folder. See README.md for details.',
+    'parents.creditsEmpty': 'Photo not downloaded yet.',
+    'parents.notes': 'Research notes and sources (RESEARCH_NOTES.md)',
+    'parents.yes': 'Yes, delete',
+    'parents.no': 'No',
+    'parents.resetDone': 'Progress has been deleted.',
+    'rotate.title': 'Turn the iPad sideways',
+
+
+    'parents.offlineTitle': 'Playing without internet',
+    'parents.offlineReady': 'Ready for the road: {p} %',
+    'parents.offlineChecking': 'Checking what is already downloaded…',
+    'parents.offlineHint': 'At 100 % the game also works without internet, for example in the car. Open it once while online and wait a moment.',
+    'parents.offlineNoSw': 'Offline play is not available here: the page must be served over https (for example from GitHub Pages) or from this computer.',
+    'parents.photosCheck': 'Check the photos',
+    'parents.photosCheckHint': 'The photos were downloaded automatically and nobody has checked them yet. Look through them before playing. A hidden photo is never shown to your child; the picture with “No photo yet” appears instead.',
+    'parents.photoShown': 'Shown',
+    'parents.photoHidden': 'Hidden',
+    'parents.photosNone': 'No photos downloaded yet.',
+    'parents.via.commonsFile': "Wikimedia Commons, researcher's pick",
+    'parents.via.alt': 'Wikimedia Commons, alternative photo',
+    'parents.via.wikipedia': 'Wikipedia, picked automatically (hidden by default)',
+    'parents.via.?': 'Unknown source (hidden by default)',
+  },
+};
+
+export const getLang = () => store.getLang();
+
+/** t('album.count', {n: 3, total: 13}) — falls back to Czech, then to the key itself */
+export function t(key, vars, lang = getLang()) {
+  let s = strings[lang]?.[key] ?? strings.cs[key] ?? key;
+  if (vars) s = s.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
+  return s;
+}
+
+/** Pick a bilingual data field, e.g. pick(species.name) › 'Hřib smrkový' */
+export function pick(obj, lang = getLang()) {
+  if (obj == null || typeof obj !== 'object') return obj;
+  return obj[lang] ?? obj.cs ?? obj.en ?? null;
+}
+
+/** 'jedla' | 'nejedla' | 'jedovata' (+ deadly) › i18n key suffix */
+export const groupKey = (group, deadly = false) => (group === 'jedovata' && deadly ? 'deadly' : group);
+export const groupLabel = (group, deadly = false, lang) => t(`group.${groupKey(group, deadly)}.title`, null, lang);
+export const groupSentence = (name, group, deadly = false, lang) => t(`say.${groupKey(group, deadly)}`, { name }, lang);
+
+export function setLang(lang) {
+  if (!LANGS.includes(lang) || lang === getLang()) return;
+  store.setLang(lang);
+  document.documentElement.lang = lang;
+  window.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
+}
+export const toggleLang = () => setLang(getLang() === 'cs' ? 'en' : 'cs');
+
+export function onLangChange(fn) {
+  const h = (e) => fn(e.detail.lang);
+  window.addEventListener('langchange', h);
+  return () => window.removeEventListener('langchange', h);
+}
+
+/**
+ * Fill static markup: <span data-i18n="nav.home"></span>,
+ * <button data-i18n-attr="aria-label:settings.soundOff;title:settings.soundOff">.
+ */
+export function applyI18n(root = document) {
+  for (const el of root.querySelectorAll('[data-i18n]')) el.textContent = t(el.dataset.i18n);
+  for (const el of root.querySelectorAll('[data-i18n-attr]')) {
+    for (const pair of el.dataset.i18nAttr.split(';')) {
+      const [attr, key] = pair.split(':').map((x) => x.trim());
+      if (attr && key) el.setAttribute(attr, t(key));
+    }
+  }
+}
+
+if (typeof document !== 'undefined') document.documentElement.lang = getLang();

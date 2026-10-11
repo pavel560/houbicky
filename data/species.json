@@ -1,0 +1,645 @@
+{
+  "version": 1,
+  "species": [
+    {
+      "id": "hrib-smrkovy",
+      "group": "jedla",
+      "deadly": false,
+      "latin": "Boletus edulis",
+      "name": {
+        "cs": "Hřib smrkový",
+        "en": "Penny bun"
+      },
+      "nick": {
+        "cs": "Hříbek Pepík",
+        "en": "Penny Pete"
+      },
+      "fact": {
+        "cs": "Je to nejznámější hřib v českém lese.",
+        "en": "It is the most famous mushroom in Czech woods."
+      },
+      "lookFor": {
+        "cs": [
+          "Má hnědý klobouk jako upečená buchta.",
+          "Pod kloboukem nemá lupínky, ale drobné dírky.",
+          "Na světlé noze má jemnou bílou síťku."
+        ],
+        "en": [
+          "Its brown cap looks like a baked bun.",
+          "Under the cap it has tiny holes, not gills.",
+          "Its pale stem has a fine white net."
+        ]
+      },
+      "where": {
+        "cs": "V lese pod smrky, ale i pod buky a duby.",
+        "en": "In woods under spruce, beech and oak trees."
+      },
+      "caution": {
+        "cs": "Pozor, hořký hřib žlučník vypadá skoro stejně!",
+        "en": "Careful! The bitter bolete looks almost the same."
+      },
+      "colors": {
+        "cap": "#8B5A2B",
+        "stem": "#EDE3CF",
+        "under": "#E6DCA6"
+      },
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Boletus-edulis/",
+        "https://www.houbareni.cz/houba/hrib_smrkovy",
+        "https://www.first-nature.com/fungi/boletus-edulis.php",
+        "https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/fungi-and-lichens/penny-bun/"
+      ]
+    },
+    {
+      "id": "liska",
+      "group": "jedla",
+      "deadly": false,
+      "latin": "Cantharellus cibarius",
+      "name": {
+        "cs": "Liška obecná",
+        "en": "Chanterelle"
+      },
+      "nick": {
+        "cs": "Liška Zlatka",
+        "en": "Goldie"
+      },
+      "fact": {
+        "cs": "Je žlutá jako vaječný žloutek a voní po meruňkách.",
+        "en": "It is yellow like an egg yolk and smells of apricots."
+      },
+      "lookFor": {
+        "cs": [
+          "Je celá žlutá, i noha.",
+          "Klobouk má jako trychtýřek se zvlněným okrajem.",
+          "Zespodu má měkké vrásky, ne tenké lupínky."
+        ],
+        "en": [
+          "It is yellow all over, even the stem.",
+          "Its cap looks like a little wavy funnel.",
+          "Underneath it has soft wrinkles, not thin gills."
+        ]
+      },
+      "where": {
+        "cs": "V lese v mechu, pod smrky, borovicemi i buky.",
+        "en": "In moss under spruce, pine and beech trees."
+      },
+      "caution": {
+        "cs": "Podobná je lištička pomerančová. Ta má husté oranžové lupínky.",
+        "en": "The false chanterelle looks similar. It has thin orange gills."
+      },
+      "colors": {
+        "cap": "#F2B33D",
+        "stem": "#EFBE55",
+        "under": "#F0C463"
+      },
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Cantharellus-cibarius/",
+        "https://www.houbareni.cz/houba/liska_obecna",
+        "https://www.mykologie.net/index.php/houby/podle-morfologie/liskovite/item/488:cantharellus-cibarius",
+        "https://www.myko.cz/myko-atlas/Hygrophoropsis-aurantiaca/"
+      ]
+    },
+    {
+      "id": "bedla",
+      "group": "jedla",
+      "deadly": false,
+      "latin": "Macrolepiota procera",
+      "name": {
+        "cs": "Bedla vysoká",
+        "en": "Parasol"
+      },
+      "nick": {
+        "cs": "Bedla Deštníček",
+        "en": "Parasol Polly"
+      },
+      "fact": {
+        "cs": "Je to obr mezi houbami. Klobouk má jako deštník.",
+        "en": "It is a giant mushroom. Its cap opens like an umbrella."
+      },
+      "lookFor": {
+        "cs": [
+          "Klobouk má hnědé šupinky jako perníček.",
+          "Vysoká noha má proužky jako hadí kůže.",
+          "Na noze má tlustý prsten, který se dá posouvat."
+        ],
+        "en": [
+          "Its cap has brown scales like gingerbread.",
+          "Its tall stem has stripes like snakeskin.",
+          "It has a thick ring that can slide up and down."
+        ]
+      },
+      "where": {
+        "cs": "Na pasekách, na okraji lesa a na loukách.",
+        "en": "In clearings, at the edge of woods and in meadows."
+      },
+      "caution": {
+        "cs": "Pozor na muchomůrky! Bedla má nohu s hadím vzorem a nemá pochvu.",
+        "en": "Deadly look-alikes exist! A parasol has a snakeskin stem and no cup."
+      },
+      "colors": {
+        "cap": "#C8B095",
+        "stem": "#B39673",
+        "under": "#F4EEE3"
+      },
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Macrolepiota-procera/",
+        "https://www.houbareni.cz/houba/bedla_vysoka?nick=robi",
+        "https://www.nahouby.cz/atlas-hub/bedla-vysoka",
+        "https://www.myko.cz/clanek198/",
+        "https://www.first-nature.com/fungi/macrolepiota-procera.php"
+      ]
+    },
+    {
+      "id": "kozak",
+      "group": "jedla",
+      "deadly": false,
+      "latin": "Leccinum scabrum",
+      "name": {
+        "cs": "Kozák březový",
+        "en": "Brown birch bolete"
+      },
+      "nick": {
+        "cs": "Kozáček Bertík",
+        "en": "Birchy Bert"
+      },
+      "fact": {
+        "cs": "Kamarádí se s břízou. Roste jen tam, kde je bříza.",
+        "en": "Its best friend is the birch tree. It grows only near birches."
+      },
+      "lookFor": {
+        "cs": [
+          "Má hnědý hladký klobouk.",
+          "Bílá noha vypadá jako posypaná černým pepřem.",
+          "Pod kloboukem má světlé dírky, ne lupínky."
+        ],
+        "en": [
+          "It has a smooth brown cap.",
+          "Its white stem looks sprinkled with black pepper.",
+          "Under the cap it has pale holes, not gills."
+        ]
+      },
+      "where": {
+        "cs": "Pod břízami v lese, v parku i u cesty.",
+        "en": "Under birch trees, in woods, parks and by paths."
+      },
+      "caution": {
+        "cs": "Podobný je hořký žlučník. Ten má pod kloboukem růžové dírky.",
+        "en": "The bitter bolete looks similar. It has pink holes underneath."
+      },
+      "colors": {
+        "cap": "#8A6440",
+        "stem": "#E9E4DA",
+        "under": "#E4DCCB"
+      },
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Leccinum-scabrum/",
+        "https://www.houbareni.cz/houba/kozak_brezovy",
+        "https://www.nahouby.cz/atlas-hub/kozak-brezovy",
+        "https://www.first-nature.com/fungi/leccinum-scabrum.php"
+      ]
+    },
+    {
+      "id": "kremenac",
+      "group": "jedla",
+      "deadly": false,
+      "latin": "Leccinum albostipitatum",
+      "name": {
+        "cs": "Křemenáč osikový",
+        "en": "Aspen bolete"
+      },
+      "nick": {
+        "cs": "Červená Čepička",
+        "en": "Little Red Cap"
+      },
+      "fact": {
+        "cs": "Kamarádí se s osikou. To je strom s třepotavými listy.",
+        "en": "Its friend is the aspen, a tree with trembling leaves."
+      },
+      "lookFor": {
+        "cs": [
+          "Má oranžově červený klobouk jako podzimní list.",
+          "Noha je bílá, s bílými šupinkami, které později tmavnou.",
+          "Je velký a pevný, pod kloboukem má dírky."
+        ],
+        "en": [
+          "Its cap is orange-red like an autumn leaf.",
+          "Its white stem has white scales that later go dark.",
+          "It is big and firm, with tiny holes underneath."
+        ]
+      },
+      "where": {
+        "cs": "Pod osikami a topoly, v listnatém i smíšeném lese.",
+        "en": "Under aspen and poplar trees."
+      },
+      "caution": {
+        "cs": "Podobných křemenáčů je víc. Rozliší je jen zkušený houbař.",
+        "en": "There are several similar ones. Only an expert can tell them apart."
+      },
+      "colors": {
+        "cap": "#D2581F",
+        "stem": "#EDE8E0",
+        "under": "#E8E0CE"
+      },
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Leccinum-rufum/",
+        "https://www.houbareni.cz/houba/kremenac_osikovy",
+        "https://www.nahouby.cz/atlas-hub/kremenac-osikovy",
+        "https://www.wildfooduk.com/mushroom-guide/leccinum-albostipitatum-aspen-bolete/",
+        "https://svampguiden.com/en/art/245501-aspen-bolete"
+      ]
+    },
+    {
+      "id": "suchohrib",
+      "group": "jedla",
+      "deadly": false,
+      "latin": "Imleria badia",
+      "name": {
+        "cs": "Hřib hnědý",
+        "en": "Bay bolete"
+      },
+      "nick": {
+        "cs": "Hnědáček Kaštánek",
+        "en": "Conker"
+      },
+      "fact": {
+        "cs": "Klobouk má hnědý jako kaštan. Za deště je slizký.",
+        "en": "Its cap is brown like a conker. It goes slimy in the rain."
+      },
+      "lookFor": {
+        "cs": [
+          "Má kaštanově hnědý klobouk.",
+          "Žluté dírky na otlačeném místě zmodrají.",
+          "Hnědá noha nemá žádnou síťku."
+        ],
+        "en": [
+          "It has a conker-brown cap.",
+          "Its yellow holes turn blue where they are bruised.",
+          "Its brown stem has no net."
+        ]
+      },
+      "where": {
+        "cs": "V jehličnatém lese pod smrky a borovicemi.",
+        "en": "In pine and spruce woods."
+      },
+      "caution": {
+        "cs": "Podobný je hořký žlučník. Ten nemodrá a má růžové dírky.",
+        "en": "The bitter bolete looks similar, but its holes go pink."
+      },
+      "colors": {
+        "cap": "#6B3E1E",
+        "stem": "#A9835A",
+        "under": "#D9CB62"
+      },
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Imleria-badia/",
+        "https://www.houbareni.cz/houba/hrib_hnedy",
+        "https://www.mykologie.net/index.php/houby/podle-morfologie/hribovite/item/503:imleria-badia",
+        "https://www.woodlandtrust.org.uk/blog/2026/10/foraging-in-autumn-wild-mushrooms/"
+      ]
+    },
+    {
+      "id": "pychavka",
+      "group": "jedla",
+      "deadly": false,
+      "latin": "Lycoperdon perlatum",
+      "name": {
+        "cs": "Pýchavka obecná",
+        "en": "Common puffball"
+      },
+      "nick": {
+        "cs": "Pýchavka Pufinka",
+        "en": "Puffy"
+      },
+      "fact": {
+        "cs": "Mladá je uvnitř bílá. Stará je plná hnědého prášku.",
+        "en": "Young ones are white inside. Old ones are full of brown dust."
+      },
+      "lookFor": {
+        "cs": [
+          "Je kulatá jako hruška a nemá klobouk.",
+          "Je bílá a pokrytá drobnými bradavičkami.",
+          "Mladá je uvnitř celá bílá."
+        ],
+        "en": [
+          "It is round like a pear, with no cap.",
+          "It is white and covered in tiny bumps.",
+          "A young one is all white inside."
+        ]
+      },
+      "where": {
+        "cs": "V lese, na pasekách i u lesních cest.",
+        "en": "In woods, in clearings and by paths."
+      },
+      "caution": {
+        "cs": "Jedlá je jen mladá a uvnitř čistě bílá. Rozhodne dospělý.",
+        "en": "Only young ones, pure white inside, are edible. Grown-ups decide."
+      },
+      "colors": {
+        "cap": "#F2EEE4",
+        "stem": "#E6DECC",
+        "under": "#FFFFFF"
+      },
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Lycoperdon-perlatum/",
+        "https://www.houbareni.cz/houba/pychavka_obecna",
+        "https://www.nahouby.cz/atlas-hub/pychavka-obecna",
+        "https://www.first-nature.com/fungi/lycoperdon-perlatum.php"
+      ]
+    },
+    {
+      "id": "zlucnik",
+      "group": "nejedla",
+      "deadly": false,
+      "latin": "Tylopilus felleus",
+      "name": {
+        "cs": "Hřib žlučník",
+        "en": "Bitter bolete"
+      },
+      "nick": {
+        "cs": "Hořčák",
+        "en": "Bitter Bill"
+      },
+      "fact": {
+        "cs": "Je strašně hořký. Jeden kousek pokazí celé jídlo.",
+        "en": "It is very bitter. One piece spoils a whole dinner."
+      },
+      "lookFor": {
+        "cs": [
+          "Vypadá skoro jako hřib smrkový.",
+          "Pod kloboukem má růžové dírky.",
+          "Na noze má tmavou hnědou síťku."
+        ],
+        "en": [
+          "It looks almost like a penny bun.",
+          "Under the cap its holes are pink.",
+          "Its stem has a dark brown net."
+        ]
+      },
+      "where": {
+        "cs": "Hlavně v jehličnatém lese, někdy u pařezů.",
+        "en": "Mostly in pine and spruce woods."
+      },
+      "caution": {
+        "cs": "Není jedovatý, ale je moc hořký. Necháme ho v lese.",
+        "en": "It is not poisonous, but too bitter. We leave it."
+      },
+      "colors": {
+        "cap": "#A67B4F",
+        "stem": "#B89466",
+        "under": "#E5C4BC"
+      },
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Tylopilus-felleus/",
+        "https://www.nahouby.cz/atlas-hub/hrib-zlucnik",
+        "https://www.mykologie.net/index.php/houby/podle-morfologie/hribovite/item/1026:tylopilus-felleus",
+        "https://www.first-nature.com/fungi/tylopilus-felleus.php"
+      ]
+    },
+    {
+      "id": "troudnatec",
+      "group": "nejedla",
+      "deadly": false,
+      "latin": "Fomes fomentarius",
+      "name": {
+        "cs": "Troudnatec kopytovitý",
+        "en": "Hoof fungus"
+      },
+      "nick": {
+        "cs": "Kopýtko",
+        "en": "Hoofy"
+      },
+      "fact": {
+        "cs": "Lidé z něj kdysi rozdělávali oheň. Nosil ho i pravěký Ötzi.",
+        "en": "People once used it to start fires, even Ötzi the Iceman."
+      },
+      "lookFor": {
+        "cs": [
+          "Vypadá jako koňské kopyto přilepené na stromě.",
+          "Je šedý a tvrdý jako dřevo.",
+          "Má proužky jako letokruhy."
+        ],
+        "en": [
+          "It looks like a horse's hoof stuck on a tree.",
+          "It is grey and hard like wood.",
+          "It has stripes like tree rings."
+        ]
+      },
+      "where": {
+        "cs": "Na kmenech buků a bříz, celý rok.",
+        "en": "On beech and birch trunks, all year round."
+      },
+      "caution": {
+        "cs": "Je tvrdý jako dřevo, a proto se nejí.",
+        "en": "It is as hard as wood, so nobody eats it."
+      },
+      "colors": {
+        "cap": "#8E8A84",
+        "stem": "#6B5A48",
+        "under": "#C8A97E"
+      },
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Fomes-fomentarius/",
+        "https://www.houbareni.cz/houba/troudnatec_kopytovity",
+        "https://www.nahouby.cz/atlas-hub/troudnatec-kopytovity",
+        "https://www.first-nature.com/fungi/fomes-fomentarius.php"
+      ]
+    },
+    {
+      "id": "muchomurka-cervena",
+      "group": "jedovata",
+      "deadly": false,
+      "latin": "Amanita muscaria",
+      "name": {
+        "cs": "Muchomůrka červená",
+        "en": "Fly agaric"
+      },
+      "nick": {
+        "cs": "Puntík Pozor",
+        "en": "Spotty Stop"
+      },
+      "fact": {
+        "cs": "Je krásná jako z pohádky, ale jedovatá. Jen se díváme!",
+        "en": "It looks like a fairy-tale mushroom, but it is poisonous. Just look!"
+      },
+      "lookFor": {
+        "cs": [
+          "Má červený klobouk s bílými puntíky.",
+          "Má bílé lupínky a bílou nohu.",
+          "Na noze nosí bílou sukýnku."
+        ],
+        "en": [
+          "Its red cap has white spots.",
+          "It has white gills and a white stem.",
+          "It wears a white skirt on its stem."
+        ]
+      },
+      "where": {
+        "cs": "Pod břízami a smrky, hlavně na podzim.",
+        "en": "Under birch and spruce trees, mostly in autumn."
+      },
+      "caution": {
+        "cs": "Je jedovatá. Nesahej na ni a řekni to dospělému.",
+        "en": "It is poisonous. Do not touch it. Tell a grown-up."
+      },
+      "colors": {
+        "cap": "#D7261E",
+        "stem": "#F5F1E6",
+        "under": "#FAF7EE"
+      },
+      "sources": [
+        "https://www.myko.cz/clanek173/",
+        "https://www.nahouby.cz/atlas-hub/muchomurka-cervena",
+        "https://cs.wikipedia.org/wiki/Muchom%C5%AFrka_%C4%8Derven%C3%A1",
+        "https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/fungi-and-lichens/fly-agaric/"
+      ]
+    },
+    {
+      "id": "muchomurka-zelena",
+      "group": "jedovata",
+      "deadly": true,
+      "latin": "Amanita phalloides",
+      "name": {
+        "cs": "Muchomůrka zelená",
+        "en": "Death cap"
+      },
+      "nick": {
+        "cs": "Zelená Hrozba",
+        "en": "Green Danger"
+      },
+      "fact": {
+        "cs": "Je to nejjedovatější houba v našich lesích.",
+        "en": "It is the most poisonous mushroom in our woods."
+      },
+      "lookFor": {
+        "cs": [
+          "Klobouk má zelenkavý nebo olivový, bez šupin.",
+          "Má bílé lupínky a bílou sukýnku.",
+          "Noha jí dole trčí z bílého pytlíku."
+        ],
+        "en": [
+          "Its cap is pale green or olive.",
+          "It has white gills and a white skirt.",
+          "Its stem grows out of a white cup."
+        ]
+      },
+      "where": {
+        "cs": "Pod duby a buky, v létě a na podzim.",
+        "en": "Under oak and beech trees, in summer and autumn."
+      },
+      "caution": {
+        "cs": "Smrtelně jedovatá! Nesahej na ni a hned řekni dospělému.",
+        "en": "Deadly poisonous! Do not touch it. Tell a grown-up."
+      },
+      "colors": {
+        "cap": "#9DA86A",
+        "stem": "#F1F0E4",
+        "under": "#FFFFFF"
+      },
+      "sources": [
+        "https://www.myko.cz/clanek198/",
+        "https://www.houbareni.cz/houba/muchomurka_zelena",
+        "https://cs.wikipedia.org/wiki/Muchom%C5%AFrka_zelen%C3%A1",
+        "https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/fungi-and-lichens/deathcap/",
+        "https://www.first-nature.com/fungi/amanita-phalloides.php"
+      ]
+    },
+    {
+      "id": "muchomurka-tygrovana",
+      "group": "jedovata",
+      "deadly": true,
+      "latin": "Amanita pantherina",
+      "name": {
+        "cs": "Muchomůrka tygrovaná",
+        "en": "Panther cap"
+      },
+      "nick": {
+        "cs": "Tygr Stop",
+        "en": "Panther Stop"
+      },
+      "fact": {
+        "cs": "Je hnědá s bílými tečkami. Je prudce jedovatá.",
+        "en": "It is brown with white spots. It is very poisonous."
+      },
+      "lookFor": {
+        "cs": [
+          "Má hnědý klobouk s bílými tečkami.",
+          "Okraj klobouku má jemné rýhy.",
+          "Dole na noze má bílý lem jako ponožku."
+        ],
+        "en": [
+          "Its brown cap has white spots.",
+          "The edge of the cap has fine lines.",
+          "Its stem base has a white rim like a sock."
+        ]
+      },
+      "where": {
+        "cs": "V lese pod buky, duby i smrky.",
+        "en": "In woods under beech, oak and spruce trees."
+      },
+      "caution": {
+        "cs": "Prudce jedovatá! Podobá se jedlé muchomůrce růžovce. Nesahej na ni.",
+        "en": "Very poisonous! It looks like the edible blusher. Do not touch it."
+      },
+      "colors": {
+        "cap": "#7A5A3A",
+        "stem": "#F3EFE6",
+        "under": "#FBF8F0"
+      },
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Amanita-pantherina/",
+        "https://www.houbareni.cz/houba/muchomurka_tygrovana?nick=robi",
+        "https://cs.wikipedia.org/wiki/Muchom%C5%AFrka_tygrovan%C3%A1",
+        "https://www.first-nature.com/fungi/amanita-pantherina.php"
+      ]
+    },
+    {
+      "id": "trepenitka",
+      "group": "jedovata",
+      "deadly": false,
+      "latin": "Hypholoma fasciculare",
+      "name": {
+        "cs": "Třepenitka svazčitá",
+        "en": "Sulphur tuft"
+      },
+      "nick": {
+        "cs": "Žlutá Parta",
+        "en": "Sulphur Gang"
+      },
+      "fact": {
+        "cs": "Roste ve velkých partách na starých pařezech. Je jedovatá.",
+        "en": "It grows in big gangs on old stumps. It is poisonous."
+      },
+      "lookFor": {
+        "cs": [
+          "Roste v trsech na dřevě a pařezech.",
+          "Klobouk je sírově žlutý, uprostřed oranžový.",
+          "Lupínky má zelenožluté, později tmavé."
+        ],
+        "en": [
+          "It grows in bunches on old wood.",
+          "Its cap is sulphur yellow with an orange middle.",
+          "Its gills are greenish-yellow, later dark."
+        ]
+      },
+      "where": {
+        "cs": "Na pařezech a kmenech, skoro celý rok.",
+        "en": "On stumps and logs, almost all year."
+      },
+      "caution": {
+        "cs": "Je jedovatá a podobá se jedlým václavkám. Nesahej na ni.",
+        "en": "It is poisonous and looks like edible honey fungus. Do not touch."
+      },
+      "colors": {
+        "cap": "#D9C43A",
+        "stem": "#E3CF6A",
+        "under": "#A9B24A"
+      },
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Hypholoma-fasciculare/",
+        "https://www.nahouby.cz/atlas-hub/trepenitka-svazcita",
+        "https://cs.wikipedia.org/wiki/T%C5%99epenitka_svaz%C4%8Dit%C3%A1",
+        "https://www.first-nature.com/fungi/hypholoma-fasciculare.php"
+      ]
+    }
+  ]
+}

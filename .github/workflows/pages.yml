@@ -1,0 +1,95 @@
+# Houbičky → GitHub Pages (https://<user>.github.io/houbicky/).
+# Photos (Wikimedia Commons) and voices (edge-tts neural voices) are generated here, never committed.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install edge-tts
+        run: pip install edge-tts
+
+      - name: Export the phrase catalogue
+        run: node dev/export_phrases.mjs
+
+      - name: Restore photos
+        uses: actions/cache@v4
+        with:
+          path: |
+            photos/*.jpg
+            photos/credits.json
+          key: photos-${{ hashFiles('photos/manifest.json') }}
+          restore-keys: photos-
+
+      - name: Restore voices
+        uses: actions/cache@v4
+        with:
+          path: |
+            voice/cs
+            voice/en
+            voice/index.json
+          key: voice-${{ hashFiles('voice/phrases.json') }}
+          restore-keys: voice-
+
+      - name: Fetch photos from Wikimedia Commons (only missing ones)
+        run: python fetch_photos.py
+        continue-on-error: true          # a missing photo shows „Fotka zatím chybí“; never block a deploy
+        env:
+          HOUBICKY_CONTACT: ${{ vars.HOUBICKY_CONTACT }}
+
+      - name: Record voices (only new or changed lines)
+        run: python make_voice.py
+        continue-on-error: true          # a missing recording falls back to the browser voice
+
+      - name: Assemble the site
+        run: |
+          mkdir -p _site
+          rsync -a --delete \
+            --exclude '_site' --exclude '.git' --exclude '.github' --exclude '.gitignore' \
+            --exclude 'dev/' --exclude 'tests/' --exclude '__pycache__/' \
+            --exclude 'design/*.png' --exclude 'design/*.md' --exclude '*.py' \
+            --exclude 'BRIEF.md' --exclude 'README.md' --exclude 'start.command' --exclude 'package.json' \
+            --exclude 'voice/phrases.json' --exclude '*.part' --exclude '*.part.mp3' \
+            ./ _site/
+          echo "site: $(find _site -type f | wc -l) files, $(du -sh _site | cut -f1)"
+          echo "photos: $(ls _site/photos/*.jpg 2>/dev/null | wc -l), voices: $(find _site/voice -name '*.mp3' | wc -l)"
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

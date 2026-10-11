@@ -1,0 +1,1 @@
+{ "private": true, "type": "module", "description": "Houbičky — static site; package.json only marks js/ as ES modules for node dev scripts (no dependencies)." }

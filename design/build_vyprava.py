@@ -397,6 +397,345 @@ def guide():
                extra=' data-expr="idle"')
 
 
+# ================================================================ v2.1: winding hill trail kit (2026-10-11)
+
+MOSS_D, MOSS_M, MOSS_L, MOSS_HI = "#4f6a2a", "#6f8a36", "#93ad4a", "#c4d46a"
+
+
+def moss_tufts(R, cx, cy, rx, ry, n, top_only=True):
+    """Haircap-moss texture: tiny star tufts, denser and lighter on the top of the cushion."""
+    d_dark, d_light = [], []
+    for _ in range(n):
+        t = R.uniform(0, 1) ** .7
+        a = R.uniform(math.pi, 2 * math.pi) if top_only else R.uniform(0, 2 * math.pi)
+        x = cx + rx * .92 * t * math.cos(a)
+        y = cy + ry * .9 * t * math.sin(a) + (ry * .25 if not top_only else 0)
+        s = R.uniform(2.2, 3.6)
+        star = "".join(f"M{f(x)} {f(y)}l{f(s * math.cos(k * math.pi / 3 + .3))} {f(s * math.sin(k * math.pi / 3 + .3))}" for k in range(6))
+        (d_light if y < cy - ry * .2 else d_dark).append(star)
+    return (f'<path d="{"".join(d_dark)}" stroke="{MOSS_D}" stroke-width="1.4" stroke-linecap="round"/>'
+            f'<path d="{"".join(d_light)}" stroke="{MOSS_HI}" stroke-width="1.4" stroke-linecap="round"/>')
+
+
+def moss_cushion(variant):
+    """Rounded moss cushions. Mushrooms 'grow in moss' = stand behind the cushion with the foot at data-hide,
+    then moss-collar.svg is placed in front of the foot."""
+    R = seed(70 + variant)
+    W, H, rx, ry = [(300, 150, 130, 58), (420, 130, 190, 46), (220, 170, 92, 70)][variant - 1]
+    cx, cy = W / 2, H - 8 - ry * .1
+    pts = []
+    for i in range(18):
+        a = math.pi + math.pi * i / 17
+        r = 1 + .06 * math.sin(4 * a + variant) + R.uniform(-.03, .03)
+        pts.append((cx + rx * r * math.cos(a), cy + ry * 1.5 * r * (abs(math.sin(a)) ** .7) * -1))
+    d = smooth(pts, closed=False) + f"Q{f(cx)} {f(H - 2)} {f(pts[0][0])} {f(pts[0][1])}Z"
+    gid = f"mc{variant}"
+    defs = (f'<radialGradient id="{gid}-g" cx="42%" cy="25%" r="80%"><stop offset="0" stop-color="{MOSS_HI}"/>'
+            f'<stop offset=".45" stop-color="{MOSS_L}"/><stop offset="1" stop-color="{MOSS_D}"/></radialGradient>'
+            f'<clipPath id="{gid}-c"><path d="{d}"/></clipPath>')
+    body = (f'<path d="{d}" fill="url(#{gid}-g)"/>'
+            f'<g clip-path="url(#{gid}-c)">{moss_tufts(R, cx, cy + ry * .1, rx, ry * 1.5, 150 + 50 * (variant == 2))}</g>'
+            f'<path d="{d}" fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>')
+    # a couple of fallen leaves resting on the moss
+    for _ in range(2):
+        x, y = cx + R.uniform(-rx * .5, rx * .5), cy - ry * R.uniform(.2, .6)
+        col = R.choice(bs.LEAF_COLORS)
+        body += (f'<path d="M0 0C5 -7 14 -7 19 0C14 7 5 7 0 0Z" transform="translate({f(x)} {f(y)}) rotate({int(R.uniform(0, 360))}) scale(.9 .55)" '
+                 f'fill="{col}" stroke="{INK}" stroke-width="1.2"/>')
+    name = f"moss-cushion-{variant}"
+    return name, svg(name, f"0 0 {W} {H}", body, defs, foot=(f(cx), H - 6), height_m=[.32, .22, .4][variant - 1],
+                     label="Mech", extra=f' data-hide="{f(cx)} {f(cy - ry * .35)}"')
+
+
+def moss_collar():
+    """Small front moss tuft: placed just in front of a mushroom's foot so it 'grows out of the moss'."""
+    R = seed(74)
+    W, H = 180, 70
+    top = [(6, 64), (14, 40), (34, 30), (50, 20), (70, 24), (90, 12), (112, 22), (132, 16), (152, 30), (166, 40), (174, 64)]
+    d = smooth(top, closed=False) + "Z"
+    defs = ('<linearGradient id="mcol-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a8bf52"/>'
+            f'<stop offset="1" stop-color="{MOSS_D}"/></linearGradient><clipPath id="mcol-c"><path d="{d}"/></clipPath>')
+    body = (f'<path d="{d}" fill="url(#mcol-g)"/><g clip-path="url(#mcol-c)">{moss_tufts(R, 90, 46, 80, 34, 70)}</g>'
+            f'<path d="{smooth(top, closed=False)}" fill="none" stroke="{INK}" stroke-width="2.6" stroke-linejoin="round"/>')
+    return "moss-collar", svg("moss-collar", f"0 0 {W} {H}", body, defs, foot=(90, 62), height_m=.09, extra=' data-role="front-cover"')
+
+
+def mossy_rock(variant):
+    """Boulders with moss caps. data-top = a spot ON the rock where a small mushroom may stand (variant 2 slab)."""
+    R = seed(80 + variant)
+    W, H = [(300, 220), (380, 170), (320, 180)][variant - 1]
+    gid = f"mr{variant}"
+    defs = (f'<radialGradient id="{gid}-s" cx="38%" cy="28%" r="85%"><stop offset="0" stop-color="#c4beb2"/>'
+            f'<stop offset=".6" stop-color="#9c968a"/><stop offset="1" stop-color="#6e695f"/></radialGradient>')
+    body = ""
+    extra = ""
+    stones = {1: [(150, 210, 128, 170)], 2: [(190, 160, 172, 90)], 3: [(110, 172, 92, 100), (232, 174, 72, 70), (175, 176, 40, 34)]}[variant]
+    for k, (cx, by, rw, rh) in enumerate(stones):
+        pts = [(cx - rw, by), (cx - rw * .96, by - rh * .45), (cx - rw * .6, by - rh * .9), (cx - rw * .05, by - rh),
+               (cx + rw * .55, by - rh * .88), (cx + rw * .95, by - rh * .4), (cx + rw, by)]
+        pts = [(x + R.uniform(-4, 4), y + R.uniform(-4, 4)) if 0 < i < 6 else (x, y) for i, (x, y) in enumerate(pts)]
+        d = smooth(pts, closed=False) + "Z"
+        cid = f"{gid}-c{k}"
+        defs += f'<clipPath id="{cid}"><path d="{d}"/></clipPath>'
+        # moss cap: an irregular blanket over the upper-left of the stone, with a drippy lower edge
+        cap = [(cx - rw * 1.1, by - rh * .5)]
+        for i in range(9):
+            t = i / 8
+            x = cx - rw * 1.05 + t * rw * 1.9
+            y = by - rh * (.95 - .55 * t) + R.uniform(-6, 10) + (10 if i % 2 else 0) * (1 if variant != 2 else .4)
+            cap.append((x, y))
+        cap += [(cx + rw * 1.1, by - rh * 1.2), (cx - rw * 1.1, by - rh * 1.2)]
+        cd = smooth(cap, closed=False) + "Z"
+        body += (f'<path d="{d}" fill="url(#{gid}-s)"/>'
+                 f'<g clip-path="url(#{cid})"><path d="{cd}" fill="{MOSS_L}"/>{moss_tufts(R, cx - rw * .2, by - rh * .75, rw * .8, rh * .35, int(rw * .9))}'
+                 f'<path d="M{f(cx + rw * .1)} {f(by - rh * .55)}q{f(rw * .3)} -6 {f(rw * .55)} 10" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".25"/>'
+                 f'<path d="M{f(cx - rw * .3)} {f(by - rh * .2)}l{f(rw * .25)} -14l{f(rw * .2)} 10" fill="none" stroke="#5a554c" stroke-width="2" opacity=".6"/></g>'
+                 f'<path d="{d}" fill="none" stroke="{INK}" stroke-width="3.2" stroke-linejoin="round"/>')
+    if variant == 2:
+        extra = ' data-top="200 82"'   # a mushroom may stand on the flat mossy top here (foot point)
+    name = f"rock-mossy-{variant}"
+    return name, svg(name, f"0 0 {W} {H}", body, defs, foot=(W / 2, H - 8), height_m=[.8, .5, .45][variant - 1],
+                     label="Kámen s mechem", extra=extra)
+
+
+def roots(variant):
+    """1: roots arching across the trail (flat-ish, lies across the path); 2: root flare at a trunk base."""
+    R = seed(85 + variant)
+    if variant == 1:
+        W, H = 520, 120
+        rs = []
+        for k in range(3):
+            y0 = 70 + k * 14
+            pts = [(10 + k * 30, y0 + 20), (120, y0 - 10 - k * 4), (260, y0 + 6), (390, y0 - 14), (510 - k * 40, y0 + 18)]
+            rs.append(smooth([(x, y + R.uniform(-3, 3)) for x, y in pts], closed=False))
+        body = "".join(f'<path d="{d}" fill="none" stroke="{INK}" stroke-width="{18 - k * 4}" stroke-linecap="round"/>'
+                       f'<path d="{d}" fill="none" stroke="#8a6644" stroke-width="{12 - k * 4}" stroke-linecap="round"/>'
+                       f'<path d="{d}" fill="none" stroke="#b08a62" stroke-width="3" stroke-linecap="round" transform="translate(0 -3)" opacity=".7"/>'
+                       for k, d in enumerate(rs))
+        name, hm, foot, label = "roots-across", .15, (W / 2, H - 14), "Kořeny"
+    else:
+        W, H = 380, 200
+        body = ""
+        for k, (ex, ey, w) in enumerate([(14, 186, 34), (96, 194, 26), (300, 192, 30), (370, 180, 24), (196, 198, 20)]):
+            sx = 190 + (ex - 190) * .18
+            mx, my = (sx + ex) / 2 + (ex - 190) * .08, ey - 46
+            # tapered root: thick at the trunk, thin at the tip
+            d = (f"M{f(sx - w * .7)} 64Q{f(mx - w * .35)} {f(my - w * .3)} {f(ex)} {f(ey)}"
+                 f"Q{f(mx + w * .35)} {f(my + w * .3)} {f(sx + w * .7)} 64Z")
+            body += f'<path d="{d}" fill="#7a5638" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+            body += f'<path d="M{f(sx)} 70Q{f(mx)} {f(my - 4)} {f(ex - (ex - 190) * .1)} {f(ey - 8)}" fill="none" stroke="#a07a54" stroke-width="2.4" opacity=".7"/>' 
+        body = (f'<path d="M150 0L150 70Q190 90 230 70L230 0Z" fill="#6b4a30" stroke="{INK}" stroke-width="3.5"/>' + body +
+                f'<path d="M60 196q40 -26 80 -4q-30 14 -80 4zM250 196q40 -26 80 -4q-30 14 -80 4z" fill="{MOSS_L}" stroke="{INK}" stroke-width="2"/>')
+        name, hm, foot, label = "roots-flare", .5, (190, 192), "Kořeny u kmene"
+    return name, svg(name, f"0 0 {W} {H}", body, foot=foot, height_m=hm, label=label)
+
+
+def tree_spruce_slope():
+    """Spruce for hillsides: exposed root plate on the uphill side; foot = downhill root tip (sits on the slope)."""
+    seed(88)
+    W, H = 440, 940
+    d = bs.spruce(W / 2, H - 70, H - 90, W * .44, 11)
+    defs = f'<clipPath id="tss-r"><rect x="{W / 2}" y="0" width="{W}" height="{H}"/></clipPath>'
+    rootp = ""
+    for ex, ey, w in [(110, H - 10, 20), (170, H - 22, 16), (290, H - 50, 18), (350, H - 66, 14)]:
+        dd = f"M{W / 2} {H - 74}Q{f((ex + W / 2) / 2)} {f(H - 70)} {ex} {ey}"
+        rootp += (f'<path d="{dd}" fill="none" stroke="{INK}" stroke-width="{w + 6}" stroke-linecap="round"/>'
+                  f'<path d="{dd}" fill="none" stroke="#6e4c32" stroke-width="{w}" stroke-linecap="round"/>')
+    body = (rootp + f'<path d="{d}" fill="#3a5a44" stroke="{INK}" stroke-width="4" stroke-linejoin="round"/>'
+            f'<path d="{d}" fill="#24402f" opacity=".75" clip-path="url(#tss-r)"/>'
+            f'<path d="{d}" fill="none" stroke="{INK}" stroke-width="4" stroke-linejoin="round"/>')
+    return "tree-spruce-slope", svg("tree-spruce-slope", f"0 0 {W} {H}", body, defs, foot=(W / 2, H - 40), height_m=9,
+                                    label="Smrk na svahu", extra=' data-slope="uphill-right"')
+
+
+def trail_narrow():
+    """Narrow forest trail (~0.8 m) for a curved ribbon mesh: seamless along v (y); u (x) edges are a ragged
+    moss/needle fringe fading to alpha so the strip melts into the ground on any curve or slope."""
+    R = seed(89)
+    S = 512
+    defs = ('<linearGradient id="tn-fade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b8975a" stop-opacity="0"/>'
+            '<stop offset=".2" stop-color="#b8975a" stop-opacity=".9"/><stop offset=".32" stop-color="#c9a86a"/>'
+            '<stop offset=".68" stop-color="#c9a86a"/><stop offset=".8" stop-color="#b8975a" stop-opacity=".9"/>'
+            '<stop offset="1" stop-color="#b8975a" stop-opacity="0"/></linearGradient>')
+    body = f'<rect width="{S}" height="{S}" fill="url(#tn-fade)"/>'
+    # ragged moss fringe at both edges (wrap in y)
+    fr = []
+    for side in (0, 1):
+        for i in range(22):
+            y = i * S / 22 + R.uniform(-6, 6)
+            x = (96 + R.uniform(-14, 10)) if side == 0 else (S - 96 + R.uniform(-10, 14))
+            r = R.uniform(14, 26)
+            for dy in (-S, 0, S):
+                fr.append(f'<ellipse cx="{f(x)}" cy="{f(y + dy)}" rx="{f(r * .8)}" ry="{f(r)}"/>')
+    body += f'<g fill="{MOSS_L}" opacity=".85">{"".join(fr)}</g>'
+    nd, peb, rt = [], [], []
+    for _ in range(120):
+        x, y, a = R.uniform(130, S - 130), R.uniform(0, S), R.uniform(0, math.pi)
+        for dy in (-S, 0, S):
+            nd.append(f"M{f(x)} {f(y + dy)}l{f(14 * math.cos(a))} {f(14 * math.sin(a))}")
+    for _ in range(30):
+        x, y, r = R.uniform(140, S - 140), R.uniform(0, S), R.uniform(3, 7)
+        for dy in (-S, 0, S):
+            peb.append(f'<ellipse cx="{f(x)}" cy="{f(y + dy)}" rx="{f(r * 1.3)}" ry="{f(r)}"/>')
+    # one root crossing per tile (reads as a step on slopes)
+    y0 = 300
+    rd = f"M90 {y0 + 12}Q200 {y0 - 10} 260 {y0 + 4}T430 {y0 - 6}"
+    rt = (f'<path d="{rd}" fill="none" stroke="{INK}" stroke-width="16" stroke-linecap="round" opacity=".85"/>'
+          f'<path d="{rd}" fill="none" stroke="#8a6644" stroke-width="10" stroke-linecap="round"/>')
+    body += (f'<path d="{"".join(nd)}" stroke="#9c7a3e" stroke-width="2" stroke-linecap="round" opacity=".75"/>'
+             f'<g fill="#a39d92" stroke="{INK}" stroke-width="1.1" opacity=".9">{"".join(peb)}</g>{rt}')
+    return svg("trail-narrow", f"0 0 {S} {S}", body, defs, extra=' data-seamless="y" data-width-m="1.4"')
+
+
+# ---------------------------------------------------------------- running animals (side view, facing right)
+
+def limb(pts, col, w):
+    d = smooth(pts, closed=False) if len(pts) > 2 else f"M{f(pts[0][0])} {f(pts[0][1])}L{f(pts[1][0])} {f(pts[1][1])}"
+    return (f'<path d="{d}" fill="none" stroke="{INK}" stroke-width="{w + 5}" stroke-linecap="round" stroke-linejoin="round"/>'
+            f'<path d="{d}" fill="none" stroke="{col}" stroke-width="{w}" stroke-linecap="round" stroke-linejoin="round"/>')
+
+
+def leg(hip, a1, l1, a2, l2, col, w, hoof=None):
+    """Two-segment leg from hip by angles (deg, 0 = straight down, + = forward/right)."""
+    k = (hip[0] + l1 * math.sin(math.radians(a1)), hip[1] + l1 * math.cos(math.radians(a1)))
+    e = (k[0] + l2 * math.sin(math.radians(a2)), k[1] + l2 * math.cos(math.radians(a2)))
+    out = limb([hip, k, e], col, w)
+    if hoof:
+        out += f'<circle cx="{f(e[0])}" cy="{f(e[1])}" r="{f(w * .55)}" fill="{hoof}" stroke="{INK}" stroke-width="2"/>'
+    return out
+
+
+def animal(name, label, W, H, foot, height_m, draw_body, legs_far, legs_near, poses, defs=""):
+    """poses: list of (bob_y, tilt_deg, leg_params). Each pose group = far legs + body + near legs."""
+    groups = []
+    for i, (bob, tilt, lp) in enumerate(poses, start=1):
+        disp = "" if i == 1 else ' display="none"'
+        inner = legs_far(lp) + draw_body() + legs_near(lp)
+        groups.append(f'<g class="pose pose-{i}"{disp}><g transform="translate(0 {bob}) rotate({tilt} {W / 2} {H / 2})">{inner}</g></g>')
+    sh = f'<g class="shadow"><ellipse cx="{W / 2}" cy="{H - 8}" rx="{W * .3}" ry="9" fill="#2a1a10" opacity=".28"/></g>'
+    return svg(name, f"0 0 {W} {H}", sh + "".join(groups), defs, foot=foot, height_m=height_m, label=label,
+               extra=f' data-pose="1" data-poses="{len(poses)}" data-facing="right"')
+
+
+def srnka():
+    W, H = 440, 380
+    coat, coat_d, white = "#9a7a5a", "#6e5238", "#f7efe2"
+    defs = ('<radialGradient id="sr-b" cx="45%" cy="30%" r="80%"><stop offset="0" stop-color="#b8956c"/>'
+            f'<stop offset=".6" stop-color="{coat}"/><stop offset="1" stop-color="{coat_d}"/></radialGradient>')
+
+    def body():
+        torso = smooth([(118, 168), (150, 134), (220, 128), (288, 136), (318, 160), (312, 196), (272, 214), (190, 214), (130, 204)])
+        neck = f"M286 150Q300 104 326 76L352 92Q330 120 316 168Z"
+        head = smooth([(318, 62), (344, 50), (372, 58), (408, 80), (410, 92), (390, 100), (352, 100), (326, 90)])
+        return (f'<path d="{torso}" fill="url(#sr-b)" stroke="{INK}" stroke-width="3.5" stroke-linejoin="round"/>'
+                f'<path d="M124 170q-14 -8 -6 -24q14 4 20 20z" fill="{white}" stroke="{INK}" stroke-width="2.6"/>'   # white rump patch
+                f'<path d="M190 206q40 10 80 4" fill="none" stroke="#d9c4a4" stroke-width="6" stroke-linecap="round" opacity=".7"/>'
+                f'<path d="{neck}" fill="url(#sr-b)" stroke="{INK}" stroke-width="3.5" stroke-linejoin="round"/>'
+                f'<path d="{head}" fill="url(#sr-b)" stroke="{INK}" stroke-width="3.5" stroke-linejoin="round"/>'
+                f'<path d="M330 66l-16 -40q20 6 28 34zM342 58l-2 -42q18 12 14 40z" fill="{coat}" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+                f'<path d="M332 58l-10 -24M346 52l0 -26" stroke="#e8d2b4" stroke-width="3" stroke-linecap="round"/>'
+                f'<ellipse cx="408" cy="86" rx="6" ry="5" fill="#1e140e"/>'
+                f'<path d="M390 98q8 6 18 2" fill="none" stroke="{white}" stroke-width="5" stroke-linecap="round"/>'
+                f'<ellipse cx="364" cy="72" rx="6" ry="7" fill="#1e140e"/><circle cx="366" cy="69" r="2" fill="#fff"/>'
+                f'<path d="M356 62q8 -6 16 0" fill="none" stroke="{INK}" stroke-width="2.4" stroke-linecap="round"/>')
+
+    def far(lp):
+        (fh, fk), (hh, hk), _, _ = lp
+        return (leg((272, 196), fh - 8, 70, fk - 8, 78, coat_d, 10, "#2a1a10") +
+                leg((150, 192), hh - 8, 74, hk - 8, 84, coat_d, 12, "#2a1a10"))
+
+    def near(lp):
+        _, _, (fh, fk), (hh, hk) = lp
+        return (leg((282, 200), fh, 70, fk, 78, coat, 11, "#2a1a10") +
+                leg((160, 196), hh, 74, hk, 84, coat, 13, "#2a1a10"))
+    # bound cycle: gathered, push-off, flight (stretched), landing
+    poses = [(12, 0, ((-10, 20), (20, -30), (-20, 10), (30, -20))),
+             (0, -6, ((30, 50), (-40, -10), (20, 60), (-30, -5))),
+             (-22, -2, ((60, 80), (-60, -40), (55, 85), (-65, -45))),
+             (4, 8, ((10, -5), (-20, -40), (-5, 5), (-10, -35)))]
+    return "srnka", animal("srnka", "Srnka", W, H, (W / 2, H - 10), 1.1, body, far, near, poses, defs)
+
+
+def zajic():
+    W, H = 380, 280
+    fur, fur_d, white = "#a8875e", "#74583a", "#f4ece0"
+    defs = ('<radialGradient id="za-b" cx="45%" cy="30%" r="80%"><stop offset="0" stop-color="#c4a47a"/>'
+            f'<stop offset=".6" stop-color="{fur}"/><stop offset="1" stop-color="{fur_d}"/></radialGradient>')
+
+    def body():
+        torso = smooth([(96, 150), (120, 112), (190, 98), (252, 110), (276, 140), (262, 170), (200, 182), (130, 180)])
+        head = smooth([(250, 104), (276, 84), (310, 86), (334, 104), (330, 122), (300, 130), (266, 128)])
+        return (f'<path d="{torso}" fill="url(#za-b)" stroke="{INK}" stroke-width="3.5" stroke-linejoin="round"/>'
+                f'<circle cx="94" cy="136" r="16" fill="{white}" stroke="{INK}" stroke-width="3"/>'
+                f'<path d="{head}" fill="url(#za-b)" stroke="{INK}" stroke-width="3.5" stroke-linejoin="round"/>'
+                # long ears laid back, black tips
+                f'<path d="M270 92Q232 40 192 22Q206 52 262 104Z" fill="{fur}" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+                f'<path d="M206 30Q196 22 192 22Q198 34 210 42Z" fill="#2a1a10"/>'
+                f'<path d="M282 88Q262 30 232 8Q238 44 274 98Z" fill="{fur}" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+                f'<path d="M244 18Q236 10 232 8Q236 22 246 30Z" fill="#2a1a10"/>'
+                f'<path d="M270 82Q250 50 236 30" stroke="#e8c8b0" stroke-width="4" stroke-linecap="round"/>'
+                f'<ellipse cx="300" cy="102" rx="7" ry="8" fill="#3a2410"/><ellipse cx="300" cy="102" rx="4" ry="5" fill="#1e140e"/><circle cx="302" cy="99" r="2" fill="#fff"/>'
+                f'<circle cx="332" cy="112" r="4" fill="#5a3a2a"/>'
+                f'<path d="M326 116l18 -4M326 118l18 4" stroke="{INK}" stroke-width="1.2" opacity=".6"/>')
+
+    def far(lp):
+        (fh, fk), (hh, hk), _, _ = lp
+        return leg((236, 160), fh - 10, 36, fk - 10, 40, fur_d, 9) + leg((124, 160), hh - 10, 46, hk - 10, 64, fur_d, 13)
+
+    def near(lp):
+        _, _, (fh, fk), (hh, hk) = lp
+        return leg((246, 164), fh, 36, fk, 40, fur, 10) + leg((134, 162), hh, 46, hk, 64, fur, 15)
+    poses = [(10, 0, ((-20, 10), (40, -60), (-10, 20), (50, -55))),
+             (0, -6, ((40, 70), (-10, -60), (30, 80), (0, -55))),
+             (-18, -2, ((70, 95), (-70, -80), (65, 90), (-75, -85))),
+             (4, 8, ((10, 0), (20, -70), (0, 10), (30, -65)))]
+    return "zajic", animal("zajic", "Zajíc", W, H, (W / 2, H - 10), .55, body, far, near, poses, defs)
+
+
+def veverka():
+    W, H = 320, 260
+    red, red_d, white = "#c4572a", "#8a3a1a", "#f8eedc"
+    defs = ('<radialGradient id="ve-b" cx="45%" cy="30%" r="80%"><stop offset="0" stop-color="#e07a3e"/>'
+            f'<stop offset=".6" stop-color="{red}"/><stop offset="1" stop-color="{red_d}"/></radialGradient>')
+
+    def body(tail_up=0):
+        tail = smooth([(110, 160), (60, 150), (30, 110), (40, 60 - tail_up), (80, 40 - tail_up), (110, 60 - tail_up * .5),
+                       (90, 90), (100, 120), (130, 150)])
+        torso = smooth([(118, 168), (140, 136), (190, 128), (226, 140), (236, 168), (210, 186), (150, 188)])
+        head = smooth([(214, 128), (232, 106), (262, 104), (284, 118), (282, 136), (258, 146), (226, 144)])
+        return (f'<path d="{tail}" fill="url(#ve-b)" stroke="{INK}" stroke-width="3.5" stroke-linejoin="round"/>'
+                f'<path d="M58 140Q40 104 52 72M80 132Q64 100 78 66" fill="none" stroke="#e8955a" stroke-width="3" stroke-linecap="round" opacity=".7"/>'
+                f'<path d="{torso}" fill="url(#ve-b)" stroke="{INK}" stroke-width="3.5" stroke-linejoin="round"/>'
+                f'<path d="M196 182q24 -4 34 -22" fill="none" stroke="{white}" stroke-width="9" stroke-linecap="round"/>'
+                f'<path d="{head}" fill="url(#ve-b)" stroke="{INK}" stroke-width="3.5" stroke-linejoin="round"/>'
+                f'<path d="M236 112l-6 -30l6 -8l4 8l6 28z" fill="{red}" stroke="{INK}" stroke-width="2.6" stroke-linejoin="round"/>'
+                f'<path d="M232 80l2 -10M236 80l4 -12" stroke="{red_d}" stroke-width="3" stroke-linecap="round"/>'   # autumn ear tufts
+                f'<path d="M262 138q12 2 20 -4" fill="none" stroke="{white}" stroke-width="5" stroke-linecap="round"/>'
+                f'<ellipse cx="258" cy="120" rx="6" ry="7" fill="#1e140e"/><circle cx="260" cy="117" r="2" fill="#fff"/>'
+                f'<circle cx="284" cy="126" r="3.5" fill="#3a2410"/>')
+
+    def far(lp):
+        (fh, fk), (hh, hk), _, _, _ = lp
+        return leg((206, 176), fh - 10, 22, fk - 10, 22, red_d, 8) + leg((140, 176), hh - 10, 28, hk - 10, 34, red_d, 10)
+
+    def near(lp):
+        _, _, (fh, fk), (hh, hk), _ = lp
+        return leg((214, 180), fh, 22, fk, 22, red, 9) + leg((150, 180), hh, 28, hk, 34, red, 12)
+    W_, H_ = W, H
+    poses_spec = [(10, 0, ((-20, 10), (40, -50), (-10, 20), (50, -45), 0)),
+                  (0, -6, ((40, 70), (-10, -50), (30, 80), (0, -45), 10)),
+                  (-16, -2, ((70, 95), (-70, -80), (65, 90), (-75, -85), 18)),
+                  (4, 8, ((10, 0), (20, -60), (0, 10), (30, -55), 4))]
+    groups = []
+    for i, (bob, tilt, lp) in enumerate(poses_spec, start=1):
+        disp = "" if i == 1 else ' display="none"'
+        inner = far(lp) + body(lp[4]) + near(lp)
+        groups.append(f'<g class="pose pose-{i}"{disp}><g transform="translate(0 {bob}) rotate({tilt} {W_ / 2} {H_ / 2})">{inner}</g></g>')
+    sh = f'<g class="shadow"><ellipse cx="{W / 2}" cy="{H - 8}" rx="{W * .28}" ry="8" fill="#2a1a10" opacity=".28"/></g>'
+    return "veverka", svg("veverka", f"0 0 {W} {H}", sh + "".join(groups), defs, foot=(W / 2, H - 10), height_m=.35, label="Veverka",
+                          extra=' data-pose="1" data-poses="4" data-facing="right"')
+
+
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     files = {"backdrop.svg": backdrop()}
@@ -406,7 +745,11 @@ if __name__ == "__main__":
     b, fr = leafpile()
     files.update({"leafpile-back.svg": b, "leafpile-front.svg": fr, "shadow.svg": shadow(), "sparkle.svg": sparkle(),
                   "stop-bubble.svg": stop_bubble(), "signpost.svg": signpost(), "ground-tile.svg": ground_tile(),
-                  "path-tile.svg": path_tile(), "guide-jezek.svg": guide()})
+                  "path-tile.svg": path_tile(), "guide-jezek.svg": guide(), "trail-narrow.svg": trail_narrow()})
+    for fn in [lambda v=v: moss_cushion(v) for v in (1, 2, 3)] + [lambda v=v: mossy_rock(v) for v in (1, 2, 3)] + \
+              [lambda: roots(1), lambda: roots(2), tree_spruce_slope, moss_collar, srnka, zajic, veverka]:
+        n, s_ = fn()
+        files[n + ".svg"] = s_
     for name, s in files.items():
         with open(os.path.join(OUT, name), "w", encoding="utf-8") as fh:
             fh.write(s)

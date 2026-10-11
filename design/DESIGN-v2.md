@@ -19,7 +19,7 @@ Every step up is a place she can see, not a menu setting.
 | `art/<id>.svg` | 12 new characters: `vaclavka hrib-kovar hrib-satan klouzek ryzec sirovec lisak kotrc pestrec muchomurka-jizliva listicka troudnatec-pasovany` |
 | `art/vyprava/` | backdrop, 4 trees, fern, blueberry, stump, log, rock, leaf pile (back + front), signpost, stop bubble, sparkle, shadow, ground tile, path tile, hedgehog guide |
 | `design/contact-sheet.png` | all 25 characters with level, twin and edibility (2×) |
-| `design/comp-vyprava.png` | the walk (CSS-3D composite of the real kit, 1024×768 @2×) |
+| `design/comp-vyprava.png` | the walk v2.1: winding uphill trail on a low-poly heightfield, mushrooms in moss / on a rock / at a stump, a deer bounding across (1024×768 @2×) |
 | `design/comp-vyprava-end.png` | the hedgehog checking the basket (1024×768 @2×) |
 | `design/comp-levels.png` | A: Les at L1 with the locked 4th door · B: level picker · C: unlock ceremony (3 × 1024×768) |
 
@@ -126,10 +126,17 @@ Every billboard root has `data-foot="x y"` (the ground contact point in viewBox 
 |---|---|---|---|
 | `backdrop.svg` (4096×1024, `data-seamless="x"`, `data-horizon-y="790"`) | inside of a cylinder (r ≈ 60 m) or a camera-locked far plane; its horizon at the camera horizon | none | always behind; no fog |
 | `ground-tile.svg` (512², seamless xy) | ground plane texture, repeat ≈ 1.6 m | none | whole floor |
-| `path-tile.svg` (512², seamless y, alpha edges) | ribbon mesh along the rail spline, width ≈ 2 m, repeat ≈ 2 m along | none | 1 cm above ground (no z-fighting) |
+| `trail-narrow.svg` (512², seamless y, alpha moss fringe, `data-width-m="1.4"`) | **the trail (v2.1):** a curved ribbon mesh along the spline, 1.4 m wide incl. the fringe (walkable core ≈ 0.8 m), UVs: u across 0→1, v = arc length / 1.4 m. One root crossing per tile reads as a step on slopes | none | draped on the heightfield, 2 cm above it |
+| `path-tile.svg` (512², seamless y, alpha edges) | *v2.0 wide avenue; keep only for the end clearing* | none | — |
 | `tree-spruce.svg`, `tree-spruce-small.svg`, `tree-beech.svg`, `tree-birch.svg` | flats; the near ones frame the view like a proscenium | 9 / 4.5 / 10 / 8 | ≥ 2.5 m from the path; dense far rows at 15–40 m |
 | `fern.svg`, `blueberry.svg` | low cover; can hide a mushroom (behind it) | 0.9 / 0.45 | 1–4 m from the path |
 | `stump.svg`, `log.svg`, `rock.svg` | props; mushrooms stand at their foot | 0.6 / 0.55 / 0.5 | 1–4 m |
+| `moss-cushion-1..3.svg` (`data-hide`) | moss mounds; a mushroom **grows in moss** = stands behind the cushion with its foot at `data-hide`, then `moss-collar.svg` in front of the foot | 0.32 / 0.22 / 0.40 | 0.8–3 m from the trail, often at a root or rock |
+| `moss-collar.svg` (`data-role="front-cover"`) | small lumpy moss tuft placed 2 cm in front of a mushroom's foot | 0.09–0.12 | with every moss / rock-top mushroom |
+| `rock-mossy-1..3.svg` | mossy boulder, low slab (with `data-top="x y"`: a mushroom may stand ON it), cluster of stones | 0.8 / 0.5 / 0.45 | beside the trail; mushrooms at the foot or on the slab top |
+| `roots-across.svg`, `roots-flare.svg` | roots arching across the trail (lie flat on it, the camera bobs over them); root flare at a trunk base (mushrooms in the crook) | 0.15 / 0.5 | across the trail every 2–4 stations; flare at near trunks |
+| `tree-spruce-slope.svg` (`data-slope="uphill-right"`) | spruce with an exposed root plate for hillsides; mirror (scale x −1) for the other slope direction | 9 | on banks above the trail |
+| `srnka.svg`, `zajic.svg`, `veverka.svg` (`data-poses="4"`, `data-facing="right"`) | running animals, 4 pose groups `.pose-1..4` (gathered, push-off, flight, landing); show one, hide the rest; mirror for leftward runs | 1.1 / 0.55 / 0.35 | fly-bys (§4.10) |
 | `leafpile-back.svg` + `leafpile-front.svg` (same viewBox, `data-hide="x y"`) | **hiding sandwich**: back < mushroom < front, 2 cm apart in depth | 0.55 | mushroom foot at `data-hide` |
 | `signpost.svg` | end clearing marker | 1.3 | last station |
 | `shadow.svg` | soft contact shadow under every billboard, flat on the ground, width ≈ 1.2 × object width | none | all billboards |
@@ -145,26 +152,29 @@ Every billboard root has `data-foot="x y"` (the ground contact point in viewBox 
 - Add `scene.fog`, linear, 12–45 m, colour `#f3e2bf` (the sky glow); this matches the comp's haze.
 - **Mushroom textures per level:** build the SVG string with `.ground` removed and, for L2+, with `.lids .brows .cheeks .mouth .warn` removed and `.mouth-neutral` made visible, *before* rasterising. CSS cannot reach into a texture.
 
-### 4.4 Camera and rail
-- **Rail:** a Catmull-Rom spline of 9–11 **stations**: one per mushroom, plus 1–2 empty "breathing" stops. It gently S-curves, so the path disappears behind a flat every 2–3 stations; anticipation comes for free.
-- **Camera:** eye height 1.25 m, FOV 55°, looking along the spline tangent with yaw eased ≤ 12° toward the station's mushroom. The target mushroom sits 2.5–4 m ahead, inside the central 60 % of the view, on a side of the path.
-- **Moving:** tap the big „Dál“ button (96 px, bottom centre, `i-footsteps`), or tap the path ahead. The camera glides to the next station over `--t-step` (1.6 s, `--ease-in-out`) with a head-bob of `--bob-amp` (2 cm, 2 steps/s) and a soft leaf-crunch footstep sound per bob.
-  - „Dál“ is disabled (dimmed, not hidden) until the current station's mushroom has been decided or warned about. Exception: an empty breathing stop.
-  - There is **no going back**.
-- **Reduced motion:** a 300 ms crossfade cut between stations, no bob, no camera yaw ease.
-- **Trail HUD** (top centre): footprints icon, one dot per station (green = done, gold and larger = here, paper = ahead), and a basket icon at the end. It is a pill, not a map.
+### 4.4 The trail: winding, up and down, with forks (v2.1, replaces the v2.0 straight rail)
+**Feel:** real mushroom hunting. You walk a **narrow trail** that winds between trunks, climbs a gentle bank, crests and dips, and you look *down and around* for caps in the moss. The trail is never a straight avenue: from the camera you see at most 6–10 m of it before it bends behind a trunk or over a crest (`comp-vyprava.png`).
 
-### 4.5 Hidden mushrooms
-Three hiding kinds:
-1. **in a leaf pile** (the sandwich; only the cap shows: `comp-vyprava.png`, left);
-2. **behind a fern or blueberry**, ≤ 50 % occluded;
-3. **at the foot of a stump or log**, on the far side, with the cap showing.
+- **Terrain:** a low-poly heightfield (≈ 1 m grid near the trail, coarser further out) with gentle hills, max slope ≈ 15° on the trail, 25° on the banks. The trail sits in a **shallow hollow** (0.1–0.3 m lower than its banks), like a real worn path; mushrooms then sit slightly *above* the eye-line of the trail on the banks, which is where a child actually looks.
+- **Ground colour by slope and wetness:** flat-shaded faces (per-face normal · light from upper left), base colour mixed between **leaf-litter brown** and **moss green** by a low-frequency noise; faces facing away from the light are 20–30 % darker. No textures on the far terrain (cheap, and it reads as gouache); `ground-tile.svg` only within ≈ 12 m, multiplied over the vertex colour. Fog as before.
+- **Trail strip:** `trail-narrow.svg` on a ribbon following the spline, draped onto the heightfield (each ribbon vertex takes the terrain height + 2 cm). Its mossy alpha fringe hides the seam on curves and slopes. Scatter `roots-across.svg` over the trail every 2–4 stations: the head-bob gets a little extra step there.
+- **Spline:** Catmull-Rom through 9–11 stations; consecutive stations 4–7 m apart, heading change between them 20–60°, so each glide turns. Height profile: one climb to a crest (2–4 m), a dip, a small second rise, and the end clearing on a flat.
+- **Camera:** eye 1.25 m above the trail, FOV 55°, **pitch −5 to −8° (looking slightly down)**, pitched to follow the slope ahead (uphill → look up a bit, max +4°; downhill → −12°). Yaw follows the tangent, eased ≤ 15° toward the station's mushroom. Glide `--t-step` (1.6 s) with `--bob-amp` head-bob; uphill glides 20 % slower, downhill 10 % faster (felt, not seen).
+- **Moving:** the big „Dál“ button (96 px, `i-footsteps`) or a tap on the trail ahead. „Dál“ stays dimmed until the station's mushroom is decided/warned (as before). **No going back.**
+- **Forks (optional, 0–2 per walk):** at a fork station the trail visibly splits around a trunk or boulder. „Dál“ is replaced by **two 96 px arrow buttons** (`i-fork-left`, `i-fork-right`) placed bottom-left-of-centre and bottom-right-of-centre, each above its branch. A **teaser** is visible down each branch (a cap peeking from moss on one side, a blueberry bush with something orange on the other), so choosing is about curiosity, not luck. Both branches carry the same number of mushrooms and rejoin within 2–3 stations (or end in the same clearing), so a round never becomes shorter or "wrong". The voice asks once: „Kudy půjdeme?“ (new phrase). Reduced motion: same, with crossfade cuts.
+- **Trail HUD:** dots as before; at a fork the next dot shows a tiny Y.
+- **Reduced motion:** crossfade cuts, no bob, no pitch/yaw ease, animals do not run (§4.10).
 
-- **Always** leave ≥ 40 % of the cap visible. Finding must be achievable for a 5-year-old.
-- **Hint ladder:**
-  1. after 12 s without a find, `sparkle.svg` twinkles over the cap (scale 0.8 ↔ 1.1, opacity, 1.4 s loop);
-  2. after 25 s, the hedgehog says „Podívej se do listí!“ / „…za kapradí!“ / „…u pařezu!“ (3 phrases, keyed by hiding kind).
-- **Found** (tap): the front leaves puff apart. The front pile flat slides 0.3 m sideways and fades over 400 ms while 6 leaf particles fly. The mushroom hops once and says its name. Then it behaves as a visible mushroom (§4.6).
+### 4.5 Where mushrooms grow (and how they hide)
+Every mushroom is placed **in a habitat**, never on bare trail:
+| Habitat | Kit | Rule | Typical species |
+|---|---|---|---|
+| **in moss** | `moss-cushion-1..3` behind + `moss-collar` in front of the foot | foot at the cushion's `data-hide`; collar 2 cm in front | hřib, kozák, křemenáč, klouzek, liška, muchomůrky |
+| **on / next to a rock** | `rock-mossy-2` slab top (`data-top`) + collar; or at the foot of `rock-mossy-1/3` | on the slab only small species (liška, lištička, pýchavka, ryzec) | liška, pýchavka, pestřec |
+| **at a stump / log / roots** | `stump`, `log`, `roots-flare` crook | wood growers always here (sírovec on a trunk flat, václavka/třepenitka/troudnatce on stumps, kotrč at a pine root flare) | wood growers, satan/kovář near roots |
+| **in leaves / under blueberry or fern** | leaf-pile sandwich, `blueberry`, `fern` | hidden kind (below) | any |
+
+**Hidden mushrooms** (unchanged rules, new covers): in a leaf pile, deep in a moss cushion (only the cap above the moss), behind blueberry or fern, on the far side of a stump/rock. **Always ≥ 40 % of the cap visible.** Hint ladder: sparkle after 12 s, hedgehog line after 25 s, keyed by cover: „…do listí!“ / „…do mechu!“ (new) / „…za kapradí!“ / „…u pařezu!“ / „…u kamene!“ (new). Found → the cover puffs (leaves fly / moss tufts wobble), the mushroom hops and says its name.
 
 ### 4.6 Tapping a mushroom
 **Edible or inedible:**
@@ -229,6 +239,17 @@ At the signpost clearing:
 - **Wood growers** stand at the foot of a stump or tree flat, never in the open.
 - **Habitat flavour, optional:** klouzek with larch needles (already in its ground patch; place it near a birch or spruce flat); kotrč and lištička near spruce or pine flats.
 - **Performance budget:** ≤ 60 billboards in view, textures ≤ 48 MB total, 60 fps on iPad 9th gen. Instanced far trees, no post-processing; fog only.
+- **v2.1 composition:** per walk ≥ 3 moss mushrooms, ≥ 1 on/at a rock, ≥ 1 at wood; ≥ 2 hidden at L2+; a fork in ≈ every other walk at L2+ (none at L1 by default — fewer decisions for the youngest).
+
+### 4.10 Animal fly-bys: srnka, zajíc, veverka
+Small moments of life, never obstacles, never part of the score.
+- **Frequency:** at most **one per walk-segment**, 1–2 per walk; never during a mushroom decision, the „Nesahej na mě!“ reaction, a hint line or the end check. Trigger during a glide or 2–4 s after arriving at a station. Not on the first station.
+- **Path:** the animal crosses **from one side to the other, 5–14 m ahead**, perpendicular-ish to the view, over 1.6–2.4 s, along the heightfield (foot on the ground, plus a parabolic hop per cycle for the deer and hare). It enters and leaves behind a trunk or bush flat (pop-in never visible). Deer: one or two bounds across the trail; hare: zig-zag low and fast; squirrel: runs across and **up a trunk flat** (rotate the billboard 80° and run it up the trunk), then peeks once.
+- **Run cycle:** swap the visible `.pose-N` group at 10–12 fps (deer: 1→2→3→4, flight pose 3 held twice as long at the top of the hop; hare: 1→2→3→4 faster; squirrel: 1→2→3→4). Mirror (`scale(-1,1)`) for leftward runs. No smooth tweening of limbs is needed — the flip-book is the storybook look.
+- **Tap:** a tap on a running animal **freezes it in pose 1 for 1.2 s** (it stops and looks), it says its name in the current language („Srnka!“ / „Zajíc!“ / „Veverka!“; EN „Roe deer!“ / „Hare!“ / „Squirrel!“, new phrases) with a soft chime, then continues off-screen. A tap is never required and earns nothing.
+- **Safety:** the squirrel **never holds, carries, sniffs or eats a mushroom** and never runs past a mushroom closer than 1.5 m (no implied "animals eat it, so it is fine"). No animal touches mushrooms or the basket.
+- **Sound:** soft leaf rustle under the run; no alarm calls.
+- **Reduced motion:** no runs. Instead, the animal may appear **standing still** half-hidden behind a trunk at a station (pose 1), and is tappable the same way.
 
 ## 5. 25 species in Les and the Album
 
@@ -322,6 +343,9 @@ Base cap colour vs `colors.cap` (CIELAB ΔE76): kovář 1.2, satan 0.4, jízliv�
 | `unlock.level3` | „Jsi Mistr houbař! Teď poznáš houby i z fotek.“ |
 | `vyprava.lockedHint` | „Ještě pár nálepek do alba a půjdeme na výpravu!“ (generic, no number) |
 | `vyprava.hint.leaves` / `.fern` / `.stump` | „Podívej se do listí!“ / „…za kapradí!“ / „…u pařezu!“ |
+| `vyprava.fork` | „Kudy půjdeme?“ |
+| `vyprava.hint.moss` / `.rock` | „Podívej se do mechu!“ / „…u kamene!“ |
+| `animal.srnka` / `.zajic` / `.veverka` | „Srnka!“ / „Zajíc!“ / „Veverka!“ (EN „Roe deer!“ / „Hare!“ / „Squirrel!“) |
 | `vyprava.warnDeadly` | „Jsem smrtelně jedovatá. Nikdy na mě nesahej!“ |
 | `vyprava.cooked` | „…a uvaří ji dospělý.“ |
 | `vyprava.twin.<id>` | one decisive-difference line per inedible species with an edible twin (from `caution`) |
@@ -348,6 +372,7 @@ All renders were made with Playwright and Chromium, then looked at; the final PN
   - Mushrooms were too small at 0.6 m, so they are now 0.9 m.
   - The leaf-pile z-order was inverted; fixed.
   - Trunks showed in the basket, so I added `.host` and `data-pick-box`.
+- **v2.1 trail kit + `comp-vyprava.png` (replaced):** kit overview + all 12 animal poses rendered and looked at. Fixes: moss cushions were flat slabs → domed with tufts over the whole surface; the moss collar was a trapezoid → lumpy top; the root flare was sticks → tapered roots. The comp is a real perspective projection of a winding, climbing heightfield (flat-shaded faces, moss/litter colour mix, fog) with the kit billboards placed by `data-foot`/`data-height-m`; iterations: the trees walled in the view → the trail corridor was cleared to 8 m, the hill was raised so the crest reads, the deer was moved onto the trail in its flight pose, and props were kept off the hero mushrooms. verified against screenshot at `design/comp-vyprava.png`.
 - **`comp-vyprava-end.png`:** the finds now stand on the cloth, not behind it, and the mistake sits under the magnifier.
 - **`comp-levels.png`:** the level text pill collided with the 4-door tray, so it became rosette-only. The padlock covered the "Mistr houbař" title, and the title overlapped the gift card; both moved.
 - **Final artefacts:**

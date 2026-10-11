@@ -1,5 +1,6 @@
 // Houbičky — boot: load data + art, mount the forest, start screen, routing.
 import { loadAll, svgEl, species, voiceIndex } from './assets.js';
+import { IS_BETA } from './env.js';
 import { buildCatalogue } from './phrases.js';
 import { mountScene } from './scene.js';
 import { register, go } from './router.js';
@@ -62,6 +63,11 @@ async function boot() {
   mountScene(document.getElementById('stage'));
   applyI18n();
   document.documentElement.classList.add('ready');
+  if (IS_BETA) {          // beta copy (/beta/): visible ribbon, own title — derived from the URL, no build step
+    document.documentElement.dataset.beta = '';
+    document.title = `${document.title} beta`;
+    document.body.append(h(`<div class="beta-ribbon" aria-hidden="true">${esc(t('beta.ribbon'))}</div>`));
+  }
   const rot = document.getElementById('rotate');
   rot.innerHTML = `<div class="rotate-card"><div class="rotate-ic">${icon('flip')}</div><p>${esc(t('rotate.title'))}</p>
     <button class="btn round r88 paper" data-act="rotate-home" aria-label="${esc(t('nav.home'))}">${icon('home')}</button></div>`;
@@ -70,7 +76,7 @@ async function boot() {
   addEventListener('langchange', () => { rot.querySelector('p').textContent = t('rotate.title'); rot.querySelector('button').setAttribute('aria-label', t('nav.home')); });
   document.documentElement.dataset.screen = 'start';
   startScreen();
-  registerServiceWorker();
+  registerServiceWorker().then((r) => { window.__houbicky.sw = { ok: r.ok, reason: r.reason || null }; });
 }
 
 // No pinch-zoom on the iPad (Safari ignores user-scalable=no): block the WebKit gesture events.

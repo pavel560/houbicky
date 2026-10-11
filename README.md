@@ -9,9 +9,23 @@ Hra pro děti: poznáváme houby (jak se jmenují a zda jsou jedlé, nejedlé ne
 - **Do košíku!** – šest hub: jedlé patří do košíku, ostatní zůstanou v lese. Houbu lze přetáhnout, nebo na ni klepnout a pak klepnout na místo. Chyba se jen vlídně opraví, prohrát nejde.
 - **Houbový kvíz** – hra řekne jméno a dítě vybírá ze tří houbiček. Reproduktor jméno zopakuje.
 - **Album nálepek** – nálepka přibude, když dítě houbu pozná. Zlatý rámeček znamená, že ji poprvé správně určilo v obou hrách.
-- **Koutek pro rodiče** – otevře se podržením ikony rodičů vpravo nahoře po dobu 3 sekund. Obsahuje bezpečnostní větu, úroveň 2 (obličeje bez nápověd, ve výchozím stavu vypnuto), jazyk, rychlost hlasu, zvukové efekty, autory fotografií a smazání postupu.
+- **Koutek pro rodiče** – otevře se podržením ikony rodičů vpravo nahoře po dobu 3 sekund. Obsahuje bezpečnostní větu, obtížnost (úrovně 1–3 a jejich ruční odemčení), jazyk, rychlost hlasu, zvukové efekty, autory fotografií a smazání postupu.
 
 Na iPadu na výšku se kartička skládá pod sebe a ve hrách se zobrazí výzva „Otoč iPad na šířku“.
+
+## Obtížnost (verze 2)
+
+| Úroveň | Název | Houby | Obličeje ve hrách | Kvíz a košík |
+|---|---|---|---|---|
+| 1 | Malý houbař | jen snadné (`"level": 1` v `data/species.json`) | nálada napovídá | možnosti z různých skupin |
+| 2 | Houbař | všechny | neutrální | mezi možnostmi jsou dvojníci |
+| 3 | Mistr houbař | všechny | schválené skutečné fotky, jinak neutrální kresba | dvojníci a otázka „jedlá, nejedlá, nebo jedovatá?“ |
+
+Úroveň 2 se odemkne po 8 nálepkách, úroveň 3 po zlatém albu úrovně 2. Rodič může úrovně i „Výpravu do lesa“ odemknout ručně v Rodičovském koutku. Dítě volí úroveň tlačítkem vpravo nahoře v lese. Nastavení „obličeje bez nápověd“ z verze 1 se při prvním spuštění převede na úroveň 2.
+
+## Beta (verze 2) vedle stabilní verze
+
+Workflow nasazuje obě verze najednou: větev `main` na `https://<uživatel>.github.io/houbicky/`, větev `v2` na `https://<uživatel>.github.io/houbicky/beta/`. Beta má vlastní uložený postup (klíč `houbicky.beta.v1`), vlastní service worker i mezipaměť a v rohu pruh „BETA“. Postup dítěte ve stabilní verzi se tím nezmění. Všechno se odvozuje z adresy, žádný zvláštní build není potřeba.
 
 ## Spuštění na Macu
 

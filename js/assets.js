@@ -28,8 +28,14 @@ export async function loadAll() {
   hiddenDefault = new Set(Array.isArray(hid) ? hid : []);
   credits = cr && typeof cr === 'object' ? cr : {};
   manifest = Object.fromEntries((mf.photos || []).map((p) => [p.id, p]));
-  const files = ['scene-forest', 'basket', 'zone-les', 'ui-icons', ...species.map((s) => s.id)];
-  await Promise.all(files.map(async (f) => svgText.set(f, await get(`art/${f}.svg`))));
+  await Promise.all(['scene-forest', 'basket', 'zone-les', 'ui-icons'].map(async (f) => svgText.set(f, await get(`art/${f}.svg`))));
+  // A species whose character is not drawn yet (data ahead of art) is left out instead of breaking the game.
+  const missing = [];
+  await Promise.all(species.map(async (s) => { try { svgText.set(s.id, await get(`art/${s.id}.svg`)); } catch { missing.push(s.id); } }));
+  if (missing.length) {
+    console.info('Houbičky: no art yet for', missing.join(', '));
+    for (const id of missing) { byId.delete(id); species.splice(species.findIndex((s) => s.id === id), 1); }
+  }
 }
 
 const reEsc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

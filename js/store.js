@@ -1,7 +1,8 @@
 // Houbičky — persistent progress (localStorage with in-memory fallback).
 // Every access is wrapped in try/catch: private mode, quota or disabled storage never break the game.
+import { STORE_KEY } from './env.js';
 
-const KEY = 'houbicky.v1';
+const KEY = STORE_KEY;          // 'houbicky.v1' (stable) or 'houbicky.beta.v1' (beta) — never shared
 const LANGS = ['cs', 'en'];
 
 const defaults = () => ({
@@ -12,7 +13,8 @@ const defaults = () => ({
   gamesPlayed: {},      // { [gameId]: count }
   stats: {},            // { [gameId]: { rounds, correct } } — free-form per game
   mastery: {},          // { [speciesId]: { kosik: true, kdo: true } } — answered right first time
-  faces: 'mood',        // 'mood' | 'neutral' (parents' Level 2: no face hints in the games)
+  level: 1,             // difficulty 1–3 (js/levels.js)
+  unlocks: {},          // { 2: true, 3: true } — set by a parent (automatic unlocks are computed, not stored)
   rate: 'normal',       // speech speed: 'normal' | 'slow'
   photoPrefs: {},       // { [speciesId]: 'show' | 'hide' } — parents' photo review
   firstSeen: null,
@@ -36,10 +38,13 @@ function load() {
   let saved = null;
   try { saved = storage ? JSON.parse(storage.getItem(KEY) || 'null') : null; } catch { saved = null; }
   const s = { ...defaults(), ...(saved && typeof saved === 'object' ? saved : {}) };
-  for (const k of ['stickers', 'gamesPlayed', 'stats', 'mastery', 'photoPrefs']) if (!s[k] || typeof s[k] !== 'object') s[k] = {};
+  for (const k of ['stickers', 'gamesPlayed', 'stats', 'mastery', 'photoPrefs', 'unlocks']) if (!s[k] || typeof s[k] !== 'object') s[k] = {};
   if (!LANGS.includes(s.lang)) s.lang = 'cs';
   s.mute = !!s.mute;
-  if (s.faces !== 'neutral') s.faces = 'mood';
+  // v1 → v2 migration: the parents' "neutral faces" toggle becomes difficulty level 2 (unlocked by the parent)
+  if (s.faces === 'neutral' && !(saved && 'level' in saved)) { s.level = 2; s.unlocks = { ...s.unlocks, 2: true }; }
+  delete s.faces;
+  s.level = [1, 2, 3].includes(Number(s.level)) ? Number(s.level) : 1;
   if (s.rate !== 'slow') s.rate = 'normal';
   const now = new Date().toISOString();
   s.firstSeen ||= now;
@@ -113,13 +118,15 @@ export const getLang = () => state.lang;
 export const setLang = (lang) => set('lang', lang);
 export const isMuted = () => state.mute;
 export const setMuted = (m) => set('mute', !!m);
-export const isNeutralFaces = () => state.faces === 'neutral';
-export const setNeutralFaces = (on) => set('faces', on ? 'neutral' : 'mood');
+export const getLevel = () => state.level;
+export const setLevel = (n) => { if ([1, 2, 3].includes(n)) set('level', n); };
+export const getUnlocks = () => ({ ...state.unlocks });
+export function setUnlock(n, on) { state.unlocks = { ...state.unlocks, [n]: !!on }; save('unlocks'); }
 export function setPhotoPref(id, pref) { state.photoPrefs = { ...state.photoPrefs, [id]: pref }; save('photoPrefs'); }
 
 /** Parents' corner: wipe progress, keep language + mute preferences */
 export function reset({ keepSettings = true } = {}) {
-  const keep = keepSettings ? { lang: state.lang, mute: state.mute, faces: state.faces, rate: state.rate, photoPrefs: state.photoPrefs } : {};
+  const keep = keepSettings ? { lang: state.lang, mute: state.mute, rate: state.rate, photoPrefs: state.photoPrefs, unlocks: state.unlocks } : {};
   state = { ...defaults(), ...keep, firstSeen: new Date().toISOString(), lastSeen: new Date().toISOString() };
   save('*');
 }

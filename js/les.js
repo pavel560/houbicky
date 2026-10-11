@@ -2,11 +2,12 @@
 import { species, byId, shroom } from './assets.js';
 import { sceneEl, pan, setPan, glideTo, stopGlide, pxToUnits } from './scene.js';
 import { idle, bounce } from './anim.js';
-import { $, $$, h, icon, say, sleep, anim, reduced } from './ui.js';
+import { $, $$, h, icon, esc, say, sleep, anim, reduced } from './ui.js';
 import { t, getLang, toggleLang, applyI18n } from './i18n.js';
 import * as store from './store.js';
 import * as sound from './sound.js';
 import { go } from './router.js';
+import { effectiveLevel, unlockState, setLevel } from './levels.js';
 import { openCard, cardOpen } from './card.js';
 
 // DESIGN §6.1 assignment, left → right: 6 mid, then 7 near
@@ -22,7 +23,7 @@ function placeCharacters() {
   const scene = sceneEl();
   const slots = [...scene.querySelectorAll('#slots circle.slot')];
   slots.forEach((slot, i) => {
-    const id = ORDER[i]; if (!id || !byId.has(id)) return;
+    const id = slot.dataset.id || ORDER[i]; if (!id || !byId.has(id)) return;     // v2 scenes name the species per slot
     const s = parseFloat(slot.dataset.scale) || 1;
     const cx = parseFloat(slot.getAttribute('cx')); const cy = parseFloat(slot.getAttribute('cy'));
     const host = scene.querySelector(`.slots-${slot.dataset.layer}`) || scene;
@@ -112,12 +113,30 @@ function updateProgress() {
   if (pill) pill.textContent = `${n} / ${species.length}`;
   $('.progress-pill', root)?.setAttribute('aria-label', t('les.progress', { n, total: species.length }));
 }
+/** Level chip (placeholder until DESIGN-v2) + the Výprava door once unlocked. */
+function updateLevel() {
+  if (!root) return;
+  const n = effectiveLevel();
+  const chip = $('.level-chip', root);
+  if (chip) { $('.lvl-num', chip).textContent = n; $('.lvl-name', chip).textContent = t(`level.${n}`); chip.setAttribute('aria-label', `${t('level.choose')}: ${t(`level.${n}`)}`); }
+  $('.door-vyprava', root)?.toggleAttribute('hidden', !unlockState().vyprava.unlocked);
+}
+function levelPicker() {
+  if ($('.level-pop', root)) { $('.level-pop', root).remove(); return; }
+  const st = unlockState(); const cur = effectiveLevel();
+  const pop = h(`<div class="level-pop ui" role="dialog" aria-label="${esc(t('level.choose'))}">
+    ${[1, 2, 3].map((n) => `<button class="lvl-opt${n === cur ? ' on' : ''}" data-lvl="${n}" ${st[n].unlocked ? '' : 'disabled aria-disabled="true"'}>
+      <span class="lvl-num">${n}</span><span class="lvl-name">${esc(st[n].unlocked ? t(`level.${n}`) : t('level.locked'))}</span></button>`).join('')}</div>`);
+  root.querySelector('.les-ui').append(pop);
+}
+
 function updatePanButtons() {
   if (!root) return;
   $('.pan-btn.left', root)?.toggleAttribute('hidden', pan.p <= 2);
   $('.pan-btn.right', root)?.toggleAttribute('hidden', pan.p >= pan.pmax - 2);
 }
 function renderLang() {
+  updateLevel();
   const lang = getLang();
   $('.lang-btn', root).innerHTML = icon(`lang-${lang}`, 'flag');
   $('.lang-btn', root).setAttribute('aria-label', t('les.lang'));
@@ -168,6 +187,7 @@ export function mount(el) {
     </nav>
     <div class="top-right ui">
       <div class="progress-pill pill" role="status">${icon('star', 'star-ic')}<b></b></div>
+      <button class="btn level-chip" data-act="level" aria-haspopup="true"><span class="lvl-num"></span><span class="lvl-name"></span></button>
       <button class="btn round r56 paper parents-btn" data-i18n-attr="aria-label:les.parentsHold">${icon('parents')}
         <svg class="hold-ring" viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="24" pathLength="151"/></svg></button>
     </div>
@@ -179,7 +199,8 @@ export function mount(el) {
   updatePanButtons();
   el.addEventListener('click', onClick);
   wireHold($('.parents-btn', el));
-  offStore = store.subscribe(updateProgress);
+  updateLevel();
+  offStore = store.subscribe(() => { updateProgress(); updateLevel(); });
   const scene = sceneEl();
   const onPan = () => { lesPan = pan.p; updatePanButtons(); };
   scene.addEventListener('pan', onPan);
@@ -190,6 +211,12 @@ export function mount(el) {
 function onClick(e) {
   const b = e.target.closest('button'); if (!b) return;
   if (b.dataset.door) { sound.play('pop'); go(b.dataset.door); return; }
+  if (b.dataset.act === 'level') { sound.play('pop'); levelPicker(); return; }
+  if (b.dataset.lvl) {
+    const n = Number(b.dataset.lvl);
+    if (setLevel(n)) { sound.play('success'); say(`ui.level.${n}`); }
+    $('.level-pop', root)?.remove(); updateLevel(); return;
+  }
   if (b.dataset.act === 'lang') {
     toggleLang(); sound.play('pop'); renderLang();
     say('ui.langName');

@@ -15,17 +15,23 @@ const SRC = path.join(HERE, '..');
 // ---- temp site under /houbicky/ with fake photos + silent voice recordings for EVERY phrase
 const TMP = fs.mkdtempSync(path.join(os.tmpdir(), 'houbicky-e2e-'));
 const SITE = path.join(TMP, 'houbicky');
-fs.cpSync(SRC, SITE, { recursive: true, filter: (f) => !/[\\/](dev[\\/]screens|__pycache__|\.git)([\\/]|$)/.test(f) });
+const BETA = path.join(SITE, 'beta');           // like GitHub Pages: v2 deployed under /houbicky/beta/
+const siteFilter = (f) => !/[\\/](dev[\\/]screens|__pycache__|\.git)([\\/]|$)/.test(f);
+// E2E_STABLE_SRC: serve another checkout (e.g. main + isolation patch) at the root, this one at /beta/
+fs.cpSync(process.env.E2E_STABLE_SRC || SRC, SITE, { recursive: true, filter: siteFilter });
+fs.cpSync(SRC, BETA, { recursive: true, filter: siteFilter });
 const { buildCatalogue } = await import(new URL('../js/phrases.js', import.meta.url).href);
 const CATALOGUE = buildCatalogue(JSON.parse(fs.readFileSync(path.join(SRC, 'data', 'species.json'), 'utf8')).species);
 const frame = Buffer.alloc(417); frame.set([0xFF, 0xFB, 0x90, 0x64]);       // MPEG-1 L3 128 kb/s 44.1 kHz, silent
 const SILENT_MP3 = Buffer.concat(Array(12).fill(frame));
-const vindex = {};
-for (const [lang, m] of Object.entries(CATALOGUE)) {
-  fs.mkdirSync(path.join(SITE, 'voice', lang), { recursive: true }); vindex[lang] = {};
-  for (const [id, text] of Object.entries(m)) { fs.writeFileSync(path.join(SITE, 'voice', lang, `${id}.mp3`), SILENT_MP3); vindex[lang][id] = { text, file: `${lang}/${id}.mp3`, sha1: 'test', bytes: SILENT_MP3.length }; }
+for (const dir of [SITE, BETA]) {
+  const vindex = {};
+  for (const [lang, m] of Object.entries(CATALOGUE)) {
+    fs.mkdirSync(path.join(dir, 'voice', lang), { recursive: true }); vindex[lang] = {};
+    for (const [id, text] of Object.entries(m)) { fs.writeFileSync(path.join(dir, 'voice', lang, `${id}.mp3`), SILENT_MP3); vindex[lang][id] = { text, file: `${lang}/${id}.mp3`, sha1: 'test', bytes: SILENT_MP3.length }; }
+  }
+  fs.writeFileSync(path.join(dir, 'voice', 'index.json'), JSON.stringify(vindex));
 }
-fs.writeFileSync(path.join(SITE, 'voice', 'index.json'), JSON.stringify(vindex));
 const PORT = 8650 + Math.floor(Math.random() * 40);
 const server = spawn('python3', [path.join(SRC, 'serve.py'), '--dir', TMP, '--port', String(PORT), '--host', '127.0.0.1', '--quiet'], { stdio: 'ignore' });
 process.on('exit', () => { server.kill(); fs.rmSync(TMP, { recursive: true, force: true }); });
@@ -34,6 +40,9 @@ for (let i = 0; i < 50; i++) { try { if ((await fetch(BASE + '/index.html')).ok)
 const species = JSON.parse(fs.readFileSync(path.join(HERE, '..', 'data', 'species.json'), 'utf8')).species;
 const browser = await chromium.launch({ executablePath: process.env.CHROME || undefined });
 const results = []; const allErrors = [];
+process.on('exit', (code) => { if (code) console.log(results.join('\n')); });
+const ONLY = (process.env.E2E_ONLY || '').split(',').filter(Boolean);
+const want = (id) => !ONLY.length || ONLY.includes(id);
 const check = (name, ok, extra = '') => { results.push(`${ok ? 'PASS' : 'FAIL'}  ${name}${extra && !ok ? '  — ' + extra : ''}`); };
 
 // fake "photo" (the character on a green field) — only ever served through page.route
@@ -44,8 +53,10 @@ const FAKE_JPG = await mk.screenshot({ type: 'jpeg', quality: 80 });
 await mk.close();
 // real files in the temp site (used by the offline/SW test; other sessions override credits via page.route)
 const credit = (via) => ({ author: 'Test Author', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePage: 'https://commons.wikimedia.org/wiki/File:Test.jpg', via });
-for (const id of ['hrib-smrkovy', 'kozak', 'bedla', 'liska']) fs.writeFileSync(path.join(SITE, 'photos', `${id}.jpg`), FAKE_JPG);
-fs.writeFileSync(path.join(SITE, 'photos', 'credits.json'), JSON.stringify({ 'hrib-smrkovy': credit('commonsFile'), kozak: credit('alt'), bedla: credit('commonsFile'), liska: credit('wikipedia') }));
+for (const dir of [SITE, BETA]) {
+  for (const id of ['hrib-smrkovy', 'kozak', 'bedla', 'liska']) fs.writeFileSync(path.join(dir, 'photos', `${id}.jpg`), FAKE_JPG);
+  fs.writeFileSync(path.join(dir, 'photos', 'credits.json'), JSON.stringify({ 'hrib-smrkovy': credit('commonsFile'), kozak: credit('alt'), bedla: credit('commonsFile'), liska: credit('wikipedia') }));
+}
 
 const FAKE_SPEECH = () => {
   const V = [{ name: 'Zuzana (Enhanced)', lang: 'cs-CZ', voiceURI: 'com.apple.voice.enhanced.cs-CZ.Zuzana', localService: true },
@@ -61,8 +72,8 @@ const FAKE_SPEECH = () => {
   window.SpeechSynthesisUtterance = class { constructor(t) { this.text = t; } };
 };
 
-async function session(vp, tag) {
-  const ctx = await browser.newContext({ viewport: vp, serviceWorkers: 'block' });
+async function session(vp, tag, br = browser) {
+  const ctx = await br.newContext({ viewport: vp, serviceWorkers: 'block' });
   await ctx.addInitScript(FAKE_SPEECH);
   const cr = (via) => ({ author: 'Test Author', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePage: 'https://commons.wikimedia.org/wiki/File:Test.jpg', via });
   // hřib = researcher's Commons pick (shown), kozák = Commons alt (shown), liška = Wikipedia fallback (hidden until a parent approves)
@@ -84,8 +95,14 @@ async function start(s) {
 }
 async function tapChar(s, id) {
   const b = await s.page.locator(`[data-char="${id}"]`).boundingBox();
-  await s.page.mouse.click(b.x + b.width / 2, b.y + b.height * 0.65);
-  await s.page.waitForSelector('.card'); await s.settle(1000);
+  const x = b.x + b.width / 2; const y = b.y + b.height * 0.65;
+  await s.page.mouse.click(x, y);
+  try { await s.page.waitForSelector('.card', { timeout: 8000 }); } catch (e) {
+    await s.shot(`DEBUG-tap-${id}`);
+    console.log('TAP DEBUG', id, JSON.stringify(b), await s.page.evaluate(([px, py]) => { const el = document.elementFromPoint(px, py); return { hit: el ? `${el.tagName}.${el.className?.baseVal ?? el.className}` : null, screen: document.documentElement.dataset.screen, vt: document.documentElement.hasAttribute('data-vt'), cards: document.querySelectorAll('.card-layer').length }; }, [x, y]), s.errors);
+    throw e;
+  }
+  await s.settle(1000);
 }
 async function closeCard(s) { await s.page.click('.card-actions [data-act="close"]'); await s.page.waitForSelector('.card-layer', { state: 'detached' }); await s.settle(1100); }
 async function drag(s, fromSel, toSel, release = true) {
@@ -108,7 +125,7 @@ async function holdParents(s, ms = 3400) {
   try { await s.page.waitForSelector('.parents-screen', { timeout: 4000 }); return true; } catch {
     await s.shot('DEBUG-hold');
     console.log('HOLD DEBUG', JSON.stringify(await s.page.evaluate(([x, y]) => ({ ev: window.__ev, screen: document.documentElement.dataset.screen,
-      hit: (() => { const e = document.elementFromPoint(x, y); return e.tagName + '.' + (e.className?.baseVal ?? e.className); })() }), [pb.x + pb.width / 2, pb.y + pb.height / 2])));
+      hit: (() => { const e = document.elementFromPoint(x, y); return e.tagName + '.' + (e.className?.baseVal ?? e.className); })() }), [pb.x + pb.width / 2, pb.y + pb.height / 2])), s.errors);
     return false;
   }
 }
@@ -158,7 +175,7 @@ async function playKdo(s, lang) {
 }
 
 // ======================================================================= 1. full e2e at 1024×768, Czech then English
-{
+if (want('1')) {
   const s = await session({ width: 1024, height: 768 }, '1024x768');
   const { page } = s;
   await start(s); await s.shot('les');
@@ -194,7 +211,7 @@ async function playKdo(s, lang) {
   const fs1 = await flipState();
   check('flip (thumbnail tap): photo <img> is topmost at the card centre, front visibility:hidden', fs1.flipped && fs1.img && fs1.top === 'IMG.photo' && fs1.front === 'hidden' && fs1.back === 'visible', JSON.stringify(fs1));
   check('flip: credit shown', (await page.textContent('.card-back .credit')).includes('Test Author'));
-  check('flip: spoken „Skutečná fotka“ + name', (await s.spoken()).pop() === 'Skutečná fotka Hřib smrkový.');
+  check('flip: spoken „Skutečná fotka“ + name', (await s.spoken()).pop() === 'Skutečná fotka Hřib smrkový.', JSON.stringify((await s.spoken()).slice(-3)));
   await s.shot('card-photo');
   await page.click('.card-actions [data-act="flip"]'); await page.click('.card-actions [data-act="flip"]', { delay: 0 }); await s.settle(1300);
   const fs2 = await flipState();
@@ -243,16 +260,26 @@ async function playKdo(s, lang) {
   check('parents gate: short press does not open', !(await page.locator('.parents-screen').count()));
   await page.mouse.down(); await page.waitForTimeout(3400); await page.mouse.up();
   await page.waitForSelector('.parents-screen'); await s.settle(700); await s.shot('parents');
-  check('parents: neutral faces OFF by default', (await page.getAttribute('.switch[data-act="faces"]', 'aria-checked')) === 'false');
-  await page.click('.switch[data-act="faces"]'); await s.settle(300);
-  check('parents: neutral faces persisted', await page.evaluate(() => JSON.parse(localStorage.getItem('houbicky.v1')).faces === 'neutral'));
+  // known state: 2 stickers (< 8), so level 2 is still locked and the parent unlocks it by hand
+  await page.evaluate(() => window.__houbicky.store.update((d) => { d.stickers = { 'hrib-smrkovy': '2026-10-11', liska: '2026-10-11' }; }));
+  await page.click('[data-act="home"]'); await page.waitForSelector('.doors'); await s.settle(600);
+  await page.waitForFunction(() => !document.documentElement.hasAttribute('data-vt'));
+  { const p2 = await page.locator('.parents-btn').boundingBox(); await page.mouse.move(p2.x + p2.width / 2, p2.y + p2.height / 2); await page.mouse.down(); await page.waitForTimeout(3400); await page.mouse.up(); }
+  await page.waitForSelector('.parents-screen'); await s.settle(600);
+  check('levels: level 1 by default, level 2/3 locked', (await page.getAttribute('.level-seg [data-v="1"]', 'aria-pressed')) === 'true'
+    && await page.isDisabled('.level-seg [data-v="2"]') && await page.isDisabled('.level-seg [data-v="3"]'));
+  await page.click('.switch[data-act="unlock-2"]'); await s.settle(300);
+  await page.click('.level-seg [data-v="2"]'); await s.settle(400);
+  const st2 = await page.evaluate(() => JSON.parse(localStorage.getItem('houbicky.v1')));
+  check('levels: parent unlocks + chooses level 2 (persisted)', st2.level === 2 && st2.unlocks['2'] === true && (await s.spoken()).pop() === 'Houbař', JSON.stringify({ level: st2.level, unlocks: st2.unlocks }));
+  await page.locator('.level-row').scrollIntoViewIfNeeded(); await s.shot('parents-levels');
   await page.click('[data-act="home"]'); await page.waitForSelector('.doors'); await s.settle(600);
   await page.click('[data-door="kdo"]'); await page.waitForSelector('.cand'); await s.settle(1000); await s.shot('kdo-neutral');
   const neutral = await page.evaluate(() => ({ attr: document.querySelector('.game.kdo').dataset.faces, mn: getComputedStyle(document.querySelector('.cand .mouth-neutral')).visibility, m: getComputedStyle(document.querySelector('.cand .mouth')).display }));
-  check('neutral faces applied in games', neutral.attr === 'neutral' && neutral.mn === 'visible' && neutral.m === 'none', JSON.stringify(neutral));
+  check('level 2: neutral faces applied in games', neutral.attr === 'neutral' && neutral.mn === 'visible' && neutral.m === 'none', JSON.stringify(neutral));
   await page.reload(); await page.waitForSelector('.start-layer .play'); await page.click('.start-layer .play'); await page.waitForSelector('.doors'); await s.settle(800);
   check('progress persists across reload (stickers)', await page.evaluate(() => Object.keys(JSON.parse(localStorage.getItem('houbicky.v1')).stickers).length >= 2));
-  await page.evaluate(() => { window.__houbicky.store.setNeutralFaces(false); });
+  await page.evaluate(() => { window.__houbicky.store.setLevel(1); });
   // ---------- English
   await page.click('.lang-btn'); await s.settle(500);
   check('EN: door labels switch', (await page.textContent('[data-door="kosik"] .door-label')) === 'Basket');
@@ -283,7 +310,7 @@ async function playKdo(s, lang) {
 }
 
 // ======================================================================= 2. screenshot tour at the other sizes
-for (const vp of [{ width: 1180, height: 820 }, { width: 1440, height: 900 }, { width: 820, height: 1180 }]) {
+if (want('2')) for (const vp of [{ width: 1180, height: 820 }, { width: 1440, height: 900 }, { width: 820, height: 1180 }]) {
   const tag = `${vp.width}x${vp.height}`; const portrait = vp.height > vp.width;
   const s = await session(vp, tag); const { page } = s;
   await start(s); await s.shot('les');
@@ -311,10 +338,11 @@ for (const vp of [{ width: 1180, height: 820 }, { width: 1440, height: 900 }, { 
 }
 
 // ======================================================================= R. regression checks for the evaluator's findings
-{
+if (want('R')) {
   const s = await session({ width: 1024, height: 768 }, '1024x768'); const { page } = s;
   await start(s);
   check('#8 no pinch-zoom: body touch-action pan-x pan-y', (await page.evaluate(() => getComputedStyle(document.body).touchAction)) === 'pan-x pan-y');
+  await page.waitForFunction(() => window.__files.some((f) => f.ok === true), null, { timeout: 8000 }).catch(() => {});
   const played = await page.evaluate(() => window.__files.filter((f) => f.ok === true).map((f) => f.id));
   check('voice: greeting played from the recording (voice/cs/ui.say.greeting.mp3), not Web Speech', played.includes('ui.say.greeting') && !(await page.evaluate(() => window.__tts.some((x) => x.startsWith('Ahoj')))), JSON.stringify(played));
   const fb = await page.evaluate(async () => {
@@ -395,8 +423,130 @@ for (const vp of [{ width: 1180, height: 820 }, { width: 1440, height: 900 }, { 
   await s.ctx.close();
 }
 
+// ======================================================================= L. difficulty levels (v2)
+if (want('L')) {
+  const s = await session({ width: 1024, height: 768 }, '1024x768'); const { page } = s;
+  // v1 → v2 migration: the old "neutral faces" toggle becomes level 2 (unlocked)
+  await page.goto(BASE + '/index.html'); await page.waitForSelector('.start-layer .play');
+  await page.evaluate(() => localStorage.setItem('houbicky.v1', JSON.stringify({ version: 1, lang: 'cs', faces: 'neutral', stickers: { liska: '2026-10-01' } })));
+  await start(s);
+  const mig = await page.evaluate(() => window.__houbicky.store.get());
+  check('migration: v1 neutral faces → level 2 unlocked, stickers kept, old field dropped', mig.level === 2 && mig.unlocks['2'] === true && mig.stickers.liska && !('faces' in mig), JSON.stringify({ level: mig.level, unlocks: mig.unlocks, faces: mig.faces }));
+  const strat = await page.evaluate(async () => {
+    const L = await import('./js/levels.js'); const A = await import('./js/assets.js');
+    const hrib = A.byId.get('hrib-smrkovy'); const out = { l1groups: true, l2twin: true, pairs: 0, filter: null };
+    for (let i = 0; i < 30; i++) {
+      const d1 = L.quizDistractors(hrib, 1); if (new Set([hrib.group, ...d1.map((x) => x.group)]).size !== 3) out.l1groups = false;
+      const d2 = L.quizDistractors(hrib, 2); if (!d2.some((x) => x.id === 'zlucnik')) out.l2twin = false;
+      const r = L.basketRound(2, 6); if (r.some((a) => a.group === 'jedla' && r.some((b) => L.twinIds(a.id).includes(b.id) && b.group !== 'jedla'))) out.pairs++;
+    }
+    // data-driven filter: a level-2 species is not in level 1; a species WITHOUT the field counts as level 1
+    const k = A.byId.get('kremenac'); const keep = k.level;
+    k.level = 2; out.filter = { l1: L.speciesFor(1).includes(k), l2: L.speciesFor(2).includes(k) };
+    delete k.level; out.filter.missing = L.speciesFor(1).includes(k);
+    k.level = keep;
+    out.fig = { photo: L.figure('hrib-smrkovy', 3).classList.contains('photo-figure'), wiki: L.figure('liska', 3).classList.contains('photo-figure'),
+      noPhoto: L.figure('kremenac', 3).classList.contains('photo-figure'), l2: L.figure('hrib-smrkovy', 2).classList.contains('photo-figure') };
+    return out;
+  });
+  check('level 1 quiz: the 3 choices come from 3 different groups (30×)', strat.l1groups);
+  check('level 2 quiz: the look-alike (hřib → žlučník) is always a choice (30×)', strat.l2twin);
+  check('level 2 basket: rounds contain an edible + look-alike pair', strat.pairs >= 25, String(strat.pairs));
+  check('species.level filters the pool (missing = level 1)', strat.filter.l1 === false && strat.filter.l2 === true && strat.filter.missing === true, JSON.stringify(strat.filter));
+  check('level 3 figures: approved photo → photo print; Wikipedia fallback / no photo / level 2 → drawing', strat.fig.photo && !strat.fig.wiki && !strat.fig.noPhoto && !strat.fig.l2, JSON.stringify(strat.fig));
+  // automatic unlocks: 8 stickers open level 2 and the Výprava door
+  await page.evaluate(() => { const st = window.__houbicky.store; st.reset({ keepSettings: false }); });
+  await page.evaluate(() => window.__houbicky.go('les')); await page.waitForSelector('.doors'); await s.settle(600);
+  const before = { vyprava: await page.evaluate(async () => (await import('./js/levels.js')).unlockState().vyprava.unlocked) };
+  await page.evaluate(() => ['hrib-smrkovy', 'liska', 'bedla', 'kozak', 'kremenac', 'suchohrib', 'pychavka', 'zlucnik'].forEach((id) => window.__houbicky.store.addSticker(id)));
+  await s.settle(300);
+  const after = { vyprava: await page.evaluate(async () => (await import('./js/levels.js')).unlockState().vyprava.unlocked) };
+  await page.click('.level-chip'); await s.settle(300); await s.shot('les-level-picker');
+  const pick = { l2: await page.isEnabled('.lvl-opt[data-lvl="2"]'), l3: await page.isEnabled('.lvl-opt[data-lvl="3"]') };
+  check('8 stickers unlock level 2 + Výprava (level 3 stays locked)', !before.vyprava && after.vyprava && pick.l2 && !pick.l3, JSON.stringify({ before, after, pick }));
+  await page.click('.lvl-opt[data-lvl="2"]'); await s.settle(300);
+  check('child level picker: choosing level 2 updates the chip', (await page.textContent('.level-chip .lvl-num')) === '2' && !(await page.locator('.level-pop').count()));
+  // level 3: photos + the group question in the quiz
+  await page.evaluate(() => { const st = window.__houbicky.store; st.setUnlock(3, true); st.setLevel(3); });
+  await page.evaluate(() => window.__houbicky.go('kdo')); await page.waitForSelector('.cand'); await s.settle(1200);
+  const lvl3 = await page.getAttribute('.game.kdo', 'data-level');
+  const names = Object.fromEntries(species.map((sp) => [sp.id, sp.name.cs.toLocaleLowerCase('cs')]));
+  const prompt = (await s.spoken()).filter((x) => /^Kde je/.test(x)).pop().toLocaleLowerCase('cs');
+  const cands = await page.$$eval('.cand', (els) => els.map((e) => e.dataset.id));
+  const tgt = cands.find((id) => prompt.includes(names[id]));
+  await page.click(`.cand[data-id="${tgt}"]`);
+  await page.waitForSelector('.group-ask', { timeout: 8000 }); await s.settle(400); await s.shot('kdo-level3-group');
+  const tsp = species.find((x) => x.id === tgt);
+  const wrongG = ['jedla', 'nejedla', 'jedovata'].find((g) => g !== tsp.group);
+  await page.click(`.group-btn[data-g="${wrongG}"]`); await s.settle(400);
+  const triedAgain = (await s.spoken()).pop() === 'Zkus to znovu.';
+  await page.click(`.group-btn[data-g="${tsp.group}"]`);
+  await page.waitForSelector('.group-ask', { state: 'detached', timeout: 8000 });
+  const saidGroup = (await s.spoken()).includes(CATALOGUE.cs[`sp.${tgt}.group`]);
+  await page.waitForFunction((n) => window.__spoken.filter((x) => /^Kde je/.test(x)).length >= n, 2, { timeout: 8000 });
+  check('level 3 quiz: after the name comes „Je jedlá, nejedlá, nebo jedovatá?“; a miss = „Zkus to znovu“, the right group is spoken, next round follows',
+    lvl3 === '3' && triedAgain && saidGroup, JSON.stringify({ lvl3, triedAgain, saidGroup }));
+  await page.evaluate(() => window.__houbicky.go('kosik')); await page.waitForSelector('.piece.active'); await s.settle(1200);
+  check('level 3 basket: game screen carries data-level=3', (await page.getAttribute('.game.kosik', 'data-level')) === '3');
+  await s.shot('kosik-level3');
+  check('L run: zero console errors / 4xx', s.errors.length === 0, s.errors.join(' | '));
+  allErrors.push(...s.errors);
+  await s.ctx.close();
+}
+
+// ======================================================================= B. beta copy isolation (/houbicky/ vs /houbicky/beta/, one origin)
+if (want('B')) {
+  const ctx = await browser.newContext({ viewport: { width: 1024, height: 768 } });
+  await ctx.addInitScript(FAKE_SPEECH);
+  const errors = []; const watch = (p) => { p.on('console', (m) => { if (['error', 'warning'].includes(m.type())) errors.push(`${p.url()} ${m.text()}`); }); p.on('pageerror', (e) => errors.push(e.message)); };
+  const root = await ctx.newPage(); watch(root);
+  await root.goto(BASE + '/'); await root.click('.start-layer .play'); await root.waitForSelector('.doors');
+  await root.evaluate(() => window.__houbicky.store.addSticker('liska'));
+  const beta = await ctx.newPage(); watch(beta);
+  await beta.goto(BASE + '/beta/'); await beta.click('.start-layer .play'); await beta.waitForSelector('.doors'); await beta.waitForTimeout(600);
+  await beta.screenshot({ path: path.join(OUT, '1024x768-beta-les.png') });
+  const b1 = await beta.evaluate(() => ({ ribbon: !!document.querySelector('.beta-ribbon'), title: document.title, stickers: window.__houbicky.store.stickerCount() }));
+  check('beta: BETA ribbon + title, starts with an empty album (does not read stable progress)', b1.ribbon && /beta$/.test(b1.title) && b1.stickers === 0, JSON.stringify(b1));
+  check('stable: no BETA ribbon', !(await root.evaluate(() => !!document.querySelector('.beta-ribbon'))));
+  await beta.evaluate(() => { window.__houbicky.store.addSticker('bedla'); window.__houbicky.store.addSticker('kozak'); });
+  await root.reload(); await root.click('.start-layer .play'); await root.waitForSelector('.doors');
+  const keys = await root.evaluate(() => ({ stable: Object.keys(JSON.parse(localStorage.getItem('houbicky.v1')).stickers), beta: Object.keys(JSON.parse(localStorage.getItem('houbicky.beta.v1')).stickers), inApp: window.__houbicky.store.stickerCount() }));
+  check('progress never mixes: stable key = [liska], beta key = [bedla, kozak], stable app shows 1', JSON.stringify(keys.stable) === '["liska"]' && JSON.stringify(keys.beta.sort()) === '["bedla","kozak"]' && keys.inApp === 1, JSON.stringify(keys));
+  // service workers: two registrations, two cache namespaces, the stable worker never touches /beta/
+  await root.evaluate(() => navigator.serviceWorker.ready); await beta.evaluate(() => navigator.serviceWorker.ready);
+  for (const p of [root, beta]) {
+    await p.evaluate(() => window.__houbicky.go('parents')); await p.waitForSelector('.offline-ready');
+    await p.waitForFunction(() => document.querySelector('.offline-ready')?.textContent.includes('100 %'), null, { timeout: 120000 }).catch(() => {});
+  }
+  const sw = await beta.evaluate(async () => {
+    const regs = (await navigator.serviceWorker.getRegistrations()).map((r) => new URL(r.scope).pathname).sort();
+    const names = (await caches.keys()).sort(); const out = { regs, names, controller: new URL(navigator.serviceWorker.controller?.scriptURL || 'http://x/none').pathname };
+    for (const n of names) { const ks = (await (await caches.open(n)).keys()).map((r) => new URL(r.url).pathname); out[n] = { n: ks.length, beta: ks.filter((k) => k.includes('/beta/')).length }; }
+    return out;
+  });
+  const stableC = sw['houbicky-v6']; const betaC = sw['houbicky-beta-v6'];
+  check('two SW registrations (/houbicky/ + /houbicky/beta/); the beta page is controlled by beta/sw.js', JSON.stringify(sw.regs) === '["/houbicky/","/houbicky/beta/"]' && sw.controller === '/houbicky/beta/sw.js', JSON.stringify({ regs: sw.regs, c: sw.controller }));
+  check('separate caches: stable cache has no /beta/ entries, beta cache only /beta/ entries', stableC && betaC && stableC.beta === 0 && betaC.beta === betaC.n && betaC.n > 50, JSON.stringify({ names: sw.names, stableC, betaC }));
+  await ctx.setOffline(true);
+  await beta.goto(BASE + '/beta/'); await beta.click('.start-layer .play'); await beta.waitForSelector('[data-char="liska"]');
+  await root.goto(BASE + '/'); await root.click('.start-layer .play'); await root.waitForSelector('[data-char="liska"]');
+  const off = { beta: await beta.evaluate(() => !!document.querySelector('.beta-ribbon')), stable: await root.evaluate(() => !!document.querySelector('.beta-ribbon')) };
+  check('offline: each copy boots from its own cache (beta with ribbon, stable without)', off.beta && !off.stable, JSON.stringify(off));
+  await ctx.setOffline(false);
+  await beta.goto(BASE + '/beta/?nosw');
+  await beta.waitForFunction(() => window.__houbicky?.sw?.reason === 'disabled-by-nosw', null, { timeout: 20000 });   // runs after the app booted
+  const after = {}; void await root.evaluate(async () => ({ names: (await caches.keys()).sort(), regs: (await navigator.serviceWorker.getRegistrations()).map((r) => new URL(r.scope).pathname).sort() }));
+  await beta.goto('about:blank');               // an unregistered worker goes away once its last page is gone
+  for (let i = 0; i < 30 && (await root.evaluate(async () => (await navigator.serviceWorker.getRegistrations()).length)) > 1; i++) await root.waitForTimeout(300);
+  Object.assign(after, await root.evaluate(async () => ({ names: (await caches.keys()).sort(), regs: (await navigator.serviceWorker.getRegistrations()).map((r) => new URL(r.scope).pathname).sort() })));
+  check('beta ?nosw removes only the beta worker + caches; stable stays installed', after.names.includes('houbicky-v6') && !after.names.some((n) => n.startsWith('houbicky-beta-')) && JSON.stringify(after.regs) === '["/houbicky/"]', JSON.stringify(after));
+  check('B run: zero console errors', errors.length === 0, errors.join(' | '));
+  await ctx.close();
+}
+
+
 // ======================================================================= 3. reduced motion + offline in the car (service worker active)
-{
+if (want('3')) {
   const ctx = await browser.newContext({ viewport: { width: 1024, height: 768 }, reducedMotion: 'reduce' });
   await ctx.addInitScript(FAKE_SPEECH);
   const page = await ctx.newPage(); const errors = []; const failed = []; const aborted = [];
@@ -417,13 +567,13 @@ for (const vp of [{ width: 1180, height: 820 }, { width: 1440, height: 900 }, { 
   const cache = await page.evaluate(async () => { const k = await caches.keys(); const c = await caches.open(k.find((x) => x.startsWith('houbicky-'))); const keys = (await c.keys()).map((r) => new URL(r.url).pathname);
     return { k, n: keys.length, mp3: keys.filter((x) => x.endsWith('.mp3')).length, jpg: keys.filter((x) => x.endsWith('.jpg')).length, scoped: keys.every((x) => x.startsWith('/houbicky/')) }; });
   const nVoices = Object.values(CATALOGUE).reduce((a, m) => a + Object.keys(m).length, 0);
-  check(`offline: SW (v5) precached shell + ${nVoices} voice files + 4 photos, all under /houbicky/`, cache.k.includes('houbicky-v5') && cache.mp3 === nVoices && cache.jpg === 4 && cache.scoped, JSON.stringify(cache));
+  check(`offline: SW (v6) precached shell + ${nVoices} voice files + 4 photos, all under /houbicky/`, cache.k.includes('houbicky-v6') && cache.mp3 === nVoices && cache.jpg === 4 && cache.scoped, JSON.stringify(cache));
   // ---- go offline (the car), reload and play everything
   failed.length = 0;
   await ctx.setOffline(true);
   await page.reload(); await page.waitForSelector('.start-layer .play', { timeout: 10000 });
   await page.click('.start-layer .play'); await page.waitForSelector('[data-char="liska"]');
-  check('offline: game boots with all 13 characters', (await page.locator('[data-char]').count()) === 13);
+  check(`offline: game boots with all ${species.length} characters`, (await page.locator('[data-char]').count()) === species.length, String(await page.locator('[data-char]').count()));
   for (const id of ['hrib-smrkovy', 'kozak', 'bedla']) {
     await page.evaluate(() => { window.__files.length = 0; });
     await page.evaluate((x) => window.__houbicky.openCard(x), id); await page.waitForSelector('.card .sp-name'); await page.waitForTimeout(900);

@@ -1,7 +1,8 @@
 // Houbičky — „Do košíku!“: sort 6 mushrooms — edible into the basket, the rest stays in the forest.
 // Drag with Pointer Events, or tap the mushroom and then tap a place. Nobody loses: every mushroom ends up right.
 // Every async step is bound to its round session `s`: leaving mid-animation (or starting a new round) stops it.
-import { species, byId, shroom, svgEl } from './assets.js';
+import { byId, svgEl } from './assets.js';
+import { effectiveLevel, facesFor, basketRound, figure } from './levels.js';
 import { glideTo } from './scene.js';
 import { warnPulse, nod, idle, stopIdle } from './anim.js';
 import { $, $$, h, icon, esc, say, name, anim, reduced, ms, shuffle, isEdible, starsHtml } from './ui.js';
@@ -16,24 +17,13 @@ const BASKET_X = [150, 250, 112, 288, 200, 178]; const ZONE_X = [262, 322, 214, 
 let S = null;   // current round session
 const live = (s) => s && S === s;
 
-export function pickRound(level2 = false) {
-  const edible = shuffle(species.filter(isEdible));
-  const other = shuffle(species.filter((s) => !isEdible(s)));
-  const nOther = level2 ? 3 : 2 + Math.round(Math.random());
-  const maxDeadly = level2 ? 2 : 1;
-  const chosen = []; let deadly = 0;
-  for (const s of other) {
-    if (chosen.length >= nOther) break;
-    if (s.deadly) { if (deadly >= maxDeadly) continue; deadly++; }
-    chosen.push(s);
-  }
-  return shuffle([...chosen, ...edible.slice(0, ROUND - chosen.length)]);
-}
+/** Kept for compatibility: a round per level (js/levels.js). */
+export const pickRound = (n = effectiveLevel()) => basketRound(n, ROUND);
 
 export function mount(root) {
-  const level2 = store.isNeutralFaces();
+  const lvl = effectiveLevel();
   glideTo(560, reduced() ? 1 : 500);
-  root.append(h(`<div class="game kosik" data-faces="${level2 ? 'neutral' : 'mood'}">
+  root.append(h(`<div class="game kosik" data-level="${lvl}" data-faces="${facesFor(lvl)}">
     <div class="topbar ui">
       <button class="btn round r64 paper" data-act="home" aria-label="${esc(t('nav.home'))}">${icon('home')}</button>
       <h1 class="title-pill pill">${esc(t('game.kosik.title'))}</h1>
@@ -51,7 +41,7 @@ export function mount(root) {
   const basket = svgEl('basket'); basket.removeAttribute('role'); $('.basket .target-art', g).append(basket);
   const zone = svgEl('zone-les'); zone.removeAttribute('role'); $('.zone .target-art', g).append(zone);
   basket.querySelector('title')?.remove(); zone.querySelector('title')?.remove();
-  const s = { g, level2, queue: pickRound(level2), active: null, stars: 0, misses: {}, firstTry: 0, busy: false, done: false, placedB: 0, placedZ: 0, basket, zone };
+  const s = { g, lvl, queue: basketRound(lvl, ROUND), active: null, stars: 0, misses: {}, firstTry: 0, busy: false, done: false, placedB: 0, placedZ: 0, basket, zone };
   S = s;
   s.pieces = s.queue.map((sp) => makePiece(s, sp));
   renderStars(s);
@@ -69,7 +59,7 @@ export function unmount() {
 
 function makePiece(s, sp) {
   const el = h(`<div class="piece" data-id="${sp.id}" data-group="${sp.group}" role="button" tabindex="-1" aria-label="${esc(name(sp))}"></div>`);
-  const svg = shroom(sp.id, { ground: false });
+  const svg = figure(sp.id, s.lvl);
   el.append(svg);
   $('.pieces', s.g).append(el);
   idle(svg);
@@ -264,9 +254,9 @@ async function flyTo(el, foot, itemH) {
   ], { duration: Math.max(1, ms('--t-drop', 550)), easing: 'cubic-bezier(.55,0,1,.45)', fill: 'forwards' });
 }
 
-function nestInto(parent, id, footX, footY, itemUnitsH) {
+function nestInto(parent, id, footX, footY, itemUnitsH, lvl) {
   const g = document.createElementNS(NS, 'g'); g.setAttribute('class', 'dropped');
-  const inner = shroom(id, { ground: false });
+  const inner = figure(id, lvl);
   const w = itemUnitsH * 240 / 280;
   inner.setAttribute('x', (footX - w / 2).toFixed(1)); inner.setAttribute('y', (footY - itemUnitsH * 262 / 280).toFixed(1));
   inner.setAttribute('width', w.toFixed(1)); inner.setAttribute('height', itemUnitsH.toFixed(1));
@@ -284,7 +274,7 @@ async function dropInBasket(s, el, sp) {
   if (!live(s)) return false;
   el.remove();
   const items = s.basket.querySelector('[id^="basket-items"]') || s.basket;
-  const { g, inner } = nestInto(items, sp.id, bx, 182, itemUnits);
+  const { g, inner } = nestInto(items, sp.id, bx, 182, itemUnits, s.lvl);
   sound.play('pop');
   await anim(g, [{ transform: 'translateY(-70px)' }, { transform: 'translateY(0)' }], { duration: reduced() ? 1 : 260, easing: 'cubic-bezier(.55,0,1,.45)' });
   if (!live(s)) return false;
@@ -300,7 +290,7 @@ async function placeInZone(s, el, sp) {
   await flyTo(el, [foot[0], foot[1]], itemUnits * k);
   if (!live(s)) return false;
   el.remove();
-  const { inner } = nestInto(s.zone, sp.id, zx, 235, itemUnits);
+  const { inner } = nestInto(s.zone, sp.id, zx, 235, itemUnits, s.lvl);
   sound.play('pop');
   nod(inner);
   return true;

@@ -6,7 +6,11 @@ export const SPOKEN_LANGS = ['cs', 'en'];
 // UI keys that are ever spoken (phrase id = `ui.<key>`)
 const UI_KEYS = ['say.greeting', 'safety.short', 'say.deadlyWarn', 'card.realPhoto', 'card.photoMissing',
   'kosik.intro', 'kosik.inBasket', 'kosik.inZone', 'kosik.poisonBounce', 'kosik.inedibleBounce', 'kosik.edibleToZone', 'kosik.done',
-  'kdo.done', 'album.empty', 'album.unknown'];
+  'kdo.done', 'album.empty', 'album.unknown',
+  // v2: levels, level-3 group question, Výprava do lesa
+  'question.group', 'feedback.tryAgain', 'level.1', 'level.2', 'level.3',
+  'vyprava.intro', 'vyprava.warn', 'vyprava.done', 'vyprava.fork',
+  'animal.srnka', 'animal.zajic', 'animal.veverka'];
 const lowerFirst = (n, lang) => n.charAt(0).toLocaleLowerCase(lang) + n.slice(1);
 const fill = (s, vars) => s.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
 

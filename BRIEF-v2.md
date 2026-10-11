@@ -66,3 +66,6 @@ Do `data/species.json` přibude pole `"level": 1|2` (minimální úroveň, na kt
 
 Hlasy a fotky generuje CI (workflow), do gitu se necommitují. Každá nová mluvená věta musí být v katalogu
 `js/phrases.js` (nic se neskládá za běhu).
+
+## Backlog po v2 (zpětná vazba rodiče)
+- Český hlas zní méně přátelsky než anglický (Maisie je dětský hlas). Edge TTS nemá český dětský hlas (jen Vlasta, Antonín); zkusit vyšší `pitch` / jiný `rate` u Vlasty, případně placený hlas (ElevenLabs). Neřešit před dokončením v2.

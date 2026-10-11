@@ -2,8 +2,10 @@
 import { svgEl } from './assets.js';
 import { reduced, anim } from './ui.js';
 
-const PANO = 2400; const BLEED = 120;
-export const pan = { p: 0, vbW: 1333, pmax: 0 };
+const BLEED = 120;
+export const pan = { p: 0, vbW: 1333, pmax: 0, width: 2400 };
+let PANO = 2400;          // full panorama (data-pano); Level 1 pans only data-pano-l1 (DESIGN-v2 §5.1)
+let PANO_L1 = 2400; let limitL1 = false;
 let el = null; let layers = []; let leaves = [];
 
 export function mountScene(stage) {
@@ -11,6 +13,7 @@ export function mountScene(stage) {
   el.removeAttribute('role');
   el.setAttribute('aria-hidden', 'true');
   el.querySelector('title')?.remove();
+  PANO = parseFloat(el.dataset.pano) || 2400; PANO_L1 = parseFloat(el.dataset.panoL1) || PANO;
   stage.append(el);
   layers = [...el.querySelectorAll('[data-depth]')].map((g) => ({ g, d: parseFloat(g.dataset.depth) || 0 }));
   fit();
@@ -19,12 +22,16 @@ export function mountScene(stage) {
   return el;
 }
 export const sceneEl = () => el;
+/** Level 1 sees only the first part of the forest. */
+export function limitPan(l1) { if (limitL1 === l1) return; limitL1 = l1; if (el) fit(); }
 
 export function fit() {
   const W = innerWidth; const H = innerHeight;
-  pan.vbW = Math.min(PANO, (1000 * W) / H);
+  const width = limitL1 ? PANO_L1 : PANO;
+  pan.width = width;
+  pan.vbW = Math.min(width, (1000 * W) / H);
   el.setAttribute('viewBox', `0 0 ${pan.vbW.toFixed(1)} 1000`);
-  pan.pmax = Math.max(0, PANO + BLEED - pan.vbW);
+  pan.pmax = Math.max(0, width + (limitL1 ? 0 : BLEED) - pan.vbW);
   setPan(pan.p);
   startLeaves();
 }

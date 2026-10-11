@@ -21,7 +21,11 @@ Na iPadu na výšku se kartička skládá pod sebe a ve hrách se zobrazí výzv
 | 2 | Houbař | všechny | neutrální | mezi možnostmi jsou dvojníci |
 | 3 | Mistr houbař | všechny | schválené skutečné fotky, jinak neutrální kresba | dvojníci a otázka „jedlá, nejedlá, nebo jedovatá?“ |
 
-Úroveň 2 se odemkne po 8 nálepkách, úroveň 3 po zlatém albu úrovně 2. Rodič může úrovně i „Výpravu do lesa“ odemknout ručně v Rodičovském koutku. Dítě volí úroveň tlačítkem vpravo nahoře v lese. Nastavení „obličeje bez nápověd“ z verze 1 se při prvním spuštění převede na úroveň 2.
+Úroveň 2 a Výprava do lesa se odemknou po 8 nálepkách (celé album úrovně 1); hra to oslaví a les se rozšíří doprava. Úroveň 3 se odemkne po 20 zlatých nálepkách získaných na úrovni 2 nebo 3. Rodič může úrovně i „Výpravu do lesa“ odemknout ručně v Rodičovském koutku. Dítě volí úroveň tlačítkem s rozetou vlevo nahoře v lese; dolů se smí vrátit kdykoli. Nastavení „obličeje bez nápověd“ z verze 1 se při prvním spuštění převede na úroveň 2.
+
+## Výprava do lesa (verze 2)
+
+Malý houbař s ježkem jde po lesní cestičce zleva doprava, přes kopečky a k potůčku. Podržením velké šipky „Dál“ jde, klepnutím dojde k další houbě. Houby rostou v mechu, u kamenů a u pařezů, některé jsou napůl schované. Jedlou nebo nejedlou houbu může dát do košíku, nebo nechat v lese; jedovatou nikdy nezvedne („Nesahej na mě!“). Od úrovně 2 je na cestě rozcestí (nahoru do kopce, nebo dolů k potůčku). Občas přeběhne srnka, zajíc nebo veverka. Na konci ježek projde košík: jedlé pochválí, u nejedlých vysvětlí rozdíl od dvojníka. Nikdy neřekne „špatně“.
 
 ## Beta (verze 2) vedle stabilní verze
 

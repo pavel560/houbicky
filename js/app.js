@@ -1,6 +1,7 @@
 // Houbičky — boot: load data + art, mount the forest, start screen, routing.
 import { loadAll, svgEl, species, voiceIndex } from './assets.js';
 import { IS_BETA } from './env.js';
+import * as vyprava from './vyprava/game.js';
 import { buildCatalogue } from './phrases.js';
 import { mountScene } from './scene.js';
 import { register, go } from './router.js';
@@ -17,7 +18,7 @@ import * as parents from './parents.js';
 import { openCard, closeCard } from './card.js';
 import * as store from './store.js';
 
-register('les', les); register('kosik', kosik); register('kdo', kdo); register('album', album); register('parents', parents);
+register('les', les); register('vyprava', vyprava); register('kosik', kosik); register('kdo', kdo); register('album', album); register('parents', parents);
 
 // Visible fallback when no voice exists for the language: a paper speech bubble.
 speech.setFallbackHandler(({ text }) => {

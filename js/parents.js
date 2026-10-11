@@ -41,7 +41,7 @@ function levelRows() {
     ? `<span class="muted">${esc(t('parents.unlockedAuto'))}</span>` : sw(st[key].manual, `unlock-${key}`)}</div>`;
   return `<div class="row level-row"><div><h2>${esc(t('level.title'))}</h2><p class="muted">${esc(t(`level.hint.${cur}`))}</p>
       <p class="muted">${esc(t('parents.levelsHint', { n: UNLOCK_STICKERS }))}</p></div><div class="seg level-seg" role="group">${segBtns}</div></div>
-    ${unlockRow(2, 'parents.unlock2')}${unlockRow(3, 'parents.unlock3')}`;
+    ${unlockRow(2, 'parents.unlock2')}${unlockRow(3, 'parents.unlock3')}${unlockRow('vyprava', 'parents.unlockVyprava')}`;
 }
 
 function render() {
@@ -85,7 +85,10 @@ function onSwMessage(e) {
 }
 async function askStatus() {
   const el = root?.querySelector('.offline-ready'); if (!el) return;
-  const reg = 'serviceWorker' in navigator && window.isSecureContext ? await navigator.serviceWorker.getRegistration().catch(() => null) : null;
+  // this copy's own worker only: getRegistration() alone may return the STABLE worker for a page in /beta/
+  const scope = new URL('./', location.href).href;
+  let reg = 'serviceWorker' in navigator && window.isSecureContext ? await navigator.serviceWorker.getRegistration('./').catch(() => null) : null;
+  if (reg && reg.scope !== scope) reg = null;
   const w = reg?.active || reg?.waiting || reg?.installing;
   if (!w) { el.textContent = t('parents.offlineNoSw'); return; }
   w.postMessage({ type: 'status' });

@@ -42,6 +42,12 @@ const reEsc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 let seq = 0;
 
 /** Parse art/<name>.svg into a fresh element. unique=true rewrites ids so the same art can appear twice. */
+/** Load extra art on demand (e.g. 'vyprava/side-child'); cached with the rest. */
+export async function loadArt(names) {
+  await Promise.all(names.filter((n) => !svgText.has(n)).map(async (n) => svgText.set(n, await get(`art/${n}.svg`))));
+}
+export const hasArt = (name) => svgText.has(name);
+
 export function svgEl(name, { unique = true } = {}) {
   let s = svgText.get(name);
   if (!s) throw new Error(`art not loaded: ${name}`);
@@ -94,7 +100,30 @@ export const TWINS = [
   { a: 'bedla', b: 'muchomurka-zelena', fa: ['snakeskin', 'ring'], fb: ['volva'] },
   { a: 'bedla', b: 'muchomurka-tygrovana', fa: ['snakeskin'], fb: ['bulb-rim'] },
 ];
-export function twinsOf(id) {
-  return TWINS.filter((t) => t.a === id || t.b === id)
-    .map((t) => (t.a === id ? { me: t.a, other: t.b, fMe: t.fa, fOther: t.fb } : { me: t.b, other: t.a, fMe: t.fb, fOther: t.fa }));
+/**
+ * Look-alikes of a species for the Dvojník panel: from data (`twin` + `twinTell.feature` = the decisive anchor),
+ * falling back to the v1 TWINS table. { me, other, fMe: [feature], fOther: [feature], tell: bool }
+ */
+export function twinsOf(id, { dataOnly = true } = {}) {
+  const sp = byId.get(id); const out = []; const seen = new Set();
+  for (const t of TWINS) {
+    if (t.a !== id && t.b !== id) continue;
+    const other = t.a === id ? t.b : t.a; if (!byId.has(other)) continue;
+    seen.add(other);
+    out.push({ me: id, other, fMe: t.a === id ? t.fa : t.fb, fOther: t.a === id ? t.fb : t.fa });
+  }
+  if (dataOnly) {
+    const fromData = [...new Set([...(sp?.twin ? [].concat(sp.twin) : []), ...species.filter((x) => x.twin && [].concat(x.twin).includes(id)).map((x) => x.id)])];
+    for (const other of fromData) {
+      if (seen.has(other) || !byId.has(other) || other === id) continue;
+      const o = byId.get(other);
+      out.push({ me: id, other, fMe: sp?.twinTell?.feature ? [sp.twinTell.feature] : [], fOther: o.twinTell?.feature ? [o.twinTell.feature] : [] });
+    }
+  }
+  // the data's decisive features win when present
+  for (const tw of out) {
+    const a = byId.get(tw.me)?.twinTell?.feature; const b = byId.get(tw.other)?.twinTell?.feature;
+    if (a) tw.fMe = [a]; if (b) tw.fOther = [b];
+  }
+  return out;
 }

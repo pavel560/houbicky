@@ -12,7 +12,8 @@ const defaults = () => ({
   stickers: {},         // { [speciesId]: ISO date first collected }
   gamesPlayed: {},      // { [gameId]: count }
   stats: {},            // { [gameId]: { rounds, correct } } — free-form per game
-  mastery: {},          // { [speciesId]: { kosik: true, kdo: true } } — answered right first time
+  mastery: {},          // { [speciesId]: { kosik: 2, kdo: 1 } } — right first time, at that level (0 = unknown, from v2.0)
+  seen: {},             // { 2: true } — unlock ceremonies already shown; { album2: true } album new-pages moment
   level: 1,             // difficulty 1–3 (js/levels.js)
   unlocks: {},          // { 2: true, 3: true } — set by a parent (automatic unlocks are computed, not stored)
   rate: 'normal',       // speech speed: 'normal' | 'slow'
@@ -38,12 +39,22 @@ function load() {
   let saved = null;
   try { saved = storage ? JSON.parse(storage.getItem(KEY) || 'null') : null; } catch { saved = null; }
   const s = { ...defaults(), ...(saved && typeof saved === 'object' ? saved : {}) };
-  for (const k of ['stickers', 'gamesPlayed', 'stats', 'mastery', 'photoPrefs', 'unlocks']) if (!s[k] || typeof s[k] !== 'object') s[k] = {};
+  for (const k of ['stickers', 'gamesPlayed', 'stats', 'mastery', 'photoPrefs', 'unlocks', 'seen']) if (!s[k] || typeof s[k] !== 'object') s[k] = {};
   if (!LANGS.includes(s.lang)) s.lang = 'cs';
   s.mute = !!s.mute;
   // v1 → v2 migration: the parents' "neutral faces" toggle becomes difficulty level 2 (unlocked by the parent)
-  if (s.faces === 'neutral' && !(saved && 'level' in saved)) { s.level = 2; s.unlocks = { ...s.unlocks, 2: true }; }
+  if (saved && !('level' in saved)) {
+    // a v1 player with ≥ 8 stickers already earned what Level 2 + Výprava ask for: unlock them without a ceremony
+    if (Object.keys(s.stickers).length >= 8) { s.unlocks = { ...s.unlocks, 2: true, vyprava: true }; s.seen = { ...(s.seen || {}), 2: true }; }
+    if (s.faces === 'neutral') { s.level = 2; s.unlocks = { ...s.unlocks, 2: true }; }
+  }
   delete s.faces;
+  // v2.0 → v2.1: mastery flags become the level they were earned at; old `true` = level unknown (0),
+  // so it still shows gold in the album but does not count toward Level 3 (earned at Level ≥ 2).
+  for (const [id, m] of Object.entries(s.mastery)) {
+    if (!m || typeof m !== 'object') { delete s.mastery[id]; continue; }
+    for (const g of Object.keys(m)) if (m[g] === true) m[g] = 0; else if (typeof m[g] !== 'number') delete m[g];
+  }
   s.level = [1, 2, 3].includes(Number(s.level)) ? Number(s.level) : 1;
   if (s.rate !== 'slow') s.rate = 'normal';
   const now = new Date().toISOString();
@@ -105,13 +116,20 @@ export function recordGame(gameId, { rounds = 0, correct = 0 } = {}) {
 export const gamesPlayed = (gameId) => (gameId ? state.gamesPlayed[gameId] || 0 : { ...state.gamesPlayed });
 
 // ---- mastery (gold rim in the album = right first time in both games)
-export function markMastery(id, game) {
+/** Right first time in `game` at difficulty `level`; keeps the highest level. */
+export function markMastery(id, game, level = state.level) {
   const m = state.mastery[id] || {};
-  if (m[game]) return;
-  state.mastery[id] = { ...m, [game]: true };
+  if (typeof m[game] === 'number' && m[game] >= level) return;
+  state.mastery[id] = { ...m, [game]: level };
   save('mastery');
 }
-export const isGold = (id) => !!(state.mastery[id]?.kosik && state.mastery[id]?.kdo);
+const won = (v) => typeof v === 'number';
+/** Gold sticker: right first time in both games (any level). */
+export const isGold = (id) => !!(won(state.mastery[id]?.kosik) && won(state.mastery[id]?.kdo));
+/** Gold earned at or above a level (both games at ≥ minLevel). */
+export const isGoldAt = (id, minLevel) => !!(state.mastery[id]?.kosik >= minLevel && state.mastery[id]?.kdo >= minLevel);
+export const wasSeen = (key) => !!state.seen[key];
+export function markSeen(key) { state.seen = { ...state.seen, [key]: true }; save('seen'); }
 
 // ---- settings
 export const getLang = () => state.lang;
@@ -126,7 +144,7 @@ export function setPhotoPref(id, pref) { state.photoPrefs = { ...state.photoPref
 
 /** Parents' corner: wipe progress, keep language + mute preferences */
 export function reset({ keepSettings = true } = {}) {
-  const keep = keepSettings ? { lang: state.lang, mute: state.mute, rate: state.rate, photoPrefs: state.photoPrefs, unlocks: state.unlocks } : {};
+  const keep = keepSettings ? { lang: state.lang, mute: state.mute, rate: state.rate, photoPrefs: state.photoPrefs, unlocks: state.unlocks } : {};   // `seen` resets with progress
   state = { ...defaults(), ...keep, firstSeen: new Date().toISOString(), lastSeen: new Date().toISOString() };
   save('*');
 }

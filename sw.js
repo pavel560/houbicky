@@ -7,7 +7,7 @@
 // Stable and beta side by side on one origin (…/houbicky/ and …/houbicky/beta/): the SAME file works in both places.
 // Everything is derived from the registration scope: the stable worker ignores every request under …/beta/
 // (the beta worker owns that scope) and each worker only ever creates/deletes caches with its own prefix.
-const VERSION = 'v6';
+const VERSION = 'v8';
 const SCOPE_PATH = new URL(self.registration.scope).pathname;          // '/houbicky/' or '/houbicky/beta/'
 const IS_BETA = /\/beta\/$/.test(SCOPE_PATH);
 const PREFIX = IS_BETA ? 'houbicky-beta-' : 'houbicky-';
@@ -65,6 +65,42 @@ const CORE = [
   './voice/index.json',
   './js/env.js',
   './js/levels.js',
+  './js/levelui.js',
+  './js/vyprava/world.js',
+  './js/vyprava/game.js',
+  './art/vyprava/side-ground-flat.svg',
+  './art/vyprava/side-ground-up.svg',
+  './art/vyprava/side-ground-crest.svg',
+  './art/vyprava/side-ground-down.svg',
+  './art/vyprava/side-ground-brook.svg',
+  './art/vyprava/moss-cushion-1.svg',
+  './art/vyprava/moss-cushion-2.svg',
+  './art/vyprava/moss-cushion-3.svg',
+  './art/vyprava/moss-collar.svg',
+  './art/vyprava/rock-mossy-1.svg',
+  './art/vyprava/rock-mossy-2.svg',
+  './art/vyprava/rock-mossy-3.svg',
+  './art/vyprava/stump.svg',
+  './art/vyprava/log.svg',
+  './art/vyprava/roots-flare.svg',
+  './art/vyprava/fern.svg',
+  './art/vyprava/blueberry.svg',
+  './art/vyprava/leafpile-front.svg',
+  './art/vyprava/signpost.svg',
+  './art/vyprava/side-fork-sign.svg',
+  './art/vyprava/stop-bubble.svg',
+  './art/vyprava/sparkle.svg',
+  './art/vyprava/side-child.svg',
+  './art/vyprava/side-jezek.svg',
+  './art/vyprava/guide-jezek.svg',
+  './art/vyprava/srnka.svg',
+  './art/vyprava/zajic.svg',
+  './art/vyprava/veverka.svg',
+  './art/vyprava/side-sky.svg',
+  './art/vyprava/side-far.svg',
+  './art/vyprava/side-mid.svg',
+  './art/vyprava/side-front.svg',
+  './art/vyprava/end-clearing.svg',
 ];
 const OPTIONAL = ['./photos/manifest.json', './data/RESEARCH_NOTES.md'];
 

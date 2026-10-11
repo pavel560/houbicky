@@ -57,7 +57,9 @@ jobs:
           fi
 
       - name: Check out v2 (beta)
+        id: v2checkout
         if: steps.beta.outputs.exists == 'true'
+        continue-on-error: true          # every v2 step is best-effort: a broken beta must never block the stable deploy
         uses: actions/checkout@v4
         with:
           ref: v2
@@ -112,12 +114,15 @@ jobs:
 
       # ---------------------------------------------------------------- beta (v2)
       - name: "v2: export the phrase catalogue"
-        if: steps.beta.outputs.exists == 'true'
+        id: v2export
+        if: steps.beta.outputs.exists == 'true' && steps.v2checkout.outcome == 'success'
+        continue-on-error: true
         working-directory: v2
         run: node dev/export_phrases.mjs
 
       - name: "v2: restore photos"
-        if: steps.beta.outputs.exists == 'true'
+        if: steps.v2export.outcome == 'success'
+        continue-on-error: true
         uses: actions/cache@v4
         with:
           path: |
@@ -127,7 +132,8 @@ jobs:
           restore-keys: v2-photos-
 
       - name: "v2: restore voices"
-        if: steps.beta.outputs.exists == 'true'
+        if: steps.v2export.outcome == 'success'
+        continue-on-error: true
         uses: actions/cache@v4
         with:
           path: |
@@ -138,7 +144,7 @@ jobs:
           restore-keys: v2-voice-
 
       - name: "v2: fetch photos (only missing ones)"
-        if: steps.beta.outputs.exists == 'true'
+        if: steps.v2export.outcome == 'success'
         working-directory: v2
         run: python fetch_photos.py
         continue-on-error: true
@@ -146,7 +152,7 @@ jobs:
           HOUBICKY_CONTACT: ${{ vars.HOUBICKY_CONTACT }}
 
       - name: "v2: record voices (only new or changed lines)"
-        if: steps.beta.outputs.exists == 'true'
+        if: steps.v2export.outcome == 'success'
         working-directory: v2
         run: python make_voice.py
         continue-on-error: true
@@ -154,7 +160,7 @@ jobs:
       # ---------------------------------------------------------------- one artifact
       - name: Assemble the site (stable at /, beta at /beta/)
         env:
-          HAS_BETA: ${{ steps.beta.outputs.exists }}
+          HAS_BETA: ${{ steps.v2export.outcome == 'success' }}   # the beta is copied only if its checkout + export worked
         run: |
           copy_site() {   # copy_site <checkout> <destination>
             mkdir -p "$2"
@@ -178,6 +184,11 @@ jobs:
           m["name"] = m.get("name", "Houbičky") + " beta"
           m["short_name"] = m.get("short_name", "Houbičky") + " β"
           json.dump(m, open(p, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+          # the iOS home-screen title comes from index.html, not from the manifest
+          p = "_site/beta/index.html"
+          html = open(p, encoding="utf-8").read()
+          html = html.replace('name="apple-mobile-web-app-title" content="Houbičky"', 'name="apple-mobile-web-app-title" content="Houbičky beta"')
+          open(p, "w", encoding="utf-8").write(html)
           PY
           fi
           for d in _site _site/beta; do
@@ -185,6 +196,22 @@ jobs:
             echo "$d: $(find "$d" -mindepth 1 \( -path "$d/beta" -prune \) -o -type f -print | wc -l) files," \
                  "photos $(ls "$d"/photos/*.jpg 2>/dev/null | wc -l), voices $(find "$d/voice" -name '*.mp3' 2>/dev/null | wc -l)"
           done
+
+      - name: Smoke test (every service-worker core file exists; fails only for the stable copy)
+        run: |
+          python3 - <<'PY'
+          import os, re, sys
+          def missing(root):
+              sw = open(os.path.join(root, "sw.js"), encoding="utf-8").read()
+              core = re.search(r"const CORE = \[(.*?)\];", sw, re.S).group(1)
+              paths = [p for p in re.findall(r"'\./([^']*)'", core) if p]
+              return [p for p in paths if not os.path.isfile(os.path.join(root, p))]
+          bad = missing("_site")
+          for p in bad: print(f"::error::stable copy is missing {p}")
+          if os.path.isdir("_site/beta"):
+              for p in missing("_site/beta"): print(f"::warning::beta copy is missing {p} (offline install of the beta will fail)")
+          sys.exit(1 if bad else 0)
+          PY
 
       - uses: actions/configure-pages@v5
 

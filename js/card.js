@@ -1,6 +1,7 @@
 // Houbičky — Kartička: species card overlay (pins, verdict, safety line, flip to photo, Dvojník).
 import { byId, shroom, hasPhoto, photoUrl, photoCredit, twinsOf } from './assets.js';
 import { introIds } from './phrases.js';
+import { effectiveLevel, facesFor } from './levels.js';
 import { $, $$, h, icon, esc, say, hush, name, anim, viewTransition, reduced, sleep, ms, groupKeyOf, badgeOf } from './ui.js';
 import { t, getLang, groupLabel, groupSentence } from './i18n.js';
 import * as store from './store.js';
@@ -106,12 +107,19 @@ async function openCardInner(sp, id, fromEl) {
     $('.art-box', layer).style.viewTransitionName = ghost ? 'hero' : '';
   });
   if (layer) $('.art-box', layer).style.viewTransitionName = '';
+  if (layer && effectiveLevel() === 3 && hasPhoto(sp.id)) {      // Level 3: the real photo first, the drawing on flip
+    const f = $('.card-flip', layer); f.classList.add('flipped');
+    setFace($('.card-front', layer), false); setFace($('.card-back', layer), true);
+  }
   if (sp.deadly) sound.play('bell'); else sound.play('whoosh');
   say(introLines(sp));
 }
 
+const cardTwins = (id) => twinsOf(id, { dataOnly: effectiveLevel() >= 2 });   // L1: the v1 safety pairs; L2+: every twin
+
 function render(sp) {
-  layer = h(`<div class="card-layer" data-faces="mood">
+  const lvl = effectiveLevel();
+  layer = h(`<div class="card-layer" data-faces="${facesFor(lvl)}" data-level="${lvl}">
     <div class="card-scrim" data-act="close"></div>
     <section class="card" role="dialog" aria-modal="true" aria-labelledby="card-title" data-group="${sp.group}" ${sp.deadly ? 'data-deadly' : ''}>
       ${sp.deadly ? `<div class="ribbon">${esc(t('card.ribbon'))}</div>` : ''}
@@ -119,7 +127,7 @@ function render(sp) {
       <div class="card-actions">
         <button class="btn round r88 gold" data-act="speak" aria-label="${esc(t('card.listen'))}">${icon('speaker')}</button>
         <button class="btn round r88 gold" data-act="flip" aria-label="${esc(t('card.flip'))}">${icon('flip')}</button>
-        ${twinsOf(sp.id).length ? `<button class="btn round r64 paper twin-btn" data-act="twin" aria-label="${esc(t('card.twin'))}"><span class="twin-thumbs"></span></button>` : ''}
+        ${cardTwins(sp.id).length ? `<button class="btn round r64 paper twin-btn" data-act="twin" aria-label="${esc(t('card.twin'))}"><span class="twin-thumbs"></span></button>` : ''}
         <button class="btn round r64 paper" data-act="close" aria-label="${esc(t('card.close'))}">${icon('close')}</button>
       </div>
     </section>
@@ -137,7 +145,7 @@ function render(sp) {
     $('.photo-thumb', layer)?.remove();
   }, { once: true });
   const tt = $('.twin-thumbs', layer);
-  if (tt) { tt.append(shroom(sp.id, { ground: false })); tt.append(shroom(twinsOf(sp.id)[0].other, { ground: false })); }
+  if (tt) { tt.append(shroom(sp.id, { ground: false })); tt.append(shroom(cardTwins(sp.id)[0].other, { ground: false })); }
   document.getElementById('overlay').append(layer);
   layer.addEventListener('click', onClick);
   layer.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeCard(); });
@@ -163,15 +171,20 @@ function onClick(e) {
     case 'twin': openTwin(sp); break;
     case 'twin-close': $('.twin-panel', layer)?.remove(); hush(); break;
     case 'twin-switch': openTwin(sp, +b.dataset.i); break;
-    case 'twin-speak': say([`sp.${sp.id}.caution`, `sp.${b.dataset.other}.caution`]); break;
+    case 'twin-speak': say(twinLines(sp.id, b.dataset.other)); break;
     default:
   }
 }
 
 /** Dvojník (L2): both characters with neutral faces, only the decisive pins. */
+/** What the Dvojník says: each side's decisive difference (data `twinTell`), else its caution. */
+function twinLines(a, b) {
+  return [a, b].map((id) => (byId.get(id)?.twinTell ? `sp.${id}.twinTell` : `sp.${id}.caution`));
+}
+
 function openTwin(sp, idx = 0) {
   $('.twin-panel', layer)?.remove();
-  const twins = twinsOf(sp.id); const tw = twins[idx]; if (!tw) return;
+  const twins = cardTwins(sp.id); const tw = twins[idx]; if (!tw) return;
   const side = (id, feats) => {
     const s = byId.get(id);
     return `<div class="twin-side" data-id="${id}"><div class="twin-art"></div><div class="twin-pins" data-feats="${feats.join(' ')}"></div>
@@ -203,7 +216,7 @@ function openTwin(sp, idx = 0) {
     say([`sp.${s.id}.name`, ...(p.dataset.look !== '' ? [`sp.${s.id}.look.${p.dataset.look}`] : [])]);
   });
   sound.play('whoosh');
-  say([`sp.${sp.id}.caution`, `sp.${tw.other}.caution`]);
+  say(twinLines(sp.id, tw.other));
 }
 
 // ---- flip: no backface-visibility (WebKit lets composited children of the hidden face show through).

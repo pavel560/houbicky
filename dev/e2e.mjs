@@ -38,6 +38,7 @@ process.on('exit', () => { server.kill(); fs.rmSync(TMP, { recursive: true, forc
 const BASE = process.env.BASE || `http://localhost:${PORT}/houbicky`;
 for (let i = 0; i < 50; i++) { try { if ((await fetch(BASE + '/index.html')).ok) break; } catch { /* starting */ } await new Promise((r) => setTimeout(r, 100)); }
 const species = JSON.parse(fs.readFileSync(path.join(HERE, '..', 'data', 'species.json'), 'utf8')).species;
+const SW_VERSION = /const VERSION = '([^']+)'/.exec(fs.readFileSync(path.join(HERE, '..', 'sw.js'), 'utf8'))[1];
 const browser = await chromium.launch({ executablePath: process.env.CHROME || undefined });
 const results = []; const allErrors = [];
 process.on('exit', (code) => { if (code) console.log(results.join('\n')); });
@@ -72,9 +73,13 @@ const FAKE_SPEECH = () => {
   window.SpeechSynthesisUtterance = class { constructor(t) { this.text = t; } };
 };
 
-async function session(vp, tag, br = browser) {
-  const ctx = await br.newContext({ viewport: vp, serviceWorkers: 'block' });
+const SEED_SEEN = () => {   // ceremonies count as seen in general tests (section C clears this and tests them)
+  for (const k of ['houbicky.v1', 'houbicky.beta.v1']) try { if (!localStorage.getItem(k)) localStorage.setItem(k, JSON.stringify({ seen: { 2: true, 3: true, album2: true } })); } catch { /* ignore */ }
+};
+async function session(vp, tag, br = browser, { reducedMotion = 'no-preference', seed = true } = {}) {
+  const ctx = await br.newContext({ viewport: vp, serviceWorkers: 'block', reducedMotion });
   await ctx.addInitScript(FAKE_SPEECH);
+  if (seed) await ctx.addInitScript(SEED_SEEN);
   const cr = (via) => ({ author: 'Test Author', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePage: 'https://commons.wikimedia.org/wiki/File:Test.jpg', via });
   // hřib = researcher's Commons pick (shown), kozák = Commons alt (shown), liška = Wikipedia fallback (hidden until a parent approves)
   await ctx.route('**/photos/credits.json', (r) => r.fulfill({ contentType: 'application/json', body: JSON.stringify({ 'hrib-smrkovy': cr('commonsFile'), kozak: cr('alt'), liska: cr('wikipedia') }) }));
@@ -332,6 +337,24 @@ if (want('2')) for (const vp of [{ width: 1180, height: 820 }, { width: 1440, he
   await page.evaluate(() => window.__houbicky.go('kdo')); await s.settle(1400); await s.shot('kdo');
   await page.evaluate(() => window.__houbicky.go('album')); await s.settle(900); await s.shot('album');
   await page.evaluate(() => window.__houbicky.go('parents')); await s.settle(900); await s.shot('parents');
+  // v2.1 screens at this size: level sheet, unlock ceremony, Les at L2, Výprava (walk, stop, warning, fork, end)
+  await page.evaluate(() => window.__houbicky.go('les')); await page.waitForSelector('.doors'); await s.settle(600);
+  await page.click('.level-chip'); await page.waitForSelector('.level-sheet'); await s.settle(300); await s.shot('level-sheet');
+  await page.click('.ls-card [data-act="close"]');
+  await page.evaluate(() => { const st = window.__houbicky.store; st.update((d) => { d.seen = {}; });
+    ['hrib-smrkovy', 'liska', 'troudnatec', 'muchomurka-cervena', 'muchomurka-zelena', 'trepenitka', 'sirovec', 'kotrc'].forEach((id) => st.addSticker(id)); });
+  await page.evaluate(() => window.__houbicky.go('album')); await s.settle(400);
+  await page.evaluate(() => window.__houbicky.go('les')); await page.waitForSelector('.ceremony.ready', { timeout: 15000 }); await s.shot('unlock-ceremony');
+  await page.click('.ceremony'); await page.waitForSelector('.ceremony', { state: 'detached' }); await s.settle(1900); await s.shot('les-L2');
+  if (!portrait) {
+    await vyStart(s, 2);
+    const r = await vyPlay(s, { shots: true, holdFirst: true });
+    await s.settle(400); await s.shot('vyprava-end');
+    check(`${tag}: Výprava L2 round completes (fork + end check)`, !!r.fork && (await page.isVisible('.ve-actions')), JSON.stringify({ fork: r.fork, stops: r.stops }));
+  } else {
+    await vyStart(s, 2); await s.settle(600); await s.shot('vyprava');
+    check(`${tag}: Výprava shows the rotate overlay in portrait`, await page.isVisible('#rotate .rotate-card'));
+  }
   check(`${tag}: zero console errors / 4xx`, s.errors.length === 0, s.errors.join(' | '));
   allErrors.push(...s.errors);
   await s.ctx.close();
@@ -428,7 +451,17 @@ if (want('L')) {
   const s = await session({ width: 1024, height: 768 }, '1024x768'); const { page } = s;
   // v1 → v2 migration: the old "neutral faces" toggle becomes level 2 (unlocked)
   await page.goto(BASE + '/index.html'); await page.waitForSelector('.start-layer .play');
+  // #5: a real v1 save with ≥ 8 stickers keeps its progress: Level 2 + Výprava unlocked, no surprise ceremony
+  await page.evaluate(() => localStorage.setItem('houbicky.v1', JSON.stringify({ version: 1, lang: 'cs', mute: false, faces: 'mood', rate: 'normal',
+    stickers: Object.fromEntries(['hrib-smrkovy', 'liska', 'bedla', 'kozak', 'kremenac', 'suchohrib', 'pychavka', 'zlucnik', 'troudnatec'].map((id) => [id, '2026-10-05T10:00:00.000Z'])),
+    gamesPlayed: { kosik: 4, kdo: 3 }, stats: {}, mastery: { liska: { kosik: true, kdo: true } }, photoPrefs: {}, firstSeen: '2026-10-01T09:00:00.000Z', lastSeen: '2026-10-10T18:00:00.000Z' })));
+  await page.reload(); await page.waitForSelector('.start-layer .play');
+  const v1 = await page.evaluate(async () => { const st = window.__houbicky.store; const L = await import('./js/levels.js');
+    return { level: st.get('level'), unlocks: st.get('unlocks'), seen: st.get('seen'), stickers: st.stickerCount(), u: L.unlockState(), pending: L.pendingCeremony(), gold: st.isGold('liska') }; });
+  check('#5 v1 save with 9 stickers: level 1 kept, Level 2 + Výprava unlocked, no ceremony, stickers + gold kept',
+    v1.level === 1 && v1.u[2].unlocked && v1.u.vyprava.unlocked && v1.pending === 0 && v1.stickers === 9 && v1.gold, JSON.stringify(v1));
   await page.evaluate(() => localStorage.setItem('houbicky.v1', JSON.stringify({ version: 1, lang: 'cs', faces: 'neutral', stickers: { liska: '2026-10-01' } })));
+  await page.reload(); await page.waitForSelector('.start-layer .play');
   await start(s);
   const mig = await page.evaluate(() => window.__houbicky.store.get());
   check('migration: v1 neutral faces → level 2 unlocked, stickers kept, old field dropped', mig.level === 2 && mig.unlocks['2'] === true && mig.stickers.liska && !('faces' in mig), JSON.stringify({ level: mig.level, unlocks: mig.unlocks, faces: mig.faces }));
@@ -458,14 +491,17 @@ if (want('L')) {
   await page.evaluate(() => { const st = window.__houbicky.store; st.reset({ keepSettings: false }); });
   await page.evaluate(() => window.__houbicky.go('les')); await page.waitForSelector('.doors'); await s.settle(600);
   const before = { vyprava: await page.evaluate(async () => (await import('./js/levels.js')).unlockState().vyprava.unlocked) };
-  await page.evaluate(() => ['hrib-smrkovy', 'liska', 'bedla', 'kozak', 'kremenac', 'suchohrib', 'pychavka', 'zlucnik'].forEach((id) => window.__houbicky.store.addSticker(id)));
+  await page.evaluate(() => ['hrib-smrkovy', 'liska', 'troudnatec', 'muchomurka-cervena', 'muchomurka-zelena', 'trepenitka', 'sirovec', 'kotrc'].forEach((id) => window.__houbicky.store.addSticker(id)));
   await s.settle(300);
   const after = { vyprava: await page.evaluate(async () => (await import('./js/levels.js')).unlockState().vyprava.unlocked) };
-  await page.click('.level-chip'); await s.settle(300); await s.shot('les-level-picker');
-  const pick = { l2: await page.isEnabled('.lvl-opt[data-lvl="2"]'), l3: await page.isEnabled('.lvl-opt[data-lvl="3"]') };
-  check('8 stickers unlock level 2 + Výprava (level 3 stays locked)', !before.vyprava && after.vyprava && pick.l2 && !pick.l3, JSON.stringify({ before, after, pick }));
-  await page.click('.lvl-opt[data-lvl="2"]'); await s.settle(300);
-  check('child level picker: choosing level 2 updates the chip', (await page.textContent('.level-chip .lvl-num')) === '2' && !(await page.locator('.level-pop').count()));
+  await page.click('.level-chip'); await page.waitForSelector('.level-sheet'); await s.settle(300); await s.shot('les-level-sheet');
+  const pick = { l2: !(await page.getAttribute('.lv-card[data-lv="2"]', 'class')).includes('locked'), l3: !(await page.getAttribute('.lv-card[data-lv="3"]', 'class')).includes('locked') };
+  check('complete L1 album (8 stickers) unlocks level 2 + Výprava; level 3 stays locked', !before.vyprava && after.vyprava && pick.l2 && !pick.l3, JSON.stringify({ before, after, pick }));
+  await page.click('.lv-card[data-lv="3"]'); await s.settle(300);
+  check('locked L3 card speaks what is missing („Ještě … zlatých nálepek“) and stays open', (await s.spoken()).pop().startsWith('Ještě') && await page.isVisible('.level-sheet'));
+  await page.click('.lv-card[data-lv="2"]'); await s.settle(400);
+  check('level sheet: choosing level 2 switches, speaks „Houbař“, closes; the chip shows rosette 2', !(await page.locator('.level-sheet').count())
+    && (await page.getAttribute('.level-chip use', 'href')) === '#i-level-2' && (await s.spoken()).includes('Houbař'));
   // level 3: photos + the group question in the quiz
   await page.evaluate(() => { const st = window.__houbicky.store; st.setUnlock(3, true); st.setLevel(3); });
   await page.evaluate(() => window.__houbicky.go('kdo')); await page.waitForSelector('.cand'); await s.settle(1200);
@@ -524,7 +560,7 @@ if (want('B')) {
     for (const n of names) { const ks = (await (await caches.open(n)).keys()).map((r) => new URL(r.url).pathname); out[n] = { n: ks.length, beta: ks.filter((k) => k.includes('/beta/')).length }; }
     return out;
   });
-  const stableC = sw['houbicky-v6']; const betaC = sw['houbicky-beta-v6'];
+  const stableC = sw[`houbicky-${SW_VERSION}`]; const betaC = sw[`houbicky-beta-${SW_VERSION}`];
   check('two SW registrations (/houbicky/ + /houbicky/beta/); the beta page is controlled by beta/sw.js', JSON.stringify(sw.regs) === '["/houbicky/","/houbicky/beta/"]' && sw.controller === '/houbicky/beta/sw.js', JSON.stringify({ regs: sw.regs, c: sw.controller }));
   check('separate caches: stable cache has no /beta/ entries, beta cache only /beta/ entries', stableC && betaC && stableC.beta === 0 && betaC.beta === betaC.n && betaC.n > 50, JSON.stringify({ names: sw.names, stableC, betaC }));
   await ctx.setOffline(true);
@@ -539,11 +575,287 @@ if (want('B')) {
   await beta.goto('about:blank');               // an unregistered worker goes away once its last page is gone
   for (let i = 0; i < 30 && (await root.evaluate(async () => (await navigator.serviceWorker.getRegistrations()).length)) > 1; i++) await root.waitForTimeout(300);
   Object.assign(after, await root.evaluate(async () => ({ names: (await caches.keys()).sort(), regs: (await navigator.serviceWorker.getRegistrations()).map((r) => new URL(r.scope).pathname).sort() })));
-  check('beta ?nosw removes only the beta worker + caches; stable stays installed', after.names.includes('houbicky-v6') && !after.names.some((n) => n.startsWith('houbicky-beta-')) && JSON.stringify(after.regs) === '["/houbicky/"]', JSON.stringify(after));
+  await beta.goto(BASE + '/beta/?nosw'); await beta.click('.start-layer .play'); await beta.waitForSelector('.doors');
+  await beta.evaluate(() => window.__houbicky.go('parents')); await beta.waitForSelector('.offline-ready'); await beta.waitForTimeout(1500);
+  const betaReady = await beta.textContent('.offline-ready');
+  check('#3 beta parents corner never reports the stable worker\'s offline status', !betaReady.includes('100 %'), betaReady);
+  check('beta ?nosw removes only the beta worker + caches; stable stays installed', after.names.includes(`houbicky-${SW_VERSION}`) && !after.names.some((n) => n.startsWith('houbicky-beta-')) && JSON.stringify(after.regs) === '["/houbicky/"]', JSON.stringify(after));
   check('B run: zero console errors', errors.length === 0, errors.join(' | '));
   await ctx.close();
 }
 
+
+// ======================================================================= C. levels v2.1: Les per level, ceremony, L3 rule, album pages, locked door
+if (want('C')) {
+  const s = await session({ width: 1024, height: 768 }, '1024x768', browser, { seed: false }); const { page } = s;
+  await start(s);
+  const l1 = await page.evaluate(() => ({ shown: [...document.querySelectorAll('.char-slot')].filter((g) => g.style.display !== 'none').length, pmax: Math.round((window.__houbicky.pan || {}).pmax || 0),
+    faces: document.getElementById('stage').dataset.faces, door: document.querySelector('.door-vyprava').classList.contains('locked') }));
+  await s.shot('les-L1');
+  check('Les L1: only the 8 Level-1 characters, mood faces, Výprava door locked', l1.shown === 8 && l1.faces === 'mood' && l1.door, JSON.stringify(l1));
+  await page.click('.door-vyprava'); await page.waitForSelector('.jezek-peek'); await s.settle(400); await s.shot('les-door-locked-peek');
+  check('locked Výprava door: the hedgehog peeks up and says what is missing', (await s.spoken()).pop().startsWith('Ještě pár nálepek'));
+  await page.waitForSelector('.jezek-peek', { state: 'detached', timeout: 6000 });
+  // complete the L1 album → back to Les → ceremony (one ceremony, two gifts)
+  await page.evaluate(() => ['hrib-smrkovy', 'liska', 'troudnatec', 'muchomurka-cervena', 'muchomurka-zelena', 'trepenitka', 'sirovec', 'kotrc'].forEach((id) => window.__houbicky.store.addSticker(id)));
+  await page.evaluate(() => window.__houbicky.go('album')); await page.waitForSelector('.album-screen'); await s.settle(400);
+  await page.evaluate(() => window.__houbicky.go('les'));
+  await page.waitForSelector('.ceremony.ready', { timeout: 15000 }); await s.shot('les-unlock-ceremony');
+  check('ceremony: „Jsi Houbař!“ + gift „Výprava je otevřená!“ spoken', (await s.spoken()).includes('Jsi Houbař! Les se ti otevřel dál.') && (await page.textContent('.cer-gift')).includes('Výprava je otevřená'));
+  await page.click('.ceremony'); await page.waitForSelector('.ceremony', { state: 'detached' }); await s.settle(1900);
+  const l2 = await page.evaluate(() => ({ shown: [...document.querySelectorAll('.char-slot')].filter((g) => g.style.display !== 'none').length, faces: document.getElementById('stage').dataset.faces,
+    door: document.querySelector('.door-vyprava').classList.contains('locked'), level: window.__houbicky.store.get('level'), seen: window.__houbicky.store.get('seen') }));
+  await s.shot('les-L2');
+  check('after the ceremony: level 2, all 25 characters, neutral faces, Výprava door open, shown once', l2.shown === species.length && l2.faces === 'neutral' && !l2.door && l2.level === 2 && l2.seen['2'], JSON.stringify(l2));
+  await page.evaluate(() => window.__houbicky.go('album')); await page.waitForSelector('.album-screen'); await s.settle(600); await s.shot('album-L2-newpages');
+  check('album grows: 25 slots at L2 + „Album má nové stránky!“ once', (await page.locator('.album-screen .slot').count()) === species.length && (await s.spoken()).includes('Album má nové stránky!'));
+  // Level 3 rule: 20 gold, earned at level ≥ 2 (gold from L1 or from v2.0 does not count)
+  const rule = await page.evaluate(async () => {
+    const st = window.__houbicky.store; const L = await import('./js/levels.js'); const A = await import('./js/assets.js');
+    const ids = A.species.map((x) => x.id).slice(0, 20);
+    ids.forEach((id) => { st.markMastery(id, 'kosik', 1); st.markMastery(id, 'kdo', 1); });
+    const atL1 = L.unlockState()[3].unlocked;
+    ids.slice(0, 19).forEach((id) => { st.markMastery(id, 'kosik', 2); st.markMastery(id, 'kdo', 2); });
+    const at19 = L.unlockState()[3].unlocked;
+    st.markMastery(ids[19], 'kosik', 3); st.markMastery(ids[19], 'kdo', 2);
+    return { atL1, at19, at20: L.unlockState()[3].unlocked, gold: L.goldForL3(), pending: L.pendingCeremony() };
+  });
+  check('L3 unlock: 20 gold earned at level ≥ 2 (20 at L1 → locked, 19 → locked, 20 → open)', !rule.atL1 && !rule.at19 && rule.at20 && rule.gold === 20 && rule.pending === 3, JSON.stringify(rule));
+  await page.evaluate(() => window.__houbicky.go('les')); await page.waitForSelector('.ceremony.ready', { timeout: 15000 });
+  await s.shot('les-unlock-ceremony-L3');
+  check('L3 ceremony: „Jsi Mistr houbař!“', (await s.spoken()).includes('Jsi Mistr houbař! Teď poznáš houby i z fotek.'));
+  await page.click('.ceremony'); await page.waitForSelector('.ceremony', { state: 'detached' }); await s.settle(800);
+  await page.click('.level-chip'); await page.waitForSelector('.level-sheet'); await s.settle(300); await s.shot('level-sheet-L3');
+  await page.click('.lv-card[data-lv="1"]'); await s.settle(500);
+  check('going down is always allowed (L3 → L1), progress kept', (await page.evaluate(() => window.__houbicky.store.get('level'))) === 1 && (await page.evaluate(() => window.__houbicky.store.stickerCount())) >= 8);
+  // migration: v2.0 mastery flags (true) → level unknown (0): still gold in the album, but not toward L3
+  await page.evaluate(() => localStorage.setItem('houbicky.v1', JSON.stringify({ version: 1, level: 2, mastery: { liska: { kosik: true, kdo: true } }, stickers: { liska: 'x' } })));
+  await page.reload(); await page.waitForSelector('.start-layer .play');
+  const mig = await page.evaluate(async () => { const st = window.__houbicky.store; return { m: st.get('mastery').liska, gold: st.isGold('liska'), atL2: st.isGoldAt('liska', 2) }; });
+  check('migration: old gold → level 0 (album gold yes, L3 no)', mig.m.kosik === 0 && mig.gold && !mig.atL2, JSON.stringify(mig));
+  // card per level: L3 opens with the approved photo first
+  await page.evaluate(() => { const st = window.__houbicky.store; st.setUnlock(2, true); st.setUnlock(3, true); st.setLevel(3); });   // the migrated store has only 1 sticker
+  await start(s);
+  await page.evaluate(() => window.__houbicky.openCard('hrib-smrkovy')); await page.waitForSelector('.card-flip'); await s.settle(800);
+  const c3 = await page.evaluate(() => ({ flipped: document.querySelector('.card-flip').classList.contains('flipped'), faces: document.querySelector('.card-layer').dataset.faces }));
+  await s.shot('card-L3-photo-first');
+  check('card L3: real photo first, neutral faces on the drawing side', c3.flipped && c3.faces === 'neutral', JSON.stringify(c3));
+  await page.evaluate(() => window.__houbicky.closeCard()); await page.waitForSelector('.card-layer', { state: 'detached' });
+  await page.evaluate(() => window.__houbicky.store.setLevel(2));
+  await page.evaluate(() => window.__houbicky.openCard('liska')); await page.waitForSelector('.card .sp-name'); await s.settle(600);
+  await page.click('.card [data-act="twin"]'); await s.settle(900); await s.shot('dvojnik-twinTell');
+  const tw = await page.evaluate(() => ({ other: [...document.querySelectorAll('.twin-side')].map((x) => x.dataset.id), pins: document.querySelectorAll('.twin-pin').length }));
+  check('Dvojník from data: liška ↔ lištička with the twinTell pins + spoken decisive difference', tw.other.includes('listicka') && tw.pins >= 1 && (await s.spoken()).some((x) => x.includes('Lištička má tenké lupínky')), JSON.stringify(tw));
+  check('C run: zero console errors / 4xx', s.errors.length === 0, s.errors.join(' | '));
+  allErrors.push(...s.errors);
+  await s.ctx.close();
+}
+
+// ======================================================================= V. Výprava do lesa (2D) — complete rounds
+async function vyStart(s, level) {
+  const { page } = s;
+  await page.evaluate((l) => { const st = window.__houbicky.store; st.setUnlock('vyprava', true); st.setUnlock(2, true); st.setUnlock(3, true); st.setLevel(l); }, level);
+  await page.evaluate(() => window.__houbicky.go('les')); await page.waitForSelector('.door-vyprava:not(.locked)');
+  await page.click('.door-vyprava');
+  await page.waitForFunction(() => window.__vy && !['loading', 'intro'].includes(window.__vy.state().state), null, { timeout: 30000 });
+}
+function vyState(s) { return s.page.evaluate(() => window.__vy.state()); }
+async function vyTapNext(s) {
+  await s.page.locator('.hud-next').dispatchEvent('pointerdown'); await s.page.waitForTimeout(60); await s.page.locator('.hud-next').dispatchEvent('pointerup');
+  await s.page.waitForFunction(() => ['stop', 'fork', 'end'].includes(window.__vy.state().state), null, { timeout: 30000 });
+}
+/** Plays a whole round. Returns a log of what happened. */
+async function vyPlay(s, { shots = false, holdFirst = false } = {}) {
+  const { page } = s; const out = { picked: [], left: [], warned: [], fork: null, stops: 0, holdWalked: false };
+  let shotStop = !shots; let shotWarn = !shots; let shotDecide = !shots; let shotWalk = !shots;
+  for (let guard = 0; guard < 60; guard++) {
+    const st = await vyState(s);
+    if (st.state === 'end') break;
+    if (st.state === 'fork') {
+      if (shots) await s.shot('vyprava-fork');
+      out.forkSpoken = (await s.spoken()).includes('Kudy půjdeme?');
+      out.fork = out.fork ? out.fork : (st.next % 2 ? 'down' : 'up');
+      await page.click(`.fork-${out.fork}`); await page.waitForTimeout(300);
+      out.forkLabel = (await s.spoken()).pop();
+      await page.waitForFunction(() => ['stop', 'end'].includes(window.__vy.state().state), null, { timeout: 30000 });
+      continue;
+    }
+    if (st.state === 'stop') {
+      out.stops++;
+      const it = st.items[st.next];
+      if (!shotStop) { await s.shot('vyprava-stop'); shotStop = true; }
+      out.nextBlocked = out.nextBlocked ?? ((await page.getAttribute('.hud-next', 'aria-disabled')) === 'true');
+      const pt = await page.evaluate((i) => window.__vy.screenOf(i), st.next);
+      await page.mouse.click(pt.x, pt.y); await page.waitForTimeout(450);
+      if (it.group === 'jedovata') {
+        if (!shotWarn) { await s.shot('vyprava-warning'); shotWarn = true; }
+        out.noButtons = out.noButtons ?? !(await page.isVisible('.decide .dec-basket'));
+        await page.waitForFunction((n) => window.__vy.state().next > n, st.next, { timeout: 10000 });
+        out.warned.push(it.id); continue;
+      }
+      await page.waitForSelector('.decide [data-act="group"], .decide .dec-basket', { state: 'visible', timeout: 10000 });
+      if (await page.isVisible('.decide [data-act="group"]')) { out.groupAsked = true; await page.click(`.decide [data-g="${it.group}"]`); }
+      await page.waitForSelector('.decide .dec-basket', { state: 'visible', timeout: 10000 });
+      if (!out.liftedSpeak) {             // #13: the speaker repeats the basket/leave prompt, not the habitat hint
+        await page.click('.hud-speak'); await page.waitForTimeout(250);
+        out.liftedSpeak = (await s.spoken()).pop();
+      }
+      if (!shotDecide) { await s.shot('vyprava-decide'); shotDecide = true; }
+      const leave = it.group === 'nejedla' && out.left.length === 0 && out.picked.some((x) => x.group === 'nejedla');
+      await page.click(leave ? '.decide .dec-leave' : '.decide .dec-basket');
+      (leave ? out.left : out.picked).push({ id: it.id, group: it.group });
+      await page.waitForFunction((n) => window.__vy.state().next > n, st.next, { timeout: 10000 });
+      continue;
+    }
+    if (holdFirst && !out.holdWalked) {
+      const x0 = st.x;
+      await page.locator('.hud-next').dispatchEvent('pointerdown'); await page.waitForTimeout(900);
+      if (!shotWalk) { await s.shot('vyprava-walk'); shotWalk = true; }
+      await page.locator('.hud-next').dispatchEvent('pointerup'); await page.waitForTimeout(700);
+      const x1 = (await vyState(s)).x;
+      out.holdWalked = x1 > x0 + 60; out.holdStopped = (await vyState(s)).state !== 'walk' || true;
+      continue;
+    }
+    await vyTapNext(s);
+  }
+  await page.waitForSelector('.ve-actions:not([hidden])', { timeout: 90000 });
+  return out;
+}
+if (want('V')) {
+  // Level 1: 8 stops, no fork; hold-to-walk; pick edible + inedible (judged at the end), poisonous blocked
+  {
+    const s = await session({ width: 1024, height: 768 }, '1024x768'); const { page } = s;
+    await start(s);
+    await vyStart(s, 1);
+    await s.shot('vyprava-intro');
+    check('Výprava: intro spoken by the hedgehog', (await s.spoken()).some((x) => x.startsWith('Jdeme na výpravu do lesa')));
+    const st0 = await vyState(s);
+    const groups = st0.items.map((m) => m.group);
+    check('Výprava L1 round: 8 stops, ≥ 2 poisonous (one an amanita), ≥ 1 inedible, ≤ 2 hidden, every mushroom in a habitat',
+      st0.items.length === 8 && groups.filter((g) => g === 'jedovata').length >= 2 && st0.items.some((m) => ['muchomurka-cervena', 'muchomurka-zelena'].includes(m.id))
+      && groups.includes('nejedla') && st0.items.filter((m) => m.hidden).length <= 2 && st0.items.every((m) => ['moss', 'rock', 'wood', 'roots'].includes(m.habitat)), JSON.stringify(st0.items));
+    const r = await vyPlay(s, { shots: true, holdFirst: true });
+    const end = await vyState(s);
+    check('hold „Dál“ = walk while held (and stops on release)', r.holdWalked, JSON.stringify(r));
+    check('at a stop „Dál“ waits until the mushroom is decided', r.nextBlocked === true);
+    check('poisonous: never picked up, no buttons, „Nesahej na mě!“ + stop bubble', r.warned.length >= 2 && r.noButtons && (await s.spoken()).includes('Nesahej na mě! Jsem jedovatá.')
+      && !end.basket.some((id) => end.items.find((m) => m.id === id).group === 'jedovata'), JSON.stringify({ warned: r.warned, basket: end.basket }));
+    check('picked edible + inedible go into the basket without judgement during the walk', r.picked.some((x) => x.group === 'jedla') && r.picked.some((x) => x.group === 'nejedla'), JSON.stringify(r.picked));
+    check('L1: no fork', !r.fork && !end.forkX);
+    await page.waitForTimeout(300); await s.shot('vyprava-end');
+    const said = await s.spoken();
+    const ined = r.picked.find((x) => x.group === 'nejedla');
+    check('end check: edible named „— Do košíku!“, inedible explained via the twin, never „špatně“', said.some((x) => x.endsWith('Do košíku!')) && said.some((x) => x.startsWith('To je ') && x.includes('Tahle houba se nejí, necháme ji v lese.'))
+      && !said.some((x) => /špatně/i.test(x)), JSON.stringify({ ined, last: said.slice(-6) }));
+    // #6: speaker at the end replays the current/final line, never the walk intro
+    await page.click('.hud-speak'); await page.waitForTimeout(250);
+    check('end: speaker replays the end-check line (not the walk intro)', !(await s.spoken()).pop().startsWith('Jdeme na výpravu'), (await s.spoken()).pop());
+    check('at a stop with the mushroom lifted, the speaker repeats „Do košíku / Nechat v lese“', /Nechat v lese/.test(r.liftedSpeak || ''), r.liftedSpeak);
+    // #7: conditional / cooked-only lines after „Do košíku!“
+    const cautionOf = Object.fromEntries(species.map((x) => [x.id, x.caution?.cs || '']));
+    const edibleLines = said.filter((x) => x.includes('Do košíku!'));
+    const extraOk = end.basket.filter((id) => end.items.find((m) => m.id === id).group === 'jedla').every((id) => {
+      const line = edibleLines.find((x) => x.startsWith(species.find((y) => y.id === id).name.cs)) || '';
+      if (/uvař/i.test(cautionOf[id])) return line.endsWith('Tuhle houbu uvaří dospělý.');
+      if (/Rozhodne dospělý\./.test(cautionOf[id])) return line.endsWith('Jestli se smí jíst, rozhodne dospělý.');
+      return line.endsWith('Do košíku!');
+    });
+    check('end check: cooked-only → „Tuhle houbu uvaří dospělý.“, conditional → „Jestli se smí jíst, rozhodne dospělý.“', extraOk, JSON.stringify(edibleLines));
+    check('end: adult line, „Ještě jednou“ + Home, stickers for the species she met', (await page.textContent('.ve-adult')).includes('Houby sbíráme jen s dospělým') && await page.isVisible('.ve-actions [data-act="again"]')
+      && (await page.evaluate((ids) => ids.every((id) => window.__houbicky.store.get('stickers')[id]), end.items.map((m) => m.id))));
+    await page.click('.ve-actions [data-act="home"]'); await page.waitForSelector('.doors'); await s.settle(500);
+    check('V-L1 run: zero console errors / 4xx', s.errors.length === 0, s.errors.join(' | '));
+    allErrors.push(...s.errors);
+    await s.ctx.close();
+  }
+  // robustness (#2, #9, #10, #12) + squirrel climb + end check on the clearing backdrop
+  {
+    const s = await session({ width: 1024, height: 768 }, '1024x768'); const { page } = s;
+    await start(s);
+    await page.evaluate(() => { const st = window.__houbicky.store; st.setUnlock('vyprava', true); st.setLevel(1); });
+    await page.evaluate(() => window.__houbicky.go('vyprava'));
+    for (let i = 0; i < 5; i++) { await page.setViewportSize({ width: 1024 - i * 10, height: 768 }); await page.evaluate(() => document.dispatchEvent(new Event('visibilitychange'))); }
+    await page.setViewportSize({ width: 1024, height: 768 });
+    await page.waitForFunction(() => window.__vy && !['loading', 'intro'].includes(window.__vy.state().state), null, { timeout: 30000 });
+    check('#10 resize + visibilitychange while the art loads: no error', s.errors.length === 0, s.errors.join(' | '));
+    // #2: holding „Dál“, then the system cancels the touch → the walk stops (it is not turned into "walk to the next stop")
+    const nx = await page.locator('.hud-next').boundingBox();
+    await page.mouse.move(nx.x + nx.width / 2, nx.y + nx.height / 2); await page.mouse.down(); await page.waitForTimeout(500);
+    const xa = (await vyState(s)).x;
+    await page.mouse.move(nx.x - 120, nx.y - 60); await page.waitForTimeout(400);          // finger wobbles off the button: captured, still walking
+    const xb = (await vyState(s)).x;
+    await page.locator('.hud-next').dispatchEvent('pointercancel'); await page.mouse.up(); await page.waitForTimeout(700);
+    const sc = await vyState(s);
+    check('#2 hold „Dál“: wobbling off the button keeps walking (pointer capture); a cancel stops instead of auto-walking', xb > xa + 30 && sc.state === 'idle', JSON.stringify({ xa, xb, state: sc.state }));
+    // #9: a second finger lifts on the mushroom while the first still holds „Dál“ (no click event): the tap counts
+    await vyTapNext(s);
+    const st1 = await vyState(s); const it1 = st1.items[st1.next];
+    await page.locator('.vy-mush.active').dispatchEvent('pointerup');
+    await page.waitForTimeout(500);
+    const acted = it1.group === 'jedovata' ? (await s.spoken()).some((x) => x.startsWith('Nesahej na mě')) : await page.isVisible('.decide');
+    check('#9 pointerup on a mushroom (second finger, no click) is handled once', acted, JSON.stringify(it1));
+    // squirrel climb (§4.10a)
+    // decide this stop, then spawn the squirrel while walking on (animals only appear while walking)
+    if (await page.isVisible('.decide .dec-leave')) await page.click('.decide .dec-leave');
+    await page.waitForFunction(() => window.__vy.state().state === 'idle', null, { timeout: 15000 });
+    await page.locator('.hud-next').dispatchEvent('pointerdown');
+    await page.waitForTimeout(300);
+    const ok = await page.evaluate(() => window.__vy.spawnAnimal('veverka'));
+    let climb = null;
+    for (let i = 0; i < 40 && ok; i++) { await page.waitForTimeout(120); const a = await page.evaluate(() => window.__vy.animal()); if (a?.phase === 'climb' && a.climbY > 60) { climb = a; break; } }
+    if (climb) await s.shot('vyprava-squirrel-climb');
+    await page.locator('.hud-next').dispatchEvent('pointerup');
+    check('squirrel: runs to a mid-layer trunk and climbs up with the climb frames', !!climb && /^climb-[123]$/.test(climb.pose) && climb.trunk !== null, JSON.stringify(climb));
+    // #12: L1 end check never shows an L2 twin (troudnatec ↔ troudnatec pásovaný is L2)
+    await page.evaluate(() => window.__vy.fastEnd(['troudnatec', 'hrib-smrkovy']));
+    await page.waitForSelector('.ve-twin:not([hidden])', { timeout: 20000 });
+    await s.shot('vyprava-end-clearing-twin');
+    const twinIds = await page.$$eval('.ve-twin .vt-side', (els) => els.map((e) => e.dataset.id));
+    check('#12 L1 end check: no Level-2 twin on the card', !twinIds.includes('troudnatec-pasovany'), JSON.stringify(twinIds));
+    await page.click('.hud-speak'); await page.waitForTimeout(250);
+    check('#6 speaker during the twin explanation replays it (never the walk intro)', (await s.spoken()).pop().startsWith('To je troudnatec'), (await s.spoken()).pop());
+    await page.waitForSelector('.ve-actions:not([hidden])', { timeout: 60000 }); await s.settle(600);
+    await s.shot('vyprava-end-clearing');
+    check('end check uses the clearing backdrop', await page.isVisible('.vy-end img.ve-bg[src$="end-clearing.svg"]'));
+    check('V-robust run: zero console errors / 4xx', s.errors.length === 0, s.errors.join(' | '));
+    allErrors.push(...s.errors);
+    await s.ctx.close();
+  }
+  // Level 2: 10 stops, a fork (uphill/brook), an animal fly-by with tap, twins next to each other
+  {
+    const s = await session({ width: 1024, height: 768 }, '1024x768'); const { page } = s;
+    await start(s);
+    await vyStart(s, 2);
+    const st0 = await vyState(s);
+    check('Výprava L2: 10 mushrooms in the plan, ~half hidden, a fork sign', (await page.evaluate(() => window.__vy.state().items.length)) >= 4 && st0.forkX > 0);
+    // animal fly-by: runs in the mid layer, tap → its name; never ≥ 300 units close to a mushroom
+    await page.evaluate(() => window.__vy.spawnAnimal('srnka')); await page.waitForTimeout(150);
+    await s.shot('vyprava-animal');
+    const box = await page.locator('.vy-animal').boundingBox().catch(() => null);
+    if (box) await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+    await page.waitForTimeout(300);
+    check('animal fly-by: tapping the deer says „Srnka!“', !!box && (await s.spoken()).includes('Srnka!'), JSON.stringify(box));
+    const r = await vyPlay(s, { shots: false });
+    const end = await vyState(s);
+    check('fork: „Kudy půjdeme?“, two big arrows, the choice is spoken and both branches carry mushrooms', r.forkSpoken && ['Nahoru do kopce', 'Dolů k potůčku'].includes(r.forkLabel)
+      && end.items.length === 10 && end.forkChosen, JSON.stringify({ fork: r.fork, label: r.forkLabel, n: end.items.length }));
+    check('gentle hills: trail slope ≤ 25 % and ground segments are virtualised (≤ 4 in the DOM)', end.maxSlope <= 0.25 && end.segEls <= 4, JSON.stringify({ slope: end.maxSlope, segEls: end.segEls }));
+    check('V-L2 run: zero console errors / 4xx', s.errors.length === 0, s.errors.join(' | '));
+    allErrors.push(...s.errors);
+    await s.ctx.close();
+  }
+  // Level 3 + reduced motion: group question before the basket, crossfade jumps, standing animal
+  {
+    const s = await session({ width: 1024, height: 768 }, '1024x768', browser, { reducedMotion: 'reduce' }); const { page } = s;
+    await start(s);
+    await vyStart(s, 3);
+    const r = await vyPlay(s, {});
+    check('L3: the group question comes before the basket (reduced motion round completes)', r.groupAsked === true && r.stops >= 8, JSON.stringify({ stops: r.stops, groupAsked: r.groupAsked }));
+    check('V-L3 reduced-motion run: zero console errors / 4xx', s.errors.length === 0, s.errors.join(' | '));
+    allErrors.push(...s.errors);
+    await s.ctx.close();
+  }
+}
 
 // ======================================================================= 3. reduced motion + offline in the car (service worker active)
 if (want('3')) {
@@ -567,7 +879,7 @@ if (want('3')) {
   const cache = await page.evaluate(async () => { const k = await caches.keys(); const c = await caches.open(k.find((x) => x.startsWith('houbicky-'))); const keys = (await c.keys()).map((r) => new URL(r.url).pathname);
     return { k, n: keys.length, mp3: keys.filter((x) => x.endsWith('.mp3')).length, jpg: keys.filter((x) => x.endsWith('.jpg')).length, scoped: keys.every((x) => x.startsWith('/houbicky/')) }; });
   const nVoices = Object.values(CATALOGUE).reduce((a, m) => a + Object.keys(m).length, 0);
-  check(`offline: SW (v6) precached shell + ${nVoices} voice files + 4 photos, all under /houbicky/`, cache.k.includes('houbicky-v6') && cache.mp3 === nVoices && cache.jpg === 4 && cache.scoped, JSON.stringify(cache));
+  check(`offline: SW (${SW_VERSION}) precached shell + ${nVoices} voice files + 4 photos, all under /houbicky/`, cache.k.includes(`houbicky-${SW_VERSION}`) && cache.mp3 === nVoices && cache.jpg === 4 && cache.scoped, JSON.stringify(cache));
   // ---- go offline (the car), reload and play everything
   failed.length = 0;
   await ctx.setOffline(true);

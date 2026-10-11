@@ -11,8 +11,9 @@ export const LEVELS = {
   2: { faces: 'neutral', photos: false, choices: 'twins', groupQuestion: false },
   3: { faces: 'neutral', photos: true, choices: 'twins', groupQuestion: true },
 };
-export const UNLOCK_STICKERS = 8;          // level 2 opens after this many stickers (BRIEF-v2; designer may refine)
-export const VYPRAVA_STICKERS = 8;         // „Výprava do lesa“ opens after this many stickers
+export const UNLOCK_STICKERS = 8;          // level 2 + Výprava open together (DESIGN-v2 §3.2: one ceremony, two gifts)
+export const VYPRAVA_STICKERS = 8;
+export const UNLOCK_GOLD = 20;             // level 3: 20 of 25 species gold, earned at level ≥ 2 (DESIGN-v2 §3.2)
 
 export const level = () => store.getLevel();
 export const conf = (n = level()) => LEVELS[n] || LEVELS[1];
@@ -33,13 +34,16 @@ export function twinIds(id) {
 }
 
 // ---- unlocks
-function goldCount(n) { return speciesFor(n).filter((sp) => store.isGold(sp.id)).length; }
+/** Gold stickers that count toward Level 3 (earned at Level ≥ 2). */
+export const goldForL3 = () => species.filter((sp) => store.isGoldAt(sp.id, 2)).length;
+export const goldIdsForL3 = () => species.filter((sp) => store.isGoldAt(sp.id, 2)).map((sp) => sp.id);
 export function unlockState() {
   const unlocks = store.getUnlocks();
-  const stickers = store.stickerCount();
+  // 8 stickers = the complete Level-1 album (DESIGN-v2 §3.2)
+  const l1 = speciesFor(1);
+  const stickers = Math.round((l1.filter((sp) => store.hasSticker(sp.id)).length * UNLOCK_STICKERS) / Math.max(1, Math.min(UNLOCK_STICKERS, l1.length)));
   const auto2 = stickers >= UNLOCK_STICKERS;
-  const pool2 = speciesFor(2).length;
-  const auto3 = pool2 > 0 && goldCount(2) >= pool2;
+  const auto3 = goldForL3() >= Math.min(UNLOCK_GOLD, species.length);
   return {
     1: { unlocked: true, auto: true, manual: false },
     2: { unlocked: auto2 || !!unlocks[2], auto: auto2, manual: !!unlocks[2] },
@@ -48,6 +52,12 @@ export function unlockState() {
   };
 }
 export const isUnlocked = (n) => !!unlockState()[n]?.unlocked;
+/** A level unlocked by playing whose ceremony has not been shown yet (2 or 3), else 0. */
+export function pendingCeremony() {
+  const st = unlockState();
+  for (const n of [3, 2]) if (st[n].auto && !store.wasSeen(n)) return n;
+  return 0;
+}
 /** Choose a level; refused if still locked. */
 export function setLevel(n) {
   if (!isUnlocked(n)) return false;

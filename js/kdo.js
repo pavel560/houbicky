@@ -91,7 +91,7 @@ async function onClick(e) {
   const sp = byId.get(b.dataset.id);
   if (sp.id === target(s).id) {
     s.busy = true;
-    if (!s.missed) store.markMastery(sp.id, 'kdo');
+    if (!s.missed) store.markMastery(sp.id, 'kdo', s.lvl);
     store.addSticker(sp.id);
     sound.play('success');
     jump(b);

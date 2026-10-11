@@ -203,7 +203,7 @@ async function resolve(s, target) {
   s.busy = true; s.g.classList.remove('choosing');
   const correct = (target === 'kosik') === edible;
   if (correct) {
-    if (!s.misses[sp.id]) { s.firstTry++; store.markMastery(sp.id, 'kosik'); }
+    if (!s.misses[sp.id]) { s.firstTry++; store.markMastery(sp.id, 'kosik', s.lvl); }
     store.addSticker(sp.id);
     const ok = await (target === 'kosik' ? dropInBasket(s, el, sp) : placeInZone(s, el, sp));
     if (!ok || !live(s)) return;

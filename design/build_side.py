@@ -463,10 +463,127 @@ def fork_sign():
     return doc("side-fork-sign", 220, 340, body, extra=' data-foot="100 330"', label="Rozcestí")
 
 
+# ---------------------------------------------------------------- end-check clearing (static backdrop)
+
+def end_clearing():
+    """Cosy forest clearing for the hedgehog's basket check. 1600x1000 (16:10); shown with
+    preserveAspectRatio xMidYMid slice, so 4:3 crops x 133..1467. Quiet zones (no detail, low contrast):
+      HUD top-left  x 0–45 % y 0–12 %      buttons top-right x 68–100 % y 0–40 %
+      hedgehog      x 0–36 % y 50–100 %    cloth + finds     x 28–100 % y 56–94 %
+    Interest lives in the tree line (y 30–56 %) and the outer side edges."""
+    R = seed(260)
+    W, H = 1600, 1000
+    HZ = 520                       # where the clearing floor meets the tree line
+    defs = ('<linearGradient id="ec-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfd4d8"/>'
+            '<stop offset=".45" stop-color="#f3e2bf"/><stop offset="1" stop-color="#f6cf97"/></linearGradient>'
+            '<radialGradient id="ec-sun" cx="62%" cy="30%" r="55%"><stop offset="0" stop-color="#fff6dc" stop-opacity=".9"/>'
+            '<stop offset=".35" stop-color="#ffe9b8" stop-opacity=".45"/><stop offset="1" stop-color="#ffe9b8" stop-opacity="0"/></radialGradient>'
+            '<linearGradient id="ec-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b7a45a"/>'
+            '<stop offset=".35" stop-color="#a99a52"/><stop offset="1" stop-color="#8c7a40"/></linearGradient>'
+            '<radialGradient id="ec-pool" cx="56%" cy="74%" r="46%"><stop offset="0" stop-color="#f4e09a" stop-opacity=".55"/>'
+            '<stop offset=".6" stop-color="#e9cf86" stop-opacity=".2"/><stop offset="1" stop-color="#e9cf86" stop-opacity="0"/></radialGradient>'
+            '<radialGradient id="ec-vig" cx="50%" cy="45%" r="75%"><stop offset=".6" stop-color="#3b2417" stop-opacity="0"/>'
+            '<stop offset="1" stop-color="#3b2417" stop-opacity=".28"/></radialGradient>'
+            '<linearGradient id="ec-haze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6dcae" stop-opacity="0"/>'
+            '<stop offset="1" stop-color="#f6dcae" stop-opacity=".8"/></linearGradient>'
+            '<linearGradient id="ec-birch" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#cfc8b8"/>'
+            '<stop offset=".35" stop-color="#fbf8f0"/><stop offset="1" stop-color="#bdb5a2"/></linearGradient>'
+            '<linearGradient id="ec-beech" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7f7a72"/>'
+            '<stop offset=".35" stop-color="#b3ada2"/><stop offset="1" stop-color="#6f6a62"/></linearGradient>')
+    body = f'<rect width="{W}" height="{H}" fill="url(#ec-sky)"/><rect width="{W}" height="{H}" fill="url(#ec-sun)"/>'
+    cl = []
+    for cx, cy, sc in [(330, 130, 1.0), (840, 80, .7)]:          # clouds only left/centre (top-right stays calm)
+        pts = [(cx + 150 * sc * math.cos(2 * math.pi * i / 10) * (1 + R.uniform(-.15, .15)),
+                cy + 32 * sc * math.sin(2 * math.pi * i / 10) * (1 + R.uniform(-.2, .2)) - (14 * sc if math.sin(2 * math.pi * i / 10) < 0 else 0))
+               for i in range(10)]
+        cl.append(smooth(pts))
+    body += f'<path d="{"".join(cl)}" fill="#fff8ea" opacity=".55"/>'
+    # far misty spruce rows behind the clearing (continuous, so no grey band)
+    for base, hmin, hmax, step, col in [(HZ - 70, 90, 150, 40, "#a9adc0"), (HZ - 20, 120, 190, 50, "#949aad")]:
+        ds = []
+        x = -20
+        while x < W + 40:
+            h = R.uniform(hmin, hmax)
+            ds.append(bs.spruce(x, base + R.uniform(-8, 8), h, h * .25, 6))
+            x += step * R.uniform(.7, 1.2)
+        body += f'<path d="{"".join(ds)}" fill="{col}"/>'
+    body += f'<rect y="{HZ - 200}" width="{W}" height="230" fill="url(#ec-haze)"/>'
+    # mid tree line: fuller at the sides, two small birches near centre-left; right side kept low (buttons)
+    mids = ""
+    for kind, x, top in [("beech", 210, 120), ("spruce", 380, 0), ("birch", 560, 250), ("birch", 600, 300),
+                         ("spruce", 1180, 0), ("birch", 1330, 300), ("beech", 1500, 260)]:
+        b = HZ + 18
+        if kind == "spruce":
+            h = 340 if x < 800 else 260
+            d = bs.spruce(x, b, h, h * .26, 8)
+            mids += (f'<path d="{d}" fill="#4f6e58" stroke="{INK}" stroke-width="2.5" stroke-linejoin="round" opacity=".92"/>')
+        elif kind == "birch":
+            mids += bs.birch(x, b, top, 18).replace("url(#g-birch)", "url(#ec-birch)")
+            mids += bs.crown(x, top + 10, 90, ["#b8892a", "#d9b23a", "#f0d266"], n=6)
+        else:
+            mids += bs.beech(x, b, top, 40).replace("url(#g-beech)", "url(#ec-beech)")
+            mids += bs.crown(x, top - 10, 170 if x < 800 else 120, ["#9c4a22", "#c46a2a", "#de9a38", "#efc15a"], n=8)
+    body += f'<g opacity=".95">{mids}</g>'
+    # bushes along the clearing edge (soft, low)
+    bush = ""
+    for i in range(14):
+        x = i * W / 13 + R.uniform(-30, 30)
+        r = R.uniform(40, 70)
+        bush += f'<ellipse cx="{f(x)}" cy="{f(HZ + 12)}" rx="{f(r * 1.6)}" ry="{f(r * .55)}" fill="{R.choice(["#7d8c45", "#8a9a4c", "#9c6a34"])}"/>'
+    body += bush
+    # clearing floor: gentle bowl, warm moss/grass, sunlit pool where the cloth goes, very low-contrast texture
+    floor = smooth([(-20, HZ + 10), (300, HZ - 2), (800, HZ - 8), (1300, HZ - 2), (W + 20, HZ + 12)], closed=False) + f"L{W + 20} {H + 10}L-20 {H + 10}Z"
+    body += f'<path d="{floor}" fill="url(#ec-floor)"/><path d="{floor}" fill="url(#ec-pool)"/>'
+    body += f'<path d="{smooth([(-20, HZ + 10), (300, HZ - 2), (800, HZ - 8), (1300, HZ - 2), (W + 20, HZ + 12)], closed=False)}" fill="none" stroke="#7d6c34" stroke-width="3" opacity=".6"/>'
+    # moss patches (soft blobs, darker toward the edges)
+    mp = []
+    for _ in range(26):
+        x, y = R.uniform(0, W), R.uniform(HZ + 40, H)
+        rx = R.uniform(60, 160)
+        mp.append(f'<ellipse cx="{f(x)}" cy="{f(y)}" rx="{f(rx)}" ry="{f(rx * .28)}"/>')
+    body += f'<g fill="#8f9a48" opacity=".35">{"".join(mp)}</g>'
+    # scattered leaves, small and low-contrast in the quiet zones
+    syms = bs.LEAF_SYMBOLS.replace('id="lf-', 'id="ec-lf-')
+    defs += syms
+    ls = []
+    for _ in range(140):
+        x, y = R.uniform(0, W), R.uniform(HZ + 30, H)
+        quiet = (x > .28 * W and y > .56 * H) or (x < .36 * W and y > .5 * H)
+        k = R.choice(["ec-lf-beech", "ec-lf-oak", "ec-lf-birch", "ec-lf-maple"])
+        sc = (y - HZ) / (H - HZ) * .9 + .4
+        ls.append(f'<use href="#{k}" x="-16" y="-11" width="32" height="22" transform="translate({f(x)} {f(y)}) scale({f(sc)} {f(sc * .55)}) rotate({int(R.uniform(0, 360))})" '
+                  f'color="{R.choice(bs.LEAF_COLORS)}" opacity="{".45" if quiet else ".85"}"/>')
+    body += "".join(ls)
+    # grass tufts only along the tree-line edge and the outer bottom corners
+    gr = []
+    for _ in range(40):
+        x = R.uniform(0, W)
+        y = HZ + R.uniform(8, 40)
+        for k in range(3):
+            gr.append(f"M{f(x + k * 4)} {f(y)}q{f(-3 + k * 3)} -10 {f(-6 + k * 6)} -{f(16 + k * 4)}")
+    for x0 in (20, W - 120):
+        for _ in range(10):
+            x, y = x0 + R.uniform(0, 100), H - R.uniform(0, 30)
+            for k in range(3):
+                gr.append(f"M{f(x + k * 5)} {f(y)}q{f(-4 + k * 4)} -14 {f(-8 + k * 8)} -{f(30 + k * 8)}")
+    body += f'<path d="{"".join(gr)}" fill="none" stroke="#5d6d33" stroke-width="3" stroke-linecap="round" opacity=".8"/>'
+    # framing: a big spruce trunk + fern at the far left edge, a mossy stump at the far right edge (outside the 4:3 crop mostly)
+    big = bs.spruce(40, H + 40, 1100, 260, 12)
+    body += (f'<clipPath id="ec-r"><rect x="40" y="0" width="300" height="{H}"/></clipPath>'
+             f'<path d="{big}" fill="#3a5a44" stroke="{INK}" stroke-width="4" stroke-linejoin="round"/>'
+             f'<path d="{big}" fill="#24402f" opacity=".7" clip-path="url(#ec-r)"/>'
+             f'<path d="{big}" fill="none" stroke="{INK}" stroke-width="4" stroke-linejoin="round"/>')
+    body += f'<g transform="translate({W - 40} {H + 10})">{bs.fern(0, 0, .8, -1, "#c07a2e", "#94541f")}</g>'
+    body += f'<rect width="{W}" height="{H}" fill="url(#ec-vig)"/>'
+    zones = ' data-safe-hud="0 0 45 12" data-safe-buttons="68 0 100 40" data-safe-guide="0 50 36 100" data-safe-cloth="28 56 100 94"'
+    return doc("end-clearing", W, H, body, defs,
+               ' preserveAspectRatio="xMidYMid slice" data-crop-43="133 0 1334 1000"' + zones, "Mýtinka")
+
+
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     files = {"side-sky.svg": side_sky(), "side-far.svg": side_far(), "side-mid.svg": side_mid(), "side-front.svg": side_front(),
-             "side-child.svg": child(), "side-jezek.svg": jezek_walk(), "side-fork-sign.svg": fork_sign()}
+             "side-child.svg": child(), "side-jezek.svg": jezek_walk(), "side-fork-sign.svg": fork_sign(), "end-clearing.svg": end_clearing()}
     for i, k in enumerate(["flat", "up", "crest", "down", "brook"]):
         files[f"side-ground-{k}.svg"] = ground_segment(k, 300 + i)
     for name, s in files.items():

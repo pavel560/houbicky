@@ -21,7 +21,7 @@ Every step up is a place she can see, not a menu setting.
 | `design/contact-sheet.png` | all 25 characters with level, twin and edibility (2×) |
 | `design/build_side.py` | **new (v2.2)**: the 2D side-scroll kit → `art/vyprava/side-*.svg` (sky, far, mid, front, 5 ground segments, child, hedgehog walk, fork sign) |
 | `design/comp-vyprava.png` | the walk v2.2 (2D): child + hedgehog climbing a hill on the trail, hřib in moss half behind a fern, liška on a mossy rock, fly agaric at a stump with the stop bubble, a deer leaping in the mid layer, basket + back + „Dál“ (1024×768 @2×) |
-| `design/comp-vyprava-end.png` | the hedgehog checking the basket (1024×768 @2×) |
+| `design/comp-vyprava-end.png` | the hedgehog checking the basket, on the new `end-clearing.svg` backdrop (1024×768 @2×; also checked at 16:10) |
 | `design/comp-levels.png` | A: Les at L1 with the locked 4th door · B: level picker · C: unlock ceremony (3 × 1024×768) |
 
 All generators are deterministic, stdlib-only Python. Rebuilding twice gives byte-identical SVGs (verified). The 12 v1 characters other than pýchavka are byte-identical to the shipped files. Pýchavka changed only in its invisible anchors (see §6.2).
@@ -219,6 +219,22 @@ At the signpost clearing:
    - two buttons: „Ještě jednou“ (`i-retry`) and Home.
    - Stickers for any species she met but did not have yet are added (the same fly-to-album moment as v1).
 
+### 4.8a End-check backdrop: `art/vyprava/end-clearing.svg` (v2.2)
+A static, cosy forest clearing (1600×1000, `preserveAspectRatio="xMidYMid slice"`; at 4:3 the visible part is x 133–1467): misty spruce rows → a mid tree line (beeches, birches, spruces; fuller at the sides, low on the right) → a warm mossy clearing floor with a sunlit pool where the cloth lies, low-contrast leaves, grass only along the tree line and the outer bottom corners; a big framing spruce at the far left edge and a fern at the far right edge (mostly outside a 4:3 crop); soft vignette. It replaces sky + far + CSS floor (which left a flat grey band).
+**Safe areas (% of the viewport, valid for 4:3 … 16:10; also in the file as `data-safe-*` = x0 y0 x1 y1):**
+| Zone | x % | y % | What goes there |
+|---|---|---|---|
+| HUD top-left | 0–45 | 0–12 | home + stars pill (plain sky) |
+| buttons top-right | 68–100 | 0–40 | speaker, „Ještě jednou“ / „Domů“ panel (calm sky + haze, no crowns) |
+| twin card | 38–70 | 10–40 | Dvojník card over the tree line (fine; the tree line is soft) |
+| hedgehog | 0–36 | 50–100 | Ježek (plain floor; only the framing trunk at the very edge) |
+| cloth + finds | 28–100 | 56–94 | gingham cloth lower-middle, finds standing on it (sunlit pool centred at 56 % / 74 %) |
+| adult line | 0–40 | 90–100 | „Houby sbíráme jen s dospělým“ pill |
+| tree line / interest | 0–100 | 30–56 | decorative only |
+
+### 4.10a Squirrel climb frames (v2.2)
+`art/vyprava/veverka.svg` keeps its 4 run poses (byte-identical) and adds `.climb-1..3` (reach, gather, push; hidden by default): head up, belly and paws toward a trunk on the **right**, paw grip line at **x ≈ 262** (`data-climb-grip-x`), `data-climb-poses="3"`. To climb: hide all `.pose-N`, align the trunk's left edge with the grip line, show `.climb-1→2→3` at 10 fps while moving the sprite up ≈ 40 units per cycle; mirror for a trunk on the left.
+
 ### 4.9 Round composition (for the programmer's generator)
 - **Count:** 8 stations at L1 and 10 at L2/L3. About 60 % edible, ≥ 2 poisonous (≥ 1 at L1 is a red or green amanita), ≥ 1 inedible.
 - **Wood growers** stand at the foot of a stump or tree flat, never in the open.
@@ -365,7 +381,8 @@ All renders were made with Playwright and Chromium, then looked at; the final PN
   - Trunks showed in the basket, so I added `.host` and `data-pick-box`.
 - **v2.1 trail kit + `comp-vyprava.png` (superseded by v2.2):** kit overview + all 12 animal poses rendered and looked at. Fixes: moss cushions were flat slabs → domed with tufts over the whole surface; the moss collar was a trapezoid → lumpy top; the root flare was sticks → tapered roots. The comp is a real perspective projection of a winding, climbing heightfield (flat-shaded faces, moss/litter colour mix, fog) with the kit billboards placed by `data-foot`/`data-height-m`; iterations: the trees walled in the view → the trail corridor was cleared to 8 m, the hill was raised so the crest reads, the deer was moved onto the trail in its flight pose, and props were kept off the hero mushrooms. verified against screenshot at `design/comp-vyprava.png`.
 - **v2.2 2D kit + `comp-vyprava.png` (replaced again):** seam test = far/mid/front tiled ×3 and a 6-segment ground chain (flat-up-crest-down-brook-flat), zoomed at the tile edge: no visible seam. Child: first version had adult proportions and the hat band covered the eye → bigger head (×1.22), shorter limbs, band raised; `look` hand moved to the brow. Comp iterations: a hairline seam where two ground segments meet → 2-unit overlap; the fly agaric was cut off at the right edge and the bubble covered the liška → items moved left, bubble lifted over the agaric; pinkish bush blobs in the mid layer → muted. verified against screenshot at `design/comp-vyprava.png`.
-- **`comp-vyprava-end.png`:** the finds now stand on the cloth, not behind it, and the mistake sits under the magnifier.
+- **v2.2 end clearing:** rendered at 1024×768 and 1280×800 with the hedgehog, cloth, finds, twin card and buttons placed by the safe-area percentages; no grey band, quiet zones hold. `comp-vyprava-end.png` replaced. Squirrel climb frames rendered against a mock trunk; first pass clipped the head at the top and the paws missed the trunk → scaled .9, shifted, grip x recalibrated; run poses verified byte-identical.
+- **`comp-vyprava-end.png` (v2.0):** the finds now stand on the cloth, not behind it, and the mistake sits under the magnifier.
 - **`comp-levels.png`:** the level text pill collided with the 4-door tray, so it became rosette-only. The padlock covered the "Mistr houbař" title, and the title overlapped the gift card; both moved.
 - **Final artefacts:**
   - verified against screenshot at `design/contact-sheet.png`

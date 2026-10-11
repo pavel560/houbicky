@@ -731,9 +731,17 @@ def veverka():
         disp = "" if i == 1 else ' display="none"'
         inner = far(lp) + body(lp[4]) + near(lp)
         groups.append(f'<g class="pose pose-{i}"{disp}><g transform="translate(0 {bob}) rotate({tilt} {W_ / 2} {H_ / 2})">{inner}</g></g>')
+    # climb-up-a-trunk set (v2.2 extra): head up, belly/feet toward a trunk on the RIGHT (grip line x ≈ 262).
+    # Show one .climb-N (and hide every .pose-N) while the billboard moves up the trunk; 3 frames at 10 fps.
+    climb_spec = [((50, 70), (-40, -55), (45, 70), (-35, -50), 0),     # reach: front paws up the trunk
+                  ((-15, 0), (40, 20), (-10, 5), (45, 25), 12),        # gather: hind paws pulled up
+                  ((20, 40), (-70, -85), (15, 35), (-75, -88), 4)]     # push: hind legs stretched
+    for i, lp in enumerate(climb_spec, start=1):
+        inner = far(lp) + body(lp[4]) + near(lp)
+        groups.append(f'<g class="climb climb-{i}" display="none"><g transform="translate(16 16) scale(.9) rotate(-80 {W_ / 2} {H_ / 2 - 10})">{inner}</g></g>')
     sh = f'<g class="shadow"><ellipse cx="{W / 2}" cy="{H - 8}" rx="{W * .28}" ry="8" fill="#2a1a10" opacity=".28"/></g>'
     return "veverka", svg("veverka", f"0 0 {W} {H}", sh + "".join(groups), defs, foot=(W / 2, H - 10), height_m=.35, label="Veverka",
-                          extra=' data-pose="1" data-poses="4" data-facing="right"')
+                          extra=' data-pose="1" data-poses="4" data-facing="right" data-climb-poses="3" data-climb-grip-x="262"')
 
 
 if __name__ == "__main__":

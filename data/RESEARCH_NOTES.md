@@ -182,3 +182,18 @@ Pár kozák↔křemenáč tvoří dva jedlé druhy. Jde o dvojníky pro učení 
 - Vyřazené kandidáty uvádím v `altNote`: václavka ze Soči (ruský popis ukazuje spíš na penízovku), *A. virosa* z Japonska (jiný taxon) a pestřec „1.jpg“ (historie souboru zmiňuje pýchavku).
 - Hlavní fotka hřibu kováře je z Ukrajiny a podle popisu ukazuje i rozříznutou modrající dužninu. Hlavní fotka klouzka je z ČR (s českým popisem), alternativa troudnatce pásovaného také (PR Skočický hrad).
 - Nejméně jisté: muchomůrka jízlivá (místo nálezu není uvedeno) a sírovec (bez místa). Obojí doporučuji zkontrolovat očima.
+
+## Oprava po revizi (11. 10. 2026)
+- **muchomurka-tygrovana.caution:** odstraněna zmínka o jedlé muchomůrce růžovce, protože odporovala pravidlu „muchomůrky nesbíráme“ a předčítá se při každém otevření karty. Nové znění: „Prudce jedovatá! Je hnědá s bílými tečkami. Nesahej na ni.“ / „Very poisonous! It is brown with white spots. Do not touch it.“ Ostatní texty pro dítě (fact, lookFor, where, caution, twinTell) žádnou jedlou muchomůrku nezmiňují, ověřeno skriptem. Růžovka a šedivka zůstávají jen v těchto poznámkách pro dospělé.
+- **Podmíněná jedlost – jednotný konec `caution`:** všech šest podmíněně jedlých druhů končí přesně větou „Rozhodne dospělý.“ / „A grown-up decides.“: pychavka, vaclavka, hrib-kovar, sirovec, lisak a kotrc. Druhy jedlé jen po uvaření obsahují kmen „uvař“: vaclavka, hrib-kovar a nově sirovec. U pýchavky jsem sjednotil anglický konec („Grown-ups decide.“ → „A grown-up decides.“).
+- **Sírovec = jen mladý a jen uvařený.** Nové znění: „Jí se jen mladý a uvařený. Rozhodne dospělý.“ Zdroje:
+  - Myko atlas: jedlý, jen dokud je dužnina měkká.
+  - en.wikipedia: „should not be consumed raw“, u části lidí zažívací potíže.
+  - University of Florida IFAS (PP358): syrový nebo nedovařený vyvolává zažívací potíže, u některých lidí alergie.
+  - MushroomExpert / Messiah University: mírné až střední zažívací potíže u části strávníků.
+  - cs.wikipedia: potíže zvláště v kombinaci s alkoholem.
+  - Do `sources` přibyly odkazy na en.wikipedia a UF IFAS.
+- **Lišák = jen mladý** (beze změny): Myko atlas uvádí, že se sbírají pouze mladé plodnice, a cs.wikipedia, že starší jsou tuhé a štiplavé. Žádný zdroj neuvádí toxicitu za syrova, proto bez „uvař“.
+- **Kotrč = jen mladý a světlý** (beze změny): First Nature uvádí, že je jedlý jen mladý a zhnědlý se vyhazuje. houbareni.cz doporučuje kvůli tuhé dužnině delší tepelnou úpravu, jde ale o kuchyňskou kvalitu, ne o jedovatost. Proto bez „uvař“.
+- **Otevřený bod:** kozáky a křemenáče (*Leccinum*) mohou syrové nebo nedovařené vyvolat nevolnost. Viz poznámka u kozáka ve v1. Brief je za podmíněné druhy nepovažuje a jejich `caution` jsem neměnil. Pokud se má pravidlo „jen uvařený“ rozšířit, týkalo by se i jich.
+- **Kozák a křemenáč = jen uvařený (rozhodnutí koordinátora, konzervativně kvůli dítěti).** Za stávající upozornění na dvojníka přibyla věta „Jí se jen uvařený. Rozhodne dospělý.“ / „Only eaten cooked. A grown-up decides.“ Zdroje: en.wikipedia (*Leccinum*: syrové nebo nedostatečně tepelně upravené často vyvolávají nevolnost a zvracení) a fórum UBC Botanical Garden (příspěvek mykologa: *Leccinum* nikdy nejíst syrové). Druhý zdroj je slabší (fórum). Myko atlas podmínku tepelné úpravy u těchto druhů výslovně neuvádí.

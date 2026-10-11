@@ -195,8 +195,8 @@
         "en": "Under birch trees, in woods, parks and by paths."
       },
       "caution": {
-        "cs": "Podobný je hořký žlučník. Ten má pod kloboukem růžové dírky.",
-        "en": "The bitter bolete looks similar. It has pink holes underneath."
+        "cs": "Podobný je hořký žlučník. Ten má pod kloboukem růžové dírky. Jí se jen uvařený. Rozhodne dospělý.",
+        "en": "The bitter bolete looks similar. It has pink holes underneath. Only eaten cooked. A grown-up decides."
       },
       "colors": {
         "cap": "#8A6440",
@@ -207,7 +207,9 @@
         "https://www.myko.cz/myko-atlas/Leccinum-scabrum/",
         "https://www.houbareni.cz/houba/kozak_brezovy",
         "https://www.nahouby.cz/atlas-hub/kozak-brezovy",
-        "https://www.first-nature.com/fungi/leccinum-scabrum.php"
+        "https://www.first-nature.com/fungi/leccinum-scabrum.php",
+        "https://en.wikipedia.org/wiki/Leccinum",
+        "https://forums.botanicalgarden.ubc.ca/threads/10-cm-organ-gilless-cap.75111/"
       ]
     },
     {
@@ -247,8 +249,8 @@
         "en": "Under aspen and poplar trees."
       },
       "caution": {
-        "cs": "Podobných křemenáčů je víc. Rozliší je jen zkušený houbař.",
-        "en": "There are several similar ones. Only an expert can tell them apart."
+        "cs": "Podobných křemenáčů je víc. Rozliší je jen zkušený houbař. Jí se jen uvařený. Rozhodne dospělý.",
+        "en": "There are several similar ones. Only an expert can tell them apart. Only eaten cooked. A grown-up decides."
       },
       "colors": {
         "cap": "#D2581F",
@@ -260,7 +262,9 @@
         "https://www.houbareni.cz/houba/kremenac_osikovy",
         "https://www.nahouby.cz/atlas-hub/kremenac-osikovy",
         "https://www.wildfooduk.com/mushroom-guide/leccinum-albostipitatum-aspen-bolete/",
-        "https://svampguiden.com/en/art/245501-aspen-bolete"
+        "https://svampguiden.com/en/art/245501-aspen-bolete",
+        "https://en.wikipedia.org/wiki/Leccinum",
+        "https://forums.botanicalgarden.ubc.ca/threads/10-cm-organ-gilless-cap.75111/"
       ]
     },
     {
@@ -353,7 +357,7 @@
       },
       "caution": {
         "cs": "Jedlá je jen mladá a uvnitř čistě bílá. Rozhodne dospělý.",
-        "en": "Only young ones, pure white inside, are edible. Grown-ups decide."
+        "en": "Only young ones, pure white inside, are edible. A grown-up decides."
       },
       "colors": {
         "cap": "#F2EEE4",
@@ -613,8 +617,8 @@
         "en": "In woods under beech, oak and spruce trees."
       },
       "caution": {
-        "cs": "Prudce jedovatá! Podobá se jedlé muchomůrce růžovce. Nesahej na ni.",
-        "en": "Very poisonous! It looks like the edible blusher. Do not touch it."
+        "cs": "Prudce jedovatá! Je hnědá s bílými tečkami. Nesahej na ni.",
+        "en": "Very poisonous! It is brown with white spots. Do not touch it."
       },
       "colors": {
         "cap": "#7A5A3A",
@@ -794,13 +798,15 @@
         "en": ["It is bright yellow and orange.", "It grows on trunks like little shelves.", "It has no stem. It sticks to the tree."]
       },
       "where": {"cs": "Na vrbách, dubech a třešních, hlavně v létě.", "en": "On willow, oak and cherry trees, mostly in summer."},
-      "caution": {"cs": "Jí se jen mladý a měkký. Rozhodne dospělý.", "en": "Only young, soft ones are eaten. A grown-up decides."},
+      "caution": {"cs": "Jí se jen mladý a uvařený. Rozhodne dospělý.", "en": "Only young ones are eaten, and only cooked. A grown-up decides."},
       "colors": {"cap": "#F5A623", "stem": "#F2C14E", "under": "#F7DC5C"},
       "sources": [
         "https://www.myko.cz/myko-atlas/Laetiporus-sulphureus/",
         "https://www.houbareni.cz/houba/sirovec_zlutooranzovy",
         "https://cs.wikipedia.org/wiki/S%C3%ADrovec_%C5%BElutooran%C5%BEov%C3%BD",
-        "https://www.first-nature.com/fungi/laetiporus-sulphureus.php"
+        "https://www.first-nature.com/fungi/laetiporus-sulphureus.php",
+        "https://en.wikipedia.org/wiki/Laetiporus_sulphureus",
+        "https://edis.ifas.ufl.edu/pdf/PP/PP35800.pdf"
       ]
     },
     {

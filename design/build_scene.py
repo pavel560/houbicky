@@ -13,7 +13,8 @@ OUT = os.path.join(HERE, "..", "art")
 INK = "#3b2417"
 R = random.Random(2026)
 
-W, H = 2400, 1000          # panorama; the app shows a window of ~1333-1600 x 1000 and pans
+W, H = 3600, 1000          # panorama (v2: 25 species); the app shows a window of ~1333-1600 x 1000 and pans
+W_L1 = 2400                # Level 1 pans only 0..2400 (8 species); Level 2 unlock opens 2400..3600
 BLEED = 120
 
 
@@ -245,8 +246,10 @@ def build_scene():
     trees.append(spruce(150, 760, 640, 150, 10))
     trees.append(spruce(2290, 770, 680, 160, 10))
     trees.append(spruce(1240, 745, 560, 120, 9))
+    trees.append(spruce(2960, 765, 620, 140, 10))   # v2 extension
+    trees.append(spruce(3540, 772, 690, 160, 10))
     mid.append(f'<path d="{"".join(trees)}" fill="#3a5a44" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>')
-    for tx, tb, th in [(150, 760, 640), (2290, 770, 680), (1240, 745, 560)]:
+    for tx, tb, th in [(150, 760, 640), (2290, 770, 680), (1240, 745, 560), (2960, 765, 620), (3540, 772, 690)]:
         mid.append(f'<clipPath id="sp{tx}"><rect x="{tx}" y="{tb - th - 10}" width="200" height="{th + 20}"/></clipPath>')
         mid.append(f'<path d="{"".join(trees)}" fill="#24402f" clip-path="url(#sp{tx})" opacity=".75"/>')
     mid.append(f'<path d="{"".join(trees)}" fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>')
@@ -255,10 +258,15 @@ def build_scene():
     mid.append(birch(930, 750, 60, 34))
     mid.append(birch(985, 760, 140, 26))
     mid.append(birch(1560, 755, 90, 30))
+    mid.append(birch(2660, 752, 70, 30))            # v2 extension
+    mid.append(birch(2716, 758, 150, 24))
+    mid.append(beech(3260, 768, -60, 70))
     mid.append(crown(540, 40, 300, ["#9c4a22", "#c46a2a", "#de9a38", "#efc15a"], n=10))
     mid.append(crown(1840, 30, 320, ["#8e3f20", "#b85a26", "#d98a32", "#ecb84e"], n=10))
     mid.append(crown(960, 90, 170, ["#b8892a", "#d9b23a", "#f0d266"], n=8))
     mid.append(crown(1560, 120, 150, ["#b8892a", "#d9b23a", "#f0d266"], n=7))
+    mid.append(crown(3270, 30, 310, ["#9c4a22", "#c46a2a", "#de9a38", "#efc15a"], n=10))
+    mid.append(crown(2690, 90, 170, ["#b8892a", "#d9b23a", "#f0d266"], n=8))
     mg = ridge(735, 16, 50, phase=.9, rough=2)
     mid.append(f'<path d="{band(mg)}" fill="url(#g-midground)" stroke="#6b5a2c" stroke-width="3"/>')
     path_d = ("M1010 742C1040 752 1060 764 1040 780C1010 800 900 812 880 840L760 900L1040 900"
@@ -293,7 +301,7 @@ def build_scene():
                 f'<ellipse cx="{lx0}" cy="{ly - 8}" rx="5" ry="8" fill="none" stroke="#9c6f3e" stroke-width="2"/>')
     near.append(f'<path d="M{lx0 + 30} {ly - 46}Q{lx0 + 200} {ly - 74} {lx1} {ly - 60}L{lx1} {ly - 40}Q{lx0 + 200} {ly - 50} {lx0 + 30} {ly - 34}Z" fill="#8a9a4c"/>')
     # stones
-    for sx, sy, sr in [(720, 905, 26), (760, 915, 16), (1480, 900, 22), (300, 930, 18)]:
+    for sx, sy, sr in [(720, 905, 26), (760, 915, 16), (1480, 900, 22), (300, 930, 18), (2640, 912, 22), (3200, 928, 26), (3236, 938, 15)]:
         near.append(f'<ellipse cx="{sx}" cy="{sy}" rx="{sr * 1.4}" ry="{sr}" fill="#a39d92" stroke="{INK}" stroke-width="2.6"/>'
                     f'<ellipse cx="{sx - sr * .4}" cy="{sy - sr * .35}" rx="{sr * .5}" ry="{sr * .25}" fill="#fff" opacity=".3"/>')
     near.append(tufts(-80, W + 80, 870, 40, "#56692f", 34))
@@ -301,22 +309,32 @@ def build_scene():
     near.append(fern(40, 1010, 1.25, 1))
     near.append(fern(2380, 1010, 1.3, -1, "#c07a2e", "#94541f"))
     near.append(fern(1060, 1010, .7, 1, "#c07a2e", "#94541f"))
+    near.append(fern(2920, 1010, .75, 1))
+    near.append(fern(W - 20, 1010, 1.3, -1, "#c07a2e", "#94541f"))
 
     # ---- slots (invisible): where the 13 characters stand; mid = smaller & further
     slots = []
-    mid_slots = [(330, 760), (720, 752), (1100, 748), (1420, 756), (1700, 752), (2060, 760)]
-    near_slots = [(200, 950), (520, 965), (880, 955), (1260, 968), (1600, 958), (1900, 968), (2240, 960)]
-    for i, (x, y) in enumerate(mid_slots):
-        slots.append(f'<circle class="slot" data-layer="mid" data-scale=".6" cx="{x}" cy="{y}" r="6"/>')
-    for i, (x, y) in enumerate(near_slots):
-        slots.append(f'<circle class="slot" data-layer="near" data-scale=".82" cx="{x}" cy="{y}" r="6"/>')
+    # v2: one slot per species (data-id), data-level = minimum level at which it appears.
+    # Level 1 uses only the 8 level-1 slots, all inside 0..W_L1, evenly spread; groups mixed, twins apart.
+    mid_slots = [(200, 754, "kozak", 2), (480, 752, "sirovec", 1), (760, 752, "zlucnik", 2), (1040, 748, "troudnatec", 1),
+                 (1320, 752, "muchomurka-tygrovana", 2), (1600, 756, "trepenitka", 1), (1880, 754, "troudnatec-pasovany", 2),
+                 (2160, 758, "kotrc", 1), (2520, 756, "ryzec", 2), (2800, 752, "pestrec", 2), (3080, 756, "vaclavka", 2),
+                 (3360, 760, "lisak", 2)]
+    near_slots = [(140, 955, "kremenac", 2), (400, 962, "hrib-smrkovy", 1), (660, 958, "pychavka", 2),
+                  (920, 955, "muchomurka-zelena", 1), (1180, 966, "suchohrib", 2), (1440, 960, "liska", 1),
+                  (1700, 958, "bedla", 2), (1960, 966, "muchomurka-cervena", 1), (2220, 960, "muchomurka-jizliva", 2),
+                  (2500, 962, "hrib-kovar", 2), (2780, 958, "klouzek", 2), (3060, 964, "hrib-satan", 2), (3340, 960, "listicka", 2)]
+    for x, y, sid, lv in mid_slots:
+        slots.append(f'<circle class="slot" data-layer="mid" data-scale=".6" data-id="{sid}" data-level="{lv}" cx="{x}" cy="{y}" r="6"/>')
+    for x, y, sid, lv in near_slots:
+        slots.append(f'<circle class="slot" data-layer="near" data-scale=".82" data-id="{sid}" data-level="{lv}" cx="{x}" cy="{y}" r="6"/>')
 
     # falling leaves (animate these; start positions above the canvas)
     falling = "".join(
         f'<use href="#{R.choice(["lf-beech", "lf-birch", "lf-maple", "lf-oak"])}" class="falling-leaf" x="-14" y="-10" width="28" height="20" '
         f'transform="translate({R.randint(80, W - 80)} {R.randint(-120, -30)})" color="{R.choice(LEAF_COLORS)}"/>' for _ in range(9))
 
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" preserveAspectRatio="xMinYMax slice" class="forest" role="img" aria-label="Podzimní les">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" preserveAspectRatio="xMinYMax slice" class="forest" data-pano="{W}" data-pano-l1="{W_L1}" role="img" aria-label="Podzimní les">
 <title>Podzimní les</title>
 <defs>{"".join(defs)}</defs>
 <g id="sky">{sky}</g>
@@ -409,6 +427,8 @@ def build_basket():
 # ---------------------------------------------------------------- 'nechat v lese' zone
 
 def build_zone():
+    global R
+    R = random.Random(7070)   # own seed (v2): scene edits must not ripple into the zone
     cx, cy = 200, 230
     out = []
     pts = []
@@ -452,6 +472,15 @@ ICONS = {
     "hand-stop": '<path d="M15 25V12a3 3 0 0 1 6 0v10V8a3 3 0 0 1 6 0v14V10a3 3 0 0 1 6 0v13V15a3 3 0 0 1 6 0v14q0 13-13 13-8 0-12-7l-6-9a3 3 0 0 1 5-4z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
     "quiz": '<circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="3.5"/><path d="M18.5 19a5.5 5.5 0 1 1 8 5c-2 1.2-2.5 2.2-2.5 4.5" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/><circle cx="24" cy="34.5" r="2.4" fill="currentColor"/>',
     "parents": '<circle cx="17" cy="14" r="5" fill="currentColor"/><circle cx="32" cy="19" r="4" fill="currentColor"/><path d="M8 40V30a9 9 0 0 1 18 0v10M26 40v-7a6 6 0 0 1 12 0v7" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>',
+    # v2: level rosettes (bronze/silver/gold by CSS var), lock states, Výprava door, step, magnifier
+    "level-1": '<path d="M43.6 24.0L42.8 26.5L40.8 28.5L41.5 31.3L41.0 33.8L39.0 35.5L36.3 36.3L35.5 39.0L33.8 41.0L31.3 41.5L28.5 40.8L26.5 42.8L24.0 43.6L21.5 42.8L19.5 40.8L16.7 41.5L14.2 41.0L12.5 39.0L11.7 36.3L9.0 35.5L7.0 33.8L6.5 31.3L7.2 28.5L5.2 26.5L4.4 24.0L5.2 21.5L7.2 19.5L6.5 16.7L7.0 14.2L9.0 12.5L11.7 11.7L12.5 9.0L14.2 7.0L16.7 6.5L19.5 7.2L21.5 5.2L24.0 4.4L26.5 5.2L28.5 7.2L31.3 6.5L33.8 7.0L35.5 9.0L36.3 11.7L39.0 12.5L41.0 14.2L41.5 16.7L40.8 19.5L42.8 21.5Z" style="fill:var(--level-1,#c98d4a)" stroke="#3b2417" stroke-width="2.6" stroke-linejoin="round"/><circle cx="24" cy="24" r="12.6" fill="#fbf4e4" stroke="#3b2417" stroke-width="1.6"/><g transform="translate(24 24) scale(1.05)"><path d="M-7 0A7 6 0 0 1 7 0Z" fill="#3b2417"/><path d="M-2.4 0h4.8l.8 7h-6.4z" fill="#3b2417"/></g>',
+    "level-2": '<path d="M43.6 24.0L42.8 26.5L40.8 28.5L41.5 31.3L41.0 33.8L39.0 35.5L36.3 36.3L35.5 39.0L33.8 41.0L31.3 41.5L28.5 40.8L26.5 42.8L24.0 43.6L21.5 42.8L19.5 40.8L16.7 41.5L14.2 41.0L12.5 39.0L11.7 36.3L9.0 35.5L7.0 33.8L6.5 31.3L7.2 28.5L5.2 26.5L4.4 24.0L5.2 21.5L7.2 19.5L6.5 16.7L7.0 14.2L9.0 12.5L11.7 11.7L12.5 9.0L14.2 7.0L16.7 6.5L19.5 7.2L21.5 5.2L24.0 4.4L26.5 5.2L28.5 7.2L31.3 6.5L33.8 7.0L35.5 9.0L36.3 11.7L39.0 12.5L41.0 14.2L41.5 16.7L40.8 19.5L42.8 21.5Z" style="fill:var(--level-2,#b9bec8)" stroke="#3b2417" stroke-width="2.6" stroke-linejoin="round"/><circle cx="24" cy="24" r="12.6" fill="#fbf4e4" stroke="#3b2417" stroke-width="1.6"/><g transform="translate(19.2 25) scale(0.82)"><path d="M-7 0A7 6 0 0 1 7 0Z" fill="#3b2417"/><path d="M-2.4 0h4.8l.8 7h-6.4z" fill="#3b2417"/></g><g transform="translate(28.8 25) scale(0.82)"><path d="M-7 0A7 6 0 0 1 7 0Z" fill="#3b2417"/><path d="M-2.4 0h4.8l.8 7h-6.4z" fill="#3b2417"/></g>',
+    "level-3": '<path d="M43.6 24.0L42.8 26.5L40.8 28.5L41.5 31.3L41.0 33.8L39.0 35.5L36.3 36.3L35.5 39.0L33.8 41.0L31.3 41.5L28.5 40.8L26.5 42.8L24.0 43.6L21.5 42.8L19.5 40.8L16.7 41.5L14.2 41.0L12.5 39.0L11.7 36.3L9.0 35.5L7.0 33.8L6.5 31.3L7.2 28.5L5.2 26.5L4.4 24.0L5.2 21.5L7.2 19.5L6.5 16.7L7.0 14.2L9.0 12.5L11.7 11.7L12.5 9.0L14.2 7.0L16.7 6.5L19.5 7.2L21.5 5.2L24.0 4.4L26.5 5.2L28.5 7.2L31.3 6.5L33.8 7.0L35.5 9.0L36.3 11.7L39.0 12.5L41.0 14.2L41.5 16.7L40.8 19.5L42.8 21.5Z" style="fill:var(--level-3,#f2b01e)" stroke="#3b2417" stroke-width="2.6" stroke-linejoin="round"/><circle cx="24" cy="24" r="12.6" fill="#fbf4e4" stroke="#3b2417" stroke-width="1.6"/><g transform="translate(17.5 27) scale(0.68)"><path d="M-7 0A7 6 0 0 1 7 0Z" fill="#3b2417"/><path d="M-2.4 0h4.8l.8 7h-6.4z" fill="#3b2417"/></g><g transform="translate(24 23.5) scale(0.68)"><path d="M-7 0A7 6 0 0 1 7 0Z" fill="#3b2417"/><path d="M-2.4 0h4.8l.8 7h-6.4z" fill="#3b2417"/></g><g transform="translate(30.5 27) scale(0.68)"><path d="M-7 0A7 6 0 0 1 7 0Z" fill="#3b2417"/><path d="M-2.4 0h4.8l.8 7h-6.4z" fill="#3b2417"/></g><path d="M24 1.8l1.6 3.2 3.5.5-2.5 2.4.6 3.5-3.2-1.7-3.2 1.7.6-3.5-2.5-2.4 3.5-.5z" fill="#fff6c8" stroke="#3b2417" stroke-width="1.3" stroke-linejoin="round"/>',
+    "lock": '<path d="M15 22v-6a9 9 0 0 1 18 0v6" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><rect x="10" y="21" width="28" height="21" rx="5" fill="currentColor"/><circle cx="24" cy="30" r="3" fill="#fbf4e4"/><path d="M24 31v5" stroke="#fbf4e4" stroke-width="3" stroke-linecap="round"/>',
+    "lock-open": '<path d="M15 22v-6a9 9 0 0 1 17.4-3.2" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><rect x="10" y="21" width="28" height="21" rx="5" fill="currentColor"/><circle cx="24" cy="30" r="3" fill="#fbf4e4"/><path d="M24 31v5" stroke="#fbf4e4" stroke-width="3" stroke-linecap="round"/>',
+    "vyprava": '<path d="M24 6l-9 14h5l-7 10h22l-7-10h5z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 30v4" stroke="currentColor" stroke-width="3"/><path d="M8 44q8-6 16-6t16 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><ellipse cx="17" cy="41" rx="1.8" ry="2.6" fill="currentColor" transform="rotate(-20 17 41)"/><ellipse cx="29" cy="41.5" rx="1.8" ry="2.6" fill="currentColor" transform="rotate(20 29 41.5)"/>',
+    "footsteps": '<g fill="currentColor"><ellipse cx="17" cy="31" rx="5.2" ry="8" transform="rotate(-12 17 31)"/><circle cx="12.5" cy="20" r="1.8"/><circle cx="16" cy="18.6" r="1.8"/><circle cx="19.6" cy="19" r="1.7"/><ellipse cx="31" cy="20" rx="5.2" ry="8" transform="rotate(12 31 20)"/><circle cx="26.4" cy="9" r="1.8"/><circle cx="30" cy="7.6" r="1.8"/><circle cx="33.6" cy="8" r="1.7"/></g>',
+    "magnifier": '<circle cx="20" cy="20" r="11" fill="none" stroke="currentColor" stroke-width="4"/><path d="M28.5 28.5l10 10" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><path d="M14 17a7 7 0 0 1 6-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5"/>',
     # language: simplified round flags (fixed colours)
     # language: simplified round flags (fixed colours, geometry pre-clipped to the circle — no clipPath in symbols)
     "lang-cs": '<path d="M6 24A18 18 0 0 1 42 24Z" fill="#fff"/><path d="M6 24A18 18 0 0 0 42 24Z" fill="#d7141a"/>'

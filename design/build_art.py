@@ -297,7 +297,8 @@ def hw_at(profile, y):
 
 def bolete(sid, title, group, seed, cap_c, cap_light, cap_dark, cap_geo, pore_c, pore_dot, profile,
            stem_c, stem_light, stem_dark, deco, mood, face_y, face_s=1.0, rim_c=None, bruise=False,
-           cap_skin=False, lookfor=()):
+           cap_skin=False, lookfor=(), ring=None, warn=False, gloss=False, ground_extra="", bruise_col=None,
+           velvet=False, stem_top=None):
     a = Art(sid, title, group, seed=seed)
     cx = 120
     rim_y, hw, top_y, bow, n = cap_geo
@@ -311,8 +312,9 @@ def bolete(sid, title, group, seed, cap_c, cap_light, cap_dark, cap_geo, pore_c,
     under = (f'<ellipse cx="{cx}" cy="{f(uy)}" rx="{f(ux_r)}" ry="{f(u_ry)}" fill="{pore_fill}" stroke="{INK}" stroke-width="2.6"/>'
              f'<ellipse cx="{cx}" cy="{f(uy)}" rx="{f(ux_r - 3)}" ry="{f(u_ry - 3)}" fill="{pores}" opacity=".85"/>')
     if bruise:
-        under += (f'<path d="{blob(a, cx + 44, uy + u_ry - 9, 8, 7)}" fill="#3f6fb0" opacity=".8"/>'
-                  f'<path d="{blob(a, cx + 44, uy + u_ry - 9, 4, 6)}" fill="#2c4f8a" opacity=".8"/>')
+        bc = bruise_col or ("#3f6fb0", "#2c4f8a")
+        under += (f'<path d="{blob(a, cx + 44, uy + u_ry - 9, 8, 7)}" fill="{bc[0]}" opacity=".8"/>'
+                  f'<path d="{blob(a, cx + 44, uy + u_ry - 9, 4, 6)}" fill="{bc[1]}" opacity=".8"/>')
         a.anchor("bruise", cx + 42, uy + u_ry - 8)
     a.anchor("pores", cx - hw * 0.76, uy + u_ry * 0.45)
     # ---- stem
@@ -359,6 +361,18 @@ def bolete(sid, title, group, seed, cap_c, cap_light, cap_dark, cap_geo, pore_c,
             if ds:
                 deco_svg += f'<path d="{"".join(ds)}" fill="none" stroke="{col}" stroke-width="2.5" stroke-linecap="round"/>'
         a.anchor("stem-scales", cx + hw_at(profile, yb - 30) * 0.5, yb - 30)
+    elif deco[0] == "dots":  # kovář: stem densely dotted with fine red points, no net
+        _, col, n_dots = deco
+        ds = []
+        for _ in range(n_dots):
+            y0 = a.rng.uniform(yt + 4, yb - 4)
+            w_here = hw_at(profile, y0)
+            x = cx + a.rng.uniform(-w_here * 0.93, w_here * 0.93)
+            if fx0 < x < fx1 and fy0 < y0 < fy1:
+                continue
+            ds.append(f"M{f(x)} {f(y0)}h.1")
+        deco_svg += f'<path d="{"".join(ds)}" stroke="{col}" stroke-width="2.6" stroke-linecap="round"/>'
+        a.anchor("stem-dots", cx + hw_at(profile, yb - 34) * 0.5, yb - 34)
     elif deco[0] == "streaks":  # suchohřib: fibrillose streaks, no net
         _, col = deco
         ds = []
@@ -371,10 +385,20 @@ def bolete(sid, title, group, seed, cap_c, cap_light, cap_dark, cap_geo, pore_c,
             ds.append(f"M{f(x)} {f(y0)}q{f(a.j(2))} 10 {f(a.j(2))} {f(a.rng.uniform(14, 26))}")
         deco_svg += f'<path d="{"".join(ds)}" fill="none" stroke="{col}" stroke-width="1.6" stroke-linecap="round" opacity=".55"/>'
         a.anchor("stem-plain", cx + hw_at(profile, yt + 28) * 0.4, yt + 28)
+    if stem_top:   # hřib satan: yellow at the top of the stem, fading into the red net
+        g_ = a.linear("stop", [(0, stem_top), (.45, stem_top), (1, "rgba(0,0,0,0)")], 0, yt, 0, yt + 60)
+        deco_svg += f'<rect x="{cx - mw}" y="{yt}" width="{2 * mw}" height="60" fill="{g_}" opacity=".9"/>'
     # contact shade under the cap
     deco_svg += (f'<ellipse cx="{cx}" cy="{f(yt + 4)}" rx="{f(profile[0][1] + 6)}" ry="9" fill="{INK}" opacity=".22"/>')
     stem += f'<g clip-path="{sclip}">{deco_svg}</g>'
     stem += f'<path d="{sd}" fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+    if ring:   # klouzek: membranous ring (collar) on the stem
+        ry_, rcol, rshade = ring
+        rw = hw_at(profile, ry_) + 5
+        stem += (f'<path d="M{f(cx - rw)} {f(ry_ - 3)}Q{f(cx)} {f(ry_ + 6)} {f(cx + rw)} {f(ry_ - 3)}L{f(cx + rw + 2)} {f(ry_ + 8)}'
+                 f'Q{f(cx)} {f(ry_ + 18)} {f(cx - rw - 2)} {f(ry_ + 8)}Z" fill="{rcol}" stroke="{INK}" stroke-width="2.4" stroke-linejoin="round"/>'
+                 f'<path d="M{f(cx - rw + 3)} {f(ry_ + 9)}Q{f(cx)} {f(ry_ + 16)} {f(cx + rw - 3)} {f(ry_ + 9)}" fill="none" stroke="{rshade}" stroke-width="2"/>')
+        a.anchor("ring", cx + rw + 2, ry_ + 4)
     stem += face(a, cx, face_y, mood, face_s, skin=sfill)
     # ---- cap
     cp = a.jit(cap_points(cx, rim_y, hw, top_y, bow, n), 0.7)
@@ -399,7 +423,14 @@ def bolete(sid, title, group, seed, cap_c, cap_light, cap_dark, cap_geo, pore_c,
     # highlight + texture speckles
     hl = [(cx - hw * 0.62, rim_y - (rim_y - top_y) * 0.42), (cx - hw * 0.4, rim_y - (rim_y - top_y) * 0.8),
           (cx - hw * 0.05, top_y + 7), (cx - hw * 0.3, top_y + 16), (cx - hw * 0.52, rim_y - (rim_y - top_y) * 0.55)]
-    inner += f'<path d="{smooth(hl)}" fill="#fff" opacity=".22"/>'
+    inner += f'<path d="{smooth(hl)}" fill="#fff" opacity="{".08" if velvet else ".22"}"/>'
+    if gloss:   # klouzek: slimy, wet-looking cap — sharp white glints + a slime drip at the rim
+        h_ = rim_y - top_y
+        inner += (f'<path d="M{f(cx - hw * .55)} {f(rim_y - h_ * .5)}Q{f(cx - hw * .42)} {f(top_y + h_ * .18)} {f(cx - hw * .05)} {f(top_y + 9)}" '
+                  f'fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".75"/>'
+                  f'<path d="M{f(cx + hw * .25)} {f(top_y + 14)}q{f(hw * .2)} 4 {f(hw * .32)} 16" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".6"/>'
+                  f'<circle cx="{f(cx - hw * .2)}" cy="{f(top_y + h_ * .45)}" r="3" fill="#fff" opacity=".7"/>')
+        a.anchor("cap-slimy", cx + hw * .45, top_y + h_ * .45)
     sp_ = []
     for _ in range(26):
         x = cx + a.rng.uniform(-hw * .8, hw * .8)
@@ -408,11 +439,17 @@ def bolete(sid, title, group, seed, cap_c, cap_light, cap_dark, cap_geo, pore_c,
     inner += f'<path d="{"".join(sp_)}" stroke="{cap_dark}" stroke-width="2.2" stroke-linecap="round" opacity=".35"/>'
     cap += f'<g clip-path="{cclip}">{inner}</g>'
     cap += f'<path d="{cd}" fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+    if gloss:   # slime drip hanging from the rim
+        dx = cx + hw * .62
+        dy = rim_y + bow * .55
+        cap += (f'<path d="M{f(dx - 4)} {f(dy - 3)}q4 2 8 0q1 9 -4 13q-5 -4 -4 -13z" fill="{cap_light}" stroke="{INK}" stroke-width="1.6" stroke-linejoin="round"/>'
+                f'<circle cx="{f(dx - 1)}" cy="{f(dy + 4)}" r="1.4" fill="#fff" opacity=".8"/>')
     a.anchor("cap", cx + hw * 0.25, top_y + (rim_y - top_y) * 0.35)
     if cap_skin:
         a.anchor("cap-skin", cx - hw * 0.75, rim_y + 6)
     sh = shadow_el(cx, 260, max(40, profile[-1][1] + 22))
-    return a, a.svg(sh, ground_patch(a), under, stem, cap)
+    wm = warn_marks(cx, top_y, hw, drop=-2) if warn else ""
+    return a, a.svg(sh, ground_patch(a) + ground_extra, under, stem, cap, wm)
 
 
 # ---------------------------------------------------------------- amanitas + bedla
@@ -465,7 +502,8 @@ def skirt_ring(a, cx, y, hw_stem, flare, drop, col="#f8f4ea", shade="#d9d3c2", p
 
 
 def amanita(sid, title, group, seed, deadly, cap_light, cap_c, cap_dark, cap_geo, cap_deco, stem_top_y,
-            profile, ring_y, base, face_y, stem_c="#f7f2e6", stem_dark="#d8cfbc", gill_c="#fbf7ee", zigzag=False):
+            profile, ring_y, base, face_y, stem_c="#f7f2e6", stem_dark="#d8cfbc", gill_c="#fbf7ee", zigzag=False,
+            cone=False, shaggy=False):
     a = Art(sid, title, group, deadly=deadly, seed=seed)
     cx = 120
     rim_y, hw, top_y, bow, n = cap_geo
@@ -502,6 +540,18 @@ def amanita(sid, title, group, seed, deadly, cap_light, cap_c, cap_dark, cap_geo
             zz.append("".join(pts))
         inner += f'<path d="{"".join(zz)}" fill="none" stroke="#c9cfa4" stroke-width="1.6" stroke-linejoin="round" opacity=".9"/>'
         a.anchor("stem-zigzag", cx + hw_at(profile, ring_y + 50) * 0.5, ring_y + 52)
+    if shaggy:   # jízlivá: woolly / flaky white fibres on the stem below the ring
+        fl = []
+        for k in range(9):
+            y0 = ring_y + 26 + k * 10
+            if face_y - 16 < y0 < face_y + 22 or y0 > yb - 6:
+                continue
+            w_ = hw_at(profile, y0)
+            for i in range(4):
+                x = cx - w_ + (i + .5 + a.j(.25)) * (2 * w_) / 4
+                fl.append(f"M{f(x - 3)} {f(y0)}q3 -5 6 0")
+        inner += f'<path d="{"".join(fl)}" fill="none" stroke="#cfc8b6" stroke-width="1.6" stroke-linecap="round"/>'
+        a.anchor("stem-shaggy", cx + hw_at(profile, ring_y + 70) * 0.5, ring_y + 70)
     stem += f'<g clip-path="{sclip}">{inner}</g>'
     stem += f'<path d="{sd}" fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
     # bulb top edge over stem join
@@ -548,7 +598,15 @@ def amanita(sid, title, group, seed, deadly, cap_light, cap_c, cap_dark, cap_geo
     a.anchor("ring", cx + hw_at(profile, ring_y) + 12, ring_y + 14)
     stem += face(a, cx, face_y, "sly", 0.95, skin=sfill)
     # cap
-    cp = a.jit(cap_points(cx, rim_y, hw, top_y, bow, n), 0.7)
+    if cone:   # jízlivá: conical / bell cap, slightly lopsided
+        h_ = rim_y - top_y
+        cp = [(cx + hw, rim_y), (cx + hw * .82, rim_y - h_ * .38), (cx + hw * .45, rim_y - h_ * .78), (cx + hw * .12, top_y + 3),
+              (cx - hw * .05, top_y), (cx - hw * .3, top_y + h_ * .12), (cx - hw * .62, rim_y - h_ * .6), (cx - hw * .9, rim_y - h_ * .25),
+              (cx - hw, rim_y)] + [(cx - hw * 0.96, rim_y + bow * 0.45), (cx - hw * 0.55, rim_y + bow * 0.92), (cx, rim_y + bow),
+                                    (cx + hw * 0.55, rim_y + bow * 0.92), (cx + hw * 0.96, rim_y + bow * 0.45)]
+        cp = a.jit(cp, 0.6)
+    else:
+        cp = a.jit(cap_points(cx, rim_y, hw, top_y, bow, n), 0.7)
     cd = smooth(cp)
     cfill = a.radial("cap", [(0, cap_light), (.5, cap_c), (1, cap_dark)])
     cclip = a.clip("cc", cd)
@@ -867,6 +925,7 @@ def pychavka():
             f'<path d="{bd}" fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>')
     a.anchor("spines", cx + 30, 112)
     a.anchor("top", cx, 88)
+    a.anchor("white", cx + 44, 196)
     a.anchor("no-gills", cx - 64, 150)
     body += face(a, cx, 166, "happy", 1.05, skin=fill)
     return a.svg(shadow_el(cx, 260, 50), ground_patch(a), "", body, "")
@@ -968,24 +1027,539 @@ def trepenitka():
     return a.svg(shadow_el(120, 261, 76), ground_patch(a, rx=100), "", stump + body, "", warn_marks(122, 58, 74))
 
 
-LOOK = {  # anchor data-feature per lookFor index, in the order of data/species.json (2026-10-11)
+# ================================================================ v2 species (2026-10-11)
+# Same contract as v1. Edible = happy, inedible = bleh/sleepy, poisonous = sly + .warn.
+
+def larch_litter(cx=120, y=262):
+    """Larch needle tufts + a small larch cone on the ground patch (klouzek grows under larch)."""
+    out = []
+    for bx, by, rot in [(cx - 70, y - 2, -10), (cx + 58, y + 3, 14)]:
+        nd = "".join(f"M0 0l{f(14 * math.cos(math.radians(-150 + k * 20)))} {f(14 * math.sin(math.radians(-150 + k * 20)))}" for k in range(7))
+        out.append(f'<g transform="translate({bx} {by}) rotate({rot})"><path d="{nd}" stroke="#c9a23a" stroke-width="1.6" stroke-linecap="round"/></g>')
+    out.append(f'<g transform="translate({cx + 76} {y - 4}) rotate(-20)"><ellipse rx="7" ry="9" fill="#8a5a33" stroke="{INK}" stroke-width="1.6"/>'
+               f'<path d="M-6 -3q6 3 12 0M-6 3q6 3 12 0" fill="none" stroke="{INK}" stroke-width="1.1"/></g>')
+    return "".join(out)
+
+
+def pine_needles(cx=120, y=262):
+    out = []
+    for bx, by, rot in [(cx - 80, y + 1, 20), (cx + 70, y + 4, -30), (cx - 30, y + 8, 80)]:
+        out.append(f'<path d="M{bx} {by}l22 -5M{bx} {by}l22 -1" transform="rotate({rot} {bx} {by})" stroke="#8a6a3a" stroke-width="1.6" stroke-linecap="round"/>')
+    return "".join(out)
+
+
+def cluster(sid, title, group, seed, caps, cap_stops, gill_c, gill_line, stem_stops, mood, scales=None, ring=None,
+            warn=False, face_xy=(None, 196)):
+    """Tuft of several mushrooms on a low stump (václavka). caps: (bx,by,kx,ky,khw,kh,shw) back->front."""
+    a = Art(sid, title, group, seed=seed)
+    top_y = 216
+    stump_pts = [(60, top_y), (58, 240), (44, 259), (70, 263), (170, 263), (196, 259), (182, 240), (180, top_y)]
+    sd = smooth(stump_pts, closed=False) + "Z"
+    sfill = a.linear("stump", [(0, "#4f3423"), (.35, "#87603f"), (.8, "#6b4a30"), (1, "#3f2a1c")], 44, 0, 196, 0)
+    sclip = a.clip("sc", sd)
+    grain = "".join(f"M{f(x)} {top_y + 8}q{f(a.j(3))} 22 {f(a.j(5))} 44" for x in range(68, 178, 11))
+    stump = (f'<path d="{sd}" fill="{sfill}"/>'
+             f'<g clip-path="{sclip}"><path d="{grain}" fill="none" stroke="#3b2417" stroke-width="1.6" opacity=".45"/></g>'
+             f'<path d="{sd}" fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+             f'<ellipse cx="120" cy="{top_y}" rx="60" ry="12" fill="#d7aa6c" stroke="{INK}" stroke-width="2.6"/>'
+             f'<ellipse cx="120" cy="{top_y}" rx="40" ry="7.5" fill="none" stroke="#b5874c" stroke-width="1.5"/>'
+             f'<ellipse cx="120" cy="{top_y}" rx="20" ry="3.6" fill="none" stroke="#b5874c" stroke-width="1.5"/>')
+    a.anchor("on-wood", 66, 244)
+    stemfill = a.linear("st", stem_stops, 0, 0, 1, 0, user=False)
+    capfill = a.radial("cap", cap_stops, cx="50%", cy="38%", r="70%")
+    body = ""
+    for i, (bx, by, kx, ky, khw, kh, shw) in enumerate(caps):
+        mx = (bx + kx) / 2 + (5 if kx < bx else -5)
+        sp = [(kx - shw * .8, ky + 2), (mx - shw, (by + ky) / 2), (bx - shw - 1, by), (bx + shw + 1, by),
+              (mx + shw, (by + ky) / 2), (kx + shw * .8, ky + 2)]
+        spd = smooth(sp, closed=False) + "Z"
+        body += (f'<path d="{spd}" fill="{stemfill}" stroke="{INK}" stroke-width="2.4" stroke-linejoin="round"/>'
+                 f'<path d="M{f(bx - shw)} {f(by - 16)}Q{f(bx)} {f(by - 11)} {f(bx + shw)} {f(by - 16)}L{f(bx + shw + 1)} {f(by - 1)}'
+                 f'Q{f(bx)} {f(by + 2)} {f(bx - shw - 1)} {f(by - 1)}Z" fill="#4a3018" opacity=".45"/>')
+        if ring:   # cottony ring a little below the cap on every stem
+            t = .22
+            rx_ = kx + (mx - kx) * t * 2
+            ry_ = ky + 12 + kh * .1
+            rw = shw * 1.15 + 3
+            body += (f'<path d="M{f(rx_ - rw)} {f(ry_)}Q{f(rx_)} {f(ry_ + 7)} {f(rx_ + rw)} {f(ry_)}L{f(rx_ + rw - 1)} {f(ry_ + 6)}'
+                     f'Q{f(rx_)} {f(ry_ + 14)} {f(rx_ - rw + 1)} {f(ry_ + 6)}Z" fill="{ring}" stroke="{INK}" stroke-width="1.6" stroke-linejoin="round"/>')
+            if i == len(caps) - 1:
+                a.anchor("ring", rx_ + rw + 2, ry_ + 4)
+        if i == len(caps) - 1:
+            fx = face_xy[0] if face_xy[0] is not None else (kx + bx) / 2 - 1
+            body += face(a, fx, face_xy[1], mood, 0.62, skin=stem_stops[1][1])
+            a.pivot = (kx, ky)
+        gry = kh * .34 + 4
+        gl = "".join(f"M{f(kx + khw * .9 * math.cos(math.pi - math.pi * j / 10) * .25)} {f(ky + 1)}"
+                     f"L{f(kx + khw * .9 * math.cos(math.pi - math.pi * j / 10))} {f(ky + 2 + gry * math.sin(math.pi * j / 10))}"
+                     for j in range(1, 10))
+        body += (f'<ellipse cx="{f(kx)}" cy="{f(ky + 2)}" rx="{f(khw * .92)}" ry="{f(gry)}" fill="{gill_c}" stroke="{INK}" stroke-width="2"/>'
+                 f'<path d="{gl}" stroke="{gill_line}" stroke-width="1" fill="none"/>')
+        cdd = smooth(a.jit(cap_points(kx, ky, khw, ky - kh, 4, 2.2, 8), .4))
+        body += f'<path d="{cdd}" fill="{capfill}" stroke="{INK}" stroke-width="2.4" stroke-linejoin="round"/>'
+        if scales:   # small dark fibrous scales, denser toward the cap centre
+            sc = []
+            for _ in range(int(khw * .45)):
+                r_ = a.rng.uniform(0, 1) ** 1.6
+                ang = a.rng.uniform(math.pi * 1.08, math.pi * 1.92)
+                x = kx + khw * .78 * r_ * math.cos(ang)
+                y = ky - kh * .62 + kh * .7 * r_ * (1 + math.sin(ang)) * .55
+                sc.append(f"M{f(x - 1.6)} {f(y)}l1.6 -2.2l1.6 2.2")
+            body += f'<path d="{"".join(sc)}" fill="none" stroke="{scales}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>'
+        body += (f'<path d="M{f(kx - khw * .55)} {f(ky - kh * .5)}Q{f(kx - khw * .3)} {f(ky - kh * .85)} {f(kx)} {f(ky - kh * .9)}" '
+                 f'fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".3"/>')
+    k = caps[-1]
+    a.anchor("tuft", caps[1][2], caps[1][3] - 12)
+    a.anchor("cap-scales", caps[2][2] + 8, caps[2][3] - caps[2][5] * .5)
+    a.anchor("gills", k[2] + k[4] * .55, k[3] + 8)
+    wm = warn_marks(122, 58, 74) if warn else ""
+    return a.svg(shadow_el(120, 261, 76), ground_patch(a, rx=100), "", f'<g class="host">{stump}</g>' + body, "", wm)
+
+
+def vaclavka():
+    # Armillaria: honey-brown caps darker at centre, small dark scales, whitish gills, ring; tuft on wood
+    return cluster("vaclavka", "Václavka obecná", "jedla", 505,
+                   caps=[(98, 214, 66, 120, 30, 20, 6), (146, 212, 178, 112, 32, 21, 6.5), (122, 210, 120, 84, 34, 23, 7),
+                         (102, 222, 84, 152, 29, 19, 7.5), (136, 226, 148, 140, 42, 27, 14)],
+                   cap_stops=[(0, "#6a3e18"), (.3, "#9c6624"), (.7, "#d29a3e"), (1, "#b47c2c")],
+                   gill_c="#f1e6cc", gill_line="#c9b48a",
+                   stem_stops=[(0, "#9c7a52"), (.4, "#e8d4ae"), (1, "#a8865a")],
+                   mood="happy", scales="#4a2c14", ring="#f6eccd")
+
+
+def ryzec():
+    # Lactarius deliciosus: orange cap with darker concentric zones, depressed centre; orange gills; carrot-orange milk
+    a = Art("ryzec", "Ryzec pravý", "jedla", seed=606)
+    cx = 120
+    a.pivot = (cx, 128)
+    org, org_l, org_d = "#e9852c", "#f6a95a", "#b85a1a"
+    rim_y, rx, ry = 100, 90, 20
+    # under: gills band seen below the cap rim, funnelling to the stem
+    gy = rim_y + 4
+    gband = [(cx - rx + 6, gy), (cx - 64, gy + 26), (cx - 26, gy + 50), (cx + 26, gy + 50), (cx + 64, gy + 26), (cx + rx - 6, gy)]
+    gd = smooth(gband, closed=False) + "Z"
+    gfill = a.linear("gill", [(0, "#f6ad5a"), (1, "#d9772a")], 0, gy, 0, gy + 50)
+    gclip = a.clip("gc", gd)
+    gl = "".join(f"M{f(cx + t * (rx - 8))} {f(gy + 4)}L{f(cx + t * 24)} {f(gy + 50)}" for t in [i / 15 - 1 for i in range(1, 30)])
+    under = (f'<path d="{gd}" fill="{gfill}"/><g clip-path="{gclip}"><path d="{gl}" stroke="#b85a1a" stroke-width="1.3" fill="none"/></g>'
+             f'<path d="{gd}" fill="none" stroke="{INK}" stroke-width="2.6" stroke-linejoin="round"/>')
+    # milk droplet hanging from a gill (carrot-orange)
+    mx, my = cx + 50, gy + 30
+    under += (f'<path d="M{mx} {my}q-7 11 0 17q7 -6 0 -17z" fill="#f2700a" stroke="{INK}" stroke-width="1.8" stroke-linejoin="round"/>'
+              f'<circle cx="{mx - 1.8}" cy="{my + 10}" r="1.8" fill="#fff" opacity=".85"/>'
+              f'<circle cx="{mx - 16}" cy="{my - 4}" r="3" fill="#f2700a" stroke="{INK}" stroke-width="1.3"/>')
+    a.anchor("gills", cx - 50, gy + 24)
+    a.anchor("milk", mx + 5, my + 10)
+    # stem: short, orange, with darker shallow pits
+    profile = [(gy + 44, 22), (190, 21), (236, 20), (250, 19)]
+    sp = a.jit(stem_points(cx, profile, 5), .5)
+    sd = smooth(sp)
+    sfill = a.linear("stem", [(0, org_d), (.35, org_l), (.7, org), (1, org_d)], cx - 22, 0, cx + 22, 0)
+    sclip = a.clip("sc", sd)
+    pits = "".join(f'<ellipse cx="{f(x)}" cy="{f(y)}" rx="{f(r)}" ry="{f(r * .7)}"/>' for x, y, r in
+                   [(cx - 13, 168, 4), (cx + 12, 176, 3.2), (cx - 10, 236, 3.6), (cx + 14, 228, 4.4), (cx + 2, 244, 3)])
+    stem = (f'<path d="{sd}" fill="{sfill}"/><g clip-path="{sclip}"><g fill="#c0601c" opacity=".75">{pits}</g>'
+            f'<ellipse cx="{cx}" cy="{gy + 48}" rx="26" ry="7" fill="{INK}" opacity=".2"/></g>'
+            f'<path d="{sd}" fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>')
+    a.anchor("stem-pits", cx + 18, 230)
+    stem += face(a, cx, 208, "happy", 0.85, skin=sfill)
+    # cap seen from slightly above: wavy rim ellipse, depressed centre, concentric darker zones
+    pts = []
+    for i in range(30):
+        th = 2 * math.pi * i / 30
+        r = 1 + .03 * math.sin(4 * th + .5)
+        pts.append((cx + rx * r * math.cos(th), rim_y + ry * r * math.sin(th)))
+    top_d = smooth(pts)
+    tfill = a.radial("top", [(0, org_d), (.4, org), (1, org_l)], cx="50%", cy="48%", r="58%")
+    tclip = a.clip("tc", top_d)
+    zones = "".join(f'<ellipse cx="{cx}" cy="{f(rim_y - 1)}" rx="{f(rx * k)}" ry="{f(ry * k)}"/>' for k in (.28, .5, .7, .88))
+    cap = (f'<path d="{top_d}" fill="{tfill}"/>'
+           f'<g clip-path="{tclip}"><g fill="none" stroke="{org_d}" stroke-width="4" opacity=".55">{zones}</g>'
+           f'<ellipse cx="{cx}" cy="{rim_y}" rx="{rx * .2}" ry="{ry * .22}" fill="{org_d}" opacity=".5"/>'
+           f'<path d="M{cx - rx * .62} {rim_y - 8}Q{cx - rx * .3} {rim_y - ry * .9} {cx + rx * .1} {rim_y - ry * .85}" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".35"/></g>'
+           f'<path d="{top_d}" fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+           f'<path d="M{cx - rx + 8} {rim_y + 8}Q{cx} {rim_y + ry + 10} {cx + rx - 8} {rim_y + 8}" fill="none" stroke="{org_l}" stroke-width="4" stroke-linecap="round" opacity=".9"/>')
+    stains = (f'<path d="{blob(a, cx - rx * .62, rim_y + 6, 13, 7)}" fill="#6f8a4a" opacity=".8"/>'
+              f'<path d="{blob(a, cx - rx * .5, rim_y + 10, 6, 5)}" fill="#55703a" opacity=".7"/>'
+              f'<path d="{blob(a, cx + rx * .3, rim_y + ry - 5, 9, 6)}" fill="#6f8a4a" opacity=".75"/>')
+    cap = cap.replace(f'<path d="{top_d}" fill="none" stroke="{INK}"', stains + f'<path d="{top_d}" fill="none" stroke="{INK}"', 1)
+    a.anchor("cap-rings", cx + rx * .62, rim_y - 4)
+    a.anchor("green-stain", cx - rx * .66, rim_y + 10)
+    return a.svg(shadow_el(cx, 260, 44), ground_patch(a) + pine_needles(), under, stem, cap)
+
+
+def sirovec():
+    # Laetiporus sulphureus: stacked fan brackets, orange top, sulphur-yellow edges + underside, on a deciduous trunk
+    a = Art("sirovec", "Sírovec žlutooranžový", "jedla", seed=707)
+    a.pivot = (128, 150)
+    tx0, tx1, ty = 34, 112, 52
+    trunk_pts = [(tx0 + 2, ty), (tx0, 140), (tx0 - 2, 220), (tx0 - 12, 258), (tx0 + 10, 262), (tx1 - 4, 262),
+                 (tx1 + 12, 258), (tx1 + 2, 220), (tx1, 140), (tx1 - 1, ty)]
+    td = smooth(trunk_pts, closed=False) + "Z"
+    bark = a.linear("bark", [(0, "#5a4a3c"), (.35, "#8d7b68"), (.75, "#76644f"), (1, "#4e3f33")], tx0, 0, tx1, 0)
+    tclip = a.clip("tc", td)
+    furrows = "".join(f"M{f(x)} {ty + 10}q{f(a.j(4))} 70 {f(a.j(6))} 200" for x in range(tx0 + 8, tx1, 12))
+    trunk = (f'<path d="{td}" fill="{bark}"/><g clip-path="{tclip}"><path d="{furrows}" fill="none" stroke="#3b2c22" stroke-width="2.4" opacity=".6"/></g>'
+             f'<path d="{td}" fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+             f'<ellipse cx="{(tx0 + tx1) / 2}" cy="{ty}" rx="{(tx1 - tx0) / 2 + 1}" ry="10" fill="#d8b98a" stroke="{INK}" stroke-width="2.6"/>'
+             f'<ellipse cx="{(tx0 + tx1) / 2}" cy="{ty}" rx="22" ry="5" fill="none" stroke="#b08a5a" stroke-width="1.5"/>')
+    a.anchor("trunk", tx0 + 16, 238)
+    a.anchor("on-tree", 112, 140)
+    topfill = a.radial("top", [(0, "#e46a14"), (.55, "#f08a1e"), (.85, "#f6b42e"), (1, "#f8d84a")], cx="0%", cy="50%", r="100%")
+    under_c = "#f6dc5a"
+    shelves = [(108, 220, 92, 34), (108, 166, 104, 38), (108, 112, 86, 32)]   # attach x, y, reach, half-depth (low -> high)
+    caps = ""
+    under = ""
+    for i, (ax, ay, rx_, ry_) in enumerate(shelves):
+        pts = []
+        for k in range(15):
+            th = -math.pi / 2 + math.pi * k / 14
+            r = 1 + .035 * math.cos(4 * th + i * .7) + a.j(.008)
+            pts.append((ax + rx_ * r * math.cos(th), ay + ry_ * r * math.sin(th)))
+        dd = "M" + f"{f(ax - 4)} {f(ay - ry_)}" + smooth(pts, closed=False)[smooth(pts, closed=False).index("C"):] + f"L{f(ax - 4)} {f(ay + ry_)}Z"
+        # thick front edge / sulphur-yellow underside showing below the front rim
+        thick = [(x, y + 11) for x, y in pts[7:]]
+        td_ = smooth(pts[7:] + thick[::-1], closed=False) + "Z"
+        caps += f'<path d="{td_}" fill="{under_c}" stroke="{INK}" stroke-width="2.4" stroke-linejoin="round"/>'
+        clip = a.clip(f"s{i}", dd)
+        zones = "".join(f'<path d="{smooth([(ax + (x - ax) * k, ay + (y - ay) * k) for x, y in pts], closed=False)}"/>' for k in (.45, .7))
+        caps += (f'<path d="{dd}" fill="{topfill}"/>'
+                 f'<g clip-path="{clip}"><g fill="none" stroke="#c8540e" stroke-width="2.4" opacity=".45">{zones}</g>'
+                 f'<path d="{smooth(pts, closed=False)}" fill="none" stroke="#fbe56a" stroke-width="10" opacity=".95"/></g>'
+                 f'<path d="{dd}" fill="none" stroke="{INK}" stroke-width="2.8" stroke-linejoin="round"/>')
+        if i == 0:
+            caps += face(a, ax + rx_ * .55, ay + 2, "happy", 0.8, skin="#f08a1e")
+    a.anchor("stacked", 176, 104)
+    a.anchor("edge-yellow", 210, 172)
+    a.anchor("under-yellow", 186, 246)
+    return a.svg(shadow_el(100, 261, 70), ground_patch(a), under, f'<g class="host">{trunk}</g>', caps)
+
+
+def lisak():
+    # Hydnum repandum: pale apricot irregular wavy cap; cream SPINES (teeth) underneath; stout pale stem, often off-centre
+    a = Art("lisak", "Lišák zprohýbaný", "jedla", seed=808)
+    cx = 120
+    rim_y, hw, top_y, bow = 118, 86, 62, 14
+    a.pivot = (cx, rim_y + bow)
+    # under: cream spine field
+    uy = rim_y + bow * .6
+    u_ry = 34
+    ufill = a.linear("u", [(0, "#f6ead2"), (1, "#e4cfa6")], 0, uy - u_ry, 0, uy + u_ry)
+    ud = f"M{cx - hw * .92} {f(uy)}A{f(hw * .92)} {f(u_ry)} 0 0 0 {cx + hw * .92} {f(uy)}Z"
+    spines = []
+    for row in range(4):
+        y0 = uy + 4 + row * 7
+        span = hw * (.86 - row * .17)
+        k = 14 - row * 3
+        for i in range(k):
+            x = cx - span + (i + .5) * 2 * span / k + a.j(1)
+            if abs(x - cx - 6) < 22 and row > 0:
+                continue
+            L = 13 - row * 1.2 + a.j(1.5)
+            spines.append(f"M{f(x - 3)} {f(y0)}L{f(x)} {f(y0 + L)}L{f(x + 3)} {f(y0)}Z")
+    under = (f'<ellipse cx="{cx}" cy="{f(uy)}" rx="{f(hw * .92)}" ry="{f(u_ry)}" fill="{ufill}" stroke="{INK}" stroke-width="2.6"/>'
+             f'<path d="{"".join(spines)}" fill="#fbf2df" stroke="#8a6a3e" stroke-width="1.2" stroke-linejoin="round"/>')
+    a.anchor("spines", cx - hw * .55, uy + 14)
+    profile = [(rim_y + 20, 21), (170, 23), (220, 26), (248, 24)]
+    sp = a.jit(stem_points(cx + 6, profile, 6), .6)
+    sd = smooth(sp)
+    sfill = a.linear("stem", [(0, "#d3bf9c"), (.35, "#fbf3e2"), (.7, "#efe2c8"), (1, "#c9b28c")], cx - 22, 0, cx + 34, 0)
+    sclip = a.clip("sc", sd)
+    stem = (f'<path d="{sd}" fill="{sfill}"/><g clip-path="{sclip}"><ellipse cx="{cx + 6}" cy="{rim_y + 16}" rx="28" ry="9" fill="{INK}" opacity=".2"/></g>'
+            f'<path d="{sd}" fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>')
+    stem += face(a, cx + 6, 200, "happy", .95, skin=sfill)
+    a.anchor("stem", cx + 30, 236)
+    # irregular, lobed, wavy cap
+    base = cap_points(cx, rim_y, hw, top_y, bow, 2.3, 12)
+    lobed = [(x + (6 * math.sin(i * 1.9) if y > rim_y - 30 else 0), y + (5 * math.sin(i * 2.3) if y > rim_y - 30 else 0)) for i, (x, y) in enumerate(base)]
+    cd = smooth(a.jit(lobed, .8))
+    cfill = a.radial("cap", [(0, "#f7d2a2"), (.55, "#e9b47a"), (1, "#c98b4e")])
+    cclip = a.clip("cc", cd)
+    cap = (f'<path d="{cd}" fill="{cfill}"/><g clip-path="{cclip}">'
+           f'<path d="M{cx - hw * .5} {rim_y - 30}Q{cx - hw * .25} {top_y + 8} {cx + hw * .1} {top_y + 8}" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".25"/>'
+           f'<path d="M{cx - 30} {top_y + 30}q20 -8 40 4M{cx + 20} {rim_y - 20}q14 -4 28 4" fill="none" stroke="#c98b4e" stroke-width="2" opacity=".5"/></g>'
+           f'<path d="{cd}" fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>')
+    a.anchor("cap", cx + hw * .3, top_y + 22)
+    return a.svg(shadow_el(cx, 260, 46), ground_patch(a), under, stem, cap)
+
+
+def kotrc():
+    # Sparassis crispa: cauliflower ball of curly flat lobes, cream with tan edges, at the base of a pine
+    a = Art("kotrc", "Kotrč kadeřavý", "jedla", seed=909)
+    cx, cy = 128, 182
+    a.pivot = (cx, 240)
+    # pine trunk behind (reddish flaky bark)
+    tx0, tx1 = 22, 92
+    ttop = 40
+    td = (f"M{tx0 + 4} {ttop}L{tx0} 230Q{tx0 - 12} 258 {tx0 - 16} 262L{tx1 + 18} 262Q{tx1 + 4} 250 {tx1} 230L{tx1 - 2} {ttop}Z")
+    bark = a.linear("bark", [(0, "#6e3b22"), (.35, "#b0643a"), (.7, "#94512e"), (1, "#5e301b")], tx0, 0, tx1, 0)
+    tclip = a.clip("tc", td)
+    plates = []
+    for _ in range(26):
+        x = a.rng.uniform(tx0 - 4, tx1 - 10)
+        y = a.rng.uniform(ttop + 8, 250)
+        w = a.rng.uniform(12, 24)
+        plates.append(f"M{f(x)} {f(y)}l{f(w)} 2l-2 {f(a.rng.uniform(8, 16))}l{f(-w)} -1z")
+    trunk = (f'<path d="{td}" fill="{bark}"/><g clip-path="{tclip}"><path d="{"".join(plates)}" fill="#c98a5a" stroke="#4a2614" stroke-width="1.4" opacity=".75"/></g>'
+             f'<path d="{td}" fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+             f'<ellipse cx="{(tx0 + tx1) / 2 + 1}" cy="{ttop}" rx="{(tx1 - tx0) / 2 + 1}" ry="10" fill="#e2b98a" stroke="{INK}" stroke-width="2.6"/>'
+             f'<ellipse cx="{(tx0 + tx1) / 2 + 1}" cy="{ttop}" rx="20" ry="5" fill="none" stroke="#b08a5a" stroke-width="1.5"/>'
+             f'<path d="M{tx0 + 22} {ttop + 2}q3 8 0 14" stroke="#d48a2a" stroke-width="3" stroke-linecap="round" opacity=".8"/>')
+    a.anchor("pine", tx0 + 14, 120)
+    # ball made of curly lobes (back to front), each lobe a wavy ribbon
+    lobes = ""
+    cream, cream_d, edge = "#f4e6bb", "#dcc78e", "#c9a35a"
+    ball_r = 66
+    rows = [(-.75, 5), (-.35, 7), (.05, 8), (.45, 7), (.8, 5)]
+    for ri, (vy, k) in enumerate(rows):
+        for i in range(k):
+            t = -1 + 2 * (i + .5) / k
+            x = cx + ball_r * t * math.sqrt(max(.1, 1 - vy * vy)) * .95 + a.j(3)
+            y = cy + ball_r * .82 * vy + a.j(3)
+            w = a.rng.uniform(15, 21)
+            h = a.rng.uniform(9, 13)
+            d = (f"M{f(x - w)} {f(y + h * .4)}C{f(x - w * .8)} {f(y - h)} {f(x - w * .2)} {f(y - h * .2)} {f(x)} {f(y - h * .9)}"
+                 f"C{f(x + w * .3)} {f(y - h * 1.5)} {f(x + w * .9)} {f(y - h * .4)} {f(x + w)} {f(y + h * .3)}"
+                 f"Q{f(x)} {f(y + h * .9)} {f(x - w)} {f(y + h * .4)}Z")
+            lobes += (f'<path d="{d}" fill="{cream if (i + ri) % 3 else "#fbf1d0"}" stroke="{INK}" stroke-width="1.6" stroke-linejoin="round"/>'
+                      f'<path d="M{f(x - w * .85)} {f(y + h * .1)}C{f(x - w * .7)} {f(y - h * .8)} {f(x - w * .2)} {f(y - h * .05)} {f(x)} {f(y - h * .7)}'
+                      f'C{f(x + w * .3)} {f(y - h * 1.25)} {f(x + w * .85)} {f(y - h * .3)} {f(x + w * .9)} {f(y + h * .1)}" fill="none" stroke="{edge}" stroke-width="1.8" opacity=".85"/>')
+    body = (f'<ellipse cx="{cx}" cy="{cy + 6}" rx="{ball_r + 6}" ry="{ball_r * .9}" fill="{cream_d}" stroke="{INK}" stroke-width="3"/>' + lobes)
+    # face window: a calm cream patch so the face reads
+    body += f'<ellipse cx="{cx}" cy="{cy + 6}" rx="27" ry="18" fill="{cream}"/>'
+    body += face(a, cx, cy + 2, "happy", .9, skin=cream)
+    a.anchor("lobes", cx + 44, cy - 34)
+    a.anchor("cream", cx - 50, cy + 20)
+    a.anchor("no-stem", cx + 30, cy + 62)
+    return a.svg(shadow_el(cx - 10, 260, 84), ground_patch(a) + pine_needles(), "", f'<g class="host">{trunk}</g>' + body, "")
+
+
+def pestrec():
+    # Scleroderma citrinum: yellowish-ochre leathery ball, cracked scaly skin; splits at the top showing purple-black inside
+    a = Art("pestrec", "Pestřec obecný", "jedovata", seed=1010)
+    cx, cy = 120, 182
+    a.pivot = (cx, 250)
+    rx, ry = 70, 62
+    pts = []
+    for i in range(20):
+        th = 2 * math.pi * i / 20
+        r = 1 + .04 * math.sin(3 * th) + a.j(.015)
+        pts.append((cx + rx * r * math.cos(th), cy + ry * r * math.sin(th) + (6 if math.sin(th) > .6 else 0)))
+    bd = smooth(pts)
+    bfill = a.radial("ball", [(0, "#f0d68c"), (.55, "#d4ae58"), (1, "#a8823a")], cx="40%", cy="32%", r="72%")
+    clip = a.clip("bc", bd)
+    # cracked skin: polygon scales with dark centres (Voronoi-ish via jittered hex grid)
+    cells = []
+    warts = []
+    for row in range(-5, 6):
+        for col in range(-6, 7):
+            x = cx + col * 16 + (8 if row % 2 else 0) + a.j(2.5)
+            y = cy + row * 13 + a.j(2.5)
+            if ((x - cx) / rx) ** 2 + ((y - cy) / ry) ** 2 > 1.05:
+                continue
+            if abs(x - cx) < 34 and cy - 8 < y < cy + 30:
+                continue
+            poly = []
+            for k in range(6):
+                ang = math.pi / 3 * k + math.pi / 6
+                poly.append(f"{f(x + 7.2 * math.cos(ang) + a.j(.8))} {f(y + 6.4 * math.sin(ang) + a.j(.8))}")
+            cells.append("M" + "L".join(poly) + "Z")
+            warts.append(f"M{f(x)} {f(y)}h.1")
+    # split at the top revealing the dark purple-black spore mass with white veins
+    split = (f"M{cx - 30} {cy - ry + 14}l8 -6l7 8l9 -9l8 9l7 -7l9 6"
+             f"Q{cx + 4} {cy - ry + 34} {cx - 30} {cy - ry + 14}Z")
+    body = (f'<path d="{bd}" fill="{bfill}"/>'
+            f'<g clip-path="{clip}"><path d="{"".join(cells)}" fill="none" stroke="#8a6428" stroke-width="1.5" stroke-linejoin="round" opacity=".85"/>'
+            f'<path d="{"".join(warts)}" stroke="#6e4a1c" stroke-width="3" stroke-linecap="round" opacity=".6"/>'
+            f'<path d="M{cx - 44} {cy - 26}Q{cx - 32} {cy - 52} {cx - 8} {cy - 56}" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".25"/></g>'
+            f'<path d="{bd}" fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+            f'<path d="{split}" fill="#2b1630" stroke="{INK}" stroke-width="2.4" stroke-linejoin="round"/>'
+            f'<path d="M{cx - 20} {cy - ry + 18}q8 4 14 1M{cx - 4} {cy - ry + 22}q6 -3 12 1" fill="none" stroke="#7a5a86" stroke-width="1.4" opacity=".9"/>'
+            # short rooting base, no stem
+            f'<path d="M{cx - 20} {cy + ry - 4}q8 14 20 16q12 -2 20 -16" fill="#b8924a" stroke="{INK}" stroke-width="2.4" stroke-linejoin="round"/>'
+            f'<path d="M{cx - 6} {cy + ry + 10}l-6 8M{cx + 6} {cy + ry + 10}l7 7" stroke="#8a6a3a" stroke-width="2" stroke-linecap="round"/>')
+    body += face(a, cx, cy + 10, "sly", 1.0, skin="#d4ae58")
+    a.anchor("ball", cx - 58, cy + 18)
+    a.anchor("cracked-skin", cx + 46, cy - 18)
+    a.anchor("inside-dark", cx - 12, cy - ry + 14)
+    a.anchor("no-stem", cx + 22, cy + ry + 6)
+    return a.svg(shadow_el(cx, 260, 58), ground_patch(a), "", body, "", warn_marks(cx, cy - ry - 6, rx))
+
+
+def listicka():
+    # Hygrophoropsis aurantiaca: deeper ORANGE, thin soft funnel-ish cap with in-rolled rim, TRUE crowded forked gills, thinner stem
+    a = Art("listicka", "Lištička pomerančová", "nejedla", seed=1111)
+    cx = 120
+    a.pivot = (cx, 140)
+    org, org_l, org_d = "#ef7d1a", "#f8a54a", "#c0570c"
+    rim_y, rx, ry = 104, 80, 20
+    # under: crowded thin gills radiating from the stem to the rim, forking
+    gtop = rim_y + 4
+    cone = [(cx - rx + 3, gtop), (cx - 52, gtop + 16), (cx - 18, gtop + 34), (cx + 18, gtop + 34), (cx + 52, gtop + 16), (cx + rx - 3, gtop)]
+    gd = smooth(cone, closed=False) + f"Q{cx} {gtop + 12} {cx - rx + 3} {gtop}Z"
+    gfill = a.linear("gill", [(0, "#f9a64e"), (1, "#e2781c")], 0, gtop, 0, gtop + 34)
+    gclip = a.clip("gc", gd)
+    lines = []
+    n = 34
+    for i in range(1, n):
+        t = -1 + 2 * i / n
+        x0, y0 = cx + t * (rx - 4), gtop + 3 + 7 * (1 - t * t)
+        x1, y1 = cx + t * 16, gtop + 34
+        lines.append(f"M{f(x0)} {f(y0)}L{f(x1)} {f(y1)}")
+        if i % 3 == 0:   # forks near the rim
+            fx, fy = x0 + (x1 - x0) * .3, y0 + (y1 - y0) * .3
+            lines.append(f"M{f(fx)} {f(fy)}L{f(x0 + 3)} {f(y0)}")
+    under = (f'<path d="{gd}" fill="{gfill}"/><g clip-path="{gclip}"><path d="{"".join(lines)}" stroke="#a8480a" stroke-width="1.1" fill="none"/></g>'
+             f'<path d="{gd}" fill="none" stroke="{INK}" stroke-width="2.6" stroke-linejoin="round"/>')
+    a.anchor("gills", cx - 50, gtop + 14)
+    profile = [(gtop + 30, 13), (190, 12), (236, 13), (250, 14)]
+    sp = a.jit(stem_points(cx, profile, 5), .5)
+    sd = smooth(sp)
+    sfill = a.linear("stem", [(0, org_d), (.35, org_l), (.7, org), (1, org_d)], cx - 14, 0, cx + 14, 0)
+    stem = f'<path d="{sd}" fill="{sfill}" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+    stem += face(a, cx, 206, "bleh", .7, skin=sfill)
+    a.anchor("stem-thin", cx + 14, 236)
+    # thin cap: shallow funnel from above with in-rolled rim (a pale rolled lip)
+    pts, ipts = [], []
+    for i in range(30):
+        th = 2 * math.pi * i / 30
+        r = 1 + .025 * math.sin(6 * th + .3)
+        pts.append((cx + rx * r * math.cos(th), rim_y + ry * r * math.sin(th)))
+        ipts.append((cx + (rx - 10) * r * math.cos(th), rim_y - 1 + (ry - 5) * r * math.sin(th)))
+    top_d = smooth(pts)
+    tfill = a.radial("top", [(0, org_d), (.5, org), (1, org_l)], cx="50%", cy="45%", r="60%")
+    cap = (f'<path d="{top_d}" fill="{tfill}" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+           f'<path d="{smooth(ipts)}" fill="none" stroke="{org_l}" stroke-width="3" opacity=".9"/>'
+           f'<ellipse cx="{cx}" cy="{rim_y}" rx="{rx * .3}" ry="{ry * .3}" fill="{org_d}" opacity=".45"/>')
+    a.anchor("cap-orange", cx + rx * .4, rim_y - 8)
+    a.anchor("rim-rolled", cx - rx + 4, rim_y + 2)
+    return a.svg(shadow_el(cx, 260, 36), ground_patch(a) + pine_needles(), under, stem, cap)
+
+
+def troudnatec_pasovany():
+    # Fomitopsis pinicola: hoof/shelf on a SPRUCE stump; dark brown-black top, red-orange resinous band, creamy-white rim, cream pores
+    a = Art("troudnatec-pasovany", "Troudnatec pásovaný", "nejedla", seed=1212)
+    a.pivot = (126, 150)
+    # spruce stump: reddish-grey scaly bark, cut top
+    tx0, tx1, ty = 40, 128, 84
+    trunk_pts = [(tx0 + 2, ty), (tx0, 160), (tx0 - 2, 220), (tx0 - 12, 258), (tx0 + 10, 262), (tx1 - 4, 262),
+                 (tx1 + 12, 258), (tx1 + 2, 220), (tx1, 160), (tx1 - 1, ty)]
+    td = smooth(trunk_pts, closed=False) + "Z"
+    bark = a.linear("bark", [(0, "#5a3e30"), (.35, "#8a6450"), (.75, "#74503e"), (1, "#4c3226")], tx0, 0, tx1, 0)
+    tclip = a.clip("tc", td)
+    scales = "".join(f"M{f(a.rng.uniform(tx0, tx1 - 12))} {f(a.rng.uniform(ty + 10, 255))}q6 -5 12 0" for _ in range(30))
+    trunk = (f'<path d="{td}" fill="{bark}"/><g clip-path="{tclip}"><path d="{scales}" fill="none" stroke="#3a261c" stroke-width="2" opacity=".7"/></g>'
+             f'<path d="{td}" fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+             f'<ellipse cx="{(tx0 + tx1) / 2 + 1}" cy="{ty}" rx="{(tx1 - tx0) / 2 + 1}" ry="11" fill="#e2c48e" stroke="{INK}" stroke-width="2.6"/>'
+             f'<ellipse cx="{(tx0 + tx1) / 2 + 1}" cy="{ty}" rx="28" ry="7" fill="none" stroke="#b08a5a" stroke-width="1.5"/>'
+             f'<path d="M{tx0 + 30} {ty - 3}q4 8 0 14" stroke="#d48a2a" stroke-width="3" stroke-linecap="round" opacity=".8"/>')
+    a.anchor("trunk", tx0 + 14, 236)
+    a.anchor("on-wood", 130, 186)
+    ax, ay = 126, 150
+    outer = [(124, 104), (160, 108), (196, 124), (218, 148), (220, 168), (210, 182), (180, 188), (150, 192), (124, 194)]
+    od = smooth(outer, closed=False) + "Z"
+    bands = ""
+    cols = ["#f4ead2", "#e0622a", "#cc4a1c", "#a83a18", "#4a2616", "#2c1710", "#24130c"]   # rim cream -> red resin band -> dark top
+    for k, sc in enumerate([1.0, .9, .8, .69, .57, .45, .33]):
+        pts = [(ax + (x - ax) * sc, ay + (y - ay) * sc + (1 - sc) * 18) for x, y in outer]
+        pts = pts[:-1] + [(124, ay + (194 - ay) * sc + (1 - sc) * 18)]
+        bands += f'<path d="{smooth(pts, closed=False)}Z" fill="{cols[k]}"/>'
+    under = (f'<path d="M124 192Q170 198 210 183Q206 194 180 198Q150 202 124 200Z" fill="#f2e6c4" stroke="{INK}" stroke-width="2.4" stroke-linejoin="round"/>')
+    bracket = (f'<path d="{od}" fill="#2c1710"/>{bands}'
+               f'<path d="M150 118Q176 118 196 136" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".18"/>'
+               f'<path d="M170 128q6 4 4 10" fill="none" stroke="#f08a3a" stroke-width="3" stroke-linecap="round" opacity=".8"/>'
+               f'<path d="{od}" fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>')
+    a.anchor("dark-top", 146, 128)
+    a.anchor("red-band", 206, 140)
+    a.anchor("cream-rim", 214, 176)
+    bracket += face(a, 186, 160, "sleepy", .9, skin="#cc4a1c")
+    return a.svg(shadow_el(98, 261, 66), ground_patch(a), under, trunk, bracket)
+
+
+def build_v2():
+    arts = {}
+    arts["vaclavka"] = vaclavka()
+    # Hřib kovář — Neoboletus luridiformis: dark brown velvety cap, RED pores, red-dotted stem, bruises dark blue
+    arts["hrib-kovar"] = bolete(
+        "hrib-kovar", "Hřib kovář", "jedla", 1313,
+        cap_c="#5a3a24", cap_light="#7a5236", cap_dark="#3a2416",
+        cap_geo=(114, 90, 36, 14, 2.5), pore_c=("#d8462a", "#a8241a"), pore_dot="#7a1410",
+        profile=[(114, 24), (150, 30), (190, 37), (226, 40), (248, 36)],
+        stem_c="#e2b23c", stem_light="#f2d06a", stem_dark="#b8862a",
+        deco=("dots", "#c22a1a", 260), mood="happy", face_y=200, face_s=1.0,
+        bruise=True, bruise_col=("#1f2f6a", "#121c46"), velvet=True)[1]
+    # Hřib satan — Rubroboletus satanas: pale whitish-grey cap, red pores, very bulbous stem yellow above, red with red net
+    arts["hrib-satan"] = bolete(
+        "hrib-satan", "Hřib satan", "jedovata", 1414,
+        cap_c="#d8d3c6", cap_light="#f1eee6", cap_dark="#aaa496",
+        cap_geo=(112, 94, 40, 14, 2.6), pore_c=("#e2482a", "#b8261a"), pore_dot="#7e1610",
+        profile=[(112, 24), (140, 34), (180, 50), (220, 54), (247, 44)],
+        stem_c="#d9564a", stem_light="#f0c25a", stem_dark="#a8342a",
+        deco=("coarse-net", "#9c1a14", 11, 15, 2.2, 250), mood="sly", face_y=196, face_s=1.05, warn=True,
+        stem_top="#f2c94a")[1]
+    # Klouzek sličný — Suillus grevillei: slimy golden-orange cap, yellow pores, ring, under larch
+    arts["klouzek"] = bolete(
+        "klouzek", "Klouzek sličný", "jedla", 1515,
+        cap_c="#e8961c", cap_light="#f6c04a", cap_dark="#b8640e",
+        cap_geo=(110, 82, 50, 12, 2.4), pore_c=("#f2d65a", "#d8b632"), pore_dot="#b8962a",
+        profile=[(110, 16), (150, 17), (200, 19), (236, 20), (250, 19)],
+        stem_c="#e2a548", stem_light="#f6d27a", stem_dark="#a86a24",
+        deco=("streaks", "#a8601c"), mood="happy", face_y=196, face_s=.9,
+        ring=(134, "#f8eab8", "#d6c07a"), gloss=True, ground_extra=larch_litter())[1]
+    arts["ryzec"] = ryzec()
+    arts["sirovec"] = sirovec()
+    arts["lisak"] = lisak()
+    arts["kotrc"] = kotrc()
+    arts["pestrec"] = pestrec()
+    # Muchomůrka jízlivá — Amanita virosa: all white, conical cap, white gills, shaggy stem, ring, bulb in a sac. Deadly.
+    arts["muchomurka-jizliva"] = amanita(
+        "muchomurka-jizliva", "Muchomůrka jízlivá", "jedovata", 1616, True,
+        cap_light="#ffffff", cap_c="#f4f1e8", cap_dark="#cfc8b6",
+        cap_geo=(96, 62, 22, 10, 2.0), cap_deco=("fibrils",),
+        stem_top_y=96, profile=[(98, 13), (140, 14), (190, 17), (224, 20)],
+        ring_y=134, base=("volva", 120, 234, 26, 18), face_y=188, shaggy=True, cone=True)[1]
+    arts["listicka"] = listicka()
+    arts["troudnatec-pasovany"] = troudnatec_pasovany()
+    return arts
+
+
+LOOK = {  # anchor data-feature per lookFor index, in the order of data/species.json lookFor
     "hrib-smrkovy": ["cap", "pores", "net"],
     "liska": ["ridges-down-stem", "cap-wavy", "ridges"],
     "bedla": ["cap-scales", "snakeskin", "ring"],
     "kozak": ["cap", "stem-scales", "pores"],
     "kremenac": ["cap", "stem-scales", "pores"],
     "suchohrib": ["cap", "bruise", "stem-plain"],
-    "pychavka": ["no-gills", "spines", "top"],
+    "pychavka": ["no-gills", "spines", "white"],
     "zlucnik": ["cap", "pores", "net"],
     "troudnatec": ["hoof", "bands", "on-wood"],
     "muchomurka-cervena": ["warts", "gills", "ring"],
     "muchomurka-zelena": ["cap-smooth", "gills", "volva"],
     "muchomurka-tygrovana": ["warts", "striate-rim", "bulb-rim"],
     "trepenitka": ["on-wood", "cap-sulphur", "gills-green"],
+    # v2 species — order of data/species.json lookFor as of 2026-10-11 (v2 branch)
+    "vaclavka": ["on-wood", "cap-scales", "ring"],
+    "hrib-kovar": ["cap", "pores", "stem-dots"],
+    "klouzek": ["cap-slimy", "pores", "ring"],
+    "ryzec": ["cap-rings", "green-stain", "stem-pits"],
+    "sirovec": ["edge-yellow", "stacked", "on-tree"],
+    "lisak": ["cap", "spines", "stem"],
+    "kotrc": ["lobes", "cream", "no-stem"],
+    "hrib-satan": ["cap", "pores", "net"],
+    "pestrec": ["ball", "cracked-skin", "inside-dark"],
+    "muchomurka-jizliva": ["gills", "ring", "volva"],
+    "listicka": ["cap-orange", "gills", "rim-rolled"],
+    "troudnatec-pasovany": ["on-wood", "red-band", "dark-top"],
 }
 
 
+# Edible species that grow on wood: the piece that goes into the basket (crop box in viewBox units, excludes the trunk/stump).
+PICK_BOX = {"sirovec": "104 70 136 196", "kotrc": "54 104 156 156", "vaclavka": "30 56 190 182"}
+
+
 def tag_look(sid, svg):
+    if sid in PICK_BOX:
+        svg = svg.replace(' role="img"', f' data-pick-box="{PICK_BOX[sid]}" role="img"', 1)
     for i, feat in enumerate(LOOK.get(sid, [])):
         key = f'data-feature="{feat}"'
         assert key in svg, (sid, feat)
@@ -996,6 +1570,7 @@ def tag_look(sid, svg):
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     arts = build_all()
+    arts.update(build_v2())
     for sid, svg in arts.items():
         svg = tag_look(sid, svg)
         p = os.path.join(OUT, f"{sid}.svg")

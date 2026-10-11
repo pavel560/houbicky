@@ -7,6 +7,7 @@
       "deadly": false,
       "level": 1,
       "twin": "zlucnik",
+      "twinTell": {"cs": "Síťka na noze je bílá. Žlučník má síťku tmavou.", "en": "Its stem net is white. The bitter bolete's net is dark.", "feature": "net"},
       "latin": "Boletus edulis",
       "name": {
         "cs": "Hřib smrkový",
@@ -58,6 +59,7 @@
       "deadly": false,
       "level": 1,
       "twin": "listicka",
+      "twinTell": {"cs": "Zespodu má měkké vrásky. Lištička má tenké lupínky.", "en": "Underneath it has soft wrinkles. The false chanterelle has thin gills.", "feature": "ridges"},
       "latin": "Cantharellus cibarius",
       "name": {
         "cs": "Liška obecná",
@@ -109,6 +111,7 @@
       "deadly": false,
       "level": 2,
       "twin": "muchomurka-zelena",
+      "twinTell": {"cs": "Dole na noze nemá pytlík. Muchomůrka zelená ho má.", "en": "Its stem has no cup at the bottom. The death cap has one.", "feature": "bulb"},
       "latin": "Macrolepiota procera",
       "name": {
         "cs": "Bedla vysoká",
@@ -161,6 +164,7 @@
       "deadly": false,
       "level": 2,
       "twin": "kremenac",
+      "twinTell": {"cs": "Klobouk má hnědý. Křemenáč má klobouk oranžově červený.", "en": "Its cap is brown. The aspen bolete's cap is orange-red.", "feature": "cap"},
       "latin": "Leccinum scabrum",
       "name": {
         "cs": "Kozák březový",
@@ -212,6 +216,7 @@
       "deadly": false,
       "level": 2,
       "twin": "kozak",
+      "twinTell": {"cs": "Klobouk má oranžově červený. Kozák má klobouk hnědý.", "en": "Its cap is orange-red. The brown birch bolete's cap is brown.", "feature": "cap"},
       "latin": "Leccinum albostipitatum",
       "name": {
         "cs": "Křemenáč osikový",
@@ -264,6 +269,7 @@
       "deadly": false,
       "level": 2,
       "twin": "zlucnik",
+      "twinTell": {"cs": "Otlačené dírky zmodrají. Žlučník nikdy nemodrá.", "en": "Its bruised holes turn blue. The bitter bolete never does.", "feature": "bruise"},
       "latin": "Imleria badia",
       "name": {
         "cs": "Hřib hnědý",
@@ -315,6 +321,7 @@
       "deadly": false,
       "level": 2,
       "twin": "pestrec",
+      "twinTell": {"cs": "Uvnitř je bílá. Pestřec je uvnitř tmavý.", "en": "It is white inside. The earthball is dark inside.", "feature": "white"},
       "latin": "Lycoperdon perlatum",
       "name": {
         "cs": "Pýchavka obecná",
@@ -366,6 +373,7 @@
       "deadly": false,
       "level": 2,
       "twin": "hrib-smrkovy",
+      "twinTell": {"cs": "Dírky pod kloboukem má růžové. Hřib smrkový je má světlé.", "en": "Its holes are pink. A penny bun's holes are pale.", "feature": "pores"},
       "latin": "Tylopilus felleus",
       "name": {
         "cs": "Hřib žlučník",
@@ -417,6 +425,7 @@
       "deadly": false,
       "level": 1,
       "twin": "troudnatec-pasovany",
+      "twinTell": {"cs": "Je šedý, bez červeného pásku. Pásovaný má červený pás.", "en": "It is grey with no red belt. The red-belted bracket has one.", "feature": "bands"},
       "latin": "Fomes fomentarius",
       "name": {
         "cs": "Troudnatec kopytovitý",
@@ -468,6 +477,7 @@
       "deadly": false,
       "level": 1,
       "twin": "muchomurka-tygrovana",
+      "twinTell": {"cs": "Klobouk má červený. Tygrovaná má klobouk hnědý.", "en": "Its cap is red. The panther cap's cap is brown.", "feature": "cap"},
       "latin": "Amanita muscaria",
       "name": {
         "cs": "Muchomůrka červená",
@@ -519,6 +529,7 @@
       "deadly": true,
       "level": 1,
       "twin": "bedla",
+      "twinTell": {"cs": "Dole na noze má bílý pytlík. Bedla ho nemá.", "en": "Its stem grows out of a white cup. A parasol has none.", "feature": "volva"},
       "latin": "Amanita phalloides",
       "name": {
         "cs": "Muchomůrka zelená",
@@ -571,6 +582,7 @@
       "deadly": true,
       "level": 2,
       "twin": "muchomurka-cervena",
+      "twinTell": {"cs": "Klobouk má hnědý. Muchomůrka červená má klobouk červený.", "en": "Its cap is brown. The fly agaric's cap is red.", "feature": "cap"},
       "latin": "Amanita pantherina",
       "name": {
         "cs": "Muchomůrka tygrovaná",
@@ -622,6 +634,7 @@
       "deadly": false,
       "level": 1,
       "twin": "vaclavka",
+      "twinTell": {"cs": "Lupínky má zelenožluté. Václavka má lupínky světlé.", "en": "Its gills are greenish-yellow. Honey fungus has pale gills.", "feature": "gills-green"},
       "latin": "Hypholoma fasciculare",
       "name": {
         "cs": "Třepenitka svazčitá",
@@ -673,6 +686,7 @@
       "deadly": false,
       "level": 2,
       "twin": "trepenitka",
+      "twinTell": {"cs": "Na noze má prsten. Třepenitka žádný prsten nemá.", "en": "It has a ring on its stem. Sulphur tuft has none.", "feature": "ring"},
       "latin": "Armillaria mellea",
       "name": {"cs": "Václavka obecná", "en": "Honey fungus"},
       "nick": {"cs": "Václavka Medulka", "en": "Honey Bunch"},
@@ -697,6 +711,7 @@
       "deadly": false,
       "level": 2,
       "twin": "hrib-satan",
+      "twinTell": {"cs": "Klobouk má tmavě hnědý. Satan má klobouk křídově bílý.", "en": "Its cap is dark brown. The devil's bolete has a chalky white cap.", "feature": "cap"},
       "latin": "Neoboletus luridiformis",
       "name": {"cs": "Hřib kovář", "en": "Scarletina bolete"},
       "nick": {"cs": "Kovář Modrásek", "en": "Blue Smithy"},
@@ -794,6 +809,7 @@
       "deadly": false,
       "level": 2,
       "twin": "liska",
+      "twinTell": {"cs": "Zespodu má ostny jako ježek. Liška má měkké vrásky.", "en": "Underneath it has spikes like a hedgehog. A chanterelle has wrinkles.", "feature": "spines"},
       "latin": "Hydnum repandum",
       "name": {"cs": "Lišák zprohýbaný", "en": "Wood hedgehog"},
       "nick": {"cs": "Ježeček Lišák", "en": "Spiky"},
@@ -842,6 +858,7 @@
       "deadly": false,
       "level": 2,
       "twin": "hrib-kovar",
+      "twinTell": {"cs": "Klobouk má křídově bílý. Kovář má klobouk tmavě hnědý.", "en": "Its cap is chalky white. The scarletina bolete's cap is dark brown.", "feature": "cap"},
       "latin": "Rubroboletus satanas",
       "name": {"cs": "Hřib satan", "en": "Devil's bolete"},
       "nick": {"cs": "Čertík Stop", "en": "Devil Stop"},
@@ -866,6 +883,7 @@
       "deadly": false,
       "level": 2,
       "twin": "pychavka",
+      "twinTell": {"cs": "Uvnitř je tmavý. Pýchavka je uvnitř bílá.", "en": "It is dark inside. A puffball is white inside.", "feature": "inside-dark"},
       "latin": "Scleroderma citrinum",
       "name": {"cs": "Pestřec obecný", "en": "Common earthball"},
       "nick": {"cs": "Bramborka Stop", "en": "Potato Stop"},
@@ -891,6 +909,7 @@
       "deadly": true,
       "level": 2,
       "twin": "bedla",
+      "twinTell": {"cs": "Je celá bílá a dole má pytlík. Bedla pytlík nemá.", "en": "It is all white, with a cup at the bottom. A parasol has none.", "feature": "volva"},
       "latin": "Amanita virosa",
       "name": {"cs": "Muchomůrka jízlivá", "en": "Destroying angel"},
       "nick": {"cs": "Bílá Hrozba", "en": "White Danger"},
@@ -914,6 +933,7 @@
       "deadly": false,
       "level": 2,
       "twin": "liska",
+      "twinTell": {"cs": "Zespodu má husté lupínky. Liška má jen měkké vrásky.", "en": "Underneath it has thin gills. A chanterelle has soft wrinkles.", "feature": "gills"},
       "latin": "Hygrophoropsis aurantiaca",
       "name": {"cs": "Lištička pomerančová", "en": "False chanterelle"},
       "nick": {"cs": "Lištička Šibalka", "en": "Trick Goldie"},
@@ -938,6 +958,7 @@
       "deadly": false,
       "level": 2,
       "twin": "troudnatec",
+      "twinTell": {"cs": "Má červený pás a bílý okraj. Kopytovitý je celý šedý.", "en": "It has a red band and a white edge. The hoof fungus is grey.", "feature": "red-band"},
       "latin": "Fomitopsis pinicola",
       "name": {"cs": "Troudnatec pásovaný", "en": "Red-belted bracket"},
       "nick": {"cs": "Troudnatec Pásek", "en": "Red Belt"},

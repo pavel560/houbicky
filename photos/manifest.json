@@ -1,5 +1,5 @@
 {
-  "_note": "Compiled 2026-10-11 by houbař-výzkumník. WebFetch/curl to wikimedia.org were blocked in the sandbox (DNS/proxy), so every entry was confirmed only via web-search renderings of the Commons file pages: file exists, author, licence, place/date and species named in the description. Nobody has looked at the pixels yet, hence verified=false everywhere. fetch_photos.py re-reads the licence from Commons extmetadata on download and flags any mismatch.",
+  "_note": "v1 entries compiled 2026-10-11, v2 entries (12 new species) added the same day. The sandbox could not open wikimedia.org (WebFetch DNS failure, curl proxy 403), so every entry was confirmed only through web-search renderings of the Commons file pages: file exists, author, licence, place/date and species named in the description. Nobody has looked at the pixels yet, hence verified=false everywhere. fetch_photos.py (CI) re-reads the licence from Commons extmetadata and flags any mismatch. Author names are the photographers' own Commons credits, kept because CC BY / CC BY-SA require attribution.",
   "photos": [
     {
       "id": "hrib-smrkovy",
@@ -10,7 +10,9 @@
       "sourcePage": "https://commons.wikimedia.org/wiki/File:Boletus_edulis_2_2008.JPG",
       "verified": false,
       "evidence": "Commons page: Boletus edulis, Tuchola Forest (PL), 14 Sep 2008, own work; dual CC BY-SA 3.0 / GFDL 1.2+.",
-      "alt": ["File:Boletus edulis steinpilz.jpg"],
+      "alt": [
+        "File:Boletus edulis steinpilz.jpg"
+      ],
       "altNote": "Holger Krisp, CC BY 3.0, Ulm-Eggingen 2012 (licence read from structured data only)."
     },
     {
@@ -22,7 +24,9 @@
       "sourcePage": "https://commons.wikimedia.org/wiki/File:Kantareller_(Cantharellus_cibarius)_i_Sala_kn_3868.jpg",
       "verified": false,
       "evidence": "Commons page: chanterelles in Sala (SE), 14 Jul 2016, own work, 3812x3256 px.",
-      "alt": ["File:2007-07-14 Cantharellus cibarius.jpg"],
+      "alt": [
+        "File:2007-07-14 Cantharellus cibarius.jpg"
+      ],
       "altNote": "Andreas Kunze, CC BY-SA 3.0, Commons Quality image."
     },
     {
@@ -34,7 +38,9 @@
       "sourcePage": "https://commons.wikimedia.org/wiki/File:Macrolepiota-procera.jpg",
       "verified": false,
       "evidence": "Commons Valued image for scope Macrolepiota procera, own work, 14 Sep 2014, 2700x3360 px.",
-      "alt": ["File:Macrolepiota procera 2025 G1.jpg"],
+      "alt": [
+        "File:Macrolepiota procera 2025 G1.jpg"
+      ],
       "altNote": "George Chernilevsky, CC BY 4.0, Commons Featured picture, Vinnytsia (UA)."
     },
     {
@@ -46,7 +52,10 @@
       "sourcePage": "https://commons.wikimedia.org/wiki/File:Kozak_brezovy-Leccinum_scabrum-I-06-2020-PP_Krizanky.jpg",
       "verified": false,
       "evidence": "Commons page: Leccinum scabrum, PP Křižánky, Jičín District (CZ), 7 Jun 2020, own work. Czech find.",
-      "alt": ["File:Gemeine Birkenpilz Leccinum scabrum.jpg", "File:Birch bolete - Brauner Birkenpilz - Leccinum scabrum - 01.jpg"],
+      "alt": [
+        "File:Gemeine Birkenpilz Leccinum scabrum.jpg",
+        "File:Birch bolete - Brauner Birkenpilz - Leccinum scabrum - 01.jpg"
+      ],
       "altNote": "1) Holger Krisp, CC BY 3.0, 2013. 2) Norbert Nagel, CC BY-SA 3.0, Hesse 2013."
     },
     {
@@ -58,7 +67,9 @@
       "sourcePage": "https://commons.wikimedia.org/wiki/File:Espen-Rotkappe_Leccinum_leucopodium.JPG",
       "verified": false,
       "evidence": "Commons page: 'Leccinum albostipitatum, Familie Boletaceae', Erbach-Ringingen (DE), 26 Oct 2014, own work; in Category:Leccinum albostipitatum.",
-      "alt": ["File:Weißstielige Rotkappe (Leccinum leucopodium). 2H1A0513WI.jpg"],
+      "alt": [
+        "File:Weißstielige Rotkappe (Leccinum leucopodium). 2H1A0513WI.jpg"
+      ],
       "altNote": "Kora27 (metadata also names Valentina Patzlaff), CC BY-SA 4.0, Wiki Loves Earth 2024, Saxony. Check the credit line."
     },
     {
@@ -70,7 +81,9 @@
       "sourcePage": "https://commons.wikimedia.org/wiki/File:Imleria_badia_in_Krajna_46.jpg",
       "verified": false,
       "evidence": "Commons page: Imleria badia, Krajna Landscape Park (PL), 23 Oct 2021, own work (user Tournasol7).",
-      "alt": ["File:Imleria badia - Maronenröhrling cropped.jpg"],
+      "alt": [
+        "File:Imleria badia - Maronenröhrling cropped.jpg"
+      ],
       "altNote": "Derivative by Ak ccm of a Holger Krisp photo, CC BY 3.0; credit 'H. Krisp, derivative Ak ccm'."
     },
     {
@@ -82,7 +95,9 @@
       "sourcePage": "https://commons.wikimedia.org/wiki/File:Lycoperdon-perlatum-flaschenstaeubling.jpg",
       "verified": false,
       "evidence": "Commons page: Lycoperdon perlatum, Ulm-Eggingen (DE), 26 Sep 2011, own work.",
-      "alt": ["File:Single lycoperdon perlatum.jpg"],
+      "alt": [
+        "File:Single lycoperdon perlatum.jpg"
+      ],
       "altNote": "Daniel Ullrich (Threedots), GFDL / CC BY-SA 2.0 DE / CC BY-SA 3.0, 2005."
     },
     {
@@ -94,7 +109,9 @@
       "sourcePage": "https://commons.wikimedia.org/wiki/File:Gemeine_Gallenr%C3%B6hrling_Tylopilus_felleus.jpg",
       "verified": false,
       "evidence": "Commons page: Tylopilus felleus, Ulm-Ringingen (DE), 13 Jul 2012, own work, 3000x1996 px.",
-      "alt": ["File:Gallenröhrling (Tylopilus felleus), Nationalpark Hohe Tauern, Kärnten.jpg"],
+      "alt": [
+        "File:Gallenröhrling (Tylopilus felleus), Nationalpark Hohe Tauern, Kärnten.jpg"
+      ],
       "altNote": "Naturpuur, CC BY 4.0, 15 Aug 2020."
     },
     {
@@ -106,7 +123,9 @@
       "sourcePage": "https://commons.wikimedia.org/wiki/File:Fomes_fomentarius_1.jpg",
       "verified": false,
       "evidence": "Commons page: Fomes fomentarius, Karmėlava forest (LT), 22 Sep 2007, own work (user Tocekas); dual CC BY-SA 3.0 / GFDL.",
-      "alt": ["File:Fomes fomentarius, Zunderschwamm 1.JPG"],
+      "alt": [
+        "File:Fomes fomentarius, Zunderschwamm 1.JPG"
+      ],
       "altNote": "Friedrich Böhringer, CC BY-SA 2.5, 2010; he asks reusers to credit him by name."
     },
     {
@@ -118,7 +137,9 @@
       "sourcePage": "https://commons.wikimedia.org/wiki/File:Fliegenpilz_fly_agaric_Amanita_muscaria.JPG",
       "verified": false,
       "evidence": "Commons page: own work, Erbach-Ringingen (DE), 5 Sep 2014; Commons Picture of the Day 6 Sep 2015.",
-      "alt": ["File:Amanita muscaria (fly agaric).JPG"],
+      "alt": [
+        "File:Amanita muscaria (fly agaric).JPG"
+      ],
       "altNote": "MichaelMaggs, CC BY-SA 2.5, Norway 2006."
     },
     {
@@ -130,7 +151,9 @@
       "sourcePage": "https://commons.wikimedia.org/wiki/File:Amanita_phalloides_1.JPG",
       "verified": false,
       "evidence": "Commons page: own work, Piacenza mountains (IT), Sep 2005, 1200x1600 px; dual CC BY-SA 3.0 / GFDL. The page does not say whether the volva is visible.",
-      "alt": ["File:Amanita phalloides.jpg"],
+      "alt": [
+        "File:Amanita phalloides.jpg"
+      ],
       "altNote": "Hankwang, southern Sweden 2004; CC BY-SA 3.0 / GFDL / CC BY 1.0."
     },
     {
@@ -142,7 +165,9 @@
       "sourcePage": "https://commons.wikimedia.org/wiki/File:Pantherpilz_(Amanita_pantherina).jpg",
       "verified": false,
       "evidence": "Commons page: own work, 10 Aug 2023, uploaded through the Commons app. The search rendering gives no place, so this is the least certain photo choice.",
-      "alt": ["File:Amanita pantherina 1.JPG"],
+      "alt": [
+        "File:Amanita pantherina 1.JPG"
+      ],
       "altNote": "Archenzo (author field missing; attributed from the upload log), CC BY-SA 3.0 / GFDL, Piacenza (IT) 2005. Do NOT use the James St. John Flickr file, which is a North American taxon."
     },
     {
@@ -154,8 +179,178 @@
       "sourcePage": "https://commons.wikimedia.org/wiki/File:Clustered_woodlover_-_Hypholoma_fasciculare_-_Gr%C3%BCnbl%C3%A4ttriger_Schwefelkopf_-_sulfur_tuft_-_01.jpg",
       "verified": false,
       "evidence": "Commons page: Hesse (DE), Oct 2013, own work, Quality image candidate Oct 2013; preferred credit 'Norbert Nagel / Wikimedia Commons'.",
-      "alt": ["File:Grünblättriger Schwefelkopf (Hypholoma fasciculare) Bruderwald-20251031-RM-162333.jpg"],
+      "alt": [
+        "File:Grünblättriger Schwefelkopf (Hypholoma fasciculare) Bruderwald-20251031-RM-162333.jpg"
+      ],
       "altNote": "Reinhold Möller, CC BY-SA 4.0, 2025; he asks to be credited and notified."
+    },
+    {
+      "id": "vaclavka",
+      "commonsFile": "File:Armillaria mellea, Honey Fungus, UK 1.jpg",
+      "author": "Stu's Images",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Armillaria_mellea,_Honey_Fungus,_UK_1.jpg",
+      "verified": false,
+      "evidence": "Commons page: Armillaria mellea, Whitewebbs Wood, Enfield (UK), 2 Dec 2011, own work.",
+      "alt": [
+        "File:Opienka miodowa (Armillaria mellea).JPG"
+      ],
+      "altNote": "Emis, CC BY-SA 3.0, 14 Oct 2012, own work. Avoid 'Armillaria mellea in Sochi 14112015.JPG': its Russian caption suggests a different species (winter mushroom)."
+    },
+    {
+      "id": "hrib-kovar",
+      "commonsFile": "File:Boletus erythropus 2010 G1.jpg",
+      "author": "George Chernilevsky",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Boletus_erythropus_2010_G1.jpg",
+      "verified": false,
+      "evidence": "Commons page: Boletus erythropus (= Neoboletus luridiformis), Ukraine, 5 Jun 2010, own work, PD-self; description mentions yellow flesh turning blue within seconds (cut specimen shown).",
+      "alt": [
+        "File:Flockenstielige Hexen-Röhrling Boletus erythropus.jpg"
+      ],
+      "altNote": "Holger Krisp, CC BY 3.0, Eggingen (DE), 6 Sep 2012."
+    },
+    {
+      "id": "klouzek",
+      "commonsFile": "File:Suillus grevillei.jpg",
+      "author": "Dezidor",
+      "license": "CC BY-SA 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Suillus_grevillei.jpg",
+      "verified": false,
+      "evidence": "Commons page: own work, 14 Aug 2007, Czech caption 'klouzek sličný', 2816x2112 px; used in the Czech Wikipedia article.",
+      "alt": [
+        "File:Gold-Röhrling Suillus grevillei 2.jpg"
+      ],
+      "altNote": "Holger Krisp, CC BY 3.0 (structured data), Ulm-Eggingen (DE), 2012."
+    },
+    {
+      "id": "ryzec",
+      "commonsFile": "File:Echte Reizker Lactarius deliciosus.JPG",
+      "author": "Holger Krisp",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Echte_Reizker_Lactarius_deliciosus.JPG",
+      "verified": false,
+      "evidence": "Commons page: Lactarius deliciosus, own work, CC BY 3.0.",
+      "alt": [
+        "File:Lactarius Deliciosus.jpg"
+      ],
+      "altNote": "L.Payakoff, CC BY-SA 3.0, near Gabrovo (BG), 13 Jun 2010."
+    },
+    {
+      "id": "sirovec",
+      "commonsFile": "File:Laetiporus sulphureus żółciak siarkowy BŻ4.jpg",
+      "author": "Selso",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Laetiporus_sulphureus_żółciak_siarkowy_BŻ4.jpg",
+      "verified": false,
+      "evidence": "Commons page: Laetiporus sulphureus, own work, 24 Aug 2012 (Polish title).",
+      "alt": [
+        "File:Laetiporus sulphureus (Chicken of the woods) on an oak tree - 20070921.jpg"
+      ],
+      "altNote": "Gargoyle888, CC BY 3.0 / GFDL, 21 Sep 2007; location not stated."
+    },
+    {
+      "id": "lisak",
+      "commonsFile": "File:Hydnum repandum semmelstoppelpilz.jpg",
+      "author": "Holger Krisp",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Hydnum_repandum_semmelstoppelpilz.jpg",
+      "verified": false,
+      "evidence": "Commons page: Hydnum repandum, Ulm-Eggingen (DE), 13 Oct 2012, own work.",
+      "alt": [
+        "File:Hydnum repandum G4.JPG"
+      ],
+      "altNote": "Jerzy Opioła, CC BY-SA 3.0, 2012."
+    },
+    {
+      "id": "kotrc",
+      "commonsFile": "File:Krause Glucke Sparassis crispa.JPG",
+      "author": "Holger Krisp",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Krause_Glucke_Sparassis_crispa.JPG",
+      "verified": false,
+      "evidence": "Commons page: Sparassis crispa, Erbach-Ringingen (DE), 10 Oct 2014, own work.",
+      "alt": [
+        "File:Sparassis crispa 2015-11-14.jpg"
+      ],
+      "altNote": "Andreas Kunze, CC BY-SA 3.0, at the base of a Scots pine, 14 Nov 2015."
+    },
+    {
+      "id": "hrib-satan",
+      "commonsFile": "File:Satans-Röhrling Boletus satanas.jpg",
+      "author": "Holger Krisp",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Satans-Röhrling_Boletus_satanas.jpg",
+      "verified": false,
+      "evidence": "Commons page: Boletus satanas (= Rubroboletus satanas), Erbach-Ringingen (DE), own work.",
+      "alt": [
+        "File:Rubroboletus satanas - Borowik szatański.jpg"
+      ],
+      "altNote": "LukeEmski, CC BY-SA 3.0, 2019."
+    },
+    {
+      "id": "pestrec",
+      "commonsFile": "File:Scleroderma citrinum - earth ball - Kartoffelbovist - Boletales - Sclerodermatineae - 06.jpg",
+      "author": "Norbert Nagel",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Scleroderma_citrinum_-_earth_ball_-_Kartoffelbovist_-_Boletales_-_Sclerodermatineae_-_06.jpg",
+      "verified": false,
+      "evidence": "Commons page: Scleroderma citrinum, Hesse (DE), 27 Dec 2011, own work.",
+      "alt": [
+        "File:Scleroderma citrinum 3.JPG"
+      ],
+      "altNote": "Toffel, CC BY-SA 3.0 / GFDL, 2009. (Not 'Scleroderma citrinum 1.jpg': its file history mentions Lycoperdon perlatum.)"
+    },
+    {
+      "id": "muchomurka-jizliva",
+      "commonsFile": "File:Amanita virosa a1 (7).JPG",
+      "author": "Jerzy Opioła",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_a1_(7).JPG",
+      "verified": false,
+      "evidence": "Commons page: Amanita virosa, own work, 15 Aug 2014, 3950x2962 px; location not stated (photographer works in Poland).",
+      "alt": [
+        "File:Amanita virosa.jpg"
+      ],
+      "altNote": "Uploaded by Pmx 2006, forest of Blois (FR), CC BY-SA 3.0 / GFDL; author field missing, check the credit line. Avoid 'Amanita virosa 09.jpg' (Japanese taxon)."
+    },
+    {
+      "id": "listicka",
+      "commonsFile": "File:False Chanterelle Hygrophoropsis aurantiaca.jpg",
+      "author": "Holger Krisp",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:False_Chanterelle_Hygrophoropsis_aurantiaca.jpg",
+      "verified": false,
+      "evidence": "Commons page: Hygrophoropsis aurantiaca, Germany, 1 Nov 2012, own work.",
+      "alt": [
+        "File:Hygrophoropsis aurantiaca 051106w.jpg"
+      ],
+      "altNote": "Strobilomyces, CC BY-SA 3.0 / GFDL, France 2005."
+    },
+    {
+      "id": "troudnatec-pasovany",
+      "commonsFile": "File:Fichtenporling Fomitopsis pinicola.jpg",
+      "author": "Holger Krisp",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Fichtenporling_Fomitopsis_pinicola.jpg",
+      "verified": false,
+      "evidence": "Commons page: Fomitopsis pinicola, near Ulm (DE), own work.",
+      "alt": [
+        "File:Fomitopsis pinicola in nature reserve Skocicky hrad in spring 2013.JPG"
+      ],
+      "altNote": "Chmee2, CC BY-SA 3.0, Skočický hrad reserve (CZ), 2 May 2013."
     }
   ]
 }

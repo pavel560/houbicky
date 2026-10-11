@@ -5,6 +5,8 @@
       "id": "hrib-smrkovy",
       "group": "jedla",
       "deadly": false,
+      "level": 1,
+      "twin": "zlucnik",
       "latin": "Boletus edulis",
       "name": {
         "cs": "Hřib smrkový",
@@ -54,6 +56,8 @@
       "id": "liska",
       "group": "jedla",
       "deadly": false,
+      "level": 1,
+      "twin": "listicka",
       "latin": "Cantharellus cibarius",
       "name": {
         "cs": "Liška obecná",
@@ -103,6 +107,8 @@
       "id": "bedla",
       "group": "jedla",
       "deadly": false,
+      "level": 2,
+      "twin": "muchomurka-zelena",
       "latin": "Macrolepiota procera",
       "name": {
         "cs": "Bedla vysoká",
@@ -153,6 +159,8 @@
       "id": "kozak",
       "group": "jedla",
       "deadly": false,
+      "level": 2,
+      "twin": "kremenac",
       "latin": "Leccinum scabrum",
       "name": {
         "cs": "Kozák březový",
@@ -202,6 +210,8 @@
       "id": "kremenac",
       "group": "jedla",
       "deadly": false,
+      "level": 2,
+      "twin": "kozak",
       "latin": "Leccinum albostipitatum",
       "name": {
         "cs": "Křemenáč osikový",
@@ -252,6 +262,8 @@
       "id": "suchohrib",
       "group": "jedla",
       "deadly": false,
+      "level": 2,
+      "twin": "zlucnik",
       "latin": "Imleria badia",
       "name": {
         "cs": "Hřib hnědý",
@@ -301,6 +313,8 @@
       "id": "pychavka",
       "group": "jedla",
       "deadly": false,
+      "level": 2,
+      "twin": "pestrec",
       "latin": "Lycoperdon perlatum",
       "name": {
         "cs": "Pýchavka obecná",
@@ -350,6 +364,8 @@
       "id": "zlucnik",
       "group": "nejedla",
       "deadly": false,
+      "level": 2,
+      "twin": "hrib-smrkovy",
       "latin": "Tylopilus felleus",
       "name": {
         "cs": "Hřib žlučník",
@@ -399,6 +415,8 @@
       "id": "troudnatec",
       "group": "nejedla",
       "deadly": false,
+      "level": 1,
+      "twin": "troudnatec-pasovany",
       "latin": "Fomes fomentarius",
       "name": {
         "cs": "Troudnatec kopytovitý",
@@ -448,6 +466,8 @@
       "id": "muchomurka-cervena",
       "group": "jedovata",
       "deadly": false,
+      "level": 1,
+      "twin": "muchomurka-tygrovana",
       "latin": "Amanita muscaria",
       "name": {
         "cs": "Muchomůrka červená",
@@ -497,6 +517,8 @@
       "id": "muchomurka-zelena",
       "group": "jedovata",
       "deadly": true,
+      "level": 1,
+      "twin": "bedla",
       "latin": "Amanita phalloides",
       "name": {
         "cs": "Muchomůrka zelená",
@@ -547,6 +569,8 @@
       "id": "muchomurka-tygrovana",
       "group": "jedovata",
       "deadly": true,
+      "level": 2,
+      "twin": "muchomurka-cervena",
       "latin": "Amanita pantherina",
       "name": {
         "cs": "Muchomůrka tygrovaná",
@@ -596,6 +620,8 @@
       "id": "trepenitka",
       "group": "jedovata",
       "deadly": false,
+      "level": 1,
+      "twin": "vaclavka",
       "latin": "Hypholoma fasciculare",
       "name": {
         "cs": "Třepenitka svazčitá",
@@ -639,6 +665,295 @@
         "https://www.nahouby.cz/atlas-hub/trepenitka-svazcita",
         "https://cs.wikipedia.org/wiki/T%C5%99epenitka_svaz%C4%8Dit%C3%A1",
         "https://www.first-nature.com/fungi/hypholoma-fasciculare.php"
+      ]
+    },
+    {
+      "id": "vaclavka",
+      "group": "jedla",
+      "deadly": false,
+      "level": 2,
+      "twin": "trepenitka",
+      "latin": "Armillaria mellea",
+      "name": {"cs": "Václavka obecná", "en": "Honey fungus"},
+      "nick": {"cs": "Václavka Medulka", "en": "Honey Bunch"},
+      "fact": {"cs": "Roste ve velkých trsech na pařezech. Je medově žlutá.", "en": "It grows in big bunches on stumps. It is honey-coloured."},
+      "lookFor": {
+        "cs": ["Roste v trsech na dřevě a pařezech.", "Medový klobouk má uprostřed tmavé šupinky.", "Na noze má bílý prsten."],
+        "en": ["It grows in bunches on old wood.", "Its honey-brown cap has dark scales in the middle.", "It has a white ring on its stem."]
+      },
+      "where": {"cs": "Na pařezech a kořenech stromů, hlavně na podzim.", "en": "On stumps and tree roots, mostly in autumn."},
+      "caution": {"cs": "Jí se jen uvařená. Pozor na jedovatou třepenitku! Rozhodne dospělý.", "en": "Only eaten cooked. Watch out for sulphur tuft! A grown-up decides."},
+      "colors": {"cap": "#C49A4A", "stem": "#D8C49A", "under": "#EFE3C8"},
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Armillaria-mellea/",
+        "https://www.nahouby.cz/atlas-hub/vaclavka-obecna",
+        "https://cs.wikipedia.org/wiki/V%C3%A1clavka_obecn%C3%A1",
+        "https://www.first-nature.com/fungi/armillaria-mellea.php"
+      ]
+    },
+    {
+      "id": "hrib-kovar",
+      "group": "jedla",
+      "deadly": false,
+      "level": 2,
+      "twin": "hrib-satan",
+      "latin": "Neoboletus luridiformis",
+      "name": {"cs": "Hřib kovář", "en": "Scarletina bolete"},
+      "nick": {"cs": "Kovář Modrásek", "en": "Blue Smithy"},
+      "fact": {"cs": "Když se rozkrojí, hned zmodrá jako inkoust.", "en": "When it is cut, it turns blue like ink."},
+      "lookFor": {
+        "cs": ["Má tmavě hnědý sametový klobouk.", "Pod kloboukem má červené dírky.", "Žlutá noha má drobné červené tečky."],
+        "en": ["It has a dark brown velvety cap.", "Under the cap its holes are red.", "Its yellow stem has tiny red dots."]
+      },
+      "where": {"cs": "V jehličnatém i smíšeném lese, často v kopcích.", "en": "In pine and spruce woods, often in hills."},
+      "caution": {"cs": "Jí se jen uvařený. Pozor na jedovatého hřiba satana! Rozhodne dospělý.", "en": "Only eaten cooked. Watch out for the devil's bolete! A grown-up decides."},
+      "colors": {"cap": "#5A3A22", "stem": "#C9A43A", "under": "#B5321F"},
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Sutorius-luridiformis/",
+        "https://www.houbareni.cz/houba/hrib_kovar",
+        "https://www.nahouby.cz/atlas-hub/hrib-kovar",
+        "https://www.first-nature.com/fungi/neoboletus-luridiformis.php"
+      ]
+    },
+    {
+      "id": "klouzek",
+      "group": "jedla",
+      "deadly": false,
+      "level": 2,
+      "twin": null,
+      "latin": "Suillus grevillei",
+      "name": {"cs": "Klouzek sličný", "en": "Larch bolete"},
+      "nick": {"cs": "Klouzek Zlatíčko", "en": "Slippy"},
+      "fact": {"cs": "Kamarádí se s modřínem. Za deště klouže jako mýdlo.", "en": "Its friend is the larch tree. In the rain it is slippery like soap."},
+      "lookFor": {
+        "cs": ["Má zlatožlutý lesklý klobouk.", "Pod kloboukem má žluté dírky.", "Na noze má prstýnek."],
+        "en": ["It has a shiny golden-yellow cap.", "Under the cap it has yellow holes.", "It has a little ring on its stem."]
+      },
+      "where": {"cs": "Jen pod modříny, v lese i v parku.", "en": "Only under larch trees, in woods and parks."},
+      "caution": {"cs": "Sbíráme ho jen s dospělým, který ho dobře zná.", "en": "Pick it only with a grown-up who knows it well."},
+      "colors": {"cap": "#E0A526", "stem": "#E3C76A", "under": "#E8C83D"},
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Suillus-grevillei/",
+        "https://www.houbareni.cz/houba/klouzek_slicny",
+        "https://www.nahouby.cz/atlas-hub/klouzek-slicny",
+        "https://www.first-nature.com/fungi/suillus-grevillei.php"
+      ]
+    },
+    {
+      "id": "ryzec",
+      "group": "jedla",
+      "deadly": false,
+      "level": 2,
+      "twin": null,
+      "latin": "Lactarius deliciosus",
+      "name": {"cs": "Ryzec pravý", "en": "Saffron milkcap"},
+      "nick": {"cs": "Ryzec Mrkvička", "en": "Carroty"},
+      "fact": {"cs": "Když se zlomí, teče z něj oranžové mléko.", "en": "If it breaks, orange milk comes out."},
+      "lookFor": {
+        "cs": ["Oranžový klobouk má kroužky jako letokruhy.", "Na otlačených místech zezelená.", "Na noze má oranžové důlky."],
+        "en": ["Its orange cap has rings like a tree stump.", "Bruised spots slowly turn green.", "Its stem has little orange dents."]
+      },
+      "where": {"cs": "Pod borovicemi, v trávě a v mechu.", "en": "Under pine trees, in grass and moss."},
+      "caution": {"cs": "Podobný ryzec kravský je chlupatý a má bílé mléko.", "en": "The woolly milkcap looks similar. It is hairy, with white milk."},
+      "colors": {"cap": "#E07A2E", "stem": "#E8955A", "under": "#E98A3A"},
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Lactarius-deliciosus/",
+        "https://www.nahouby.cz/atlas-hub/ryzec-pravy-borovy",
+        "https://www.mykologie.net/index.php/houby/podle-morfologie/lupenate/item/388:lactarius-deliciosus",
+        "https://www.myko.cz/myko-atlas/Lactarius-torminosus/",
+        "https://www.first-nature.com/fungi/lactarius-deliciosus.php"
+      ]
+    },
+    {
+      "id": "sirovec",
+      "group": "jedla",
+      "deadly": false,
+      "level": 1,
+      "twin": null,
+      "latin": "Laetiporus sulphureus",
+      "name": {"cs": "Sírovec žlutooranžový", "en": "Chicken of the woods"},
+      "nick": {"cs": "Lesní Kuře", "en": "Woody Chicken"},
+      "fact": {"cs": "Roste na stromech jako žlutooranžové schody.", "en": "It grows on trees like yellow and orange steps."},
+      "lookFor": {
+        "cs": ["Je zářivě žlutý a oranžový.", "Roste v patrech na kmeni jako poličky.", "Nemá nohu, přirůstá přímo ke stromu."],
+        "en": ["It is bright yellow and orange.", "It grows on trunks like little shelves.", "It has no stem. It sticks to the tree."]
+      },
+      "where": {"cs": "Na vrbách, dubech a třešních, hlavně v létě.", "en": "On willow, oak and cherry trees, mostly in summer."},
+      "caution": {"cs": "Jí se jen mladý a měkký. Rozhodne dospělý.", "en": "Only young, soft ones are eaten. A grown-up decides."},
+      "colors": {"cap": "#F5A623", "stem": "#F2C14E", "under": "#F7DC5C"},
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Laetiporus-sulphureus/",
+        "https://www.houbareni.cz/houba/sirovec_zlutooranzovy",
+        "https://cs.wikipedia.org/wiki/S%C3%ADrovec_%C5%BElutooran%C5%BEov%C3%BD",
+        "https://www.first-nature.com/fungi/laetiporus-sulphureus.php"
+      ]
+    },
+    {
+      "id": "lisak",
+      "group": "jedla",
+      "deadly": false,
+      "level": 2,
+      "twin": "liska",
+      "latin": "Hydnum repandum",
+      "name": {"cs": "Lišák zprohýbaný", "en": "Wood hedgehog"},
+      "nick": {"cs": "Ježeček Lišák", "en": "Spiky"},
+      "fact": {"cs": "Pod kloboukem má měkké ostny jako ježek.", "en": "Under its cap it has soft spikes like a hedgehog."},
+      "lookFor": {
+        "cs": ["Má světle oranžový, zprohýbaný klobouk.", "Zespodu má drobné ostny, ne lupínky.", "Noha je krátká a světlá."],
+        "en": ["It has a pale orange, wavy cap.", "Underneath it has tiny spikes, not gills.", "Its stem is short and pale."]
+      },
+      "where": {"cs": "V listnatém i jehličnatém lese, často pod buky.", "en": "In woods, often under beech trees."},
+      "caution": {"cs": "Sbírá se jen mladý. Rozhodne dospělý.", "en": "Only young ones are picked. A grown-up decides."},
+      "colors": {"cap": "#E9B97A", "stem": "#F1DFC2", "under": "#F2D2A0"},
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Hydnum-repandum/",
+        "https://www.houbareni.cz/houba/lisak_zprohybany",
+        "https://cs.wikipedia.org/wiki/Li%C5%A1%C3%A1k_zproh%C3%BDban%C3%BD",
+        "https://www.first-nature.com/fungi/hydnum-repandum.php"
+      ]
+    },
+    {
+      "id": "kotrc",
+      "group": "jedla",
+      "deadly": false,
+      "level": 1,
+      "twin": null,
+      "latin": "Sparassis crispa",
+      "name": {"cs": "Kotrč kadeřavý", "en": "Wood cauliflower"},
+      "nick": {"cs": "Kotrč Kudrnáč", "en": "Curly"},
+      "fact": {"cs": "Vypadá jako kudrnatá houba na mytí nádobí.", "en": "It looks like a big curly kitchen sponge."},
+      "lookFor": {
+        "cs": ["Je kulatý a kudrnatý jako květák.", "Je krémově bílý až nažloutlý.", "Nemá klobouk ani nohu."],
+        "en": ["It is round and curly like a cauliflower.", "It is creamy white or pale yellow.", "It has no cap and no stem."]
+      },
+      "where": {"cs": "U paty borovic a na starých pařezech.", "en": "At the foot of pine trees and on old stumps."},
+      "caution": {"cs": "Jí se jen mladý a světlý. Rozhodne dospělý.", "en": "Only young, pale ones are eaten. A grown-up decides."},
+      "colors": {"cap": "#EEE0B8", "stem": "#D9C79A", "under": "#F3EBD2"},
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Sparassis-crispa/",
+        "https://www.houbareni.cz/houba/kotrc_kaderavy",
+        "https://www.nahouby.cz/atlas-hub/kotrc-kaderavy",
+        "https://www.first-nature.com/fungi/sparassis-crispa.php"
+      ]
+    },
+    {
+      "id": "hrib-satan",
+      "group": "jedovata",
+      "deadly": false,
+      "level": 2,
+      "twin": "hrib-kovar",
+      "latin": "Rubroboletus satanas",
+      "name": {"cs": "Hřib satan", "en": "Devil's bolete"},
+      "nick": {"cs": "Čertík Stop", "en": "Devil Stop"},
+      "fact": {"cs": "Je vzácný a jedovatý. V lese se na něj jen díváme.", "en": "It is rare and poisonous. In the woods we only look at it."},
+      "lookFor": {
+        "cs": ["Má světlý, křídově bílý klobouk.", "Pod kloboukem má červené dírky.", "Tlustá noha má červenou síťku."],
+        "en": ["It has a pale, chalky white cap.", "Under the cap its holes are red.", "Its fat stem has a red net."]
+      },
+      "where": {"cs": "V teplých listnatých lesích pod duby a buky.", "en": "In warm woods under oak and beech trees."},
+      "caution": {"cs": "Je jedovatý! Nesahej na něj a řekni to dospělému.", "en": "It is poisonous! Do not touch it. Tell a grown-up."},
+      "colors": {"cap": "#D9D4C7", "stem": "#C9423A", "under": "#C0392B"},
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Boletus-satanas/",
+        "https://cs.wikipedia.org/wiki/H%C5%99ib_satan",
+        "https://www.mykologie.net/index.php/houby/podle-morfologie/hribovite/item/775:rubroboletus-satanas",
+        "https://www.first-nature.com/fungi/rubroboletus-satanas.php"
+      ]
+    },
+    {
+      "id": "pestrec",
+      "group": "jedovata",
+      "deadly": false,
+      "level": 2,
+      "twin": "pychavka",
+      "latin": "Scleroderma citrinum",
+      "name": {"cs": "Pestřec obecný", "en": "Common earthball"},
+      "nick": {"cs": "Bramborka Stop", "en": "Potato Stop"},
+      "fact": {"cs": "Vypadá jako brambora. Uvnitř zčerná.", "en": "It looks like a potato. Inside it goes black."},
+      "lookFor": {
+        "cs": ["Je kulatý a žlutohnědý jako brambora.", "Tlustá kůže má vzor jako šupinky.", "Uvnitř je tmavě fialový až černý."],
+        "en": ["It is round and yellow-brown like a potato.", "Its thick skin has a scaly pattern.", "Inside it is dark purple or black."]
+      },
+      "where": {"cs": "Na holé zemi v lese, pod duby a břízami.", "en": "On bare soil in woods, under oak and birch."},
+      "caution": {"cs": "Je jedovatý a podobá se pýchavce. Nesahej na něj.", "en": "It is poisonous and looks like a puffball. Do not touch."},
+      "colors": {"cap": "#C9A85A", "stem": "#B89650", "under": "#2B2233"},
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Scleroderma-citrinum/",
+        "https://www.nahouby.cz/atlas-hub/pestrec-obecny",
+        "https://www.mykologie.net/index.php/houby/podle-morfologie/gasteromycetes/item/643:scleroderma-citrinum",
+        "https://www.first-nature.com/fungi/scleroderma-citrinum.php",
+        "https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/fungi-and-lichens/common-earthball/"
+      ]
+    },
+    {
+      "id": "muchomurka-jizliva",
+      "group": "jedovata",
+      "deadly": true,
+      "level": 2,
+      "twin": "bedla",
+      "latin": "Amanita virosa",
+      "name": {"cs": "Muchomůrka jízlivá", "en": "Destroying angel"},
+      "nick": {"cs": "Bílá Hrozba", "en": "White Danger"},
+      "fact": {"cs": "Je celá bílá a smrtelně jedovatá.", "en": "It is all white and deadly poisonous."},
+      "lookFor": {
+        "cs": ["Je celá čistě bílá, i lupínky.", "Na noze má roztřepenou bílou sukýnku.", "Noha jí dole trčí z bílého pytlíku."],
+        "en": ["It is pure white all over, even the gills.", "It has a ragged white skirt on its stem.", "Its stem grows out of a white cup."]
+      },
+      "where": {"cs": "V jehličnatém lese, hlavně v horách.", "en": "In pine and spruce woods, mostly in hills."},
+      "caution": {"cs": "Smrtelně jedovatá! Nesahej na ni a hned řekni dospělému.", "en": "Deadly poisonous! Do not touch it. Tell a grown-up."},
+      "colors": {"cap": "#F7F6F0", "stem": "#F2F0E8", "under": "#FFFFFF"},
+      "sources": [
+        "https://www.myko.cz/clanek357/",
+        "https://www.myko.cz/houby/jedovate-houby/",
+        "https://www.first-nature.com/fungi/amanita-virosa.php"
+      ]
+    },
+    {
+      "id": "listicka",
+      "group": "nejedla",
+      "deadly": false,
+      "level": 2,
+      "twin": "liska",
+      "latin": "Hygrophoropsis aurantiaca",
+      "name": {"cs": "Lištička pomerančová", "en": "False chanterelle"},
+      "nick": {"cs": "Lištička Šibalka", "en": "Trick Goldie"},
+      "fact": {"cs": "Vypadá jako liška, ale je to jiná houba.", "en": "It looks like a chanterelle, but it is a different mushroom."},
+      "lookFor": {
+        "cs": ["Je oranžová, víc než liška.", "Zespodu má husté tenké lupínky.", "Klobouk má jako nálevku s podvinutým okrajem."],
+        "en": ["It is more orange than a chanterelle.", "Underneath it has thin gills, close together.", "Its cap is like a funnel with a rolled edge."]
+      },
+      "where": {"cs": "V jehličnatém lese, na zemi i na tlejícím dřevě.", "en": "In pine and spruce woods, on soil or old wood."},
+      "caution": {"cs": "Nesbíráme ji. Snadno se splete s liškou.", "en": "We do not pick it. It is easy to mix up with chanterelles."},
+      "colors": {"cap": "#E8812A", "stem": "#D9782C", "under": "#F08C2E"},
+      "sources": [
+        "https://www.houbareni.cz/houba/listicka_pomerancova?nick=mahony",
+        "https://www.myko.cz/myko-atlas/Hygrophoropsis-aurantiaca/",
+        "https://www.nahouby.cz/atlas-hub/listicka-pomerancova",
+        "https://cs.wikipedia.org/wiki/Li%C5%A1ti%C4%8Dka_pomeran%C4%8Dov%C3%A1"
+      ]
+    },
+    {
+      "id": "troudnatec-pasovany",
+      "group": "nejedla",
+      "deadly": false,
+      "level": 2,
+      "twin": "troudnatec",
+      "latin": "Fomitopsis pinicola",
+      "name": {"cs": "Troudnatec pásovaný", "en": "Red-belted bracket"},
+      "nick": {"cs": "Troudnatec Pásek", "en": "Red Belt"},
+      "fact": {"cs": "Nosí červený pásek. Někdy z něj kapou kapky jako slzy.", "en": "It wears a red belt. Sometimes it drips like tears."},
+      "lookFor": {
+        "cs": ["Roste jako polička na kmeni.", "Má červenooranžový pás a bílý okraj.", "Je tvrdý jako dřevo."],
+        "en": ["It grows like a shelf on a trunk.", "It has a red-orange band and a white edge.", "It is as hard as wood."]
+      },
+      "where": {"cs": "Na pařezech a kmenech smrků, celý rok.", "en": "On spruce stumps and trunks, all year round."},
+      "caution": {"cs": "Je tvrdý jako dřevo, a proto se nejí.", "en": "It is as hard as wood, so nobody eats it."},
+      "colors": {"cap": "#5B3A29", "stem": "#C4482A", "under": "#EDE3C8"},
+      "sources": [
+        "https://www.myko.cz/myko-atlas/Fomitopsis-pinicola/",
+        "https://www.houbareni.cz/houba/troudnatec_pasovany",
+        "https://www.nahouby.cz/atlas-hub/troudnatec-pasovany",
+        "https://cs.wikipedia.org/wiki/Troudnatec_p%C3%A1sovan%C3%BD"
       ]
     }
   ]

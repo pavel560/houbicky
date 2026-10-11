@@ -12,21 +12,27 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 import make_voice as mv  # noqa: E402
 
-MP3 = b"ID3" + b"\x00" * 300
+MP3 = b"ID3" + b"\x00" * 12000          # big enough to pass the length check for the test texts
+STUB = b"ID3" + b"\x00" * 1900          # the ~2 kB stub the service sometimes returns
 
 
 class FakeTTS:
-    def __init__(self, fail=None):
+    def __init__(self, fail=None, stub=None):
         self.calls = []
         self.fail = dict(fail or {})      # text -> number of failures before success
+        self.stub = dict(stub or {})      # text -> number of tiny "successful" outputs before a good one
 
     def synth(self, text, voice, rate, path):
         self.calls.append((text, voice, rate))
         if self.fail.get(text, 0) > 0:
             self.fail[text] -= 1
             raise ConnectionResetError("reset")
+        data = MP3
+        if self.stub.get(text, 0) > 0:
+            self.stub[text] -= 1
+            data = STUB
         with open(path, "wb") as f:
-            f.write(MP3)
+            f.write(data)
 
 
 class TestMakeVoice(unittest.TestCase):
@@ -63,7 +69,7 @@ class TestMakeVoice(unittest.TestCase):
         self.assertEqual(idx["cs"]["sp.liska.name"]["file"], "cs/sp.liska.name.mp3")
         self.assertEqual(idx["cs"]["sp.liska.name"]["text"], "Liška obecná.")
         self.assertTrue(os.path.isfile(os.path.join(self.root, "voice", "cs", "sp.liska.name.mp3")))
-        self.assertIn("[1/3] cs sp.liska.name … nahrávám … hotovo 0 kB", self.out.getvalue())
+        self.assertIn("[1/3] cs sp.liska.name … nahrávám … hotovo 12 kB", self.out.getvalue())
 
     def test_second_run_records_nothing(self):
         self.run_mv(FakeTTS())
@@ -100,6 +106,39 @@ class TestMakeVoice(unittest.TestCase):
             def synth(self, text, voice, rate, path):
                 open(path, "wb").close()
         self.assertEqual(self.run_mv(Empty(), langs=["en"], retries=1), 1)
+
+    def test_tiny_output_is_retried(self):
+        tts = FakeTTS(stub={"Ahoj!": 2})
+        self.assertEqual(self.run_mv(tts, langs=["cs"]), 0)
+        self.assertEqual(sum(1 for c in tts.calls if c[0] == "Ahoj!"), 3)
+        self.assertGreater(os.path.getsize(os.path.join(self.root, "voice", "cs", "ui.say.greeting.mp3")), 4000)
+
+    def test_persistent_tiny_output_is_deleted_and_dropped(self):
+        self.run_mv(FakeTTS())                               # a good recording exists first
+        self.write({"cs": {"ui.say.greeting": "Ahoj, kamarádko!", "sp.liska.name": "Liška obecná."}, "en": {"ui.say.greeting": "Hello!"}})
+        tts = FakeTTS(stub={"Ahoj, kamarádko!": 99})
+        self.assertEqual(self.run_mv(tts, langs=["cs"], retries=3), 1)
+        self.assertEqual(sum(1 for c in tts.calls if c[0] == "Ahoj, kamarádko!"), 3)
+        self.assertNotIn("ui.say.greeting", self.index()["cs"])
+        self.assertFalse(os.path.exists(os.path.join(self.root, "voice", "cs", "ui.say.greeting.mp3")))
+        self.assertIn("chyb 1", self.out.getvalue())
+
+    def test_cached_tiny_file_is_regenerated(self):
+        self.run_mv(FakeTTS())
+        stub_path = os.path.join(self.root, "voice", "cs", "sp.liska.name.mp3")
+        with open(stub_path, "wb") as f:                     # the CI cache kept a 2 kB stub with a matching hash
+            f.write(STUB)
+        tts = FakeTTS()
+        self.assertEqual(self.run_mv(tts), 0)
+        self.assertEqual([c[0] for c in tts.calls], ["Liška obecná."])
+        self.assertGreater(os.path.getsize(stub_path), 4000)
+        out = self.out.getvalue()
+        self.assertIn("podezřelé (podezřele krátká nahrávka", out)
+        self.assertIn("podezřelé 1 (opraveno 1)", out)
+
+    def test_min_bytes_scales_with_text(self):
+        self.assertEqual(mv.min_bytes("Ahoj!"), 4000)
+        self.assertEqual(mv.min_bytes("x" * 100), 20000)
 
     def test_missing_phrases(self):
         os.remove(os.path.join(self.root, "voice", "phrases.json"))

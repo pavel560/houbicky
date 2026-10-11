@@ -3,8 +3,16 @@
 // every photo listed in photos/credits.json and every voice recording listed in voice/index.json.
 // Pages ask for progress with postMessage({type:'status'}) → {type:'status', have, total, version}.
 // Bump VERSION whenever app files change; sw.js is served with Cache-Control: no-cache.
-const VERSION = 'v5';
-const CACHE = `houbicky-${VERSION}`;
+//
+// Stable and beta side by side on one origin (…/houbicky/ and …/houbicky/beta/): the SAME file works in both places.
+// Everything is derived from the registration scope: the stable worker ignores every request under …/beta/
+// (the beta worker owns that scope) and each worker only ever creates/deletes caches with its own prefix.
+const VERSION = 'v6';
+const SCOPE_PATH = new URL(self.registration.scope).pathname;          // '/houbicky/' or '/houbicky/beta/'
+const IS_BETA = /\/beta\/$/.test(SCOPE_PATH);
+const PREFIX = IS_BETA ? 'houbicky-beta-' : 'houbicky-';
+const OWN_CACHE = IS_BETA ? /^houbicky-beta-v\d+$/ : /^houbicky-v\d+$/;
+const CACHE = `${PREFIX}${VERSION}`;
 
 // Must exist — installation fails if any of these is missing.
 const CORE = [
@@ -109,7 +117,7 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
   event.waitUntil((async () => {
-    for (const key of await caches.keys()) if (key.startsWith('houbicky-') && key !== CACHE) await caches.delete(key);
+    for (const key of await caches.keys()) if (OWN_CACHE.test(key) && key !== CACHE) await caches.delete(key);
     await self.clients.claim();
   })());
 });
@@ -131,6 +139,8 @@ self.addEventListener('fetch', (event) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
+  if (!url.pathname.startsWith(SCOPE_PATH)) return;
+  if (!IS_BETA && url.pathname.startsWith(`${SCOPE_PATH}beta/`)) return;   // the beta copy has its own worker
   if (url.searchParams.has('nosw')) return;
   event.respondWith(handle(req, url, event));
 });

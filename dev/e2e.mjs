@@ -417,7 +417,7 @@ for (const vp of [{ width: 1180, height: 820 }, { width: 1440, height: 900 }, { 
   const cache = await page.evaluate(async () => { const k = await caches.keys(); const c = await caches.open(k.find((x) => x.startsWith('houbicky-'))); const keys = (await c.keys()).map((r) => new URL(r.url).pathname);
     return { k, n: keys.length, mp3: keys.filter((x) => x.endsWith('.mp3')).length, jpg: keys.filter((x) => x.endsWith('.jpg')).length, scoped: keys.every((x) => x.startsWith('/houbicky/')) }; });
   const nVoices = Object.values(CATALOGUE).reduce((a, m) => a + Object.keys(m).length, 0);
-  check(`offline: SW (v5) precached shell + ${nVoices} voice files + 4 photos, all under /houbicky/`, cache.k.includes('houbicky-v5') && cache.mp3 === nVoices && cache.jpg === 4 && cache.scoped, JSON.stringify(cache));
+  check(`offline: SW (v6) precached shell + ${nVoices} voice files + 4 photos, all under /houbicky/`, cache.k.includes('houbicky-v6') && cache.mp3 === nVoices && cache.jpg === 4 && cache.scoped, JSON.stringify(cache));
   // ---- go offline (the car), reload and play everything
   failed.length = 0;
   await ctx.setOffline(true);

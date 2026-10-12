@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Ukázky (v5.7: Gemini/Vertex) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
+"""Ukázky (v6: ElevenLabs: Gemini/Vertex) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
 Běží v GitHub Actions; klíč v tajemství GOOGLE_TTS_API_KEY. Výstup: ukazky/*.mp3 + ukazky/index.html."""
 import base64, html, json, os, pathlib, re, subprocess, sys, urllib.error, urllib.request
 
@@ -115,6 +115,35 @@ def google():
             except Exception as e:  # noqa: BLE001
                 print("CHYBA", fn.__name__, who, *args, str(e)[:400])
 
+EL_KEY = os.environ.get("ELEVENLABS_API_KEY", "")
+EL_WANT = ["Jessica", "Laura", "Alice", "Lily", "Matilda", "Charlotte"]   # mladé, veselé ženské hlasy z výchozí nabídky
+
+def el_call(path, body=None):
+    req = urllib.request.Request("https://api.elevenlabs.io/v1/" + path, data=json.dumps(body).encode() if body else None,
+                                 headers={"xi-api-key": EL_KEY, "Content-Type": "application/json", "Accept": "*/*"})
+    try:
+        with urllib.request.urlopen(req, timeout=120) as r:
+            return r.read()
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"HTTP {e.code}: {e.read().decode()[:300]}") from None
+
+def elevenlabs():
+    voices = json.loads(el_call("voices"))["voices"]
+    print("ElevenLabs hlasy:", [v["name"].split(" ")[0] for v in voices])
+    picked = [v for w in EL_WANT for v in voices if v["name"].split(" ")[0].lower() == w.lower()][:4]
+    for v in picked:
+        name = v["name"].split(" ")[0]
+        for model, text, label in (("eleven_multilingual_v2", TEXT, "Multilingual v2"),
+                                   ("eleven_v3", "[cheerfully] " + TEXT, "v3, „vesele“")):
+            try:
+                audio = el_call(f"text-to-speech/{v['voice_id']}?output_format=mp3_44100_64",
+                                {"text": text, "model_id": model, "language_code": "cs",
+                                 "voice_settings": {"stability": 0.4, "similarity_boost": 0.75, "style": 0.5}})
+                out = HERE / f"e-{name}-{model}.mp3"; out.write_bytes(audio)
+                rows.append((out.stem, f"ElevenLabs {name} – {label}")); print("ok el", name, model, len(audio))
+            except Exception as e:  # noqa: BLE001
+                print("CHYBA el", name, model, str(e)[:300])
+
 def piper():
     model = HERE / "jirka.onnx"
     for ext in ("", ".json"):
@@ -133,10 +162,18 @@ try:
     rows.append(("a-soucasny", "Současný hlas ve hře (Vlasta) – jiná věta, jen pro srovnání barvy hlasu"))
 except Exception as e:  # noqa: BLE001
     print("CHYBA současný", e)
-if KEY or TOKEN:
-    google()
+if KEY:
+    try:
+        chirp("Leda"); print("ok chirp Leda")
+    except Exception as e:  # noqa: BLE001
+        print("CHYBA chirp", str(e)[:200])
+if EL_KEY:
+    try:
+        elevenlabs()
+    except Exception as e:  # noqa: BLE001
+        print("CHYBA elevenlabs", str(e)[:300])
 else:
-    print("GOOGLE_TTS_API_KEY chybí – Google přeskočen")
+    print("ELEVENLABS_API_KEY chybí")
 try:
     urllib.request.urlretrieve(CURRENT.replace("/cs/", "/en/"), str(HERE / "b-maisie.mp3"))
     rows.append(("b-maisie", "Pro srovnání: anglická Maisie ze hry (jiná věta)"))

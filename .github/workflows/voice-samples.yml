@@ -20,6 +20,7 @@ jobs:
         env:
           GOOGLE_TTS_API_KEY: '${{ secrets.GOOGLE_TTS_API_KEY }}'
           GCP_SA_KEY: '${{ secrets.GCP_SA_KEY }}'
+          ELEVENLABS_API_KEY: '${{ secrets.ELEVENLABS_API_KEY }}'
           GCP_PROJECT: '${{ secrets.GCP_PROJECT_ID }}'
       - name: Commit samples
         run: |

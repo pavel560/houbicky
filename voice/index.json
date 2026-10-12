@@ -1,2748 +1,3532 @@
 {
  "cs": {
   "sp.bedla.caution": {
-   "bytes": 39888,
+   "bytes": 32853,
    "file": "cs/sp.bedla.caution.mp3",
-   "sha1": "75cc767445bae025335e7292c7291230106587ab",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "9c9b2d77a01d77ed227c30b56fc66a79c3500d73",
    "text": "Pozor na muchomůrky! Bedla má nohu s hadím vzorem a nemá pochvu.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.bedla.fact": {
-   "bytes": 33696,
+   "bytes": 26584,
    "file": "cs/sp.bedla.fact.mp3",
-   "sha1": "e32c6852b28cba1f97e8aaf5747c486733c3780b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "14b6f7ebb43254cac892763bc40b912a50a21bf8",
    "text": "Je to obr mezi houbami. Klobouk má jako deštník.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.bedla.group": {
-   "bytes": 19296,
+   "bytes": 15717,
    "file": "cs/sp.bedla.group.mp3",
-   "sha1": "eb2919ee7bffc8c2d32db9c7654e32e7a962f636",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "72a589b7a879e41e2c784ea02c8ec951ca87d66a",
    "text": "Bedla vysoká je jedlá houba.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.bedla.kdo.iAm": {
-   "bytes": 2160,
+   "bytes": 11746,
    "file": "cs/sp.bedla.kdo.iAm.mp3",
-   "sha1": "6a204561b4a128df2f59574051e547c687cec8ac",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "d20bd7c99592813945031a8c9f8040e491f95f74",
    "text": "Já jsem bedla vysoká.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.bedla.kdo.where": {
-   "bytes": 15264,
+   "bytes": 12791,
    "file": "cs/sp.bedla.kdo.where.mp3",
-   "sha1": "deb6ffbe7d2818bf4fcdc46bf36fc9c15adc9197",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "78f3739bf916fc8cc8d57b202d666d72b139d498",
    "text": "Kde je bedla vysoká?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.bedla.kdo.yes": {
-   "bytes": 23328,
+   "bytes": 13209,
    "file": "cs/sp.bedla.kdo.yes.mp3",
-   "sha1": "f49e53c9fda63923761009c723b7ddecdb4ade00",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "31064e58faf9a6f6c97a06651e87e658eed4fbaf",
    "text": "Ano! To je bedla vysoká.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.bedla.kosik": {
-   "bytes": 17136,
+   "bytes": 13627,
    "file": "cs/sp.bedla.kosik.mp3",
-   "sha1": "8c5667010c059941640bd2bf0ee3eb1366f6b451",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "58bb21ebd2ebe9d1c65dd2c64459f124efbfbbea",
    "text": "Kam patří bedla vysoká?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.bedla.look.0": {
-   "bytes": 25200,
+   "bytes": 21359,
    "file": "cs/sp.bedla.look.0.mp3",
-   "sha1": "732cabf91e4f6a787fcf128e9fdea78d80734994",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "16ecb8d200e75fb5598af9238983a43f71061421",
    "text": "Klobouk má hnědé šupinky jako perníček.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.bedla.look.1": {
-   "bytes": 24336,
+   "bytes": 19479,
    "file": "cs/sp.bedla.look.1.mp3",
-   "sha1": "3e6579dde26e4ad7205cca0a1f72a635c84a27e0",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "fa19629b889859a5e4f07bcc2a70f585b6133e43",
    "text": "Vysoká noha má proužky jako hadí kůže.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.bedla.look.2": {
-   "bytes": 28368,
+   "bytes": 24703,
    "file": "cs/sp.bedla.look.2.mp3",
-   "sha1": "7e7b04d2ec648f8f38453023082cd86271a4e1c0",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "37a94ea5f7b6f9684a48b4cd553f435bb89cc6b3",
    "text": "Na noze má tlustý prsten, který se dá posouvat.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.bedla.name": {
-   "bytes": 13680,
+   "bytes": 9866,
    "file": "cs/sp.bedla.name.mp3",
-   "sha1": "255ec1972226b6c581d747feff62526762426195",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "0b51462502f0fb59160221f1911ef72c152a840a",
    "text": "Bedla vysoká.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.bedla.thatIs": {
-   "bytes": 15264,
+   "bytes": 11328,
    "file": "cs/sp.bedla.thatIs.mp3",
-   "sha1": "3ff8d2fd2ae455158cf4504c0647c0e5ea343698",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "68ff4311562f682426838bba5410a185ffc64402",
    "text": "To je bedla vysoká.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.bedla.twinTell": {
-   "bytes": 35712,
+   "bytes": 28047,
    "file": "cs/sp.bedla.twinTell.mp3",
-   "sha1": "326113181762f0bb030240b33bebef8857a573ec",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "743aaaf80ce66884cbaf56e75b4c167b3fa0f992",
    "text": "Dole na noze nemá pytlík. Muchomůrka zelená ho má.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-kovar.caution": {
-   "bytes": 49536,
+   "bytes": 43302,
    "file": "cs/sp.hrib-kovar.caution.mp3",
-   "sha1": "3b6604b6880fcdc5edf0235a71382dd852630e68",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "41cf98ca7afcd15a79563e5a12a71cb42211ad90",
    "text": "Jí se jen uvařený. Pozor na jedovatého hřiba satana! Rozhodne dospělý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-kovar.fact": {
-   "bytes": 28080,
+   "bytes": 20315,
    "file": "cs/sp.hrib-kovar.fact.mp3",
-   "sha1": "afc944d00ecb193f9378f88184ac0a498acd2413",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "62cdeaa6b9a448430642e6bb707b4619e307ce4a",
    "text": "Když se rozkrojí, hned zmodrá jako inkoust.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-kovar.group": {
-   "bytes": 18576,
+   "bytes": 13836,
    "file": "cs/sp.hrib-kovar.group.mp3",
-   "sha1": "861ab19a16c9c6009dc61cb25d80bc4a373e83f4",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "925edcde90b1a679b02f5b83d034a5aae5ff4860",
    "text": "Hřib kovář je jedlá houba.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-kovar.kdo.iAm": {
-   "bytes": 15696,
+   "bytes": 11746,
    "file": "cs/sp.hrib-kovar.kdo.iAm.mp3",
-   "sha1": "ace17e770517e656c24504a58760e1de960694e7",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ee3be75804d992a7a310b54cd5461e7ed49971a5",
    "text": "Já jsem hřib kovář.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-kovar.kdo.where": {
-   "bytes": 14688,
+   "bytes": 12373,
    "file": "cs/sp.hrib-kovar.kdo.where.mp3",
-   "sha1": "9f1f207b9034e92c57a341307968f629e00ddfd4",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "aa401a8ba68a4d930d71cbaeaabe4c483246098e",
    "text": "Kde je hřib kovář?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-kovar.kdo.yes": {
-   "bytes": 22752,
+   "bytes": 13836,
    "file": "cs/sp.hrib-kovar.kdo.yes.mp3",
-   "sha1": "b4687614369410650b52cb4aee49884218cde92c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "f3016b11a3795ad58aa51fb621f0c1f677b65adb",
    "text": "Ano! To je hřib kovář.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-kovar.kosik": {
-   "bytes": 16560,
+   "bytes": 12164,
    "file": "cs/sp.hrib-kovar.kosik.mp3",
-   "sha1": "e77d8e9d3c9d9ca7eb94e959cbf46d19607a4c27",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "84505d7161e311e04740f8ddc4e9e6a33ba6d5b8",
    "text": "Kam patří hřib kovář?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-kovar.look.0": {
-   "bytes": 22176,
+   "bytes": 19897,
    "file": "cs/sp.hrib-kovar.look.0.mp3",
-   "sha1": "f038a8846990e69afee4ca4b820a1c23174b29a3",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "f7ab7aceefcd3d4c7d47c24b344660b40665cfeb",
    "text": "Má tmavě hnědý sametový klobouk.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-kovar.look.1": {
-   "bytes": 2160,
+   "bytes": 18434,
    "file": "cs/sp.hrib-kovar.look.1.mp3",
-   "sha1": "df12da3f62cb2d9ca7a050114c69ea7f4aadbc72",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "196ae059b79d45f8a628608afcefbe1fccb287c7",
    "text": "Pod kloboukem má červené dírky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-kovar.look.2": {
-   "bytes": 23184,
+   "bytes": 19479,
    "file": "cs/sp.hrib-kovar.look.2.mp3",
-   "sha1": "0c45347ae9550c0231209534483da4b321817249",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "e4494ae246257a776e9f35c9c5f50d8653a17161",
    "text": "Žlutá noha má drobné červené tečky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-kovar.name": {
-   "bytes": 13248,
+   "bytes": 9030,
    "file": "cs/sp.hrib-kovar.name.mp3",
-   "sha1": "0c5c3838077b9fa2fe585c87af7ba7aee327f5bc",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "402d54385a80ece7c23e664f6918b645c9ab8c6c",
    "text": "Hřib kovář.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-kovar.thatIs": {
-   "bytes": 14688,
+   "bytes": 10910,
    "file": "cs/sp.hrib-kovar.thatIs.mp3",
-   "sha1": "624fd1f12e3a1d8c7908d4d7c6724d37e1742122",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "148c1219d60e2183c99a30e702ebbac26790fe68",
    "text": "To je hřib kovář.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-kovar.twinTell": {
-   "bytes": 38880,
+   "bytes": 31390,
    "file": "cs/sp.hrib-kovar.twinTell.mp3",
-   "sha1": "a912d3606eab557df3283157b41640dc078f8cd3",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "6f811c4260cad477d39b3d7ce934bf1203c5177e",
    "text": "Klobouk má tmavě hnědý. Satan má klobouk křídově bílý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-satan.caution": {
-   "bytes": 34128,
+   "bytes": 27211,
    "file": "cs/sp.hrib-satan.caution.mp3",
-   "sha1": "f095a299b047f3e19bd9fde695cd63fc930140ab",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "114bb60e2554d2c0438fb48d272e70262af65f0d",
    "text": "Je jedovatý! Nesahej na něj a řekni to dospělému.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-satan.fact": {
-   "bytes": 35856,
+   "bytes": 29928,
    "file": "cs/sp.hrib-satan.fact.mp3",
-   "sha1": "312213bceb0be4be2f594658eded2fc6385ebec8",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "05cdf6e19781ea50a497f8bf85d8d99102b6f054",
    "text": "Je vzácný a jedovatý. V lese se na něj jen díváme.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-satan.group": {
-   "bytes": 28800,
+   "bytes": 22195,
    "file": "cs/sp.hrib-satan.group.mp3",
-   "sha1": "8526bf870fbd03cf6b94b1e7bd16b679a7ad734b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "259a5790010cf25116febe9959b25b1fd58ed1fa",
    "text": "Pozor! Hřib satan je jedovatá houba!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-satan.kdo.iAm": {
-   "bytes": 15552,
+   "bytes": 11328,
    "file": "cs/sp.hrib-satan.kdo.iAm.mp3",
-   "sha1": "e775c1ea17faf22a5f99a8c64cdf2cb228cf62bf",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "e1d8cdc77a30eaaf34f07b7f622a6188acf4934f",
    "text": "Já jsem hřib satan.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-satan.kdo.where": {
-   "bytes": 14256,
+   "bytes": 11328,
    "file": "cs/sp.hrib-satan.kdo.where.mp3",
-   "sha1": "e0d5caddc2cbc5dbfcf33cde7f0f3c735b61d14b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "68b6beb90eb79905eb7de40bfea7b8f0b1bf27b9",
    "text": "Kde je hřib satan?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-satan.kdo.yes": {
-   "bytes": 22752,
+   "bytes": 14672,
    "file": "cs/sp.hrib-satan.kdo.yes.mp3",
-   "sha1": "16e2dd11feea886a17a5e6d083838e66de0edaa1",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "165fcc232ed2018242f3e66b3166a91eaf350c8f",
    "text": "Ano! To je hřib satan.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-satan.kosik": {
-   "bytes": 16272,
+   "bytes": 12791,
    "file": "cs/sp.hrib-satan.kosik.mp3",
-   "sha1": "9cd1ca32764372cf286113ab5c702716a727c3a9",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "c542748f707b7ca1407e32a5bdbd9ceed2832980",
    "text": "Kam patří hřib satan?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-satan.look.0": {
-   "bytes": 24624,
+   "bytes": 19897,
    "file": "cs/sp.hrib-satan.look.0.mp3",
-   "sha1": "f6496083892380297baa375070197a7704d4db4c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "27c7f9590bac322144dc79033ac3e3150b52acb9",
    "text": "Má světlý, křídově bílý klobouk.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-satan.look.1": {
-   "bytes": 20880,
+   "bytes": 18016,
    "file": "cs/sp.hrib-satan.look.1.mp3",
-   "sha1": "df12da3f62cb2d9ca7a050114c69ea7f4aadbc72",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "196ae059b79d45f8a628608afcefbe1fccb287c7",
    "text": "Pod kloboukem má červené dírky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-satan.look.2": {
-   "bytes": 20736,
+   "bytes": 17180,
    "file": "cs/sp.hrib-satan.look.2.mp3",
-   "sha1": "4af348114067c96793864239acc30cefe26f1795",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "1763f4a0f7f42b70b009a6662a426c848b60993f",
    "text": "Tlustá noha má červenou síťku.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-satan.name": {
-   "bytes": 12816,
+   "bytes": 10284,
    "file": "cs/sp.hrib-satan.name.mp3",
-   "sha1": "eee95f93464e7207274e187fa8fa1eea5045da2b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "4f1ba0c29d0215dc759189e984c6bd53f95dae9c",
    "text": "Hřib satan.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-satan.thatIs": {
-   "bytes": 14688,
+   "bytes": 12164,
    "file": "cs/sp.hrib-satan.thatIs.mp3",
-   "sha1": "7a39960ff3bad69019c7ec9cb13fc87bb999fb1b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "f201d418562056884513feec2b076da630631615",
    "text": "To je hřib satan.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-satan.twinTell": {
-   "bytes": 39024,
+   "bytes": 29510,
    "file": "cs/sp.hrib-satan.twinTell.mp3",
-   "sha1": "40467e9af64a2f428100244d83a5e706f92a37ea",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "eb4c7f4b665429f0b9b2644ba5c42fec0f9b46ae",
    "text": "Klobouk má křídově bílý. Kovář má klobouk tmavě hnědý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-smrkovy.caution": {
-   "bytes": 29232,
+   "bytes": 23658,
    "file": "cs/sp.hrib-smrkovy.caution.mp3",
-   "sha1": "9752a0ce1b9091e4dfc43ec056ef0fe3727fd6e7",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "820c7afe9ae0f87100dac5f31c3a15aa15972ca7",
    "text": "Pozor, hořký hřib žlučník vypadá skoro stejně!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-smrkovy.fact": {
-   "bytes": 23904,
+   "bytes": 20524,
    "file": "cs/sp.hrib-smrkovy.fact.mp3",
-   "sha1": "ccf5b39cc55b49984751ce62561451ba02b6cbca",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8db6abbda17587f90ce63c3ceb99a920814182e7",
    "text": "Je to nejznámější hřib v českém lese.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-smrkovy.group": {
-   "bytes": 19296,
+   "bytes": 14672,
    "file": "cs/sp.hrib-smrkovy.group.mp3",
-   "sha1": "b87faf2a0127993e7b1825f6d09fedae774b8e05",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "0f0c3ace77b98a908756834728167c5bcd73e08a",
    "text": "Hřib smrkový je jedlá houba.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-smrkovy.kdo.iAm": {
-   "bytes": 16416,
+   "bytes": 12164,
    "file": "cs/sp.hrib-smrkovy.kdo.iAm.mp3",
-   "sha1": "f73af4422de2c5f02d27092bb5f66d881b58c9ee",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "dbc9cf21c3baf9007ea526395024fc6f536a0625",
    "text": "Já jsem hřib smrkový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-smrkovy.kdo.where": {
-   "bytes": 15264,
+   "bytes": 11746,
    "file": "cs/sp.hrib-smrkovy.kdo.where.mp3",
-   "sha1": "c03c4d8745ea12e5c656346e05adb101c1bc72a8",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "045ba2026a82b755bcabf4e3140ececd9a61264c",
    "text": "Kde je hřib smrkový?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-smrkovy.kdo.yes": {
-   "bytes": 23328,
+   "bytes": 12791,
    "file": "cs/sp.hrib-smrkovy.kdo.yes.mp3",
-   "sha1": "aa7cfe4aef5de190b2776fe6ff86aafbc67348a0",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "58f15e2270c861c693e5e4177172c30a912479ed",
    "text": "Ano! To je hřib smrkový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-smrkovy.kosik": {
-   "bytes": 17136,
+   "bytes": 12373,
    "file": "cs/sp.hrib-smrkovy.kosik.mp3",
-   "sha1": "b0099a0da02bfb2f9f288f42ddc99dfc68e6a509",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "1b721c16d0fc4ee08da39b86438a9a42d9e4e79b",
    "text": "Kam patří hřib smrkový?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-smrkovy.look.0": {
-   "bytes": 22896,
+   "bytes": 20524,
    "file": "cs/sp.hrib-smrkovy.look.0.mp3",
-   "sha1": "50f4bff260aa2322ecd68df42d2f8c31c024da17",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "987a229bfabf0b5a52bba8d7402521c57a207615",
    "text": "Má hnědý klobouk jako upečená buchta.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-smrkovy.look.1": {
-   "bytes": 28800,
+   "bytes": 22195,
    "file": "cs/sp.hrib-smrkovy.look.1.mp3",
-   "sha1": "fe6b0adb95ac22a8581b9c726adbc31f4f7975bd",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ffafd66a6d1dc2b86a926ec5c350e3499f9ec289",
    "text": "Pod kloboukem nemá lupínky, ale drobné dírky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-smrkovy.look.2": {
-   "bytes": 23472,
+   "bytes": 18852,
    "file": "cs/sp.hrib-smrkovy.look.2.mp3",
-   "sha1": "3bf1283a7e894160801823ded39a4dfecb53b3fa",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "e502a17ac76d677644883bef5e1d24e84b5b451c",
    "text": "Na světlé noze má jemnou bílou síťku.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-smrkovy.name": {
-   "bytes": 13536,
+   "bytes": 10284,
    "file": "cs/sp.hrib-smrkovy.name.mp3",
-   "sha1": "7866ba5986fea92ca4a9e8f5250bd280b7bbc470",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "c5e908f16925a0fc33c848b8e951a5f20ec4dd78",
    "text": "Hřib smrkový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-smrkovy.thatIs": {
-   "bytes": 15264,
+   "bytes": 12164,
    "file": "cs/sp.hrib-smrkovy.thatIs.mp3",
-   "sha1": "6f15b2e6961b6dd7b6c91e2ca51de857cdac4cd5",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "73ebd61c91a3d45feeaa84a6b5a9967b26880770",
    "text": "To je hřib smrkový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.hrib-smrkovy.twinTell": {
-   "bytes": 36432,
+   "bytes": 29510,
    "file": "cs/sp.hrib-smrkovy.twinTell.mp3",
-   "sha1": "2e4dd84bf84b439f434075103ea304129edd3d59",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "7ab53a081b9810323f306e48783caaa012a82642",
    "text": "Síťka na noze je bílá. Žlučník má síťku tmavou.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.klouzek.caution": {
-   "bytes": 27792,
+   "bytes": 21777,
    "file": "cs/sp.klouzek.caution.mp3",
-   "sha1": "a021568895a16086c331b05c4460cca48fd4f8ea",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "6357131795d14aa7b1e0d3527dcfc2e5d7e3b104",
    "text": "Sbíráme ho jen s dospělým, který ho dobře zná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.klouzek.fact": {
-   "bytes": 35712,
+   "bytes": 26166,
    "file": "cs/sp.klouzek.fact.mp3",
-   "sha1": "8f2019a42cf396c50682057ae47ee9f6550d0516",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "4f552fea33757f29afa26ff9be698f617715aa68",
    "text": "Kamarádí se s modřínem. Za deště klouže jako mýdlo.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.klouzek.group": {
-   "bytes": 20592,
+   "bytes": 17180,
    "file": "cs/sp.klouzek.group.mp3",
-   "sha1": "274bdd91f818f673d81936007b7ae53c37f57384",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "1f9ed3fee268909aba497313b091dc0b446fa10f",
    "text": "Klouzek sličný je jedlá houba.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.klouzek.kdo.iAm": {
-   "bytes": 17280,
+   "bytes": 13209,
    "file": "cs/sp.klouzek.kdo.iAm.mp3",
-   "sha1": "c14296d227e3a0e58321d920de34bfe3d642c4af",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "052cf78a2931f240ebc057d0266a013074a12924",
    "text": "Já jsem klouzek sličný.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.klouzek.kdo.where": {
-   "bytes": 15840,
+   "bytes": 13209,
    "file": "cs/sp.klouzek.kdo.where.mp3",
-   "sha1": "d85f74509f8456a0ef0190d43e2e9cbbb302d10b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "462cdc4b5e11fa3cd4d49a69064f6d8f6da0690d",
    "text": "Kde je klouzek sličný?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.klouzek.kdo.yes": {
-   "bytes": 24192,
+   "bytes": 12373,
    "file": "cs/sp.klouzek.kdo.yes.mp3",
-   "sha1": "b4943e75bfee182196371244b184cfaa1a366348",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "2c4d3289b818a5cd89527bef4a96949e1e6a5fa8",
    "text": "Ano! To je klouzek sličný.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.klouzek.kosik": {
-   "bytes": 18000,
+   "bytes": 13209,
    "file": "cs/sp.klouzek.kosik.mp3",
-   "sha1": "2c02fb8a0afd8ee73c7fd132c2acd8b4e9acd6f8",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "327de89ca6efdcfbf1f4dba42ae57088a5f5e5fa",
    "text": "Kam patří klouzek sličný?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.klouzek.look.0": {
-   "bytes": 20448,
+   "bytes": 16135,
    "file": "cs/sp.klouzek.look.0.mp3",
-   "sha1": "e2be680869b80a0fce8f4634227e4f1242d75ac7",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "52dcbd702067deb2e49816cda778688865b814ee",
    "text": "Má zlatožlutý lesklý klobouk.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.klouzek.look.1": {
-   "bytes": 20448,
+   "bytes": 16135,
    "file": "cs/sp.klouzek.look.1.mp3",
-   "sha1": "11e33b7ccb31c1b7edb631a860b5142c5e02bc5f",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "9de761c5657a2a6b3577af13d23f5806fb6e63bb",
    "text": "Pod kloboukem má žluté dírky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.klouzek.look.2": {
-   "bytes": 16416,
+   "bytes": 12373,
    "file": "cs/sp.klouzek.look.2.mp3",
-   "sha1": "aa64a09d74282fce0f5578aab516dd06c5d0426b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "f8a2161dd21e5b3c4d49c6924ab43be479bd821c",
    "text": "Na noze má prstýnek.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.klouzek.name": {
-   "bytes": 14688,
+   "bytes": 11746,
    "file": "cs/sp.klouzek.name.mp3",
-   "sha1": "02d18f715a0a403fe5b8ba6dab8c60fd8e1fe8ec",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "d766ea83cf2312f7626af834072b81db5064befd",
    "text": "Klouzek sličný.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.klouzek.thatIs": {
-   "bytes": 15984,
+   "bytes": 13209,
    "file": "cs/sp.klouzek.thatIs.mp3",
-   "sha1": "383a313e3e49133dd6b463c1d1fd559ee3678aee",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "96d49a68c647e4f1f2c229543e0931e9e6e26b01",
    "text": "To je klouzek sličný.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kotrc.caution": {
-   "bytes": 33120,
+   "bytes": 22404,
    "file": "cs/sp.kotrc.caution.mp3",
-   "sha1": "1119a54b20ba21821e65adb7f01b44044b6151ad",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "92652e4fabfe77b796e5dff18d5d1fe52ddb0fc9",
    "text": "Jí se jen mladý a světlý. Rozhodne dospělý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kotrc.fact": {
-   "bytes": 27072,
+   "bytes": 20524,
    "file": "cs/sp.kotrc.fact.mp3",
-   "sha1": "22e1ce7f2bd28931ed96deb3d3d0822d79c1ba9c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "57092301aa7d6cd1b17e9f9c47a4c4154ee0ccf4",
    "text": "Vypadá jako kudrnatá houba na mytí nádobí.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kotrc.group": {
-   "bytes": 19728,
+   "bytes": 17180,
    "file": "cs/sp.kotrc.group.mp3",
-   "sha1": "ac14a7ba5107fe88b08d5fad73dbed5b5468e1cc",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "79fc5c6acb884f0dbfe38e528295891be64bb631",
    "text": "Kotrč kadeřavý je jedlá houba.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kotrc.kdo.iAm": {
-   "bytes": 17424,
+   "bytes": 11328,
    "file": "cs/sp.kotrc.kdo.iAm.mp3",
-   "sha1": "a857c3c4e20849d2c98c554d1ecf7cbccf65dcc2",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "79d14225f7fcce2227ae094b5921f964e6025518",
    "text": "Já jsem kotrč kadeřavý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kotrc.kdo.where": {
-   "bytes": 16416,
+   "bytes": 12791,
    "file": "cs/sp.kotrc.kdo.where.mp3",
-   "sha1": "a8d1428d184f2e55c631d9e72714ef7be09f79fa",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "fac514269c732808d9f55927e4cb87f157e078dc",
    "text": "Kde je kotrč kadeřavý?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kotrc.kdo.yes": {
-   "bytes": 24480,
+   "bytes": 15508,
    "file": "cs/sp.kotrc.kdo.yes.mp3",
-   "sha1": "77bd8c738728e22dc9dafb54c7bc71be3b264853",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "92b7d1647997147c7dd0ead7bb130bb6176b2299",
    "text": "Ano! To je kotrč kadeřavý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kotrc.kosik": {
-   "bytes": 18144,
+   "bytes": 14254,
    "file": "cs/sp.kotrc.kosik.mp3",
-   "sha1": "bcc593f30a49bb8c733226eddeb103e7b1373ef8",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "f5aa681144526649d2dfef1d85b878606a2e5425",
    "text": "Kam patří kotrč kadeřavý?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kotrc.look.0": {
-   "bytes": 23472,
+   "bytes": 18852,
    "file": "cs/sp.kotrc.look.0.mp3",
-   "sha1": "f7726121e0a4aaa272fe5b8585598a44b790c5ff",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "2edf2c750be383d291192662cff6f3f4225361b0",
    "text": "Je kulatý a kudrnatý jako květák.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kotrc.look.1": {
-   "bytes": 21168,
+   "bytes": 19897,
    "file": "cs/sp.kotrc.look.1.mp3",
-   "sha1": "c7db72d3dbc3c6bc7f054c55c8720681340596c9",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "09c60b912f0c44dfb9b85c83198f5457db3adb2c",
    "text": "Je krémově bílý až nažloutlý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kotrc.look.2": {
-   "bytes": 16992,
+   "bytes": 13209,
    "file": "cs/sp.kotrc.look.2.mp3",
-   "sha1": "e47a8c7bb170a991e1ec0285155caa71249d5c01",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8b2ca0e34f1c20907ec3a5e509a0a1b238cd80e7",
    "text": "Nemá klobouk ani nohu.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kotrc.name": {
-   "bytes": 14256,
+   "bytes": 11746,
    "file": "cs/sp.kotrc.name.mp3",
-   "sha1": "f22657a9d1bbd34a13de2c0b34e0c0484e46934b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "7084460fe6dee08cc86cfee4b31c9c30b91ac858",
    "text": "Kotrč kadeřavý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kotrc.thatIs": {
-   "bytes": 16272,
+   "bytes": 13627,
    "file": "cs/sp.kotrc.thatIs.mp3",
-   "sha1": "8e3bc68ccdf602d6cbaefad793c98727b3a5b615",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ef4ac08fea0cbfcf19d65309ecf5ca2dd3f167d6",
    "text": "To je kotrč kadeřavý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kozak.caution": {
-   "bytes": 69120,
+   "bytes": 58976,
    "file": "cs/sp.kozak.caution.mp3",
-   "sha1": "27944ab6f3ac8d8a635bf6a6bc1e1799f45f3ac9",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8ec7e6407456595e6c056ffcfa562f22b4e8b9b5",
    "text": "Podobný je hořký žlučník. Ten má pod kloboukem růžové dírky. Jí se jen uvařený. Rozhodne dospělý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kozak.fact": {
-   "bytes": 37584,
+   "bytes": 30346,
    "file": "cs/sp.kozak.fact.mp3",
-   "sha1": "49cc73995d1112a4815611184453b83af349f533",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ce0bfab5c9ae5272c99c1ab580d9a6ea313036f6",
    "text": "Kamarádí se s břízou. Roste jen tam, kde je bříza.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kozak.group": {
-   "bytes": 20304,
+   "bytes": 15090,
    "file": "cs/sp.kozak.group.mp3",
-   "sha1": "e06732ae8cbe3c38fb19ef678486409ff64e9138",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "0cf68c9a7743584c0eb3c7ccfd9622336cc23310",
    "text": "Kozák březový je jedlá houba.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kozak.kdo.iAm": {
-   "bytes": 17424,
+   "bytes": 13627,
    "file": "cs/sp.kozak.kdo.iAm.mp3",
-   "sha1": "e91f908205dd0a93ce4dc9f8d88f10df2536bc12",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "5c361841b584db9a5a317e55acb3fbf11c8f497f",
    "text": "Já jsem kozák březový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kozak.kdo.where": {
-   "bytes": 16128,
+   "bytes": 12791,
    "file": "cs/sp.kozak.kdo.where.mp3",
-   "sha1": "76c05a88d74cd225cee0ceeea8ffddd8db6be710",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "a4c781a0f810fa0147d685ca9ce39ec743c2dd7c",
    "text": "Kde je kozák březový?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kozak.kdo.yes": {
-   "bytes": 24480,
+   "bytes": 16135,
    "file": "cs/sp.kozak.kdo.yes.mp3",
-   "sha1": "bb6c196cdd09fefa166df0e677dcace07efb2ba8",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "c8229678b80fe25ca6d7a8c9ea2860f6c28702b2",
    "text": "Ano! To je kozák březový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kozak.kosik": {
-   "bytes": 18432,
+   "bytes": 14254,
    "file": "cs/sp.kozak.kosik.mp3",
-   "sha1": "1487c77611f3ac18077a55475f9d55f65b58540b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "bb60b1b737d25c1974566e9680bd100317f85801",
    "text": "Kam patří kozák březový?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kozak.look.0": {
-   "bytes": 18144,
+   "bytes": 15508,
    "file": "cs/sp.kozak.look.0.mp3",
-   "sha1": "5c3154ca0a88436660cc76858216eafdcd8cd1ac",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "7b3a4d6d36aa63a22fcd7fd8eed99d949c3eae55",
    "text": "Má hnědý hladký klobouk.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kozak.look.1": {
-   "bytes": 27936,
+   "bytes": 24285,
    "file": "cs/sp.kozak.look.1.mp3",
-   "sha1": "44836289a24c16fefe8b9d78a7bad2404c6e41bf",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "da06a5431a16ae9365d0b939733ad125c1ac02c6",
    "text": "Bílá noha vypadá jako posypaná černým pepřem.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kozak.look.2": {
-   "bytes": 27648,
+   "bytes": 21777,
    "file": "cs/sp.kozak.look.2.mp3",
-   "sha1": "2ddf19d6954db4703f1f74931de928a8946b835a",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8d798039f537fdc4c389c239f536a3fa84d8b76b",
    "text": "Pod kloboukem má světlé dírky, ne lupínky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kozak.name": {
-   "bytes": 14688,
+   "bytes": 10910,
    "file": "cs/sp.kozak.name.mp3",
-   "sha1": "42380293e8355e3fb74df7b76f2df8955736f642",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "3e723d72422e8f0f31e1a658a1d4e47ba2a8251a",
    "text": "Kozák březový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kozak.thatIs": {
-   "bytes": 16272,
+   "bytes": 12791,
    "file": "cs/sp.kozak.thatIs.mp3",
-   "sha1": "c0a8c528927486adba45edc801f8f8e365120c11",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "0f514310c455f3f71ff0f08b21f202a90e13eb66",
    "text": "To je kozák březový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kozak.twinTell": {
-   "bytes": 38592,
+   "bytes": 31390,
    "file": "cs/sp.kozak.twinTell.mp3",
-   "sha1": "8ea19abcd230d4d58934d557a00ab687fe330a1e",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b3b40af83b49ea833c7e6ff24153f1251cd10239",
    "text": "Klobouk má hnědý. Křemenáč má klobouk oranžově červený.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kremenac.caution": {
-   "bytes": 68400,
+   "bytes": 60021,
    "file": "cs/sp.kremenac.caution.mp3",
-   "sha1": "822ce3a0bc572d0c8e35cf5fd52af6b49033556c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b82a30b007f9541c6e6a62c4c3caa2311d4854d3",
    "text": "Podobných křemenáčů je víc. Rozliší je jen zkušený houbař. Jí se jen uvařený. Rozhodne dospělý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kremenac.fact": {
-   "bytes": 36288,
+   "bytes": 28465,
    "file": "cs/sp.kremenac.fact.mp3",
-   "sha1": "80a27b80ef61fe7a935fa67546b7acceea263a31",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "6ff7ff34373ae3b08dd06f11ad2b5515b370f21b",
    "text": "Kamarádí se s osikou. To je strom s třepotavými listy.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kremenac.group": {
-   "bytes": 21600,
+   "bytes": 16971,
    "file": "cs/sp.kremenac.group.mp3",
-   "sha1": "1f6ba321764c8e455827529c1812cc64a3ddddb3",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "c9b4930efdcea0b5750bfa21f6dd526c50faa45e",
    "text": "Křemenáč osikový je jedlá houba.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kremenac.kdo.iAm": {
-   "bytes": 18720,
+   "bytes": 12791,
    "file": "cs/sp.kremenac.kdo.iAm.mp3",
-   "sha1": "86bab2f7393d73a50d19ac452379927d5958a7f5",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "130c2e134440d9ea9903c014894f962dd9c7f512",
    "text": "Já jsem křemenáč osikový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kremenac.kdo.where": {
-   "bytes": 17856,
+   "bytes": 13209,
    "file": "cs/sp.kremenac.kdo.where.mp3",
-   "sha1": "503099f69dc2655d1f9d1d9dabb8b99fe41a6742",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "4720dea64fd3388349c5da5839fd42b946694790",
    "text": "Kde je křemenáč osikový?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kremenac.kdo.yes": {
-   "bytes": 25776,
+   "bytes": 16971,
    "file": "cs/sp.kremenac.kdo.yes.mp3",
-   "sha1": "931704089345578ee36752504d7d38fd26e77500",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "129ca2a8b5b78be337b62faeb46081a35b8c47eb",
    "text": "Ano! To je křemenáč osikový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kremenac.kosik": {
-   "bytes": 19728,
+   "bytes": 14254,
    "file": "cs/sp.kremenac.kosik.mp3",
-   "sha1": "e1710a4d3b9013b73f6633898c81466bc3b49464",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8d2ae7f6eb0975ef445b2a2fb534d8c64fe1f311",
    "text": "Kam patří křemenáč osikový?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kremenac.look.0": {
-   "bytes": 27360,
+   "bytes": 22404,
    "file": "cs/sp.kremenac.look.0.mp3",
-   "sha1": "6ebab603334b0407877a6d497231732414c2ed9a",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ba98aabaab831eb79e75d308da5621df73e79e2c",
    "text": "Má oranžově červený klobouk jako podzimní list.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kremenac.look.1": {
-   "bytes": 34128,
+   "bytes": 30346,
    "file": "cs/sp.kremenac.look.1.mp3",
-   "sha1": "bc2c5501b2a2a49b3c5b76c93b10f419885e4548",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "aa8d005e4c205a4f884d9d8c0f76e44b238ac96e",
    "text": "Noha je bílá, s bílými šupinkami, které později tmavnou.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kremenac.look.2": {
-   "bytes": 27792,
+   "bytes": 23240,
    "file": "cs/sp.kremenac.look.2.mp3",
-   "sha1": "7ee017d2d9cb3c073810542db4200577f077c325",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "9a6d4a03f216694d5a846507bc6a417e208dc8c8",
    "text": "Je velký a pevný, pod kloboukem má dírky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kremenac.name": {
-   "bytes": 16128,
+   "bytes": 12164,
    "file": "cs/sp.kremenac.name.mp3",
-   "sha1": "03c1a1602ba43383b9429731a258624105f18d5f",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "2bb3b33de5133f16c3ff92f9210163ae386f0913",
    "text": "Křemenáč osikový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kremenac.thatIs": {
-   "bytes": 17712,
+   "bytes": 12791,
    "file": "cs/sp.kremenac.thatIs.mp3",
-   "sha1": "e2383ac1bd5a3fcc7133c5f3d04e81345dbea00c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "832703c6bba8d61a042b10a0d531b1a9eaaf2c90",
    "text": "To je křemenáč osikový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.kremenac.twinTell": {
-   "bytes": 37728,
+   "bytes": 30973,
    "file": "cs/sp.kremenac.twinTell.mp3",
-   "sha1": "dc922e2989c54b8391c5f392714a9845ca4938a1",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "0cacba49658b488c8c926f1dcb6adda4334cc09f",
    "text": "Klobouk má oranžově červený. Kozák má klobouk hnědý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.lisak.caution": {
-   "bytes": 30960,
+   "bytes": 21359,
    "file": "cs/sp.lisak.caution.mp3",
-   "sha1": "d1a60a2fb2b13d01afc4bf40d8ca05ade640c605",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "57d54ce27d1251ddad7a56caf1d1c71e59d21695",
    "text": "Sbírá se jen mladý. Rozhodne dospělý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.lisak.fact": {
-   "bytes": 24480,
+   "bytes": 20315,
    "file": "cs/sp.lisak.fact.mp3",
-   "sha1": "d68d6c45355bb0853d49cc5a83220c30a1ba1f3c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ed5a351da2e3b96bdfdfe533d5170bf5a53c6240",
    "text": "Pod kloboukem má měkké ostny jako ježek.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.lisak.group": {
-   "bytes": 21600,
+   "bytes": 17598,
    "file": "cs/sp.lisak.group.mp3",
-   "sha1": "085a7e3cab8672ce99830ac3ce294364f95629df",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "4012837abda770c623de46fb413adfa91ec0d6c1",
    "text": "Lišák zprohýbaný je jedlá houba.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.lisak.kdo.iAm": {
-   "bytes": 18000,
+   "bytes": 13836,
    "file": "cs/sp.lisak.kdo.iAm.mp3",
-   "sha1": "1d7f70270788a538d418caefabcc51fddabcad6c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "1f1395c5ada2d1c5154a5a58cb2dbaa2ddb5f9c4",
    "text": "Já jsem lišák zprohýbaný.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.lisak.kdo.where": {
-   "bytes": 17136,
+   "bytes": 12791,
    "file": "cs/sp.lisak.kdo.where.mp3",
-   "sha1": "258ab2250f1bbe9ae2da7784e0ee309915e16b9b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "7fa7a63f5ccc86763f62a932ed40903b2cd31d02",
    "text": "Kde je lišák zprohýbaný?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.lisak.kdo.yes": {
-   "bytes": 25056,
+   "bytes": 18016,
    "file": "cs/sp.lisak.kdo.yes.mp3",
-   "sha1": "9bf4404763fb15ff0bb0efa605612413d9ec0b17",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "db81b597e054199eb9f4cccb87b0bc9b76c8c594",
    "text": "Ano! To je lišák zprohýbaný.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.lisak.kosik": {
-   "bytes": 18864,
+   "bytes": 15090,
    "file": "cs/sp.lisak.kosik.mp3",
-   "sha1": "7a62193e7a6440bd8b00e87b766f6d8ac616cb03",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ff06b8416cbdea25c9f4fcad275b3353ab5b7a98",
    "text": "Kam patří lišák zprohýbaný?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.lisak.look.0": {
-   "bytes": 27072,
+   "bytes": 19897,
    "file": "cs/sp.lisak.look.0.mp3",
-   "sha1": "59d18d0d6637d994e4a6064ad655552fbfea3fd3",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "87e7aed14d71bb97ed81558cebea3f728567ff7f",
    "text": "Má světle oranžový, zprohýbaný klobouk.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.lisak.look.1": {
-   "bytes": 25056,
+   "bytes": 19061,
    "file": "cs/sp.lisak.look.1.mp3",
-   "sha1": "71e1bf3fcbbdfbe585fab4aed8a05d5643fc40f3",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "6fa7abfd697a31a97ec9d552d893b62fbf6fbdc2",
    "text": "Zespodu má drobné ostny, ne lupínky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.lisak.look.2": {
-   "bytes": 19584,
+   "bytes": 14254,
    "file": "cs/sp.lisak.look.2.mp3",
-   "sha1": "f36c64d3bd9a377ece1c629851b70036bbc913c7",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "7095d7c4c39c900a678f3b6803e1204823ec0509",
    "text": "Noha je krátká a světlá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.lisak.name": {
-   "bytes": 15552,
+   "bytes": 11328,
    "file": "cs/sp.lisak.name.mp3",
-   "sha1": "0628df17e6c906f08808c533afefa78f14d1ef97",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "01efd63a8d0e36a7b66a0877e0ac1ce131d7e22d",
    "text": "Lišák zprohýbaný.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.lisak.thatIs": {
-   "bytes": 16848,
+   "bytes": 13209,
    "file": "cs/sp.lisak.thatIs.mp3",
-   "sha1": "f3cc0b86b1ba57e907149d2cc2951bb4e4147171",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "9b77fadeb41adc38dd3cb14ba76095539d26a5ae",
    "text": "To je lišák zprohýbaný.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.lisak.twinTell": {
-   "bytes": 36288,
+   "bytes": 29092,
    "file": "cs/sp.lisak.twinTell.mp3",
-   "sha1": "27cfa248707502e9d142535cfcd457f5e7ac0e12",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "38facabb116368e87d9842c6785cd16472538a07",
    "text": "Zespodu má ostny jako ježek. Liška má měkké vrásky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.liska.caution": {
-   "bytes": 41904,
+   "bytes": 34316,
    "file": "cs/sp.liska.caution.mp3",
-   "sha1": "b48877529aa02fafe270446aee8c1666d919085a",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ad0314daa1df19c2378754ac41740c9a8a1cce86",
    "text": "Podobná je lištička pomerančová. Ta má husté oranžové lupínky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.liska.fact": {
-   "bytes": 28800,
+   "bytes": 28465,
    "file": "cs/sp.liska.fact.mp3",
-   "sha1": "788dd3910ffcb20076e1db5424e5e18c74540aa3",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ce684747bc88a5780db702aa4c3d6f6e484c420b",
    "text": "Je žlutá jako vaječný žloutek a voní po meruňkách.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.liska.group": {
-   "bytes": 20448,
+   "bytes": 16553,
    "file": "cs/sp.liska.group.mp3",
-   "sha1": "13acf3eeb5406b8e5ae8b88bd656dd0f07be887d",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "e81318f37bd605dd9d251cbbec40d95905ae7788",
    "text": "Liška obecná je jedlá houba.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.liska.kdo.iAm": {
-   "bytes": 16992,
+   "bytes": 12373,
    "file": "cs/sp.liska.kdo.iAm.mp3",
-   "sha1": "07c7287c0a12a3f2c3c2824a3dac42e5799f7526",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "666dc85deff6bb54ebe4c4d347f1e0507b0e5833",
    "text": "Já jsem liška obecná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.liska.kdo.where": {
-   "bytes": 2160,
+   "bytes": 11328,
    "file": "cs/sp.liska.kdo.where.mp3",
-   "sha1": "d77cac527e06a317519cd93ae3446f171f27a185",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "025e914282b19e56de8b07e4e4bf6687fc293cee",
    "text": "Kde je liška obecná?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.liska.kdo.yes": {
-   "bytes": 24192,
+   "bytes": 14672,
    "file": "cs/sp.liska.kdo.yes.mp3",
-   "sha1": "9301ef3a66082bfd82a49ad957c94b6aa75cdb58",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "a621896633ab1f78c31db8a8d6c77a48c9b951ed",
    "text": "Ano! To je liška obecná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.liska.kosik": {
-   "bytes": 18000,
+   "bytes": 12791,
    "file": "cs/sp.liska.kosik.mp3",
-   "sha1": "1643e35fb439b60e3fbd24a0c922ecb70abb230c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "a8eaaa445a77bd4b8893b89ac85ec7696cb2941c",
    "text": "Kam patří liška obecná?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.liska.look.0": {
-   "bytes": 19008,
+   "bytes": 12791,
    "file": "cs/sp.liska.look.0.mp3",
-   "sha1": "f1a25300bd22ca0ee3a9cd47e83a49476c5dc79b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ec0b0abf27a0c80eb47e801be113609ecacfcfe2",
    "text": "Je celá žlutá, i noha.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.liska.look.1": {
-   "bytes": 26784,
+   "bytes": 22822,
    "file": "cs/sp.liska.look.1.mp3",
-   "sha1": "6812e4e97d7766aed28a9df1021e046e62cf729c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "36ef448bc90186ef9233a1ebdcfc780cd9d7f438",
    "text": "Klobouk má jako trychtýřek se zvlněným okrajem.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.liska.look.2": {
-   "bytes": 28512,
+   "bytes": 24285,
    "file": "cs/sp.liska.look.2.mp3",
-   "sha1": "daf2fdc10b0e83dcd456600eb40fae9e4696eeab",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "6566259f21d8bfcf153407dcdc28d136942bacdd",
    "text": "Zespodu má měkké vrásky, ne tenké lupínky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.liska.name": {
-   "bytes": 14688,
+   "bytes": 11746,
    "file": "cs/sp.liska.name.mp3",
-   "sha1": "d8f1e0ef764fb4a89b6a5d47552ba6cef3c64a9f",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "e5061c43c9ff6495b3b3fd692f67c641d47d2b9a",
    "text": "Liška obecná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.liska.thatIs": {
-   "bytes": 15984,
+   "bytes": 12373,
    "file": "cs/sp.liska.thatIs.mp3",
-   "sha1": "2aa6a0fc77a8bf478e5aa364e1934f1a3631d58d",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "d769a5c943e8c9eddb04dc290d202723e41ce243",
    "text": "To je liška obecná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.liska.twinTell": {
-   "bytes": 37008,
+   "bytes": 29510,
    "file": "cs/sp.liska.twinTell.mp3",
-   "sha1": "72ce542ea37d1fa20d7c66b0d9d3c07fe983c31e",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "6fa37a217eed7ba15d33b65a4ef0d05328c87bef",
    "text": "Zespodu má měkké vrásky. Lištička má tenké lupínky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.listicka.caution": {
-   "bytes": 30816,
+   "bytes": 22822,
    "file": "cs/sp.listicka.caution.mp3",
-   "sha1": "e2834b18d927321fe1b491baafaea4d9f891851e",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8f5c3b9ff34d843f9bb5946363ca38a7a3c39f76",
    "text": "Nesbíráme ji. Snadno se splete s liškou.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.listicka.fact": {
-   "bytes": 26640,
+   "bytes": 19479,
    "file": "cs/sp.listicka.fact.mp3",
-   "sha1": "b3fc83ccc1541d8eff363720957ab9c88f20fc28",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "80f93f13182fda6df3b3ba76bcabb20a0c1ccf1f",
    "text": "Vypadá jako liška, ale je to jiná houba.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.listicka.group": {
-   "bytes": 35280,
+   "bytes": 27211,
    "file": "cs/sp.listicka.group.mp3",
-   "sha1": "657a26060a2edf346491640caf52c08a6f568ea1",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "80b5fe5efb75005b70a4733cd3c0e8e3a959e440",
    "text": "Lištička pomerančová je nejedlá houba. Ta se nejí.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.listicka.kdo.iAm": {
-   "bytes": 19296,
+   "bytes": 16135,
    "file": "cs/sp.listicka.kdo.iAm.mp3",
-   "sha1": "1b94542e2f91a84c503b99b1698ded3cc1e06a45",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "75fb24fab95a8180f25a7a4c7b7397b536d13898",
    "text": "Já jsem lištička pomerančová.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.listicka.kdo.where": {
-   "bytes": 18576,
+   "bytes": 15508,
    "file": "cs/sp.listicka.kdo.where.mp3",
-   "sha1": "543a33194eaf899260490ef185973589b6a24c56",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "a1a2a3b385b84bd1c4d1c311678f2f666980d3ab",
    "text": "Kde je lištička pomerančová?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.listicka.kdo.yes": {
-   "bytes": 26784,
+   "bytes": 18434,
    "file": "cs/sp.listicka.kdo.yes.mp3",
-   "sha1": "e97bd5ed7839e77f9507c89db0fa2082a8808806",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "03b495bb5481e56e50221aa9ecaf805d0b260516",
    "text": "Ano! To je lištička pomerančová.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.listicka.kosik": {
-   "bytes": 20592,
+   "bytes": 16971,
    "file": "cs/sp.listicka.kosik.mp3",
-   "sha1": "c5e74f4d6d7f1be85e7368a60166cf4b19763665",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "6ca81d4ae69f876ec4e6ef1551de428d1768b0b3",
    "text": "Kam patří lištička pomerančová?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.listicka.look.0": {
-   "bytes": 21600,
+   "bytes": 15508,
    "file": "cs/sp.listicka.look.0.mp3",
-   "sha1": "72458c9e915b8bff652ba3dcd3d119b4dd206cff",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "fd2cec6c9c270e5746a5f5684f3db936d6745295",
    "text": "Je oranžová, víc než liška.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.listicka.look.1": {
-   "bytes": 22176,
+   "bytes": 18852,
    "file": "cs/sp.listicka.look.1.mp3",
-   "sha1": "abcbc95758674862995d3fe3669cfa5042b13f07",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ce1ef9ff614f3e62991223d7505be1997756cb45",
    "text": "Zespodu má husté tenké lupínky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.listicka.look.2": {
-   "bytes": 26640,
+   "bytes": 25539,
    "file": "cs/sp.listicka.look.2.mp3",
-   "sha1": "9fd6fc1ef3287b2579846815d94bd92b6d415e38",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "72727fc7dd85fde1e18143dfb7d4aea900289b62",
    "text": "Klobouk má jako nálevku s podvinutým okrajem.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.listicka.name": {
-   "bytes": 16992,
+   "bytes": 13209,
    "file": "cs/sp.listicka.name.mp3",
-   "sha1": "7f4423a6babc3aaa4fde1aeb793fd9a909f39f60",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8b76a20e32535fc20390843d6b9193cb4c2be93e",
    "text": "Lištička pomerančová.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.listicka.thatIs": {
-   "bytes": 18576,
+   "bytes": 14254,
    "file": "cs/sp.listicka.thatIs.mp3",
-   "sha1": "2fe4f8a45e043a3e231b8be75779d8ee9870b569",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "9249b164cb780956fe84755eaf7ccd74e4d54a04",
    "text": "To je lištička pomerančová.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.listicka.twinTell": {
-   "bytes": 37296,
+   "bytes": 29510,
    "file": "cs/sp.listicka.twinTell.mp3",
-   "sha1": "a40a94fabc38d18cba2972072b9323e2db23e8cd",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "5f259f1a983ecd3729f9e709fb8b79c2e10cc610",
    "text": "Zespodu má husté lupínky. Liška má jen měkké vrásky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-cervena.caution": {
-   "bytes": 33984,
+   "bytes": 31390,
    "file": "cs/sp.muchomurka-cervena.caution.mp3",
-   "sha1": "5ea1084078c47b60bdeb03ff295b28b69ff252ce",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8116f4ab6651a4f138450abd6db45add29cb5ff6",
    "text": "Je jedovatá. Nesahej na ni a řekni to dospělému.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-cervena.fact": {
-   "bytes": 39600,
+   "bytes": 29928,
    "file": "cs/sp.muchomurka-cervena.fact.mp3",
-   "sha1": "3b964f52967c22421dd9ecf372a0cd4d1b149589",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "4088530640c7e9eff1caa9f0dadd3e6e5a46e50d",
    "text": "Je krásná jako z pohádky, ale jedovatá. Jen se díváme!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-cervena.group": {
-   "bytes": 32832,
+   "bytes": 26166,
    "file": "cs/sp.muchomurka-cervena.group.mp3",
-   "sha1": "5c29bc08b2847fbdedd4dbbdc444191a8ba66d64",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ab44c61e2d3c6e390fd78ce509b31c8e8537abfd",
    "text": "Pozor! Muchomůrka červená je jedovatá houba!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-cervena.kdo.iAm": {
-   "bytes": 18576,
+   "bytes": 14672,
    "file": "cs/sp.muchomurka-cervena.kdo.iAm.mp3",
-   "sha1": "8c918f329b4f06ed75837cda36fd3fddd8694868",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "1f4465c507a41fe2ef73142e64ce52957b6f80e3",
    "text": "Já jsem muchomůrka červená.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-cervena.kdo.where": {
-   "bytes": 17712,
+   "bytes": 14672,
    "file": "cs/sp.muchomurka-cervena.kdo.where.mp3",
-   "sha1": "8328158236aa16b9f1608c608eb9a82c03674fc6",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "f1e7d105b81269ab5879daafd7e445cb22e9710f",
    "text": "Kde je muchomůrka červená?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-cervena.kdo.yes": {
-   "bytes": 25632,
+   "bytes": 17598,
    "file": "cs/sp.muchomurka-cervena.kdo.yes.mp3",
-   "sha1": "2b5d01bad3a6f1b1202c861a1a23f5f6c8d35e84",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "4bc444a8d9333ef00a62f25d33d620cf96528dc3",
    "text": "Ano! To je muchomůrka červená.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-cervena.kosik": {
-   "bytes": 19440,
+   "bytes": 15717,
    "file": "cs/sp.muchomurka-cervena.kosik.mp3",
-   "sha1": "d6e0e03c479d736cb8f829fed518114152bbfa97",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "c841ac019965b3d8c1f566a765bf7946734faae0",
    "text": "Kam patří muchomůrka červená?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-cervena.look.0": {
-   "bytes": 24480,
+   "bytes": 18434,
    "file": "cs/sp.muchomurka-cervena.look.0.mp3",
-   "sha1": "65c3f1aed9fe52af57072dd98122fb107106ab36",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "a105e82b7dbf8b47eb675d313e2e80e42a2b8c44",
    "text": "Má červený klobouk s bílými puntíky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-cervena.look.1": {
-   "bytes": 21744,
+   "bytes": 17598,
    "file": "cs/sp.muchomurka-cervena.look.1.mp3",
-   "sha1": "ac276fee8bedb3276fe27b0d6934650e76d4d7bc",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "16151329199210cc133838d2960e86ead8c6dae8",
    "text": "Má bílé lupínky a bílou nohu.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-cervena.look.2": {
-   "bytes": 19584,
+   "bytes": 15508,
    "file": "cs/sp.muchomurka-cervena.look.2.mp3",
-   "sha1": "e98c88f68cdd857e435e5d4b7360a9372c7bad59",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "c8cf398b86a5c0eeb16c9abfb740a3636f49f491",
    "text": "Na noze nosí bílou sukýnku.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-cervena.name": {
-   "bytes": 15984,
+   "bytes": 12164,
    "file": "cs/sp.muchomurka-cervena.name.mp3",
-   "sha1": "1e4a6f434ed89670a16a380532f9f48cc3fb80b4",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ef16d137531eb527507ab02cb372108a86757e51",
    "text": "Muchomůrka červená.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-cervena.thatIs": {
-   "bytes": 17424,
+   "bytes": 13627,
    "file": "cs/sp.muchomurka-cervena.thatIs.mp3",
-   "sha1": "d156dfa8f280f440db3abc2868a14a82a6ca8961",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "16d5b6dd83bcfb3913ab708e9569bb261accdda7",
    "text": "To je muchomůrka červená.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-cervena.twinTell": {
-   "bytes": 34704,
+   "bytes": 27002,
    "file": "cs/sp.muchomurka-cervena.twinTell.mp3",
-   "sha1": "96ccca75cadf5f033022569425ba9f80312d9fc2",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "754fa836ae5656dea034b86348997c746cc85ab9",
    "text": "Klobouk má červený. Tygrovaná má klobouk hnědý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-jizliva.caution": {
-   "bytes": 37728,
+   "bytes": 32853,
    "file": "cs/sp.muchomurka-jizliva.caution.mp3",
-   "sha1": "d21101dad9b2ddda546716c614ad22b3af37b8c7",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "936aff3cdb18e9a24250b2c141e6f321962aa644",
    "text": "Smrtelně jedovatá! Nesahej na ni a hned řekni dospělému.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-jizliva.fact": {
-   "bytes": 23472,
+   "bytes": 20941,
    "file": "cs/sp.muchomurka-jizliva.fact.mp3",
-   "sha1": "943dc1c149266b81f056cafd647a26c6427722e8",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b6045e56c0887fdc5e4c5e967aa7c8f74a64371f",
    "text": "Je celá bílá a smrtelně jedovatá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-jizliva.group": {
-   "bytes": 36576,
+   "bytes": 28047,
    "file": "cs/sp.muchomurka-jizliva.group.mp3",
-   "sha1": "237cbd7998d1b01a5b8683c4c4355013a5e35f28",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "898e4471e2bb1622cded93ec64e7b0c28e70f13d",
    "text": "Pozor! Muchomůrka jízlivá je smrtelně jedovatá houba!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-jizliva.kdo.iAm": {
-   "bytes": 19296,
+   "bytes": 13627,
    "file": "cs/sp.muchomurka-jizliva.kdo.iAm.mp3",
-   "sha1": "efbfd35072134f851a9c723322d147d4c79bc7f9",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "00d1548dce64b92a514c6d568ab27dab8a9219d1",
    "text": "Já jsem muchomůrka jízlivá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-jizliva.kdo.where": {
-   "bytes": 17856,
+   "bytes": 12164,
    "file": "cs/sp.muchomurka-jizliva.kdo.where.mp3",
-   "sha1": "aec3a00e65b67fcf0e8cc892816030693acf376d",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "23fccd0fcc2f274a7c21c85ab5008ce83cfb45d6",
    "text": "Kde je muchomůrka jízlivá?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-jizliva.kdo.yes": {
-   "bytes": 26352,
+   "bytes": 19479,
    "file": "cs/sp.muchomurka-jizliva.kdo.yes.mp3",
-   "sha1": "cde81d3e66048c982fccc15a17aa2deafce91be5",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "37c37c49766d33b03b5f49e79b88389ab80613d5",
    "text": "Ano! To je muchomůrka jízlivá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-jizliva.kosik": {
-   "bytes": 20160,
+   "bytes": 15508,
    "file": "cs/sp.muchomurka-jizliva.kosik.mp3",
-   "sha1": "267d6013861c41c13c8d0d0e56b261f89bb58b03",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "bdc52a5016cde23437a2bae2887d4f5273bd10f0",
    "text": "Kam patří muchomůrka jízlivá?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-jizliva.look.0": {
-   "bytes": 24048,
+   "bytes": 20524,
    "file": "cs/sp.muchomurka-jizliva.look.0.mp3",
-   "sha1": "c898a388d2506540f177341bde4e573f1c242796",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "430dfc2448c0aaa56ccff46867306495d5e42ab2",
    "text": "Je celá čistě bílá, i lupínky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-jizliva.look.1": {
-   "bytes": 23040,
+   "bytes": 21359,
    "file": "cs/sp.muchomurka-jizliva.look.1.mp3",
-   "sha1": "7976915e60eb681ab4a19cf1263dcaf7fbeeb1c1",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ac02c9392ffcb255d3986081db7dacf8f3b9dda5",
    "text": "Na noze má roztřepenou bílou sukýnku.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-jizliva.look.2": {
-   "bytes": 22896,
+   "bytes": 18016,
    "file": "cs/sp.muchomurka-jizliva.look.2.mp3",
-   "sha1": "9f170bce56491e20dca085e310d9c81b5f86cd51",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "30bca321425a3381198ff9481bebd30bb13571cb",
    "text": "Noha jí dole trčí z bílého pytlíku.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-jizliva.name": {
-   "bytes": 16560,
+   "bytes": 11746,
    "file": "cs/sp.muchomurka-jizliva.name.mp3",
-   "sha1": "886785f87330fa029e635146c061a9b4f3b21466",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "9a134ef0aa087b80617a2f3a480165d0d4e7d1e6",
    "text": "Muchomůrka jízlivá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-jizliva.thatIs": {
-   "bytes": 18144,
+   "bytes": 13209,
    "file": "cs/sp.muchomurka-jizliva.thatIs.mp3",
-   "sha1": "c84dd1da3f7415cb04fc9d99c08c041371549844",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ab39ed82d6bd321c8e2fedae98176f4e4449a91b",
    "text": "To je muchomůrka jízlivá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-jizliva.twinTell": {
-   "bytes": 37296,
+   "bytes": 33271,
    "file": "cs/sp.muchomurka-jizliva.twinTell.mp3",
-   "sha1": "1f70652fa4c68a764412ed127854705a763b6493",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "37ff90dc2f968b02b29f2371c8ec93f268260144",
    "text": "Je celá bílá a dole má pytlík. Bedla pytlík nemá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-tygrovana.caution": {
-   "bytes": 45648,
+   "bytes": 34316,
    "file": "cs/sp.muchomurka-tygrovana.caution.mp3",
-   "sha1": "4d8a80944ca720e126cd42710be2c7302c05f028",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "a5f7f11a3873119e79756ba435329f6cb76ea16e",
    "text": "Prudce jedovatá! Je hnědá s bílými tečkami. Nesahej na ni.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-tygrovana.fact": {
-   "bytes": 34416,
+   "bytes": 28883,
    "file": "cs/sp.muchomurka-tygrovana.fact.mp3",
-   "sha1": "fa9ac82ddddee05e2b8c4d0958b9907a4280aeb5",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "7e7fd9d03d3edfbf896277bd5cdaee48a4332c29",
    "text": "Je hnědá s bílými tečkami. Je prudce jedovatá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-tygrovana.group": {
-   "bytes": 36864,
+   "bytes": 33271,
    "file": "cs/sp.muchomurka-tygrovana.group.mp3",
-   "sha1": "f3e6932e5c8efa269140c7a995e8708a42999fc9",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b3faebcdaf78b1978118fb9894509439dff7668a",
    "text": "Pozor! Muchomůrka tygrovaná je smrtelně jedovatá houba!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-tygrovana.kdo.iAm": {
-   "bytes": 19296,
+   "bytes": 16553,
    "file": "cs/sp.muchomurka-tygrovana.kdo.iAm.mp3",
-   "sha1": "7b6077241127b2c0786892a3a65e96b685ae3f56",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "4296135925f2bab025de53b50d5b0342b30e4c14",
    "text": "Já jsem muchomůrka tygrovaná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-tygrovana.kdo.where": {
-   "bytes": 18144,
+   "bytes": 13836,
    "file": "cs/sp.muchomurka-tygrovana.kdo.where.mp3",
-   "sha1": "70ffbd8a19ac050ca6c08d5453ba8aae70580c9c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "d721500bd9de1120ce471644c331a15b16e6a45a",
    "text": "Kde je muchomůrka tygrovaná?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-tygrovana.kdo.yes": {
-   "bytes": 26496,
+   "bytes": 20315,
    "file": "cs/sp.muchomurka-tygrovana.kdo.yes.mp3",
-   "sha1": "252c684e8b48efca22fe4f6cd60d348e8e532cc7",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "aadca692f03425790b80887f287fdccb8b4e246b",
    "text": "Ano! To je muchomůrka tygrovaná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-tygrovana.kosik": {
-   "bytes": 20160,
+   "bytes": 16553,
    "file": "cs/sp.muchomurka-tygrovana.kosik.mp3",
-   "sha1": "1b16575edf7609c349c640676975d1a67c1fb5e6",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "0bbeae25f30ee278a144e1da26341998d5ce064e",
    "text": "Kam patří muchomůrka tygrovaná?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-tygrovana.look.0": {
-   "bytes": 22320,
+   "bytes": 17598,
    "file": "cs/sp.muchomurka-tygrovana.look.0.mp3",
-   "sha1": "04516f46238fc465251d1b935a8c45127f0c91b9",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "1e4c299502f59555508a53fdd0936f0d6c85e86b",
    "text": "Má hnědý klobouk s bílými tečkami.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-tygrovana.look.1": {
-   "bytes": 20304,
+   "bytes": 17180,
    "file": "cs/sp.muchomurka-tygrovana.look.1.mp3",
-   "sha1": "c1f90c464ce651f9ad93665f37b35f8c0eb4c220",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "56241b0d5b0ec6115f5570d5934e8adba5495509",
    "text": "Okraj klobouku má jemné rýhy.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-tygrovana.look.2": {
-   "bytes": 23184,
+   "bytes": 19479,
    "file": "cs/sp.muchomurka-tygrovana.look.2.mp3",
-   "sha1": "30f731cb6294bd56f6875409b4d434cced4cda7f",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "04c3199be5a25745bccbd01dd796364da7714742",
    "text": "Dole na noze má bílý lem jako ponožku.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-tygrovana.name": {
-   "bytes": 16560,
+   "bytes": 12164,
    "file": "cs/sp.muchomurka-tygrovana.name.mp3",
-   "sha1": "55fd7f936d234966afec959aa40ba6db42666d79",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "00420e23583b9f7058583efa5480798f1e9ebef8",
    "text": "Muchomůrka tygrovaná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-tygrovana.thatIs": {
-   "bytes": 18288,
+   "bytes": 13836,
    "file": "cs/sp.muchomurka-tygrovana.thatIs.mp3",
-   "sha1": "80f488712f8ed4f3c55ea4df9cbe35fe04e16f3e",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "83e6891897bbb1505ac6a3d492a6ef26165488a7",
    "text": "To je muchomůrka tygrovaná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-tygrovana.twinTell": {
-   "bytes": 38592,
+   "bytes": 29510,
    "file": "cs/sp.muchomurka-tygrovana.twinTell.mp3",
-   "sha1": "67b14e9f0277e9670a75536b16264191c67ac4ba",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "4d70881c9e68389d6244565e7f52e736d4c04dc3",
    "text": "Klobouk má hnědý. Muchomůrka červená má klobouk červený.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-zelena.caution": {
-   "bytes": 37728,
+   "bytes": 32853,
    "file": "cs/sp.muchomurka-zelena.caution.mp3",
-   "sha1": "d21101dad9b2ddda546716c614ad22b3af37b8c7",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "936aff3cdb18e9a24250b2c141e6f321962aa644",
    "text": "Smrtelně jedovatá! Nesahej na ni a hned řekni dospělému.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-zelena.fact": {
-   "bytes": 24768,
+   "bytes": 21777,
    "file": "cs/sp.muchomurka-zelena.fact.mp3",
-   "sha1": "b86f8cfba1744fd3758677fd7b057194926cef8c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "3177e5bd6dd670c9702c712b7f3df4e3784711d8",
    "text": "Je to nejjedovatější houba v našich lesích.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-zelena.group": {
-   "bytes": 36000,
+   "bytes": 29928,
    "file": "cs/sp.muchomurka-zelena.group.mp3",
-   "sha1": "eed0107498a1bea33e50f9779ee2f3da71c74a7e",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "647e07eff45c73fa58d1d02b9745c86230638b44",
    "text": "Pozor! Muchomůrka zelená je smrtelně jedovatá houba!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-zelena.kdo.iAm": {
-   "bytes": 18576,
+   "bytes": 13209,
    "file": "cs/sp.muchomurka-zelena.kdo.iAm.mp3",
-   "sha1": "6852ee9e952aa63b9ac9080d9b990798a250c1d9",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "7f5328418aa68486efea0fccca95c6ff7453755c",
    "text": "Já jsem muchomůrka zelená.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-zelena.kdo.where": {
-   "bytes": 17424,
+   "bytes": 13209,
    "file": "cs/sp.muchomurka-zelena.kdo.where.mp3",
-   "sha1": "6ee55e7e50f1e44c28288341aad073666bf89139",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "e4df4cd2cac6a6b58c2f3141bfb3a413773b8697",
    "text": "Kde je muchomůrka zelená?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-zelena.kdo.yes": {
-   "bytes": 25632,
+   "bytes": 17180,
    "file": "cs/sp.muchomurka-zelena.kdo.yes.mp3",
-   "sha1": "791e21e4977925aaeef92159d65bce9e46ae8a4a",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "df0a91eca85d7eb239a6b64df6b96261436b8901",
    "text": "Ano! To je muchomůrka zelená.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-zelena.kosik": {
-   "bytes": 19296,
+   "bytes": 15717,
    "file": "cs/sp.muchomurka-zelena.kosik.mp3",
-   "sha1": "344d44767317e0f4cae8f4633529659647278939",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "74d57a0c5288dd8919e52a4b473f8a3997e61754",
    "text": "Kam patří muchomůrka zelená?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-zelena.look.0": {
-   "bytes": 28656,
+   "bytes": 25748,
    "file": "cs/sp.muchomurka-zelena.look.0.mp3",
-   "sha1": "3cefa34532ed9c827b135df140c83554f1c15604",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "5911e64724c24e8f88a162362554e400637938eb",
    "text": "Klobouk má zelenkavý nebo olivový, bez šupin.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-zelena.look.1": {
-   "bytes": 23904,
+   "bytes": 19479,
    "file": "cs/sp.muchomurka-zelena.look.1.mp3",
-   "sha1": "7e1c57346a4f6a1f84a6705aafc840300e149ad1",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "48e31ed7859bd6b8065fe934eb0aa170d0019245",
    "text": "Má bílé lupínky a bílou sukýnku.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-zelena.look.2": {
-   "bytes": 22896,
+   "bytes": 18852,
    "file": "cs/sp.muchomurka-zelena.look.2.mp3",
-   "sha1": "9f170bce56491e20dca085e310d9c81b5f86cd51",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "30bca321425a3381198ff9481bebd30bb13571cb",
    "text": "Noha jí dole trčí z bílého pytlíku.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-zelena.name": {
-   "bytes": 15840,
+   "bytes": 12164,
    "file": "cs/sp.muchomurka-zelena.name.mp3",
-   "sha1": "221c4b58a5686030c497f02787b4aa462302c0df",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "424c9d5ab027a5618dbadce40696a6a2b7d06d9f",
    "text": "Muchomůrka zelená.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-zelena.thatIs": {
-   "bytes": 17424,
+   "bytes": 13209,
    "file": "cs/sp.muchomurka-zelena.thatIs.mp3",
-   "sha1": "cc044affd20a8235539e6d2c30f929b75f577c76",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "be913e4b41b896b40751953519b408d94f02c155",
    "text": "To je muchomůrka zelená.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.muchomurka-zelena.twinTell": {
-   "bytes": 32976,
+   "bytes": 22822,
    "file": "cs/sp.muchomurka-zelena.twinTell.mp3",
-   "sha1": "a61dceb9fe5d56b594dfe64043c493f2d057d115",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "a50aba8ba2dbaf90c94d9a33ab2ba52cf06ee198",
    "text": "Dole na noze má bílý pytlík. Bedla ho nemá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pestrec.caution": {
-   "bytes": 34560,
+   "bytes": 30973,
    "file": "cs/sp.pestrec.caution.mp3",
-   "sha1": "475c556aa8ca97999ed93ed4b7d823cd0b269a36",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b03ffb043160b11107807fdd20ec03425e685a79",
    "text": "Je jedovatý a podobá se pýchavce. Nesahej na něj.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pestrec.fact": {
-   "bytes": 29664,
+   "bytes": 20315,
    "file": "cs/sp.pestrec.fact.mp3",
-   "sha1": "9f9a559f1d2df7c7915ccbfaf57a7b10586cfa4e",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8f291e1b4d4976d150e80e13d5c1b52cde2092ea",
    "text": "Vypadá jako brambora. Uvnitř zčerná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pestrec.group": {
-   "bytes": 31536,
+   "bytes": 24703,
    "file": "cs/sp.pestrec.group.mp3",
-   "sha1": "4e130962213ded98e744ab7cfd272920ef06fc99",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "374671af3925b59c45efad9768b3c38c3d9e7b74",
    "text": "Pozor! Pestřec obecný je jedovatá houba!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pestrec.kdo.iAm": {
-   "bytes": 17856,
+   "bytes": 12373,
    "file": "cs/sp.pestrec.kdo.iAm.mp3",
-   "sha1": "5a3100a5bc1c4c8722d04615c4f3ad1cbcd91225",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "a605e986db742a3dec961d6eb14612532ccbe068",
    "text": "Já jsem pestřec obecný.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pestrec.kdo.where": {
-   "bytes": 16416,
+   "bytes": 13209,
    "file": "cs/sp.pestrec.kdo.where.mp3",
-   "sha1": "4388dbb53676b7337cf1e596f28dfd0d1d3a12ac",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "de4e05beb385fe87e287e3d7124736d04c74769e",
    "text": "Kde je pestřec obecný?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pestrec.kdo.yes": {
-   "bytes": 24768,
+   "bytes": 14672,
    "file": "cs/sp.pestrec.kdo.yes.mp3",
-   "sha1": "927ae9f684622e323687ba82455a5ffe6a9e9f2a",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "c01172a219add8d9050def8a15616710688f7e4e",
    "text": "Ano! To je pestřec obecný.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pestrec.kosik": {
-   "bytes": 18288,
+   "bytes": 14672,
    "file": "cs/sp.pestrec.kosik.mp3",
-   "sha1": "33097f696125e386599a88ad1178dfd5b89497ab",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "91f19efd449f5468771c0133a624d3854c0c66f7",
    "text": "Kam patří pestřec obecný?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pestrec.look.0": {
-   "bytes": 23472,
+   "bytes": 20315,
    "file": "cs/sp.pestrec.look.0.mp3",
-   "sha1": "87a8e21f90df33993af3f533d45d2dd52984d4e4",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "d5d2dbb205e53030f0473d1817bbc5d747b5205d",
    "text": "Je kulatý a žlutohnědý jako brambora.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pestrec.look.1": {
-   "bytes": 22608,
+   "bytes": 19479,
    "file": "cs/sp.pestrec.look.1.mp3",
-   "sha1": "bd7fa18c99eeeaec7e72e5b2290faa96befa7f1a",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "975c7d1bc0c6369e2438ebd469833f1f4eb04de1",
    "text": "Tlustá kůže má vzor jako šupinky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pestrec.look.2": {
-   "bytes": 22032,
+   "bytes": 18852,
    "file": "cs/sp.pestrec.look.2.mp3",
-   "sha1": "464e37fd3fe0acb50e7ad2abda5931b6e5c581c6",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "64221a3750248d26a8e6fa7ba4e97a88ce3a2f3f",
    "text": "Uvnitř je tmavě fialový až černý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pestrec.name": {
-   "bytes": 14976,
+   "bytes": 10284,
    "file": "cs/sp.pestrec.name.mp3",
-   "sha1": "2bc05a3c62b3e6268d390742864e0d1eb2ba6ef7",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "3aea6c6d9fb6634e0177940b017c35f04fcdde8b",
    "text": "Pestřec obecný.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pestrec.thatIs": {
-   "bytes": 16704,
+   "bytes": 12164,
    "file": "cs/sp.pestrec.thatIs.mp3",
-   "sha1": "be8d9633c3e60ff6c67dcd10453b8e02afbe4895",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "7133d812d87470f3b4e90888e17cd2d98ebc089c",
    "text": "To je pestřec obecný.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pestrec.twinTell": {
-   "bytes": 33264,
+   "bytes": 23867,
    "file": "cs/sp.pestrec.twinTell.mp3",
-   "sha1": "77d286e1d9aaa6923f69d2d6337e3784e7ab5600",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "82a0690d8369283491c81a2c803d7270e829d3ad",
    "text": "Uvnitř je tmavý. Pýchavka je uvnitř bílá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pychavka.caution": {
-   "bytes": 40608,
+   "bytes": 29928,
    "file": "cs/sp.pychavka.caution.mp3",
-   "sha1": "5831686763935f2315aa733ec87d53a091bd7097",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "0c62d7ab1e55068084176ebcbf22cb9449dff43b",
    "text": "Jedlá je jen mladá a uvnitř čistě bílá. Rozhodne dospělý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pychavka.fact": {
-   "bytes": 38448,
+   "bytes": 28883,
    "file": "cs/sp.pychavka.fact.mp3",
-   "sha1": "9ad6c01c0c5cb96badfbe5e092e6a291f26642ae",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "0bc19e892a9c798c613a8b2a5e8e840c1042acfc",
    "text": "Mladá je uvnitř bílá. Stará je plná hnědého prášku.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pychavka.group": {
-   "bytes": 22032,
+   "bytes": 19897,
    "file": "cs/sp.pychavka.group.mp3",
-   "sha1": "db1e48a983835afc41d66de6ff440e4cd78a5f3c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "805247816803d3618ee73ab3372c5c3cffbfa8b6",
    "text": "Pýchavka obecná je jedlá houba.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pychavka.kdo.iAm": {
-   "bytes": 18576,
+   "bytes": 13627,
    "file": "cs/sp.pychavka.kdo.iAm.mp3",
-   "sha1": "32464984721d7fe28e9ee5ba56b87004d041ffba",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "13057ee77b798256d8144e0c16e744d983b1bfef",
    "text": "Já jsem pýchavka obecná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pychavka.kdo.where": {
-   "bytes": 17280,
+   "bytes": 13836,
    "file": "cs/sp.pychavka.kdo.where.mp3",
-   "sha1": "a9f3124a0ac406e2f8a292cf1822bb9c17ec95b3",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "019772913315c8b89e0d5f140fa4480dfb7154a2",
    "text": "Kde je pýchavka obecná?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pychavka.kdo.yes": {
-   "bytes": 25920,
+   "bytes": 15717,
    "file": "cs/sp.pychavka.kdo.yes.mp3",
-   "sha1": "56d9c36411e221e4dac23c4637a58b691c3beb5c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "bc2099b74b42dcb22a0d8c59071db7bf99381f5a",
    "text": "Ano! To je pýchavka obecná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pychavka.kosik": {
-   "bytes": 19296,
+   "bytes": 12791,
    "file": "cs/sp.pychavka.kosik.mp3",
-   "sha1": "e4f23d919fad6a8e39bc34910935b4b9e32695ce",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "e378915f9e2499b467870a54e2f725fc66628e1e",
    "text": "Kam patří pýchavka obecná?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pychavka.look.0": {
-   "bytes": 24048,
+   "bytes": 20524,
    "file": "cs/sp.pychavka.look.0.mp3",
-   "sha1": "3adb80be8a6b6d16d65c81bd85e048f917b744f0",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "7cf4f54c6322bc59fba90ceff2125771c8e572f1",
    "text": "Je kulatá jako hruška a nemá klobouk.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pychavka.look.1": {
-   "bytes": 25344,
+   "bytes": 22404,
    "file": "cs/sp.pychavka.look.1.mp3",
-   "sha1": "e1ab83bba1432f7166c145771438450200df8e2d",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "04e3a1e8a753222d3e727c0e93024d96203280f6",
    "text": "Je bílá a pokrytá drobnými bradavičkami.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pychavka.look.2": {
-   "bytes": 21024,
+   "bytes": 15717,
    "file": "cs/sp.pychavka.look.2.mp3",
-   "sha1": "543be521ec512cafd2bd7c06dd1c936ff99a736d",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "15fb2917700579625c767bdd57408779d3fb0117",
    "text": "Mladá je uvnitř celá bílá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pychavka.name": {
-   "bytes": 16128,
+   "bytes": 11328,
    "file": "cs/sp.pychavka.name.mp3",
-   "sha1": "b30cb8a99114fa365bee85eeb29195a8390af29c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "9b46c03e4975f23113c59a476b661af4427de243",
    "text": "Pýchavka obecná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pychavka.thatIs": {
-   "bytes": 17856,
+   "bytes": 13209,
    "file": "cs/sp.pychavka.thatIs.mp3",
-   "sha1": "1a840e0ac6673ad09510e51b786440d1dcd771fe",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "49c5618f7d4eb65982c86d44ac212b2360b4ad1e",
    "text": "To je pýchavka obecná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.pychavka.twinTell": {
-   "bytes": 31680,
+   "bytes": 25121,
    "file": "cs/sp.pychavka.twinTell.mp3",
-   "sha1": "d7bb722e0393b6589069c3f4670b399de494b124",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "7146fa24591e1fc48229b364f3ff2b4892556bb1",
    "text": "Uvnitř je bílá. Pestřec je uvnitř tmavý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.ryzec.caution": {
-   "bytes": 29664,
+   "bytes": 27211,
    "file": "cs/sp.ryzec.caution.mp3",
-   "sha1": "d16b302a151112234ec5053220ba2393681252cb",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "7a9d347207056f948bc504c18899cc8198adce6d",
    "text": "Podobný ryzec kravský je chlupatý a má bílé mléko.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.ryzec.fact": {
-   "bytes": 26496,
+   "bytes": 22404,
    "file": "cs/sp.ryzec.fact.mp3",
-   "sha1": "665bd01131c44194e07a1008fb9d2b8a5d45260f",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "63116f1146a0ad097b9577459d6f1df9648ebbd8",
    "text": "Když se zlomí, teče z něj oranžové mléko.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.ryzec.group": {
-   "bytes": 2160,
+   "bytes": 15090,
    "file": "cs/sp.ryzec.group.mp3",
-   "sha1": "074427d8122cc13931659cfdc9b23d41e76d1316",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "a5f3b0e097c38b7109853dfb0709e178cab8f181",
    "text": "Ryzec pravý je jedlá houba.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.ryzec.kdo.iAm": {
-   "bytes": 15696,
+   "bytes": 11746,
    "file": "cs/sp.ryzec.kdo.iAm.mp3",
-   "sha1": "8376686a4794a35c501ce19e764025d7c78d3267",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "27b42d542a3a646da64cbade09202b18e52a6885",
    "text": "Já jsem ryzec pravý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.ryzec.kdo.where": {
-   "bytes": 14544,
+   "bytes": 11746,
    "file": "cs/sp.ryzec.kdo.where.mp3",
-   "sha1": "cd2f4df6418ad332931e5ec7f9f050f49ce5e9d9",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "6f2356ad9e09a133d0b272601f817fef1687764e",
    "text": "Kde je ryzec pravý?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.ryzec.kdo.yes": {
-   "bytes": 22896,
+   "bytes": 13627,
    "file": "cs/sp.ryzec.kdo.yes.mp3",
-   "sha1": "b91be76e4b97117ddf9fa4a4ed810131e0473335",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "7e09602975595470bb23c8f1d1b7bc30393e38e3",
    "text": "Ano! To je ryzec pravý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.ryzec.kosik": {
-   "bytes": 16848,
+   "bytes": 12373,
    "file": "cs/sp.ryzec.kosik.mp3",
-   "sha1": "69d85e49bcf5d8fe0d8f28b8e08b2e89a9f1b3ce",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "664fbd5ec672a11f05be3306960c04097a0454cd",
    "text": "Kam patří ryzec pravý?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.ryzec.look.0": {
-   "bytes": 24768,
+   "bytes": 21359,
    "file": "cs/sp.ryzec.look.0.mp3",
-   "sha1": "1d43495fc225691ff2b3ba313aee40bc2af401cb",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "076c9570ae3331ae29e546f22a2fc5a902c964ed",
    "text": "Oranžový klobouk má kroužky jako letokruhy.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.ryzec.look.1": {
-   "bytes": 20448,
+   "bytes": 19061,
    "file": "cs/sp.ryzec.look.1.mp3",
-   "sha1": "7dcd11f3629c535f7f2b2e0bf0390842e78b311d",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "6d25e88d475653e9d3c488f2788be32ecc0840c3",
    "text": "Na otlačených místech zezelená.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.ryzec.look.2": {
-   "bytes": 19152,
+   "bytes": 15090,
    "file": "cs/sp.ryzec.look.2.mp3",
-   "sha1": "1074d19fd0ab924a3775ca2936a3b7a4a6edf386",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "090f3f909dc2d04eb517c2ba4f11095405bf1f14",
    "text": "Na noze má oranžové důlky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.ryzec.name": {
-   "bytes": 13104,
+   "bytes": 10493,
    "file": "cs/sp.ryzec.name.mp3",
-   "sha1": "bf5ec62bcc114cf912572511c14a84c7f09c490a",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b2b4ec89143d5f8fe13a5fe12df8d286d66ac988",
    "text": "Ryzec pravý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.ryzec.thatIs": {
-   "bytes": 14688,
+   "bytes": 12164,
    "file": "cs/sp.ryzec.thatIs.mp3",
-   "sha1": "02413ed9a3a4800e7b17d367e54d555cf8f1d0cd",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "cf7b1ec20245162e8b96ff2b236be8d8f35511dd",
    "text": "To je ryzec pravý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.sirovec.caution": {
-   "bytes": 33408,
+   "bytes": 25121,
    "file": "cs/sp.sirovec.caution.mp3",
-   "sha1": "be97b4874578dcdf11effd1109022a32c873e929",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "fcd76f137ba394e103449ee991b7f766c793c060",
    "text": "Jí se jen mladý a uvařený. Rozhodne dospělý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.sirovec.fact": {
-   "bytes": 23616,
+   "bytes": 23658,
    "file": "cs/sp.sirovec.fact.mp3",
-   "sha1": "560a8a3e4c1c9265d64dd8c06b49a31478b01f96",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "817d3e25d8342bd3118eee0a6a77b76c6b77950f",
    "text": "Roste na stromech jako žlutooranžové schody.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.sirovec.group": {
-   "bytes": 24192,
+   "bytes": 19061,
    "file": "cs/sp.sirovec.group.mp3",
-   "sha1": "8dfbb6a771f71772fed8abc1ca9a02fec3b12bb4",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "f6434fe411b1e2ff0e65c9c069cf8b2fbcf24939",
    "text": "Sírovec žlutooranžový je jedlá houba.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.sirovec.kdo.iAm": {
-   "bytes": 20736,
+   "bytes": 16135,
    "file": "cs/sp.sirovec.kdo.iAm.mp3",
-   "sha1": "da7c68ff5294d8b6f65d704db17dda0518667b9f",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "51345c3763c50e7df5cabe48af1d9ea8f77f97b4",
    "text": "Já jsem sírovec žlutooranžový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.sirovec.kdo.where": {
-   "bytes": 19296,
+   "bytes": 15090,
    "file": "cs/sp.sirovec.kdo.where.mp3",
-   "sha1": "6b72a979b0339d92987aad4c715268b3e13acd33",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "88ddf6b72d1394e854a7798781ec8205e23482a5",
    "text": "Kde je sírovec žlutooranžový?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.sirovec.kdo.yes": {
-   "bytes": 28080,
+   "bytes": 18852,
    "file": "cs/sp.sirovec.kdo.yes.mp3",
-   "sha1": "395c6656dce93face6b46becd3b6b0a6ca886daa",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "c472f92ddc56bb4f62fb5fd545b99d8f5be4de4d",
    "text": "Ano! To je sírovec žlutooranžový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.sirovec.kosik": {
-   "bytes": 21024,
+   "bytes": 19061,
    "file": "cs/sp.sirovec.kosik.mp3",
-   "sha1": "f339a14288c23ce9cae5344b0130523e3b454efb",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "720b571dc605d79b13d7c37a10a840c487682000",
    "text": "Kam patří sírovec žlutooranžový?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.sirovec.look.0": {
-   "bytes": 21024,
+   "bytes": 16553,
    "file": "cs/sp.sirovec.look.0.mp3",
-   "sha1": "7ebb78e8e72dc092a69f936c84869d91cf38ba3d",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "c360008a5773083c0fa76979e06c1bbd2e784d0f",
    "text": "Je zářivě žlutý a oranžový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.sirovec.look.1": {
-   "bytes": 20736,
+   "bytes": 18434,
    "file": "cs/sp.sirovec.look.1.mp3",
-   "sha1": "38482f885a8b20f2113f712d2bb6eeacf24bdde0",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "28efb0683dd50743d75c15a74f96dc57841dfc35",
    "text": "Roste v patrech na kmeni jako poličky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.sirovec.look.2": {
-   "bytes": 25344,
+   "bytes": 19479,
    "file": "cs/sp.sirovec.look.2.mp3",
-   "sha1": "8357192c930b3a1d2ad2bac2006230aa2c093381",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b8f2bb70d8aa5db3b172b0c7ba477b66d680c286",
    "text": "Nemá nohu, přirůstá přímo ke stromu.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.sirovec.name": {
-   "bytes": 18288,
+   "bytes": 12164,
    "file": "cs/sp.sirovec.name.mp3",
-   "sha1": "042a6aa5b65197a53814cc5cb82fdc1b9a1f72ee",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8a96c7ca91e57353714386bee6753d6b548d92ea",
    "text": "Sírovec žlutooranžový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.sirovec.thatIs": {
-   "bytes": 19872,
+   "bytes": 16135,
    "file": "cs/sp.sirovec.thatIs.mp3",
-   "sha1": "845445556b93e7ef446eef009b05bdfadb6005f8",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "27f9cbed6f038279f3234f16c57c37d9e6b424cd",
    "text": "To je sírovec žlutooranžový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.suchohrib.caution": {
-   "bytes": 40176,
+   "bytes": 31808,
    "file": "cs/sp.suchohrib.caution.mp3",
-   "sha1": "766277824c8c3d3bac2a01df7bddc27c16d6347c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "7bafe828acd9bd643a04682f11cb4821ab2f982e",
    "text": "Podobný je hořký žlučník. Ten nemodrá a má růžové dírky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.suchohrib.fact": {
-   "bytes": 35280,
+   "bytes": 29928,
    "file": "cs/sp.suchohrib.fact.mp3",
-   "sha1": "b7c967c9950a32c5e751baac5d7a94cd5e937799",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "bbd989bcb933c871dec7dcb02c5d1ffd2501f819",
    "text": "Klobouk má hnědý jako kaštan. Za deště je slizký.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.suchohrib.group": {
-   "bytes": 18432,
+   "bytes": 15090,
    "file": "cs/sp.suchohrib.group.mp3",
-   "sha1": "30d8f8a18f24db8f99c7352dce4b6bc2cbdb4a3b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "83eb4f32a249470bdddb74e17f6134ef175c22cb",
    "text": "Hřib hnědý je jedlá houba.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.suchohrib.kdo.iAm": {
-   "bytes": 15264,
+   "bytes": 12164,
    "file": "cs/sp.suchohrib.kdo.iAm.mp3",
-   "sha1": "9b9017202ca5adcebb1c409dde1ffc9f6091797a",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "a79c199400b1a12527731a0cff50c1b493286221",
    "text": "Já jsem hřib hnědý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.suchohrib.kdo.where": {
-   "bytes": 14112,
+   "bytes": 11328,
    "file": "cs/sp.suchohrib.kdo.where.mp3",
-   "sha1": "805190270d89746b3b81f7b5384f0a794283b3ce",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "6e0c182ed8a7e94cdc77dd2855b78d9f375a1522",
    "text": "Kde je hřib hnědý?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.suchohrib.kdo.yes": {
-   "bytes": 22176,
+   "bytes": 13836,
    "file": "cs/sp.suchohrib.kdo.yes.mp3",
-   "sha1": "7c5f7f29ff947efda370a00ccf0e421104b3051d",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "0bab65f8001ae80bcb49b3a448837b0dd9f36900",
    "text": "Ano! To je hřib hnědý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.suchohrib.kosik": {
-   "bytes": 16272,
+   "bytes": 12164,
    "file": "cs/sp.suchohrib.kosik.mp3",
-   "sha1": "4f6d03ce5515def5d1df49fc62189e1520e8b996",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "9f2cb3e226038260613341819a97e29c62cf7854",
    "text": "Kam patří hřib hnědý?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.suchohrib.look.0": {
-   "bytes": 19296,
+   "bytes": 15508,
    "file": "cs/sp.suchohrib.look.0.mp3",
-   "sha1": "2a315f47e85b1e7d100b5e8343b1761c4f1dd4c8",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "f30261daf062092cccfb12fad1059632e3fe0c62",
    "text": "Má kaštanově hnědý klobouk.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.suchohrib.look.1": {
-   "bytes": 25920,
+   "bytes": 21777,
    "file": "cs/sp.suchohrib.look.1.mp3",
-   "sha1": "56835284e41016e5303e1c3bf2ac7e3bd22d9357",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "4e260b27625e630c9007145c712c7d4809fe93de",
    "text": "Žluté dírky na otlačeném místě zmodrají.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.suchohrib.look.2": {
-   "bytes": 21168,
+   "bytes": 16553,
    "file": "cs/sp.suchohrib.look.2.mp3",
-   "sha1": "eb36a442f586990b77fcbad1eae879509a8ce219",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8df291b160f11fa82ae58f31388d38a3a0b72226",
    "text": "Hnědá noha nemá žádnou síťku.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.suchohrib.name": {
-   "bytes": 12384,
+   "bytes": 8821,
    "file": "cs/sp.suchohrib.name.mp3",
-   "sha1": "270cff0f7b6676dab469b05d0e00c4d5222b2ad4",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "7d6a78fd9c7ef558b5129f0d04cc01e533fd8fc6",
    "text": "Hřib hnědý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.suchohrib.thatIs": {
-   "bytes": 14112,
+   "bytes": 10910,
    "file": "cs/sp.suchohrib.thatIs.mp3",
-   "sha1": "2d1aaf21473e7f3f1210c079a5a277d3383ee74c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "36375ffd6ee572062aa69c084c7ef7dc3c993a15",
    "text": "To je hřib hnědý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.suchohrib.twinTell": {
-   "bytes": 35856,
+   "bytes": 28883,
    "file": "cs/sp.suchohrib.twinTell.mp3",
-   "sha1": "479972f96ea4124cdc0dc39a95f0a8bcf50b170b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8e30f210382e3406e084595cd6d4003dbbd0359a",
    "text": "Otlačené dírky zmodrají. Žlučník nikdy nemodrá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.trepenitka.caution": {
-   "bytes": 39168,
+   "bytes": 31808,
    "file": "cs/sp.trepenitka.caution.mp3",
-   "sha1": "968597c344df651e2e442b7bdf3e10e69c823659",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "a83b0ff939cecbbe842c681ee23196e3e254ba00",
    "text": "Je jedovatá a podobá se jedlým václavkám. Nesahej na ni.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.trepenitka.fact": {
-   "bytes": 37152,
+   "bytes": 29510,
    "file": "cs/sp.trepenitka.fact.mp3",
-   "sha1": "937c7ffdcc789d79e4ae29dd362eed86bd548cf9",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "9ab42269c596a5f45d80ff65df099f4db57e67f6",
    "text": "Roste ve velkých partách na starých pařezech. Je jedovatá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.trepenitka.group": {
-   "bytes": 33120,
+   "bytes": 27629,
    "file": "cs/sp.trepenitka.group.mp3",
-   "sha1": "bc06e3504594b7fdadc89ff3fb4480e4177ffbbb",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "03a4574ec6d4b960f5933c9f864a015aa3588e6f",
    "text": "Pozor! Třepenitka svazčitá je jedovatá houba!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.trepenitka.kdo.iAm": {
-   "bytes": 19440,
+   "bytes": 14672,
    "file": "cs/sp.trepenitka.kdo.iAm.mp3",
-   "sha1": "93d1b66853be86c17ede00fbe8c0894636ee835b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ca3b37a16fcb6be93a1eed39bbbb6afaaf09aded",
    "text": "Já jsem třepenitka svazčitá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.trepenitka.kdo.where": {
-   "bytes": 18144,
+   "bytes": 14254,
    "file": "cs/sp.trepenitka.kdo.where.mp3",
-   "sha1": "d78a9facbdd3bb1e336c005d0ede26ae8ae9f763",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "81d4ec8c7d7c527d62985a3b85401da17d4e539e",
    "text": "Kde je třepenitka svazčitá?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.trepenitka.kdo.yes": {
-   "bytes": 26640,
+   "bytes": 19897,
    "file": "cs/sp.trepenitka.kdo.yes.mp3",
-   "sha1": "da0c71d700541c0e74f88fe86cd3195ab81be495",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ae034dc87b12478b7a0427637c32bbc58a2649a1",
    "text": "Ano! To je třepenitka svazčitá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.trepenitka.kosik": {
-   "bytes": 20304,
+   "bytes": 18434,
    "file": "cs/sp.trepenitka.kosik.mp3",
-   "sha1": "b50a8ceeed20758258b6bde5eb5fe5f4712bce98",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "a3c415f9f0aa7f2a107fdbb442f39d8904a256c7",
    "text": "Kam patří třepenitka svazčitá?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.trepenitka.look.0": {
-   "bytes": 21600,
+   "bytes": 18434,
    "file": "cs/sp.trepenitka.look.0.mp3",
-   "sha1": "ff70e98ce2e9fd2040a016c2356bd93427aca9d4",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "4b02fbdf2496cc5fc9cfccee3b2c91503d5694cd",
    "text": "Roste v trsech na dřevě a pařezech.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.trepenitka.look.1": {
-   "bytes": 29232,
+   "bytes": 25539,
    "file": "cs/sp.trepenitka.look.1.mp3",
-   "sha1": "636ac6dc096715801118b1998ca70cc5b2482b82",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b4a4ceccdf2677d55d96f376f1ad2da2f74ce7d7",
    "text": "Klobouk je sírově žlutý, uprostřed oranžový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.trepenitka.look.2": {
-   "bytes": 26928,
+   "bytes": 23867,
    "file": "cs/sp.trepenitka.look.2.mp3",
-   "sha1": "504335642870b0375534169446972db06c1235c8",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "921a995274534af7d65f24fe1032da5dfdcbcee0",
    "text": "Lupínky má zelenožluté, později tmavé.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.trepenitka.name": {
-   "bytes": 16848,
+   "bytes": 11746,
    "file": "cs/sp.trepenitka.name.mp3",
-   "sha1": "3cffaa3d49aae4a6b91aaf94c42adb18f2d04089",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "48e8c4fb6f0591bcabe28d70e7d588175bd84ec1",
    "text": "Třepenitka svazčitá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.trepenitka.thatIs": {
-   "bytes": 18576,
+   "bytes": 13627,
    "file": "cs/sp.trepenitka.thatIs.mp3",
-   "sha1": "0a128c9807381eda4fe48754725a34dfd84720e8",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b1123ecd07751f61b3f169be23ea5827bf07bb6d",
    "text": "To je třepenitka svazčitá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.trepenitka.twinTell": {
-   "bytes": 38880,
+   "bytes": 29510,
    "file": "cs/sp.trepenitka.twinTell.mp3",
-   "sha1": "c39d112f8c1c22d83fbbd182890ecccacdb034e7",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8e459570b807688765e6210eaf7c673c24ac4919",
    "text": "Lupínky má zelenožluté. Václavka má lupínky světlé.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec-pasovany.caution": {
-   "bytes": 24624,
+   "bytes": 20941,
    "file": "cs/sp.troudnatec-pasovany.caution.mp3",
-   "sha1": "61dbf9fb2add05bc13756942f767b3ea89331662",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "cfbe16f43073b753e60d4c7d8b82bbac6af5daa0",
    "text": "Je tvrdý jako dřevo, a proto se nejí.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec-pasovany.fact": {
-   "bytes": 37728,
+   "bytes": 30346,
    "file": "cs/sp.troudnatec-pasovany.fact.mp3",
-   "sha1": "d5521a3c864608369e46ea08615de685d935dbeb",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "33809e07433c2851ae23df49421ee7887a99972c",
    "text": "Nosí červený pásek. Někdy z něj kapou kapky jako slzy.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec-pasovany.group": {
-   "bytes": 34560,
+   "bytes": 24285,
    "file": "cs/sp.troudnatec-pasovany.group.mp3",
-   "sha1": "882adba781c1219972ce2235b6f52cc0e2668005",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "2b07cf109de98da1f36332caab936f38e14e8161",
    "text": "Troudnatec pásovaný je nejedlá houba. Ta se nejí.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec-pasovany.kdo.iAm": {
-   "bytes": 19008,
+   "bytes": 16135,
    "file": "cs/sp.troudnatec-pasovany.kdo.iAm.mp3",
-   "sha1": "b047e061de354d5898dcec96e362c269e261878d",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "3e4220ab6f3e8a08628853833a0a95f6eb14360a",
    "text": "Já jsem troudnatec pásovaný.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec-pasovany.kdo.where": {
-   "bytes": 17856,
+   "bytes": 15508,
    "file": "cs/sp.troudnatec-pasovany.kdo.where.mp3",
-   "sha1": "7413c8e5a813eb3c55ca4954bb2a890fd36725cb",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "316fb91bc4f80d6e67b7979e6f418c6cb7ef590f",
    "text": "Kde je troudnatec pásovaný?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec-pasovany.kdo.yes": {
-   "bytes": 25920,
+   "bytes": 20941,
    "file": "cs/sp.troudnatec-pasovany.kdo.yes.mp3",
-   "sha1": "a83fb62f3846bba9cdcaac599f5bbe45716d753f",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "bc898588866d83c872e009dc78ae0ab0769a1db2",
    "text": "Ano! To je troudnatec pásovaný.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec-pasovany.kosik": {
-   "bytes": 19728,
+   "bytes": 17180,
    "file": "cs/sp.troudnatec-pasovany.kosik.mp3",
-   "sha1": "0849ae47de4d141869a6a4994b7b93a690ffad15",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b313dd7b3bfeb28f3fc74d413806e432a0b7df87",
    "text": "Kam patří troudnatec pásovaný?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec-pasovany.look.0": {
-   "bytes": 17424,
+   "bytes": 15717,
    "file": "cs/sp.troudnatec-pasovany.look.0.mp3",
-   "sha1": "abd51e07cfbac657e1c36b13c4848ddabdb1b43f",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "1816987d563e98c7837d7621ca5c079b3961d8e3",
    "text": "Roste jako polička na kmeni.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec-pasovany.look.1": {
-   "bytes": 25776,
+   "bytes": 20524,
    "file": "cs/sp.troudnatec-pasovany.look.1.mp3",
-   "sha1": "67bcd2fff4a483a6f343a22a5fff88b7da218ffb",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "db1e3d14f70296e81d5b667676655c4b04101719",
    "text": "Má červenooranžový pás a bílý okraj.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec-pasovany.look.2": {
-   "bytes": 15552,
+   "bytes": 13209,
    "file": "cs/sp.troudnatec-pasovany.look.2.mp3",
-   "sha1": "0ee20408c50aae1017de7d2eb4d695f64326d9b7",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "0c364316201f65736d0e5006bce509e7e3458521",
    "text": "Je tvrdý jako dřevo.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec-pasovany.name": {
-   "bytes": 16272,
+   "bytes": 12164,
    "file": "cs/sp.troudnatec-pasovany.name.mp3",
-   "sha1": "42715505fa7f55e755487f42f4e28927a9ac000a",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "914412b87a4671fa8bb72bf4e2ae4e421ba68a1d",
    "text": "Troudnatec pásovaný.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec-pasovany.thatIs": {
-   "bytes": 17712,
+   "bytes": 14254,
    "file": "cs/sp.troudnatec-pasovany.thatIs.mp3",
-   "sha1": "6c570851336f8957ff05ccbfd9970727df20f38a",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "37a1c35183c4cd42b1389068479d456b039ce147",
    "text": "To je troudnatec pásovaný.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec-pasovany.twinTell": {
-   "bytes": 39600,
+   "bytes": 30346,
    "file": "cs/sp.troudnatec-pasovany.twinTell.mp3",
-   "sha1": "debcfb32efd8bd5319aa6942dfa9708a2fc7bc17",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "88009ddd84a456efb3a1eb2094f6fd8927ecfeef",
    "text": "Má červený pás a bílý okraj. Kopytovitý je celý šedý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec.caution": {
-   "bytes": 24624,
+   "bytes": 18852,
    "file": "cs/sp.troudnatec.caution.mp3",
-   "sha1": "61dbf9fb2add05bc13756942f767b3ea89331662",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "cfbe16f43073b753e60d4c7d8b82bbac6af5daa0",
    "text": "Je tvrdý jako dřevo, a proto se nejí.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec.fact": {
-   "bytes": 40032,
+   "bytes": 29510,
    "file": "cs/sp.troudnatec.fact.mp3",
-   "sha1": "3bea81097b8167b537c61698271b2e26ace17aec",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b44a8940cf71681408f9cb6ad6633d6976764f76",
    "text": "Lidé z něj kdysi rozdělávali oheň. Nosil ho i pravěký Ötzi.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec.group": {
-   "bytes": 34848,
+   "bytes": 27211,
    "file": "cs/sp.troudnatec.group.mp3",
-   "sha1": "54a28fbe4047fbf584e33cae13297398f3470023",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "61dde900648db0f186315f60a8ace9de0c9d914f",
    "text": "Troudnatec kopytovitý je nejedlá houba. Ta se nejí.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec.kdo.iAm": {
-   "bytes": 19584,
+   "bytes": 15508,
    "file": "cs/sp.troudnatec.kdo.iAm.mp3",
-   "sha1": "b1ba4bf00ba28ce88c016121be216300359c2f85",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "2dd1601a044693a696f6a93efe77f5f8bb1bd8d7",
    "text": "Já jsem troudnatec kopytovitý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec.kdo.where": {
-   "bytes": 18288,
+   "bytes": 15508,
    "file": "cs/sp.troudnatec.kdo.where.mp3",
-   "sha1": "1e122e6ab893b6b09599ed9f4f4285515c02aa02",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "6ea643e2f948d11c4ae0bc823dd2ccf73e5bc380",
    "text": "Kde je troudnatec kopytovitý?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec.kdo.yes": {
-   "bytes": 26640,
+   "bytes": 21777,
    "file": "cs/sp.troudnatec.kdo.yes.mp3",
-   "sha1": "e86c56a1d1373ba831016c33591b6924e6202d06",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "4442739df28b1fcba789826075978fd9a2b2ee4f",
    "text": "Ano! To je troudnatec kopytovitý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec.kosik": {
-   "bytes": 20448,
+   "bytes": 18434,
    "file": "cs/sp.troudnatec.kosik.mp3",
-   "sha1": "e7052ad1125065bb3678d5088921e4dabedf4e60",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "89c605db4ce358fd92f3676d35f8e4523c01b03d",
    "text": "Kam patří troudnatec kopytovitý?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec.look.0": {
-   "bytes": 2160,
+   "bytes": 26166,
    "file": "cs/sp.troudnatec.look.0.mp3",
-   "sha1": "afaf011a56f2bcf0ea561b6bb2975fc0c2f1a6cd",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "7229d59439ef20a5c2f7ae649ded404b3a1e48d6",
    "text": "Vypadá jako koňské kopyto přilepené na stromě.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec.look.1": {
-   "bytes": 19152,
+   "bytes": 14672,
    "file": "cs/sp.troudnatec.look.1.mp3",
-   "sha1": "1d6d85563a6271830d84a2aff32a23e14987eda2",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "15ec2d2fd1dcbc18b816eed8b4983c3c5330289a",
    "text": "Je šedý a tvrdý jako dřevo.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec.look.2": {
-   "bytes": 17856,
+   "bytes": 14672,
    "file": "cs/sp.troudnatec.look.2.mp3",
-   "sha1": "ea11ff48b997e1b52a6202b896a8309487013806",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b67190691e246583255d52ba3d2cc9f90677c4ae",
    "text": "Má proužky jako letokruhy.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec.name": {
-   "bytes": 16848,
+   "bytes": 12791,
    "file": "cs/sp.troudnatec.name.mp3",
-   "sha1": "2a0f6f8aa0bb83a8ea5caa29ecc71013a6b73d54",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "43bc0b9f4a343c5eace5c9e63362ab1360486234",
    "text": "Troudnatec kopytovitý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec.thatIs": {
-   "bytes": 18432,
+   "bytes": 15717,
    "file": "cs/sp.troudnatec.thatIs.mp3",
-   "sha1": "89c402ee7ef435ab1ab12989e9994cea2513d4d9",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "654b147b5bf3b6684c90b4635f5b9f3752af54aa",
    "text": "To je troudnatec kopytovitý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.troudnatec.twinTell": {
-   "bytes": 40896,
+   "bytes": 30973,
    "file": "cs/sp.troudnatec.twinTell.mp3",
-   "sha1": "db93c983814d8cb6a04c55a4a9223ce7a56a24e2",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "57b217a5b759d0e7e4d51c9809ed1aaaa1172a8e",
    "text": "Je šedý, bez červeného pásku. Pásovaný má červený pás.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.vaclavka.caution": {
-   "bytes": 48528,
+   "bytes": 46646,
    "file": "cs/sp.vaclavka.caution.mp3",
-   "sha1": "3d8923dfdfdecb79888630523724a5b3d4aaa5e5",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "553d7ddb4dc8f97e10127d8ebd172aca620f612c",
    "text": "Jí se jen uvařená. Pozor na jedovatou třepenitku! Rozhodne dospělý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.vaclavka.fact": {
-   "bytes": 34560,
+   "bytes": 28465,
    "file": "cs/sp.vaclavka.fact.mp3",
-   "sha1": "235b1da2c77e660be6a7b77d6ab175853326780b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b39d7d5a255dbc9f8f6d79cb51f4b04ee1c33225",
    "text": "Roste ve velkých trsech na pařezech. Je medově žlutá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.vaclavka.group": {
-   "bytes": 22320,
+   "bytes": 19897,
    "file": "cs/sp.vaclavka.group.mp3",
-   "sha1": "972b24372a21beb6af9b42e53c8a8feaca47d5f3",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "d7cbc8397b4db6eb4fdddf1a9d63cd84313ecb58",
    "text": "Václavka obecná je jedlá houba.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.vaclavka.kdo.iAm": {
-   "bytes": 18864,
+   "bytes": 13836,
    "file": "cs/sp.vaclavka.kdo.iAm.mp3",
-   "sha1": "bf8e167b0f880a9142a1e0a5547912328a1d15f6",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "978c67fc30def0cddb88246eb4cb62c4a2eb2ce4",
    "text": "Já jsem václavka obecná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.vaclavka.kdo.where": {
-   "bytes": 17424,
+   "bytes": 13627,
    "file": "cs/sp.vaclavka.kdo.where.mp3",
-   "sha1": "ebeccae6d0f8b591e9a1088369a4c70f4923bbd1",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "1befcb1b66411156826e9de987711cd94ccf2d34",
    "text": "Kde je václavka obecná?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.vaclavka.kdo.yes": {
-   "bytes": 25920,
+   "bytes": 16971,
    "file": "cs/sp.vaclavka.kdo.yes.mp3",
-   "sha1": "9bdbc1b2833ad09969748fa06edafc12851634bd",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ca0e9659a6207034fb5b1ad696c0247bb4a30788",
    "text": "Ano! To je václavka obecná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.vaclavka.kosik": {
-   "bytes": 19440,
+   "bytes": 15717,
    "file": "cs/sp.vaclavka.kosik.mp3",
-   "sha1": "3a70edb443e6983f7a25a9fc442ef8620d2dee1e",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "e2d1a527e96e6db58860d55e24f4dabbad35f963",
    "text": "Kam patří václavka obecná?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.vaclavka.look.0": {
-   "bytes": 21600,
+   "bytes": 18016,
    "file": "cs/sp.vaclavka.look.0.mp3",
-   "sha1": "ff70e98ce2e9fd2040a016c2356bd93427aca9d4",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "4b02fbdf2496cc5fc9cfccee3b2c91503d5694cd",
    "text": "Roste v trsech na dřevě a pařezech.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.vaclavka.look.1": {
-   "bytes": 25344,
+   "bytes": 22195,
    "file": "cs/sp.vaclavka.look.1.mp3",
-   "sha1": "bf8e875191f4ed3b31ccd4ed42dcfe1b9e4d582d",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "e1d1351dd1a4fb999960c3791cf6e05faad45f5f",
    "text": "Medový klobouk má uprostřed tmavé šupinky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.vaclavka.look.2": {
-   "bytes": 18144,
+   "bytes": 11328,
    "file": "cs/sp.vaclavka.look.2.mp3",
-   "sha1": "0079e6de47b4a650be2b7d6e22125a6281eefb1f",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "5326e17057795a6f6d8a8581e77ff649fac05c69",
    "text": "Na noze má bílý prsten.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.vaclavka.name": {
-   "bytes": 16416,
+   "bytes": 11328,
    "file": "cs/sp.vaclavka.name.mp3",
-   "sha1": "4f6ca12869a8cc0778f864d25837027dbfb5ce37",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "9244a91b2c3586f8b336a6cfd31ba95c317b9e55",
    "text": "Václavka obecná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.vaclavka.thatIs": {
-   "bytes": 17856,
+   "bytes": 13209,
    "file": "cs/sp.vaclavka.thatIs.mp3",
-   "sha1": "edf1c612a58eb070e07d41a4a4ffea1247127a97",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "5a182ce3fc743ebd31dd719d25bb6d40b443b11b",
    "text": "To je václavka obecná.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.vaclavka.twinTell": {
-   "bytes": 35856,
+   "bytes": 28883,
    "file": "cs/sp.vaclavka.twinTell.mp3",
-   "sha1": "0695c7a80f09039e26dfc3893f486df9b71f0405",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "7b738bbb1b6e6a03391d48a74766cac4dd84893a",
    "text": "Na noze má prsten. Třepenitka žádný prsten nemá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.zlucnik.caution": {
-   "bytes": 36720,
+   "bytes": 28883,
    "file": "cs/sp.zlucnik.caution.mp3",
-   "sha1": "38cbe88d93a6828d4d7354bf5fcfaafa9a99a863",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b4996d84f8baf256e548072b363054aa05a4c260",
    "text": "Není jedovatý, ale je moc hořký. Necháme ho v lese.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.zlucnik.fact": {
-   "bytes": 35568,
+   "bytes": 27629,
    "file": "cs/sp.zlucnik.fact.mp3",
-   "sha1": "fedb2e14450b7989b101699154692166825465f5",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "f022e308770cec7e47f6952b513e73d77dff05d5",
    "text": "Je strašně hořký. Jeden kousek pokazí celé jídlo.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.zlucnik.group": {
-   "bytes": 31824,
+   "bytes": 20941,
    "file": "cs/sp.zlucnik.group.mp3",
-   "sha1": "2323ec0081eebd6584672cca1e2c0cd3be92e241",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "a8a184a61e67ef42b6a60f5ce9010fddb3e66497",
    "text": "Hřib žlučník je nejedlá houba. Ta se nejí.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.zlucnik.kdo.iAm": {
-   "bytes": 16848,
+   "bytes": 12791,
    "file": "cs/sp.zlucnik.kdo.iAm.mp3",
-   "sha1": "00456afe1574a44f51adae10a85a8a41e7bda3a1",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "39d9768a3f03a94231c36d1aa3ada8c004d595bc",
    "text": "Já jsem hřib žlučník.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.zlucnik.kdo.where": {
-   "bytes": 15552,
+   "bytes": 13209,
    "file": "cs/sp.zlucnik.kdo.where.mp3",
-   "sha1": "96af02ccd648d438d47a0d05aec37784fc82c007",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "55f3c440036ca7266c41f433e046d0465c4abe8b",
    "text": "Kde je hřib žlučník?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.zlucnik.kdo.yes": {
-   "bytes": 23616,
+   "bytes": 15717,
    "file": "cs/sp.zlucnik.kdo.yes.mp3",
-   "sha1": "17ce354dfde50d469660f52df863be212b088d21",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b7cd26c9113d3986761978ea96600e6859c9b2a2",
    "text": "Ano! To je hřib žlučník.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.zlucnik.kosik": {
-   "bytes": 17424,
+   "bytes": 14254,
    "file": "cs/sp.zlucnik.kosik.mp3",
-   "sha1": "65bc28ea525c2bfc4c42d5ef25b84c812b6a89b9",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "a0c203ef5c23ee73229db67641156f35271e1957",
    "text": "Kam patří hřib žlučník?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.zlucnik.look.0": {
-   "bytes": 21168,
+   "bytes": 18016,
    "file": "cs/sp.zlucnik.look.0.mp3",
-   "sha1": "6e4a2a9aabca2ebda81e45530f9c40f6562bb38b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "4baa414a3fbbdb504ca02329c5a29f638043e2df",
    "text": "Vypadá skoro jako hřib smrkový.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.zlucnik.look.1": {
-   "bytes": 20880,
+   "bytes": 16971,
    "file": "cs/sp.zlucnik.look.1.mp3",
-   "sha1": "d25b6fafd4b302ef271520cf96541ab60feec7f6",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "2e4e3409d303f869b4a051eef0ace9061b5b9d46",
    "text": "Pod kloboukem má růžové dírky.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.zlucnik.look.2": {
-   "bytes": 20160,
+   "bytes": 16135,
    "file": "cs/sp.zlucnik.look.2.mp3",
-   "sha1": "c573d4e4d152948d34bba3a5fe0c81e324821680",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "397a551f7d9ff2cf06a8432acfba959afd1b6cab",
    "text": "Na noze má tmavou hnědou síťku.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.zlucnik.name": {
-   "bytes": 13968,
+   "bytes": 9866,
    "file": "cs/sp.zlucnik.name.mp3",
-   "sha1": "51f9df9f42013f4dbc7e34fc8ec762f6520ba6e6",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "bcb29db05230283ce24df22c50c3de77794133b1",
    "text": "Hřib žlučník.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.zlucnik.thatIs": {
-   "bytes": 15552,
+   "bytes": 12373,
    "file": "cs/sp.zlucnik.thatIs.mp3",
-   "sha1": "bd82942a25e77b3320ade531918783326f6c260a",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "f4d66b32664626a9dad61a200f446d8e06c0380c",
    "text": "To je hřib žlučník.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "sp.zlucnik.twinTell": {
-   "bytes": 40032,
+   "bytes": 31808,
    "file": "cs/sp.zlucnik.twinTell.mp3",
-   "sha1": "bee56ab50546325c045aae778dffdce8ba2cbc61",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "0128dc921e93c0ccb113529b45ba0f14d74f4096",
    "text": "Dírky pod kloboukem má růžové. Hřib smrkový je má světlé.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.album.empty": {
-   "bytes": 26496,
+   "bytes": 15090,
    "file": "cs/ui.album.empty.mp3",
-   "sha1": "546569a50b781db5947390e911c8c5c643e7e6a9",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "bf4631ce3953b93ef142fe72711d63cbf56216cc",
    "text": "Zatím tu nic není. Pojď hrát!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.album.newPages": {
-   "bytes": 17280,
+   "bytes": 13209,
    "file": "cs/ui.album.newPages.mp3",
-   "sha1": "60cfe81f72fade5567ad69292893806b2fdf5c76",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "730402b65dedd510e5cac28a7e3136ba78e3267c",
    "text": "Album má nové stránky!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.album.unknown": {
-   "bytes": 19584,
+   "bytes": 14254,
    "file": "cs/ui.album.unknown.mp3",
-   "sha1": "f7c9f9b7dca713c62edf2eeb7f7c54fdb5fce55a",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "57ea58f046e141935dc925b67c11e060c39bd0c2",
    "text": "Tuhle houbičku ještě hledáš.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.animal.srnka": {
-   "bytes": 11232,
+   "bytes": 7567,
    "file": "cs/ui.animal.srnka.mp3",
-   "sha1": "0cbb87157ef40d8e29bc6b1596e6f2f3cbedbc17",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "0bb37ea1f87c19d683236c20c0af3079aca078d5",
    "text": "Srnka!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.animal.veverka": {
-   "bytes": 11232,
+   "bytes": 8403,
    "file": "cs/ui.animal.veverka.mp3",
-   "sha1": "5c837065f12fb7ba3e9ab7d280ba48bce49c4581",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b0ea50137ad45066ae6678621be6b09671b4d42e",
    "text": "Veverka!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.animal.zajic": {
-   "bytes": 11232,
+   "bytes": 7149,
    "file": "cs/ui.animal.zajic.mp3",
-   "sha1": "2a5dfd789aeb2cbc1ace4d4980507de1b9dc8fdb",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ef48687db7d68280b93d5e7ec6592793838b57cc",
    "text": "Zajíc!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.card.photoMissing": {
-   "bytes": 15696,
+   "bytes": 12164,
    "file": "cs/ui.card.photoMissing.mp3",
-   "sha1": "69f631d1d367b2e4d696007cc5fdd8bae3f98e7e",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "d5174d700a0131622fc9b1452542f4edc9414058",
    "text": "Fotka zatím chybí.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.card.realPhoto": {
-   "bytes": 14688,
+   "bytes": 11328,
    "file": "cs/ui.card.realPhoto.mp3",
-   "sha1": "b711535149e4dc8da35ca234ad0c56ca66a6b3a0",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8101b9cf608f008dca69add33108f008bc32d741",
    "text": "Skutečná fotka",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.feedback.tryAgain": {
-   "bytes": 12960,
+   "bytes": 9030,
    "file": "cs/ui.feedback.tryAgain.mp3",
-   "sha1": "bc58b6c37cba7eef46de8b22764866111a004e1d",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8506e31dac45698c39d80d7f77b6aec9e3f53fd4",
    "text": "Zkus to znovu.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.kdo.done": {
-   "bytes": 29232,
+   "bytes": 20941,
    "file": "cs/ui.kdo.done.mp3",
-   "sha1": "6cbf4b31028d1bdb4df6d41e12e48b82d2f22b8e",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "6f5d2105526b4c0ca273cbcb8c212c2fef29207b",
    "text": "Výborně! Všechny houbičky jsi poznala.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.kosik.basket": {
-   "bytes": 12096,
+   "bytes": 8821,
    "file": "cs/ui.kosik.basket.mp3",
-   "sha1": "ff0de9ac85f2939c464743759e4976b3799aeedf",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "1a5c536dacec3c3742cd0bb0f114aab65a175c71",
    "text": "Do košíku",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.kosik.done": {
-   "bytes": 24624,
+   "bytes": 13209,
    "file": "cs/ui.kosik.done.mp3",
-   "sha1": "f3e3a5dc692e9f68fed8cfbb8c82e37920fc5b21",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ceac987165b4a133116efefae23f23a036b53663",
    "text": "Výborně! Košík je plný.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.kosik.edibleToZone": {
-   "bytes": 23904,
+   "bytes": 18434,
    "file": "cs/ui.kosik.edibleToZone.mp3",
-   "sha1": "5580f8149702073de3e8cd5bddbf830784958f38",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8523e8529f729911045149308f9cf2865479254c",
    "text": "Tuhle můžeme s dospělým dát do košíku.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.kosik.inBasket": {
-   "bytes": 30816,
+   "bytes": 22195,
    "file": "cs/ui.kosik.inBasket.mp3",
-   "sha1": "85076d5f3817a7801157e9bad6f9c036449343d2",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b7bb9f665a67229b5d5a98740f7781ddd54d58f5",
    "text": "Do košíku! S dospělým ji můžeme sbírat.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.kosik.inZone": {
-   "bytes": 20160,
+   "bytes": 14254,
    "file": "cs/ui.kosik.inZone.mp3",
-   "sha1": "e70f8002c50f06209984f762889796c1fd9fb06b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b5d9d849d136bab4184905baaa948281a82dd8ea",
    "text": "Správně, zůstanu v lese.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.kosik.inedibleBounce": {
-   "bytes": 28224,
+   "bytes": 20941,
    "file": "cs/ui.kosik.inedibleBounce.mp3",
-   "sha1": "de01ab7165820a7b46eefacb0bb55268756ef9b6",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "40df1f0695baa102a1c56574ad55764649e9bbb3",
    "text": "Já jsem nejedlá. Necháme mě v lese.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.kosik.intro": {
-   "bytes": 35568,
+   "bytes": 28883,
    "file": "cs/ui.kosik.intro.mp3",
-   "sha1": "86b30f3516592d0d4a78950cf8b6bbdbbed8ad92",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "9001896d6152b3c1719e1116d3224c5918d4e9f0",
    "text": "Jedlé houby dáme do košíku. Ostatní necháme v lese.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.kosik.poisonBounce": {
-   "bytes": 37872,
+   "bytes": 23867,
    "file": "cs/ui.kosik.poisonBounce.mp3",
-   "sha1": "36701cafa063af24fd3232fbf32c02c0102bf663",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "12462ddda1f5230e495419c29ce6cf10a581470a",
    "text": "Pozor! Já jsem jedovatá. Necháme mě v lese.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.kosik.zone": {
-   "bytes": 12384,
+   "bytes": 10910,
    "file": "cs/ui.kosik.zone.mp3",
-   "sha1": "a87461c3cfca61e24ced21cdae58852c89f3c31d",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "1b04c42e96186f70c3a2b7aa2fa4653c4e31c955",
    "text": "Nechat v lese",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.langName": {
-   "bytes": 11232,
+   "bytes": 9030,
    "file": "cs/ui.langName.mp3",
-   "sha1": "c739f9c507d38df76b331335683c2fda8f80d713",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "13c6d78618e8b0e5c0520bf4a3d407441bda5617",
    "text": "Čeština",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.1": {
-   "bytes": 13248,
+   "bytes": 9448,
    "file": "cs/ui.level.1.mp3",
-   "sha1": "40957f94bbb34d16b52e7a7f5dfde95a935daf45",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b4fc4394bdbb1885c86460e581cda1fb68687300",
    "text": "Malý houbař",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.2": {
-   "bytes": 11232,
+   "bytes": 7567,
    "file": "cs/ui.level.2.mp3",
-   "sha1": "b8dc58c5c38fdb8da061471b580cb15f3cdd699b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "05158b525341bce4c4888d7bade09b8e5cae5612",
    "text": "Houbař",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.3": {
-   "bytes": 13104,
+   "bytes": 10284,
    "file": "cs/ui.level.3.mp3",
-   "sha1": "4912d9470b098876c5f51a5816020ef07a1ea496",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "90488ff98b275b98455c8f9b5820dfbfc7fcee4e",
    "text": "Mistr houbař",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint2": {
-   "bytes": 25056,
+   "bytes": 19479,
    "file": "cs/ui.level.lockedHint2.mp3",
-   "sha1": "494130a8d67620f7c70eca6d887fb034127a5c42",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "a6db6bb30f3db49b7ca2451a70411c975c349354",
    "text": "Sbírej nálepky do alba a budeš Houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.1": {
-   "bytes": 28080,
+   "bytes": 24703,
    "file": "cs/ui.level.lockedHint3.1.mp3",
-   "sha1": "8d44055d855714208acf7c2ac6a6ac9a7a069282",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "0a29b581abe97157aa20d2dbf10e728b6ed8820a",
    "text": "Ještě jednu zlatou nálepku a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.10": {
-   "bytes": 28800,
+   "bytes": 24285,
    "file": "cs/ui.level.lockedHint3.10.mp3",
-   "sha1": "eb7ac0ac8d246c580fa781da50b771e0d2398a7a",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "3003d149266b0b1c090f29bc6baee0828188cb82",
    "text": "Ještě 10 zlatých nálepek a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.11": {
-   "bytes": 30672,
+   "bytes": 26166,
    "file": "cs/ui.level.lockedHint3.11.mp3",
-   "sha1": "7ba8b625289c65d7e5b45f5ba6cbb387faf30fd7",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "984ae994057c4b1d034c04c1e9a35776d64efdd2",
    "text": "Ještě 11 zlatých nálepek a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.12": {
-   "bytes": 30096,
+   "bytes": 25539,
    "file": "cs/ui.level.lockedHint3.12.mp3",
-   "sha1": "124e45fc109992c3920ba3f934cf14a8a362b02a",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "37afa62b8a5630fce350d5eeb63d68e41de3011d",
    "text": "Ještě 12 zlatých nálepek a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.13": {
-   "bytes": 30240,
+   "bytes": 25539,
    "file": "cs/ui.level.lockedHint3.13.mp3",
-   "sha1": "a88670372dd45058697e2ff2147208aadea65a3e",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "e2249a43fbf20d8b15576b26ccb5b763f5a13bca",
    "text": "Ještě 13 zlatých nálepek a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.14": {
-   "bytes": 30672,
+   "bytes": 23240,
    "file": "cs/ui.level.lockedHint3.14.mp3",
-   "sha1": "73224fb1aecb349903d79628cb1667ea4ed83c96",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "bf6c22ee6c1bf12122e701bd0851a9386d3cc43a",
    "text": "Ještě 14 zlatých nálepek a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.15": {
-   "bytes": 30528,
+   "bytes": 23658,
    "file": "cs/ui.level.lockedHint3.15.mp3",
-   "sha1": "f116189d6604a180e4927bef169e67836e5236cf",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "dfee18a021d507a632ed10ff358b43852317ae21",
    "text": "Ještě 15 zlatých nálepek a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.16": {
-   "bytes": 30528,
+   "bytes": 23240,
    "file": "cs/ui.level.lockedHint3.16.mp3",
-   "sha1": "82a9ba5392f3fc0b9502d3879eab1d7be7458eb5",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "cbd34503b37a1e0db80ff72ea40e25598f457f24",
    "text": "Ještě 16 zlatých nálepek a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.17": {
-   "bytes": 30960,
+   "bytes": 28047,
    "file": "cs/ui.level.lockedHint3.17.mp3",
-   "sha1": "1bcbccaf7749c745e64db4e096e167b673a3b162",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "34d75cf8b2ad37bb94ca93a79809d172a9c902e3",
    "text": "Ještě 17 zlatých nálepek a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.18": {
-   "bytes": 30960,
+   "bytes": 23658,
    "file": "cs/ui.level.lockedHint3.18.mp3",
-   "sha1": "d0864ba908819e578c73aa98e9130629d7d5158c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "d6904997ac39992f17360794993ba17443e791b8",
    "text": "Ještě 18 zlatých nálepek a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.19": {
-   "bytes": 31104,
+   "bytes": 27211,
    "file": "cs/ui.level.lockedHint3.19.mp3",
-   "sha1": "e795b2acdebba5fdc18abb4f4de915acbd57e8a9",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "92be28489d02bf8716fb1fb95c5c40282d663f2f",
    "text": "Ještě 19 zlatých nálepek a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.2": {
-   "bytes": 27072,
+   "bytes": 21359,
    "file": "cs/ui.level.lockedHint3.2.mp3",
-   "sha1": "aa74634ccabc67827de04b19acf119d8d9fa3d36",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "02ba6d00e0430bdce251c0c9938746cfc6587288",
    "text": "Ještě 2 zlaté nálepky a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.20": {
-   "bytes": 28944,
+   "bytes": 24703,
    "file": "cs/ui.level.lockedHint3.20.mp3",
-   "sha1": "2e1365917ca020a50e2085f04c1067d2c85eb136",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "75776b6e3edf7244204151f4721c804b5159163f",
    "text": "Ještě 20 zlatých nálepek a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.3": {
-   "bytes": 27072,
+   "bytes": 22822,
    "file": "cs/ui.level.lockedHint3.3.mp3",
-   "sha1": "d76af8ff8be3ce5a5fb61965bcd2570ff129d10e",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "beaf2a69a4398f9f33d76824607ad01a29e8ec8a",
    "text": "Ještě 3 zlaté nálepky a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.4": {
-   "bytes": 28080,
+   "bytes": 23658,
    "file": "cs/ui.level.lockedHint3.4.mp3",
-   "sha1": "1ac11f54c1ccef4e6ebe44a1eb1f33dfa274be66",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "1f195810481a22f29bcbcb3f96f92e77a989c098",
    "text": "Ještě 4 zlaté nálepky a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.5": {
-   "bytes": 28224,
+   "bytes": 25121,
    "file": "cs/ui.level.lockedHint3.5.mp3",
-   "sha1": "12be0d17c6129b3fcc252b634768f1ade9cea3b0",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "95f184b9b295e9355c56b7995dd81791e8dc07ed",
    "text": "Ještě 5 zlatých nálepek a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.6": {
-   "bytes": 28800,
+   "bytes": 22822,
    "file": "cs/ui.level.lockedHint3.6.mp3",
-   "sha1": "7649d810919a8f79586530a9ecb44a95dbfd843d",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "e7e82bf82a5b5b59d1f878a256c249ec6ad2f213",
    "text": "Ještě 6 zlatých nálepek a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.7": {
-   "bytes": 28512,
+   "bytes": 23867,
    "file": "cs/ui.level.lockedHint3.7.mp3",
-   "sha1": "ce1db3d255f9c5daeb84a60490b105cb62881db0",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "dbac8c628e2673e99c725b7e045c70d81903f208",
    "text": "Ještě 7 zlatých nálepek a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.8": {
-   "bytes": 28368,
+   "bytes": 27629,
    "file": "cs/ui.level.lockedHint3.8.mp3",
-   "sha1": "ed040b3b09b3d0850e55bff65348403823c7e917",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "13189b46adc6acdcebdd3cd077b156a9aeb5a90f",
    "text": "Ještě 8 zlatých nálepek a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.level.lockedHint3.9": {
-   "bytes": 28944,
+   "bytes": 23867,
    "file": "cs/ui.level.lockedHint3.9.mp3",
-   "sha1": "b0a60ad66c625b724777ff3b2d918893fef62f84",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b6dd11d2ef030a9d1c8d8fe823f5f23b1dfed62e",
    "text": "Ještě 9 zlatých nálepek a budeš Mistr houbař.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.question.group": {
-   "bytes": 25776,
+   "bytes": 19897,
    "file": "cs/ui.question.group.mp3",
-   "sha1": "7a4d62b5636a27c1c0d148cf2eb27a449ad39952",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "5e2d03d42dba7f6f2ab80d682d1c0632a46ef403",
    "text": "Je jedlá, nejedlá, nebo jedovatá?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.safety.short": {
-   "bytes": 21456,
+   "bytes": 16553,
    "file": "cs/ui.safety.short.mp3",
-   "sha1": "b9e247c429ad3d373e52c0907d5304734d56a800",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "61dc41130150d9dfa1c5a56bc7fd8424d1976869",
    "text": "Houby sbíráme jen s dospělým.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.say.deadlyWarn": {
-   "bytes": 19152,
+   "bytes": 16135,
    "file": "cs/ui.say.deadlyWarn.mp3",
-   "sha1": "fe94b2d02961f735428a98b2cd815d046dc348d1",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "dc16a7a1c6f8eee5f3ce9b8e1e385474a778fba5",
    "text": "Na tuhle houbu nikdy nesahej!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.say.greeting": {
-   "bytes": 37872,
+   "bytes": 30346,
    "file": "cs/ui.say.greeting.mp3",
-   "sha1": "c3e1ff5e28cd99bb23032ef166db0a3e6495a672",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "54f2c925b3dd22af226f45948c94cb108dc219dc",
    "text": "Ahoj! Klepni na houbičku a ona ti řekne, jak se jmenuje.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.unlock.gift2": {
-   "bytes": 16704,
+   "bytes": 11746,
    "file": "cs/ui.unlock.gift2.mp3",
-   "sha1": "2b93d624b08c58dea1e5a85efbd39f37d068cc14",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "88c8097ca264c72899ca269014a0d53ac6af5af9",
    "text": "Výprava je otevřená!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.unlock.level2": {
-   "bytes": 28224,
+   "bytes": 20524,
    "file": "cs/ui.unlock.level2.mp3",
-   "sha1": "34643e7293d69444dc546716394022b5f79d5b3e",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b40c6efa5688672dde8dcf47b0bcdc15a9b45eba",
    "text": "Jsi Houbař! Les se ti otevřel dál.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.unlock.level3": {
-   "bytes": 32112,
+   "bytes": 22822,
    "file": "cs/ui.unlock.level3.mp3",
-   "sha1": "d051627ab473cfce62f2b761ee88f0ca2ff4ea24",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "2e85391ce1db0680f5feafe69d730a195714147c",
    "text": "Jsi Mistr houbař! Teď poznáš houby i z fotek.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.adultDecides": {
-   "bytes": 24912,
+   "bytes": 20315,
    "file": "cs/ui.vyprava.adultDecides.mp3",
-   "sha1": "f281dfe973e3c56f41961a4d7ba1bdc98822822b",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "105d79328fc961d6c545e7ac83e66fe082ae5b62",
    "text": "Jestli se smí jíst, rozhodne dospělý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.cooked": {
-   "bytes": 19296,
+   "bytes": 15090,
    "file": "cs/ui.vyprava.cooked.mp3",
-   "sha1": "b489b4c973e94e40771abfca38e5824735f1b538",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "1c2990c5766db13738d7bcddde836687ab30f02c",
    "text": "Tuhle houbu uvaří dospělý.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.done": {
-   "bytes": 34560,
+   "bytes": 25539,
    "file": "cs/ui.vyprava.done.mp3",
-   "sha1": "4a1252f211f1e956bf9834e0e8f36865c1f70860",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "f851d4e7cebb13af5dca860ec9d09db690514a32",
    "text": "Výprava je u konce. Košík ukážeme dospělému.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.end": {
-   "bytes": 20160,
+   "bytes": 12373,
    "file": "cs/ui.vyprava.end.mp3",
-   "sha1": "cee8b77e90692b3d885e5d86719f6f4d2f9b50c5",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8b410ca12661e356e6096141ab41a807f783cedc",
    "text": "Ukaž mi, co máš v košíku.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.fork": {
-   "bytes": 12384,
+   "bytes": 10284,
    "file": "cs/ui.vyprava.fork.mp3",
-   "sha1": "85f817764f367eb056f0b4dd4516af7fd6c656d1",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "279f2abc7246d1e42c3799ea085f906a7b65385a",
    "text": "Kudy půjdeme?",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.fork.down": {
-   "bytes": 14400,
+   "bytes": 11746,
    "file": "cs/ui.vyprava.fork.down.mp3",
-   "sha1": "ad0925334a5ca3f771028183456ca03895520f4d",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "8d2d4b1879abe62ebc1a17660004fcefe9a3af8f",
    "text": "Dolů k potůčku",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.fork.up": {
-   "bytes": 13680,
+   "bytes": 11746,
    "file": "cs/ui.vyprava.fork.up.mp3",
-   "sha1": "84c59c0fd2f2c33b8731ea4487d434ef5f4c7fad",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "90e415c48fa91f18b1ec90c7d331deeeb47a88cb",
    "text": "Nahoru do kopce",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.hint.fern": {
-   "bytes": 16704,
+   "bytes": 12373,
    "file": "cs/ui.vyprava.hint.fern.mp3",
-   "sha1": "6e9a1b41ca74f6e722aeb590eb1aa2d494398c0c",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "709b2cc23a6e961f9312cd0061e56004e7f42d82",
    "text": "Podívej se za kapradí!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.hint.leaves": {
-   "bytes": 15984,
+   "bytes": 12373,
    "file": "cs/ui.vyprava.hint.leaves.mp3",
-   "sha1": "105e50479348a1c0383028e6d3c113ceb212ddd8",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "a5e3e2d962efd41f4518278f490bf9f47568bd9f",
    "text": "Podívej se do listí!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.hint.moss": {
-   "bytes": 14832,
+   "bytes": 10910,
    "file": "cs/ui.vyprava.hint.moss.mp3",
-   "sha1": "d210965e80cea1b3898aa5d10b4527b1f7c7ba74",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ba0f2fb9d7b9ff1a17deadfedefc9bfb892e4327",
    "text": "Podívej se do mechu!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.hint.rock": {
-   "bytes": 2160,
+   "bytes": 12164,
    "file": "cs/ui.vyprava.hint.rock.mp3",
-   "sha1": "ffff172ddbd6ab0d2b7d4a6df77e9be9c6e53895",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "e23c01a12c1149b82e41e47c1498b6870e0af276",
    "text": "Podívej se u kamene!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.hint.wood": {
-   "bytes": 16272,
+   "bytes": 11746,
    "file": "cs/ui.vyprava.hint.wood.mp3",
-   "sha1": "650037d6543dee7efc9b0180ca0b4c642a996114",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "852ba87f7d56f55013b3e0d01ac5dd0811948276",
    "text": "Podívej se u pařezu!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.intro": {
-   "bytes": 63072,
+   "bytes": 49572,
    "file": "cs/ui.vyprava.intro.mp3",
-   "sha1": "84a32ebf7056d76cfb9ae875411282e53e0ea9e6",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "ddac01892ead9f0c908813c1018071ed3536dc89",
    "text": "Jdeme na výpravu do lesa! Podrž šipku a půjdeme dál. Houby hledej v mechu, u kamenů a u pařezů.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.leftOk": {
-   "bytes": 24048,
+   "bytes": 19479,
    "file": "cs/ui.vyprava.leftOk.mp3",
-   "sha1": "83574626ab9e872f45a1727c523dacb374558878",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "327c7393be6964200729833fe857c3a607376f56",
    "text": "Správně, tuhle houbu necháme v lese.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.lockedHint": {
-   "bytes": 27792,
+   "bytes": 25748,
    "file": "cs/ui.vyprava.lockedHint.mp3",
-   "sha1": "aa79a5011ad3beabc3dd8da960b36e5024bbc9f3",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "aae867cc3fde47801e61c1a9283210e775444cc0",
    "text": "Ještě pár nálepek do alba a půjdeme na výpravu!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.notEdible": {
-   "bytes": 24768,
+   "bytes": 19061,
    "file": "cs/ui.vyprava.notEdible.mp3",
-   "sha1": "3df3934f9ca1be3c576be80d15cb61a18f4d3a83",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "77cd6bdd58cc4fcf966f29aa928dbb07227047fc",
    "text": "Tahle houba se nejí, necháme ji v lese.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.toBasket": {
-   "bytes": 11808,
+   "bytes": 8403,
    "file": "cs/ui.vyprava.toBasket.mp3",
-   "sha1": "ad34e72138bd3b0433cb1fb0854cebcfe1cd575d",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "301d99b6084046e3da5975f9cdb8e9ceb6b51e66",
    "text": "Do košíku!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.wait": {
-   "bytes": 2160,
+   "bytes": 11746,
    "file": "cs/ui.vyprava.wait.mp3",
-   "sha1": "6cf21767b956d41dc752343fbf5a4d21a27bfce0",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "c1accd933a6d829751e76116800a381afa6a5094",
    "text": "Počkej, něco tu je!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.warn": {
-   "bytes": 25920,
+   "bytes": 18852,
    "file": "cs/ui.vyprava.warn.mp3",
-   "sha1": "dd0743e719327ae46a034ef6a76ad0eb49006290",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "d6053f2508888df9750a792d41cc14725d3927e9",
    "text": "Nesahej na mě! Jsem jedovatá.",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   },
   "ui.vyprava.warnDeadly": {
-   "bytes": 32544,
+   "bytes": 27211,
    "file": "cs/ui.vyprava.warnDeadly.mp3",
-   "sha1": "41530bef5345805497b8c502c8261c7847eb3e91",
+   "model": "eleven_multilingual_v2",
+   "provider": "elevenlabs",
+   "sha1": "b6243443bd04e317333fd103c1efa403025fb807",
    "text": "Jsem smrtelně jedovatá. Nikdy na mě nesahej!",
-   "voice": "cs-CZ-VlastaNeural"
+   "voice": "Candy - Young and Sweet"
   }
  },
  "en": {

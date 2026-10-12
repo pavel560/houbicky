@@ -9,9 +9,27 @@ Hra pro děti: poznáváme houby (jak se jmenují a zda jsou jedlé, nejedlé ne
 - **Do košíku!** – šest hub: jedlé patří do košíku, ostatní zůstanou v lese. Houbu lze přetáhnout, nebo na ni klepnout a pak klepnout na místo. Chyba se jen vlídně opraví, prohrát nejde.
 - **Houbový kvíz** – hra řekne jméno a dítě vybírá ze tří houbiček. Reproduktor jméno zopakuje.
 - **Album nálepek** – nálepka přibude, když dítě houbu pozná. Zlatý rámeček znamená, že ji poprvé správně určilo v obou hrách.
-- **Koutek pro rodiče** – otevře se podržením ikony rodičů vpravo nahoře po dobu 3 sekund. Obsahuje bezpečnostní větu, úroveň 2 (obličeje bez nápověd, ve výchozím stavu vypnuto), jazyk, rychlost hlasu, zvukové efekty, autory fotografií a smazání postupu.
+- **Koutek pro rodiče** – otevře se podržením ikony rodičů vpravo nahoře po dobu 3 sekund. Obsahuje bezpečnostní větu, obtížnost (úrovně 1–3 a jejich ruční odemčení), jazyk, rychlost hlasu, zvukové efekty, autory fotografií a smazání postupu.
 
 Na iPadu na výšku se kartička skládá pod sebe a ve hrách se zobrazí výzva „Otoč iPad na šířku“.
+
+## Obtížnost (verze 2)
+
+| Úroveň | Název | Houby | Obličeje ve hrách | Kvíz a košík |
+|---|---|---|---|---|
+| 1 | Malý houbař | jen snadné (`"level": 1` v `data/species.json`) | nálada napovídá | možnosti z různých skupin |
+| 2 | Houbař | všechny | neutrální | mezi možnostmi jsou dvojníci |
+| 3 | Mistr houbař | všechny | schválené skutečné fotky, jinak neutrální kresba | dvojníci a otázka „jedlá, nejedlá, nebo jedovatá?“ |
+
+Úroveň 2 a Výprava do lesa se odemknou po 8 nálepkách (celé album úrovně 1); hra to oslaví a les se rozšíří doprava. Úroveň 3 se odemkne po 20 zlatých nálepkách získaných na úrovni 2 nebo 3. Rodič může úrovně i „Výpravu do lesa“ odemknout ručně v Rodičovském koutku. Dítě volí úroveň tlačítkem s rozetou vlevo nahoře v lese; dolů se smí vrátit kdykoli. Nastavení „obličeje bez nápověd“ z verze 1 se při prvním spuštění převede na úroveň 2.
+
+## Výprava do lesa (verze 2)
+
+Malý houbař s ježkem jde po lesní cestičce zleva doprava, přes kopečky a k potůčku. Podržením velké šipky „Dál“ jde, klepnutím dojde k další houbě. Houby rostou v mechu, u kamenů a u pařezů, některé jsou napůl schované. Jedlou nebo nejedlou houbu může dát do košíku, nebo nechat v lese; jedovatou nikdy nezvedne („Nesahej na mě!“). Od úrovně 2 je na cestě rozcestí (nahoru do kopce, nebo dolů k potůčku). Občas přeběhne srnka, zajíc nebo veverka. Na konci ježek projde košík: jedlé pochválí, u nejedlých vysvětlí rozdíl od dvojníka. Nikdy neřekne „špatně“.
+
+## Beta (verze 2) vedle stabilní verze
+
+Workflow nasazuje obě verze najednou: větev `main` na `https://<uživatel>.github.io/houbicky/`, větev `v2` na `https://<uživatel>.github.io/houbicky/beta/`. Beta má vlastní uložený postup (klíč `houbicky.beta.v1`), vlastní service worker i mezipaměť a v rohu pruh „BETA“. Postup dítěte ve stabilní verzi se tím nezmění. Všechno se odvozuje z adresy, žádný zvláštní build není potřeba.
 
 ## Spuštění na Macu
 
@@ -71,17 +89,18 @@ Skript průběžně vypisuje každý druh (`[3/13] kozak … stahuji … hotovo 
 - Když fotka v Commons chybí, skript zkusí náhradní soubor (`alt`) a nakonec hlavní obrázek z anglické Wikipedie podle latinského názvu. Na konci vypíše přehled; řádky `FAILED` je třeba opravit v manifestu.
 - Chyba `CERTIFICATE_VERIFY_FAILED` na Macu: spusťte jednou `Install Certificates.command` ve složce `/Applications/Python 3.x/`, nebo použijte systémový `/usr/bin/python3`.
 
-## Hlasy (nahrané neuronové hlasy)
+## Hlasy
 
-Všechno, co hra říká, je v pevném seznamu vět (`js/phrases.js`). Věty lze předem nahrát přirozenými hlasy Microsoftu (česky Vlasta, anglicky dětský hlas Maisie) přes balíček `edge-tts` (zdarma, bez klíče, potřebuje internet):
+Všechno, co hra říká, je v pevném seznamu vět (`js/phrases.js`). Nahrávky jsou uložené přímo v gitu (`voice/cs/`, `voice/en/`, `voice/index.json`), takže nasazení stránky nepotřebuje žádnou hlasovou službu. Věty bez nahrávky hra řekne hlasem prohlížeče.
 
-```bash
-pip3 install edge-tts
-node dev/export_phrases.mjs     # seznam vět → voice/phrases.json
-python3 make_voice.py           # nahraje jen nové nebo změněné věty → voice/cs/*.mp3, voice/en/*.mp3
-```
+**Který hlas se použije**, určuje `voice/config.json` pro každý jazyk zvlášť:
 
-Skript průběžně vypisuje každou větu. Když se text věty změní (např. v `data/species.json`), stačí oba příkazy spustit znovu; nahraje se jen to, co se změnilo. Věty bez nahrávky hra řekne hlasem prohlížeče. Rychlost hlasu se nastavuje v Rodičovském koutku.
+- `"provider": "elevenlabs"`: hlas z ElevenLabs podle jména (`voice_name`, hlas musí být v účtu v „My voices“), model `model_id` a nastavení `voice_settings`. Klíč je v tajemství repozitáře `ELEVENLABS_API_KEY`.
+- `"provider": "edge"`: hlas Microsoft (`voice`, `rate`), zdarma, ale ze serverů GitHubu je teď blokovaný.
+
+**Změna českého hlasu:** v `voice/config.json` přepište `voice_name` (nebo model či nastavení) a změnu pushněte do větve `v2`. Workflow „Record voices“ pak nahraje všechny české věty novým hlasem, nahrávky uloží do gitu a stránku znovu nasadí. Před nahráváním ověří, že na to v ElevenLabs zbývá dost znaků; jinak nenahraje nic. Nový hlas se použije jen tehdy, když se podaří nahrát úplně všechny věty, takže se v jedné hře nikdy nemíchají dva hlasy. Ručně lze nahrávání spustit v Actions → Record voices → Run workflow.
+
+Na počítači: `node dev/export_phrases.mjs` a `python3 make_voice.py` (pro ElevenLabs s proměnnou `ELEVENLABS_API_KEY`).
 
 ## Zveřejnění na GitHub Pages (iPad v autě bez internetu)
 

@@ -42,7 +42,7 @@
        nejedlá   = rounded square + X   (slate blue)
        jedovatá  = triangle + !         (red)
        smrtelně  = octagon + skull + hazard stripes + "Pozor!" voice (near-black on red)
-     CVD check (Machado 2009, CIELAB dE76): worst pair edible↔poison under deuteranopia = 23
+     CVD check (physiological CVD simulation, CIELAB dE76): worst pair edible↔poison under deuteranopia = 23
      (L* 55 vs 50) → colour alone is NOT enough; shapes carry the meaning. */
   --edible:         #2f9b57;
   --edible-ink:     #1d6b3a;   /* text on paper, 5.9:1 */
@@ -63,6 +63,15 @@
   --try-again:      #d99a2b;   /* warm amber "zkus to znovu", not an error colour */
   --star:           #f2b01e;
   --star-ink:       #b8780a;
+
+  /* ------------------------------------------------------------------ v2: difficulty levels (rosette badges i-level-1..3)
+     Bronze / silver / gold = universally read ranking; deliberately NOT green/red/blue so levels never
+     collide with the edibility language. Shape = 12-lobe rosette (edibility uses circle/square/triangle/octagon). */
+  --level-1:        #c98d4a;   /* Malý houbař — bronze (wicker) */
+  --level-2:        #b9bec8;   /* Houbař — silver */
+  --level-3:        #f2b01e;   /* Mistr houbař — gold */
+  --locked:         #8a7660;   /* locked door / card ink */
+  --locked-fill:    #e9dcc0;
 
   /* ------------------------------------------------------------------ typography */
   --font-display:   "Grandstander", "Baloo 2", "Comic Sans MS", system-ui, sans-serif;
@@ -133,6 +142,13 @@
                         1.108 26%, 1.103, 1.088 30.6%, 1.025 38.5%, 1.004 42.7%, .992 48.1%, 1.001 59.7%, 1);
   --ease-bounce: linear(0, .25 9%, .79 20%, 1 27%, .88 36%, .86 40%, 1 52%, .97 60%, 1 72%, .995 82%, 1);
 
+  /* v2: Výprava do lesa (3D walk) */
+  --t-step:       1600ms;  /* camera glide between stations */
+  --t-pick:       700ms;   /* mushroom arcs from the forest into the HUD basket */
+  --t-warn:       420ms;   /* "Nesahej na mě!" bubble spring-in */
+  --t-unlock:     3200ms;  /* level / Výprava unlock ceremony (rosette in, rays, gift card) */
+  --bob-amp:      .02;     /* camera head-bob, metres (0 under reduced motion) */
+
   /* ------------------------------------------------------------------ layering */
   --z-scene: 0;  --z-chars: 10;  --z-ui: 20;  --z-drag: 30;  --z-card: 40;  --z-celebrate: 50;  --z-parents: 60;
 }
@@ -143,5 +159,6 @@
     --t-celebrate: 1200ms;     /* keep a static "done" state visible */
     --idle-sway: 0ms;          /* JS: skip idle loops when this is 0 */
     --ease-spring: linear; --ease-bounce: linear;
+    --t-step: 1ms; --t-pick: 1ms; --t-warn: 1ms; --t-unlock: 1500ms; --bob-amp: 0;
   }
 }

@@ -8,8 +8,10 @@ photos/*.part
 !design/*.png
 # generated (CI / scripts): photos, voice recordings, phrase export
 photos/*.jpg
-voice/cs/
-voice/en/
+# voice/cs/ and voice/en/ are COMMITTED (record-voices.yml); only the export and temp folders stay out
+voice/.staging-*/
 voice/phrases.json
 *.part.mp3
 _site/
+# snímky z e2e testů (generované)
+dev/screens/

@@ -2,6 +2,7 @@
 //
 // iOS/iPadOS: the first speak() must happen inside a user gesture. This module primes speech on the
 // first pointerup/touchend/click/keydown automatically; after that, speak() works from timers too.
+import { voiceUrl } from './voiceurl.js';
 
 const LANG_TAG = { cs: 'cs-CZ', en: 'en-GB' };
 
@@ -212,7 +213,7 @@ if (typeof window !== 'undefined' && isSupported()) {
 // Every line the game says is a catalogue phrase (js/phrases.js). If voice/<lang>/<id>.mp3 exists for the
 // CURRENT text (voice/index.json, written by make_voice.py), it plays through one reused <audio>; otherwise
 // the same text goes to Web Speech above. Events: 'speech:say' {ids, lang, text} once per call,
-// 'speech:file' {id, lang, ok} per recording played.
+// 'speech:file' {id, lang, ok, rate} per recording played.
 let catalogue = {}; let voiceIndex = {};
 let audio = null; let playToken = 0; let endCurrent = null; let silent = null;
 
@@ -254,6 +255,7 @@ function playFile(url, rate) {
     try {
       a.src = url;
       a.defaultPlaybackRate = rate; a.playbackRate = rate;
+      a.preservesPitch = true; a.webkitPreservesPitch = true;   // slower, not deeper
       const p = a.play();
       if (p) p.catch(() => fin(null));
     } catch { fin(null); }
@@ -283,8 +285,8 @@ export async function sayAll(ids, lang = 'cs', { rate = 1, ttsRate } = {}) {
     if (my !== playToken) return false;
     let ok = null;
     if (hasRecording(id, lang)) {
-      ok = await playFile(`voice/${voiceIndex[lang][id].file}`, rate);
-      if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('speech:file', { detail: { id, lang, ok } }));
+      ok = await playFile(voiceUrl(voiceIndex[lang][id]), rate);
+      if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('speech:file', { detail: { id, lang, ok, rate } }));
     }
     if (my !== playToken) return false;
     if (ok === null) ok = await speak(phraseText(id, lang), lang, ttsRate ? { rate: ttsRate } : {});

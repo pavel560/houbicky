@@ -136,6 +136,10 @@ const SOUNDS = {
     [[196, 0.34, 1.6], [392, 0.10, 1.1], [588, 0.05, 0.8]].forEach(([f, peak, decay]) =>
       tone({ freq: f, t, peak, attack: 0.01, decay }));
   },
+  hop(t) {
+    // soft little footsteps of an animal running across the trail
+    [0, 0.11, 0.22].forEach((dt, i) => tone({ type: 'triangle', freq: 330 - i * 30, to: 220, glide: 0.05, t: t + dt, peak: 0.14, attack: 0.004, decay: 0.07 }));
+  },
   whoosh(t) {
     const src = ctx.createBufferSource();
     src.buffer = noise();
@@ -169,6 +173,7 @@ export const tryAgain = () => play('tryAgain');
 export const sparkle = () => play('sparkle');
 export const whoosh = () => play('whoosh');
 export const bell = () => play('bell');
+export const hop = () => play('hop');
 
 // Unlock on user activations; keep listening because iOS suspends ("interrupted") after backgrounding.
 if (typeof window !== 'undefined' && Ctx) {

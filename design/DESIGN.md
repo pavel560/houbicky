@@ -1,5 +1,7 @@
 # Houbičky: design spec
 
+> **v2:** levels, „Výprava do lesa“ and the 25-species Les/Album are specified in `design/DESIGN-v2.md`, which extends and in places replaces this file.
+
 Designer · 2026-10-11 · Personal family surface, **outside the fleet registers**: no ph.json, no LIVE_REGISTER row, no design-baseline compile (per brief). Tokens-only discipline holds inside the app: every colour, size and duration comes from `design/tokens.css`.
 
 **Verdict.** The game is a living autumn picture-book page. Every mushroom is a character whose facial mood is the safety lesson: edible friends smile, inedible grumps pull a face or doze, and poisonous tricksters smirk under red „Pozor!“ marks. The real identifying features are drawn with botanical care and carry numbered pins, so the mood helps her remember the group and the pins teach her the mushroom.
@@ -24,7 +26,7 @@ Art lives in `../art/`: 13 × `<id>.svg`, `scene-forest.svg`, `basket.svg` (+ `b
 **One idea:** *the face is the lesson, the pins are the knowledge.* A 5-year-old remembers characters long before she remembers features. So each species is a character whose expression places it in its group at a glance, and whose 2–3 identifying features are pointed at, named and spoken.
 
 **Visual direction: a Czech storybook at golden hour, not clip-art.**
-- Lineage: the warm, flat-but-painterly forests of Czech animated storybooks (Zdeněk Miler's Krtek backgrounds, Josef Lada's warm colour fields), lit by a late-October sun low on the right. *[Designer's reference choice, not a claim about either artist's palette.]*
+- Lineage: the warm, flat-but-painterly forests of classic Czech animated storybooks and picture-book illustration (warm colour fields, simple inked shapes), lit by a late-October sun low on the right. *[Designer's reference choice.]*
 - **Ink:** warm umber `--ink #3b2417` at 3 px on characters and UI (never black). Hand-drawn feel comes from slightly jittered outlines, varied inner line weights and texture speckles on caps.
 - **Volume:** gouache-style. Caps carry a radial light from the upper left plus a soft highlight crescent; stems are lit like cylinders. No glossy 3D and no neon.
 - **Depth:** the scene has four planes (sky, misty far spruces, inked mid trees, inked forest floor). Atmospheric perspective means the far layer has no ink and sits under a warm haze, while everything you can touch is inked.
@@ -64,7 +66,7 @@ The researcher's nicknames happen to fit the moods (Hořčák, Kopýtko, Puntík
 | jedovatá | triangle | ! | `--poison #c92f2a` | jedovatá / poisonous | `.warn` „!“ marks in the art |
 | smrtelně jedovatá | **octagon (stop sign)** | skull and crossbones | `--deadly #2a0f14` + red | smrtelně jedovatá / deadly poisonous | `--deadly-stripes` frame, ribbon, low bell sound, slow 1 Hz glow pulse on the badge only |
 
-- **Colour-blind check** (Machado 2009 simulation, CIELAB ΔE76): the worst pair is edible ↔ poison under deuteranopia, ΔE 23 (L\* 55 vs 50). Colour alone is therefore **not** enough, which is why shape and glyph carry the meaning. I searched alternative greens and reds and found at most ΔE 26, so it was not worth leaving traffic-light semantics a child already knows.
+- **Colour-blind check** (standard physiological CVD simulation matrices, CIELAB ΔE76): the worst pair is edible ↔ poison under deuteranopia, ΔE 23 (L\* 55 vs 50). Colour alone is therefore **not** enough, which is why shape and glyph carry the meaning. I searched alternative greens and reds and found at most ΔE 26, so it was not worth leaving traffic-light semantics a child already knows.
 - Glyph on badge: white. Contrast is 3.5 : 1 or better (graphics tier, ≥ 3 : 1). Text on paper uses the `*-ink` variants: edible 5.96, inedible 7.11, poison 7.41, ink 13.2 : 1.
 - Badges are symbols in `ui-icons.svg`: `i-badge-jedla`, `i-badge-nejedla`, `i-badge-jedovata`, `i-skull`. Their fills read `var(--edible)` and so on, so the tokens drive them.
 

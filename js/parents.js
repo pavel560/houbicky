@@ -3,6 +3,7 @@ import { species, byId, credits, manifest, photoIds, photoVia, photoShown, photo
 import { h, icon, esc, name, say } from './ui.js';
 import { t, getLang, setLang, applyI18n } from './i18n.js';
 import * as store from './store.js';
+import { unlockState, effectiveLevel, setLevel, UNLOCK_STICKERS } from './levels.js';
 import * as sound from './sound.js';
 import { go } from './router.js';
 
@@ -32,6 +33,17 @@ function photoGrid() {
   }).join('')}</ul>`;
 }
 
+function levelRows() {
+  const st = unlockState(); const cur = effectiveLevel();
+  const segBtns = [1, 2, 3].map((n) => `<button class="seg-btn${n === cur ? ' on' : ''}" aria-pressed="${n === cur}" data-act="level" data-v="${n}"
+    ${st[n].unlocked ? '' : 'disabled aria-disabled="true"'} title="${esc(st[n].unlocked ? t(`level.${n}`) : t('level.locked'))}">${n} · ${esc(t(`level.${n}`))}</button>`).join('');
+  const unlockRow = (key, label) => `<div class="row sub"><span>${esc(t(label))}</span>${st[key].auto
+    ? `<span class="muted">${esc(t('parents.unlockedAuto'))}</span>` : sw(st[key].manual, `unlock-${key}`)}</div>`;
+  return `<div class="row level-row"><div><h2>${esc(t('level.title'))}</h2><p class="muted">${esc(t(`level.hint.${cur}`))}</p>
+      <p class="muted">${esc(t('parents.levelsHint', { n: UNLOCK_STICKERS }))}</p></div><div class="seg level-seg" role="group">${segBtns}</div></div>
+    ${unlockRow(2, 'parents.unlock2')}${unlockRow(3, 'parents.unlock3')}${unlockRow('vyprava', 'parents.unlockVyprava')}`;
+}
+
 function render() {
   const lang = getLang();
   root.replaceChildren(h(`<div class="parents-screen">
@@ -44,7 +56,7 @@ function render() {
       <section class="offline"><h2>${esc(t('parents.offlineTitle'))}</h2>
         <p class="offline-ready" role="status">${esc(t('parents.offlineChecking'))}</p><p class="muted">${esc(t('parents.offlineHint'))}</p></section>
       <section class="row-set">
-        <div class="row"><div><h2>${esc(t('parents.level2'))}</h2><p class="muted">${esc(t('parents.level2Hint'))}</p></div>${sw(store.isNeutralFaces(), 'faces')}</div>
+        ${levelRows()}
         <div class="row"><h2>${esc(t('settings.language'))}</h2>${seg('lang', [['cs', t('lang.cs')], ['en', t('lang.en')]], lang)}</div>
         <div class="row"><h2>${esc(t('parents.voiceRate'))}</h2>${seg('rate', [['slow', t('parents.rateSlow')], ['normal', t('parents.rateNormal')]], store.get('rate'))}</div>
         <div class="row"><h2>${esc(t('parents.soundFx'))}</h2>${sw(!store.isMuted(), 'sound')}</div>
@@ -73,7 +85,10 @@ function onSwMessage(e) {
 }
 async function askStatus() {
   const el = root?.querySelector('.offline-ready'); if (!el) return;
-  const reg = 'serviceWorker' in navigator && window.isSecureContext ? await navigator.serviceWorker.getRegistration().catch(() => null) : null;
+  // this copy's own worker only: getRegistration() alone may return the STABLE worker for a page in /beta/
+  const scope = new URL('./', location.href).href;
+  let reg = 'serviceWorker' in navigator && window.isSecureContext ? await navigator.serviceWorker.getRegistration('./').catch(() => null) : null;
+  if (reg && reg.scope !== scope) reg = null;
   const w = reg?.active || reg?.waiting || reg?.installing;
   if (!w) { el.textContent = t('parents.offlineNoSw'); return; }
   w.postMessage({ type: 'status' });
@@ -90,7 +105,11 @@ function onClick(e) {
   const act = b.dataset.act;
   if (act === 'home') { go('les'); return; }
   sound.play('tap');
-  if (act === 'faces') store.setNeutralFaces(!store.isNeutralFaces());
+  if (act === 'level') { if (setLevel(Number(b.dataset.v))) say(`ui.level.${b.dataset.v}`); }
+  else if (act.startsWith('unlock-')) {
+    const k = act.slice(7); const key = /^\d$/.test(k) ? Number(k) : k;
+    store.setUnlock(key, !store.getUnlocks()[key]);
+  }
   else if (act === 'photo') { store.setPhotoPref(b.dataset.id, photoShown(b.dataset.id) ? 'hide' : 'show'); }
   else if (act === 'sound') sound.setMuted(!store.isMuted());
   else if (act === 'lang') { setLang(b.dataset.v); applyI18n(); }

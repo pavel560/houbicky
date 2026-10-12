@@ -1,8 +1,10 @@
 // Houbičky — „Houbový kvíz“: hear a name, tap the right one of three characters. Round of 5.
-import { species, byId, shroom, TWINS } from './assets.js';
+import { byId } from './assets.js';
+import { effectiveLevel, facesFor, conf, quizDistractors, quizTargets, figure } from './levels.js';
 import { glideTo } from './scene.js';
 import { idle, jump, wobble } from './anim.js';
-import { $, $$, h, icon, esc, say, name, sleep, reduced, shuffle, starsHtml, anim, ms } from './ui.js';
+import { $, $$, h, icon, esc, say, name, sleep, reduced, shuffle, starsHtml, anim, ms, badgeOf } from './ui.js';
+import { groupLabel } from './i18n.js';
 import { t, getLang } from './i18n.js';
 import * as store from './store.js';
 import * as sound from './sound.js';
@@ -20,21 +22,13 @@ const STUMP = `<svg class="stump" viewBox="0 0 220 120" aria-hidden="true">
   <ellipse cx="110" cy="34" rx="30" ry="8" fill="none" stroke="var(--wicker)" stroke-width="3"/>
 </svg>`;
 
-export function distractors(target, level2 = false) {
-  if (level2) {
-    const twin = TWINS.filter((x) => x.a === target.id || x.b === target.id).map((x) => byId.get(x.a === target.id ? x.b : x.a));
-    const pool = shuffle(species.filter((s) => s.id !== target.id));
-    const sameGroup = pool.filter((s) => s.group === target.group);
-    return [...shuffle(twin), ...sameGroup, ...pool].filter((s, i, a) => a.indexOf(s) === i).slice(0, 2);
-  }
-  const groups = ['jedla', 'nejedla', 'jedovata'].filter((g) => g !== target.group);
-  return groups.map((g) => shuffle(species.filter((s) => s.group === g))[0]);
-}
+/** Kept for compatibility: wrong answers per level (js/levels.js). */
+export const distractors = (target, n = effectiveLevel()) => quizDistractors(target, n);
 
 export function mount(root) {
-  const level2 = store.isNeutralFaces();
+  const lvl = effectiveLevel();
   glideTo(1500, reduced() ? 1 : 500);
-  root.append(h(`<div class="game kdo" data-faces="${level2 ? 'neutral' : 'mood'}">
+  root.append(h(`<div class="game kdo" data-level="${lvl}" data-faces="${facesFor(lvl)}">
     <div class="topbar ui">
       <button class="btn round r64 paper" data-act="home" aria-label="${esc(t('nav.home'))}">${icon('home')}</button>
       <h1 class="title-pill pill">${esc(t('game.kdo.title'))}</h1>
@@ -44,7 +38,7 @@ export function mount(root) {
     <button class="btn round r120 gold big-speaker ui" data-act="speak" aria-label="${esc(t('card.listen'))}">${icon('speaker')}</button>
     <div class="stumps"></div>
   </div>`));
-  const s = { g: $('.game', root), level2, targets: shuffle(species).slice(0, ROUND), i: 0, stars: 0, missed: false, busy: false, done: false };
+  const s = { g: $('.game', root), lvl, targets: quizTargets(lvl, ROUND), i: 0, stars: 0, missed: false, busy: false, done: false, asking: false };
   S = s;
   s.g.addEventListener('click', onClick);
   renderStars(s);
@@ -63,20 +57,21 @@ const target = (s) => s?.targets[s.i];
 /** Speaker line: the current question, or the praise once the round is over (never a missing target). */
 function prompt(s) {
   if (!s || s.done || !target(s)) return say('ui.kdo.done');
+  if (s.asking) return say('ui.question.group');
   return say(`sp.${target(s).id}.kdo.where`);
 }
 
 async function round(s, first = false) {
   if (!live(s)) return;
   const tg = target(s); s.missed = false; s.busy = false;
-  const cands = shuffle([tg, ...distractors(tg, s.level2)]);
+  const cands = shuffle([tg, ...quizDistractors(tg, s.lvl)]);
   const box = $('.stumps', s.g);
   box.replaceChildren();
   cands.forEach((sp, i) => {
     const slot = h(`<div class="stump-slot" style="--i:${i}">
       <button class="cand" data-id="${sp.id}" aria-label="${esc(t('kdo.option', { n: i + 1 }))}"></button>
       ${STUMP}<p class="cand-name" hidden></p></div>`);
-    const svg = shroom(sp.id, { ground: false });
+    const svg = figure(sp.id, s.lvl);
     $('.cand', slot).append(svg);
     box.append(slot);
     idle(svg);
@@ -91,11 +86,12 @@ async function onClick(e) {
   if (b.dataset.act === 'home') { go('les'); return; }
   if (b.dataset.act === 'again') { go('kdo'); return; }
   if (b.dataset.act === 'speak') { sound.play('tap'); prompt(s); return; }
+  if (b.dataset.act === 'group') { answerGroup(s, b); return; }
   if (!b.classList.contains('cand') || s.busy || s.done) return;
   const sp = byId.get(b.dataset.id);
   if (sp.id === target(s).id) {
     s.busy = true;
-    if (!s.missed) store.markMastery(sp.id, 'kdo');
+    if (!s.missed) store.markMastery(sp.id, 'kdo', s.lvl);
     store.addSticker(sp.id);
     sound.play('success');
     jump(b);
@@ -104,16 +100,43 @@ async function onClick(e) {
     s.stars++; renderStars(s); sound.play('sparkle');
     await say(`sp.${sp.id}.kdo.yes`);
     if (!live(s)) return;
-    await sleep(reduced() ? 200 : 700);
-    if (!live(s)) return;
-    s.i++;
-    if (s.i >= ROUND) finish(s); else round(s);
+    if (conf(s.lvl).groupQuestion) { askGroup(s, sp); return; }      // level 3: and is it edible?
+    await nextRound(s);
   } else {
     s.missed = true;
     sound.play('tryAgain');
     wobble(b);
     say(`sp.${sp.id}.kdo.iAm`);
   }
+}
+
+async function nextRound(s) {
+  await sleep(reduced() ? 200 : 700);
+  if (!live(s)) return;
+  s.i++;
+  if (s.i >= ROUND) finish(s); else round(s);
+}
+
+/** Level 3: „Je jedlá, nejedlá, nebo jedovatá?“ — three big badge buttons; a miss only says „Zkus to znovu“. */
+function askGroup(s, sp) {
+  s.asking = sp.id;
+  const box = h(`<div class="group-ask ui" role="group" aria-label="${esc(t('question.group'))}">
+    ${['jedla', 'nejedla', 'jedovata'].map((g) => `<button class="group-btn v-${g}" data-act="group" data-g="${g}">${icon(badgeOf({ group: g }), 'badge')}<span>${esc(groupLabel(g, false))}</span></button>`).join('')}
+  </div>`);
+  s.g.append(box);
+  say('ui.question.group');
+}
+async function answerGroup(s, b) {
+  if (!s.asking || s.busy === 'group') return;
+  const sp = byId.get(s.asking);
+  if (b.dataset.g !== sp.group) { sound.play('tryAgain'); wobble(b); say('ui.feedback.tryAgain'); return; }
+  s.busy = 'group';
+  sound.play('success'); jump(b);
+  await say(`sp.${sp.id}.group`);
+  if (!live(s)) return;
+  $('.group-ask', s.g)?.remove();
+  s.asking = false; s.busy = true;
+  await nextRound(s);
 }
 
 async function finish(s) {

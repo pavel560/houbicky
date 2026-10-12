@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Ukázky (v5.3: Gemini/Vertex) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
+"""Ukázky (v5.4: Gemini/Vertex) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
 Běží v GitHub Actions; klíč v tajemství GOOGLE_TTS_API_KEY. Výstup: ukazky/*.mp3 + ukazky/index.html."""
 import base64, html, json, os, pathlib, re, subprocess, sys, urllib.error, urllib.request
 
@@ -20,8 +20,30 @@ def call(path, body=None):
 
 STYLE = ("Mluv česky, vesele a hravě, jako šťastná, nadšená holčička kolem sedmi let, která kamarádce "
          "vypráví o lese. Jasně, vřele a s úsměvem v hlase.")
-TOKEN = os.environ.get("GCP_TOKEN", "")
 PROJECT = os.environ.get("GCP_PROJECT", "")
+
+def sa_token():
+    """Access token ze servisního účtu; snese JSON zkopírovaný bez vnějších složených závorek."""
+    raw = os.environ.get("GCP_SA_KEY", "").strip()
+    if not raw:
+        return ""
+    if not raw.startswith("{"):
+        raw = "{" + raw.rstrip(",") + "}"
+    info = json.loads(raw)
+    from google.oauth2 import service_account  # noqa: PLC0415
+    from google.auth.transport.requests import Request  # noqa: PLC0415
+    creds = service_account.Credentials.from_service_account_info(
+        info, scopes=["https://www.googleapis.com/auth/cloud-platform"])
+    creds.refresh(Request())
+    global PROJECT
+    PROJECT = PROJECT or info.get("project_id", "")
+    return creds.token
+
+try:
+    TOKEN = sa_token()
+    print("servisní účet:", "OK" if TOKEN else "není")
+except Exception as e:  # noqa: BLE001
+    TOKEN = ""; print("CHYBA servisní účet", type(e).__name__, str(e)[:200])
 
 def post(url, body, bearer=False):
     hdr = {"Content-Type": "application/json"}

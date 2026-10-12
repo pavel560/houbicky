@@ -89,17 +89,18 @@ Skript průběžně vypisuje každý druh (`[3/13] kozak … stahuji … hotovo 
 - Když fotka v Commons chybí, skript zkusí náhradní soubor (`alt`) a nakonec hlavní obrázek z anglické Wikipedie podle latinského názvu. Na konci vypíše přehled; řádky `FAILED` je třeba opravit v manifestu.
 - Chyba `CERTIFICATE_VERIFY_FAILED` na Macu: spusťte jednou `Install Certificates.command` ve složce `/Applications/Python 3.x/`, nebo použijte systémový `/usr/bin/python3`.
 
-## Hlasy (nahrané neuronové hlasy)
+## Hlasy
 
-Všechno, co hra říká, je v pevném seznamu vět (`js/phrases.js`). Věty lze předem nahrát přirozenými hlasy Microsoftu (česky Vlasta, anglicky dětský hlas Maisie) přes balíček `edge-tts` (zdarma, bez klíče, potřebuje internet):
+Všechno, co hra říká, je v pevném seznamu vět (`js/phrases.js`). Nahrávky jsou uložené přímo v gitu (`voice/cs/`, `voice/en/`, `voice/index.json`), takže nasazení stránky nepotřebuje žádnou hlasovou službu. Věty bez nahrávky hra řekne hlasem prohlížeče.
 
-```bash
-pip3 install edge-tts
-node dev/export_phrases.mjs     # seznam vět → voice/phrases.json
-python3 make_voice.py           # nahraje jen nové nebo změněné věty → voice/cs/*.mp3, voice/en/*.mp3
-```
+**Který hlas se použije**, určuje `voice/config.json` pro každý jazyk zvlášť:
 
-Skript průběžně vypisuje každou větu. Když se text věty změní (např. v `data/species.json`), stačí oba příkazy spustit znovu; nahraje se jen to, co se změnilo. Věty bez nahrávky hra řekne hlasem prohlížeče. Rychlost hlasu se nastavuje v Rodičovském koutku.
+- `"provider": "elevenlabs"`: hlas z ElevenLabs podle jména (`voice_name`, hlas musí být v účtu v „My voices“), model `model_id` a nastavení `voice_settings`. Klíč je v tajemství repozitáře `ELEVENLABS_API_KEY`.
+- `"provider": "edge"`: hlas Microsoft (`voice`, `rate`), zdarma, ale ze serverů GitHubu je teď blokovaný.
+
+**Změna českého hlasu:** v `voice/config.json` přepište `voice_name` (nebo model či nastavení) a změnu pushněte do větve `v2`. Workflow „Record voices“ pak nahraje všechny české věty novým hlasem, nahrávky uloží do gitu a stránku znovu nasadí. Před nahráváním ověří, že na to v ElevenLabs zbývá dost znaků; jinak nenahraje nic. Nový hlas se použije jen tehdy, když se podaří nahrát úplně všechny věty, takže se v jedné hře nikdy nemíchají dva hlasy. Ručně lze nahrávání spustit v Actions → Record voices → Run workflow.
+
+Na počítači: `node dev/export_phrases.mjs` a `python3 make_voice.py` (pro ElevenLabs s proměnnou `ELEVENLABS_API_KEY`).
 
 ## Zveřejnění na GitHub Pages (iPad v autě bez internetu)
 

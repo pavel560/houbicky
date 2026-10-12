@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Ukázky českých hlasů pro Houbičky (běží v GitHub Actions; výstup ukazky/*.mp3 + ukazky/index.html)."""
+"""Ukázky (v2) českých hlasů pro Houbičky (běží v GitHub Actions; výstup ukazky/*.mp3 + ukazky/index.html)."""
 import asyncio, html, pathlib, subprocess, sys, urllib.request
 import edge_tts
 
@@ -31,13 +31,19 @@ def piper():
     for p in (wav, model, pathlib.Path(str(model) + ".json")):
         p.unlink(missing_ok=True)
 
+import time
 rows = []
 for name, label, voice, rate, pitch, text in EDGE:
-    try:
-        asyncio.run(edge(name, voice, rate, pitch, text)); rows.append((name, label))
-        print("ok", name, (HERE / f"{name}.mp3").stat().st_size, "B")
-    except Exception as e:  # noqa: BLE001
-        print("CHYBA", name, e)
+    out = HERE / f"{name}.mp3"
+    for attempt in range(4):
+        try:
+            asyncio.run(edge(name, voice, rate, pitch, text))
+            if out.stat().st_size > 4000:
+                rows.append((name, label)); print("ok", name, out.stat().st_size, "B"); break
+            print("krátké", name, out.stat().st_size, "B")
+        except Exception as e:  # noqa: BLE001
+            print("CHYBA", name, attempt, str(e)[:80])
+        out.unlink(missing_ok=True); time.sleep(10 * (attempt + 1))
 try:
     piper(); rows.append(("8-piper", "Piper „Jirka“ – zdarma a offline (open source), mužský"))
     print("ok 8-piper")

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Ukázky (v6.1: ElevenLabs: Gemini/Vertex) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
+"""Ukázky (v7: ElevenLabs dětské hlasy: Gemini/Vertex) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
 Běží v GitHub Actions; klíč v tajemství GOOGLE_TTS_API_KEY. Výstup: ukazky/*.mp3 + ukazky/index.html."""
-import base64, html, json, os, pathlib, re, subprocess, sys, urllib.error, urllib.request
+import base64, html, json, os, pathlib, re, subprocess, sys, urllib.error, urllib.parse, urllib.request
 
 HERE = pathlib.Path(__file__).parent
 TEXT = "Ahoj! Já jsem hřib smrkový a jsem jedlá houba. Podívej, na noze mám bílou síťku. Ale pozor, houby sbíráme jen s dospělým!"
@@ -144,6 +144,60 @@ def elevenlabs():
             except Exception as e:  # noqa: BLE001
                 print("CHYBA el", name, model, str(e)[:300])
 
+KID_DESC = ("A cheerful, playful little girl about seven years old, speaking Czech with a clear native accent. "
+            "Bright, warm, smiling, curious and excited, like telling a friend about a walk in the forest.")
+
+def el_json(path, body=None, method=None):
+    req = urllib.request.Request("https://api.elevenlabs.io/v1/" + path, method=method,
+                                 data=json.dumps(body).encode() if body is not None else None,
+                                 headers={"xi-api-key": EL_KEY, "Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=180) as r:
+            return json.load(r)
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"HTTP {e.code}: {e.read().decode()[:300]}") from None
+
+def el_say(voice_id, fn, label, model="eleven_multilingual_v2", text=TEXT):
+    audio = el_call(f"text-to-speech/{voice_id}?output_format=mp3_44100_64",
+                    {"text": text, "model_id": model, "language_code": "cs",
+                     "voice_settings": {"stability": 0.4, "similarity_boost": 0.75, "style": 0.5}})
+    (HERE / f"{fn}.mp3").write_bytes(audio); rows.append((fn, label)); print("ok", fn, len(audio))
+
+def el_kids():
+    # A) dětské dívčí hlasy ze sdílené knihovny
+    seen, found = set(), []
+    for q in ("child", "little girl", "kid", "young girl"):
+        try:
+            res = el_json("shared-voices?page_size=20&gender=female&search=" + urllib.parse.quote(q))
+        except Exception as e:  # noqa: BLE001
+            print("CHYBA hledání", q, str(e)[:200]); continue
+        for v in res.get("voices", []):
+            txt = " ".join(str(v.get(k, "")) for k in ("name", "age", "description", "descriptive", "use_case")).lower()
+            if v["voice_id"] in seen or not any(w in txt for w in ("child", "kid", "girl", "little")):
+                continue
+            seen.add(v["voice_id"]); found.append(v)
+    print("knihovna – nalezeno:", [(v.get("name"), v.get("age")) for v in found[:8]])
+    for v in found[:4]:
+        name = re.sub(r"[^A-Za-z0-9]+", "-", v.get("name", "hlas"))[:24].strip("-")
+        try:
+            added = el_json(f"voices/add/{v['public_owner_id']}/{v['voice_id']}", {"new_name": f"houbicky {name}"})
+            el_say(added["voice_id"], f"c-{name}", f"ElevenLabs knihovna: {v.get('name')} (dětský hlas)")
+        except Exception as e:  # noqa: BLE001
+            print("CHYBA knihovna", name, str(e)[:300])
+    # B) návrh hlasu podle popisu
+    for path, body in (("text-to-voice/design", {"voice_description": KID_DESC, "text": TEXT, "model_id": "eleven_ttv_v3"}),
+                       ("text-to-voice/create-previews", {"voice_description": KID_DESC, "text": TEXT})):
+        try:
+            res = el_json(path, body)
+            for i, pv in enumerate(res.get("previews", [])[:3], 1):
+                fn = f"d-navrh-{i}"
+                (HERE / f"{fn}.mp3").write_bytes(base64.b64decode(pv["audio_base_64"]))
+                rows.append((fn, f"ElevenLabs návrh hlasu „veselá sedmiletá holčička“ – varianta {i}"))
+                print("ok návrh", i, pv.get("generated_voice_id"))
+            break
+        except Exception as e:  # noqa: BLE001
+            print("CHYBA návrh", path, str(e)[:300])
+
 def piper():
     model = HERE / "jirka.onnx"
     for ext in ("", ".json"):
@@ -156,20 +210,19 @@ def piper():
     rows.append(("p-piper", "Piper „Jirka“ – zdarma a offline, mužský"))
 
 for f in HERE.glob("*.mp3"):
-    f.unlink()
+    if f.name.startswith("e-"):
+        n, m = f.stem[2:].split("-", 1)
+        rows.append((f.stem, f"ElevenLabs {n} – {'v3, „vesele“' if m == 'eleven_v3' else 'Multilingual v2'} (dospělý hlas)"))
+    else:
+        f.unlink()
 try:
     urllib.request.urlretrieve(CURRENT, str(HERE / "a-soucasny.mp3"))
     rows.append(("a-soucasny", "Současný hlas ve hře (Vlasta) – jiná věta, jen pro srovnání barvy hlasu"))
 except Exception as e:  # noqa: BLE001
     print("CHYBA současný", e)
-if KEY:
-    try:
-        chirp("Leda"); print("ok chirp Leda")
-    except Exception as e:  # noqa: BLE001
-        print("CHYBA chirp", str(e)[:200])
 if EL_KEY:
     try:
-        elevenlabs()
+        el_kids()
     except Exception as e:  # noqa: BLE001
         print("CHYBA elevenlabs", str(e)[:300])
 else:

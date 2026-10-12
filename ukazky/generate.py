@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Ukázky (v8: ElevenLabs moje hlasy: Gemini/Vertex) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
+"""Ukázky (v9: ElevenLabs knihovna + moje hlasy: Gemini/Vertex) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
 Běží v GitHub Actions; klíč v tajemství GOOGLE_TTS_API_KEY. Výstup: ukazky/*.mp3 + ukazky/index.html."""
 import base64, html, json, os, pathlib, re, subprocess, sys, urllib.error, urllib.parse, urllib.request
 
@@ -210,6 +210,41 @@ def el_mine():
             except Exception as e:  # noqa: BLE001
                 print("CHYBA můj hlas", name, model, str(e)[:300])
 
+def el_library_page():
+    """Stránka s ukázkami kandidátů z knihovny ElevenLabs (jejich vlastní preview, nestojí kredity)."""
+    seen, found = set(), []
+    for q in ("cartoon girl", "animated character girl", "childlike", "little girl", "kid character", "playful girl",
+              "cartoon", "child"):
+        for extra in ("&gender=female", ""):
+            try:
+                res = el_json("shared-voices?page_size=30&sort=usage_character_count_1y&search=" + urllib.parse.quote(q) + extra)
+            except Exception as e:  # noqa: BLE001
+                print("CHYBA hledání", q, str(e)[:200]); continue
+            for v in res.get("voices", []):
+                if v["voice_id"] in seen or not v.get("preview_url") or v.get("gender") == "male":
+                    continue
+                txt = " ".join(str(v.get(k, "")) for k in ("name", "description", "descriptive", "use_case", "category")).lower()
+                if not any(w in txt for w in ("cartoon", "animat", "child", "kid", "girl", "playful", "cute", "character")):
+                    continue
+                seen.add(v["voice_id"]); found.append((q, v))
+    found = found[:24]
+    print("knihovna – kandidátů:", len(found))
+    items = "".join(
+        f'<li><p>{html.escape(v.get("name",""))}</p><p style="font-weight:400;font-size:14px">'
+        f'{html.escape((v.get("description") or "")[:160])} · věk: {html.escape(str(v.get("age","?")))} · '
+        f'přízvuk: {html.escape(str(v.get("accent","?")))}</p>'
+        f'<audio controls preload="none" src="{html.escape(v["preview_url"])}"></audio></li>' for q, v in found)
+    d = HERE / "knihovna"; d.mkdir(exist_ok=True)
+    (d / "index.html").write_text(f"""<!doctype html><html lang="cs"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Houbičky – kandidáti z ElevenLabs</title>
+<style>body{{font:17px/1.4 system-ui,sans-serif;margin:0 auto;max-width:640px;padding:16px;background:#faf3e3;color:#3b2a1a}}
+ul{{list-style:none;padding:0}}li{{background:#fff;border-radius:14px;padding:12px 14px;margin:0 0 12px}}
+p{{margin:0 0 6px;font-weight:600}}audio{{width:100%}}</style>
+<h1>Kandidáti z knihovny ElevenLabs</h1>
+<p style="font-weight:400">Ukázky jsou v originálním jazyce hlasu (většinou anglicky). Líbí-li se ti hlas, najdi ho podle jména
+v ElevenLabs › Voice Library a dej „Add to my voices“. Pak ho namluvíme česky.</p><ul>{items}</ul></html>
+""", encoding="utf-8")
+
 def piper():
     model = HERE / "jirka.onnx"
     for ext in ("", ".json"):
@@ -233,6 +268,10 @@ try:
 except Exception as e:  # noqa: BLE001
     print("CHYBA současný", e)
 if EL_KEY:
+    try:
+        el_library_page()
+    except Exception as e:  # noqa: BLE001
+        print("CHYBA knihovna stránka", str(e)[:300])
     try:
         el_mine()
     except Exception as e:  # noqa: BLE001

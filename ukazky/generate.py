@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Ukázky (v5.4: Gemini/Vertex) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
+"""Ukázky (v5.5: Gemini/Vertex) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
 Běží v GitHub Actions; klíč v tajemství GOOGLE_TTS_API_KEY. Výstup: ukazky/*.mp3 + ukazky/index.html."""
 import base64, html, json, os, pathlib, re, subprocess, sys, urllib.error, urllib.request
 
@@ -24,12 +24,25 @@ PROJECT = os.environ.get("GCP_PROJECT", "")
 
 def sa_token():
     """Access token ze servisního účtu; snese JSON zkopírovaný bez vnějších složených závorek."""
-    raw = os.environ.get("GCP_SA_KEY", "").strip()
-    if not raw:
+    raw = os.environ.get("GCP_SA_KEY", "")
+    if not raw.strip():
         return ""
-    if not raw.startswith("{"):
-        raw = "{" + raw.rstrip(",") + "}"
-    info = json.loads(raw)
+    print("sa_diag prvni_znaky", [hex(ord(c)) for c in raw.strip()[:2]])
+    t = (raw.replace("\u201c", '"').replace("\u201d", '"').replace("\u201e", '"')
+            .replace("\u2018", "'").replace("\u2019", "'").strip().lstrip("\ufeff\u200b").strip())
+    try:
+        info = json.loads(t if t.startswith("{") else "{" + t.rstrip(",") + "}")
+    except Exception:  # noqa: BLE001 — vytáhni jen nutná pole bez ohledu na formát
+        def field(name):
+            m = re.search(r'["\']?' + name + r'["\']?\s*:\s*["\']([^"\']+)["\']', t)
+            return m.group(1) if m else ""
+        key = re.search(r"-----BEGIN PRIVATE KEY-----.*?-----END PRIVATE KEY-----", t, re.S)
+        if not key:
+            raise RuntimeError("v secretu není private key")
+        info = {"type": "service_account", "client_email": field("client_email"),
+                "private_key": key.group(0).replace("\\n", "\n"), "project_id": field("project_id"),
+                "token_uri": field("token_uri") or "https://oauth2.googleapis.com/token"}
+        print("sa_diag nouzové čtení polí, client_email nalezen:", bool(info["client_email"]))
     from google.oauth2 import service_account  # noqa: PLC0415
     from google.auth.transport.requests import Request  # noqa: PLC0415
     creds = service_account.Credentials.from_service_account_info(

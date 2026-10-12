@@ -1,0 +1,28 @@
+# Jednorázové ukázky hlasů: push změny ukazky/generate.py do v2 → namluví ukázky, commitne je do v2
+# a spustí nasazení (main postaví i betu) → https://<user>.github.io/houbicky/beta/ukazky/
+name: Voice samples
+on:
+  push:
+    branches: [v2]
+    paths: ['ukazky/generate.py']
+permissions:
+  contents: write
+  actions: write
+jobs:
+  samples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: sudo apt-get install -y ffmpeg >/dev/null && pip install edge-tts piper-tts
+      - run: python ukazky/generate.py
+      - name: Commit samples
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ukazky/*.mp3 ukazky/index.html
+          git commit -m "Ukázky hlasů (CI)" && git push || echo "beze změn"
+      - name: Deploy (main builds main + v2)
+        run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref main
+        env: { GH_TOKEN: '${{ github.token }}' }

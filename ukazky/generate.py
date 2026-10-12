@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Ukázky (v3.1) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
+"""Ukázky (v4: dětský hlas) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
 Běží v GitHub Actions; klíč v tajemství GOOGLE_TTS_API_KEY. Výstup: ukazky/*.mp3 + ukazky/index.html."""
 import base64, html, json, os, pathlib, subprocess, sys, urllib.request
 
@@ -18,28 +18,43 @@ def call(path, body=None):
     with urllib.request.urlopen(req, timeout=60) as r:
         return json.load(r)
 
+STYLE = ("Read this in Czech, cheerfully and playfully, like a happy, excited little girl of about seven "
+         "telling her friend about the forest. Bright, warm and smiling.")
+
+def synth(voice, cfg, text=TEXT, prompt=None):
+    body = {"input": {"text": text}, "voice": voice, "audioConfig": cfg}
+    if prompt:
+        body["input"]["prompt"] = prompt
+    return base64.b64decode(call("text:synthesize", body)["audioContent"])
+
+def shift(src, dst, ratio):
+    # vyšší hlas, stejné tempo: asetrate zvýší výšku i tempo, atempo vrátí tempo zpět
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(src), "-af",
+                    f"asetrate=24000*{ratio},aresample=24000,atempo={1/ratio:.4f}", "-b:a", "96k", str(dst)], check=True)
+
 def google():
-    voices = sorted(call("voices?languageCode=cs-CZ")["voices"], key=lambda v: v["name"])
-    print("české hlasy:", [v["name"] for v in voices])
-    for i, v in enumerate(voices, 1):
-        name, gender = v["name"], v.get("ssmlGender", "")
-        variants = [("", 0.92, 0.0)]
-        if gender == "FEMALE" and ("Chirp" not in name):
-            variants.append((" – vyšší a veselejší", 0.97, 3.0))
-        for suffix, rate, pitch in variants:
-            cfg = {"audioEncoding": "MP3", "speakingRate": rate}
-            if "Chirp" not in name:
-                cfg["pitch"] = pitch
-            try:
-                out = call("text:synthesize", {"input": {"text": TEXT},
-                           "voice": {"languageCode": "cs-CZ", "name": name}, "audioConfig": cfg})
-                fn = f"g{i:02d}{'b' if suffix else 'a'}-{name}"
-                (HERE / f"{fn}.mp3").write_bytes(base64.b64decode(out["audioContent"]))
-                kind = "žena" if gender == "FEMALE" else "muž" if gender == "MALE" else gender.lower()
-                rows.append((fn, f"Google {name} ({kind}){suffix}"))
-                print("ok", fn)
-            except Exception as e:  # noqa: BLE001
-                print("CHYBA", name, str(e)[:120])
+    for i, who in enumerate(["Leda", "Despina"], 1):
+        base = HERE / f"g{i}a-{who}.mp3"
+        try:
+            base.write_bytes(synth({"languageCode": "cs-CZ", "name": f"cs-CZ-Chirp3-HD-{who}"},
+                                   {"audioEncoding": "MP3", "speakingRate": 1.05, "sampleRateHertz": 24000}))
+            rows.append((base.stem, f"{who} – původní (Chirp 3 HD)"))
+            for tag, ratio, label in (("b", 1.19, "o 3 půltóny výš (mladší)"), ("c", 1.30, "o 4,5 půltónu výš (holčička)")):
+                out = HERE / f"g{i}{tag}-{who}.mp3"
+                shift(base, out, ratio); rows.append((out.stem, f"{who} – {label}"))
+            print("ok", who)
+        except Exception as e:  # noqa: BLE001
+            print("CHYBA chirp", who, str(e)[:200])
+        try:
+            out = HERE / f"g{i}d-{who}-gemini.mp3"
+            out.write_bytes(synth({"languageCode": "cs-CZ", "name": who, "modelName": "gemini-2.5-flash-tts"},
+                                  {"audioEncoding": "MP3"}, prompt=STYLE))
+            rows.append((out.stem, f"{who} – Gemini, styl „veselá holčička“"))
+            out2 = HERE / f"g{i}e-{who}-gemini-vys.mp3"
+            shift(out, out2, 1.19); rows.append((out2.stem, f"{who} – Gemini „veselá holčička“ + o 3 půltóny výš"))
+            print("ok gemini", who)
+        except Exception as e:  # noqa: BLE001
+            print("CHYBA gemini", who, str(e)[:300])
 
 def piper():
     model = HERE / "jirka.onnx"
@@ -64,9 +79,10 @@ if KEY:
 else:
     print("GOOGLE_TTS_API_KEY chybí – Google přeskočen")
 try:
-    piper()
+    urllib.request.urlretrieve(CURRENT.replace("/cs/", "/en/"), str(HERE / "b-maisie.mp3"))
+    rows.append(("b-maisie", "Pro srovnání: anglická Maisie ze hry (jiná věta)"))
 except Exception as e:  # noqa: BLE001
-    print("CHYBA piper", e)
+    print("CHYBA maisie", e)
 rows.sort()
 items = "\n".join(f'<li><p>{html.escape(l)}</p><audio controls preload="none" src="{n}.mp3"></audio></li>' for n, l in rows)
 (HERE / "index.html").write_text(f"""<!doctype html><html lang="cs"><meta charset="utf-8">

@@ -226,6 +226,8 @@ def el_library_page():
                 txt = " ".join(str(v.get(k, "")) for k in ("name", "description", "descriptive", "use_case", "category")).lower()
                 if not any(w in txt for w in ("cartoon", "animat", "child", "kid", "girl", "playful", "cute", "character")):
                     continue
+                if re.search(r"seduct|alluring|sexy|sensual|flirt|sultry|intimate|asmr", txt):
+                    continue
                 seen.add(v["voice_id"]); found.append((q, v))
     found = found[:24]
     print("knihovna – kandidátů:", len(found))

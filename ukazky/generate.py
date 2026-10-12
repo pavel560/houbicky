@@ -1,52 +1,70 @@
 #!/usr/bin/env python3
-"""Ukázky (v2) českých hlasů pro Houbičky (běží v GitHub Actions; výstup ukazky/*.mp3 + ukazky/index.html)."""
-import asyncio, html, pathlib, subprocess, sys, urllib.request
-import edge_tts
+"""Ukázky (v3) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
+Běží v GitHub Actions; klíč v tajemství GOOGLE_TTS_API_KEY. Výstup: ukazky/*.mp3 + ukazky/index.html."""
+import base64, html, json, os, pathlib, subprocess, sys, urllib.request
 
 HERE = pathlib.Path(__file__).parent
 TEXT = "Ahoj! Já jsem hřib smrkový a jsem jedlá houba. Podívej, na noze mám bílou síťku. Ale pozor, houby sbíráme jen s dospělým!"
-EN = "Hello! I am a penny bun, and I am an edible mushroom. Look, I have a white net on my stem!"
-EDGE = [  # (soubor, popis, hlas, rate, pitch, text)
-    ("1-vlasta-dnes", "Vlasta – současný hlas ve hře", "cs-CZ-VlastaNeural", "-8%", "+0Hz", TEXT),
-    ("2-vlasta-vesela", "Vlasta – vyšší a o kousek rychlejší (veselejší)", "cs-CZ-VlastaNeural", "+0%", "+15Hz", TEXT),
-    ("3-vlasta-pohadka", "Vlasta – výš a pomaleji (pohádkově)", "cs-CZ-VlastaNeural", "-12%", "+25Hz", TEXT),
-    ("4-antonin", "Antonín – mužský hlas", "cs-CZ-AntoninNeural", "-8%", "+0Hz", TEXT),
-    ("5-emma-multi", "Emma (vícejazyčný hlas, čte česky)", "en-US-EmmaMultilingualNeural", "-5%", "+0Hz", TEXT),
-    ("6-ava-multi", "Ava (vícejazyčný hlas, čte česky)", "en-US-AvaMultilingualNeural", "-5%", "+0Hz", TEXT),
-    ("7-seraphina-multi", "Seraphina (vícejazyčný hlas, čte česky)", "de-DE-SeraphinaMultilingualNeural", "-5%", "+0Hz", TEXT),
-    ("9-maisie-en", "Pro srovnání: Maisie – současný anglický hlas", "en-GB-MaisieNeural", "-8%", "+0Hz", EN),
-]
+KEY = os.environ.get("GOOGLE_TTS_API_KEY", "")
+API = "https://texttospeech.googleapis.com/v1"
 PIPER = "https://huggingface.co/rhasspy/piper-voices/resolve/main/cs/cs_CZ/jirka/medium/cs_CZ-jirka-medium.onnx"
+CURRENT = "https://pavel560.github.io/houbicky/beta/voice/cs/sp.hrib-smrkovy.fact.mp3"
+rows = []
 
-async def edge(name, voice, rate, pitch, text):
-    await edge_tts.Communicate(text, voice, rate=rate, pitch=pitch).save(str(HERE / f"{name}.mp3"))
+def call(path, body=None):
+    req = urllib.request.Request(f"{API}/{path}{'&' if '?' in path else '?'}key={KEY}",
+                                 data=json.dumps(body).encode() if body else None,
+                                 headers={"Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        return json.load(r)
+
+def google():
+    voices = sorted(call("voices?languageCode=cs-CZ")["voices"], key=lambda v: v["name"])
+    print("české hlasy:", [v["name"] for v in voices])
+    for i, v in enumerate(voices, 1):
+        name, gender = v["name"], v.get("ssmlGender", "")
+        variants = [("", 0.92, 0.0)]
+        if gender == "FEMALE" and ("Chirp" not in name):
+            variants.append((" – vyšší a veselejší", 0.97, 3.0))
+        for suffix, rate, pitch in variants:
+            cfg = {"audioEncoding": "MP3", "speakingRate": rate}
+            if "Chirp" not in name:
+                cfg["pitch"] = pitch
+            try:
+                out = call("text:synthesize", {"input": {"text": TEXT},
+                           "voice": {"languageCode": "cs-CZ", "name": name}, "audioConfig": cfg})
+                fn = f"g{i:02d}{'b' if suffix else 'a'}-{name}"
+                (HERE / f"{fn}.mp3").write_bytes(base64.b64decode(out["audioContent"]))
+                kind = "žena" if gender == "FEMALE" else "muž" if gender == "MALE" else gender.lower()
+                rows.append((fn, f"Google {name} ({kind}){suffix}"))
+                print("ok", fn)
+            except Exception as e:  # noqa: BLE001
+                print("CHYBA", name, str(e)[:120])
 
 def piper():
     model = HERE / "jirka.onnx"
     for ext in ("", ".json"):
         urllib.request.urlretrieve(PIPER + ext, str(model) + ext)
-    wav = HERE / "8-piper.wav"
+    wav = HERE / "p-piper.wav"
     subprocess.run([sys.executable, "-m", "piper", "-m", str(model), "-f", str(wav)], input=TEXT.encode(), check=True)
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav), "-b:a", "64k", str(HERE / "8-piper.mp3")], check=True)
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav), "-b:a", "64k", str(HERE / "p-piper.mp3")], check=True)
     for p in (wav, model, pathlib.Path(str(model) + ".json")):
         p.unlink(missing_ok=True)
+    rows.append(("p-piper", "Piper „Jirka“ – zdarma a offline, mužský"))
 
-import time
-rows = []
-for name, label, voice, rate, pitch, text in EDGE:
-    out = HERE / f"{name}.mp3"
-    for attempt in range(4):
-        try:
-            asyncio.run(edge(name, voice, rate, pitch, text))
-            if out.stat().st_size > 4000:
-                rows.append((name, label)); print("ok", name, out.stat().st_size, "B"); break
-            print("krátké", name, out.stat().st_size, "B")
-        except Exception as e:  # noqa: BLE001
-            print("CHYBA", name, attempt, str(e)[:80])
-        out.unlink(missing_ok=True); time.sleep(10 * (attempt + 1))
+for f in HERE.glob("*.mp3"):
+    f.unlink()
 try:
-    piper(); rows.append(("8-piper", "Piper „Jirka“ – zdarma a offline (open source), mužský"))
-    print("ok 8-piper")
+    urllib.request.urlretrieve(CURRENT, str(HERE / "a-soucasny.mp3"))
+    rows.append(("a-soucasny", "Současný hlas ve hře (Vlasta) – jiná věta, jen pro srovnání barvy hlasu"))
+except Exception as e:  # noqa: BLE001
+    print("CHYBA současný", e)
+if KEY:
+    google()
+else:
+    print("GOOGLE_TTS_API_KEY chybí – Google přeskočen")
+try:
+    piper()
 except Exception as e:  # noqa: BLE001
     print("CHYBA piper", e)
 rows.sort()

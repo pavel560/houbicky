@@ -1,1 +1,2232 @@
-{}
+{
+ "cs": {
+  "sp.bedla.caution": {
+   "bytes": 2160,
+   "file": "cs/sp.bedla.caution.mp3",
+   "sha1": "75cc767445bae025335e7292c7291230106587ab",
+   "text": "Pozor na muchomůrky! Bedla má nohu s hadím vzorem a nemá pochvu.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.bedla.fact": {
+   "bytes": 33696,
+   "file": "cs/sp.bedla.fact.mp3",
+   "sha1": "e32c6852b28cba1f97e8aaf5747c486733c3780b",
+   "text": "Je to obr mezi houbami. Klobouk má jako deštník.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.bedla.group": {
+   "bytes": 19296,
+   "file": "cs/sp.bedla.group.mp3",
+   "sha1": "eb2919ee7bffc8c2d32db9c7654e32e7a962f636",
+   "text": "Bedla vysoká je jedlá houba.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.bedla.kdo.iAm": {
+   "bytes": 16560,
+   "file": "cs/sp.bedla.kdo.iAm.mp3",
+   "sha1": "6a204561b4a128df2f59574051e547c687cec8ac",
+   "text": "Já jsem bedla vysoká.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.bedla.kdo.where": {
+   "bytes": 15264,
+   "file": "cs/sp.bedla.kdo.where.mp3",
+   "sha1": "deb6ffbe7d2818bf4fcdc46bf36fc9c15adc9197",
+   "text": "Kde je bedla vysoká?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.bedla.kdo.yes": {
+   "bytes": 23328,
+   "file": "cs/sp.bedla.kdo.yes.mp3",
+   "sha1": "f49e53c9fda63923761009c723b7ddecdb4ade00",
+   "text": "Ano! To je bedla vysoká.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.bedla.kosik": {
+   "bytes": 17136,
+   "file": "cs/sp.bedla.kosik.mp3",
+   "sha1": "8c5667010c059941640bd2bf0ee3eb1366f6b451",
+   "text": "Kam patří bedla vysoká?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.bedla.look.0": {
+   "bytes": 25200,
+   "file": "cs/sp.bedla.look.0.mp3",
+   "sha1": "732cabf91e4f6a787fcf128e9fdea78d80734994",
+   "text": "Klobouk má hnědé šupinky jako perníček.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.bedla.look.1": {
+   "bytes": 24336,
+   "file": "cs/sp.bedla.look.1.mp3",
+   "sha1": "3e6579dde26e4ad7205cca0a1f72a635c84a27e0",
+   "text": "Vysoká noha má proužky jako hadí kůže.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.bedla.look.2": {
+   "bytes": 28368,
+   "file": "cs/sp.bedla.look.2.mp3",
+   "sha1": "7e7b04d2ec648f8f38453023082cd86271a4e1c0",
+   "text": "Na noze má tlustý prsten, který se dá posouvat.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.bedla.name": {
+   "bytes": 13680,
+   "file": "cs/sp.bedla.name.mp3",
+   "sha1": "255ec1972226b6c581d747feff62526762426195",
+   "text": "Bedla vysoká.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.hrib-smrkovy.caution": {
+   "bytes": 29232,
+   "file": "cs/sp.hrib-smrkovy.caution.mp3",
+   "sha1": "9752a0ce1b9091e4dfc43ec056ef0fe3727fd6e7",
+   "text": "Pozor, hořký hřib žlučník vypadá skoro stejně!",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.hrib-smrkovy.fact": {
+   "bytes": 23904,
+   "file": "cs/sp.hrib-smrkovy.fact.mp3",
+   "sha1": "ccf5b39cc55b49984751ce62561451ba02b6cbca",
+   "text": "Je to nejznámější hřib v českém lese.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.hrib-smrkovy.group": {
+   "bytes": 19296,
+   "file": "cs/sp.hrib-smrkovy.group.mp3",
+   "sha1": "b87faf2a0127993e7b1825f6d09fedae774b8e05",
+   "text": "Hřib smrkový je jedlá houba.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.hrib-smrkovy.kdo.iAm": {
+   "bytes": 16416,
+   "file": "cs/sp.hrib-smrkovy.kdo.iAm.mp3",
+   "sha1": "f73af4422de2c5f02d27092bb5f66d881b58c9ee",
+   "text": "Já jsem hřib smrkový.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.hrib-smrkovy.kdo.where": {
+   "bytes": 2160,
+   "file": "cs/sp.hrib-smrkovy.kdo.where.mp3",
+   "sha1": "c03c4d8745ea12e5c656346e05adb101c1bc72a8",
+   "text": "Kde je hřib smrkový?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.hrib-smrkovy.kdo.yes": {
+   "bytes": 23328,
+   "file": "cs/sp.hrib-smrkovy.kdo.yes.mp3",
+   "sha1": "aa7cfe4aef5de190b2776fe6ff86aafbc67348a0",
+   "text": "Ano! To je hřib smrkový.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.hrib-smrkovy.kosik": {
+   "bytes": 17136,
+   "file": "cs/sp.hrib-smrkovy.kosik.mp3",
+   "sha1": "b0099a0da02bfb2f9f288f42ddc99dfc68e6a509",
+   "text": "Kam patří hřib smrkový?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.hrib-smrkovy.look.0": {
+   "bytes": 22896,
+   "file": "cs/sp.hrib-smrkovy.look.0.mp3",
+   "sha1": "50f4bff260aa2322ecd68df42d2f8c31c024da17",
+   "text": "Má hnědý klobouk jako upečená buchta.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.hrib-smrkovy.look.1": {
+   "bytes": 28800,
+   "file": "cs/sp.hrib-smrkovy.look.1.mp3",
+   "sha1": "fe6b0adb95ac22a8581b9c726adbc31f4f7975bd",
+   "text": "Pod kloboukem nemá lupínky, ale drobné dírky.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.hrib-smrkovy.look.2": {
+   "bytes": 23472,
+   "file": "cs/sp.hrib-smrkovy.look.2.mp3",
+   "sha1": "3bf1283a7e894160801823ded39a4dfecb53b3fa",
+   "text": "Na světlé noze má jemnou bílou síťku.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.hrib-smrkovy.name": {
+   "bytes": 13536,
+   "file": "cs/sp.hrib-smrkovy.name.mp3",
+   "sha1": "7866ba5986fea92ca4a9e8f5250bd280b7bbc470",
+   "text": "Hřib smrkový.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kozak.caution": {
+   "bytes": 40320,
+   "file": "cs/sp.kozak.caution.mp3",
+   "sha1": "54e30d368a059532a9f582b448794db7cde7e6f3",
+   "text": "Podobný je hořký žlučník. Ten má pod kloboukem růžové dírky.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kozak.fact": {
+   "bytes": 37584,
+   "file": "cs/sp.kozak.fact.mp3",
+   "sha1": "49cc73995d1112a4815611184453b83af349f533",
+   "text": "Kamarádí se s břízou. Roste jen tam, kde je bříza.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kozak.group": {
+   "bytes": 20304,
+   "file": "cs/sp.kozak.group.mp3",
+   "sha1": "e06732ae8cbe3c38fb19ef678486409ff64e9138",
+   "text": "Kozák březový je jedlá houba.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kozak.kdo.iAm": {
+   "bytes": 17424,
+   "file": "cs/sp.kozak.kdo.iAm.mp3",
+   "sha1": "e91f908205dd0a93ce4dc9f8d88f10df2536bc12",
+   "text": "Já jsem kozák březový.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kozak.kdo.where": {
+   "bytes": 2160,
+   "file": "cs/sp.kozak.kdo.where.mp3",
+   "sha1": "76c05a88d74cd225cee0ceeea8ffddd8db6be710",
+   "text": "Kde je kozák březový?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kozak.kdo.yes": {
+   "bytes": 24480,
+   "file": "cs/sp.kozak.kdo.yes.mp3",
+   "sha1": "bb6c196cdd09fefa166df0e677dcace07efb2ba8",
+   "text": "Ano! To je kozák březový.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kozak.kosik": {
+   "bytes": 18432,
+   "file": "cs/sp.kozak.kosik.mp3",
+   "sha1": "1487c77611f3ac18077a55475f9d55f65b58540b",
+   "text": "Kam patří kozák březový?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kozak.look.0": {
+   "bytes": 18144,
+   "file": "cs/sp.kozak.look.0.mp3",
+   "sha1": "5c3154ca0a88436660cc76858216eafdcd8cd1ac",
+   "text": "Má hnědý hladký klobouk.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kozak.look.1": {
+   "bytes": 27936,
+   "file": "cs/sp.kozak.look.1.mp3",
+   "sha1": "44836289a24c16fefe8b9d78a7bad2404c6e41bf",
+   "text": "Bílá noha vypadá jako posypaná černým pepřem.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kozak.look.2": {
+   "bytes": 27648,
+   "file": "cs/sp.kozak.look.2.mp3",
+   "sha1": "2ddf19d6954db4703f1f74931de928a8946b835a",
+   "text": "Pod kloboukem má světlé dírky, ne lupínky.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kozak.name": {
+   "bytes": 14688,
+   "file": "cs/sp.kozak.name.mp3",
+   "sha1": "42380293e8355e3fb74df7b76f2df8955736f642",
+   "text": "Kozák březový.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kremenac.caution": {
+   "bytes": 39600,
+   "file": "cs/sp.kremenac.caution.mp3",
+   "sha1": "98256026d34ceb6e45548b452f4bd569d40f6c8a",
+   "text": "Podobných křemenáčů je víc. Rozliší je jen zkušený houbař.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kremenac.fact": {
+   "bytes": 36288,
+   "file": "cs/sp.kremenac.fact.mp3",
+   "sha1": "80a27b80ef61fe7a935fa67546b7acceea263a31",
+   "text": "Kamarádí se s osikou. To je strom s třepotavými listy.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kremenac.group": {
+   "bytes": 21600,
+   "file": "cs/sp.kremenac.group.mp3",
+   "sha1": "1f6ba321764c8e455827529c1812cc64a3ddddb3",
+   "text": "Křemenáč osikový je jedlá houba.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kremenac.kdo.iAm": {
+   "bytes": 18720,
+   "file": "cs/sp.kremenac.kdo.iAm.mp3",
+   "sha1": "86bab2f7393d73a50d19ac452379927d5958a7f5",
+   "text": "Já jsem křemenáč osikový.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kremenac.kdo.where": {
+   "bytes": 17856,
+   "file": "cs/sp.kremenac.kdo.where.mp3",
+   "sha1": "503099f69dc2655d1f9d1d9dabb8b99fe41a6742",
+   "text": "Kde je křemenáč osikový?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kremenac.kdo.yes": {
+   "bytes": 25776,
+   "file": "cs/sp.kremenac.kdo.yes.mp3",
+   "sha1": "931704089345578ee36752504d7d38fd26e77500",
+   "text": "Ano! To je křemenáč osikový.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kremenac.kosik": {
+   "bytes": 19728,
+   "file": "cs/sp.kremenac.kosik.mp3",
+   "sha1": "e1710a4d3b9013b73f6633898c81466bc3b49464",
+   "text": "Kam patří křemenáč osikový?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kremenac.look.0": {
+   "bytes": 27360,
+   "file": "cs/sp.kremenac.look.0.mp3",
+   "sha1": "6ebab603334b0407877a6d497231732414c2ed9a",
+   "text": "Má oranžově červený klobouk jako podzimní list.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kremenac.look.1": {
+   "bytes": 34128,
+   "file": "cs/sp.kremenac.look.1.mp3",
+   "sha1": "bc2c5501b2a2a49b3c5b76c93b10f419885e4548",
+   "text": "Noha je bílá, s bílými šupinkami, které později tmavnou.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kremenac.look.2": {
+   "bytes": 27792,
+   "file": "cs/sp.kremenac.look.2.mp3",
+   "sha1": "7ee017d2d9cb3c073810542db4200577f077c325",
+   "text": "Je velký a pevný, pod kloboukem má dírky.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.kremenac.name": {
+   "bytes": 16128,
+   "file": "cs/sp.kremenac.name.mp3",
+   "sha1": "03c1a1602ba43383b9429731a258624105f18d5f",
+   "text": "Křemenáč osikový.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.liska.caution": {
+   "bytes": 41904,
+   "file": "cs/sp.liska.caution.mp3",
+   "sha1": "b48877529aa02fafe270446aee8c1666d919085a",
+   "text": "Podobná je lištička pomerančová. Ta má husté oranžové lupínky.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.liska.fact": {
+   "bytes": 28800,
+   "file": "cs/sp.liska.fact.mp3",
+   "sha1": "788dd3910ffcb20076e1db5424e5e18c74540aa3",
+   "text": "Je žlutá jako vaječný žloutek a voní po meruňkách.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.liska.group": {
+   "bytes": 20448,
+   "file": "cs/sp.liska.group.mp3",
+   "sha1": "13acf3eeb5406b8e5ae8b88bd656dd0f07be887d",
+   "text": "Liška obecná je jedlá houba.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.liska.kdo.iAm": {
+   "bytes": 16992,
+   "file": "cs/sp.liska.kdo.iAm.mp3",
+   "sha1": "07c7287c0a12a3f2c3c2824a3dac42e5799f7526",
+   "text": "Já jsem liška obecná.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.liska.kdo.where": {
+   "bytes": 15840,
+   "file": "cs/sp.liska.kdo.where.mp3",
+   "sha1": "d77cac527e06a317519cd93ae3446f171f27a185",
+   "text": "Kde je liška obecná?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.liska.kdo.yes": {
+   "bytes": 24192,
+   "file": "cs/sp.liska.kdo.yes.mp3",
+   "sha1": "9301ef3a66082bfd82a49ad957c94b6aa75cdb58",
+   "text": "Ano! To je liška obecná.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.liska.kosik": {
+   "bytes": 18000,
+   "file": "cs/sp.liska.kosik.mp3",
+   "sha1": "1643e35fb439b60e3fbd24a0c922ecb70abb230c",
+   "text": "Kam patří liška obecná?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.liska.look.0": {
+   "bytes": 19008,
+   "file": "cs/sp.liska.look.0.mp3",
+   "sha1": "f1a25300bd22ca0ee3a9cd47e83a49476c5dc79b",
+   "text": "Je celá žlutá, i noha.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.liska.look.1": {
+   "bytes": 26784,
+   "file": "cs/sp.liska.look.1.mp3",
+   "sha1": "6812e4e97d7766aed28a9df1021e046e62cf729c",
+   "text": "Klobouk má jako trychtýřek se zvlněným okrajem.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.liska.look.2": {
+   "bytes": 28512,
+   "file": "cs/sp.liska.look.2.mp3",
+   "sha1": "daf2fdc10b0e83dcd456600eb40fae9e4696eeab",
+   "text": "Zespodu má měkké vrásky, ne tenké lupínky.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.liska.name": {
+   "bytes": 14688,
+   "file": "cs/sp.liska.name.mp3",
+   "sha1": "d8f1e0ef764fb4a89b6a5d47552ba6cef3c64a9f",
+   "text": "Liška obecná.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-cervena.caution": {
+   "bytes": 33984,
+   "file": "cs/sp.muchomurka-cervena.caution.mp3",
+   "sha1": "5ea1084078c47b60bdeb03ff295b28b69ff252ce",
+   "text": "Je jedovatá. Nesahej na ni a řekni to dospělému.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-cervena.fact": {
+   "bytes": 39600,
+   "file": "cs/sp.muchomurka-cervena.fact.mp3",
+   "sha1": "3b964f52967c22421dd9ecf372a0cd4d1b149589",
+   "text": "Je krásná jako z pohádky, ale jedovatá. Jen se díváme!",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-cervena.group": {
+   "bytes": 32832,
+   "file": "cs/sp.muchomurka-cervena.group.mp3",
+   "sha1": "5c29bc08b2847fbdedd4dbbdc444191a8ba66d64",
+   "text": "Pozor! Muchomůrka červená je jedovatá houba!",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-cervena.kdo.iAm": {
+   "bytes": 18576,
+   "file": "cs/sp.muchomurka-cervena.kdo.iAm.mp3",
+   "sha1": "8c918f329b4f06ed75837cda36fd3fddd8694868",
+   "text": "Já jsem muchomůrka červená.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-cervena.kdo.where": {
+   "bytes": 17712,
+   "file": "cs/sp.muchomurka-cervena.kdo.where.mp3",
+   "sha1": "8328158236aa16b9f1608c608eb9a82c03674fc6",
+   "text": "Kde je muchomůrka červená?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-cervena.kdo.yes": {
+   "bytes": 25632,
+   "file": "cs/sp.muchomurka-cervena.kdo.yes.mp3",
+   "sha1": "2b5d01bad3a6f1b1202c861a1a23f5f6c8d35e84",
+   "text": "Ano! To je muchomůrka červená.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-cervena.kosik": {
+   "bytes": 19440,
+   "file": "cs/sp.muchomurka-cervena.kosik.mp3",
+   "sha1": "d6e0e03c479d736cb8f829fed518114152bbfa97",
+   "text": "Kam patří muchomůrka červená?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-cervena.look.0": {
+   "bytes": 24480,
+   "file": "cs/sp.muchomurka-cervena.look.0.mp3",
+   "sha1": "65c3f1aed9fe52af57072dd98122fb107106ab36",
+   "text": "Má červený klobouk s bílými puntíky.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-cervena.look.1": {
+   "bytes": 21744,
+   "file": "cs/sp.muchomurka-cervena.look.1.mp3",
+   "sha1": "ac276fee8bedb3276fe27b0d6934650e76d4d7bc",
+   "text": "Má bílé lupínky a bílou nohu.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-cervena.look.2": {
+   "bytes": 19584,
+   "file": "cs/sp.muchomurka-cervena.look.2.mp3",
+   "sha1": "e98c88f68cdd857e435e5d4b7360a9372c7bad59",
+   "text": "Na noze nosí bílou sukýnku.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-cervena.name": {
+   "bytes": 15984,
+   "file": "cs/sp.muchomurka-cervena.name.mp3",
+   "sha1": "1e4a6f434ed89670a16a380532f9f48cc3fb80b4",
+   "text": "Muchomůrka červená.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-tygrovana.caution": {
+   "bytes": 48528,
+   "file": "cs/sp.muchomurka-tygrovana.caution.mp3",
+   "sha1": "ea1dd49bbf6a011788bef3e524c5a9be884057ff",
+   "text": "Prudce jedovatá! Podobá se jedlé muchomůrce růžovce. Nesahej na ni.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-tygrovana.fact": {
+   "bytes": 34416,
+   "file": "cs/sp.muchomurka-tygrovana.fact.mp3",
+   "sha1": "fa9ac82ddddee05e2b8c4d0958b9907a4280aeb5",
+   "text": "Je hnědá s bílými tečkami. Je prudce jedovatá.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-tygrovana.group": {
+   "bytes": 2160,
+   "file": "cs/sp.muchomurka-tygrovana.group.mp3",
+   "sha1": "f3e6932e5c8efa269140c7a995e8708a42999fc9",
+   "text": "Pozor! Muchomůrka tygrovaná je smrtelně jedovatá houba!",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-tygrovana.kdo.iAm": {
+   "bytes": 19296,
+   "file": "cs/sp.muchomurka-tygrovana.kdo.iAm.mp3",
+   "sha1": "7b6077241127b2c0786892a3a65e96b685ae3f56",
+   "text": "Já jsem muchomůrka tygrovaná.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-tygrovana.kdo.where": {
+   "bytes": 18144,
+   "file": "cs/sp.muchomurka-tygrovana.kdo.where.mp3",
+   "sha1": "70ffbd8a19ac050ca6c08d5453ba8aae70580c9c",
+   "text": "Kde je muchomůrka tygrovaná?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-tygrovana.kdo.yes": {
+   "bytes": 26496,
+   "file": "cs/sp.muchomurka-tygrovana.kdo.yes.mp3",
+   "sha1": "252c684e8b48efca22fe4f6cd60d348e8e532cc7",
+   "text": "Ano! To je muchomůrka tygrovaná.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-tygrovana.kosik": {
+   "bytes": 20160,
+   "file": "cs/sp.muchomurka-tygrovana.kosik.mp3",
+   "sha1": "1b16575edf7609c349c640676975d1a67c1fb5e6",
+   "text": "Kam patří muchomůrka tygrovaná?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-tygrovana.look.0": {
+   "bytes": 22320,
+   "file": "cs/sp.muchomurka-tygrovana.look.0.mp3",
+   "sha1": "04516f46238fc465251d1b935a8c45127f0c91b9",
+   "text": "Má hnědý klobouk s bílými tečkami.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-tygrovana.look.1": {
+   "bytes": 20304,
+   "file": "cs/sp.muchomurka-tygrovana.look.1.mp3",
+   "sha1": "c1f90c464ce651f9ad93665f37b35f8c0eb4c220",
+   "text": "Okraj klobouku má jemné rýhy.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-tygrovana.look.2": {
+   "bytes": 23184,
+   "file": "cs/sp.muchomurka-tygrovana.look.2.mp3",
+   "sha1": "30f731cb6294bd56f6875409b4d434cced4cda7f",
+   "text": "Dole na noze má bílý lem jako ponožku.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-tygrovana.name": {
+   "bytes": 16560,
+   "file": "cs/sp.muchomurka-tygrovana.name.mp3",
+   "sha1": "55fd7f936d234966afec959aa40ba6db42666d79",
+   "text": "Muchomůrka tygrovaná.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-zelena.caution": {
+   "bytes": 37728,
+   "file": "cs/sp.muchomurka-zelena.caution.mp3",
+   "sha1": "d21101dad9b2ddda546716c614ad22b3af37b8c7",
+   "text": "Smrtelně jedovatá! Nesahej na ni a hned řekni dospělému.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-zelena.fact": {
+   "bytes": 24768,
+   "file": "cs/sp.muchomurka-zelena.fact.mp3",
+   "sha1": "b86f8cfba1744fd3758677fd7b057194926cef8c",
+   "text": "Je to nejjedovatější houba v našich lesích.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-zelena.group": {
+   "bytes": 36000,
+   "file": "cs/sp.muchomurka-zelena.group.mp3",
+   "sha1": "eed0107498a1bea33e50f9779ee2f3da71c74a7e",
+   "text": "Pozor! Muchomůrka zelená je smrtelně jedovatá houba!",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-zelena.kdo.iAm": {
+   "bytes": 18576,
+   "file": "cs/sp.muchomurka-zelena.kdo.iAm.mp3",
+   "sha1": "6852ee9e952aa63b9ac9080d9b990798a250c1d9",
+   "text": "Já jsem muchomůrka zelená.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-zelena.kdo.where": {
+   "bytes": 17424,
+   "file": "cs/sp.muchomurka-zelena.kdo.where.mp3",
+   "sha1": "6ee55e7e50f1e44c28288341aad073666bf89139",
+   "text": "Kde je muchomůrka zelená?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-zelena.kdo.yes": {
+   "bytes": 25632,
+   "file": "cs/sp.muchomurka-zelena.kdo.yes.mp3",
+   "sha1": "791e21e4977925aaeef92159d65bce9e46ae8a4a",
+   "text": "Ano! To je muchomůrka zelená.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-zelena.kosik": {
+   "bytes": 19296,
+   "file": "cs/sp.muchomurka-zelena.kosik.mp3",
+   "sha1": "344d44767317e0f4cae8f4633529659647278939",
+   "text": "Kam patří muchomůrka zelená?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-zelena.look.0": {
+   "bytes": 28656,
+   "file": "cs/sp.muchomurka-zelena.look.0.mp3",
+   "sha1": "3cefa34532ed9c827b135df140c83554f1c15604",
+   "text": "Klobouk má zelenkavý nebo olivový, bez šupin.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-zelena.look.1": {
+   "bytes": 23904,
+   "file": "cs/sp.muchomurka-zelena.look.1.mp3",
+   "sha1": "7e1c57346a4f6a1f84a6705aafc840300e149ad1",
+   "text": "Má bílé lupínky a bílou sukýnku.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-zelena.look.2": {
+   "bytes": 22896,
+   "file": "cs/sp.muchomurka-zelena.look.2.mp3",
+   "sha1": "9f170bce56491e20dca085e310d9c81b5f86cd51",
+   "text": "Noha jí dole trčí z bílého pytlíku.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.muchomurka-zelena.name": {
+   "bytes": 15840,
+   "file": "cs/sp.muchomurka-zelena.name.mp3",
+   "sha1": "221c4b58a5686030c497f02787b4aa462302c0df",
+   "text": "Muchomůrka zelená.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.pychavka.caution": {
+   "bytes": 40608,
+   "file": "cs/sp.pychavka.caution.mp3",
+   "sha1": "5831686763935f2315aa733ec87d53a091bd7097",
+   "text": "Jedlá je jen mladá a uvnitř čistě bílá. Rozhodne dospělý.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.pychavka.fact": {
+   "bytes": 38448,
+   "file": "cs/sp.pychavka.fact.mp3",
+   "sha1": "9ad6c01c0c5cb96badfbe5e092e6a291f26642ae",
+   "text": "Mladá je uvnitř bílá. Stará je plná hnědého prášku.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.pychavka.group": {
+   "bytes": 22032,
+   "file": "cs/sp.pychavka.group.mp3",
+   "sha1": "db1e48a983835afc41d66de6ff440e4cd78a5f3c",
+   "text": "Pýchavka obecná je jedlá houba.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.pychavka.kdo.iAm": {
+   "bytes": 18576,
+   "file": "cs/sp.pychavka.kdo.iAm.mp3",
+   "sha1": "32464984721d7fe28e9ee5ba56b87004d041ffba",
+   "text": "Já jsem pýchavka obecná.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.pychavka.kdo.where": {
+   "bytes": 17280,
+   "file": "cs/sp.pychavka.kdo.where.mp3",
+   "sha1": "a9f3124a0ac406e2f8a292cf1822bb9c17ec95b3",
+   "text": "Kde je pýchavka obecná?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.pychavka.kdo.yes": {
+   "bytes": 25920,
+   "file": "cs/sp.pychavka.kdo.yes.mp3",
+   "sha1": "56d9c36411e221e4dac23c4637a58b691c3beb5c",
+   "text": "Ano! To je pýchavka obecná.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.pychavka.kosik": {
+   "bytes": 19296,
+   "file": "cs/sp.pychavka.kosik.mp3",
+   "sha1": "e4f23d919fad6a8e39bc34910935b4b9e32695ce",
+   "text": "Kam patří pýchavka obecná?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.pychavka.look.0": {
+   "bytes": 24048,
+   "file": "cs/sp.pychavka.look.0.mp3",
+   "sha1": "3adb80be8a6b6d16d65c81bd85e048f917b744f0",
+   "text": "Je kulatá jako hruška a nemá klobouk.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.pychavka.look.1": {
+   "bytes": 25344,
+   "file": "cs/sp.pychavka.look.1.mp3",
+   "sha1": "e1ab83bba1432f7166c145771438450200df8e2d",
+   "text": "Je bílá a pokrytá drobnými bradavičkami.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.pychavka.look.2": {
+   "bytes": 21024,
+   "file": "cs/sp.pychavka.look.2.mp3",
+   "sha1": "543be521ec512cafd2bd7c06dd1c936ff99a736d",
+   "text": "Mladá je uvnitř celá bílá.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.pychavka.name": {
+   "bytes": 16128,
+   "file": "cs/sp.pychavka.name.mp3",
+   "sha1": "b30cb8a99114fa365bee85eeb29195a8390af29c",
+   "text": "Pýchavka obecná.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.suchohrib.caution": {
+   "bytes": 40176,
+   "file": "cs/sp.suchohrib.caution.mp3",
+   "sha1": "766277824c8c3d3bac2a01df7bddc27c16d6347c",
+   "text": "Podobný je hořký žlučník. Ten nemodrá a má růžové dírky.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.suchohrib.fact": {
+   "bytes": 35280,
+   "file": "cs/sp.suchohrib.fact.mp3",
+   "sha1": "b7c967c9950a32c5e751baac5d7a94cd5e937799",
+   "text": "Klobouk má hnědý jako kaštan. Za deště je slizký.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.suchohrib.group": {
+   "bytes": 18432,
+   "file": "cs/sp.suchohrib.group.mp3",
+   "sha1": "30d8f8a18f24db8f99c7352dce4b6bc2cbdb4a3b",
+   "text": "Hřib hnědý je jedlá houba.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.suchohrib.kdo.iAm": {
+   "bytes": 15264,
+   "file": "cs/sp.suchohrib.kdo.iAm.mp3",
+   "sha1": "9b9017202ca5adcebb1c409dde1ffc9f6091797a",
+   "text": "Já jsem hřib hnědý.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.suchohrib.kdo.where": {
+   "bytes": 14112,
+   "file": "cs/sp.suchohrib.kdo.where.mp3",
+   "sha1": "805190270d89746b3b81f7b5384f0a794283b3ce",
+   "text": "Kde je hřib hnědý?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.suchohrib.kdo.yes": {
+   "bytes": 22176,
+   "file": "cs/sp.suchohrib.kdo.yes.mp3",
+   "sha1": "7c5f7f29ff947efda370a00ccf0e421104b3051d",
+   "text": "Ano! To je hřib hnědý.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.suchohrib.kosik": {
+   "bytes": 16272,
+   "file": "cs/sp.suchohrib.kosik.mp3",
+   "sha1": "4f6d03ce5515def5d1df49fc62189e1520e8b996",
+   "text": "Kam patří hřib hnědý?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.suchohrib.look.0": {
+   "bytes": 19296,
+   "file": "cs/sp.suchohrib.look.0.mp3",
+   "sha1": "2a315f47e85b1e7d100b5e8343b1761c4f1dd4c8",
+   "text": "Má kaštanově hnědý klobouk.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.suchohrib.look.1": {
+   "bytes": 25920,
+   "file": "cs/sp.suchohrib.look.1.mp3",
+   "sha1": "56835284e41016e5303e1c3bf2ac7e3bd22d9357",
+   "text": "Žluté dírky na otlačeném místě zmodrají.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.suchohrib.look.2": {
+   "bytes": 21168,
+   "file": "cs/sp.suchohrib.look.2.mp3",
+   "sha1": "eb36a442f586990b77fcbad1eae879509a8ce219",
+   "text": "Hnědá noha nemá žádnou síťku.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.suchohrib.name": {
+   "bytes": 12384,
+   "file": "cs/sp.suchohrib.name.mp3",
+   "sha1": "270cff0f7b6676dab469b05d0e00c4d5222b2ad4",
+   "text": "Hřib hnědý.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.trepenitka.caution": {
+   "bytes": 39168,
+   "file": "cs/sp.trepenitka.caution.mp3",
+   "sha1": "968597c344df651e2e442b7bdf3e10e69c823659",
+   "text": "Je jedovatá a podobá se jedlým václavkám. Nesahej na ni.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.trepenitka.fact": {
+   "bytes": 37152,
+   "file": "cs/sp.trepenitka.fact.mp3",
+   "sha1": "937c7ffdcc789d79e4ae29dd362eed86bd548cf9",
+   "text": "Roste ve velkých partách na starých pařezech. Je jedovatá.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.trepenitka.group": {
+   "bytes": 2160,
+   "file": "cs/sp.trepenitka.group.mp3",
+   "sha1": "bc06e3504594b7fdadc89ff3fb4480e4177ffbbb",
+   "text": "Pozor! Třepenitka svazčitá je jedovatá houba!",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.trepenitka.kdo.iAm": {
+   "bytes": 19440,
+   "file": "cs/sp.trepenitka.kdo.iAm.mp3",
+   "sha1": "93d1b66853be86c17ede00fbe8c0894636ee835b",
+   "text": "Já jsem třepenitka svazčitá.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.trepenitka.kdo.where": {
+   "bytes": 18144,
+   "file": "cs/sp.trepenitka.kdo.where.mp3",
+   "sha1": "d78a9facbdd3bb1e336c005d0ede26ae8ae9f763",
+   "text": "Kde je třepenitka svazčitá?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.trepenitka.kdo.yes": {
+   "bytes": 26640,
+   "file": "cs/sp.trepenitka.kdo.yes.mp3",
+   "sha1": "da0c71d700541c0e74f88fe86cd3195ab81be495",
+   "text": "Ano! To je třepenitka svazčitá.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.trepenitka.kosik": {
+   "bytes": 20304,
+   "file": "cs/sp.trepenitka.kosik.mp3",
+   "sha1": "b50a8ceeed20758258b6bde5eb5fe5f4712bce98",
+   "text": "Kam patří třepenitka svazčitá?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.trepenitka.look.0": {
+   "bytes": 21600,
+   "file": "cs/sp.trepenitka.look.0.mp3",
+   "sha1": "ff70e98ce2e9fd2040a016c2356bd93427aca9d4",
+   "text": "Roste v trsech na dřevě a pařezech.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.trepenitka.look.1": {
+   "bytes": 29232,
+   "file": "cs/sp.trepenitka.look.1.mp3",
+   "sha1": "636ac6dc096715801118b1998ca70cc5b2482b82",
+   "text": "Klobouk je sírově žlutý, uprostřed oranžový.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.trepenitka.look.2": {
+   "bytes": 26928,
+   "file": "cs/sp.trepenitka.look.2.mp3",
+   "sha1": "504335642870b0375534169446972db06c1235c8",
+   "text": "Lupínky má zelenožluté, později tmavé.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.trepenitka.name": {
+   "bytes": 16848,
+   "file": "cs/sp.trepenitka.name.mp3",
+   "sha1": "3cffaa3d49aae4a6b91aaf94c42adb18f2d04089",
+   "text": "Třepenitka svazčitá.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.troudnatec.caution": {
+   "bytes": 24624,
+   "file": "cs/sp.troudnatec.caution.mp3",
+   "sha1": "61dbf9fb2add05bc13756942f767b3ea89331662",
+   "text": "Je tvrdý jako dřevo, a proto se nejí.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.troudnatec.fact": {
+   "bytes": 40032,
+   "file": "cs/sp.troudnatec.fact.mp3",
+   "sha1": "3bea81097b8167b537c61698271b2e26ace17aec",
+   "text": "Lidé z něj kdysi rozdělávali oheň. Nosil ho i pravěký Ötzi.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.troudnatec.group": {
+   "bytes": 34848,
+   "file": "cs/sp.troudnatec.group.mp3",
+   "sha1": "54a28fbe4047fbf584e33cae13297398f3470023",
+   "text": "Troudnatec kopytovitý je nejedlá houba. Ta se nejí.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.troudnatec.kdo.iAm": {
+   "bytes": 19584,
+   "file": "cs/sp.troudnatec.kdo.iAm.mp3",
+   "sha1": "b1ba4bf00ba28ce88c016121be216300359c2f85",
+   "text": "Já jsem troudnatec kopytovitý.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.troudnatec.kdo.where": {
+   "bytes": 18288,
+   "file": "cs/sp.troudnatec.kdo.where.mp3",
+   "sha1": "1e122e6ab893b6b09599ed9f4f4285515c02aa02",
+   "text": "Kde je troudnatec kopytovitý?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.troudnatec.kdo.yes": {
+   "bytes": 26640,
+   "file": "cs/sp.troudnatec.kdo.yes.mp3",
+   "sha1": "e86c56a1d1373ba831016c33591b6924e6202d06",
+   "text": "Ano! To je troudnatec kopytovitý.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.troudnatec.kosik": {
+   "bytes": 2160,
+   "file": "cs/sp.troudnatec.kosik.mp3",
+   "sha1": "e7052ad1125065bb3678d5088921e4dabedf4e60",
+   "text": "Kam patří troudnatec kopytovitý?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.troudnatec.look.0": {
+   "bytes": 26208,
+   "file": "cs/sp.troudnatec.look.0.mp3",
+   "sha1": "afaf011a56f2bcf0ea561b6bb2975fc0c2f1a6cd",
+   "text": "Vypadá jako koňské kopyto přilepené na stromě.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.troudnatec.look.1": {
+   "bytes": 19152,
+   "file": "cs/sp.troudnatec.look.1.mp3",
+   "sha1": "1d6d85563a6271830d84a2aff32a23e14987eda2",
+   "text": "Je šedý a tvrdý jako dřevo.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.troudnatec.look.2": {
+   "bytes": 17856,
+   "file": "cs/sp.troudnatec.look.2.mp3",
+   "sha1": "ea11ff48b997e1b52a6202b896a8309487013806",
+   "text": "Má proužky jako letokruhy.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.troudnatec.name": {
+   "bytes": 16848,
+   "file": "cs/sp.troudnatec.name.mp3",
+   "sha1": "2a0f6f8aa0bb83a8ea5caa29ecc71013a6b73d54",
+   "text": "Troudnatec kopytovitý.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.zlucnik.caution": {
+   "bytes": 36720,
+   "file": "cs/sp.zlucnik.caution.mp3",
+   "sha1": "38cbe88d93a6828d4d7354bf5fcfaafa9a99a863",
+   "text": "Není jedovatý, ale je moc hořký. Necháme ho v lese.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.zlucnik.fact": {
+   "bytes": 35568,
+   "file": "cs/sp.zlucnik.fact.mp3",
+   "sha1": "fedb2e14450b7989b101699154692166825465f5",
+   "text": "Je strašně hořký. Jeden kousek pokazí celé jídlo.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.zlucnik.group": {
+   "bytes": 31824,
+   "file": "cs/sp.zlucnik.group.mp3",
+   "sha1": "2323ec0081eebd6584672cca1e2c0cd3be92e241",
+   "text": "Hřib žlučník je nejedlá houba. Ta se nejí.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.zlucnik.kdo.iAm": {
+   "bytes": 16848,
+   "file": "cs/sp.zlucnik.kdo.iAm.mp3",
+   "sha1": "00456afe1574a44f51adae10a85a8a41e7bda3a1",
+   "text": "Já jsem hřib žlučník.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.zlucnik.kdo.where": {
+   "bytes": 15552,
+   "file": "cs/sp.zlucnik.kdo.where.mp3",
+   "sha1": "96af02ccd648d438d47a0d05aec37784fc82c007",
+   "text": "Kde je hřib žlučník?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.zlucnik.kdo.yes": {
+   "bytes": 23616,
+   "file": "cs/sp.zlucnik.kdo.yes.mp3",
+   "sha1": "17ce354dfde50d469660f52df863be212b088d21",
+   "text": "Ano! To je hřib žlučník.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.zlucnik.kosik": {
+   "bytes": 17424,
+   "file": "cs/sp.zlucnik.kosik.mp3",
+   "sha1": "65bc28ea525c2bfc4c42d5ef25b84c812b6a89b9",
+   "text": "Kam patří hřib žlučník?",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.zlucnik.look.0": {
+   "bytes": 21168,
+   "file": "cs/sp.zlucnik.look.0.mp3",
+   "sha1": "6e4a2a9aabca2ebda81e45530f9c40f6562bb38b",
+   "text": "Vypadá skoro jako hřib smrkový.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.zlucnik.look.1": {
+   "bytes": 20880,
+   "file": "cs/sp.zlucnik.look.1.mp3",
+   "sha1": "d25b6fafd4b302ef271520cf96541ab60feec7f6",
+   "text": "Pod kloboukem má růžové dírky.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.zlucnik.look.2": {
+   "bytes": 20160,
+   "file": "cs/sp.zlucnik.look.2.mp3",
+   "sha1": "c573d4e4d152948d34bba3a5fe0c81e324821680",
+   "text": "Na noze má tmavou hnědou síťku.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "sp.zlucnik.name": {
+   "bytes": 13968,
+   "file": "cs/sp.zlucnik.name.mp3",
+   "sha1": "51f9df9f42013f4dbc7e34fc8ec762f6520ba6e6",
+   "text": "Hřib žlučník.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "ui.album.empty": {
+   "bytes": 26496,
+   "file": "cs/ui.album.empty.mp3",
+   "sha1": "546569a50b781db5947390e911c8c5c643e7e6a9",
+   "text": "Zatím tu nic není. Pojď hrát!",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "ui.album.unknown": {
+   "bytes": 19584,
+   "file": "cs/ui.album.unknown.mp3",
+   "sha1": "f7c9f9b7dca713c62edf2eeb7f7c54fdb5fce55a",
+   "text": "Tuhle houbičku ještě hledáš.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "ui.card.photoMissing": {
+   "bytes": 15696,
+   "file": "cs/ui.card.photoMissing.mp3",
+   "sha1": "69f631d1d367b2e4d696007cc5fdd8bae3f98e7e",
+   "text": "Fotka zatím chybí.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "ui.card.realPhoto": {
+   "bytes": 14688,
+   "file": "cs/ui.card.realPhoto.mp3",
+   "sha1": "b711535149e4dc8da35ca234ad0c56ca66a6b3a0",
+   "text": "Skutečná fotka",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "ui.kdo.done": {
+   "bytes": 29232,
+   "file": "cs/ui.kdo.done.mp3",
+   "sha1": "6cbf4b31028d1bdb4df6d41e12e48b82d2f22b8e",
+   "text": "Výborně! Všechny houbičky jsi poznala.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "ui.kosik.done": {
+   "bytes": 24624,
+   "file": "cs/ui.kosik.done.mp3",
+   "sha1": "f3e3a5dc692e9f68fed8cfbb8c82e37920fc5b21",
+   "text": "Výborně! Košík je plný.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "ui.kosik.edibleToZone": {
+   "bytes": 23904,
+   "file": "cs/ui.kosik.edibleToZone.mp3",
+   "sha1": "5580f8149702073de3e8cd5bddbf830784958f38",
+   "text": "Tuhle můžeme s dospělým dát do košíku.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "ui.kosik.inBasket": {
+   "bytes": 30816,
+   "file": "cs/ui.kosik.inBasket.mp3",
+   "sha1": "85076d5f3817a7801157e9bad6f9c036449343d2",
+   "text": "Do košíku! S dospělým ji můžeme sbírat.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "ui.kosik.inZone": {
+   "bytes": 20160,
+   "file": "cs/ui.kosik.inZone.mp3",
+   "sha1": "e70f8002c50f06209984f762889796c1fd9fb06b",
+   "text": "Správně, zůstanu v lese.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "ui.kosik.inedibleBounce": {
+   "bytes": 28224,
+   "file": "cs/ui.kosik.inedibleBounce.mp3",
+   "sha1": "de01ab7165820a7b46eefacb0bb55268756ef9b6",
+   "text": "Já jsem nejedlá. Necháme mě v lese.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "ui.kosik.intro": {
+   "bytes": 35568,
+   "file": "cs/ui.kosik.intro.mp3",
+   "sha1": "86b30f3516592d0d4a78950cf8b6bbdbbed8ad92",
+   "text": "Jedlé houby dáme do košíku. Ostatní necháme v lese.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "ui.kosik.poisonBounce": {
+   "bytes": 2160,
+   "file": "cs/ui.kosik.poisonBounce.mp3",
+   "sha1": "36701cafa063af24fd3232fbf32c02c0102bf663",
+   "text": "Pozor! Já jsem jedovatá. Necháme mě v lese.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "ui.langName": {
+   "bytes": 2160,
+   "file": "cs/ui.langName.mp3",
+   "sha1": "c739f9c507d38df76b331335683c2fda8f80d713",
+   "text": "Čeština",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "ui.safety.short": {
+   "bytes": 21456,
+   "file": "cs/ui.safety.short.mp3",
+   "sha1": "b9e247c429ad3d373e52c0907d5304734d56a800",
+   "text": "Houby sbíráme jen s dospělým.",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "ui.say.deadlyWarn": {
+   "bytes": 19152,
+   "file": "cs/ui.say.deadlyWarn.mp3",
+   "sha1": "fe94b2d02961f735428a98b2cd815d046dc348d1",
+   "text": "Na tuhle houbu nikdy nesahej!",
+   "voice": "cs-CZ-VlastaNeural"
+  },
+  "ui.say.greeting": {
+   "bytes": 37872,
+   "file": "cs/ui.say.greeting.mp3",
+   "sha1": "c3e1ff5e28cd99bb23032ef166db0a3e6495a672",
+   "text": "Ahoj! Klepni na houbičku a ona ti řekne, jak se jmenuje.",
+   "voice": "cs-CZ-VlastaNeural"
+  }
+ },
+ "en": {
+  "sp.bedla.caution": {
+   "bytes": 41472,
+   "file": "en/sp.bedla.caution.mp3",
+   "sha1": "bd5045975d0e7f8987810d7ee328a807540e6846",
+   "text": "Deadly look-alikes exist! A parasol has a snakeskin stem and no cup.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.bedla.fact": {
+   "bytes": 34128,
+   "file": "en/sp.bedla.fact.mp3",
+   "sha1": "adb57ee010038a307037105e61ce23f72659f6cb",
+   "text": "It is a giant mushroom. Its cap opens like an umbrella.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.bedla.group": {
+   "bytes": 19728,
+   "file": "en/sp.bedla.group.mp3",
+   "sha1": "187bc80a04af903da8b0bd0a01eb657229cec54a",
+   "text": "The parasol is an edible mushroom.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.bedla.kdo.iAm": {
+   "bytes": 12816,
+   "file": "en/sp.bedla.kdo.iAm.mp3",
+   "sha1": "a850a7510c1060e774a518a49a3b511f67206b57",
+   "text": "I'm the parasol.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.bedla.kdo.where": {
+   "bytes": 13680,
+   "file": "en/sp.bedla.kdo.where.mp3",
+   "sha1": "aba5a740dae74cca7e5a925166672b1a9edb8ac7",
+   "text": "Where is the parasol?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.bedla.kdo.yes": {
+   "bytes": 22608,
+   "file": "en/sp.bedla.kdo.yes.mp3",
+   "sha1": "f459f6fecb2faf4e4b4fb677291221f26482c9c6",
+   "text": "Yes! That's the parasol.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.bedla.kosik": {
+   "bytes": 15840,
+   "file": "en/sp.bedla.kosik.mp3",
+   "sha1": "8eaf6fabbe2278bee49fef129449d2c494318a67",
+   "text": "Where does the parasol go?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.bedla.look.0": {
+   "bytes": 23040,
+   "file": "en/sp.bedla.look.0.mp3",
+   "sha1": "43d228ef8e98540b08a8a9474ae5299891e3af66",
+   "text": "Its cap has brown scales like gingerbread.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.bedla.look.1": {
+   "bytes": 23616,
+   "file": "en/sp.bedla.look.1.mp3",
+   "sha1": "caeda1530d13f5017701ec018335cffc4043a162",
+   "text": "Its tall stem has stripes like snakeskin.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.bedla.look.2": {
+   "bytes": 22752,
+   "file": "en/sp.bedla.look.2.mp3",
+   "sha1": "0806c9187ad99d9a7456f47d386e09a29d010ab8",
+   "text": "It has a thick ring that can slide up and down.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.bedla.name": {
+   "bytes": 11232,
+   "file": "en/sp.bedla.name.mp3",
+   "sha1": "612b2dd6320d893a233eb27936d3fe2d88fb3c23",
+   "text": "Parasol.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.hrib-smrkovy.caution": {
+   "bytes": 30960,
+   "file": "en/sp.hrib-smrkovy.caution.mp3",
+   "sha1": "c77ae7562cd4bdb99529f62821aea3419d7e8a62",
+   "text": "Careful! The bitter bolete looks almost the same.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.hrib-smrkovy.fact": {
+   "bytes": 24048,
+   "file": "en/sp.hrib-smrkovy.fact.mp3",
+   "sha1": "57c67ce52dc5ee91fa04477ded47e1d37be068a0",
+   "text": "It is the most famous mushroom in Czech woods.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.hrib-smrkovy.group": {
+   "bytes": 20304,
+   "file": "en/sp.hrib-smrkovy.group.mp3",
+   "sha1": "f8770ce4db13fa13d491b7b4a5559479299db1e6",
+   "text": "The penny bun is an edible mushroom.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.hrib-smrkovy.kdo.iAm": {
+   "bytes": 13536,
+   "file": "en/sp.hrib-smrkovy.kdo.iAm.mp3",
+   "sha1": "d4383db6aa1ac9cbd4ab749254a8bbedf4c31a6d",
+   "text": "I'm the penny bun.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.hrib-smrkovy.kdo.where": {
+   "bytes": 14544,
+   "file": "en/sp.hrib-smrkovy.kdo.where.mp3",
+   "sha1": "7d626525b9e65fa9c38b7c67353767ddcd638d2f",
+   "text": "Where is the penny bun?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.hrib-smrkovy.kdo.yes": {
+   "bytes": 23472,
+   "file": "en/sp.hrib-smrkovy.kdo.yes.mp3",
+   "sha1": "39da4d6ac6215e1a9d7ea235a5ae0d4c48b3a3b3",
+   "text": "Yes! That's the penny bun.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.hrib-smrkovy.kosik": {
+   "bytes": 16272,
+   "file": "en/sp.hrib-smrkovy.kosik.mp3",
+   "sha1": "21763b95deaf2dc468ba1ea9ab160d6f87b6c554",
+   "text": "Where does the penny bun go?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.hrib-smrkovy.look.0": {
+   "bytes": 20880,
+   "file": "en/sp.hrib-smrkovy.look.0.mp3",
+   "sha1": "fef42de7be0f82c1c530b1d85a79dcd204ce30df",
+   "text": "Its brown cap looks like a baked bun.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.hrib-smrkovy.look.1": {
+   "bytes": 25776,
+   "file": "en/sp.hrib-smrkovy.look.1.mp3",
+   "sha1": "12068fc8acfb833f138fe5b126a374e9a47370eb",
+   "text": "Under the cap it has tiny holes, not gills.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.hrib-smrkovy.look.2": {
+   "bytes": 21456,
+   "file": "en/sp.hrib-smrkovy.look.2.mp3",
+   "sha1": "f536dccd3f1d5484e61cf3557f1649efef049faf",
+   "text": "Its pale stem has a fine white net.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.hrib-smrkovy.name": {
+   "bytes": 11664,
+   "file": "en/sp.hrib-smrkovy.name.mp3",
+   "sha1": "c723911678925a7b0036aafce7dc085081924215",
+   "text": "Penny bun.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kozak.caution": {
+   "bytes": 35712,
+   "file": "en/sp.kozak.caution.mp3",
+   "sha1": "75e30546f6004f763e27e2cb8e4337b771f5320e",
+   "text": "The bitter bolete looks similar. It has pink holes underneath.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kozak.fact": {
+   "bytes": 37440,
+   "file": "en/sp.kozak.fact.mp3",
+   "sha1": "66bd1c3f49c3d4bf8f52d3faff17bd057bb23e0e",
+   "text": "Its best friend is the birch tree. It grows only near birches.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kozak.group": {
+   "bytes": 23328,
+   "file": "en/sp.kozak.group.mp3",
+   "sha1": "25531d273b757814b09d15a5e2f658ca277c32ad",
+   "text": "The brown birch bolete is an edible mushroom.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kozak.kdo.iAm": {
+   "bytes": 16560,
+   "file": "en/sp.kozak.kdo.iAm.mp3",
+   "sha1": "ae72e15d78df030a393fefb7b9c5922b85e98607",
+   "text": "I'm the brown birch bolete.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kozak.kdo.where": {
+   "bytes": 17280,
+   "file": "en/sp.kozak.kdo.where.mp3",
+   "sha1": "b2cde0fa1c48f91928cbebf0d4b03ae9c4f407bc",
+   "text": "Where is the brown birch bolete?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kozak.kdo.yes": {
+   "bytes": 26496,
+   "file": "en/sp.kozak.kdo.yes.mp3",
+   "sha1": "03857dddc1b899db28afcce1c2f0c169e4758c7b",
+   "text": "Yes! That's the brown birch bolete.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kozak.kosik": {
+   "bytes": 19008,
+   "file": "en/sp.kozak.kosik.mp3",
+   "sha1": "011419a6dd7ef7b3ba11c5a40a8f831e63d8cb94",
+   "text": "Where does the brown birch bolete go?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kozak.look.0": {
+   "bytes": 17280,
+   "file": "en/sp.kozak.look.0.mp3",
+   "sha1": "455528ae4a0b0b4f3d8b9afcd7ef7c1c54474742",
+   "text": "It has a smooth brown cap.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kozak.look.1": {
+   "bytes": 23616,
+   "file": "en/sp.kozak.look.1.mp3",
+   "sha1": "366444ca67ae9f650a53a32c9557de107dfb541f",
+   "text": "Its white stem looks sprinkled with black pepper.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kozak.look.2": {
+   "bytes": 2160,
+   "file": "en/sp.kozak.look.2.mp3",
+   "sha1": "b30492bfad89dec3301d34f7357364904b01dc76",
+   "text": "Under the cap it has pale holes, not gills.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kozak.name": {
+   "bytes": 14544,
+   "file": "en/sp.kozak.name.mp3",
+   "sha1": "6dd41389f48950401dd6faba2b82e2b126427ba6",
+   "text": "Brown birch bolete.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kremenac.caution": {
+   "bytes": 38304,
+   "file": "en/sp.kremenac.caution.mp3",
+   "sha1": "6f4750534cf7fe7797c44a41ae0049fa08a37b38",
+   "text": "There are several similar ones. Only an expert can tell them apart.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kremenac.fact": {
+   "bytes": 28800,
+   "file": "en/sp.kremenac.fact.mp3",
+   "sha1": "c1aa31bed22212c2c2a507e1402d54cd9aee9e3b",
+   "text": "Its friend is the aspen, a tree with trembling leaves.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kremenac.group": {
+   "bytes": 21456,
+   "file": "en/sp.kremenac.group.mp3",
+   "sha1": "97cc1c452501e0e4e59bcfca8673d2a1c9950394",
+   "text": "The aspen bolete is an edible mushroom.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kremenac.kdo.iAm": {
+   "bytes": 14832,
+   "file": "en/sp.kremenac.kdo.iAm.mp3",
+   "sha1": "28e719e3eb3cb7b8d364500a33132c280e732992",
+   "text": "I'm the aspen bolete.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kremenac.kdo.where": {
+   "bytes": 15696,
+   "file": "en/sp.kremenac.kdo.where.mp3",
+   "sha1": "8034873f9abc56bf0993c434342d93de8904e48a",
+   "text": "Where is the aspen bolete?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kremenac.kdo.yes": {
+   "bytes": 24768,
+   "file": "en/sp.kremenac.kdo.yes.mp3",
+   "sha1": "3780d48dcec0d179414a1d208b7bdfe358e7ee5d",
+   "text": "Yes! That's the aspen bolete.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kremenac.kosik": {
+   "bytes": 17280,
+   "file": "en/sp.kremenac.kosik.mp3",
+   "sha1": "e14145e45e19b113c0c8affcb0c8d4e2c4f52dff",
+   "text": "Where does the aspen bolete go?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kremenac.look.0": {
+   "bytes": 22752,
+   "file": "en/sp.kremenac.look.0.mp3",
+   "sha1": "81a3c5bf4d5d62c0ac060a3bf7e281ad965e62c3",
+   "text": "Its cap is orange-red like an autumn leaf.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kremenac.look.1": {
+   "bytes": 27072,
+   "file": "en/sp.kremenac.look.1.mp3",
+   "sha1": "0e564efa44109fd8068819293f83c3d9e0fe8f7a",
+   "text": "Its white stem has white scales that later go dark.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kremenac.look.2": {
+   "bytes": 27504,
+   "file": "en/sp.kremenac.look.2.mp3",
+   "sha1": "fd9c0c43c3041dec6eb890a658deee4acefe60bc",
+   "text": "It is big and firm, with tiny holes underneath.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.kremenac.name": {
+   "bytes": 12960,
+   "file": "en/sp.kremenac.name.mp3",
+   "sha1": "24debb997e5f11ff4875e15fa90ab7f85c1533c2",
+   "text": "Aspen bolete.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.liska.caution": {
+   "bytes": 35568,
+   "file": "en/sp.liska.caution.mp3",
+   "sha1": "d30ce933053e2d81c4b1d45d4963fd5d2017b8cd",
+   "text": "The false chanterelle looks similar. It has thin orange gills.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.liska.fact": {
+   "bytes": 26640,
+   "file": "en/sp.liska.fact.mp3",
+   "sha1": "079c4ba872c9a87c9d3cfbdb61cf53506e3edf4d",
+   "text": "It is yellow like an egg yolk and smells of apricots.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.liska.group": {
+   "bytes": 20448,
+   "file": "en/sp.liska.group.mp3",
+   "sha1": "6e07844a8e7f2aa9cd23bcd6b34fff773c8905d8",
+   "text": "The chanterelle is an edible mushroom.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.liska.kdo.iAm": {
+   "bytes": 13536,
+   "file": "en/sp.liska.kdo.iAm.mp3",
+   "sha1": "7e2014cc535d705a4f9ea9aca197ac1ac1450c3b",
+   "text": "I'm the chanterelle.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.liska.kdo.where": {
+   "bytes": 14544,
+   "file": "en/sp.liska.kdo.where.mp3",
+   "sha1": "1e490a2fc4a44c886ee3ff7cf300efa21d8d259a",
+   "text": "Where is the chanterelle?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.liska.kdo.yes": {
+   "bytes": 23472,
+   "file": "en/sp.liska.kdo.yes.mp3",
+   "sha1": "59575e64c17b0c0ccb5b9a1fb16c8c1d558ac424",
+   "text": "Yes! That's the chanterelle.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.liska.kosik": {
+   "bytes": 16272,
+   "file": "en/sp.liska.kosik.mp3",
+   "sha1": "4d5bd18e4ff046f4b0e2273afa0ad8819e9463c1",
+   "text": "Where does the chanterelle go?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.liska.look.0": {
+   "bytes": 22176,
+   "file": "en/sp.liska.look.0.mp3",
+   "sha1": "5c8d7c09680666fe585fa605e207975dbef1ba69",
+   "text": "It is yellow all over, even the stem.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.liska.look.1": {
+   "bytes": 21168,
+   "file": "en/sp.liska.look.1.mp3",
+   "sha1": "a3f2e934a1a70c852d80692a963964f7b064c0c1",
+   "text": "Its cap looks like a little wavy funnel.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.liska.look.2": {
+   "bytes": 27360,
+   "file": "en/sp.liska.look.2.mp3",
+   "sha1": "5c62f7a1151132ff1c38912638d8384c36ebb5b7",
+   "text": "Underneath it has soft wrinkles, not thin gills.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.liska.name": {
+   "bytes": 11376,
+   "file": "en/sp.liska.name.mp3",
+   "sha1": "fdc8e146f1e0f39d38cba5218ec85426790f0778",
+   "text": "Chanterelle.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-cervena.caution": {
+   "bytes": 38736,
+   "file": "en/sp.muchomurka-cervena.caution.mp3",
+   "sha1": "f5c3bc657d8eb558d5780cdaaea59c6dbbaccb2b",
+   "text": "It is poisonous. Do not touch it. Tell a grown-up.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-cervena.fact": {
+   "bytes": 39024,
+   "file": "en/sp.muchomurka-cervena.fact.mp3",
+   "sha1": "8e1565bb69768e4a156c18981a42f0d2d0773298",
+   "text": "It looks like a fairy-tale mushroom, but it is poisonous. Just look!",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-cervena.group": {
+   "bytes": 28368,
+   "file": "en/sp.muchomurka-cervena.group.mp3",
+   "sha1": "69cb93abbe6471c0255fae4ac6f2f1d33d853ce7",
+   "text": "Careful! The fly agaric is poisonous!",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-cervena.kdo.iAm": {
+   "bytes": 14544,
+   "file": "en/sp.muchomurka-cervena.kdo.iAm.mp3",
+   "sha1": "f8968707fb9d60ad5dad6a89d57efc4fef2f5db1",
+   "text": "I'm the fly agaric.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-cervena.kdo.where": {
+   "bytes": 15408,
+   "file": "en/sp.muchomurka-cervena.kdo.where.mp3",
+   "sha1": "ed20caa03229a7dc59e6e45a64943308d9de799c",
+   "text": "Where is the fly agaric?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-cervena.kdo.yes": {
+   "bytes": 24192,
+   "file": "en/sp.muchomurka-cervena.kdo.yes.mp3",
+   "sha1": "5f9eea44aafdf322fedef517b34137aae1899c46",
+   "text": "Yes! That's the fly agaric.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-cervena.kosik": {
+   "bytes": 17136,
+   "file": "en/sp.muchomurka-cervena.kosik.mp3",
+   "sha1": "f756ca50fddb08a6269ea0c5d1128fdc99ea3dfe",
+   "text": "Where does the fly agaric go?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-cervena.look.0": {
+   "bytes": 18432,
+   "file": "en/sp.muchomurka-cervena.look.0.mp3",
+   "sha1": "0e80265c5dcd1f55db18e07d3a804da6d01b9811",
+   "text": "Its red cap has white spots.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-cervena.look.1": {
+   "bytes": 19584,
+   "file": "en/sp.muchomurka-cervena.look.1.mp3",
+   "sha1": "9cb1c6b479da27a4d0145a78a177a25a12bace12",
+   "text": "It has white gills and a white stem.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-cervena.look.2": {
+   "bytes": 19152,
+   "file": "en/sp.muchomurka-cervena.look.2.mp3",
+   "sha1": "9caf7dcdcf39f0f31e058aa515d2dee10574414b",
+   "text": "It wears a white skirt on its stem.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-cervena.name": {
+   "bytes": 12816,
+   "file": "en/sp.muchomurka-cervena.name.mp3",
+   "sha1": "8667223cd9acb90c4dd59cb62df3407604d689eb",
+   "text": "Fly agaric.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-tygrovana.caution": {
+   "bytes": 43920,
+   "file": "en/sp.muchomurka-tygrovana.caution.mp3",
+   "sha1": "281de53b2bf60920fe27ef38f4a9908f3b282090",
+   "text": "Very poisonous! It looks like the edible blusher. Do not touch it.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-tygrovana.fact": {
+   "bytes": 33984,
+   "file": "en/sp.muchomurka-tygrovana.fact.mp3",
+   "sha1": "a52c628c2a7ed4d8a37e3614ded6d7e33254bcae",
+   "text": "It is brown with white spots. It is very poisonous.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-tygrovana.group": {
+   "bytes": 30816,
+   "file": "en/sp.muchomurka-tygrovana.group.mp3",
+   "sha1": "a2b0c8cb6300940b2464ced800bd4e91155fcc3c",
+   "text": "Careful! The panther cap is deadly poisonous!",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-tygrovana.kdo.iAm": {
+   "bytes": 13824,
+   "file": "en/sp.muchomurka-tygrovana.kdo.iAm.mp3",
+   "sha1": "7dc1ac2e07b45cd85fc0670ae4dd458bec25fb73",
+   "text": "I'm the panther cap.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-tygrovana.kdo.where": {
+   "bytes": 15264,
+   "file": "en/sp.muchomurka-tygrovana.kdo.where.mp3",
+   "sha1": "650e8010b40520e195b5b1f3a814d2a0c1392765",
+   "text": "Where is the panther cap?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-tygrovana.kdo.yes": {
+   "bytes": 23616,
+   "file": "en/sp.muchomurka-tygrovana.kdo.yes.mp3",
+   "sha1": "922ef3b52f6074a8b19b847513a7a08ddca9bae1",
+   "text": "Yes! That's the panther cap.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-tygrovana.kosik": {
+   "bytes": 16992,
+   "file": "en/sp.muchomurka-tygrovana.kosik.mp3",
+   "sha1": "65f6d24b72fed7f3e54cfef06983098709b9c1f6",
+   "text": "Where does the panther cap go?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-tygrovana.look.0": {
+   "bytes": 19440,
+   "file": "en/sp.muchomurka-tygrovana.look.0.mp3",
+   "sha1": "9e419d11c57b1cf1a021a6f69d801730159eed3d",
+   "text": "Its brown cap has white spots.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-tygrovana.look.1": {
+   "bytes": 19872,
+   "file": "en/sp.muchomurka-tygrovana.look.1.mp3",
+   "sha1": "b0052aeeb57fbcf2d974fde0292cbff167164a40",
+   "text": "The edge of the cap has fine lines.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-tygrovana.look.2": {
+   "bytes": 22464,
+   "file": "en/sp.muchomurka-tygrovana.look.2.mp3",
+   "sha1": "6789074e13db58f753d7c53d535a3d5144dff38c",
+   "text": "Its stem base has a white rim like a sock.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-tygrovana.name": {
+   "bytes": 11664,
+   "file": "en/sp.muchomurka-tygrovana.name.mp3",
+   "sha1": "6735e71c9b7bc5d7a7c5675e9b184bbb271a6484",
+   "text": "Panther cap.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-zelena.caution": {
+   "bytes": 39168,
+   "file": "en/sp.muchomurka-zelena.caution.mp3",
+   "sha1": "bf13a951708d25d6454740e206484d3f7711cc17",
+   "text": "Deadly poisonous! Do not touch it. Tell a grown-up.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-zelena.fact": {
+   "bytes": 23616,
+   "file": "en/sp.muchomurka-zelena.fact.mp3",
+   "sha1": "ad76e76e447c7f5c1c2eb693f69edceb72a60c71",
+   "text": "It is the most poisonous mushroom in our woods.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-zelena.group": {
+   "bytes": 29952,
+   "file": "en/sp.muchomurka-zelena.group.mp3",
+   "sha1": "2a286901a14a96a4e367f0b922c42a67ce722205",
+   "text": "Careful! The death cap is deadly poisonous!",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-zelena.kdo.iAm": {
+   "bytes": 13104,
+   "file": "en/sp.muchomurka-zelena.kdo.iAm.mp3",
+   "sha1": "08ca16259b1c0c1b8ce3157ad9a2cbd2785098fb",
+   "text": "I'm the death cap.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-zelena.kdo.where": {
+   "bytes": 14544,
+   "file": "en/sp.muchomurka-zelena.kdo.where.mp3",
+   "sha1": "6bf6228e9aa29f0a7057672a16dbd1245a15fad7",
+   "text": "Where is the death cap?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-zelena.kdo.yes": {
+   "bytes": 22896,
+   "file": "en/sp.muchomurka-zelena.kdo.yes.mp3",
+   "sha1": "0dcfd24a692514265fc7ed0b1cc36d4a8b9422ef",
+   "text": "Yes! That's the death cap.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-zelena.kosik": {
+   "bytes": 16128,
+   "file": "en/sp.muchomurka-zelena.kosik.mp3",
+   "sha1": "18329c7fead55bd33ff09f0c277b3842a8259214",
+   "text": "Where does the death cap go?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-zelena.look.0": {
+   "bytes": 19440,
+   "file": "en/sp.muchomurka-zelena.look.0.mp3",
+   "sha1": "ba7caa62c8872f788bcb865bc8b560abb176fedb",
+   "text": "Its cap is pale green or olive.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-zelena.look.1": {
+   "bytes": 19728,
+   "file": "en/sp.muchomurka-zelena.look.1.mp3",
+   "sha1": "765f98fe2762a4a46c28b99f295168a529a6ee21",
+   "text": "It has white gills and a white skirt.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-zelena.look.2": {
+   "bytes": 19728,
+   "file": "en/sp.muchomurka-zelena.look.2.mp3",
+   "sha1": "d2714673436f2ef614e37efa2e316dee281174f9",
+   "text": "Its stem grows out of a white cup.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.muchomurka-zelena.name": {
+   "bytes": 11232,
+   "file": "en/sp.muchomurka-zelena.name.mp3",
+   "sha1": "53bb3d4386d4b619bc119ff58dbbca81aa9d5fb1",
+   "text": "Death cap.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.pychavka.caution": {
+   "bytes": 40464,
+   "file": "en/sp.pychavka.caution.mp3",
+   "sha1": "4d0fe2dc50d4bc715badc2f78843f9d1be59a6cc",
+   "text": "Only young ones, pure white inside, are edible. Grown-ups decide.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.pychavka.fact": {
+   "bytes": 36288,
+   "file": "en/sp.pychavka.fact.mp3",
+   "sha1": "40b483088185752274af6e0946a8ad1cb1cba9c0",
+   "text": "Young ones are white inside. Old ones are full of brown dust.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.pychavka.group": {
+   "bytes": 21600,
+   "file": "en/sp.pychavka.group.mp3",
+   "sha1": "74390947b826f913436edac372dc9647673bc298",
+   "text": "The common puffball is an edible mushroom.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.pychavka.kdo.iAm": {
+   "bytes": 14832,
+   "file": "en/sp.pychavka.kdo.iAm.mp3",
+   "sha1": "62dfc961e8c2d32b8aa4486d3b17bcca3abf315f",
+   "text": "I'm the common puffball.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.pychavka.kdo.where": {
+   "bytes": 15984,
+   "file": "en/sp.pychavka.kdo.where.mp3",
+   "sha1": "7335d431062b6b8ab08c06161f3f3b97b56fb35c",
+   "text": "Where is the common puffball?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.pychavka.kdo.yes": {
+   "bytes": 24768,
+   "file": "en/sp.pychavka.kdo.yes.mp3",
+   "sha1": "2f3a0398191d9a52d53f18ad4c60ed44955e0124",
+   "text": "Yes! That's the common puffball.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.pychavka.kosik": {
+   "bytes": 17856,
+   "file": "en/sp.pychavka.kosik.mp3",
+   "sha1": "04d51e64dde4cbb6ce2a526ba1d2d83281960e2e",
+   "text": "Where does the common puffball go?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.pychavka.look.0": {
+   "bytes": 22464,
+   "file": "en/sp.pychavka.look.0.mp3",
+   "sha1": "072b7baf7e9dd0ed39d8e131183f21e2f505c46f",
+   "text": "It is round like a pear, with no cap.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.pychavka.look.1": {
+   "bytes": 2160,
+   "file": "en/sp.pychavka.look.1.mp3",
+   "sha1": "c8875a1e77def3918e60fbfeacaeabf85dbc6e13",
+   "text": "It is white and covered in tiny bumps.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.pychavka.look.2": {
+   "bytes": 19152,
+   "file": "en/sp.pychavka.look.2.mp3",
+   "sha1": "2ee17337b97a948d6d248322f3e19d70a6a83e5e",
+   "text": "A young one is all white inside.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.pychavka.name": {
+   "bytes": 13104,
+   "file": "en/sp.pychavka.name.mp3",
+   "sha1": "abc0cdd2c47ad2b66afd24634b01c7257edd6652",
+   "text": "Common puffball.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.suchohrib.caution": {
+   "bytes": 28800,
+   "file": "en/sp.suchohrib.caution.mp3",
+   "sha1": "3f6a94614f70f905ed5ade8f640c5c455f81aae7",
+   "text": "The bitter bolete looks similar, but its holes go pink.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.suchohrib.fact": {
+   "bytes": 35280,
+   "file": "en/sp.suchohrib.fact.mp3",
+   "sha1": "72422d4fc34994d8b9bc85aea91993147b5c7b3c",
+   "text": "Its cap is brown like a conker. It goes slimy in the rain.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.suchohrib.group": {
+   "bytes": 20160,
+   "file": "en/sp.suchohrib.group.mp3",
+   "sha1": "c0880eb701280588e344973b3ce23b97eb072748",
+   "text": "The bay bolete is an edible mushroom.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.suchohrib.kdo.iAm": {
+   "bytes": 14112,
+   "file": "en/sp.suchohrib.kdo.iAm.mp3",
+   "sha1": "66980b608995d9d3814d5058f255fb50f3b3e299",
+   "text": "I'm the bay bolete.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.suchohrib.kdo.where": {
+   "bytes": 14832,
+   "file": "en/sp.suchohrib.kdo.where.mp3",
+   "sha1": "8c31c30dd44a4487fd77a8faf0cb3ce4fce34812",
+   "text": "Where is the bay bolete?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.suchohrib.kdo.yes": {
+   "bytes": 23616,
+   "file": "en/sp.suchohrib.kdo.yes.mp3",
+   "sha1": "e720b938fede8b1adaf6628bb143036e19119435",
+   "text": "Yes! That's the bay bolete.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.suchohrib.kosik": {
+   "bytes": 16272,
+   "file": "en/sp.suchohrib.kosik.mp3",
+   "sha1": "fb826dc9c6988abf949e4039d01c74dc83237856",
+   "text": "Where does the bay bolete go?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.suchohrib.look.0": {
+   "bytes": 16704,
+   "file": "en/sp.suchohrib.look.0.mp3",
+   "sha1": "fe3e5dbb86f70e058cc9ad16eaefd1ab101c50c6",
+   "text": "It has a conker-brown cap.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.suchohrib.look.1": {
+   "bytes": 23760,
+   "file": "en/sp.suchohrib.look.1.mp3",
+   "sha1": "076012cab80d9b30f30f54c33fe81d6ffdb47c75",
+   "text": "Its yellow holes turn blue where they are bruised.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.suchohrib.look.2": {
+   "bytes": 18864,
+   "file": "en/sp.suchohrib.look.2.mp3",
+   "sha1": "8fe0c5946204a1218e82ba1635b982e7a57ce277",
+   "text": "Its brown stem has no net.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.suchohrib.name": {
+   "bytes": 11376,
+   "file": "en/sp.suchohrib.name.mp3",
+   "sha1": "f05f2b9cacf26547e52cd6d23579882b7798c385",
+   "text": "Bay bolete.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.trepenitka.caution": {
+   "bytes": 38304,
+   "file": "en/sp.trepenitka.caution.mp3",
+   "sha1": "ab97ae161dcc9910a7c66addca83e292f2f5f3ac",
+   "text": "It is poisonous and looks like edible honey fungus. Do not touch.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.trepenitka.fact": {
+   "bytes": 35568,
+   "file": "en/sp.trepenitka.fact.mp3",
+   "sha1": "2311a85f1f13f37ca53c109a6f759d89327c44bc",
+   "text": "It grows in big gangs on old stumps. It is poisonous.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.trepenitka.group": {
+   "bytes": 28800,
+   "file": "en/sp.trepenitka.group.mp3",
+   "sha1": "1f5bf537ec2a01e67adcdd7ab54ff3a39a6a7eba",
+   "text": "Careful! The sulphur tuft is poisonous!",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.trepenitka.kdo.iAm": {
+   "bytes": 14832,
+   "file": "en/sp.trepenitka.kdo.iAm.mp3",
+   "sha1": "9f4ba34408c64be1ea5bec95d1ca742bb6ee1974",
+   "text": "I'm the sulphur tuft.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.trepenitka.kdo.where": {
+   "bytes": 15984,
+   "file": "en/sp.trepenitka.kdo.where.mp3",
+   "sha1": "bf6f76961506dff93a054014c90174db1ea30db5",
+   "text": "Where is the sulphur tuft?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.trepenitka.kdo.yes": {
+   "bytes": 24768,
+   "file": "en/sp.trepenitka.kdo.yes.mp3",
+   "sha1": "2901f77385e18ebcd198cd75f22621dbb0ca545e",
+   "text": "Yes! That's the sulphur tuft.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.trepenitka.kosik": {
+   "bytes": 17712,
+   "file": "en/sp.trepenitka.kosik.mp3",
+   "sha1": "d90aca46b5bc293f3e9dc0fcb78ab0c73547707d",
+   "text": "Where does the sulphur tuft go?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.trepenitka.look.0": {
+   "bytes": 19296,
+   "file": "en/sp.trepenitka.look.0.mp3",
+   "sha1": "55b8358be2536e86cc7f0176249c20ddf65b144c",
+   "text": "It grows in bunches on old wood.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.trepenitka.look.1": {
+   "bytes": 23328,
+   "file": "en/sp.trepenitka.look.1.mp3",
+   "sha1": "47daad23b4ea9c8034fe1c48d8d7605aa55f741b",
+   "text": "Its cap is sulphur yellow with an orange middle.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.trepenitka.look.2": {
+   "bytes": 23472,
+   "file": "en/sp.trepenitka.look.2.mp3",
+   "sha1": "9b0a855427ddc7531eb3d3b90f53acf822399e6b",
+   "text": "Its gills are greenish-yellow, later dark.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.trepenitka.name": {
+   "bytes": 13392,
+   "file": "en/sp.trepenitka.name.mp3",
+   "sha1": "7ecb8dd5467a74198334993832ec919e6071e52c",
+   "text": "Sulphur tuft.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.troudnatec.caution": {
+   "bytes": 24048,
+   "file": "en/sp.troudnatec.caution.mp3",
+   "sha1": "effffab12f9c97a70384092c84fe64d9ff242e70",
+   "text": "It is as hard as wood, so nobody eats it.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.troudnatec.fact": {
+   "bytes": 30960,
+   "file": "en/sp.troudnatec.fact.mp3",
+   "sha1": "5db59e86dc696c2bc6ef5782eacbc3d8201859d5",
+   "text": "People once used it to start fires, even Ötzi the Iceman.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.troudnatec.group": {
+   "bytes": 20160,
+   "file": "en/sp.troudnatec.group.mp3",
+   "sha1": "9f969d85b9f665e26ed49964e44cfe334edf7e00",
+   "text": "The hoof fungus is not good to eat.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.troudnatec.kdo.iAm": {
+   "bytes": 14832,
+   "file": "en/sp.troudnatec.kdo.iAm.mp3",
+   "sha1": "50cdc3d34ed1bee98327274c658f2046978204e0",
+   "text": "I'm the hoof fungus.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.troudnatec.kdo.where": {
+   "bytes": 15984,
+   "file": "en/sp.troudnatec.kdo.where.mp3",
+   "sha1": "82938b885fd8ca0bfe90a3ea5d77da8daa0c86ac",
+   "text": "Where is the hoof fungus?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.troudnatec.kdo.yes": {
+   "bytes": 24624,
+   "file": "en/sp.troudnatec.kdo.yes.mp3",
+   "sha1": "e394593941a3b2d2ba0defeb9fe98e83c74d2b62",
+   "text": "Yes! That's the hoof fungus.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.troudnatec.kosik": {
+   "bytes": 17424,
+   "file": "en/sp.troudnatec.kosik.mp3",
+   "sha1": "970fe98d5ab455846000a7a17355931277afb7ef",
+   "text": "Where does the hoof fungus go?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.troudnatec.look.0": {
+   "bytes": 22176,
+   "file": "en/sp.troudnatec.look.0.mp3",
+   "sha1": "c2c4355c2e4aae62c9a7df9dc44fa86c1d418448",
+   "text": "It looks like a horse's hoof stuck on a tree.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.troudnatec.look.1": {
+   "bytes": 18144,
+   "file": "en/sp.troudnatec.look.1.mp3",
+   "sha1": "c49a054f90e0927edf9f07a3cd1fef0a032faf7e",
+   "text": "It is grey and hard like wood.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.troudnatec.look.2": {
+   "bytes": 18720,
+   "file": "en/sp.troudnatec.look.2.mp3",
+   "sha1": "5a754e827365ef094198adb577231236b11394d1",
+   "text": "It has stripes like tree rings.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.troudnatec.name": {
+   "bytes": 12816,
+   "file": "en/sp.troudnatec.name.mp3",
+   "sha1": "868cb4c26e981cf0e506b9cf4136dcf121956ceb",
+   "text": "Hoof fungus.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.zlucnik.caution": {
+   "bytes": 33264,
+   "file": "en/sp.zlucnik.caution.mp3",
+   "sha1": "e7a943f6d3834bada6e58ceec0f7f70ca8e9a6f7",
+   "text": "It is not poisonous, but too bitter. We leave it.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.zlucnik.fact": {
+   "bytes": 32544,
+   "file": "en/sp.zlucnik.fact.mp3",
+   "sha1": "96e1cefdf50ee9650f6fe0efdcbfaffa81c3d8af",
+   "text": "It is very bitter. One piece spoils a whole dinner.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.zlucnik.group": {
+   "bytes": 19296,
+   "file": "en/sp.zlucnik.group.mp3",
+   "sha1": "35049c05f194db47f811a646a48f7848721181e5",
+   "text": "The bitter bolete is not good to eat.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.zlucnik.kdo.iAm": {
+   "bytes": 14544,
+   "file": "en/sp.zlucnik.kdo.iAm.mp3",
+   "sha1": "4b5ad15d442b3fa5e9f52f2a6bbcdb64a1f2bfc2",
+   "text": "I'm the bitter bolete.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.zlucnik.kdo.where": {
+   "bytes": 15552,
+   "file": "en/sp.zlucnik.kdo.where.mp3",
+   "sha1": "9e200fc1da8197c52199e0646f20d74570aec81a",
+   "text": "Where is the bitter bolete?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.zlucnik.kdo.yes": {
+   "bytes": 24336,
+   "file": "en/sp.zlucnik.kdo.yes.mp3",
+   "sha1": "d4639c28095cb33dddcf94e86cc87b13f5e1b072",
+   "text": "Yes! That's the bitter bolete.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.zlucnik.kosik": {
+   "bytes": 16704,
+   "file": "en/sp.zlucnik.kosik.mp3",
+   "sha1": "3b47c5ed85ff1430bac829023cef71a7b6dbe4cf",
+   "text": "Where does the bitter bolete go?",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.zlucnik.look.0": {
+   "bytes": 19152,
+   "file": "en/sp.zlucnik.look.0.mp3",
+   "sha1": "f58d5e663b478e2ed35750f326fd4696abcee1bf",
+   "text": "It looks almost like a penny bun.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.zlucnik.look.1": {
+   "bytes": 18576,
+   "file": "en/sp.zlucnik.look.1.mp3",
+   "sha1": "bb53e59152dea1fa2be703faf08f34596f4f9b0d",
+   "text": "Under the cap its holes are pink.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.zlucnik.look.2": {
+   "bytes": 19728,
+   "file": "en/sp.zlucnik.look.2.mp3",
+   "sha1": "b539761e3111e62dae3c5ee4db2e5816e736dc5b",
+   "text": "Its stem has a dark brown net.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "sp.zlucnik.name": {
+   "bytes": 12384,
+   "file": "en/sp.zlucnik.name.mp3",
+   "sha1": "457ecffb72933103e5671930d9ce2c6c7f307f6d",
+   "text": "Bitter bolete.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "ui.album.empty": {
+   "bytes": 24480,
+   "file": "en/ui.album.empty.mp3",
+   "sha1": "0bae5388d8f4630b34115c28a64c2baaefced818",
+   "text": "Nothing here yet. Let's play!",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "ui.album.unknown": {
+   "bytes": 2160,
+   "file": "en/ui.album.unknown.mp3",
+   "sha1": "1d643400ae40e66ee9195f01fe5be1e8c0052b21",
+   "text": "You haven't found this one yet.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "ui.card.photoMissing": {
+   "bytes": 14112,
+   "file": "en/ui.card.photoMissing.mp3",
+   "sha1": "d1b905cdbe9961e16faeb227f3738e36c8c8bc97",
+   "text": "No photo yet.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "ui.card.realPhoto": {
+   "bytes": 12240,
+   "file": "en/ui.card.realPhoto.mp3",
+   "sha1": "e9511139cfeee7514965b5140ffe02f341c7f895",
+   "text": "Real photo",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "ui.kdo.done": {
+   "bytes": 24336,
+   "file": "en/ui.kdo.done.mp3",
+   "sha1": "eee6d72a3b4406ba6b1d7494422116ffa31827a4",
+   "text": "Brilliant! You found them all.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "ui.kosik.done": {
+   "bytes": 25632,
+   "file": "en/ui.kosik.done.mp3",
+   "sha1": "910604cc37292e11e087ec4c8e412417f1a16480",
+   "text": "Well done! The basket is full.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "ui.kosik.edibleToZone": {
+   "bytes": 24336,
+   "file": "en/ui.kosik.edibleToZone.mp3",
+   "sha1": "d2bf5df4243f55a846ae5233a22dbc2e612acdce",
+   "text": "We can put this one in the basket with a grown-up.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "ui.kosik.inBasket": {
+   "bytes": 29808,
+   "file": "en/ui.kosik.inBasket.mp3",
+   "sha1": "bbadb4cb6e638e54a8e88bfcdcf8d4b279c48538",
+   "text": "Into the basket! We can pick it with a grown-up.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "ui.kosik.inZone": {
+   "bytes": 20592,
+   "file": "en/ui.kosik.inZone.mp3",
+   "sha1": "5f1456be2789f9b195ca4401afbe394e04df36b2",
+   "text": "That's right, I'll stay in the forest.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "ui.kosik.inedibleBounce": {
+   "bytes": 29520,
+   "file": "en/ui.kosik.inedibleBounce.mp3",
+   "sha1": "28adde6b466935bbf2eaebc140dbdd336e773bf7",
+   "text": "I'm not good to eat. Let's leave me in the forest.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "ui.kosik.intro": {
+   "bytes": 2160,
+   "file": "en/ui.kosik.intro.mp3",
+   "sha1": "03c828a6e1bcfc048cc597c221fec57775019fa7",
+   "text": "Edible mushrooms go in the basket. We leave the others in the forest.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "ui.kosik.poisonBounce": {
+   "bytes": 38160,
+   "file": "en/ui.kosik.poisonBounce.mp3",
+   "sha1": "89ca84b3ea07702145bb37209652ecbbd85370ad",
+   "text": "Careful! I'm poisonous. Let's leave me in the forest.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "ui.langName": {
+   "bytes": 11232,
+   "file": "en/ui.langName.mp3",
+   "sha1": "c34cbda031d8fee73109aa4d7c1d680d16128fcc",
+   "text": "English",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "ui.safety.short": {
+   "bytes": 20448,
+   "file": "en/ui.safety.short.mp3",
+   "sha1": "d19b6c90f75fc78c977952bc76bd7abc620aa4a6",
+   "text": "We only pick mushrooms with a grown-up.",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "ui.say.deadlyWarn": {
+   "bytes": 16848,
+   "file": "en/ui.say.deadlyWarn.mp3",
+   "sha1": "d845042589b66e737fee665037fe6a49bc087fc9",
+   "text": "Never touch this mushroom!",
+   "voice": "en-GB-MaisieNeural"
+  },
+  "ui.say.greeting": {
+   "bytes": 30240,
+   "file": "en/ui.say.greeting.mp3",
+   "sha1": "1356db2667872207db5a5eda1507b99283240a60",
+   "text": "Hello! Tap a mushroom and it will tell you its name.",
+   "voice": "en-GB-MaisieNeural"
+  }
+ }
+}

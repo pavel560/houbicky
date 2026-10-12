@@ -18,6 +18,20 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
       - run: sudo apt-get install -y ffmpeg >/dev/null && pip install piper-tts
+      - name: Diagnose secret shape (no content)
+        if: ${{ env.HAS_SA == 'true' }}
+        env: { K: '${{ secrets.GCP_SA_KEY }}', P: '${{ secrets.GCP_PROJECT_ID }}' }
+        run: |
+          python3 - <<'PY'
+          import os, json, base64
+          s = os.environ["K"]; t = s.strip()
+          print("delka", len(s), "radku", s.count("\n") + 1, "zacina_slozenou_zavorkou", t.startswith("{"),
+                "konci_slozenou_zavorkou", t.endswith("}"), "obsahuje_service_account", "service_account" in s,
+                "obsahuje_private_key", "private_key" in s, "obsahuje_uvozovky_na_zacatku", t[:1] in "\"'")
+          try: json.loads(t); print("json_ok True")
+          except Exception as e: print("json_ok False", type(e).__name__, "pozice", getattr(e, "pos", "?"))
+          p = os.environ["P"]; print("project_id_delka", len(p), "jen_povolene_znaky", all(c.isalnum() or c == "-" for c in p))
+          PY
       - id: gauth
         if: ${{ env.HAS_SA == 'true' }}
         uses: google-github-actions/auth@v2

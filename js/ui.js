@@ -32,8 +32,11 @@ export function name(sp, lang = getLang(), mid = false) {
 
 // ---- speech: catalogue phrase ids only (js/phrases.js); one line at a time, a new say() cancels the previous one
 const slow = () => store.get('rate') === 'slow';
+// Recording playback speed per language: the Czech voice speaks fast, so "normal" is already slowed down.
+const REC_RATE = { cs: { normal: 0.85, slow: 0.75 }, en: { normal: 1, slow: 0.85 } };
+export const recRate = (lang, isSlow = slow()) => (REC_RATE[lang] ?? REC_RATE.en)[isSlow ? 'slow' : 'normal'];
 export function say(ids, lang = getLang()) {
-  return speech.sayAll(ids, lang, { rate: slow() ? 0.85 : 1, ttsRate: slow() ? 0.72 : 0.85 });
+  return speech.sayAll(ids, lang, { rate: recRate(lang), ttsRate: slow() ? 0.72 : 0.85 });
 }
 export function hush() { speech.stopAll(); }
 

@@ -7,7 +7,7 @@
 // Stable and beta side by side on one origin (…/houbicky/ and …/houbicky/beta/): the SAME file works in both places.
 // Everything is derived from the registration scope: the stable worker ignores every request under …/beta/
 // (the beta worker owns that scope) and each worker only ever creates/deletes caches with its own prefix.
-const VERSION = 'v9';
+const VERSION = 'v10';
 const SCOPE_PATH = new URL(self.registration.scope).pathname;          // '/houbicky/' or '/houbicky/beta/'
 const IS_BETA = /\/beta\/$/.test(SCOPE_PATH);
 const PREFIX = IS_BETA ? 'houbicky-beta-' : 'houbicky-';
@@ -30,6 +30,7 @@ const CORE = [
   './js/store.js',
   './js/i18n.js',
   './js/speech.js',
+  './js/voiceurl.js',
   './js/sound.js',
   './js/confetti.js',
   './js/pwa.js',
@@ -120,10 +121,22 @@ async function wanted(cache) {
   const ids = (species?.species || []).map((s) => s.id).filter((id) => SAFE_ID.test(id));
   const credits = (await readJson(cache, './photos/credits.json')) || {};
   const index = (await readJson(cache, './voice/index.json')) || {};
-  const voices = Object.values(index).flatMap((byId) => Object.values(byId || {}).map((e) => e && e.file))
-    .filter((f) => typeof f === 'string' && SAFE_VOICE.test(f)).map((f) => `./voice/${f}`);
+  // content-addressed (see js/voiceurl.js): ./voice/cs/x.mp3?v=<first 10 chars of the index sha1>
+  const voices = Object.values(index).flatMap((byId) => Object.values(byId || {}))
+    .filter((e) => e && typeof e.file === 'string' && SAFE_VOICE.test(e.file))
+    .map((e) => `./voice/${e.file}${typeof e.sha1 === 'string' && e.sha1 ? `?v=${encodeURIComponent(e.sha1.slice(0, 10))}` : ''}`);
   return [...new Set([...CORE, ...OPTIONAL, ...ids.map((id) => `./art/${id}.svg`),
     ...Object.keys(credits).filter((id) => ids.includes(id)).map((id) => `./photos/${id}.jpg`), ...voices])];
+}
+
+const isVoice = (url) => /\/voice\/[a-z]{2}\/[^/]+\.mp3$/.test(url.pathname);
+/** Drop cached recordings whose exact URL (incl. ?v=) is no longer in voice/index.json: superseded takes. */
+async function pruneVoices(cache, wantedList) {
+  const keep = new Set(wantedList.map((u) => new URL(u, self.registration.scope).href));
+  for (const req of await cache.keys()) {
+    const url = new URL(req.url);
+    if (isVoice(url) && !keep.has(url.href)) await cache.delete(req);
+  }
 }
 
 let filling = null;
@@ -132,6 +145,7 @@ function fillMissing(cache) {
   if (filling) return filling;
   filling = (async () => {
     const queue = await wanted(cache);
+    await pruneVoices(cache, queue);
     const worker = async () => {
       while (queue.length) {
         const u = queue.shift();
@@ -165,6 +179,7 @@ self.addEventListener('message', (event) => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE);
     const list = await wanted(cache);
+    await pruneVoices(cache, list);                 // superseded takes go away even when nothing is missing
     let have = 0;
     for (const u of list) if (await cache.match(u)) have++;
     event.source?.postMessage({ type: 'status', version: VERSION, have, total: list.length });
@@ -196,7 +211,24 @@ async function ranged(req, res) {
     'Content-Range': `bytes ${start}-${end}/${size}`, 'Content-Length': String(end - start + 1), 'Accept-Ranges': 'bytes' } });
 }
 
+/** Voice recordings: exact URL match only (the ?v= hash IS the version); a miss is fetched in full and cached. */
+async function handleVoice(req, url) {
+  const cache = await caches.open(CACHE);
+  let res = await cache.match(url.href);                       // exact: never another take of the same line
+  if (!res) {
+    try {
+      const full = await fetch(url.href);                      // without the Range header, so it can be cached
+      if (full && full.ok && full.status === 200 && full.type === 'basic') {
+        if (url.searchParams.has('v')) await cache.put(url.href, full.clone()).catch(() => {});
+        res = full;
+      } else return full;
+    } catch { return Response.error(); }
+  }
+  return req.headers.has('range') ? ranged(req, res) : res;
+}
+
 async function handle(req, url, event) {
+  if (isVoice(url)) return handleVoice(req, url);
   const cache = await caches.open(CACHE);
   const key = req.mode === 'navigate' && url.pathname.endsWith('/') ? './' : req;
   // Created lazily: no eager network request (and no unhandled rejection) when the cached copy is enough.

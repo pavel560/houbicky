@@ -857,6 +857,67 @@ if (want('V')) {
   }
 }
 
+// ======================================================================= VC. content-addressed voices: a re-recorded line is never served stale
+if (want('VC')) {
+  const ctx = await browser.newContext({ viewport: { width: 1024, height: 768 } });
+  await ctx.addInitScript(FAKE_SPEECH); await ctx.addInitScript(SEED_SEEN);
+  const page = await ctx.newPage(); const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message)); page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+  const IDX = path.join(SITE, 'voice', 'index.json'); const MP3 = path.join(SITE, 'voice', 'cs', 'ui.say.greeting.mp3');
+  const idx0 = fs.readFileSync(IDX, 'utf8'); const mp30 = fs.readFileSync(MP3);
+  const setTake = (sha1, bytes) => { const ix = JSON.parse(idx0); ix.cs['ui.say.greeting'].sha1 = sha1; fs.writeFileSync(IDX, JSON.stringify(ix)); fs.writeFileSync(MP3, bytes); };
+  const OLD = Buffer.concat([SILENT_MP3, Buffer.alloc(100, 1)]); const NEW = Buffer.concat([SILENT_MP3, SILENT_MP3, Buffer.alloc(77, 2)]);
+  try {
+    setTake('aaaaaaaaaaaaaaaa', OLD);
+    await page.goto(BASE + '/'); await page.waitForSelector('.start-layer .play');
+    await page.evaluate(() => navigator.serviceWorker.ready); await page.reload(); await page.waitForSelector('.start-layer .play');
+    await page.evaluate(() => window.__houbicky.go('parents'));
+    await page.waitForFunction(() => document.querySelector('.offline-ready')?.textContent.includes('100 %'), null, { timeout: 120000 });
+    const c1 = await page.evaluate(async () => { const c = await caches.open((await caches.keys()).find((k) => /^houbicky-v\d+$/.test(k)));
+      return (await c.keys()).map((r) => r.url).filter((u) => u.includes('/cs/ui.say.greeting.mp3')); });
+    check('VC: the precache holds the versioned URL (…mp3?v=aaaaaaaaaa)', c1.length === 1 && c1[0].endsWith('ui.say.greeting.mp3?v=aaaaaaaaaa'), JSON.stringify(c1));
+    // the line is re-recorded (new take, same file name) — the CDN/SW must not hand out the old bytes
+    setTake('bbbbbbbbbbbbbbbb', NEW);
+    await page.reload(); await page.waitForSelector('.start-layer .play');
+    const got = await page.evaluate(async () => {
+      const ix = await (await fetch('voice/index.json')).json();       // network-first → the new hash
+      const { voiceUrl } = await import('./js/voiceurl.js');
+      const url = voiceUrl(ix.cs['ui.say.greeting']);
+      const full = await (await fetch(url)).arrayBuffer();
+      const part = await fetch(url, { headers: { Range: 'bytes=0-99' } });
+      return { url, bytes: full.byteLength, partStatus: part.status, partLen: (await part.arrayBuffer()).byteLength };
+    });
+    check('VC: new take ⇒ new URL ⇒ the SW serves the NEW bytes although the old take is cached', got.url.endsWith('?v=bbbbbbbbbb') && got.bytes === NEW.length, JSON.stringify(got));
+    check('VC: byte ranges (206) still work for versioned URLs', got.partStatus === 206 && got.partLen === 100, JSON.stringify(got));
+    // the game itself plays the new take
+    await page.click('.start-layer .play'); await page.waitForSelector('.doors');
+    await page.waitForFunction(() => window.__files.some((f) => f.id === 'ui.say.greeting'), null, { timeout: 8000 }).catch(() => {});
+    const played = await page.evaluate(() => performance.getEntriesByType('resource').map((e) => e.name).filter((n) => n.includes('ui.say.greeting.mp3')));
+    const rates = await page.evaluate(async () => { const { recRate } = await import('./js/ui.js');
+      return { played: window.__files.find((f) => f.id === 'ui.say.greeting')?.rate, cs: recRate('cs', false), csSlow: recRate('cs', true), en: recRate('en', false), enSlow: recRate('en', true) }; });
+    check('VC: Czech recordings play slower by default (0.85; „Pomalu“ 0.75), English unchanged (1; 0.85)',
+      rates.played === 0.85 && rates.cs === 0.85 && rates.csSlow === 0.75 && rates.en === 1 && rates.enSlow === 0.85, JSON.stringify(rates));
+    check('VC: the app requests the new take (…?v=bbbbbbbbbb)', played.some((n) => n.endsWith('?v=bbbbbbbbbb')) && !played.some((n) => n.endsWith('?v=aaaaaaaaaa')), JSON.stringify(played));
+    // the superseded take is pruned and the readiness % counts the new URL
+    await page.evaluate(() => window.__houbicky.go('parents'));
+    await page.waitForFunction(() => document.querySelector('.offline-ready')?.textContent.includes('100 %'), null, { timeout: 60000 }).catch(() => {});
+    const c2 = await page.evaluate(async () => { const c = await caches.open((await caches.keys()).find((k) => /^houbicky-v\d+$/.test(k)));
+      return (await c.keys()).map((r) => r.url).filter((u) => u.includes('/cs/ui.say.greeting.mp3')); });
+    check('VC: the old take is pruned from the cache, the new one cached, readiness back at 100 %',
+      c2.length === 1 && c2[0].endsWith('?v=bbbbbbbbbb') && (await page.textContent('.offline-ready')).includes('100 %'), JSON.stringify(c2));
+    // offline: the new take plays from the cache
+    await ctx.setOffline(true);
+    const off = await page.evaluate(async () => { const ix = await (await fetch('voice/index.json')).json(); const { voiceUrl } = await import('./js/voiceurl.js');
+      const r = await fetch(voiceUrl(ix.cs['ui.say.greeting'])); return { ok: r.ok, bytes: (await r.arrayBuffer()).byteLength }; });
+    check('VC: offline the new take is served from the cache', off.ok && off.bytes === NEW.length, JSON.stringify(off));
+    await ctx.setOffline(false);
+    check('VC run: zero page errors', errors.length === 0, errors.join(' | '));
+  } finally {
+    fs.writeFileSync(IDX, idx0); fs.writeFileSync(MP3, mp30);
+    await ctx.close();
+  }
+}
+
 // ======================================================================= 3. reduced motion + offline in the car (service worker active)
 if (want('3')) {
   const ctx = await browser.newContext({ viewport: { width: 1024, height: 768 }, reducedMotion: 'reduce' });
@@ -864,7 +925,7 @@ if (want('3')) {
   const page = await ctx.newPage(); const errors = []; const failed = []; const aborted = [];
   page.on('console', (m) => { if (['error', 'warning'].includes(m.type())) errors.push(m.text()); });
   page.on('pageerror', (e) => errors.push(e.message));
-  page.on('requestfailed', (r) => { (r.failure()?.errorText === 'net::ERR_ABORTED' && /\.mp3$/.test(r.url()) ? aborted : failed).push(`${r.url()} ${r.failure()?.errorText}`); });
+  page.on('requestfailed', (r) => { (r.failure()?.errorText === 'net::ERR_ABORTED' && /\.mp3(\?|$)/.test(r.url()) ? aborted : failed).push(`${r.url()} ${r.failure()?.errorText}`); });
   page.on('response', (r) => { if (r.status() >= 400) failed.push(`http ${r.status()} ${r.url()}`); });
   const shot = (name) => page.screenshot({ path: path.join(OUT, `1024x768-${name}.png`) });
   await page.goto(BASE + '/'); await page.waitForSelector('.start-layer .play'); await page.click('.start-layer .play'); await page.waitForSelector('.doors');

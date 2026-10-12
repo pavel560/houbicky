@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Ukázky (v7: ElevenLabs dětské hlasy: Gemini/Vertex) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
+"""Ukázky (v8: ElevenLabs moje hlasy: Gemini/Vertex) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
 Běží v GitHub Actions; klíč v tajemství GOOGLE_TTS_API_KEY. Výstup: ukazky/*.mp3 + ukazky/index.html."""
 import base64, html, json, os, pathlib, re, subprocess, sys, urllib.error, urllib.parse, urllib.request
 
@@ -198,6 +198,18 @@ def el_kids():
         except Exception as e:  # noqa: BLE001
             print("CHYBA návrh", path, str(e)[:300])
 
+def el_mine():
+    """Všechny hlasy, které si rodič přidal do svého účtu (Moje hlasy), každý česky ve v2 a v3."""
+    voices = [v for v in json.loads(el_call("voices"))["voices"] if v.get("category") != "premade"]
+    print("moje hlasy:", [v["name"] for v in voices])
+    for v in voices[:6]:
+        name = re.sub(r"[^A-Za-z0-9]+", "-", v["name"])[:24].strip("-")
+        for model, text, tag in (("eleven_multilingual_v2", TEXT, "Multilingual v2"), ("eleven_v3", "[cheerfully] " + TEXT, "v3 „vesele“")):
+            try:
+                el_say(v["voice_id"], f"m-{name}-{model}", f"Tvůj hlas {v['name']} – {tag}", model=model, text=text)
+            except Exception as e:  # noqa: BLE001
+                print("CHYBA můj hlas", name, model, str(e)[:300])
+
 def piper():
     model = HERE / "jirka.onnx"
     for ext in ("", ".json"):
@@ -222,7 +234,7 @@ except Exception as e:  # noqa: BLE001
     print("CHYBA současný", e)
 if EL_KEY:
     try:
-        el_kids()
+        el_mine()
     except Exception as e:  # noqa: BLE001
         print("CHYBA elevenlabs", str(e)[:300])
 else:

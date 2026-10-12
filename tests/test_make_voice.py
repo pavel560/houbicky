@@ -273,6 +273,15 @@ class TestElevenLabs(unittest.TestCase):
         need = sum(len(t) for t in self.PHRASES["cs"].values())
         self.assertEqual(self.run_el(FakeEleven(used=30000 - need, limit=30000)), 0)
 
+    def test_key_without_user_read_still_records(self):
+        self.dump("config.json", EL_CFG)
+        class NoUserRead(FakeEleven):
+            def subscription(self): raise mv.PermissionMissing("missing_permissions user_read")
+        api = NoUserRead()
+        self.assertEqual(self.run_el(api), 0)
+        self.assertEqual(len(api.calls), 3)
+        self.assertIn("stav kreditů nelze ověřit", self.out.getvalue())
+
     def test_voice_not_in_my_voices(self):
         self.dump("config.json", EL_CFG)
         api = FakeEleven(voices=[{"voice_id": "x", "name": "Somebody"}])

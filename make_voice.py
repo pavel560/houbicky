@@ -90,6 +90,10 @@ class QuotaError(TTSError):
     pass
 
 
+class PermissionMissing(TTSError):
+    """401 missing_permissions — the key works, it just may not call this endpoint."""
+
+
 class FatalTTSError(TTSError):
     """Not worth retrying (bad key, plan, missing voice)."""
 
@@ -111,8 +115,10 @@ class ElevenLabsAPI:
                 return r.read()
         except urllib.error.HTTPError as e:
             detail = e.read().decode("utf-8", "replace")[:300] if hasattr(e, "read") else ""
+            if e.code == 401 and "missing_permissions" in detail:
+                raise PermissionMissing(f"ElevenLabs: klíči chybí oprávnění ({detail})") from e
             if e.code == 401:
-                raise FatalTTSError("ElevenLabs: neplatný API klíč (401)") from e
+                raise FatalTTSError(f"ElevenLabs: neplatný API klíč (401): {detail}") from e
             if e.code == 402 or "quota" in detail.lower() or "paid" in detail.lower():
                 raise QuotaError(f"ElevenLabs: došly kredity nebo je potřeba placený plán ({e.code}): {detail}") from e
             if e.code == 429:
@@ -376,15 +382,21 @@ def _run_elevenlabs(lang, cfg, need, phrases, index, index_path, vdir, api, retr
     chars = sum(len(text) for _, text, _, _ in need)
     print(f"{lang}: {provider.label} — potřeba {len(need)} vět, {chars} znaků.", file=out, flush=True)
     try:
-        sub = provider.api.subscription()
-        remaining = int(sub.get("character_limit", 0)) - int(sub.get("character_count", 0))
+        try:
+            sub = provider.api.subscription()
+        except PermissionMissing:
+            sub = None
+            print(f"{lang}: stav kreditů nelze ověřit (klíč nemá oprávnění user_read) — pokračuji; "
+                  f"když kredity dojdou, přepnutí se zruší a stávající nahrávky zůstanou.", file=out, flush=True)
+        remaining = (int(sub.get("character_limit", 0)) - int(sub.get("character_count", 0))) if sub else chars
         if chars > remaining:
             t["failed"] += len(need)
             print(f"{lang}: NIC SE NENAHRÁVÁ — potřeba {chars} znaků, ale v ElevenLabs zbývá jen {max(0, remaining)} "
                   f"(limit {sub.get('character_limit')}, použito {sub.get('character_count')}). Stávající nahrávky zůstávají.",
                   file=out, flush=True)
             return
-        print(f"{lang}: kredity v pořádku (zbývá {remaining} znaků, po nahrání {remaining - chars}).", file=out, flush=True)
+        if sub:
+            print(f"{lang}: kredity v pořádku (zbývá {remaining} znaků, po nahrání {remaining - chars}).", file=out, flush=True)
         provider.resolve()
     except TTSError as e:
         t["failed"] += len(need)

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Ukázky (v4: dětský hlas) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
+"""Ukázky (v5: Gemini/Vertex) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
 Běží v GitHub Actions; klíč v tajemství GOOGLE_TTS_API_KEY. Výstup: ukazky/*.mp3 + ukazky/index.html."""
-import base64, html, json, os, pathlib, subprocess, sys, urllib.request
+import base64, html, json, os, pathlib, re, subprocess, sys, urllib.error, urllib.request
 
 HERE = pathlib.Path(__file__).parent
 TEXT = "Ahoj! Já jsem hřib smrkový a jsem jedlá houba. Podívej, na noze mám bílou síťku. Ale pozor, houby sbíráme jen s dospělým!"
@@ -18,43 +18,61 @@ def call(path, body=None):
     with urllib.request.urlopen(req, timeout=60) as r:
         return json.load(r)
 
-STYLE = ("Read this in Czech, cheerfully and playfully, like a happy, excited little girl of about seven "
-         "telling her friend about the forest. Bright, warm and smiling.")
+STYLE = ("Mluv česky, vesele a hravě, jako šťastná, nadšená holčička kolem sedmi let, která kamarádce "
+         "vypráví o lese. Jasně, vřele a s úsměvem v hlase.")
+TOKEN = os.environ.get("GCP_TOKEN", "")
+PROJECT = os.environ.get("GCP_PROJECT", "")
 
-def synth(voice, cfg, text=TEXT, prompt=None):
-    body = {"input": {"text": text}, "voice": voice, "audioConfig": cfg}
-    if prompt:
-        body["input"]["prompt"] = prompt
-    return base64.b64decode(call("text:synthesize", body)["audioContent"])
+def post(url, body, bearer=False):
+    hdr = {"Content-Type": "application/json"}
+    if bearer:
+        hdr.update({"Authorization": f"Bearer {TOKEN}", "x-goog-user-project": PROJECT})
+    else:
+        url += ("&" if "?" in url else "?") + f"key={KEY}"
+    req = urllib.request.Request(url, data=json.dumps(body).encode(), headers=hdr)
+    try:
+        with urllib.request.urlopen(req, timeout=120) as r:
+            return json.load(r)
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"HTTP {e.code}: {e.read().decode()[:300]}") from None
 
-def shift(src, dst, ratio):
-    # vyšší hlas, stejné tempo: asetrate zvýší výšku i tempo, atempo vrátí tempo zpět
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(src), "-af",
-                    f"asetrate=24000*{ratio},aresample=24000,atempo={1/ratio:.4f}", "-b:a", "96k", str(dst)], check=True)
+def chirp(who):
+    out = HERE / f"g-{who}.mp3"
+    r = post(f"{API}/text:synthesize", {"input": {"text": TEXT}, "voice": {"languageCode": "cs-CZ",
+             "name": f"cs-CZ-Chirp3-HD-{who}"}, "audioConfig": {"audioEncoding": "MP3", "speakingRate": 1.05}})
+    out.write_bytes(base64.b64decode(r["audioContent"])); rows.append((out.stem, f"{who} – původní (Chirp 3 HD)"))
+
+def gemini_tts(who, model):
+    out = HERE / f"h-{who}-{model}.mp3"
+    r = post(f"{API}/text:synthesize", {"input": {"text": TEXT, "prompt": STYLE},
+             "voice": {"languageCode": "cs-CZ", "name": who, "modelName": model},
+             "audioConfig": {"audioEncoding": "MP3"}}, bearer=True)
+    out.write_bytes(base64.b64decode(r["audioContent"])); rows.append((out.stem, f"{who} – Gemini ({model}), „veselá holčička“"))
+
+def vertex(who, model):
+    url = (f"https://us-central1-aiplatform.googleapis.com/v1/projects/{PROJECT}/locations/us-central1/"
+           f"publishers/google/models/{model}:generateContent")
+    r = post(url, {"contents": [{"role": "user", "parts": [{"text": f"{STYLE}\n\n{TEXT}"}]}],
+                   "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": {
+                       "voiceConfig": {"prebuiltVoiceConfig": {"voiceName": who}}}}}, bearer=True)
+    part = r["candidates"][0]["content"]["parts"][0]["inlineData"]
+    raw = HERE / "tmp.pcm"; raw.write_bytes(base64.b64decode(part["data"]))
+    rate = re.search(r"rate=(\d+)", part.get("mimeType", "")) ; rate = rate.group(1) if rate else "24000"
+    out = HERE / f"v-{who}-{model}.mp3"
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "s16le", "-ar", rate, "-ac", "1", "-i", str(raw),
+                    "-b:a", "96k", str(out)], check=True)
+    raw.unlink(); rows.append((out.stem, f"{who} – Vertex AI ({model}), „veselá holčička“"))
 
 def google():
-    for i, who in enumerate(["Leda", "Despina"], 1):
-        base = HERE / f"g{i}a-{who}.mp3"
-        try:
-            base.write_bytes(synth({"languageCode": "cs-CZ", "name": f"cs-CZ-Chirp3-HD-{who}"},
-                                   {"audioEncoding": "MP3", "speakingRate": 1.05, "sampleRateHertz": 24000}))
-            rows.append((base.stem, f"{who} – původní (Chirp 3 HD)"))
-            for tag, ratio, label in (("b", 1.19, "o 3 půltóny výš (mladší)"), ("c", 1.30, "o 4,5 půltónu výš (holčička)")):
-                out = HERE / f"g{i}{tag}-{who}.mp3"
-                shift(base, out, ratio); rows.append((out.stem, f"{who} – {label}"))
-            print("ok", who)
-        except Exception as e:  # noqa: BLE001
-            print("CHYBA chirp", who, str(e)[:200])
-        try:
-            out = HERE / f"g{i}d-{who}-gemini.mp3"
-            out.write_bytes(synth({"languageCode": "cs-CZ", "name": who, "modelName": "gemini-2.5-flash-tts"},
-                                  {"audioEncoding": "MP3"}, prompt=STYLE))
-            rows.append((out.stem, f"{who} – Gemini, styl „veselá holčička“"))
-            out2 = HERE / f"g{i}e-{who}-gemini-vys.mp3"
-            shift(out, out2, 1.19); rows.append((out2.stem, f"{who} – Gemini „veselá holčička“ + o 3 půltóny výš"))
-            print("ok gemini", who)
-        except Exception as e:  # noqa: BLE001
-            print("CHYBA gemini", who, str(e)[:300])
+    for who in ("Leda", "Despina"):
+        for fn, args in ((chirp, ()), (gemini_tts, ("gemini-2.5-flash-tts",)), (gemini_tts, ("gemini-2.5-pro-tts",)),
+                         (vertex, ("gemini-2.5-flash-preview-tts",)), (vertex, ("gemini-2.5-pro-preview-tts",))):
+            if fn is not chirp and not TOKEN:
+                continue
+            try:
+                fn(who, *args); print("ok", fn.__name__, who, *args)
+            except Exception as e:  # noqa: BLE001
+                print("CHYBA", fn.__name__, who, *args, str(e)[:400])
 
 def piper():
     model = HERE / "jirka.onnx"
@@ -74,7 +92,7 @@ try:
     rows.append(("a-soucasny", "Současný hlas ve hře (Vlasta) – jiná věta, jen pro srovnání barvy hlasu"))
 except Exception as e:  # noqa: BLE001
     print("CHYBA současný", e)
-if KEY:
+if KEY or TOKEN:
     google()
 else:
     print("GOOGLE_TTS_API_KEY chybí – Google přeskočen")

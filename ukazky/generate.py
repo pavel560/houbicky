@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Ukázky (v3) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
+"""Ukázky (v3.1) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
 Běží v GitHub Actions; klíč v tajemství GOOGLE_TTS_API_KEY. Výstup: ukazky/*.mp3 + ukazky/index.html."""
 import base64, html, json, os, pathlib, subprocess, sys, urllib.request
 

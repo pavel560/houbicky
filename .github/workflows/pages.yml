@@ -90,7 +90,18 @@ jobs:
           key: main-photos-${{ hashFiles('main/photos/manifest.json') }}
           restore-keys: main-photos-
 
+      - name: "main: committed recordings?"
+        id: mainvoices
+        # runs always (main is the stable copy)
+        run: |
+          if ls main/voice/cs/*.mp3 >/dev/null 2>&1 || ls main/voice/en/*.mp3 >/dev/null 2>&1; then
+            echo "committed=true" >> "$GITHUB_OUTPUT"; echo "main: using the recordings committed in git (no voice cache)"
+          else
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: "main: restore voices"
+        if: steps.mainvoices.outputs.committed != 'true'    # transitional: until record-voices.yml has committed them
         uses: actions/cache@v4
         with:
           path: |
@@ -107,6 +118,8 @@ jobs:
         env:
           HOUBICKY_CONTACT: ${{ vars.HOUBICKY_CONTACT }}
 
+      # Deploys never use a paid TTS service (no ElevenLabs key here): recordings come from git (record-voices.yml).
+      # This step only fills gaps with free edge-tts, and makes no network call when every line is already recorded.
       - name: "main: record voices (only new or changed lines)"
         working-directory: main
         run: python make_voice.py
@@ -131,8 +144,18 @@ jobs:
           key: v2-photos-${{ hashFiles('v2/photos/manifest.json') }}
           restore-keys: v2-photos-
 
-      - name: "v2: restore voices"
+      - name: "v2: committed recordings?"
+        id: v2voices
         if: steps.v2export.outcome == 'success'
+        run: |
+          if ls v2/voice/cs/*.mp3 >/dev/null 2>&1 || ls v2/voice/en/*.mp3 >/dev/null 2>&1; then
+            echo "committed=true" >> "$GITHUB_OUTPUT"; echo "v2: using the recordings committed in git (no voice cache)"
+          else
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: "v2: restore voices"
+        if: steps.v2export.outcome == 'success' && steps.v2voices.outputs.committed != 'true'
         continue-on-error: true
         uses: actions/cache@v4
         with:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Ukázky (v5.5: Gemini/Vertex) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
+"""Ukázky (v5.6: Gemini/Vertex) českých hlasů pro Houbičky — Google Cloud Text-to-Speech + Piper + současný hlas ze hry.
 Běží v GitHub Actions; klíč v tajemství GOOGLE_TTS_API_KEY. Výstup: ukazky/*.mp3 + ukazky/index.html."""
 import base64, html, json, os, pathlib, re, subprocess, sys, urllib.error, urllib.request
 
@@ -34,7 +34,7 @@ def sa_token():
         info = json.loads(t if t.startswith("{") else "{" + t.rstrip(",") + "}")
     except Exception:  # noqa: BLE001 — vytáhni jen nutná pole bez ohledu na formát
         def field(name):
-            m = re.search(r'["\']?' + name + r'["\']?\s*:\s*["\']([^"\']+)["\']', t)
+            m = re.search(r'["\']?' + name + r'["\']?\s*[:=]\s*["\']?([^"\',\s]+)', t)
             return m.group(1) if m else ""
         key = re.search(r"-----BEGIN PRIVATE KEY-----.*?-----END PRIVATE KEY-----", t, re.S)
         if not key:

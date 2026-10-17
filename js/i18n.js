@@ -134,6 +134,7 @@ export const strings = {
     'parents.no': 'Ne',
     'parents.resetDone': 'Postup byl smazán.',
     'rotate.title': 'Otoč iPad na šířku',
+    'rotate.titlePhone': 'Otoč telefon na šířku',
 
     'level.title': 'Obtížnost',
     'level.1': 'Malý houbař',
@@ -342,6 +343,7 @@ export const strings = {
     'parents.no': 'No',
     'parents.resetDone': 'Progress has been deleted.',
     'rotate.title': 'Turn the iPad sideways',
+    'rotate.titlePhone': 'Turn the phone sideways',
 
     'level.title': 'Difficulty',
     'level.1': 'Little forager',

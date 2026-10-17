@@ -70,11 +70,11 @@ async function boot() {
     document.body.append(h(`<div class="beta-ribbon" aria-hidden="true">${esc(t('beta.ribbon'))}</div>`));
   }
   const rot = document.getElementById('rotate');
-  rot.innerHTML = `<div class="rotate-card"><div class="rotate-ic">${icon('flip')}</div><p>${esc(t('rotate.title'))}</p>
+  rot.innerHTML = `<div class="rotate-card"><div class="rotate-ic">${icon('flip')}</div><p class="rot-tablet">${esc(t('rotate.title'))}</p><p class="rot-phone">${esc(t('rotate.titlePhone'))}</p>
     <button class="btn round r88 paper" data-act="rotate-home" aria-label="${esc(t('nav.home'))}">${icon('home')}</button></div>`;
   // rotation lock on the iPad must never trap the child in a game
   rot.querySelector('[data-act="rotate-home"]').addEventListener('click', () => { sound.play('pop'); go('les'); });
-  addEventListener('langchange', () => { rot.querySelector('p').textContent = t('rotate.title'); rot.querySelector('button').setAttribute('aria-label', t('nav.home')); });
+  addEventListener('langchange', () => { rot.querySelector('.rot-tablet').textContent = t('rotate.title'); rot.querySelector('.rot-phone').textContent = t('rotate.titlePhone'); rot.querySelector('button').setAttribute('aria-label', t('nav.home')); });
   document.documentElement.dataset.screen = 'start';
   startScreen();
   registerServiceWorker().then((r) => { window.__houbicky.sw = { ok: r.ok, reason: r.reason || null }; });

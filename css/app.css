@@ -507,3 +507,190 @@ html:is([data-screen="kosik"], [data-screen="kdo"]) .forest .fern { display: non
 .ve-adult .icon { width: 30px; height: 30px; }
 .ve-actions { right: max(var(--space-5), env(safe-area-inset-right)); top: calc(max(var(--space-4), env(safe-area-inset-top)) + 104px); display: flex; gap: var(--space-4);
   background: var(--paper); border: var(--stroke-ink) solid var(--ink); border-radius: var(--r-lg); padding: var(--space-4); box-shadow: var(--shadow-lift); }
+
+/* ------------------------------------------------------------ iPhone (responsive pass)
+   Every rule below sits behind a phone-only query: a short landscape viewport (max-height 500px) or a narrow
+   portrait one (max-width 600px). iPad / desktop (>= 744 px on the short side) never match, so their layout is untouched.
+   Only layout / sizing tokens are re-set here; colours and fonts stay the design tokens. svh = the viewport with
+   Safari's toolbars shown, so nothing hides under them. */
+.rot-phone { display: none; }
+@media (orientation: portrait) and (max-width: 700px) { .rot-tablet { display: none; } .rot-phone { display: block; } }
+
+@media (orientation: landscape) and (max-height: 500px), (orientation: portrait) and (max-width: 600px) {
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  :root { --phone-top: max(var(--space-3), env(safe-area-inset-top)); --phone-bottom: max(var(--space-3), env(safe-area-inset-bottom));
+    --phone-left: max(var(--space-3), env(safe-area-inset-left)); --phone-right: max(var(--space-3), env(safe-area-inset-right)); }
+  .lang-btn, .level-chip, .doors, .top-right, .topbar, .hud-home, .trail-dots, .hud-speak, .big-speaker { top: var(--phone-top); }
+  .lang-btn, .topbar, .hud-home { left: var(--phone-left); }
+  .level-chip { left: calc(var(--phone-left) + var(--touch-min) + var(--space-3)); }
+  .top-right, .topbar, .hud-speak { right: var(--phone-right); }
+  .pan-btn.left { left: var(--phone-left); } .pan-btn.right { right: var(--phone-right); }
+  .title-pill { font-size: 24px; padding-inline: var(--space-4); }
+  .stars { padding-inline: var(--space-3); gap: 2px; }
+  .star { width: 28px; height: 28px; }
+  #speech-bubble { bottom: var(--phone-bottom); max-width: calc(100vw - var(--phone-left) - var(--phone-right)); font-size: 18px; padding: var(--space-2) var(--space-4); }
+
+  /* album + parents: header and panel stack in a column; the panel scrolls inside itself */
+  .album-screen, .parents-screen { display: flex; flex-direction: column; gap: var(--space-3);
+    padding: var(--phone-top) var(--phone-right) var(--phone-bottom) var(--phone-left); }
+  .album-screen .topbar, .parents-screen .topbar { position: static; flex: none; flex-wrap: wrap; row-gap: var(--space-2); }
+  .book, .sheet { position: static; translate: none; flex: 1 1 auto; min-height: 0; width: 100%; max-width: 1280px; margin-inline: auto; }
+  .sheet { max-width: 900px; padding: var(--space-5); gap: var(--space-5); overscroll-behavior: contain; -webkit-overflow-scrolling: touch; overflow-wrap: anywhere; }
+  .book { grid-template-rows: minmax(0, 1fr); }
+  .page { overscroll-behavior: contain; padding: var(--space-3) var(--space-4); }
+  .slots { grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); }
+  .sticker-btn { width: 84px; height: 96px; }
+  .st-name { font-size: 16px; }
+  .row { flex-wrap: wrap; row-gap: var(--space-3); }
+  .seg { max-width: 100%; }
+  .seg-btn { min-width: 0; line-height: 1.2; padding-block: var(--space-1); }
+  .photo-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+
+  /* level sheet: scrolls when it does not fit, clear of the notch and the home indicator */
+  .level-sheet { padding: var(--phone-top) var(--phone-right) var(--phone-bottom) var(--phone-left); }
+  .ls-card { width: min(100%, 1000px); max-height: 100%; overflow-y: auto; overscroll-behavior: contain; padding: var(--space-4); }
+  .lv-card { min-height: 0; }
+  .lv-rosette { width: 72px; height: 72px; }
+  .cer-title { font-size: 36px; }
+
+  /* card: never clip — the content scrolls inside the card */
+  .card { inset: var(--phone-top) var(--phone-right) var(--phone-bottom) var(--phone-left); }
+  .card[data-deadly] { top: calc(var(--phone-top) + 18px); }
+  .ribbon { top: -20px; font-size: 16px; padding-inline: var(--space-4); }
+  .photo-thumb { width: 64px; height: 64px; top: 0; right: 0; }
+  .verdict { --badge-card: 52px; gap: var(--space-3); padding-right: var(--space-5); }
+  .look { min-height: 56px; font-size: 17px; }
+  .look .num { width: 30px; height: 30px; font-size: 15px; }
+  .card-actions .r88 { width: 72px; height: 72px; }
+  .twin-panel { overflow-y: auto; padding: var(--space-3); }
+  .twin-art { height: min(30svh, 150px); }
+  .twin-verdict { font-size: 17px; }
+  .twin-verdict .badge { width: 32px; height: 32px; }
+
+  /* end of a round */
+  .end-panel { padding: var(--space-4) var(--space-5); gap: var(--space-2); max-width: calc(100vw - var(--phone-left) - var(--phone-right)); }
+  .end-stars .star { width: 40px; height: 40px; }
+  .end-doors { gap: var(--space-5); }
+}
+
+/* -------- short landscape phone (iPhone on its side: 375–440 px tall) */
+@media (orientation: landscape) and (max-height: 500px) {
+  :root { --touch-main: 72px; --touch-hero: 88px; --char-card: min(46svh, 200px);
+    --fs-hero: 36px; --fs-title: 28px; --fs-label: 22px; --fs-body: 19px; }
+  /* Les: the menu stays centred; stars + parents stack in the corner so the menu has the width */
+  .doors { width: max-content; gap: var(--space-2); padding: var(--space-2) var(--space-3) var(--space-1); border-radius: var(--r-md); }
+  .door { min-width: var(--touch-main); }
+  .door-label { font-size: 16px; }
+  .top-right { flex-direction: column-reverse; align-items: flex-end; gap: var(--space-2); }
+  .progress-pill { min-height: 48px; padding-block: var(--space-1); }
+  .star-ic { width: 26px; height: 26px; }
+  .start-card { padding: var(--space-5) var(--space-7) var(--space-4); gap: var(--space-3); }
+  .start-title { font-size: 4rem; }
+  /* Kvíz: the big speaker joins the right end of the header (like Do košíku) */
+  .kdo .topbar { right: calc(var(--phone-right) + var(--touch-hero) + var(--space-3)); }
+  .kdo .big-speaker { left: auto; right: var(--phone-right); translate: none; }
+  .stumps { bottom: max(2svh, env(safe-area-inset-bottom)); height: 66svh; padding-inline: max(4vw, env(safe-area-inset-left)) max(4vw, env(safe-area-inset-right)); }
+  .cand { height: min(34svh, 200px); }
+  .cand-name { font-size: 20px; }
+  /* Do košíku */
+  .zone { left: max(1.5%, env(safe-area-inset-left)); width: min(36vw, 380px, 82svh); }
+  .basket { right: max(2.5%, env(safe-area-inset-right)); width: min(40vw, 440px, 76svh); }   /* height-capped: clear of the header */
+  .target { bottom: calc(max(var(--space-2), env(safe-area-inset-bottom)) + var(--space-2)); }   /* + room for the chip pulse */
+  .chip-label { font-size: 20px; margin-top: calc(-1 * var(--space-6)); }
+  .chip-label .badge, .chip-label .hand { width: 34px; height: 34px; }
+  /* card: art + caution left, text right, buttons in a column on the right edge; each column scrolls if needed */
+  .card { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: minmax(0, 1fr); }
+  .card-front { grid-template-columns: minmax(0, 40%) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); gap: var(--space-4);
+    padding: var(--space-3) 0 var(--space-3) var(--space-3); }
+  .card-art { grid-template-rows: auto auto; align-content: center; gap: var(--space-2); overflow-y: auto; overscroll-behavior: contain; padding-bottom: 0; }
+  .art-box { height: var(--char-card); }
+  .caution { max-width: 100%; }
+  .card-info { justify-content: flex-start; justify-content: safe center; overflow-y: auto; overscroll-behavior: contain; gap: var(--space-2);
+    padding: var(--space-1) var(--space-3) var(--space-1) 0; }
+  .card-back { padding: var(--space-3) 0 var(--space-3) var(--space-3); }
+  .card-actions { flex-direction: column; justify-content: center; gap: var(--space-2); padding: var(--space-3) var(--space-3) var(--space-3) var(--space-4); }
+  .card-actions > * { flex: none; }
+  .card[data-deadly] :is(.card-front, .card-back) { padding-top: var(--space-7); }   /* the ribbon sits over the top edge */
+  .card-actions .r88 { width: 68px; height: 68px; }
+  .twin-panel { grid-template-columns: auto minmax(0, 1fr); grid-template-rows: auto auto minmax(0, 1fr);
+    grid-template-areas: "title row" "tabs row" "act row"; align-items: center; column-gap: var(--space-5); }
+  .twin-title { grid-area: title; font-size: 28px; }
+  .twin-tabs { grid-area: tabs; flex-direction: column; }
+  .twin-row { grid-area: row; }
+  .twin-actions { grid-area: act; align-self: start; }
+  .twin-art { height: min(44svh, 170px); }
+  .missing-art { height: min(50svh, 220px); }
+  /* album: smaller pills; pages scroll */
+  .dots i { width: 8px; height: 8px; }
+  /* Výprava: smaller big buttons, clear of the home indicator */
+  .hud-next, .fork-arrows .btn { width: 96px; height: 96px; }
+  .hud-next { bottom: calc(var(--phone-bottom) + 22px); right: var(--phone-right); }
+  .hud-next span { bottom: -26px; font-size: 18px; }
+  .fork-arrows { bottom: var(--phone-bottom); right: var(--phone-right); gap: var(--space-2); }
+  .hud-back { bottom: var(--phone-bottom); }
+  .hud-basket { left: var(--phone-left); bottom: var(--phone-bottom); width: 120px; height: 96px; }
+  .trail-dots .dots i { width: 18px; height: 18px; }
+  .trail-dots .dots i.cur { width: 24px; height: 24px; margin-block: -3px; }
+  .vy-hud .decide .group-btn, .group-btn { min-height: 72px; font-size: 20px; }
+  .group-btn .badge { width: 52px; height: 52px; }
+  .vy-photo-pop { width: 150px; height: 150px; }
+  .ve-actions { top: calc(var(--phone-top) + 80px); right: var(--phone-right); }
+  .ve-adult { left: var(--phone-left); bottom: var(--phone-bottom); }
+  .ve-stars { left: calc(var(--phone-left) + 76px); }
+  .vt-art { height: min(22svh, 110px); }
+  .ls-cards { gap: var(--space-3); }
+  .lv-pv { height: min(110px, 24svh); }
+  .lv-preview { height: min(100px, 22svh); width: calc(min(100px, 22svh) * 240 / 280); }
+  .lv-polaroid { height: min(96px, 22svh); width: min(96px, 22svh); }
+}
+
+/* -------- portrait phone (390–440 px wide). The three games ask to turn the phone (#rotate); menus, album, card, parents work upright. */
+@media (orientation: portrait) and (max-width: 600px) {
+  :root { --fs-hero: 40px; --char-card: min(30svh, 240px); }
+  .start-card { padding: var(--space-6) var(--space-5) var(--space-5); max-width: calc(100vw - 2 * var(--space-6)); }
+  .start-title { font-size: clamp(3rem, 15vw, 4.25rem); }
+  .start-card .lang-btn { top: calc(-1 * var(--space-4)); left: calc(-1 * var(--space-4)); }
+  /* Les: the four doors as a 2 × 2 menu under the top row */
+  .doors { top: calc(var(--phone-top) + var(--touch-min) + var(--space-4)); width: max-content; display: grid; grid-template-columns: repeat(2, auto);
+    gap: var(--space-3) var(--space-6); padding: var(--space-4) var(--space-6) var(--space-3); }
+  .door { min-width: 104px; }
+  .pan-btn { top: 66%; }
+  /* album: one page under the other, the whole book scrolls */
+  .book { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; overflow-y: auto; overscroll-behavior: contain; }
+  .page { overflow: visible; }
+  .page.left { border-right: 0; border-bottom: var(--stroke-ink) dashed var(--paper-edge); }
+  .slots { grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); }
+  .sticker-btn { width: 92px; height: 104px; }
+  /* parents: label above its control, controls full width */
+  .sheet { padding: var(--space-4); }
+  .safety-box { padding: var(--space-3) var(--space-4); gap: var(--space-3); }
+  .safety-box .big { width: 44px; height: 44px; }
+  .row { flex-direction: column; align-items: stretch; }
+  .row .switch { align-self: flex-start; }
+  .seg { display: flex; width: 100%; }
+  .seg-btn { flex: 1 1 0; padding-inline: var(--space-2); }
+  .row.sub { padding-left: var(--space-3); }
+  .offline-ready { flex-wrap: wrap; }
+  .pcheck .switch { flex-wrap: wrap; row-gap: var(--space-1); }
+  .pcheck .sw-label { min-width: 0; }
+  .ls-cards { grid-template-columns: minmax(0, 1fr); }
+  .ls-card { width: calc(100vw - var(--phone-left) - var(--phone-right)); }
+  /* card: art on top, text below, the front scrolls; buttons stay in a row at the bottom */
+  .card-front { grid-template-columns: minmax(0, 1fr); grid-template-rows: max-content max-content; align-content: start; overflow-y: auto; overscroll-behavior: contain;
+    padding: var(--space-4) var(--space-4) var(--space-2); gap: var(--space-2); }
+  .card-art { grid-template-rows: auto auto; gap: var(--space-2); min-height: max-content; }
+  .art-box { height: var(--char-card); }
+  .card-info { justify-content: flex-start; padding-block: 0 var(--space-2); min-height: max-content; }
+  .card[data-deadly] .card-front { padding-top: var(--space-5); }
+  .card-back { padding: var(--space-4) var(--space-4) 0; }
+  .card-actions { gap: var(--space-3); padding: var(--space-3) 0 var(--space-4); }
+  .twin-row { gap: var(--space-2); }
+  .twin-vs { font-size: 36px; }
+  .twin-name { font-size: 20px; }
+  .twin-tabs { flex-wrap: wrap; justify-content: center; }
+  /* games behind the rotate overlay: keep their headers inside the screen */
+  .topbar { flex-wrap: wrap; }
+  .trail-dots { max-width: calc(100vw - 2 * (var(--phone-left) + var(--touch-main))); overflow: hidden; }
+  .rotate-card { padding: var(--space-6) var(--space-5); margin-inline: var(--space-4); font-size: 28px; }
+  .rotate-ic { width: 112px; height: 112px; }
+}

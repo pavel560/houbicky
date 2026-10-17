@@ -76,8 +76,8 @@ const FAKE_SPEECH = () => {
 const SEED_SEEN = () => {   // ceremonies count as seen in general tests (section C clears this and tests them)
   for (const k of ['houbicky.v1', 'houbicky.beta.v1']) try { if (!localStorage.getItem(k)) localStorage.setItem(k, JSON.stringify({ seen: { 2: true, 3: true, album2: true } })); } catch { /* ignore */ }
 };
-async function session(vp, tag, br = browser, { reducedMotion = 'no-preference', seed = true } = {}) {
-  const ctx = await br.newContext({ viewport: vp, serviceWorkers: 'block', reducedMotion });
+async function session(vp, tag, br = browser, { reducedMotion = 'no-preference', seed = true, ctxOpts = {} } = {}) {
+  const ctx = await br.newContext({ viewport: vp, serviceWorkers: 'block', reducedMotion, ...ctxOpts });
   await ctx.addInitScript(FAKE_SPEECH);
   if (seed) await ctx.addInitScript(SEED_SEEN);
   const cr = (via) => ({ author: 'Test Author', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePage: 'https://commons.wikimedia.org/wiki/File:Test.jpg', via });
@@ -965,6 +965,127 @@ if (want('3')) {
   check('reduced-motion/offline run: zero console errors', errors.length === 0, errors.join(' | '));
   await ctx.setOffline(false);
   await ctx.close();
+}
+// ---------------------------------------------------------------- IP: iPhone — every screen + the card at phone sizes (landscape + portrait)
+if (want('IP')) {
+  const PHONES = [
+    { tag: 'ip-land', vp: { width: 844, height: 390 }, insets: { top: 0, left: 47, right: 47, bottom: 21 } },     // iPhone 13–16, notch left or right
+    { tag: 'ip-se', vp: { width: 667, height: 375 }, insets: { top: 0, left: 0, right: 0, bottom: 0 } },          // iPhone SE
+    { tag: 'ip-port', vp: { width: 390, height: 844 }, insets: { top: 47, left: 0, right: 0, bottom: 34 } },      // upright
+  ];
+  const GAMES = ['kosik', 'kdo', 'vyprava'];
+  const CONTROLS = {
+    start: ['.start-layer .play', '.start-card .lang-btn'],
+    les: ['.les-ui > .lang-btn', '.level-chip', '.door[data-door="kosik"]', '.door[data-door="kdo"]', '.door[data-door="album"]', '.door[data-door="vyprava"]', '.progress-pill', '.parents-btn', '.pan-btn.left?', '.pan-btn.right?'],
+    kdo: ['.kdo .topbar [data-act="home"]', '.kdo .title-pill', '.kdo .stars', '.big-speaker', '.stump-slot:nth-child(1) .cand', '.stump-slot:nth-child(2) .cand', '.stump-slot:nth-child(3) .cand'],
+    kosik: ['.kosik .topbar [data-act="home"]', '.kosik .title-pill', '.kosik .stars', '.kosik .topbar [data-act="speak"]', '.zone .chip-label', '.basket .chip-label'],
+    vyprava: ['.hud-home', '.trail-dots', '.hud-speak', '.hud-basket', '.hud-back?', '.hud-next'],
+    album: ['.album-screen .topbar [data-act="home"]', '.album-screen .title-pill', '.album-count', '.book'],
+    parents: ['.parents-screen .topbar [data-act="home"]', '.parents-screen .title-pill', '.sheet'],
+    rotate: ['#rotate .rotate-card', '#rotate [data-act="rotate-home"]'],
+    card: ['.card', '.card-actions [data-act="speak"]', '.card-actions [data-act="flip"]', '.card-actions [data-act="twin"]', '.card-actions [data-act="close"]', '.photo-thumb?'],
+    twin: ['.twin-panel [data-act="twin-speak"]', '.twin-panel [data-act="twin-close"]', '.twin-side:nth-of-type(1)', '.twin-side:last-of-type'],
+    deadly: ['.card', '.ribbon', '.card-actions [data-act="speak"]', '.card-actions [data-act="close"]'],
+    levels: ['.ls-card', '.ls-card [data-act="close"]'],
+  };
+  const CARD_TEXT = ['.sp-name', '.sp-alt', '.verdict', '.safety', '.looks', '.caution', '.art-box', '.photo-thumb'];
+  // geometry probe: controls inside the safe viewport and not overlapping; no horizontal clipping; every button >= 56 px; scroll, not clip
+  const probe = (s, sels, ins, textSels = []) => s.page.evaluate(({ sels, ins, textSels }) => {
+    const W = innerWidth, H = innerHeight;
+    const vis = (el) => el && el.checkVisibility({ visibilityProperty: true, opacityProperty: true }) && el.getClientRects().length > 0;
+    const r = (el) => { const b = el.getBoundingClientRect(); return { l: b.left, t: b.top, r: b.right, b: b.bottom, w: b.width, h: b.height }; };
+    const shown = (el) => { const b = r(el);   // the part of el not clipped away by a scrolling / clipping ancestor
+      for (let a = el.parentElement; a && a !== document.body; a = a.parentElement) { const c = getComputedStyle(a); if (c.overflowX === 'visible' && c.overflowY === 'visible') continue;
+        const k = r(a); b.l = Math.max(b.l, k.l); b.t = Math.max(b.t, k.t); b.r = Math.min(b.r, k.r); b.b = Math.min(b.b, k.b); }
+      return b; };
+    const out = { missing: [], outside: [], overlaps: [], clipped: [], small: [], hscroll: [], cutoff: [] };
+    // a trailing '?' = optional (e.g. the left pan arrow is hidden at the forest's left edge, the photo badge only on species with a photo)
+    const found = sels.map((q) => [q.replace(/\?$/, ''), document.querySelector(q.replace(/\?$/, '')), q.endsWith('?')]).filter(([sel, el, opt]) => (vis(el) ? true : (opt || out.missing.push(sel), false))).map(([sel, el]) => [sel, el]);
+    for (const [sel, el] of found) { const b = r(el);
+      if (b.l < ins.left - 1 || b.t < ins.top - 1 || b.r > W - ins.right + 1 || b.b > H - ins.bottom + 1) out.outside.push(`${sel} ${[b.l, b.t, b.r, b.b].map(Math.round)}`); }
+    const both = [...found, ...textSels.map((sel) => [sel, document.querySelector(sel)]).filter(([, el]) => vis(el))];
+    for (let i = 0; i < both.length; i++) for (let j = i + 1; j < both.length; j++) {
+      const [sa, a] = both[i], [sb, b] = both[j];
+      if (a === b || a.contains(b) || b.contains(a)) continue;
+      if ([sa, sb].includes('.art-box') && [sa, sb].includes('.photo-thumb')) continue;   // the photo badge sits on the art corner by design
+      const A = shown(a), B = shown(b); const ox = Math.min(A.r, B.r) - Math.max(A.l, B.l), oy = Math.min(A.b, B.b) - Math.max(A.t, B.t);
+      if (ox > 1 && oy > 1) out.overlaps.push(`${sa} × ${sb} (${Math.round(ox)}×${Math.round(oy)})`);
+    }
+    const rot = getComputedStyle(document.getElementById('rotate')).display !== 'none';
+    const roots = rot ? [document.getElementById('rotate')] : [document.getElementById('screen'), document.getElementById('overlay')];
+    for (const root of roots) for (const el of root.querySelectorAll('.ui, button, .pill, h1, h2, h3, p, li, .card, .sheet, .book, .rotate-card, .ls-card, .end-panel')) {
+      if (!vis(el) || el.closest('.vy-stage, .pieces, .card-back, .stumps, .target-art')) continue;
+      const b = r(el); if (b.w < 1) continue;
+      if (b.l < -1 || b.r > W + 1) out.clipped.push(`${el.className || el.tagName} ${Math.round(b.l)}..${Math.round(b.r)}`);
+      if (el.tagName === 'BUTTON' && !el.closest('.vy-stage') && (b.w < 55.5 || b.h < 55.5)) out.small.push(`${el.className || el.dataset.act} ${Math.round(b.w)}×${Math.round(b.h)}`);
+    }
+    for (const el of document.querySelectorAll('.sheet, .book, .page, .card-front, .card-info, .card-art, .ls-card, .twin-panel, .card')) {
+      if (!vis(el)) continue; const cs = getComputedStyle(el);
+      if (el.scrollWidth > el.clientWidth + 1 && cs.overflowX !== 'visible') out.hscroll.push(`${el.className} ${el.scrollWidth}>${el.clientWidth}`);
+      if (el.scrollHeight > el.clientHeight + 1 && !['auto', 'scroll'].includes(cs.overflowY)) out.cutoff.push(`${el.className} ${el.scrollHeight}>${el.clientHeight} (${cs.overflowY})`);
+    }
+    out.page = { sw: document.documentElement.scrollWidth, iw: W };
+    out.rotate = rot ? [...document.querySelectorAll('#rotate p')].filter(vis).map((p) => p.textContent) : null;
+    return out;
+  }, { sels, ins, textSels });
+  for (const { tag, vp, insets } of PHONES) {
+    const s = await session(vp, tag, browser, { ctxOpts: { isMobile: true, hasTouch: true, deviceScaleFactor: 2 } });
+    let ins = insets;
+    try { const cdp = await s.ctx.newCDPSession(s.page); await cdp.send('Emulation.setSafeAreaInsetsOverride', { insets }); }
+    catch { ins = { top: 0, left: 0, right: 0, bottom: 0 }; results.push(`INFO  ${tag}: safe-area emulation not available in this Chromium — checked against the full viewport`); }
+    const portrait = vp.height > vp.width;
+    const verify = async (screen, sels, text = []) => {
+      const p = await probe(s, sels, ins, text);
+      const bad = ['missing', 'outside', 'overlaps', 'clipped', 'small', 'hscroll', 'cutoff'].filter((k) => p[k].length).map((k) => `${k}: ${p[k].slice(0, 4).join(' | ')}`);
+      check(`${tag} ${screen}: controls inside the safe area, no overlaps, no horizontal clipping, buttons ≥ 56 px, overflow scrolls`, !bad.length && p.page.sw <= p.page.iw, bad.join(' ; ') + ` sw=${p.page.sw}/${p.page.iw}`);
+      return p;
+    };
+    await s.page.goto(BASE + '/'); await s.page.waitForSelector('.start-layer .play'); await s.settle(800); await s.shot('start');
+    await verify('start', CONTROLS.start);
+    await s.page.click('.start-layer .play'); await s.page.waitForSelector('.doors'); await s.settle(1200); await s.shot('les');
+    await verify('les', CONTROLS.les);
+    for (const scr of ['kdo', 'kosik', 'vyprava', 'album', 'parents']) {
+      await s.page.evaluate((x) => window.__houbicky.go(x), scr); await s.settle(1600); await s.shot(scr);
+      const covered = portrait && GAMES.includes(scr);
+      const p = await verify(scr, covered ? CONTROLS.rotate : CONTROLS[scr]);
+      check(`${tag} ${scr}: rotate overlay ${covered ? 'shown with the phone wording' : 'hidden'}`, covered ? JSON.stringify(p.rotate) === JSON.stringify(['Otoč telefon na šířku']) : p.rotate === null, JSON.stringify(p.rotate));
+      if (scr === 'parents') {   // the sheet scrolls to its very end (reset button reachable, fully inside the sheet)
+        const end = await s.page.evaluate(() => { const sh = document.querySelector('.sheet'); sh.scrollTop = sh.scrollHeight; const b = document.querySelector('[data-act="reset"]').getBoundingClientRect(); const c = sh.getBoundingClientRect();
+          return b.bottom <= c.bottom + 1 && b.top >= c.top - 1 && b.right <= c.right + 1; });
+        await s.settle(300); await s.shot('parents-end');
+        check(`${tag} parents: the sheet scrolls to the reset button`, end);
+      }
+      if (scr === 'album') {
+        const end = await s.page.evaluate(() => { const last = [...document.querySelectorAll('.slot')].pop(); last.scrollIntoView({ block: 'end' }); const b = last.getBoundingClientRect(); const c = document.querySelector('.book').getBoundingClientRect();
+          return b.bottom <= c.bottom + 1 && b.right <= c.right + 1 && b.left >= c.left - 1; });
+        await s.settle(300); await s.shot('album-end');
+        check(`${tag} album: the last sticker slot scrolls fully into the book`, end);
+      }
+    }
+    await s.page.evaluate(() => window.__houbicky.go('les')); await s.settle(900);
+    await s.page.evaluate(() => window.__houbicky.openCard('bedla')); await s.page.waitForSelector('.card .sp-name'); await s.settle(1400); await s.shot('card');
+    await verify('card (bedla)', CONTROLS.card, CARD_TEXT);
+    const lastLook = await s.page.evaluate(() => { const l = [...document.querySelectorAll('.card-front .look')].pop(); l.scrollIntoView({ block: 'end' }); const b = l.getBoundingClientRect(); const c = document.querySelector('.card-flip').getBoundingClientRect();
+      return b.bottom <= c.bottom + 1 && b.top >= c.top - 1 && b.right <= c.right + 1; });
+    await s.settle(300); await s.shot('card-end');
+    check(`${tag} card: the last look-for line scrolls fully into view`, lastLook);
+    await s.page.click('.card-actions [data-act="twin"]'); await s.page.waitForSelector('.twin-panel'); await s.settle(1200); await s.shot('card-twin');
+    await verify('card twin panel', CONTROLS.twin);
+    await s.page.click('.twin-panel [data-act="twin-close"]'); await s.settle(600);
+    await s.page.evaluate(() => window.__houbicky.closeCard()); await s.page.waitForSelector('.card-layer', { state: 'detached' }); await s.settle(800);
+    await s.page.evaluate(() => window.__houbicky.openCard('muchomurka-zelena')); await s.page.waitForSelector('.card .sp-name'); await s.settle(1400); await s.shot('card-deadly');
+    await verify('card (deadly, ribbon)', CONTROLS.deadly, CARD_TEXT);
+    await s.page.evaluate(() => window.__houbicky.closeCard()); await s.page.waitForSelector('.card-layer', { state: 'detached' }); await s.settle(800);
+    await s.page.evaluate(() => window.__houbicky.openCard('hrib-smrkovy')); await s.page.waitForSelector('.card .photo-thumb'); await s.settle(1400); await s.shot('card-photo');
+    await verify('card (with photo badge)', [...CONTROLS.card.filter((x) => !x.startsWith('.photo-thumb')), '.photo-thumb'], CARD_TEXT);
+    await s.page.click('.photo-thumb'); await s.settle(1200); await s.shot('card-photo-back');
+    await verify('card photo side', ['.card', '.card-back .thumb', '.card-actions [data-act="close"]']);
+    await s.page.evaluate(() => window.__houbicky.closeCard()); await s.page.waitForSelector('.card-layer', { state: 'detached' }); await s.settle(800);
+    await s.page.click('.level-chip'); await s.page.waitForSelector('.ls-card'); await s.settle(1200); await s.shot('levels');
+    await verify('level sheet', CONTROLS.levels);
+    check(`${tag}: zero console errors / page errors`, s.errors.length === 0, s.errors.slice(0, 4).join(' | '));
+    await s.ctx.close();
+  }
 }
 await browser.close();
 console.log(results.join('\n'));

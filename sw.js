@@ -7,7 +7,7 @@
 // Stable and beta side by side on one origin (…/houbicky/ and …/houbicky/beta/): the SAME file works in both places.
 // Everything is derived from the registration scope: the stable worker ignores every request under …/beta/
 // (the beta worker owns that scope) and each worker only ever creates/deletes caches with its own prefix.
-const VERSION = 'v10';
+const VERSION = 'v11';
 const SCOPE_PATH = new URL(self.registration.scope).pathname;          // '/houbicky/' or '/houbicky/beta/'
 const IS_BETA = /\/beta\/$/.test(SCOPE_PATH);
 const PREFIX = IS_BETA ? 'houbicky-beta-' : 'houbicky-';

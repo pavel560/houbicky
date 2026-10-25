@@ -44,6 +44,20 @@ function levelRows() {
     ${unlockRow(2, 'parents.unlock2')}${unlockRow(3, 'parents.unlock3')}${unlockRow('vyprava', 'parents.unlockVyprava')}`;
 }
 
+// The free games link to the paid series only here, behind the parents' hold — never from the child's screens, never
+// as a purchase button. Empty until the series has its name and web address; the section is then hidden.
+const SERIES = { name: '', url: '' };
+
+function aboutSection() {
+  const more = SERIES.url
+    ? `<section class="more-games"><h2>${esc(t('parents.moreGames'))}</h2><p>${t('parents.moreGamesText', {
+      name: `<a href="${esc(SERIES.url)}" target="_blank" rel="noopener">${esc(SERIES.name || SERIES.url)}</a>` })}</p></section>`
+    : '';
+  return `<section class="about"><h2>${esc(t('parents.about'))}</h2>
+      <p>${esc(t('parents.aboutMade'))}</p><p class="muted">${esc(t('parents.aboutVoices'))}<br>${esc(t('parents.aboutFonts'))}</p>
+      <p>${esc(t('parents.aboutPrivacy'))}</p></section>${more}`;
+}
+
 function render() {
   const lang = getLang();
   root.replaceChildren(h(`<div class="parents-screen">
@@ -62,8 +76,9 @@ function render() {
         <div class="row"><h2>${esc(t('parents.soundFx'))}</h2>${sw(!store.isMuted(), 'sound')}</div>
       </section>
       <section class="photo-check"><h2>${esc(t('parents.photosCheck'))}</h2><p class="muted">${esc(t('parents.photosCheckHint'))}</p>${photoGrid()}</section>
-      <section><h2>${esc(t('parents.credits'))}</h2><p class="muted">${esc(t('parents.photosHow'))}</p><ul class="credits">${creditRows()}</ul></section>
+      <section><h2>${esc(t('parents.credits'))}</h2><p class="muted">${esc(t('parents.photosNote'))}</p><ul class="credits">${creditRows()}</ul></section>
       <section><h2>${esc(t('parents.sources'))}</h2><p><a href="data/RESEARCH_NOTES.md" target="_blank" rel="noopener">${esc(t('parents.notes'))}</a></p></section>
+      ${aboutSection()}
       <section class="reset"><h2>${esc(t('parents.reset'))}</h2>
         <div class="reset-row"><button class="btn text-btn" data-act="reset">${esc(t('parents.reset'))}</button></div></section>
       ${store.persistent ? '' : `<p class="muted">${esc(t('parents.noStorage'))}</p>`}

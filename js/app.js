@@ -36,11 +36,13 @@ function startScreen() {
       <h1 class="start-title">${esc(t('app.name'))}</h1>
       <button class="btn round r120 gold play" aria-label="${esc(t('start.play'))}">${icon('play')}</button>
       <button class="btn round r64 paper lang-btn" aria-label="${esc(t('les.lang'))}">${icon(`lang-${getLang()}`, 'flag')}</button>
+      <p class="start-ai">${esc(t('start.ai'))}</p>
     </div></div>`);
   document.getElementById('overlay').append(layer);
   layer.querySelector('.lang-btn').addEventListener('click', (e) => {
     toggleLang(); e.currentTarget.innerHTML = icon(`lang-${getLang()}`, 'flag'); sound.play('pop');
     layer.querySelector('.play').setAttribute('aria-label', t('start.play'));
+    layer.querySelector('.start-ai').textContent = t('start.ai');
   });
   layer.querySelector('.play').addEventListener('click', async () => {
     sound.unlock(); speech.unlockAudio(); speech.prime(true); sound.play('success');

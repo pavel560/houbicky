@@ -74,6 +74,7 @@ export const strings = {
 
     'common.loading': 'Načítám…',
     'start.play': 'Hrát',
+    'start.ai': 'Hlasy a některé obrázky v této hře vytvořila umělá inteligence.',
     'say.greeting': 'Ahoj! Klepni na houbičku a ona ti řekne, jak se jmenuje.',
     'door.kosik': 'Do košíku',
     'door.kdo': 'Kvíz',
@@ -290,6 +291,7 @@ export const strings = {
 
     'common.loading': 'Loading…',
     'start.play': 'Play',
+    'start.ai': 'The voices and some pictures in this game were made with artificial intelligence.',
     'say.greeting': 'Hello! Tap a mushroom and it will tell you its name.',
     'door.kosik': 'Basket',
     'door.kdo': 'Quiz',

@@ -91,6 +91,8 @@ html:is([data-screen="kosik"], [data-screen="kdo"]) .forest .fern { display: non
   border-radius: var(--r-lg); box-shadow: var(--shadow-lift); padding: var(--space-7) var(--space-8) var(--space-6); }
 .start-title { font-family: var(--font-display); font-weight: var(--fw-display); font-size: clamp(4rem, 3rem + 5vw, 7rem); line-height: 1; color: var(--spruce); }
 .start-card .play .icon { width: 50%; height: 50%; translate: 6% 0; }
+/* AI notice (AI Act art. 50): shown on every start, never spoken */
+.start-ai { margin: 0; max-width: 30ch; text-align: center; font-size: var(--fs-small); color: var(--ink-soft); }
 .start-card .lang-btn { position: absolute; top: calc(-1 * var(--space-5)); left: calc(-1 * var(--space-5)); }
 
 /* ------------------------------------------------------------ card */

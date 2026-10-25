@@ -3,8 +3,10 @@
   "sp.bedla.caution": {
    "bytes": 32853,
    "file": "cs/sp.bedla.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "9c9b2d77a01d77ed227c30b56fc66a79c3500d73",
    "text": "Pozor na muchomůrky! Bedla má nohu s hadím vzorem a nemá pochvu.",
    "voice": "Candy - Young and Sweet"
@@ -12,8 +14,10 @@
   "sp.bedla.fact": {
    "bytes": 26584,
    "file": "cs/sp.bedla.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "14b6f7ebb43254cac892763bc40b912a50a21bf8",
    "text": "Je to obr mezi houbami. Klobouk má jako deštník.",
    "voice": "Candy - Young and Sweet"
@@ -21,8 +25,10 @@
   "sp.bedla.group": {
    "bytes": 15717,
    "file": "cs/sp.bedla.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "72a589b7a879e41e2c784ea02c8ec951ca87d66a",
    "text": "Bedla vysoká je jedlá houba.",
    "voice": "Candy - Young and Sweet"
@@ -30,8 +36,10 @@
   "sp.bedla.kdo.iAm": {
    "bytes": 11746,
    "file": "cs/sp.bedla.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "d20bd7c99592813945031a8c9f8040e491f95f74",
    "text": "Já jsem bedla vysoká.",
    "voice": "Candy - Young and Sweet"
@@ -39,8 +47,10 @@
   "sp.bedla.kdo.where": {
    "bytes": 12791,
    "file": "cs/sp.bedla.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "78f3739bf916fc8cc8d57b202d666d72b139d498",
    "text": "Kde je bedla vysoká?",
    "voice": "Candy - Young and Sweet"
@@ -48,8 +58,10 @@
   "sp.bedla.kdo.yes": {
    "bytes": 13209,
    "file": "cs/sp.bedla.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "31064e58faf9a6f6c97a06651e87e658eed4fbaf",
    "text": "Ano! To je bedla vysoká.",
    "voice": "Candy - Young and Sweet"
@@ -57,8 +69,10 @@
   "sp.bedla.kosik": {
    "bytes": 13627,
    "file": "cs/sp.bedla.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "58bb21ebd2ebe9d1c65dd2c64459f124efbfbbea",
    "text": "Kam patří bedla vysoká?",
    "voice": "Candy - Young and Sweet"
@@ -66,8 +80,10 @@
   "sp.bedla.look.0": {
    "bytes": 21359,
    "file": "cs/sp.bedla.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "16ecb8d200e75fb5598af9238983a43f71061421",
    "text": "Klobouk má hnědé šupinky jako perníček.",
    "voice": "Candy - Young and Sweet"
@@ -75,8 +91,10 @@
   "sp.bedla.look.1": {
    "bytes": 19479,
    "file": "cs/sp.bedla.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "fa19629b889859a5e4f07bcc2a70f585b6133e43",
    "text": "Vysoká noha má proužky jako hadí kůže.",
    "voice": "Candy - Young and Sweet"
@@ -84,8 +102,10 @@
   "sp.bedla.look.2": {
    "bytes": 24703,
    "file": "cs/sp.bedla.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "37a94ea5f7b6f9684a48b4cd553f435bb89cc6b3",
    "text": "Na noze má tlustý prsten, který se dá posouvat.",
    "voice": "Candy - Young and Sweet"
@@ -93,8 +113,10 @@
   "sp.bedla.name": {
    "bytes": 9866,
    "file": "cs/sp.bedla.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "0b51462502f0fb59160221f1911ef72c152a840a",
    "text": "Bedla vysoká.",
    "voice": "Candy - Young and Sweet"
@@ -102,8 +124,10 @@
   "sp.bedla.thatIs": {
    "bytes": 11328,
    "file": "cs/sp.bedla.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "68ff4311562f682426838bba5410a185ffc64402",
    "text": "To je bedla vysoká.",
    "voice": "Candy - Young and Sweet"
@@ -111,8 +135,10 @@
   "sp.bedla.twinTell": {
    "bytes": 28047,
    "file": "cs/sp.bedla.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "743aaaf80ce66884cbaf56e75b4c167b3fa0f992",
    "text": "Dole na noze nemá pytlík. Muchomůrka zelená ho má.",
    "voice": "Candy - Young and Sweet"
@@ -120,8 +146,10 @@
   "sp.hrib-kovar.caution": {
    "bytes": 43302,
    "file": "cs/sp.hrib-kovar.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "41cf98ca7afcd15a79563e5a12a71cb42211ad90",
    "text": "Jí se jen uvařený. Pozor na jedovatého hřiba satana! Rozhodne dospělý.",
    "voice": "Candy - Young and Sweet"
@@ -129,8 +157,10 @@
   "sp.hrib-kovar.fact": {
    "bytes": 20315,
    "file": "cs/sp.hrib-kovar.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "62cdeaa6b9a448430642e6bb707b4619e307ce4a",
    "text": "Když se rozkrojí, hned zmodrá jako inkoust.",
    "voice": "Candy - Young and Sweet"
@@ -138,8 +168,10 @@
   "sp.hrib-kovar.group": {
    "bytes": 13836,
    "file": "cs/sp.hrib-kovar.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "925edcde90b1a679b02f5b83d034a5aae5ff4860",
    "text": "Hřib kovář je jedlá houba.",
    "voice": "Candy - Young and Sweet"
@@ -147,8 +179,10 @@
   "sp.hrib-kovar.kdo.iAm": {
    "bytes": 11746,
    "file": "cs/sp.hrib-kovar.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ee3be75804d992a7a310b54cd5461e7ed49971a5",
    "text": "Já jsem hřib kovář.",
    "voice": "Candy - Young and Sweet"
@@ -156,8 +190,10 @@
   "sp.hrib-kovar.kdo.where": {
    "bytes": 12373,
    "file": "cs/sp.hrib-kovar.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "aa401a8ba68a4d930d71cbaeaabe4c483246098e",
    "text": "Kde je hřib kovář?",
    "voice": "Candy - Young and Sweet"
@@ -165,8 +201,10 @@
   "sp.hrib-kovar.kdo.yes": {
    "bytes": 13836,
    "file": "cs/sp.hrib-kovar.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "f3016b11a3795ad58aa51fb621f0c1f677b65adb",
    "text": "Ano! To je hřib kovář.",
    "voice": "Candy - Young and Sweet"
@@ -174,8 +212,10 @@
   "sp.hrib-kovar.kosik": {
    "bytes": 12164,
    "file": "cs/sp.hrib-kovar.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "84505d7161e311e04740f8ddc4e9e6a33ba6d5b8",
    "text": "Kam patří hřib kovář?",
    "voice": "Candy - Young and Sweet"
@@ -183,8 +223,10 @@
   "sp.hrib-kovar.look.0": {
    "bytes": 19897,
    "file": "cs/sp.hrib-kovar.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "f7ab7aceefcd3d4c7d47c24b344660b40665cfeb",
    "text": "Má tmavě hnědý sametový klobouk.",
    "voice": "Candy - Young and Sweet"
@@ -192,8 +234,10 @@
   "sp.hrib-kovar.look.1": {
    "bytes": 18434,
    "file": "cs/sp.hrib-kovar.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "196ae059b79d45f8a628608afcefbe1fccb287c7",
    "text": "Pod kloboukem má červené dírky.",
    "voice": "Candy - Young and Sweet"
@@ -201,8 +245,10 @@
   "sp.hrib-kovar.look.2": {
    "bytes": 19479,
    "file": "cs/sp.hrib-kovar.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "e4494ae246257a776e9f35c9c5f50d8653a17161",
    "text": "Žlutá noha má drobné červené tečky.",
    "voice": "Candy - Young and Sweet"
@@ -210,8 +256,10 @@
   "sp.hrib-kovar.name": {
    "bytes": 9030,
    "file": "cs/sp.hrib-kovar.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "402d54385a80ece7c23e664f6918b645c9ab8c6c",
    "text": "Hřib kovář.",
    "voice": "Candy - Young and Sweet"
@@ -219,8 +267,10 @@
   "sp.hrib-kovar.thatIs": {
    "bytes": 10910,
    "file": "cs/sp.hrib-kovar.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "148c1219d60e2183c99a30e702ebbac26790fe68",
    "text": "To je hřib kovář.",
    "voice": "Candy - Young and Sweet"
@@ -228,8 +278,10 @@
   "sp.hrib-kovar.twinTell": {
    "bytes": 31390,
    "file": "cs/sp.hrib-kovar.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "6f811c4260cad477d39b3d7ce934bf1203c5177e",
    "text": "Klobouk má tmavě hnědý. Satan má klobouk křídově bílý.",
    "voice": "Candy - Young and Sweet"
@@ -237,8 +289,10 @@
   "sp.hrib-satan.caution": {
    "bytes": 27211,
    "file": "cs/sp.hrib-satan.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "114bb60e2554d2c0438fb48d272e70262af65f0d",
    "text": "Je jedovatý! Nesahej na něj a řekni to dospělému.",
    "voice": "Candy - Young and Sweet"
@@ -246,8 +300,10 @@
   "sp.hrib-satan.fact": {
    "bytes": 29928,
    "file": "cs/sp.hrib-satan.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "05cdf6e19781ea50a497f8bf85d8d99102b6f054",
    "text": "Je vzácný a jedovatý. V lese se na něj jen díváme.",
    "voice": "Candy - Young and Sweet"
@@ -255,8 +311,10 @@
   "sp.hrib-satan.group": {
    "bytes": 22195,
    "file": "cs/sp.hrib-satan.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "259a5790010cf25116febe9959b25b1fd58ed1fa",
    "text": "Pozor! Hřib satan je jedovatá houba!",
    "voice": "Candy - Young and Sweet"
@@ -264,8 +322,10 @@
   "sp.hrib-satan.kdo.iAm": {
    "bytes": 11328,
    "file": "cs/sp.hrib-satan.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "e1d8cdc77a30eaaf34f07b7f622a6188acf4934f",
    "text": "Já jsem hřib satan.",
    "voice": "Candy - Young and Sweet"
@@ -273,8 +333,10 @@
   "sp.hrib-satan.kdo.where": {
    "bytes": 11328,
    "file": "cs/sp.hrib-satan.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "68b6beb90eb79905eb7de40bfea7b8f0b1bf27b9",
    "text": "Kde je hřib satan?",
    "voice": "Candy - Young and Sweet"
@@ -282,8 +344,10 @@
   "sp.hrib-satan.kdo.yes": {
    "bytes": 14672,
    "file": "cs/sp.hrib-satan.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "165fcc232ed2018242f3e66b3166a91eaf350c8f",
    "text": "Ano! To je hřib satan.",
    "voice": "Candy - Young and Sweet"
@@ -291,8 +355,10 @@
   "sp.hrib-satan.kosik": {
    "bytes": 12791,
    "file": "cs/sp.hrib-satan.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "c542748f707b7ca1407e32a5bdbd9ceed2832980",
    "text": "Kam patří hřib satan?",
    "voice": "Candy - Young and Sweet"
@@ -300,8 +366,10 @@
   "sp.hrib-satan.look.0": {
    "bytes": 19897,
    "file": "cs/sp.hrib-satan.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "27c7f9590bac322144dc79033ac3e3150b52acb9",
    "text": "Má světlý, křídově bílý klobouk.",
    "voice": "Candy - Young and Sweet"
@@ -309,8 +377,10 @@
   "sp.hrib-satan.look.1": {
    "bytes": 18016,
    "file": "cs/sp.hrib-satan.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "196ae059b79d45f8a628608afcefbe1fccb287c7",
    "text": "Pod kloboukem má červené dírky.",
    "voice": "Candy - Young and Sweet"
@@ -318,8 +388,10 @@
   "sp.hrib-satan.look.2": {
    "bytes": 17180,
    "file": "cs/sp.hrib-satan.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "1763f4a0f7f42b70b009a6662a426c848b60993f",
    "text": "Tlustá noha má červenou síťku.",
    "voice": "Candy - Young and Sweet"
@@ -327,8 +399,10 @@
   "sp.hrib-satan.name": {
    "bytes": 10284,
    "file": "cs/sp.hrib-satan.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "4f1ba0c29d0215dc759189e984c6bd53f95dae9c",
    "text": "Hřib satan.",
    "voice": "Candy - Young and Sweet"
@@ -336,8 +410,10 @@
   "sp.hrib-satan.thatIs": {
    "bytes": 12164,
    "file": "cs/sp.hrib-satan.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "f201d418562056884513feec2b076da630631615",
    "text": "To je hřib satan.",
    "voice": "Candy - Young and Sweet"
@@ -345,8 +421,10 @@
   "sp.hrib-satan.twinTell": {
    "bytes": 29510,
    "file": "cs/sp.hrib-satan.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "eb4c7f4b665429f0b9b2644ba5c42fec0f9b46ae",
    "text": "Klobouk má křídově bílý. Kovář má klobouk tmavě hnědý.",
    "voice": "Candy - Young and Sweet"
@@ -354,8 +432,10 @@
   "sp.hrib-smrkovy.caution": {
    "bytes": 23658,
    "file": "cs/sp.hrib-smrkovy.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "820c7afe9ae0f87100dac5f31c3a15aa15972ca7",
    "text": "Pozor, hořký hřib žlučník vypadá skoro stejně!",
    "voice": "Candy - Young and Sweet"
@@ -363,8 +443,10 @@
   "sp.hrib-smrkovy.fact": {
    "bytes": 20524,
    "file": "cs/sp.hrib-smrkovy.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8db6abbda17587f90ce63c3ceb99a920814182e7",
    "text": "Je to nejznámější hřib v českém lese.",
    "voice": "Candy - Young and Sweet"
@@ -372,8 +454,10 @@
   "sp.hrib-smrkovy.group": {
    "bytes": 14672,
    "file": "cs/sp.hrib-smrkovy.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "0f0c3ace77b98a908756834728167c5bcd73e08a",
    "text": "Hřib smrkový je jedlá houba.",
    "voice": "Candy - Young and Sweet"
@@ -381,8 +465,10 @@
   "sp.hrib-smrkovy.kdo.iAm": {
    "bytes": 12164,
    "file": "cs/sp.hrib-smrkovy.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "dbc9cf21c3baf9007ea526395024fc6f536a0625",
    "text": "Já jsem hřib smrkový.",
    "voice": "Candy - Young and Sweet"
@@ -390,8 +476,10 @@
   "sp.hrib-smrkovy.kdo.where": {
    "bytes": 11746,
    "file": "cs/sp.hrib-smrkovy.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "045ba2026a82b755bcabf4e3140ececd9a61264c",
    "text": "Kde je hřib smrkový?",
    "voice": "Candy - Young and Sweet"
@@ -399,8 +487,10 @@
   "sp.hrib-smrkovy.kdo.yes": {
    "bytes": 12791,
    "file": "cs/sp.hrib-smrkovy.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "58f15e2270c861c693e5e4177172c30a912479ed",
    "text": "Ano! To je hřib smrkový.",
    "voice": "Candy - Young and Sweet"
@@ -408,8 +498,10 @@
   "sp.hrib-smrkovy.kosik": {
    "bytes": 12373,
    "file": "cs/sp.hrib-smrkovy.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "1b721c16d0fc4ee08da39b86438a9a42d9e4e79b",
    "text": "Kam patří hřib smrkový?",
    "voice": "Candy - Young and Sweet"
@@ -417,8 +509,10 @@
   "sp.hrib-smrkovy.look.0": {
    "bytes": 20524,
    "file": "cs/sp.hrib-smrkovy.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "987a229bfabf0b5a52bba8d7402521c57a207615",
    "text": "Má hnědý klobouk jako upečená buchta.",
    "voice": "Candy - Young and Sweet"
@@ -426,8 +520,10 @@
   "sp.hrib-smrkovy.look.1": {
    "bytes": 22195,
    "file": "cs/sp.hrib-smrkovy.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ffafd66a6d1dc2b86a926ec5c350e3499f9ec289",
    "text": "Pod kloboukem nemá lupínky, ale drobné dírky.",
    "voice": "Candy - Young and Sweet"
@@ -435,8 +531,10 @@
   "sp.hrib-smrkovy.look.2": {
    "bytes": 18852,
    "file": "cs/sp.hrib-smrkovy.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "e502a17ac76d677644883bef5e1d24e84b5b451c",
    "text": "Na světlé noze má jemnou bílou síťku.",
    "voice": "Candy - Young and Sweet"
@@ -444,8 +542,10 @@
   "sp.hrib-smrkovy.name": {
    "bytes": 10284,
    "file": "cs/sp.hrib-smrkovy.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "c5e908f16925a0fc33c848b8e951a5f20ec4dd78",
    "text": "Hřib smrkový.",
    "voice": "Candy - Young and Sweet"
@@ -453,8 +553,10 @@
   "sp.hrib-smrkovy.thatIs": {
    "bytes": 12164,
    "file": "cs/sp.hrib-smrkovy.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "73ebd61c91a3d45feeaa84a6b5a9967b26880770",
    "text": "To je hřib smrkový.",
    "voice": "Candy - Young and Sweet"
@@ -462,8 +564,10 @@
   "sp.hrib-smrkovy.twinTell": {
    "bytes": 29510,
    "file": "cs/sp.hrib-smrkovy.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "7ab53a081b9810323f306e48783caaa012a82642",
    "text": "Síťka na noze je bílá. Žlučník má síťku tmavou.",
    "voice": "Candy - Young and Sweet"
@@ -471,8 +575,10 @@
   "sp.klouzek.caution": {
    "bytes": 21777,
    "file": "cs/sp.klouzek.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "6357131795d14aa7b1e0d3527dcfc2e5d7e3b104",
    "text": "Sbíráme ho jen s dospělým, který ho dobře zná.",
    "voice": "Candy - Young and Sweet"
@@ -480,8 +586,10 @@
   "sp.klouzek.fact": {
    "bytes": 26166,
    "file": "cs/sp.klouzek.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "4f552fea33757f29afa26ff9be698f617715aa68",
    "text": "Kamarádí se s modřínem. Za deště klouže jako mýdlo.",
    "voice": "Candy - Young and Sweet"
@@ -489,8 +597,10 @@
   "sp.klouzek.group": {
    "bytes": 17180,
    "file": "cs/sp.klouzek.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "1f9ed3fee268909aba497313b091dc0b446fa10f",
    "text": "Klouzek sličný je jedlá houba.",
    "voice": "Candy - Young and Sweet"
@@ -498,8 +608,10 @@
   "sp.klouzek.kdo.iAm": {
    "bytes": 13209,
    "file": "cs/sp.klouzek.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "052cf78a2931f240ebc057d0266a013074a12924",
    "text": "Já jsem klouzek sličný.",
    "voice": "Candy - Young and Sweet"
@@ -507,8 +619,10 @@
   "sp.klouzek.kdo.where": {
    "bytes": 13209,
    "file": "cs/sp.klouzek.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "462cdc4b5e11fa3cd4d49a69064f6d8f6da0690d",
    "text": "Kde je klouzek sličný?",
    "voice": "Candy - Young and Sweet"
@@ -516,8 +630,10 @@
   "sp.klouzek.kdo.yes": {
    "bytes": 12373,
    "file": "cs/sp.klouzek.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "2c4d3289b818a5cd89527bef4a96949e1e6a5fa8",
    "text": "Ano! To je klouzek sličný.",
    "voice": "Candy - Young and Sweet"
@@ -525,8 +641,10 @@
   "sp.klouzek.kosik": {
    "bytes": 13209,
    "file": "cs/sp.klouzek.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "327de89ca6efdcfbf1f4dba42ae57088a5f5e5fa",
    "text": "Kam patří klouzek sličný?",
    "voice": "Candy - Young and Sweet"
@@ -534,8 +652,10 @@
   "sp.klouzek.look.0": {
    "bytes": 16135,
    "file": "cs/sp.klouzek.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "52dcbd702067deb2e49816cda778688865b814ee",
    "text": "Má zlatožlutý lesklý klobouk.",
    "voice": "Candy - Young and Sweet"
@@ -543,8 +663,10 @@
   "sp.klouzek.look.1": {
    "bytes": 16135,
    "file": "cs/sp.klouzek.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "9de761c5657a2a6b3577af13d23f5806fb6e63bb",
    "text": "Pod kloboukem má žluté dírky.",
    "voice": "Candy - Young and Sweet"
@@ -552,8 +674,10 @@
   "sp.klouzek.look.2": {
    "bytes": 12373,
    "file": "cs/sp.klouzek.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "f8a2161dd21e5b3c4d49c6924ab43be479bd821c",
    "text": "Na noze má prstýnek.",
    "voice": "Candy - Young and Sweet"
@@ -561,8 +685,10 @@
   "sp.klouzek.name": {
    "bytes": 11746,
    "file": "cs/sp.klouzek.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "d766ea83cf2312f7626af834072b81db5064befd",
    "text": "Klouzek sličný.",
    "voice": "Candy - Young and Sweet"
@@ -570,8 +696,10 @@
   "sp.klouzek.thatIs": {
    "bytes": 13209,
    "file": "cs/sp.klouzek.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "96d49a68c647e4f1f2c229543e0931e9e6e26b01",
    "text": "To je klouzek sličný.",
    "voice": "Candy - Young and Sweet"
@@ -579,8 +707,10 @@
   "sp.kotrc.caution": {
    "bytes": 22404,
    "file": "cs/sp.kotrc.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "92652e4fabfe77b796e5dff18d5d1fe52ddb0fc9",
    "text": "Jí se jen mladý a světlý. Rozhodne dospělý.",
    "voice": "Candy - Young and Sweet"
@@ -588,8 +718,10 @@
   "sp.kotrc.fact": {
    "bytes": 20524,
    "file": "cs/sp.kotrc.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "57092301aa7d6cd1b17e9f9c47a4c4154ee0ccf4",
    "text": "Vypadá jako kudrnatá houba na mytí nádobí.",
    "voice": "Candy - Young and Sweet"
@@ -597,8 +729,10 @@
   "sp.kotrc.group": {
    "bytes": 17180,
    "file": "cs/sp.kotrc.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "79fc5c6acb884f0dbfe38e528295891be64bb631",
    "text": "Kotrč kadeřavý je jedlá houba.",
    "voice": "Candy - Young and Sweet"
@@ -606,8 +740,10 @@
   "sp.kotrc.kdo.iAm": {
    "bytes": 11328,
    "file": "cs/sp.kotrc.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "79d14225f7fcce2227ae094b5921f964e6025518",
    "text": "Já jsem kotrč kadeřavý.",
    "voice": "Candy - Young and Sweet"
@@ -615,8 +751,10 @@
   "sp.kotrc.kdo.where": {
    "bytes": 12791,
    "file": "cs/sp.kotrc.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "fac514269c732808d9f55927e4cb87f157e078dc",
    "text": "Kde je kotrč kadeřavý?",
    "voice": "Candy - Young and Sweet"
@@ -624,8 +762,10 @@
   "sp.kotrc.kdo.yes": {
    "bytes": 15508,
    "file": "cs/sp.kotrc.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "92b7d1647997147c7dd0ead7bb130bb6176b2299",
    "text": "Ano! To je kotrč kadeřavý.",
    "voice": "Candy - Young and Sweet"
@@ -633,8 +773,10 @@
   "sp.kotrc.kosik": {
    "bytes": 14254,
    "file": "cs/sp.kotrc.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "f5aa681144526649d2dfef1d85b878606a2e5425",
    "text": "Kam patří kotrč kadeřavý?",
    "voice": "Candy - Young and Sweet"
@@ -642,8 +784,10 @@
   "sp.kotrc.look.0": {
    "bytes": 18852,
    "file": "cs/sp.kotrc.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "2edf2c750be383d291192662cff6f3f4225361b0",
    "text": "Je kulatý a kudrnatý jako květák.",
    "voice": "Candy - Young and Sweet"
@@ -651,8 +795,10 @@
   "sp.kotrc.look.1": {
    "bytes": 19897,
    "file": "cs/sp.kotrc.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "09c60b912f0c44dfb9b85c83198f5457db3adb2c",
    "text": "Je krémově bílý až nažloutlý.",
    "voice": "Candy - Young and Sweet"
@@ -660,8 +806,10 @@
   "sp.kotrc.look.2": {
    "bytes": 13209,
    "file": "cs/sp.kotrc.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8b2ca0e34f1c20907ec3a5e509a0a1b238cd80e7",
    "text": "Nemá klobouk ani nohu.",
    "voice": "Candy - Young and Sweet"
@@ -669,8 +817,10 @@
   "sp.kotrc.name": {
    "bytes": 11746,
    "file": "cs/sp.kotrc.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "7084460fe6dee08cc86cfee4b31c9c30b91ac858",
    "text": "Kotrč kadeřavý.",
    "voice": "Candy - Young and Sweet"
@@ -678,8 +828,10 @@
   "sp.kotrc.thatIs": {
    "bytes": 13627,
    "file": "cs/sp.kotrc.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ef4ac08fea0cbfcf19d65309ecf5ca2dd3f167d6",
    "text": "To je kotrč kadeřavý.",
    "voice": "Candy - Young and Sweet"
@@ -687,8 +839,10 @@
   "sp.kozak.caution": {
    "bytes": 58976,
    "file": "cs/sp.kozak.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8ec7e6407456595e6c056ffcfa562f22b4e8b9b5",
    "text": "Podobný je hořký žlučník. Ten má pod kloboukem růžové dírky. Jí se jen uvařený. Rozhodne dospělý.",
    "voice": "Candy - Young and Sweet"
@@ -696,8 +850,10 @@
   "sp.kozak.fact": {
    "bytes": 30346,
    "file": "cs/sp.kozak.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ce0bfab5c9ae5272c99c1ab580d9a6ea313036f6",
    "text": "Kamarádí se s břízou. Roste jen tam, kde je bříza.",
    "voice": "Candy - Young and Sweet"
@@ -705,8 +861,10 @@
   "sp.kozak.group": {
    "bytes": 15090,
    "file": "cs/sp.kozak.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "0cf68c9a7743584c0eb3c7ccfd9622336cc23310",
    "text": "Kozák březový je jedlá houba.",
    "voice": "Candy - Young and Sweet"
@@ -714,8 +872,10 @@
   "sp.kozak.kdo.iAm": {
    "bytes": 13627,
    "file": "cs/sp.kozak.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "5c361841b584db9a5a317e55acb3fbf11c8f497f",
    "text": "Já jsem kozák březový.",
    "voice": "Candy - Young and Sweet"
@@ -723,8 +883,10 @@
   "sp.kozak.kdo.where": {
    "bytes": 12791,
    "file": "cs/sp.kozak.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "a4c781a0f810fa0147d685ca9ce39ec743c2dd7c",
    "text": "Kde je kozák březový?",
    "voice": "Candy - Young and Sweet"
@@ -732,8 +894,10 @@
   "sp.kozak.kdo.yes": {
    "bytes": 16135,
    "file": "cs/sp.kozak.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "c8229678b80fe25ca6d7a8c9ea2860f6c28702b2",
    "text": "Ano! To je kozák březový.",
    "voice": "Candy - Young and Sweet"
@@ -741,8 +905,10 @@
   "sp.kozak.kosik": {
    "bytes": 14254,
    "file": "cs/sp.kozak.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "bb60b1b737d25c1974566e9680bd100317f85801",
    "text": "Kam patří kozák březový?",
    "voice": "Candy - Young and Sweet"
@@ -750,8 +916,10 @@
   "sp.kozak.look.0": {
    "bytes": 15508,
    "file": "cs/sp.kozak.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "7b3a4d6d36aa63a22fcd7fd8eed99d949c3eae55",
    "text": "Má hnědý hladký klobouk.",
    "voice": "Candy - Young and Sweet"
@@ -759,8 +927,10 @@
   "sp.kozak.look.1": {
    "bytes": 24285,
    "file": "cs/sp.kozak.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "da06a5431a16ae9365d0b939733ad125c1ac02c6",
    "text": "Bílá noha vypadá jako posypaná černým pepřem.",
    "voice": "Candy - Young and Sweet"
@@ -768,8 +938,10 @@
   "sp.kozak.look.2": {
    "bytes": 21777,
    "file": "cs/sp.kozak.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8d798039f537fdc4c389c239f536a3fa84d8b76b",
    "text": "Pod kloboukem má světlé dírky, ne lupínky.",
    "voice": "Candy - Young and Sweet"
@@ -777,8 +949,10 @@
   "sp.kozak.name": {
    "bytes": 10910,
    "file": "cs/sp.kozak.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "3e723d72422e8f0f31e1a658a1d4e47ba2a8251a",
    "text": "Kozák březový.",
    "voice": "Candy - Young and Sweet"
@@ -786,8 +960,10 @@
   "sp.kozak.thatIs": {
    "bytes": 12791,
    "file": "cs/sp.kozak.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "0f514310c455f3f71ff0f08b21f202a90e13eb66",
    "text": "To je kozák březový.",
    "voice": "Candy - Young and Sweet"
@@ -795,8 +971,10 @@
   "sp.kozak.twinTell": {
    "bytes": 31390,
    "file": "cs/sp.kozak.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b3b40af83b49ea833c7e6ff24153f1251cd10239",
    "text": "Klobouk má hnědý. Křemenáč má klobouk oranžově červený.",
    "voice": "Candy - Young and Sweet"
@@ -804,8 +982,10 @@
   "sp.kremenac.caution": {
    "bytes": 60021,
    "file": "cs/sp.kremenac.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b82a30b007f9541c6e6a62c4c3caa2311d4854d3",
    "text": "Podobných křemenáčů je víc. Rozliší je jen zkušený houbař. Jí se jen uvařený. Rozhodne dospělý.",
    "voice": "Candy - Young and Sweet"
@@ -813,8 +993,10 @@
   "sp.kremenac.fact": {
    "bytes": 28465,
    "file": "cs/sp.kremenac.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "6ff7ff34373ae3b08dd06f11ad2b5515b370f21b",
    "text": "Kamarádí se s osikou. To je strom s třepotavými listy.",
    "voice": "Candy - Young and Sweet"
@@ -822,8 +1004,10 @@
   "sp.kremenac.group": {
    "bytes": 16971,
    "file": "cs/sp.kremenac.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "c9b4930efdcea0b5750bfa21f6dd526c50faa45e",
    "text": "Křemenáč osikový je jedlá houba.",
    "voice": "Candy - Young and Sweet"
@@ -831,8 +1015,10 @@
   "sp.kremenac.kdo.iAm": {
    "bytes": 12791,
    "file": "cs/sp.kremenac.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "130c2e134440d9ea9903c014894f962dd9c7f512",
    "text": "Já jsem křemenáč osikový.",
    "voice": "Candy - Young and Sweet"
@@ -840,8 +1026,10 @@
   "sp.kremenac.kdo.where": {
    "bytes": 13209,
    "file": "cs/sp.kremenac.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "4720dea64fd3388349c5da5839fd42b946694790",
    "text": "Kde je křemenáč osikový?",
    "voice": "Candy - Young and Sweet"
@@ -849,8 +1037,10 @@
   "sp.kremenac.kdo.yes": {
    "bytes": 16971,
    "file": "cs/sp.kremenac.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "129ca2a8b5b78be337b62faeb46081a35b8c47eb",
    "text": "Ano! To je křemenáč osikový.",
    "voice": "Candy - Young and Sweet"
@@ -858,8 +1048,10 @@
   "sp.kremenac.kosik": {
    "bytes": 14254,
    "file": "cs/sp.kremenac.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8d2ae7f6eb0975ef445b2a2fb534d8c64fe1f311",
    "text": "Kam patří křemenáč osikový?",
    "voice": "Candy - Young and Sweet"
@@ -867,8 +1059,10 @@
   "sp.kremenac.look.0": {
    "bytes": 22404,
    "file": "cs/sp.kremenac.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ba98aabaab831eb79e75d308da5621df73e79e2c",
    "text": "Má oranžově červený klobouk jako podzimní list.",
    "voice": "Candy - Young and Sweet"
@@ -876,8 +1070,10 @@
   "sp.kremenac.look.1": {
    "bytes": 30346,
    "file": "cs/sp.kremenac.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "aa8d005e4c205a4f884d9d8c0f76e44b238ac96e",
    "text": "Noha je bílá, s bílými šupinkami, které později tmavnou.",
    "voice": "Candy - Young and Sweet"
@@ -885,8 +1081,10 @@
   "sp.kremenac.look.2": {
    "bytes": 23240,
    "file": "cs/sp.kremenac.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "9a6d4a03f216694d5a846507bc6a417e208dc8c8",
    "text": "Je velký a pevný, pod kloboukem má dírky.",
    "voice": "Candy - Young and Sweet"
@@ -894,8 +1092,10 @@
   "sp.kremenac.name": {
    "bytes": 12164,
    "file": "cs/sp.kremenac.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "2bb3b33de5133f16c3ff92f9210163ae386f0913",
    "text": "Křemenáč osikový.",
    "voice": "Candy - Young and Sweet"
@@ -903,8 +1103,10 @@
   "sp.kremenac.thatIs": {
    "bytes": 12791,
    "file": "cs/sp.kremenac.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "832703c6bba8d61a042b10a0d531b1a9eaaf2c90",
    "text": "To je křemenáč osikový.",
    "voice": "Candy - Young and Sweet"
@@ -912,8 +1114,10 @@
   "sp.kremenac.twinTell": {
    "bytes": 30973,
    "file": "cs/sp.kremenac.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "0cacba49658b488c8c926f1dcb6adda4334cc09f",
    "text": "Klobouk má oranžově červený. Kozák má klobouk hnědý.",
    "voice": "Candy - Young and Sweet"
@@ -921,8 +1125,10 @@
   "sp.lisak.caution": {
    "bytes": 21359,
    "file": "cs/sp.lisak.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "57d54ce27d1251ddad7a56caf1d1c71e59d21695",
    "text": "Sbírá se jen mladý. Rozhodne dospělý.",
    "voice": "Candy - Young and Sweet"
@@ -930,8 +1136,10 @@
   "sp.lisak.fact": {
    "bytes": 20315,
    "file": "cs/sp.lisak.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ed5a351da2e3b96bdfdfe533d5170bf5a53c6240",
    "text": "Pod kloboukem má měkké ostny jako ježek.",
    "voice": "Candy - Young and Sweet"
@@ -939,8 +1147,10 @@
   "sp.lisak.group": {
    "bytes": 17598,
    "file": "cs/sp.lisak.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "4012837abda770c623de46fb413adfa91ec0d6c1",
    "text": "Lišák zprohýbaný je jedlá houba.",
    "voice": "Candy - Young and Sweet"
@@ -948,8 +1158,10 @@
   "sp.lisak.kdo.iAm": {
    "bytes": 13836,
    "file": "cs/sp.lisak.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "1f1395c5ada2d1c5154a5a58cb2dbaa2ddb5f9c4",
    "text": "Já jsem lišák zprohýbaný.",
    "voice": "Candy - Young and Sweet"
@@ -957,8 +1169,10 @@
   "sp.lisak.kdo.where": {
    "bytes": 12791,
    "file": "cs/sp.lisak.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "7fa7a63f5ccc86763f62a932ed40903b2cd31d02",
    "text": "Kde je lišák zprohýbaný?",
    "voice": "Candy - Young and Sweet"
@@ -966,8 +1180,10 @@
   "sp.lisak.kdo.yes": {
    "bytes": 18016,
    "file": "cs/sp.lisak.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "db81b597e054199eb9f4cccb87b0bc9b76c8c594",
    "text": "Ano! To je lišák zprohýbaný.",
    "voice": "Candy - Young and Sweet"
@@ -975,8 +1191,10 @@
   "sp.lisak.kosik": {
    "bytes": 15090,
    "file": "cs/sp.lisak.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ff06b8416cbdea25c9f4fcad275b3353ab5b7a98",
    "text": "Kam patří lišák zprohýbaný?",
    "voice": "Candy - Young and Sweet"
@@ -984,8 +1202,10 @@
   "sp.lisak.look.0": {
    "bytes": 19897,
    "file": "cs/sp.lisak.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "87e7aed14d71bb97ed81558cebea3f728567ff7f",
    "text": "Má světle oranžový, zprohýbaný klobouk.",
    "voice": "Candy - Young and Sweet"
@@ -993,8 +1213,10 @@
   "sp.lisak.look.1": {
    "bytes": 19061,
    "file": "cs/sp.lisak.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "6fa7abfd697a31a97ec9d552d893b62fbf6fbdc2",
    "text": "Zespodu má drobné ostny, ne lupínky.",
    "voice": "Candy - Young and Sweet"
@@ -1002,8 +1224,10 @@
   "sp.lisak.look.2": {
    "bytes": 14254,
    "file": "cs/sp.lisak.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "7095d7c4c39c900a678f3b6803e1204823ec0509",
    "text": "Noha je krátká a světlá.",
    "voice": "Candy - Young and Sweet"
@@ -1011,8 +1235,10 @@
   "sp.lisak.name": {
    "bytes": 11328,
    "file": "cs/sp.lisak.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "01efd63a8d0e36a7b66a0877e0ac1ce131d7e22d",
    "text": "Lišák zprohýbaný.",
    "voice": "Candy - Young and Sweet"
@@ -1020,8 +1246,10 @@
   "sp.lisak.thatIs": {
    "bytes": 13209,
    "file": "cs/sp.lisak.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "9b77fadeb41adc38dd3cb14ba76095539d26a5ae",
    "text": "To je lišák zprohýbaný.",
    "voice": "Candy - Young and Sweet"
@@ -1029,8 +1257,10 @@
   "sp.lisak.twinTell": {
    "bytes": 29092,
    "file": "cs/sp.lisak.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "38facabb116368e87d9842c6785cd16472538a07",
    "text": "Zespodu má ostny jako ježek. Liška má měkké vrásky.",
    "voice": "Candy - Young and Sweet"
@@ -1038,8 +1268,10 @@
   "sp.liska.caution": {
    "bytes": 34316,
    "file": "cs/sp.liska.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ad0314daa1df19c2378754ac41740c9a8a1cce86",
    "text": "Podobná je lištička pomerančová. Ta má husté oranžové lupínky.",
    "voice": "Candy - Young and Sweet"
@@ -1047,8 +1279,10 @@
   "sp.liska.fact": {
    "bytes": 28465,
    "file": "cs/sp.liska.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ce684747bc88a5780db702aa4c3d6f6e484c420b",
    "text": "Je žlutá jako vaječný žloutek a voní po meruňkách.",
    "voice": "Candy - Young and Sweet"
@@ -1056,8 +1290,10 @@
   "sp.liska.group": {
    "bytes": 16553,
    "file": "cs/sp.liska.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "e81318f37bd605dd9d251cbbec40d95905ae7788",
    "text": "Liška obecná je jedlá houba.",
    "voice": "Candy - Young and Sweet"
@@ -1065,8 +1301,10 @@
   "sp.liska.kdo.iAm": {
    "bytes": 12373,
    "file": "cs/sp.liska.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "666dc85deff6bb54ebe4c4d347f1e0507b0e5833",
    "text": "Já jsem liška obecná.",
    "voice": "Candy - Young and Sweet"
@@ -1074,8 +1312,10 @@
   "sp.liska.kdo.where": {
    "bytes": 11328,
    "file": "cs/sp.liska.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "025e914282b19e56de8b07e4e4bf6687fc293cee",
    "text": "Kde je liška obecná?",
    "voice": "Candy - Young and Sweet"
@@ -1083,8 +1323,10 @@
   "sp.liska.kdo.yes": {
    "bytes": 14672,
    "file": "cs/sp.liska.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "a621896633ab1f78c31db8a8d6c77a48c9b951ed",
    "text": "Ano! To je liška obecná.",
    "voice": "Candy - Young and Sweet"
@@ -1092,8 +1334,10 @@
   "sp.liska.kosik": {
    "bytes": 12791,
    "file": "cs/sp.liska.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "a8eaaa445a77bd4b8893b89ac85ec7696cb2941c",
    "text": "Kam patří liška obecná?",
    "voice": "Candy - Young and Sweet"
@@ -1101,8 +1345,10 @@
   "sp.liska.look.0": {
    "bytes": 12791,
    "file": "cs/sp.liska.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ec0b0abf27a0c80eb47e801be113609ecacfcfe2",
    "text": "Je celá žlutá, i noha.",
    "voice": "Candy - Young and Sweet"
@@ -1110,8 +1356,10 @@
   "sp.liska.look.1": {
    "bytes": 22822,
    "file": "cs/sp.liska.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "36ef448bc90186ef9233a1ebdcfc780cd9d7f438",
    "text": "Klobouk má jako trychtýřek se zvlněným okrajem.",
    "voice": "Candy - Young and Sweet"
@@ -1119,8 +1367,10 @@
   "sp.liska.look.2": {
    "bytes": 24285,
    "file": "cs/sp.liska.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "6566259f21d8bfcf153407dcdc28d136942bacdd",
    "text": "Zespodu má měkké vrásky, ne tenké lupínky.",
    "voice": "Candy - Young and Sweet"
@@ -1128,8 +1378,10 @@
   "sp.liska.name": {
    "bytes": 11746,
    "file": "cs/sp.liska.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "e5061c43c9ff6495b3b3fd692f67c641d47d2b9a",
    "text": "Liška obecná.",
    "voice": "Candy - Young and Sweet"
@@ -1137,8 +1389,10 @@
   "sp.liska.thatIs": {
    "bytes": 12373,
    "file": "cs/sp.liska.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "d769a5c943e8c9eddb04dc290d202723e41ce243",
    "text": "To je liška obecná.",
    "voice": "Candy - Young and Sweet"
@@ -1146,8 +1400,10 @@
   "sp.liska.twinTell": {
    "bytes": 29510,
    "file": "cs/sp.liska.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "6fa37a217eed7ba15d33b65a4ef0d05328c87bef",
    "text": "Zespodu má měkké vrásky. Lištička má tenké lupínky.",
    "voice": "Candy - Young and Sweet"
@@ -1155,8 +1411,10 @@
   "sp.listicka.caution": {
    "bytes": 22822,
    "file": "cs/sp.listicka.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8f5c3b9ff34d843f9bb5946363ca38a7a3c39f76",
    "text": "Nesbíráme ji. Snadno se splete s liškou.",
    "voice": "Candy - Young and Sweet"
@@ -1164,8 +1422,10 @@
   "sp.listicka.fact": {
    "bytes": 19479,
    "file": "cs/sp.listicka.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "80f93f13182fda6df3b3ba76bcabb20a0c1ccf1f",
    "text": "Vypadá jako liška, ale je to jiná houba.",
    "voice": "Candy - Young and Sweet"
@@ -1173,8 +1433,10 @@
   "sp.listicka.group": {
    "bytes": 27211,
    "file": "cs/sp.listicka.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "80b5fe5efb75005b70a4733cd3c0e8e3a959e440",
    "text": "Lištička pomerančová je nejedlá houba. Ta se nejí.",
    "voice": "Candy - Young and Sweet"
@@ -1182,8 +1444,10 @@
   "sp.listicka.kdo.iAm": {
    "bytes": 16135,
    "file": "cs/sp.listicka.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "75fb24fab95a8180f25a7a4c7b7397b536d13898",
    "text": "Já jsem lištička pomerančová.",
    "voice": "Candy - Young and Sweet"
@@ -1191,8 +1455,10 @@
   "sp.listicka.kdo.where": {
    "bytes": 15508,
    "file": "cs/sp.listicka.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "a1a2a3b385b84bd1c4d1c311678f2f666980d3ab",
    "text": "Kde je lištička pomerančová?",
    "voice": "Candy - Young and Sweet"
@@ -1200,8 +1466,10 @@
   "sp.listicka.kdo.yes": {
    "bytes": 18434,
    "file": "cs/sp.listicka.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "03b495bb5481e56e50221aa9ecaf805d0b260516",
    "text": "Ano! To je lištička pomerančová.",
    "voice": "Candy - Young and Sweet"
@@ -1209,8 +1477,10 @@
   "sp.listicka.kosik": {
    "bytes": 16971,
    "file": "cs/sp.listicka.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "6ca81d4ae69f876ec4e6ef1551de428d1768b0b3",
    "text": "Kam patří lištička pomerančová?",
    "voice": "Candy - Young and Sweet"
@@ -1218,8 +1488,10 @@
   "sp.listicka.look.0": {
    "bytes": 15508,
    "file": "cs/sp.listicka.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "fd2cec6c9c270e5746a5f5684f3db936d6745295",
    "text": "Je oranžová, víc než liška.",
    "voice": "Candy - Young and Sweet"
@@ -1227,8 +1499,10 @@
   "sp.listicka.look.1": {
    "bytes": 18852,
    "file": "cs/sp.listicka.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ce1ef9ff614f3e62991223d7505be1997756cb45",
    "text": "Zespodu má husté tenké lupínky.",
    "voice": "Candy - Young and Sweet"
@@ -1236,8 +1510,10 @@
   "sp.listicka.look.2": {
    "bytes": 25539,
    "file": "cs/sp.listicka.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "72727fc7dd85fde1e18143dfb7d4aea900289b62",
    "text": "Klobouk má jako nálevku s podvinutým okrajem.",
    "voice": "Candy - Young and Sweet"
@@ -1245,8 +1521,10 @@
   "sp.listicka.name": {
    "bytes": 13209,
    "file": "cs/sp.listicka.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8b76a20e32535fc20390843d6b9193cb4c2be93e",
    "text": "Lištička pomerančová.",
    "voice": "Candy - Young and Sweet"
@@ -1254,8 +1532,10 @@
   "sp.listicka.thatIs": {
    "bytes": 14254,
    "file": "cs/sp.listicka.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "9249b164cb780956fe84755eaf7ccd74e4d54a04",
    "text": "To je lištička pomerančová.",
    "voice": "Candy - Young and Sweet"
@@ -1263,8 +1543,10 @@
   "sp.listicka.twinTell": {
    "bytes": 29510,
    "file": "cs/sp.listicka.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "5f259f1a983ecd3729f9e709fb8b79c2e10cc610",
    "text": "Zespodu má husté lupínky. Liška má jen měkké vrásky.",
    "voice": "Candy - Young and Sweet"
@@ -1272,8 +1554,10 @@
   "sp.muchomurka-cervena.caution": {
    "bytes": 31390,
    "file": "cs/sp.muchomurka-cervena.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8116f4ab6651a4f138450abd6db45add29cb5ff6",
    "text": "Je jedovatá. Nesahej na ni a řekni to dospělému.",
    "voice": "Candy - Young and Sweet"
@@ -1281,8 +1565,10 @@
   "sp.muchomurka-cervena.fact": {
    "bytes": 29928,
    "file": "cs/sp.muchomurka-cervena.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "4088530640c7e9eff1caa9f0dadd3e6e5a46e50d",
    "text": "Je krásná jako z pohádky, ale jedovatá. Jen se díváme!",
    "voice": "Candy - Young and Sweet"
@@ -1290,8 +1576,10 @@
   "sp.muchomurka-cervena.group": {
    "bytes": 26166,
    "file": "cs/sp.muchomurka-cervena.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ab44c61e2d3c6e390fd78ce509b31c8e8537abfd",
    "text": "Pozor! Muchomůrka červená je jedovatá houba!",
    "voice": "Candy - Young and Sweet"
@@ -1299,8 +1587,10 @@
   "sp.muchomurka-cervena.kdo.iAm": {
    "bytes": 14672,
    "file": "cs/sp.muchomurka-cervena.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "1f4465c507a41fe2ef73142e64ce52957b6f80e3",
    "text": "Já jsem muchomůrka červená.",
    "voice": "Candy - Young and Sweet"
@@ -1308,8 +1598,10 @@
   "sp.muchomurka-cervena.kdo.where": {
    "bytes": 14672,
    "file": "cs/sp.muchomurka-cervena.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "f1e7d105b81269ab5879daafd7e445cb22e9710f",
    "text": "Kde je muchomůrka červená?",
    "voice": "Candy - Young and Sweet"
@@ -1317,8 +1609,10 @@
   "sp.muchomurka-cervena.kdo.yes": {
    "bytes": 17598,
    "file": "cs/sp.muchomurka-cervena.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "4bc444a8d9333ef00a62f25d33d620cf96528dc3",
    "text": "Ano! To je muchomůrka červená.",
    "voice": "Candy - Young and Sweet"
@@ -1326,8 +1620,10 @@
   "sp.muchomurka-cervena.kosik": {
    "bytes": 15717,
    "file": "cs/sp.muchomurka-cervena.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "c841ac019965b3d8c1f566a765bf7946734faae0",
    "text": "Kam patří muchomůrka červená?",
    "voice": "Candy - Young and Sweet"
@@ -1335,8 +1631,10 @@
   "sp.muchomurka-cervena.look.0": {
    "bytes": 18434,
    "file": "cs/sp.muchomurka-cervena.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "a105e82b7dbf8b47eb675d313e2e80e42a2b8c44",
    "text": "Má červený klobouk s bílými puntíky.",
    "voice": "Candy - Young and Sweet"
@@ -1344,8 +1642,10 @@
   "sp.muchomurka-cervena.look.1": {
    "bytes": 17598,
    "file": "cs/sp.muchomurka-cervena.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "16151329199210cc133838d2960e86ead8c6dae8",
    "text": "Má bílé lupínky a bílou nohu.",
    "voice": "Candy - Young and Sweet"
@@ -1353,8 +1653,10 @@
   "sp.muchomurka-cervena.look.2": {
    "bytes": 15508,
    "file": "cs/sp.muchomurka-cervena.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "c8cf398b86a5c0eeb16c9abfb740a3636f49f491",
    "text": "Na noze nosí bílou sukýnku.",
    "voice": "Candy - Young and Sweet"
@@ -1362,8 +1664,10 @@
   "sp.muchomurka-cervena.name": {
    "bytes": 12164,
    "file": "cs/sp.muchomurka-cervena.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ef16d137531eb527507ab02cb372108a86757e51",
    "text": "Muchomůrka červená.",
    "voice": "Candy - Young and Sweet"
@@ -1371,8 +1675,10 @@
   "sp.muchomurka-cervena.thatIs": {
    "bytes": 13627,
    "file": "cs/sp.muchomurka-cervena.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "16d5b6dd83bcfb3913ab708e9569bb261accdda7",
    "text": "To je muchomůrka červená.",
    "voice": "Candy - Young and Sweet"
@@ -1380,8 +1686,10 @@
   "sp.muchomurka-cervena.twinTell": {
    "bytes": 27002,
    "file": "cs/sp.muchomurka-cervena.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "754fa836ae5656dea034b86348997c746cc85ab9",
    "text": "Klobouk má červený. Tygrovaná má klobouk hnědý.",
    "voice": "Candy - Young and Sweet"
@@ -1389,8 +1697,10 @@
   "sp.muchomurka-jizliva.caution": {
    "bytes": 32853,
    "file": "cs/sp.muchomurka-jizliva.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "936aff3cdb18e9a24250b2c141e6f321962aa644",
    "text": "Smrtelně jedovatá! Nesahej na ni a hned řekni dospělému.",
    "voice": "Candy - Young and Sweet"
@@ -1398,8 +1708,10 @@
   "sp.muchomurka-jizliva.fact": {
    "bytes": 20941,
    "file": "cs/sp.muchomurka-jizliva.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b6045e56c0887fdc5e4c5e967aa7c8f74a64371f",
    "text": "Je celá bílá a smrtelně jedovatá.",
    "voice": "Candy - Young and Sweet"
@@ -1407,8 +1719,10 @@
   "sp.muchomurka-jizliva.group": {
    "bytes": 28047,
    "file": "cs/sp.muchomurka-jizliva.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "898e4471e2bb1622cded93ec64e7b0c28e70f13d",
    "text": "Pozor! Muchomůrka jízlivá je smrtelně jedovatá houba!",
    "voice": "Candy - Young and Sweet"
@@ -1416,8 +1730,10 @@
   "sp.muchomurka-jizliva.kdo.iAm": {
    "bytes": 13627,
    "file": "cs/sp.muchomurka-jizliva.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "00d1548dce64b92a514c6d568ab27dab8a9219d1",
    "text": "Já jsem muchomůrka jízlivá.",
    "voice": "Candy - Young and Sweet"
@@ -1425,8 +1741,10 @@
   "sp.muchomurka-jizliva.kdo.where": {
    "bytes": 12164,
    "file": "cs/sp.muchomurka-jizliva.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "23fccd0fcc2f274a7c21c85ab5008ce83cfb45d6",
    "text": "Kde je muchomůrka jízlivá?",
    "voice": "Candy - Young and Sweet"
@@ -1434,8 +1752,10 @@
   "sp.muchomurka-jizliva.kdo.yes": {
    "bytes": 19479,
    "file": "cs/sp.muchomurka-jizliva.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "37c37c49766d33b03b5f49e79b88389ab80613d5",
    "text": "Ano! To je muchomůrka jízlivá.",
    "voice": "Candy - Young and Sweet"
@@ -1443,8 +1763,10 @@
   "sp.muchomurka-jizliva.kosik": {
    "bytes": 15508,
    "file": "cs/sp.muchomurka-jizliva.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "bdc52a5016cde23437a2bae2887d4f5273bd10f0",
    "text": "Kam patří muchomůrka jízlivá?",
    "voice": "Candy - Young and Sweet"
@@ -1452,8 +1774,10 @@
   "sp.muchomurka-jizliva.look.0": {
    "bytes": 20524,
    "file": "cs/sp.muchomurka-jizliva.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "430dfc2448c0aaa56ccff46867306495d5e42ab2",
    "text": "Je celá čistě bílá, i lupínky.",
    "voice": "Candy - Young and Sweet"
@@ -1461,8 +1785,10 @@
   "sp.muchomurka-jizliva.look.1": {
    "bytes": 21359,
    "file": "cs/sp.muchomurka-jizliva.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ac02c9392ffcb255d3986081db7dacf8f3b9dda5",
    "text": "Na noze má roztřepenou bílou sukýnku.",
    "voice": "Candy - Young and Sweet"
@@ -1470,8 +1796,10 @@
   "sp.muchomurka-jizliva.look.2": {
    "bytes": 18016,
    "file": "cs/sp.muchomurka-jizliva.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "30bca321425a3381198ff9481bebd30bb13571cb",
    "text": "Noha jí dole trčí z bílého pytlíku.",
    "voice": "Candy - Young and Sweet"
@@ -1479,8 +1807,10 @@
   "sp.muchomurka-jizliva.name": {
    "bytes": 11746,
    "file": "cs/sp.muchomurka-jizliva.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "9a134ef0aa087b80617a2f3a480165d0d4e7d1e6",
    "text": "Muchomůrka jízlivá.",
    "voice": "Candy - Young and Sweet"
@@ -1488,8 +1818,10 @@
   "sp.muchomurka-jizliva.thatIs": {
    "bytes": 13209,
    "file": "cs/sp.muchomurka-jizliva.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ab39ed82d6bd321c8e2fedae98176f4e4449a91b",
    "text": "To je muchomůrka jízlivá.",
    "voice": "Candy - Young and Sweet"
@@ -1497,8 +1829,10 @@
   "sp.muchomurka-jizliva.twinTell": {
    "bytes": 33271,
    "file": "cs/sp.muchomurka-jizliva.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "37ff90dc2f968b02b29f2371c8ec93f268260144",
    "text": "Je celá bílá a dole má pytlík. Bedla pytlík nemá.",
    "voice": "Candy - Young and Sweet"
@@ -1506,8 +1840,10 @@
   "sp.muchomurka-tygrovana.caution": {
    "bytes": 34316,
    "file": "cs/sp.muchomurka-tygrovana.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "a5f7f11a3873119e79756ba435329f6cb76ea16e",
    "text": "Prudce jedovatá! Je hnědá s bílými tečkami. Nesahej na ni.",
    "voice": "Candy - Young and Sweet"
@@ -1515,8 +1851,10 @@
   "sp.muchomurka-tygrovana.fact": {
    "bytes": 28883,
    "file": "cs/sp.muchomurka-tygrovana.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "7e7fd9d03d3edfbf896277bd5cdaee48a4332c29",
    "text": "Je hnědá s bílými tečkami. Je prudce jedovatá.",
    "voice": "Candy - Young and Sweet"
@@ -1524,8 +1862,10 @@
   "sp.muchomurka-tygrovana.group": {
    "bytes": 33271,
    "file": "cs/sp.muchomurka-tygrovana.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b3faebcdaf78b1978118fb9894509439dff7668a",
    "text": "Pozor! Muchomůrka tygrovaná je smrtelně jedovatá houba!",
    "voice": "Candy - Young and Sweet"
@@ -1533,8 +1873,10 @@
   "sp.muchomurka-tygrovana.kdo.iAm": {
    "bytes": 16553,
    "file": "cs/sp.muchomurka-tygrovana.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "4296135925f2bab025de53b50d5b0342b30e4c14",
    "text": "Já jsem muchomůrka tygrovaná.",
    "voice": "Candy - Young and Sweet"
@@ -1542,8 +1884,10 @@
   "sp.muchomurka-tygrovana.kdo.where": {
    "bytes": 13836,
    "file": "cs/sp.muchomurka-tygrovana.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "d721500bd9de1120ce471644c331a15b16e6a45a",
    "text": "Kde je muchomůrka tygrovaná?",
    "voice": "Candy - Young and Sweet"
@@ -1551,8 +1895,10 @@
   "sp.muchomurka-tygrovana.kdo.yes": {
    "bytes": 20315,
    "file": "cs/sp.muchomurka-tygrovana.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "aadca692f03425790b80887f287fdccb8b4e246b",
    "text": "Ano! To je muchomůrka tygrovaná.",
    "voice": "Candy - Young and Sweet"
@@ -1560,8 +1906,10 @@
   "sp.muchomurka-tygrovana.kosik": {
    "bytes": 16553,
    "file": "cs/sp.muchomurka-tygrovana.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "0bbeae25f30ee278a144e1da26341998d5ce064e",
    "text": "Kam patří muchomůrka tygrovaná?",
    "voice": "Candy - Young and Sweet"
@@ -1569,8 +1917,10 @@
   "sp.muchomurka-tygrovana.look.0": {
    "bytes": 17598,
    "file": "cs/sp.muchomurka-tygrovana.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "1e4c299502f59555508a53fdd0936f0d6c85e86b",
    "text": "Má hnědý klobouk s bílými tečkami.",
    "voice": "Candy - Young and Sweet"
@@ -1578,8 +1928,10 @@
   "sp.muchomurka-tygrovana.look.1": {
    "bytes": 17180,
    "file": "cs/sp.muchomurka-tygrovana.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "56241b0d5b0ec6115f5570d5934e8adba5495509",
    "text": "Okraj klobouku má jemné rýhy.",
    "voice": "Candy - Young and Sweet"
@@ -1587,8 +1939,10 @@
   "sp.muchomurka-tygrovana.look.2": {
    "bytes": 19479,
    "file": "cs/sp.muchomurka-tygrovana.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "04c3199be5a25745bccbd01dd796364da7714742",
    "text": "Dole na noze má bílý lem jako ponožku.",
    "voice": "Candy - Young and Sweet"
@@ -1596,8 +1950,10 @@
   "sp.muchomurka-tygrovana.name": {
    "bytes": 12164,
    "file": "cs/sp.muchomurka-tygrovana.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "00420e23583b9f7058583efa5480798f1e9ebef8",
    "text": "Muchomůrka tygrovaná.",
    "voice": "Candy - Young and Sweet"
@@ -1605,8 +1961,10 @@
   "sp.muchomurka-tygrovana.thatIs": {
    "bytes": 13836,
    "file": "cs/sp.muchomurka-tygrovana.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "83e6891897bbb1505ac6a3d492a6ef26165488a7",
    "text": "To je muchomůrka tygrovaná.",
    "voice": "Candy - Young and Sweet"
@@ -1614,8 +1972,10 @@
   "sp.muchomurka-tygrovana.twinTell": {
    "bytes": 29510,
    "file": "cs/sp.muchomurka-tygrovana.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "4d70881c9e68389d6244565e7f52e736d4c04dc3",
    "text": "Klobouk má hnědý. Muchomůrka červená má klobouk červený.",
    "voice": "Candy - Young and Sweet"
@@ -1623,8 +1983,10 @@
   "sp.muchomurka-zelena.caution": {
    "bytes": 32853,
    "file": "cs/sp.muchomurka-zelena.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "936aff3cdb18e9a24250b2c141e6f321962aa644",
    "text": "Smrtelně jedovatá! Nesahej na ni a hned řekni dospělému.",
    "voice": "Candy - Young and Sweet"
@@ -1632,8 +1994,10 @@
   "sp.muchomurka-zelena.fact": {
    "bytes": 21777,
    "file": "cs/sp.muchomurka-zelena.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "3177e5bd6dd670c9702c712b7f3df4e3784711d8",
    "text": "Je to nejjedovatější houba v našich lesích.",
    "voice": "Candy - Young and Sweet"
@@ -1641,8 +2005,10 @@
   "sp.muchomurka-zelena.group": {
    "bytes": 29928,
    "file": "cs/sp.muchomurka-zelena.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "647e07eff45c73fa58d1d02b9745c86230638b44",
    "text": "Pozor! Muchomůrka zelená je smrtelně jedovatá houba!",
    "voice": "Candy - Young and Sweet"
@@ -1650,8 +2016,10 @@
   "sp.muchomurka-zelena.kdo.iAm": {
    "bytes": 13209,
    "file": "cs/sp.muchomurka-zelena.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "7f5328418aa68486efea0fccca95c6ff7453755c",
    "text": "Já jsem muchomůrka zelená.",
    "voice": "Candy - Young and Sweet"
@@ -1659,8 +2027,10 @@
   "sp.muchomurka-zelena.kdo.where": {
    "bytes": 13209,
    "file": "cs/sp.muchomurka-zelena.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "e4df4cd2cac6a6b58c2f3141bfb3a413773b8697",
    "text": "Kde je muchomůrka zelená?",
    "voice": "Candy - Young and Sweet"
@@ -1668,8 +2038,10 @@
   "sp.muchomurka-zelena.kdo.yes": {
    "bytes": 17180,
    "file": "cs/sp.muchomurka-zelena.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "df0a91eca85d7eb239a6b64df6b96261436b8901",
    "text": "Ano! To je muchomůrka zelená.",
    "voice": "Candy - Young and Sweet"
@@ -1677,8 +2049,10 @@
   "sp.muchomurka-zelena.kosik": {
    "bytes": 15717,
    "file": "cs/sp.muchomurka-zelena.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "74d57a0c5288dd8919e52a4b473f8a3997e61754",
    "text": "Kam patří muchomůrka zelená?",
    "voice": "Candy - Young and Sweet"
@@ -1686,8 +2060,10 @@
   "sp.muchomurka-zelena.look.0": {
    "bytes": 25748,
    "file": "cs/sp.muchomurka-zelena.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "5911e64724c24e8f88a162362554e400637938eb",
    "text": "Klobouk má zelenkavý nebo olivový, bez šupin.",
    "voice": "Candy - Young and Sweet"
@@ -1695,8 +2071,10 @@
   "sp.muchomurka-zelena.look.1": {
    "bytes": 19479,
    "file": "cs/sp.muchomurka-zelena.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "48e31ed7859bd6b8065fe934eb0aa170d0019245",
    "text": "Má bílé lupínky a bílou sukýnku.",
    "voice": "Candy - Young and Sweet"
@@ -1704,8 +2082,10 @@
   "sp.muchomurka-zelena.look.2": {
    "bytes": 18852,
    "file": "cs/sp.muchomurka-zelena.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "30bca321425a3381198ff9481bebd30bb13571cb",
    "text": "Noha jí dole trčí z bílého pytlíku.",
    "voice": "Candy - Young and Sweet"
@@ -1713,8 +2093,10 @@
   "sp.muchomurka-zelena.name": {
    "bytes": 12164,
    "file": "cs/sp.muchomurka-zelena.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "424c9d5ab027a5618dbadce40696a6a2b7d06d9f",
    "text": "Muchomůrka zelená.",
    "voice": "Candy - Young and Sweet"
@@ -1722,8 +2104,10 @@
   "sp.muchomurka-zelena.thatIs": {
    "bytes": 13209,
    "file": "cs/sp.muchomurka-zelena.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "be913e4b41b896b40751953519b408d94f02c155",
    "text": "To je muchomůrka zelená.",
    "voice": "Candy - Young and Sweet"
@@ -1731,8 +2115,10 @@
   "sp.muchomurka-zelena.twinTell": {
    "bytes": 22822,
    "file": "cs/sp.muchomurka-zelena.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "a50aba8ba2dbaf90c94d9a33ab2ba52cf06ee198",
    "text": "Dole na noze má bílý pytlík. Bedla ho nemá.",
    "voice": "Candy - Young and Sweet"
@@ -1740,8 +2126,10 @@
   "sp.pestrec.caution": {
    "bytes": 30973,
    "file": "cs/sp.pestrec.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b03ffb043160b11107807fdd20ec03425e685a79",
    "text": "Je jedovatý a podobá se pýchavce. Nesahej na něj.",
    "voice": "Candy - Young and Sweet"
@@ -1749,8 +2137,10 @@
   "sp.pestrec.fact": {
    "bytes": 20315,
    "file": "cs/sp.pestrec.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8f291e1b4d4976d150e80e13d5c1b52cde2092ea",
    "text": "Vypadá jako brambora. Uvnitř zčerná.",
    "voice": "Candy - Young and Sweet"
@@ -1758,8 +2148,10 @@
   "sp.pestrec.group": {
    "bytes": 24703,
    "file": "cs/sp.pestrec.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "374671af3925b59c45efad9768b3c38c3d9e7b74",
    "text": "Pozor! Pestřec obecný je jedovatá houba!",
    "voice": "Candy - Young and Sweet"
@@ -1767,8 +2159,10 @@
   "sp.pestrec.kdo.iAm": {
    "bytes": 12373,
    "file": "cs/sp.pestrec.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "a605e986db742a3dec961d6eb14612532ccbe068",
    "text": "Já jsem pestřec obecný.",
    "voice": "Candy - Young and Sweet"
@@ -1776,8 +2170,10 @@
   "sp.pestrec.kdo.where": {
    "bytes": 13209,
    "file": "cs/sp.pestrec.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "de4e05beb385fe87e287e3d7124736d04c74769e",
    "text": "Kde je pestřec obecný?",
    "voice": "Candy - Young and Sweet"
@@ -1785,8 +2181,10 @@
   "sp.pestrec.kdo.yes": {
    "bytes": 14672,
    "file": "cs/sp.pestrec.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "c01172a219add8d9050def8a15616710688f7e4e",
    "text": "Ano! To je pestřec obecný.",
    "voice": "Candy - Young and Sweet"
@@ -1794,8 +2192,10 @@
   "sp.pestrec.kosik": {
    "bytes": 14672,
    "file": "cs/sp.pestrec.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "91f19efd449f5468771c0133a624d3854c0c66f7",
    "text": "Kam patří pestřec obecný?",
    "voice": "Candy - Young and Sweet"
@@ -1803,8 +2203,10 @@
   "sp.pestrec.look.0": {
    "bytes": 20315,
    "file": "cs/sp.pestrec.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "d5d2dbb205e53030f0473d1817bbc5d747b5205d",
    "text": "Je kulatý a žlutohnědý jako brambora.",
    "voice": "Candy - Young and Sweet"
@@ -1812,8 +2214,10 @@
   "sp.pestrec.look.1": {
    "bytes": 19479,
    "file": "cs/sp.pestrec.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "975c7d1bc0c6369e2438ebd469833f1f4eb04de1",
    "text": "Tlustá kůže má vzor jako šupinky.",
    "voice": "Candy - Young and Sweet"
@@ -1821,8 +2225,10 @@
   "sp.pestrec.look.2": {
    "bytes": 18852,
    "file": "cs/sp.pestrec.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "64221a3750248d26a8e6fa7ba4e97a88ce3a2f3f",
    "text": "Uvnitř je tmavě fialový až černý.",
    "voice": "Candy - Young and Sweet"
@@ -1830,8 +2236,10 @@
   "sp.pestrec.name": {
    "bytes": 10284,
    "file": "cs/sp.pestrec.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "3aea6c6d9fb6634e0177940b017c35f04fcdde8b",
    "text": "Pestřec obecný.",
    "voice": "Candy - Young and Sweet"
@@ -1839,8 +2247,10 @@
   "sp.pestrec.thatIs": {
    "bytes": 12164,
    "file": "cs/sp.pestrec.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "7133d812d87470f3b4e90888e17cd2d98ebc089c",
    "text": "To je pestřec obecný.",
    "voice": "Candy - Young and Sweet"
@@ -1848,8 +2258,10 @@
   "sp.pestrec.twinTell": {
    "bytes": 23867,
    "file": "cs/sp.pestrec.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "82a0690d8369283491c81a2c803d7270e829d3ad",
    "text": "Uvnitř je tmavý. Pýchavka je uvnitř bílá.",
    "voice": "Candy - Young and Sweet"
@@ -1857,8 +2269,10 @@
   "sp.pychavka.caution": {
    "bytes": 29928,
    "file": "cs/sp.pychavka.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "0c62d7ab1e55068084176ebcbf22cb9449dff43b",
    "text": "Jedlá je jen mladá a uvnitř čistě bílá. Rozhodne dospělý.",
    "voice": "Candy - Young and Sweet"
@@ -1866,8 +2280,10 @@
   "sp.pychavka.fact": {
    "bytes": 28883,
    "file": "cs/sp.pychavka.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "0bc19e892a9c798c613a8b2a5e8e840c1042acfc",
    "text": "Mladá je uvnitř bílá. Stará je plná hnědého prášku.",
    "voice": "Candy - Young and Sweet"
@@ -1875,8 +2291,10 @@
   "sp.pychavka.group": {
    "bytes": 19897,
    "file": "cs/sp.pychavka.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "805247816803d3618ee73ab3372c5c3cffbfa8b6",
    "text": "Pýchavka obecná je jedlá houba.",
    "voice": "Candy - Young and Sweet"
@@ -1884,8 +2302,10 @@
   "sp.pychavka.kdo.iAm": {
    "bytes": 13627,
    "file": "cs/sp.pychavka.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "13057ee77b798256d8144e0c16e744d983b1bfef",
    "text": "Já jsem pýchavka obecná.",
    "voice": "Candy - Young and Sweet"
@@ -1893,8 +2313,10 @@
   "sp.pychavka.kdo.where": {
    "bytes": 13836,
    "file": "cs/sp.pychavka.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "019772913315c8b89e0d5f140fa4480dfb7154a2",
    "text": "Kde je pýchavka obecná?",
    "voice": "Candy - Young and Sweet"
@@ -1902,8 +2324,10 @@
   "sp.pychavka.kdo.yes": {
    "bytes": 15717,
    "file": "cs/sp.pychavka.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "bc2099b74b42dcb22a0d8c59071db7bf99381f5a",
    "text": "Ano! To je pýchavka obecná.",
    "voice": "Candy - Young and Sweet"
@@ -1911,8 +2335,10 @@
   "sp.pychavka.kosik": {
    "bytes": 12791,
    "file": "cs/sp.pychavka.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "e378915f9e2499b467870a54e2f725fc66628e1e",
    "text": "Kam patří pýchavka obecná?",
    "voice": "Candy - Young and Sweet"
@@ -1920,8 +2346,10 @@
   "sp.pychavka.look.0": {
    "bytes": 20524,
    "file": "cs/sp.pychavka.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "7cf4f54c6322bc59fba90ceff2125771c8e572f1",
    "text": "Je kulatá jako hruška a nemá klobouk.",
    "voice": "Candy - Young and Sweet"
@@ -1929,8 +2357,10 @@
   "sp.pychavka.look.1": {
    "bytes": 22404,
    "file": "cs/sp.pychavka.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "04e3a1e8a753222d3e727c0e93024d96203280f6",
    "text": "Je bílá a pokrytá drobnými bradavičkami.",
    "voice": "Candy - Young and Sweet"
@@ -1938,8 +2368,10 @@
   "sp.pychavka.look.2": {
    "bytes": 15717,
    "file": "cs/sp.pychavka.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "15fb2917700579625c767bdd57408779d3fb0117",
    "text": "Mladá je uvnitř celá bílá.",
    "voice": "Candy - Young and Sweet"
@@ -1947,8 +2379,10 @@
   "sp.pychavka.name": {
    "bytes": 11328,
    "file": "cs/sp.pychavka.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "9b46c03e4975f23113c59a476b661af4427de243",
    "text": "Pýchavka obecná.",
    "voice": "Candy - Young and Sweet"
@@ -1956,8 +2390,10 @@
   "sp.pychavka.thatIs": {
    "bytes": 13209,
    "file": "cs/sp.pychavka.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "49c5618f7d4eb65982c86d44ac212b2360b4ad1e",
    "text": "To je pýchavka obecná.",
    "voice": "Candy - Young and Sweet"
@@ -1965,8 +2401,10 @@
   "sp.pychavka.twinTell": {
    "bytes": 25121,
    "file": "cs/sp.pychavka.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "7146fa24591e1fc48229b364f3ff2b4892556bb1",
    "text": "Uvnitř je bílá. Pestřec je uvnitř tmavý.",
    "voice": "Candy - Young and Sweet"
@@ -1974,8 +2412,10 @@
   "sp.ryzec.caution": {
    "bytes": 27211,
    "file": "cs/sp.ryzec.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "7a9d347207056f948bc504c18899cc8198adce6d",
    "text": "Podobný ryzec kravský je chlupatý a má bílé mléko.",
    "voice": "Candy - Young and Sweet"
@@ -1983,8 +2423,10 @@
   "sp.ryzec.fact": {
    "bytes": 22404,
    "file": "cs/sp.ryzec.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "63116f1146a0ad097b9577459d6f1df9648ebbd8",
    "text": "Když se zlomí, teče z něj oranžové mléko.",
    "voice": "Candy - Young and Sweet"
@@ -1992,8 +2434,10 @@
   "sp.ryzec.group": {
    "bytes": 15090,
    "file": "cs/sp.ryzec.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "a5f3b0e097c38b7109853dfb0709e178cab8f181",
    "text": "Ryzec pravý je jedlá houba.",
    "voice": "Candy - Young and Sweet"
@@ -2001,8 +2445,10 @@
   "sp.ryzec.kdo.iAm": {
    "bytes": 11746,
    "file": "cs/sp.ryzec.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "27b42d542a3a646da64cbade09202b18e52a6885",
    "text": "Já jsem ryzec pravý.",
    "voice": "Candy - Young and Sweet"
@@ -2010,8 +2456,10 @@
   "sp.ryzec.kdo.where": {
    "bytes": 11746,
    "file": "cs/sp.ryzec.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "6f2356ad9e09a133d0b272601f817fef1687764e",
    "text": "Kde je ryzec pravý?",
    "voice": "Candy - Young and Sweet"
@@ -2019,8 +2467,10 @@
   "sp.ryzec.kdo.yes": {
    "bytes": 13627,
    "file": "cs/sp.ryzec.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "7e09602975595470bb23c8f1d1b7bc30393e38e3",
    "text": "Ano! To je ryzec pravý.",
    "voice": "Candy - Young and Sweet"
@@ -2028,8 +2478,10 @@
   "sp.ryzec.kosik": {
    "bytes": 12373,
    "file": "cs/sp.ryzec.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "664fbd5ec672a11f05be3306960c04097a0454cd",
    "text": "Kam patří ryzec pravý?",
    "voice": "Candy - Young and Sweet"
@@ -2037,8 +2489,10 @@
   "sp.ryzec.look.0": {
    "bytes": 21359,
    "file": "cs/sp.ryzec.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "076c9570ae3331ae29e546f22a2fc5a902c964ed",
    "text": "Oranžový klobouk má kroužky jako letokruhy.",
    "voice": "Candy - Young and Sweet"
@@ -2046,8 +2500,10 @@
   "sp.ryzec.look.1": {
    "bytes": 19061,
    "file": "cs/sp.ryzec.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "6d25e88d475653e9d3c488f2788be32ecc0840c3",
    "text": "Na otlačených místech zezelená.",
    "voice": "Candy - Young and Sweet"
@@ -2055,8 +2511,10 @@
   "sp.ryzec.look.2": {
    "bytes": 15090,
    "file": "cs/sp.ryzec.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "090f3f909dc2d04eb517c2ba4f11095405bf1f14",
    "text": "Na noze má oranžové důlky.",
    "voice": "Candy - Young and Sweet"
@@ -2064,8 +2522,10 @@
   "sp.ryzec.name": {
    "bytes": 10493,
    "file": "cs/sp.ryzec.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b2b4ec89143d5f8fe13a5fe12df8d286d66ac988",
    "text": "Ryzec pravý.",
    "voice": "Candy - Young and Sweet"
@@ -2073,8 +2533,10 @@
   "sp.ryzec.thatIs": {
    "bytes": 12164,
    "file": "cs/sp.ryzec.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "cf7b1ec20245162e8b96ff2b236be8d8f35511dd",
    "text": "To je ryzec pravý.",
    "voice": "Candy - Young and Sweet"
@@ -2082,8 +2544,10 @@
   "sp.sirovec.caution": {
    "bytes": 25121,
    "file": "cs/sp.sirovec.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "fcd76f137ba394e103449ee991b7f766c793c060",
    "text": "Jí se jen mladý a uvařený. Rozhodne dospělý.",
    "voice": "Candy - Young and Sweet"
@@ -2091,8 +2555,10 @@
   "sp.sirovec.fact": {
    "bytes": 23658,
    "file": "cs/sp.sirovec.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "817d3e25d8342bd3118eee0a6a77b76c6b77950f",
    "text": "Roste na stromech jako žlutooranžové schody.",
    "voice": "Candy - Young and Sweet"
@@ -2100,8 +2566,10 @@
   "sp.sirovec.group": {
    "bytes": 19061,
    "file": "cs/sp.sirovec.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "f6434fe411b1e2ff0e65c9c069cf8b2fbcf24939",
    "text": "Sírovec žlutooranžový je jedlá houba.",
    "voice": "Candy - Young and Sweet"
@@ -2109,8 +2577,10 @@
   "sp.sirovec.kdo.iAm": {
    "bytes": 16135,
    "file": "cs/sp.sirovec.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "51345c3763c50e7df5cabe48af1d9ea8f77f97b4",
    "text": "Já jsem sírovec žlutooranžový.",
    "voice": "Candy - Young and Sweet"
@@ -2118,8 +2588,10 @@
   "sp.sirovec.kdo.where": {
    "bytes": 15090,
    "file": "cs/sp.sirovec.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "88ddf6b72d1394e854a7798781ec8205e23482a5",
    "text": "Kde je sírovec žlutooranžový?",
    "voice": "Candy - Young and Sweet"
@@ -2127,8 +2599,10 @@
   "sp.sirovec.kdo.yes": {
    "bytes": 18852,
    "file": "cs/sp.sirovec.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "c472f92ddc56bb4f62fb5fd545b99d8f5be4de4d",
    "text": "Ano! To je sírovec žlutooranžový.",
    "voice": "Candy - Young and Sweet"
@@ -2136,8 +2610,10 @@
   "sp.sirovec.kosik": {
    "bytes": 19061,
    "file": "cs/sp.sirovec.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "720b571dc605d79b13d7c37a10a840c487682000",
    "text": "Kam patří sírovec žlutooranžový?",
    "voice": "Candy - Young and Sweet"
@@ -2145,8 +2621,10 @@
   "sp.sirovec.look.0": {
    "bytes": 16553,
    "file": "cs/sp.sirovec.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "c360008a5773083c0fa76979e06c1bbd2e784d0f",
    "text": "Je zářivě žlutý a oranžový.",
    "voice": "Candy - Young and Sweet"
@@ -2154,8 +2632,10 @@
   "sp.sirovec.look.1": {
    "bytes": 18434,
    "file": "cs/sp.sirovec.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "28efb0683dd50743d75c15a74f96dc57841dfc35",
    "text": "Roste v patrech na kmeni jako poličky.",
    "voice": "Candy - Young and Sweet"
@@ -2163,8 +2643,10 @@
   "sp.sirovec.look.2": {
    "bytes": 19479,
    "file": "cs/sp.sirovec.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b8f2bb70d8aa5db3b172b0c7ba477b66d680c286",
    "text": "Nemá nohu, přirůstá přímo ke stromu.",
    "voice": "Candy - Young and Sweet"
@@ -2172,8 +2654,10 @@
   "sp.sirovec.name": {
    "bytes": 12164,
    "file": "cs/sp.sirovec.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8a96c7ca91e57353714386bee6753d6b548d92ea",
    "text": "Sírovec žlutooranžový.",
    "voice": "Candy - Young and Sweet"
@@ -2181,8 +2665,10 @@
   "sp.sirovec.thatIs": {
    "bytes": 16135,
    "file": "cs/sp.sirovec.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "27f9cbed6f038279f3234f16c57c37d9e6b424cd",
    "text": "To je sírovec žlutooranžový.",
    "voice": "Candy - Young and Sweet"
@@ -2190,8 +2676,10 @@
   "sp.suchohrib.caution": {
    "bytes": 31808,
    "file": "cs/sp.suchohrib.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "7bafe828acd9bd643a04682f11cb4821ab2f982e",
    "text": "Podobný je hořký žlučník. Ten nemodrá a má růžové dírky.",
    "voice": "Candy - Young and Sweet"
@@ -2199,8 +2687,10 @@
   "sp.suchohrib.fact": {
    "bytes": 29928,
    "file": "cs/sp.suchohrib.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "bbd989bcb933c871dec7dcb02c5d1ffd2501f819",
    "text": "Klobouk má hnědý jako kaštan. Za deště je slizký.",
    "voice": "Candy - Young and Sweet"
@@ -2208,8 +2698,10 @@
   "sp.suchohrib.group": {
    "bytes": 15090,
    "file": "cs/sp.suchohrib.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "83eb4f32a249470bdddb74e17f6134ef175c22cb",
    "text": "Hřib hnědý je jedlá houba.",
    "voice": "Candy - Young and Sweet"
@@ -2217,8 +2709,10 @@
   "sp.suchohrib.kdo.iAm": {
    "bytes": 12164,
    "file": "cs/sp.suchohrib.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "a79c199400b1a12527731a0cff50c1b493286221",
    "text": "Já jsem hřib hnědý.",
    "voice": "Candy - Young and Sweet"
@@ -2226,8 +2720,10 @@
   "sp.suchohrib.kdo.where": {
    "bytes": 11328,
    "file": "cs/sp.suchohrib.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "6e0c182ed8a7e94cdc77dd2855b78d9f375a1522",
    "text": "Kde je hřib hnědý?",
    "voice": "Candy - Young and Sweet"
@@ -2235,8 +2731,10 @@
   "sp.suchohrib.kdo.yes": {
    "bytes": 13836,
    "file": "cs/sp.suchohrib.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "0bab65f8001ae80bcb49b3a448837b0dd9f36900",
    "text": "Ano! To je hřib hnědý.",
    "voice": "Candy - Young and Sweet"
@@ -2244,8 +2742,10 @@
   "sp.suchohrib.kosik": {
    "bytes": 12164,
    "file": "cs/sp.suchohrib.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "9f2cb3e226038260613341819a97e29c62cf7854",
    "text": "Kam patří hřib hnědý?",
    "voice": "Candy - Young and Sweet"
@@ -2253,8 +2753,10 @@
   "sp.suchohrib.look.0": {
    "bytes": 15508,
    "file": "cs/sp.suchohrib.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "f30261daf062092cccfb12fad1059632e3fe0c62",
    "text": "Má kaštanově hnědý klobouk.",
    "voice": "Candy - Young and Sweet"
@@ -2262,8 +2764,10 @@
   "sp.suchohrib.look.1": {
    "bytes": 21777,
    "file": "cs/sp.suchohrib.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "4e260b27625e630c9007145c712c7d4809fe93de",
    "text": "Žluté dírky na otlačeném místě zmodrají.",
    "voice": "Candy - Young and Sweet"
@@ -2271,8 +2775,10 @@
   "sp.suchohrib.look.2": {
    "bytes": 16553,
    "file": "cs/sp.suchohrib.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8df291b160f11fa82ae58f31388d38a3a0b72226",
    "text": "Hnědá noha nemá žádnou síťku.",
    "voice": "Candy - Young and Sweet"
@@ -2280,8 +2786,10 @@
   "sp.suchohrib.name": {
    "bytes": 8821,
    "file": "cs/sp.suchohrib.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "7d6a78fd9c7ef558b5129f0d04cc01e533fd8fc6",
    "text": "Hřib hnědý.",
    "voice": "Candy - Young and Sweet"
@@ -2289,8 +2797,10 @@
   "sp.suchohrib.thatIs": {
    "bytes": 10910,
    "file": "cs/sp.suchohrib.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "36375ffd6ee572062aa69c084c7ef7dc3c993a15",
    "text": "To je hřib hnědý.",
    "voice": "Candy - Young and Sweet"
@@ -2298,8 +2808,10 @@
   "sp.suchohrib.twinTell": {
    "bytes": 28883,
    "file": "cs/sp.suchohrib.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8e30f210382e3406e084595cd6d4003dbbd0359a",
    "text": "Otlačené dírky zmodrají. Žlučník nikdy nemodrá.",
    "voice": "Candy - Young and Sweet"
@@ -2307,8 +2819,10 @@
   "sp.trepenitka.caution": {
    "bytes": 31808,
    "file": "cs/sp.trepenitka.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "a83b0ff939cecbbe842c681ee23196e3e254ba00",
    "text": "Je jedovatá a podobá se jedlým václavkám. Nesahej na ni.",
    "voice": "Candy - Young and Sweet"
@@ -2316,8 +2830,10 @@
   "sp.trepenitka.fact": {
    "bytes": 29510,
    "file": "cs/sp.trepenitka.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "9ab42269c596a5f45d80ff65df099f4db57e67f6",
    "text": "Roste ve velkých partách na starých pařezech. Je jedovatá.",
    "voice": "Candy - Young and Sweet"
@@ -2325,8 +2841,10 @@
   "sp.trepenitka.group": {
    "bytes": 27629,
    "file": "cs/sp.trepenitka.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "03a4574ec6d4b960f5933c9f864a015aa3588e6f",
    "text": "Pozor! Třepenitka svazčitá je jedovatá houba!",
    "voice": "Candy - Young and Sweet"
@@ -2334,8 +2852,10 @@
   "sp.trepenitka.kdo.iAm": {
    "bytes": 14672,
    "file": "cs/sp.trepenitka.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ca3b37a16fcb6be93a1eed39bbbb6afaaf09aded",
    "text": "Já jsem třepenitka svazčitá.",
    "voice": "Candy - Young and Sweet"
@@ -2343,8 +2863,10 @@
   "sp.trepenitka.kdo.where": {
    "bytes": 14254,
    "file": "cs/sp.trepenitka.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "81d4ec8c7d7c527d62985a3b85401da17d4e539e",
    "text": "Kde je třepenitka svazčitá?",
    "voice": "Candy - Young and Sweet"
@@ -2352,8 +2874,10 @@
   "sp.trepenitka.kdo.yes": {
    "bytes": 19897,
    "file": "cs/sp.trepenitka.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ae034dc87b12478b7a0427637c32bbc58a2649a1",
    "text": "Ano! To je třepenitka svazčitá.",
    "voice": "Candy - Young and Sweet"
@@ -2361,8 +2885,10 @@
   "sp.trepenitka.kosik": {
    "bytes": 18434,
    "file": "cs/sp.trepenitka.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "a3c415f9f0aa7f2a107fdbb442f39d8904a256c7",
    "text": "Kam patří třepenitka svazčitá?",
    "voice": "Candy - Young and Sweet"
@@ -2370,8 +2896,10 @@
   "sp.trepenitka.look.0": {
    "bytes": 18434,
    "file": "cs/sp.trepenitka.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "4b02fbdf2496cc5fc9cfccee3b2c91503d5694cd",
    "text": "Roste v trsech na dřevě a pařezech.",
    "voice": "Candy - Young and Sweet"
@@ -2379,8 +2907,10 @@
   "sp.trepenitka.look.1": {
    "bytes": 25539,
    "file": "cs/sp.trepenitka.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b4a4ceccdf2677d55d96f376f1ad2da2f74ce7d7",
    "text": "Klobouk je sírově žlutý, uprostřed oranžový.",
    "voice": "Candy - Young and Sweet"
@@ -2388,8 +2918,10 @@
   "sp.trepenitka.look.2": {
    "bytes": 23867,
    "file": "cs/sp.trepenitka.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "921a995274534af7d65f24fe1032da5dfdcbcee0",
    "text": "Lupínky má zelenožluté, později tmavé.",
    "voice": "Candy - Young and Sweet"
@@ -2397,8 +2929,10 @@
   "sp.trepenitka.name": {
    "bytes": 11746,
    "file": "cs/sp.trepenitka.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "48e8c4fb6f0591bcabe28d70e7d588175bd84ec1",
    "text": "Třepenitka svazčitá.",
    "voice": "Candy - Young and Sweet"
@@ -2406,8 +2940,10 @@
   "sp.trepenitka.thatIs": {
    "bytes": 13627,
    "file": "cs/sp.trepenitka.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b1123ecd07751f61b3f169be23ea5827bf07bb6d",
    "text": "To je třepenitka svazčitá.",
    "voice": "Candy - Young and Sweet"
@@ -2415,8 +2951,10 @@
   "sp.trepenitka.twinTell": {
    "bytes": 29510,
    "file": "cs/sp.trepenitka.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8e459570b807688765e6210eaf7c673c24ac4919",
    "text": "Lupínky má zelenožluté. Václavka má lupínky světlé.",
    "voice": "Candy - Young and Sweet"
@@ -2424,8 +2962,10 @@
   "sp.troudnatec-pasovany.caution": {
    "bytes": 20941,
    "file": "cs/sp.troudnatec-pasovany.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "cfbe16f43073b753e60d4c7d8b82bbac6af5daa0",
    "text": "Je tvrdý jako dřevo, a proto se nejí.",
    "voice": "Candy - Young and Sweet"
@@ -2433,8 +2973,10 @@
   "sp.troudnatec-pasovany.fact": {
    "bytes": 30346,
    "file": "cs/sp.troudnatec-pasovany.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "33809e07433c2851ae23df49421ee7887a99972c",
    "text": "Nosí červený pásek. Někdy z něj kapou kapky jako slzy.",
    "voice": "Candy - Young and Sweet"
@@ -2442,8 +2984,10 @@
   "sp.troudnatec-pasovany.group": {
    "bytes": 24285,
    "file": "cs/sp.troudnatec-pasovany.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "2b07cf109de98da1f36332caab936f38e14e8161",
    "text": "Troudnatec pásovaný je nejedlá houba. Ta se nejí.",
    "voice": "Candy - Young and Sweet"
@@ -2451,8 +2995,10 @@
   "sp.troudnatec-pasovany.kdo.iAm": {
    "bytes": 16135,
    "file": "cs/sp.troudnatec-pasovany.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "3e4220ab6f3e8a08628853833a0a95f6eb14360a",
    "text": "Já jsem troudnatec pásovaný.",
    "voice": "Candy - Young and Sweet"
@@ -2460,8 +3006,10 @@
   "sp.troudnatec-pasovany.kdo.where": {
    "bytes": 15508,
    "file": "cs/sp.troudnatec-pasovany.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "316fb91bc4f80d6e67b7979e6f418c6cb7ef590f",
    "text": "Kde je troudnatec pásovaný?",
    "voice": "Candy - Young and Sweet"
@@ -2469,8 +3017,10 @@
   "sp.troudnatec-pasovany.kdo.yes": {
    "bytes": 20941,
    "file": "cs/sp.troudnatec-pasovany.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "bc898588866d83c872e009dc78ae0ab0769a1db2",
    "text": "Ano! To je troudnatec pásovaný.",
    "voice": "Candy - Young and Sweet"
@@ -2478,8 +3028,10 @@
   "sp.troudnatec-pasovany.kosik": {
    "bytes": 17180,
    "file": "cs/sp.troudnatec-pasovany.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b313dd7b3bfeb28f3fc74d413806e432a0b7df87",
    "text": "Kam patří troudnatec pásovaný?",
    "voice": "Candy - Young and Sweet"
@@ -2487,8 +3039,10 @@
   "sp.troudnatec-pasovany.look.0": {
    "bytes": 15717,
    "file": "cs/sp.troudnatec-pasovany.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "1816987d563e98c7837d7621ca5c079b3961d8e3",
    "text": "Roste jako polička na kmeni.",
    "voice": "Candy - Young and Sweet"
@@ -2496,8 +3050,10 @@
   "sp.troudnatec-pasovany.look.1": {
    "bytes": 20524,
    "file": "cs/sp.troudnatec-pasovany.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "db1e3d14f70296e81d5b667676655c4b04101719",
    "text": "Má červenooranžový pás a bílý okraj.",
    "voice": "Candy - Young and Sweet"
@@ -2505,8 +3061,10 @@
   "sp.troudnatec-pasovany.look.2": {
    "bytes": 13209,
    "file": "cs/sp.troudnatec-pasovany.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "0c364316201f65736d0e5006bce509e7e3458521",
    "text": "Je tvrdý jako dřevo.",
    "voice": "Candy - Young and Sweet"
@@ -2514,8 +3072,10 @@
   "sp.troudnatec-pasovany.name": {
    "bytes": 12164,
    "file": "cs/sp.troudnatec-pasovany.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "914412b87a4671fa8bb72bf4e2ae4e421ba68a1d",
    "text": "Troudnatec pásovaný.",
    "voice": "Candy - Young and Sweet"
@@ -2523,8 +3083,10 @@
   "sp.troudnatec-pasovany.thatIs": {
    "bytes": 14254,
    "file": "cs/sp.troudnatec-pasovany.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "37a1c35183c4cd42b1389068479d456b039ce147",
    "text": "To je troudnatec pásovaný.",
    "voice": "Candy - Young and Sweet"
@@ -2532,8 +3094,10 @@
   "sp.troudnatec-pasovany.twinTell": {
    "bytes": 30346,
    "file": "cs/sp.troudnatec-pasovany.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "88009ddd84a456efb3a1eb2094f6fd8927ecfeef",
    "text": "Má červený pás a bílý okraj. Kopytovitý je celý šedý.",
    "voice": "Candy - Young and Sweet"
@@ -2541,8 +3105,10 @@
   "sp.troudnatec.caution": {
    "bytes": 18852,
    "file": "cs/sp.troudnatec.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "cfbe16f43073b753e60d4c7d8b82bbac6af5daa0",
    "text": "Je tvrdý jako dřevo, a proto se nejí.",
    "voice": "Candy - Young and Sweet"
@@ -2550,8 +3116,10 @@
   "sp.troudnatec.fact": {
    "bytes": 29510,
    "file": "cs/sp.troudnatec.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b44a8940cf71681408f9cb6ad6633d6976764f76",
    "text": "Lidé z něj kdysi rozdělávali oheň. Nosil ho i pravěký Ötzi.",
    "voice": "Candy - Young and Sweet"
@@ -2559,8 +3127,10 @@
   "sp.troudnatec.group": {
    "bytes": 27211,
    "file": "cs/sp.troudnatec.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "61dde900648db0f186315f60a8ace9de0c9d914f",
    "text": "Troudnatec kopytovitý je nejedlá houba. Ta se nejí.",
    "voice": "Candy - Young and Sweet"
@@ -2568,8 +3138,10 @@
   "sp.troudnatec.kdo.iAm": {
    "bytes": 15508,
    "file": "cs/sp.troudnatec.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "2dd1601a044693a696f6a93efe77f5f8bb1bd8d7",
    "text": "Já jsem troudnatec kopytovitý.",
    "voice": "Candy - Young and Sweet"
@@ -2577,8 +3149,10 @@
   "sp.troudnatec.kdo.where": {
    "bytes": 15508,
    "file": "cs/sp.troudnatec.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "6ea643e2f948d11c4ae0bc823dd2ccf73e5bc380",
    "text": "Kde je troudnatec kopytovitý?",
    "voice": "Candy - Young and Sweet"
@@ -2586,8 +3160,10 @@
   "sp.troudnatec.kdo.yes": {
    "bytes": 21777,
    "file": "cs/sp.troudnatec.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "4442739df28b1fcba789826075978fd9a2b2ee4f",
    "text": "Ano! To je troudnatec kopytovitý.",
    "voice": "Candy - Young and Sweet"
@@ -2595,8 +3171,10 @@
   "sp.troudnatec.kosik": {
    "bytes": 18434,
    "file": "cs/sp.troudnatec.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "89c605db4ce358fd92f3676d35f8e4523c01b03d",
    "text": "Kam patří troudnatec kopytovitý?",
    "voice": "Candy - Young and Sweet"
@@ -2604,8 +3182,10 @@
   "sp.troudnatec.look.0": {
    "bytes": 26166,
    "file": "cs/sp.troudnatec.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "7229d59439ef20a5c2f7ae649ded404b3a1e48d6",
    "text": "Vypadá jako koňské kopyto přilepené na stromě.",
    "voice": "Candy - Young and Sweet"
@@ -2613,8 +3193,10 @@
   "sp.troudnatec.look.1": {
    "bytes": 14672,
    "file": "cs/sp.troudnatec.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "15ec2d2fd1dcbc18b816eed8b4983c3c5330289a",
    "text": "Je šedý a tvrdý jako dřevo.",
    "voice": "Candy - Young and Sweet"
@@ -2622,8 +3204,10 @@
   "sp.troudnatec.look.2": {
    "bytes": 14672,
    "file": "cs/sp.troudnatec.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b67190691e246583255d52ba3d2cc9f90677c4ae",
    "text": "Má proužky jako letokruhy.",
    "voice": "Candy - Young and Sweet"
@@ -2631,8 +3215,10 @@
   "sp.troudnatec.name": {
    "bytes": 12791,
    "file": "cs/sp.troudnatec.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "43bc0b9f4a343c5eace5c9e63362ab1360486234",
    "text": "Troudnatec kopytovitý.",
    "voice": "Candy - Young and Sweet"
@@ -2640,8 +3226,10 @@
   "sp.troudnatec.thatIs": {
    "bytes": 15717,
    "file": "cs/sp.troudnatec.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "654b147b5bf3b6684c90b4635f5b9f3752af54aa",
    "text": "To je troudnatec kopytovitý.",
    "voice": "Candy - Young and Sweet"
@@ -2649,8 +3237,10 @@
   "sp.troudnatec.twinTell": {
    "bytes": 30973,
    "file": "cs/sp.troudnatec.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "57b217a5b759d0e7e4d51c9809ed1aaaa1172a8e",
    "text": "Je šedý, bez červeného pásku. Pásovaný má červený pás.",
    "voice": "Candy - Young and Sweet"
@@ -2658,8 +3248,10 @@
   "sp.vaclavka.caution": {
    "bytes": 46646,
    "file": "cs/sp.vaclavka.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "553d7ddb4dc8f97e10127d8ebd172aca620f612c",
    "text": "Jí se jen uvařená. Pozor na jedovatou třepenitku! Rozhodne dospělý.",
    "voice": "Candy - Young and Sweet"
@@ -2667,8 +3259,10 @@
   "sp.vaclavka.fact": {
    "bytes": 28465,
    "file": "cs/sp.vaclavka.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b39d7d5a255dbc9f8f6d79cb51f4b04ee1c33225",
    "text": "Roste ve velkých trsech na pařezech. Je medově žlutá.",
    "voice": "Candy - Young and Sweet"
@@ -2676,8 +3270,10 @@
   "sp.vaclavka.group": {
    "bytes": 19897,
    "file": "cs/sp.vaclavka.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "d7cbc8397b4db6eb4fdddf1a9d63cd84313ecb58",
    "text": "Václavka obecná je jedlá houba.",
    "voice": "Candy - Young and Sweet"
@@ -2685,8 +3281,10 @@
   "sp.vaclavka.kdo.iAm": {
    "bytes": 13836,
    "file": "cs/sp.vaclavka.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "978c67fc30def0cddb88246eb4cb62c4a2eb2ce4",
    "text": "Já jsem václavka obecná.",
    "voice": "Candy - Young and Sweet"
@@ -2694,8 +3292,10 @@
   "sp.vaclavka.kdo.where": {
    "bytes": 13627,
    "file": "cs/sp.vaclavka.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "1befcb1b66411156826e9de987711cd94ccf2d34",
    "text": "Kde je václavka obecná?",
    "voice": "Candy - Young and Sweet"
@@ -2703,8 +3303,10 @@
   "sp.vaclavka.kdo.yes": {
    "bytes": 16971,
    "file": "cs/sp.vaclavka.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ca0e9659a6207034fb5b1ad696c0247bb4a30788",
    "text": "Ano! To je václavka obecná.",
    "voice": "Candy - Young and Sweet"
@@ -2712,8 +3314,10 @@
   "sp.vaclavka.kosik": {
    "bytes": 15717,
    "file": "cs/sp.vaclavka.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "e2d1a527e96e6db58860d55e24f4dabbad35f963",
    "text": "Kam patří václavka obecná?",
    "voice": "Candy - Young and Sweet"
@@ -2721,8 +3325,10 @@
   "sp.vaclavka.look.0": {
    "bytes": 18016,
    "file": "cs/sp.vaclavka.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "4b02fbdf2496cc5fc9cfccee3b2c91503d5694cd",
    "text": "Roste v trsech na dřevě a pařezech.",
    "voice": "Candy - Young and Sweet"
@@ -2730,8 +3336,10 @@
   "sp.vaclavka.look.1": {
    "bytes": 22195,
    "file": "cs/sp.vaclavka.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "e1d1351dd1a4fb999960c3791cf6e05faad45f5f",
    "text": "Medový klobouk má uprostřed tmavé šupinky.",
    "voice": "Candy - Young and Sweet"
@@ -2739,8 +3347,10 @@
   "sp.vaclavka.look.2": {
    "bytes": 11328,
    "file": "cs/sp.vaclavka.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "5326e17057795a6f6d8a8581e77ff649fac05c69",
    "text": "Na noze má bílý prsten.",
    "voice": "Candy - Young and Sweet"
@@ -2748,8 +3358,10 @@
   "sp.vaclavka.name": {
    "bytes": 11328,
    "file": "cs/sp.vaclavka.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "9244a91b2c3586f8b336a6cfd31ba95c317b9e55",
    "text": "Václavka obecná.",
    "voice": "Candy - Young and Sweet"
@@ -2757,8 +3369,10 @@
   "sp.vaclavka.thatIs": {
    "bytes": 13209,
    "file": "cs/sp.vaclavka.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "5a182ce3fc743ebd31dd719d25bb6d40b443b11b",
    "text": "To je václavka obecná.",
    "voice": "Candy - Young and Sweet"
@@ -2766,8 +3380,10 @@
   "sp.vaclavka.twinTell": {
    "bytes": 28883,
    "file": "cs/sp.vaclavka.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "7b738bbb1b6e6a03391d48a74766cac4dd84893a",
    "text": "Na noze má prsten. Třepenitka žádný prsten nemá.",
    "voice": "Candy - Young and Sweet"
@@ -2775,8 +3391,10 @@
   "sp.zlucnik.caution": {
    "bytes": 28883,
    "file": "cs/sp.zlucnik.caution.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b4996d84f8baf256e548072b363054aa05a4c260",
    "text": "Není jedovatý, ale je moc hořký. Necháme ho v lese.",
    "voice": "Candy - Young and Sweet"
@@ -2784,8 +3402,10 @@
   "sp.zlucnik.fact": {
    "bytes": 27629,
    "file": "cs/sp.zlucnik.fact.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "f022e308770cec7e47f6952b513e73d77dff05d5",
    "text": "Je strašně hořký. Jeden kousek pokazí celé jídlo.",
    "voice": "Candy - Young and Sweet"
@@ -2793,8 +3413,10 @@
   "sp.zlucnik.group": {
    "bytes": 20941,
    "file": "cs/sp.zlucnik.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "a8a184a61e67ef42b6a60f5ce9010fddb3e66497",
    "text": "Hřib žlučník je nejedlá houba. Ta se nejí.",
    "voice": "Candy - Young and Sweet"
@@ -2802,8 +3424,10 @@
   "sp.zlucnik.kdo.iAm": {
    "bytes": 12791,
    "file": "cs/sp.zlucnik.kdo.iAm.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "39d9768a3f03a94231c36d1aa3ada8c004d595bc",
    "text": "Já jsem hřib žlučník.",
    "voice": "Candy - Young and Sweet"
@@ -2811,8 +3435,10 @@
   "sp.zlucnik.kdo.where": {
    "bytes": 13209,
    "file": "cs/sp.zlucnik.kdo.where.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "55f3c440036ca7266c41f433e046d0465c4abe8b",
    "text": "Kde je hřib žlučník?",
    "voice": "Candy - Young and Sweet"
@@ -2820,8 +3446,10 @@
   "sp.zlucnik.kdo.yes": {
    "bytes": 15717,
    "file": "cs/sp.zlucnik.kdo.yes.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b7cd26c9113d3986761978ea96600e6859c9b2a2",
    "text": "Ano! To je hřib žlučník.",
    "voice": "Candy - Young and Sweet"
@@ -2829,8 +3457,10 @@
   "sp.zlucnik.kosik": {
    "bytes": 14254,
    "file": "cs/sp.zlucnik.kosik.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "a0c203ef5c23ee73229db67641156f35271e1957",
    "text": "Kam patří hřib žlučník?",
    "voice": "Candy - Young and Sweet"
@@ -2838,8 +3468,10 @@
   "sp.zlucnik.look.0": {
    "bytes": 18016,
    "file": "cs/sp.zlucnik.look.0.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "4baa414a3fbbdb504ca02329c5a29f638043e2df",
    "text": "Vypadá skoro jako hřib smrkový.",
    "voice": "Candy - Young and Sweet"
@@ -2847,8 +3479,10 @@
   "sp.zlucnik.look.1": {
    "bytes": 16971,
    "file": "cs/sp.zlucnik.look.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "2e4e3409d303f869b4a051eef0ace9061b5b9d46",
    "text": "Pod kloboukem má růžové dírky.",
    "voice": "Candy - Young and Sweet"
@@ -2856,8 +3490,10 @@
   "sp.zlucnik.look.2": {
    "bytes": 16135,
    "file": "cs/sp.zlucnik.look.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "397a551f7d9ff2cf06a8432acfba959afd1b6cab",
    "text": "Na noze má tmavou hnědou síťku.",
    "voice": "Candy - Young and Sweet"
@@ -2865,8 +3501,10 @@
   "sp.zlucnik.name": {
    "bytes": 9866,
    "file": "cs/sp.zlucnik.name.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "bcb29db05230283ce24df22c50c3de77794133b1",
    "text": "Hřib žlučník.",
    "voice": "Candy - Young and Sweet"
@@ -2874,8 +3512,10 @@
   "sp.zlucnik.thatIs": {
    "bytes": 12373,
    "file": "cs/sp.zlucnik.thatIs.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "f4d66b32664626a9dad61a200f446d8e06c0380c",
    "text": "To je hřib žlučník.",
    "voice": "Candy - Young and Sweet"
@@ -2883,8 +3523,10 @@
   "sp.zlucnik.twinTell": {
    "bytes": 31808,
    "file": "cs/sp.zlucnik.twinTell.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "0128dc921e93c0ccb113529b45ba0f14d74f4096",
    "text": "Dírky pod kloboukem má růžové. Hřib smrkový je má světlé.",
    "voice": "Candy - Young and Sweet"
@@ -2892,8 +3534,10 @@
   "ui.album.empty": {
    "bytes": 15090,
    "file": "cs/ui.album.empty.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "bf4631ce3953b93ef142fe72711d63cbf56216cc",
    "text": "Zatím tu nic není. Pojď hrát!",
    "voice": "Candy - Young and Sweet"
@@ -2901,8 +3545,10 @@
   "ui.album.newPages": {
    "bytes": 13209,
    "file": "cs/ui.album.newPages.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "730402b65dedd510e5cac28a7e3136ba78e3267c",
    "text": "Album má nové stránky!",
    "voice": "Candy - Young and Sweet"
@@ -2910,8 +3556,10 @@
   "ui.album.unknown": {
    "bytes": 14254,
    "file": "cs/ui.album.unknown.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "57ea58f046e141935dc925b67c11e060c39bd0c2",
    "text": "Tuhle houbičku ještě hledáš.",
    "voice": "Candy - Young and Sweet"
@@ -2919,8 +3567,10 @@
   "ui.animal.srnka": {
    "bytes": 7567,
    "file": "cs/ui.animal.srnka.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "0bb37ea1f87c19d683236c20c0af3079aca078d5",
    "text": "Srnka!",
    "voice": "Candy - Young and Sweet"
@@ -2928,8 +3578,10 @@
   "ui.animal.veverka": {
    "bytes": 8403,
    "file": "cs/ui.animal.veverka.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b0ea50137ad45066ae6678621be6b09671b4d42e",
    "text": "Veverka!",
    "voice": "Candy - Young and Sweet"
@@ -2937,8 +3589,10 @@
   "ui.animal.zajic": {
    "bytes": 7149,
    "file": "cs/ui.animal.zajic.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ef48687db7d68280b93d5e7ec6592793838b57cc",
    "text": "Zajíc!",
    "voice": "Candy - Young and Sweet"
@@ -2946,8 +3600,10 @@
   "ui.card.photoMissing": {
    "bytes": 12164,
    "file": "cs/ui.card.photoMissing.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "d5174d700a0131622fc9b1452542f4edc9414058",
    "text": "Fotka zatím chybí.",
    "voice": "Candy - Young and Sweet"
@@ -2955,8 +3611,10 @@
   "ui.card.realPhoto": {
    "bytes": 11328,
    "file": "cs/ui.card.realPhoto.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8101b9cf608f008dca69add33108f008bc32d741",
    "text": "Skutečná fotka",
    "voice": "Candy - Young and Sweet"
@@ -2964,8 +3622,10 @@
   "ui.feedback.tryAgain": {
    "bytes": 9030,
    "file": "cs/ui.feedback.tryAgain.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8506e31dac45698c39d80d7f77b6aec9e3f53fd4",
    "text": "Zkus to znovu.",
    "voice": "Candy - Young and Sweet"
@@ -2973,8 +3633,10 @@
   "ui.kdo.done": {
    "bytes": 20941,
    "file": "cs/ui.kdo.done.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "6f5d2105526b4c0ca273cbcb8c212c2fef29207b",
    "text": "Výborně! Všechny houbičky jsi poznala.",
    "voice": "Candy - Young and Sweet"
@@ -2982,8 +3644,10 @@
   "ui.kosik.basket": {
    "bytes": 8821,
    "file": "cs/ui.kosik.basket.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "1a5c536dacec3c3742cd0bb0f114aab65a175c71",
    "text": "Do košíku",
    "voice": "Candy - Young and Sweet"
@@ -2991,8 +3655,10 @@
   "ui.kosik.done": {
    "bytes": 13209,
    "file": "cs/ui.kosik.done.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ceac987165b4a133116efefae23f23a036b53663",
    "text": "Výborně! Košík je plný.",
    "voice": "Candy - Young and Sweet"
@@ -3000,8 +3666,10 @@
   "ui.kosik.edibleToZone": {
    "bytes": 18434,
    "file": "cs/ui.kosik.edibleToZone.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8523e8529f729911045149308f9cf2865479254c",
    "text": "Tuhle můžeme s dospělým dát do košíku.",
    "voice": "Candy - Young and Sweet"
@@ -3009,8 +3677,10 @@
   "ui.kosik.inBasket": {
    "bytes": 22195,
    "file": "cs/ui.kosik.inBasket.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b7bb9f665a67229b5d5a98740f7781ddd54d58f5",
    "text": "Do košíku! S dospělým ji můžeme sbírat.",
    "voice": "Candy - Young and Sweet"
@@ -3018,8 +3688,10 @@
   "ui.kosik.inZone": {
    "bytes": 14254,
    "file": "cs/ui.kosik.inZone.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b5d9d849d136bab4184905baaa948281a82dd8ea",
    "text": "Správně, zůstanu v lese.",
    "voice": "Candy - Young and Sweet"
@@ -3027,8 +3699,10 @@
   "ui.kosik.inedibleBounce": {
    "bytes": 20941,
    "file": "cs/ui.kosik.inedibleBounce.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "40df1f0695baa102a1c56574ad55764649e9bbb3",
    "text": "Já jsem nejedlá. Necháme mě v lese.",
    "voice": "Candy - Young and Sweet"
@@ -3036,8 +3710,10 @@
   "ui.kosik.intro": {
    "bytes": 28883,
    "file": "cs/ui.kosik.intro.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "9001896d6152b3c1719e1116d3224c5918d4e9f0",
    "text": "Jedlé houby dáme do košíku. Ostatní necháme v lese.",
    "voice": "Candy - Young and Sweet"
@@ -3045,8 +3721,10 @@
   "ui.kosik.poisonBounce": {
    "bytes": 23867,
    "file": "cs/ui.kosik.poisonBounce.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "12462ddda1f5230e495419c29ce6cf10a581470a",
    "text": "Pozor! Já jsem jedovatá. Necháme mě v lese.",
    "voice": "Candy - Young and Sweet"
@@ -3054,8 +3732,10 @@
   "ui.kosik.zone": {
    "bytes": 10910,
    "file": "cs/ui.kosik.zone.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "1b04c42e96186f70c3a2b7aa2fa4653c4e31c955",
    "text": "Nechat v lese",
    "voice": "Candy - Young and Sweet"
@@ -3063,8 +3743,10 @@
   "ui.langName": {
    "bytes": 9030,
    "file": "cs/ui.langName.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "13c6d78618e8b0e5c0520bf4a3d407441bda5617",
    "text": "Čeština",
    "voice": "Candy - Young and Sweet"
@@ -3072,8 +3754,10 @@
   "ui.level.1": {
    "bytes": 9448,
    "file": "cs/ui.level.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b4fc4394bdbb1885c86460e581cda1fb68687300",
    "text": "Malý houbař",
    "voice": "Candy - Young and Sweet"
@@ -3081,8 +3765,10 @@
   "ui.level.2": {
    "bytes": 7567,
    "file": "cs/ui.level.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "05158b525341bce4c4888d7bade09b8e5cae5612",
    "text": "Houbař",
    "voice": "Candy - Young and Sweet"
@@ -3090,8 +3776,10 @@
   "ui.level.3": {
    "bytes": 10284,
    "file": "cs/ui.level.3.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "90488ff98b275b98455c8f9b5820dfbfc7fcee4e",
    "text": "Mistr houbař",
    "voice": "Candy - Young and Sweet"
@@ -3099,8 +3787,10 @@
   "ui.level.lockedHint2": {
    "bytes": 19479,
    "file": "cs/ui.level.lockedHint2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "a6db6bb30f3db49b7ca2451a70411c975c349354",
    "text": "Sbírej nálepky do alba a budeš Houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3108,8 +3798,10 @@
   "ui.level.lockedHint3.1": {
    "bytes": 24703,
    "file": "cs/ui.level.lockedHint3.1.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "0a29b581abe97157aa20d2dbf10e728b6ed8820a",
    "text": "Ještě jednu zlatou nálepku a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3117,8 +3809,10 @@
   "ui.level.lockedHint3.10": {
    "bytes": 24285,
    "file": "cs/ui.level.lockedHint3.10.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "3003d149266b0b1c090f29bc6baee0828188cb82",
    "text": "Ještě 10 zlatých nálepek a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3126,8 +3820,10 @@
   "ui.level.lockedHint3.11": {
    "bytes": 26166,
    "file": "cs/ui.level.lockedHint3.11.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "984ae994057c4b1d034c04c1e9a35776d64efdd2",
    "text": "Ještě 11 zlatých nálepek a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3135,8 +3831,10 @@
   "ui.level.lockedHint3.12": {
    "bytes": 25539,
    "file": "cs/ui.level.lockedHint3.12.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "37afa62b8a5630fce350d5eeb63d68e41de3011d",
    "text": "Ještě 12 zlatých nálepek a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3144,8 +3842,10 @@
   "ui.level.lockedHint3.13": {
    "bytes": 25539,
    "file": "cs/ui.level.lockedHint3.13.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "e2249a43fbf20d8b15576b26ccb5b763f5a13bca",
    "text": "Ještě 13 zlatých nálepek a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3153,8 +3853,10 @@
   "ui.level.lockedHint3.14": {
    "bytes": 23240,
    "file": "cs/ui.level.lockedHint3.14.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "bf6c22ee6c1bf12122e701bd0851a9386d3cc43a",
    "text": "Ještě 14 zlatých nálepek a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3162,8 +3864,10 @@
   "ui.level.lockedHint3.15": {
    "bytes": 23658,
    "file": "cs/ui.level.lockedHint3.15.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "dfee18a021d507a632ed10ff358b43852317ae21",
    "text": "Ještě 15 zlatých nálepek a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3171,8 +3875,10 @@
   "ui.level.lockedHint3.16": {
    "bytes": 23240,
    "file": "cs/ui.level.lockedHint3.16.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "cbd34503b37a1e0db80ff72ea40e25598f457f24",
    "text": "Ještě 16 zlatých nálepek a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3180,8 +3886,10 @@
   "ui.level.lockedHint3.17": {
    "bytes": 28047,
    "file": "cs/ui.level.lockedHint3.17.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "34d75cf8b2ad37bb94ca93a79809d172a9c902e3",
    "text": "Ještě 17 zlatých nálepek a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3189,8 +3897,10 @@
   "ui.level.lockedHint3.18": {
    "bytes": 23658,
    "file": "cs/ui.level.lockedHint3.18.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "d6904997ac39992f17360794993ba17443e791b8",
    "text": "Ještě 18 zlatých nálepek a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3198,8 +3908,10 @@
   "ui.level.lockedHint3.19": {
    "bytes": 27211,
    "file": "cs/ui.level.lockedHint3.19.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "92be28489d02bf8716fb1fb95c5c40282d663f2f",
    "text": "Ještě 19 zlatých nálepek a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3207,8 +3919,10 @@
   "ui.level.lockedHint3.2": {
    "bytes": 21359,
    "file": "cs/ui.level.lockedHint3.2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "02ba6d00e0430bdce251c0c9938746cfc6587288",
    "text": "Ještě 2 zlaté nálepky a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3216,8 +3930,10 @@
   "ui.level.lockedHint3.20": {
    "bytes": 24703,
    "file": "cs/ui.level.lockedHint3.20.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "75776b6e3edf7244204151f4721c804b5159163f",
    "text": "Ještě 20 zlatých nálepek a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3225,8 +3941,10 @@
   "ui.level.lockedHint3.3": {
    "bytes": 22822,
    "file": "cs/ui.level.lockedHint3.3.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "beaf2a69a4398f9f33d76824607ad01a29e8ec8a",
    "text": "Ještě 3 zlaté nálepky a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3234,8 +3952,10 @@
   "ui.level.lockedHint3.4": {
    "bytes": 23658,
    "file": "cs/ui.level.lockedHint3.4.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "1f195810481a22f29bcbcb3f96f92e77a989c098",
    "text": "Ještě 4 zlaté nálepky a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3243,8 +3963,10 @@
   "ui.level.lockedHint3.5": {
    "bytes": 25121,
    "file": "cs/ui.level.lockedHint3.5.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "95f184b9b295e9355c56b7995dd81791e8dc07ed",
    "text": "Ještě 5 zlatých nálepek a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3252,8 +3974,10 @@
   "ui.level.lockedHint3.6": {
    "bytes": 22822,
    "file": "cs/ui.level.lockedHint3.6.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "e7e82bf82a5b5b59d1f878a256c249ec6ad2f213",
    "text": "Ještě 6 zlatých nálepek a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3261,8 +3985,10 @@
   "ui.level.lockedHint3.7": {
    "bytes": 23867,
    "file": "cs/ui.level.lockedHint3.7.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "dbac8c628e2673e99c725b7e045c70d81903f208",
    "text": "Ještě 7 zlatých nálepek a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3270,8 +3996,10 @@
   "ui.level.lockedHint3.8": {
    "bytes": 27629,
    "file": "cs/ui.level.lockedHint3.8.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "13189b46adc6acdcebdd3cd077b156a9aeb5a90f",
    "text": "Ještě 8 zlatých nálepek a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3279,8 +4007,10 @@
   "ui.level.lockedHint3.9": {
    "bytes": 23867,
    "file": "cs/ui.level.lockedHint3.9.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b6dd11d2ef030a9d1c8d8fe823f5f23b1dfed62e",
    "text": "Ještě 9 zlatých nálepek a budeš Mistr houbař.",
    "voice": "Candy - Young and Sweet"
@@ -3288,8 +4018,10 @@
   "ui.question.group": {
    "bytes": 19897,
    "file": "cs/ui.question.group.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "5e2d03d42dba7f6f2ab80d682d1c0632a46ef403",
    "text": "Je jedlá, nejedlá, nebo jedovatá?",
    "voice": "Candy - Young and Sweet"
@@ -3297,8 +4029,10 @@
   "ui.safety.short": {
    "bytes": 16553,
    "file": "cs/ui.safety.short.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "61dc41130150d9dfa1c5a56bc7fd8424d1976869",
    "text": "Houby sbíráme jen s dospělým.",
    "voice": "Candy - Young and Sweet"
@@ -3306,8 +4040,10 @@
   "ui.say.deadlyWarn": {
    "bytes": 16135,
    "file": "cs/ui.say.deadlyWarn.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "dc16a7a1c6f8eee5f3ce9b8e1e385474a778fba5",
    "text": "Na tuhle houbu nikdy nesahej!",
    "voice": "Candy - Young and Sweet"
@@ -3315,8 +4051,10 @@
   "ui.say.greeting": {
    "bytes": 30346,
    "file": "cs/ui.say.greeting.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "54f2c925b3dd22af226f45948c94cb108dc219dc",
    "text": "Ahoj! Klepni na houbičku a ona ti řekne, jak se jmenuje.",
    "voice": "Candy - Young and Sweet"
@@ -3324,8 +4062,10 @@
   "ui.unlock.gift2": {
    "bytes": 11746,
    "file": "cs/ui.unlock.gift2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "88c8097ca264c72899ca269014a0d53ac6af5af9",
    "text": "Výprava je otevřená!",
    "voice": "Candy - Young and Sweet"
@@ -3333,8 +4073,10 @@
   "ui.unlock.level2": {
    "bytes": 20524,
    "file": "cs/ui.unlock.level2.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b40c6efa5688672dde8dcf47b0bcdc15a9b45eba",
    "text": "Jsi Houbař! Les se ti otevřel dál.",
    "voice": "Candy - Young and Sweet"
@@ -3342,8 +4084,10 @@
   "ui.unlock.level3": {
    "bytes": 22822,
    "file": "cs/ui.unlock.level3.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "2e85391ce1db0680f5feafe69d730a195714147c",
    "text": "Jsi Mistr houbař! Teď poznáš houby i z fotek.",
    "voice": "Candy - Young and Sweet"
@@ -3351,8 +4095,10 @@
   "ui.vyprava.adultDecides": {
    "bytes": 20315,
    "file": "cs/ui.vyprava.adultDecides.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "105d79328fc961d6c545e7ac83e66fe082ae5b62",
    "text": "Jestli se smí jíst, rozhodne dospělý.",
    "voice": "Candy - Young and Sweet"
@@ -3360,8 +4106,10 @@
   "ui.vyprava.cooked": {
    "bytes": 15090,
    "file": "cs/ui.vyprava.cooked.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "1c2990c5766db13738d7bcddde836687ab30f02c",
    "text": "Tuhle houbu uvaří dospělý.",
    "voice": "Candy - Young and Sweet"
@@ -3369,8 +4117,10 @@
   "ui.vyprava.done": {
    "bytes": 25539,
    "file": "cs/ui.vyprava.done.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "f851d4e7cebb13af5dca860ec9d09db690514a32",
    "text": "Výprava je u konce. Košík ukážeme dospělému.",
    "voice": "Candy - Young and Sweet"
@@ -3378,8 +4128,10 @@
   "ui.vyprava.end": {
    "bytes": 12373,
    "file": "cs/ui.vyprava.end.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8b410ca12661e356e6096141ab41a807f783cedc",
    "text": "Ukaž mi, co máš v košíku.",
    "voice": "Candy - Young and Sweet"
@@ -3387,8 +4139,10 @@
   "ui.vyprava.fork": {
    "bytes": 10284,
    "file": "cs/ui.vyprava.fork.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "279f2abc7246d1e42c3799ea085f906a7b65385a",
    "text": "Kudy půjdeme?",
    "voice": "Candy - Young and Sweet"
@@ -3396,8 +4150,10 @@
   "ui.vyprava.fork.down": {
    "bytes": 11746,
    "file": "cs/ui.vyprava.fork.down.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "8d2d4b1879abe62ebc1a17660004fcefe9a3af8f",
    "text": "Dolů k potůčku",
    "voice": "Candy - Young and Sweet"
@@ -3405,8 +4161,10 @@
   "ui.vyprava.fork.up": {
    "bytes": 11746,
    "file": "cs/ui.vyprava.fork.up.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "90e415c48fa91f18b1ec90c7d331deeeb47a88cb",
    "text": "Nahoru do kopce",
    "voice": "Candy - Young and Sweet"
@@ -3414,8 +4172,10 @@
   "ui.vyprava.hint.fern": {
    "bytes": 12373,
    "file": "cs/ui.vyprava.hint.fern.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "709b2cc23a6e961f9312cd0061e56004e7f42d82",
    "text": "Podívej se za kapradí!",
    "voice": "Candy - Young and Sweet"
@@ -3423,8 +4183,10 @@
   "ui.vyprava.hint.leaves": {
    "bytes": 12373,
    "file": "cs/ui.vyprava.hint.leaves.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "a5e3e2d962efd41f4518278f490bf9f47568bd9f",
    "text": "Podívej se do listí!",
    "voice": "Candy - Young and Sweet"
@@ -3432,8 +4194,10 @@
   "ui.vyprava.hint.moss": {
    "bytes": 10910,
    "file": "cs/ui.vyprava.hint.moss.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ba0f2fb9d7b9ff1a17deadfedefc9bfb892e4327",
    "text": "Podívej se do mechu!",
    "voice": "Candy - Young and Sweet"
@@ -3441,8 +4205,10 @@
   "ui.vyprava.hint.rock": {
    "bytes": 12164,
    "file": "cs/ui.vyprava.hint.rock.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "e23c01a12c1149b82e41e47c1498b6870e0af276",
    "text": "Podívej se u kamene!",
    "voice": "Candy - Young and Sweet"
@@ -3450,8 +4216,10 @@
   "ui.vyprava.hint.wood": {
    "bytes": 11746,
    "file": "cs/ui.vyprava.hint.wood.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "852ba87f7d56f55013b3e0d01ac5dd0811948276",
    "text": "Podívej se u pařezu!",
    "voice": "Candy - Young and Sweet"
@@ -3459,8 +4227,10 @@
   "ui.vyprava.intro": {
    "bytes": 49572,
    "file": "cs/ui.vyprava.intro.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "ddac01892ead9f0c908813c1018071ed3536dc89",
    "text": "Jdeme na výpravu do lesa! Podrž šipku a půjdeme dál. Houby hledej v mechu, u kamenů a u pařezů.",
    "voice": "Candy - Young and Sweet"
@@ -3468,8 +4238,10 @@
   "ui.vyprava.leftOk": {
    "bytes": 19479,
    "file": "cs/ui.vyprava.leftOk.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "327c7393be6964200729833fe857c3a607376f56",
    "text": "Správně, tuhle houbu necháme v lese.",
    "voice": "Candy - Young and Sweet"
@@ -3477,8 +4249,10 @@
   "ui.vyprava.lockedHint": {
    "bytes": 25748,
    "file": "cs/ui.vyprava.lockedHint.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "aae867cc3fde47801e61c1a9283210e775444cc0",
    "text": "Ještě pár nálepek do alba a půjdeme na výpravu!",
    "voice": "Candy - Young and Sweet"
@@ -3486,8 +4260,10 @@
   "ui.vyprava.notEdible": {
    "bytes": 19061,
    "file": "cs/ui.vyprava.notEdible.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "77cd6bdd58cc4fcf966f29aa928dbb07227047fc",
    "text": "Tahle houba se nejí, necháme ji v lese.",
    "voice": "Candy - Young and Sweet"
@@ -3495,8 +4271,10 @@
   "ui.vyprava.toBasket": {
    "bytes": 8403,
    "file": "cs/ui.vyprava.toBasket.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "301d99b6084046e3da5975f9cdb8e9ceb6b51e66",
    "text": "Do košíku!",
    "voice": "Candy - Young and Sweet"
@@ -3504,8 +4282,10 @@
   "ui.vyprava.wait": {
    "bytes": 11746,
    "file": "cs/ui.vyprava.wait.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "c1accd933a6d829751e76116800a381afa6a5094",
    "text": "Počkej, něco tu je!",
    "voice": "Candy - Young and Sweet"
@@ -3513,8 +4293,10 @@
   "ui.vyprava.warn": {
    "bytes": 18852,
    "file": "cs/ui.vyprava.warn.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "d6053f2508888df9750a792d41cc14725d3927e9",
    "text": "Nesahej na mě! Jsem jedovatá.",
    "voice": "Candy - Young and Sweet"
@@ -3522,8 +4304,10 @@
   "ui.vyprava.warnDeadly": {
    "bytes": 27211,
    "file": "cs/ui.vyprava.warnDeadly.mp3",
+   "licence": "ElevenLabs Starter",
    "model": "eleven_multilingual_v2",
    "provider": "elevenlabs",
+   "recorded": "2026-10-12T15:31:49Z",
    "sha1": "b6243443bd04e317333fd103c1efa403025fb807",
    "text": "Jsem smrtelně jedovatá. Nikdy na mě nesahej!",
    "voice": "Candy - Young and Sweet"

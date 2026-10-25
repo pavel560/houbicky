@@ -93,18 +93,28 @@ Skript průběžně vypisuje každý druh (`[3/13] kozak … stahuji … hotovo 
 
 Všechno, co hra říká, je v pevném seznamu vět (`js/phrases.js`). Nahrávky jsou uložené přímo v gitu (`voice/cs/`, `voice/en/`, `voice/index.json`), takže nasazení stránky nepotřebuje žádnou hlasovou službu. Věty bez nahrávky hra řekne hlasem prohlížeče.
 
-**Který hlas se použije**, určuje `voice/config.json` pro každý jazyk zvlášť:
+Nahrávky smějí pocházet jen ze služeb, které dovolují komerční užití. Hlas pro každý jazyk určuje `voice/config.json`:
 
-- `"provider": "elevenlabs"`: hlas z ElevenLabs podle jména (`voice_name`, hlas musí být v účtu v „My voices“), model `model_id` a nastavení `voice_settings`. Klíč je v tajemství repozitáře `ELEVENLABS_API_KEY`.
-- `"provider": "edge"`: hlas Microsoft (`voice`, `rate`), zdarma, ale ze serverů GitHubu je teď blokovaný.
+- `"provider": "elevenlabs"` (čeština, hlas „Candy - Young and Sweet“ z knihovny hlasů ElevenLabs): nahrává se jen na placeném tarifu. Klíč je v tajemství repozitáře `ELEVENLABS_API_KEY` (celý klíč `sk_…`).
+- `"provider": "azure"` (angličtina, hlas `en-GB-MaisieNeural` z Azure AI Speech): klíč je v tajemství `AZURE_SPEECH_KEY`, oblast v proměnné repozitáře `AZURE_SPEECH_REGION` (například `westeurope`).
 
-**Změna českého hlasu:** v `voice/config.json` přepište `voice_name` (nebo model či nastavení) a změnu pushněte do větve `v2`. Workflow „Record voices“ pak nahraje všechny české věty novým hlasem, nahrávky uloží do gitu a stránku znovu nasadí. Před nahráváním ověří, že na to v ElevenLabs zbývá dost znaků; jinak nenahraje nic. Nový hlas se použije jen tehdy, když se podaří nahrát úplně všechny věty, takže se v jedné hře nikdy nemíchají dva hlasy. Ručně lze nahrávání spustit v Actions → Record voices → Run workflow.
+Bezplatné hlasy Microsoft Edge (edge-tts) se nepoužívají, protože je Microsoft pro komerční užití nelicencuje.
 
-Na počítači: `node dev/export_phrases.mjs` a `python3 make_voice.py` (pro ElevenLabs s proměnnou `ELEVENLABS_API_KEY`).
+**Evidence licence:** `voice/index.json` u každé nahrávky uvádí službu (`provider`), licenci (`licence`) a čas nahrání (`recorded`, UTC); `voice/config.json` u jazyka uvádí tarif a začátek licence (`licence.since`). Příkaz `python3 make_voice.py --audit` vypíše, které věty ještě nejsou nahrané licencovanou službou a kolik znaků by přenahrání stálo. Spouští ho workflow „Record voices“ (bez nálezu skončí zeleně) i nasazení stránky (jen upozorní). Doklad o tarifu (fakturu) vede provozovatel mimo tento veřejný repozitář.
+
+**Přenahrání:** Actions → Record voices → Run workflow. Volba `force` přenahraje celý jazyk i bez změny (`en`, `cs`, `all`); bez ní se nahrají jen nové, změněné a nelicencované věty. Workflow nahrávky uloží do gitu a stránku znovu nasadí. Jazyk se přepne jen tehdy, když se podaří nahrát všechny jeho věty, takže se ve hře nikdy nemíchají dva hlasy. U ElevenLabs workflow předem ověří, že zbývá dost kreditů; jinak nenahraje nic. Jazyk, kterému chybí klíč, se nenahrává a jeho stávající nahrávky zůstanou.
+
+Na počítači: `node dev/export_phrases.mjs` a `python3 make_voice.py` (s proměnnými prostředí uvedenými výše).
+
+## Licence a autoři
+
+- **Fotky:** Wikimedia Commons, licence CC BY, CC BY-SA a volné dílo. Autor, licence a odkaz na zdroj jsou u každé fotky v `photos/manifest.json` a ve hře v koutku pro rodiče. Fotky jsou zmenšené a ve hře oříznuté; jiné úpravy nemají.
+- **Písma:** Andika a Grandstander, SIL Open Font License 1.1 (`fonts/LICENSE-*.txt`).
+- **Hlasy:** vytvořené umělou inteligencí (ElevenLabs, Azure AI Speech), podrobnosti v části o hlasech.
 
 ## Zveřejnění na GitHub Pages (iPad v autě bez internetu)
 
-Složka obsahuje workflow `.github/workflows/pages.yml`. Po každém pushi do větve `main` stáhne fotky, nahraje hlasy a zveřejní hru na `https://<uživatel>.github.io/houbicky/`. Fotky ani nahrávky se do gitu nepřidávají.
+Složka obsahuje workflow `.github/workflows/pages.yml`. Po každém pushi do větve `main` stáhne fotky a zveřejní hru na `https://<uživatel>.github.io/houbicky/`. Fotky se do gitu nepřidávají; nahrávky hlasů v gitu jsou (workflow „Record voices“).
 
 1. Na iPadu otevřete adresu hry v Safari, chvíli počkejte a v Rodičovském koutku zkontrolujte **Připraveno na cestu: 100 %**.
 2. **Sdílet → Přidat na plochu.** Pak hra funguje i v autě bez signálu.

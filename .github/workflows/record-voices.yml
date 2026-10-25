@@ -1,21 +1,23 @@
-# Record the spoken lines and COMMIT them to git (voice/<lang>/*.mp3 + voice/index.json), so deploys never need a
-# TTS service again (edge-tts is blocked from GitHub runners; ElevenLabs is a paid plan that will end).
-#   - manual: Actions → "Record voices" → Run workflow → branch = main | v2
-#   - automatic on v2 when the lines or the voice config change
-# First run per branch: the current recordings (Vlasta / Maisie) are taken from the pages.yml voice cache, so nothing
-# that exists today is lost; only missing or changed lines are recorded (voice/config.json decides the provider).
+# Record the spoken lines with LICENSED services only and COMMIT them (voice/<lang>/*.mp3 + voice/index.json), then
+# re-deploy. voice/config.json decides the service and the voice per language; the free edge-tts voices are never used.
+#   Czech:   ElevenLabs, paid plan  → repository secret ELEVENLABS_API_KEY (the whole key sk_…, not its id)
+#   English: Azure AI Speech        → repository secret AZURE_SPEECH_KEY + repository variable AZURE_SPEECH_REGION (e.g. westeurope)
+# A language whose key is missing records nothing (its current recordings stay); the others still record.
+#   - manual: Actions → "Record voices" → Run workflow; "force" re-records a whole language even if nothing changed
+#   - automatic when the lines, the data or the voice config change on main (the old beta branch v2 is never recorded)
+# The last step is the licence audit (make_voice.py --audit): the run stays red while any line is unlicensed.
 name: Record voices
 
 on:
   workflow_dispatch:
     inputs:
-      branch:
-        description: 'Branch to record and commit'
+      force:
+        description: 'Re-record even unchanged lines (none = only new, changed or unlicensed lines)'
         type: choice
-        options: [v2, main]
-        default: v2
+        options: [none, en, cs, all]
+        default: none
   push:
-    branches: [v2]
+    branches: [main]
     paths:
       - voice/config.json
       - js/phrases.js
@@ -33,14 +35,8 @@ concurrency:
 jobs:
   record:
     runs-on: ubuntu-latest
-    env:
-      B: ${{ github.event_name == 'workflow_dispatch' && inputs.branch || github.ref_name }}
     steps:
-      - name: Check out the branch (into a folder named like the branch, so the voice cache paths match pages.yml)
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ env.B }}
-          path: ${{ env.B }}
+      - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
         with:
@@ -50,70 +46,53 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Install edge-tts (English Maisie; may be blocked, then only the cache counts)
-        run: pip install edge-tts
-        continue-on-error: true
-
       - name: Export the phrase catalogue
-        working-directory: ${{ env.B }}
         run: node dev/export_phrases.mjs
 
-      - name: Recordings already in git?
-        id: committed
+      - name: Licence audit before recording (what will be recorded and how many characters)
+        run: python make_voice.py --audit || true
+
+      - name: Record new, changed and unlicensed lines
         run: |
-          if ls "$B"/voice/cs/*.mp3 >/dev/null 2>&1 || ls "$B"/voice/en/*.mp3 >/dev/null 2>&1; then
-            echo "yes=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "yes=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Take over the existing recordings from the pages.yml voice cache (first run only)
-        if: steps.committed.outputs.yes != 'true'
-        uses: actions/cache/restore@v4
-        with:
-          path: |
-            ${{ env.B }}/voice/cs
-            ${{ env.B }}/voice/en
-            ${{ env.B }}/voice/index.json
-          key: ${{ env.B }}-voice-${{ hashFiles(format('{0}/voice/phrases.json', env.B)) }}
-          restore-keys: ${{ env.B }}-voice-
-
-      - name: Record missing / changed lines
-        working-directory: ${{ env.B }}
-        run: python make_voice.py
-        continue-on-error: true          # lines that cannot be recorded fall back to the browser voice; commit the rest
+          rc=0
+          case "$FORCE" in
+            all)   python make_voice.py --force || rc=1 ;;
+            cs|en) python make_voice.py --lang "$FORCE" --force || rc=1
+                   python make_voice.py || rc=1 ;;
+            *)     python make_voice.py || rc=1 ;;
+          esac
+          exit $rc
+        continue-on-error: true          # a language that fails keeps its current recordings; commit the rest
         env:
+          FORCE: ${{ github.event_name == 'workflow_dispatch' && inputs.force || 'none' }}
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ vars.AZURE_SPEECH_REGION }}
 
       - name: Check the recordings before committing
-        working-directory: ${{ env.B }}
         run: |
           python3 - <<'PY'
           import json, os, sys
           idx = json.load(open("voice/index.json", encoding="utf-8")) if os.path.exists("voice/index.json") else {}
           missing = [e["file"] for lang in idx.values() for e in lang.values() if not os.path.isfile(os.path.join("voice", e["file"]))]
-          n = sum(len(v) for v in idx.values())
-          size = sum(os.path.getsize(os.path.join(r, f)) for d in ("voice/cs", "voice/en") if os.path.isdir(d) for r, _, fs in os.walk(d) for f in fs)
-          print(f"index: {n} recordings, {size / 1e6:.1f} MB on disk")
+          print(f"index: {sum(len(v) for v in idx.values())} recordings")
           for f in missing: print(f"::error::index.json points to a missing file: {f}")
           sys.exit(1 if missing else 0)
           PY
 
       - name: Commit the recordings
         id: commit
-        working-directory: ${{ env.B }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898099+github-actions[bot]@users.noreply.github.com"
           mkdir -p voice/cs voice/en
-          git add -f --all voice/cs voice/en voice/index.json      # -f: main's .gitignore may still ignore them
-          if git diff --cached --quiet; then
-            echo "Nothing new to commit."; echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0
-          fi
-          git commit -q -m "Hlasy: nahrávky v gitu ($B) [record-voices]"
+          git add -f --all voice/cs voice/en
+          [ -f voice/index.json ] && git add -f voice/index.json
+          if git diff --cached --quiet; then echo "Nothing new to commit."; echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git commit -q -m "Hlasy: nahrávky v gitu [record-voices]"
           for i in 1 2 3; do
-            if git push origin "HEAD:$B"; then echo "changed=true" >> "$GITHUB_OUTPUT"; exit 0; fi
-            git pull --rebase origin "$B" || { git rebase --abort; exit 1; }
+            if git push origin HEAD:main; then echo "changed=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+            git pull --rebase origin main || { git rebase --abort; exit 1; }
           done
           exit 1
 
@@ -122,3 +101,6 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run pages.yml --ref main --repo "$GITHUB_REPOSITORY"
+
+      - name: Licence audit (fails while any line is not recorded by a licensed service)
+        run: python make_voice.py --audit

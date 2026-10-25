@@ -4,7 +4,9 @@
 # One artifact holds both. A push to EITHER branch rebuilds both, so this file is identical on main and v2.
 # The github-pages environment only accepts deployments from main, so a push to v2 just dispatches this
 # workflow on main (job trigger-main); the main run then builds and deploys both copies.
-# Photos (Wikimedia Commons) and voices (edge-tts) are generated here per branch, never committed.
+# Photos (Wikimedia Commons) are downloaded here per branch, never committed. Voice recordings come only from git
+# (record-voices.yml, licensed services); this deploy never records anything and never calls a TTS service.
+# The voice-sample pages (ukazky/) were for choosing a voice and are not part of the site.
 # The two copies never interfere at runtime: different localStorage key, SW scope and cache names
 # (all derived from the URL by js/env.js and sw.js).
 name: Deploy to GitHub Pages
@@ -73,9 +75,6 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Install edge-tts
-        run: pip install edge-tts
-
       # ---------------------------------------------------------------- stable (main)
       - name: "main: export the phrase catalogue"
         working-directory: main
@@ -90,27 +89,6 @@ jobs:
           key: main-photos-${{ hashFiles('main/photos/manifest.json') }}
           restore-keys: main-photos-
 
-      - name: "main: committed recordings?"
-        id: mainvoices
-        # runs always (main is the stable copy)
-        run: |
-          if ls main/voice/cs/*.mp3 >/dev/null 2>&1 || ls main/voice/en/*.mp3 >/dev/null 2>&1; then
-            echo "committed=true" >> "$GITHUB_OUTPUT"; echo "main: using the recordings committed in git (no voice cache)"
-          else
-            echo "committed=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: "main: restore voices"
-        if: steps.mainvoices.outputs.committed != 'true'    # transitional: until record-voices.yml has committed them
-        uses: actions/cache@v4
-        with:
-          path: |
-            main/voice/cs
-            main/voice/en
-            main/voice/index.json
-          key: main-voice-${{ hashFiles('main/voice/phrases.json') }}
-          restore-keys: main-voice-
-
       - name: "main: fetch photos (only missing ones)"
         working-directory: main
         run: python fetch_photos.py
@@ -118,12 +96,12 @@ jobs:
         env:
           HOUBICKY_CONTACT: ${{ vars.HOUBICKY_CONTACT }}
 
-      # Deploys never use a paid TTS service (no ElevenLabs key here): recordings come from git (record-voices.yml).
-      # This step only fills gaps with free edge-tts, and makes no network call when every line is already recorded.
-      - name: "main: record voices (only new or changed lines)"
+      # Recordings come from git only (record-voices.yml). The audit just reports lines that are not yet recorded by a
+      # licensed service; it never blocks a deploy (such lines keep their current recording or use the browser voice).
+      - name: "main: voice licence audit (report only)"
         working-directory: main
-        run: python make_voice.py
-        continue-on-error: true          # a missing recording falls back to the browser voice
+        run: |
+          python make_voice.py --audit || echo "::warning::Some voice lines are not recorded by a licensed service yet (Actions → Record voices)"
 
       # ---------------------------------------------------------------- beta (v2)
       - name: "v2: export the phrase catalogue"
@@ -144,28 +122,6 @@ jobs:
           key: v2-photos-${{ hashFiles('v2/photos/manifest.json') }}
           restore-keys: v2-photos-
 
-      - name: "v2: committed recordings?"
-        id: v2voices
-        if: steps.v2export.outcome == 'success'
-        run: |
-          if ls v2/voice/cs/*.mp3 >/dev/null 2>&1 || ls v2/voice/en/*.mp3 >/dev/null 2>&1; then
-            echo "committed=true" >> "$GITHUB_OUTPUT"; echo "v2: using the recordings committed in git (no voice cache)"
-          else
-            echo "committed=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: "v2: restore voices"
-        if: steps.v2export.outcome == 'success' && steps.v2voices.outputs.committed != 'true'
-        continue-on-error: true
-        uses: actions/cache@v4
-        with:
-          path: |
-            v2/voice/cs
-            v2/voice/en
-            v2/voice/index.json
-          key: v2-voice-${{ hashFiles('v2/voice/phrases.json') }}
-          restore-keys: v2-voice-
-
       - name: "v2: fetch photos (only missing ones)"
         if: steps.v2export.outcome == 'success'
         working-directory: v2
@@ -173,12 +129,6 @@ jobs:
         continue-on-error: true
         env:
           HOUBICKY_CONTACT: ${{ vars.HOUBICKY_CONTACT }}
-
-      - name: "v2: record voices (only new or changed lines)"
-        if: steps.v2export.outcome == 'success'
-        working-directory: v2
-        run: python make_voice.py
-        continue-on-error: true
 
       # ---------------------------------------------------------------- one artifact
       - name: Assemble the site (stable at /, beta at /beta/)
@@ -189,7 +139,7 @@ jobs:
             mkdir -p "$2"
             rsync -a \
               --exclude '.git' --exclude '.github' --exclude '.gitignore' \
-              --exclude 'dev/' --exclude 'tests/' --exclude '__pycache__/' --exclude 'beta/' \
+              --exclude 'dev/' --exclude 'tests/' --exclude '__pycache__/' --exclude 'beta/' --exclude 'ukazky/' \
               --exclude 'design/*.png' --exclude 'design/*.md' --exclude '*.py' \
               --exclude 'BRIEF*.md' --exclude 'README.md' --exclude 'start.command' --exclude 'package.json' \
               --exclude 'voice/phrases.json' --exclude '*.part' --exclude '*.part.mp3' \
